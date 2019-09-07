@@ -3,8 +3,65 @@ all:
 include common.mk
 include wla-dx.mk
 
-SOURCES = src/main.asm
-OBJECTS = $(BUILD)/src/main.asm.o
+SOURCES = \
+  src/bank80.asm \
+  src/bank81.asm \
+  src/bank82.asm \
+  src/bank83.asm \
+  src/bank84.asm \
+  src/bank85.asm \
+  src/bank86.asm \
+  src/bank87.asm \
+  src/bank88.asm \
+  src/bank89.asm \
+  src/bank8a.asm \
+  src/bank8b.asm \
+  src/bank8c.asm \
+  src/bank8d.asm \
+  src/bank8e.asm \
+  src/bank8f.asm \
+  src/bank90.asm \
+  src/bank91.asm \
+  src/bank92.asm \
+  src/bank93.asm \
+  src/bank94.asm \
+  src/bank95.asm \
+  src/bank96.asm \
+  src/bank97.asm \
+  src/bank98.asm \
+  src/bank99.asm \
+  src/bank9a.asm \
+  src/bank9b.asm \
+  src/bank9c.asm \
+  src/bank9d.asm \
+  src/bank9e.asm \
+  src/bank9f.asm \
+  src/banka0.asm \
+  src/banka1.asm \
+  src/banka2.asm \
+  src/banka3.asm \
+  src/banka4.asm \
+  src/banka5.asm \
+  src/banka6.asm \
+  src/banka7.asm \
+  src/banka8.asm \
+  src/banka9.asm \
+  src/bankaa.asm \
+  src/bankab.asm \
+  src/bankac.asm \
+  src/bankad.asm \
+  src/bankae.asm \
+  src/bankaf.asm \
+  src/bankb0.asm \
+  src/bankb1.asm \
+  src/bankb2.asm \
+  src/bankb3.asm \
+  src/bankb4.asm \
+  src/bankb5.asm \
+  src/main.asm
+
+OBJECTS = $(patsubst %.asm,$(BUILD)/%.asm.o,$(SOURCES))
+DEPENDENCY_FILES = $(patsubst %,%.d,$(OBJECTS))
 
 .PHONY: all
 all: roms check
@@ -29,8 +86,8 @@ supermetroid-ntsc.sfc: $(BUILD)/linkfile $(OBJECTS) $(WLALINK)
 $(BUILD)/linkfile: Makefile
 	{ printf '[objects]\n' && printf '%s\n' $(OBJECTS) ; } >$(@)
 
--include $(BUILD)/src/main.asm.o.d
-$(BUILD)/src/main.asm.o: src/main.asm $(WLA_65816)
+-include $(DEPENDENCY_FILES)
+$(BUILD)/src/%.asm.o: src/%.asm $(WLA_65816)
 	mkdir -p $(dir $(@))
 	@# HACK(strager): For an incremental build, if assembling fails, the .d
 	@# file is overwritten. Ensure GNU Make re-runs this rule if the .d file

@@ -1,3 +1,5 @@
+.include "src/common.asm"
+
 .bank ($88 - $80) slot $0
 .org $0
 
