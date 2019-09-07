@@ -1,3 +1,6 @@
+.bank ($85 - $80) slot $0
+.org $0
+
 unknown_85_8000: asl $0e00.w
 unknown_85_8003: brk $0e
 unknown_85_8005: brk $4e

@@ -1,3 +1,6 @@
+.bank ($8a - $80) slot $0
+.org $0
+
 unknown_8a_8000: bvc $18 ; $801a.w
 unknown_8a_8002: eor ($18), Y
 unknown_8a_8004: eor ($18)

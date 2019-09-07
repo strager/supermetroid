@@ -1,3 +1,6 @@
+.bank ($b5 - $80) slot $0
+.org $0
+
 unknown_b5_8000: ora $001f00.l, X
 unknown_b5_8004: ora $001f00.l, X
 unknown_b5_8008: ora $001f00.l, X

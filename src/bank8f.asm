@@ -1,3 +1,6 @@
+.bank ($8f - $80) slot $0
+.org $0
+
 unknown_8f_8000: ora $b7, S
 unknown_8f_8002: asl $b028.w, X
 unknown_8f_8005: sta ($47)

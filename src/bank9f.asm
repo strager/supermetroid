@@ -1,3 +1,6 @@
+.bank ($9f - $80) slot $0
+.org $0
+
 unknown_9f_8000: brk $00
 unknown_9f_8002: brk $00
 unknown_9f_8004: brk $00

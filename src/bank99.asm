@@ -1,3 +1,6 @@
+.bank ($99 - $80) slot $0
+.org $0
+
 unknown_99_8000: cpy $09
 unknown_99_8002: cpy $5d
 unknown_99_8004: ora $57, S

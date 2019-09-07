@@ -1,3 +1,6 @@
+.bank ($a4 - $80) slot $0
+.org $0
+
 unknown_a4_8000: jsr $a09f6d
 unknown_a4_8004: rtl
 

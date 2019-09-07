@@ -1,3 +1,6 @@
+.bank ($8c - $80) slot $0
+.org $0
+
 unknown_8c_8000: and $00
 unknown_8c_8002: bvc $00 ; $8004.w
 unknown_8c_8004: inx 

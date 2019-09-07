@@ -1,3 +1,6 @@
+.bank ($9b - $80) slot $0
+.org $0
+
 unknown_9b_8000: brk $00
 unknown_9b_8002: brk $00
 unknown_9b_8004: ora ($01, X)

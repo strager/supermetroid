@@ -1,3 +1,6 @@
+.bank ($84 - $80) slot $0
+.org $0
+
 unknown_84_8000: phx 
 unknown_84_8001: phy 
 unknown_84_8002: phb 

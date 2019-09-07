@@ -1,3 +1,6 @@
+.bank ($8e - $80) slot $0
+.org $0
+
 unknown_8e_8000: brk $00
 unknown_8e_8002: brk $00
 unknown_8e_8004: brk $3c

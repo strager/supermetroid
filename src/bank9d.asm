@@ -1,3 +1,6 @@
+.bank ($9d - $80) slot $0
+.org $0
+
 unknown_9d_8000: brl $c2c3 ; $42c6.w
 unknown_9d_8003: cmp $07, S
 unknown_9d_8005: ora [$0f]

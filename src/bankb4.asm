@@ -1,3 +1,6 @@
+.bank ($b4 - $80) slot $0
+.org $0
+
 unknown_b4_8000: sbc $4653ff, X
 unknown_b4_8004: and ($5f), Y
 unknown_b4_8006: and ($30), Y

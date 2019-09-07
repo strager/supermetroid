@@ -1,3 +1,6 @@
+.bank ($ad - $80) slot $0
+.org $0
+
 unknown_ad_8000: brk $00
 unknown_ad_8002: brk $00
 unknown_ad_8004: brk $00

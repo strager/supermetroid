@@ -1,3 +1,6 @@
+.bank ($ac - $80) slot $0
+.org $0
+
 unknown_ac_8000: bit $5a18.w, X
 unknown_ac_8003: bit $18
 unknown_ac_8005: clc 

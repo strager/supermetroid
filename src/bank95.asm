@@ -1,3 +1,6 @@
+.bank ($95 - $80) slot $0
+.org $0
+
 unknown_95_8000: rep #$07
 unknown_95_8002: ora $00, S
 unknown_95_8004: and $0032.w, X

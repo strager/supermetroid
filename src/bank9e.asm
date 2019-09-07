@@ -1,3 +1,6 @@
+.bank ($9e - $80) slot $0
+.org $0
+
 unknown_9e_8000: nop 
 unknown_9e_8001: sbc $ebffff, X
 unknown_9e_8005: dey 

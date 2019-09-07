@@ -1,3 +1,6 @@
+.bank ($8b - $80) slot $0
+.org $0
+
 unknown_8b_8000: php 
 unknown_8b_8001: sep #$30
 unknown_8b_8003: lda #$80

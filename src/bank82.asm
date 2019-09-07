@@ -1,3 +1,6 @@
+.bank ($82 - $80) slot $0
+.org $0
+
 unknown_82_8000: php 
 unknown_82_8001: rep #$30
 unknown_82_8003: lda $0998.w

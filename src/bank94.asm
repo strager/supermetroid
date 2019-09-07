@@ -1,3 +1,6 @@
+.bank ($94 - $80) slot $0
+.org $0
+
 unknown_94_8000: lda $0b02.w
 unknown_94_8003: lsr A
 unknown_94_8004: bcc $03 ; $8009.w

@@ -1,3 +1,6 @@
+.bank ($89 - $80) slot $0
+.org $0
+
 unknown_89_8000: bit $5f30.w
 unknown_89_8003: adc $2f6325, X
 unknown_89_8007: adc [$3f]

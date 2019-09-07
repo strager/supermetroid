@@ -1,3 +1,6 @@
+.bank ($a1 - $80) slot $0
+.org $0
+
 unknown_a1_8000: sbc $d3bfff, X
 unknown_a1_8004: bvc $01 ; $8007.w
 unknown_a1_8006: jmp $0005.w

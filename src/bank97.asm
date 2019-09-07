@@ -1,3 +1,6 @@
+.bank ($97 - $80) slot $0
+.org $0
+
 unknown_97_8000: asl $3e
 unknown_97_8002: ora [$3e]
 unknown_97_8004: tcd 

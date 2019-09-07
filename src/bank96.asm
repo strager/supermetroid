@@ -1,3 +1,6 @@
+.bank ($96 - $80) slot $0
+.org $0
+
 unknown_96_8000: cmp ($05, X)
 unknown_96_8002: eor $01, S
 unknown_96_8004: brk $02

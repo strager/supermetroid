@@ -1,3 +1,6 @@
+.bank ($b0 - $80) slot $0
+.org $0
+
 unknown_b0_8000: sec 
 unknown_b0_8001: sec 
 unknown_b0_8002: mvp $4c, $44

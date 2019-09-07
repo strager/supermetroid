@@ -1,3 +1,6 @@
+.bank ($91 - $80) slot $0
+.org $0
+
 unknown_91_8000: php 
 unknown_91_8001: phb 
 unknown_91_8002: phk 

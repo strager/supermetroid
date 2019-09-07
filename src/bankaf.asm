@@ -1,3 +1,6 @@
+.bank ($af - $80) slot $0
+.org $0
+
 unknown_af_8000: ora ($00, X)
 unknown_af_8002: ora ($02, X)
 unknown_af_8004: cop $05

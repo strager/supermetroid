@@ -1,3 +1,6 @@
+.bank ($9c - $80) slot $0
+.org $0
+
 unknown_9c_8000: ora [$07]
 unknown_9c_8002: trb $301f.w
 unknown_9c_8005: and $607f60, X

@@ -1,3 +1,6 @@
+.bank ($98 - $80) slot $0
+.org $0
+
 unknown_98_8000: cpy $10
 unknown_98_8002: eor $00
 unknown_98_8004: eor ($24), Y

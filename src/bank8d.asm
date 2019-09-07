@@ -1,3 +1,6 @@
+.bank ($8d - $80) slot $0
+.org $0
+
 unknown_8d_8000: brk $00
 unknown_8d_8002: brk $00
 unknown_8d_8004: brk $df

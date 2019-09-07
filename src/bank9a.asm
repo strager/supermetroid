@@ -1,3 +1,6 @@
+.bank ($9a - $80) slot $0
+.org $0
+
 unknown_9a_8000: cpx #$ff14.w
 unknown_9a_8003: adc $5a6b5a, X
 unknown_9a_8007: rtl
