@@ -3,6 +3,9 @@ all:
 include common.mk
 include wla-dx.mk
 
+SOURCES = src/main.asm
+OBJECTS = $(BUILD)/src/main.asm.o
+
 .PHONY: all
 all: roms check
 
@@ -20,8 +23,11 @@ check: supermetroid-ntsc.sfc
 	echo 'da957f0d63d14cb441d215462904c4fa8519c613  supermetroid-ntsc.sfc' \
 	  | shasum --algorithm 1 --check
 
-supermetroid-ntsc.sfc: src/linkfile $(BUILD)/src/main.asm.o $(WLALINK)
-	$(WLALINK) src/linkfile $(@)
+supermetroid-ntsc.sfc: $(BUILD)/linkfile $(OBJECTS) $(WLALINK)
+	$(WLALINK) $(BUILD)/linkfile $(@)
+
+$(BUILD)/linkfile: Makefile
+	{ printf '[objects]\n' && printf '%s\n' $(OBJECTS) ; } >$(@)
 
 -include $(BUILD)/src/main.asm.o.d
 $(BUILD)/src/main.asm.o: src/main.asm $(WLA_65816)

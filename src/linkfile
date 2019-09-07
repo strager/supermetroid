@@ -1,4 +1,0 @@
-# This file is interpreted by WLA DX's wlalink command.
-
-[objects]
-build/src/main.asm.o
