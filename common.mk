@@ -1,0 +1,3 @@
+BUILD = build
+
+.SUFFIXES:

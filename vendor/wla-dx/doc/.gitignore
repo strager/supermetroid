@@ -1,0 +1,13 @@
+# Super strict .gitignore file, that is mainly just a whitelist.
+
+**
+!/theme/
+!/sphinx/
+!/man/*.rst
+!*.py
+!*.rst
+!CMakeLists.txt
+!*.md
+!.gitignore
+*.pyc
+
