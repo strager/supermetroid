@@ -12,7 +12,7 @@ roms: supermetroid-ntsc.sfc
 .PHONY: clean
 clean:
 	rm -rf $(BUILD)
-	rm -f src/main.asm.o src/main.asm.o.d supermetroid-ntsc.sfc
+	rm -f supermetroid-ntsc.sfc
 
 .PHONY: check
 check: supermetroid-ntsc.sfc
@@ -20,11 +20,12 @@ check: supermetroid-ntsc.sfc
 	echo 'da957f0d63d14cb441d215462904c4fa8519c613  supermetroid-ntsc.sfc' \
 	  | shasum --algorithm 1 --check
 
-supermetroid-ntsc.sfc: src/linkfile src/main.asm.o $(WLALINK)
+supermetroid-ntsc.sfc: src/linkfile $(BUILD)/src/main.asm.o $(WLALINK)
 	$(WLALINK) src/linkfile $(@)
 
--include src/main.asm.o.d
-src/main.asm.o: src/main.asm $(WLA_65816)
+-include $(BUILD)/src/main.asm.o.d
+$(BUILD)/src/main.asm.o: src/main.asm $(WLA_65816)
+	mkdir -p $(dir $(@))
 	@# HACK(strager): For an incremental build, if assembling fails, the .d
 	@# file is overwritten. Ensure GNU Make re-runs this rule if the .d file
 	@# is empty for this reason.
