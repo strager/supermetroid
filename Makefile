@@ -81,7 +81,7 @@ check: supermetroid-ntsc.sfc
 	  | shasum --algorithm 1 --check
 
 supermetroid-ntsc.sfc: $(BUILD)/linkfile $(OBJECTS) $(WLALINK)
-	$(WLALINK) $(BUILD)/linkfile $(@)
+	$(WLALINK) -s $(BUILD)/linkfile $(@)
 
 $(BUILD)/linkfile: Makefile
 	{ printf '[objects]\n' && printf '%s\n' $(OBJECTS) ; } >$(@)
