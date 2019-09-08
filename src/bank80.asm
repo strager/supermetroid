@@ -579,6 +579,7 @@ unknown_80_841c: sei
 unknown_80_841d: clc
 unknown_80_841e: xce
 unknown_80_841f: jmp $808423
+
 unknown_80_8423: sep #$20
 unknown_80_8425: lda #$01
 unknown_80_8427: sta $420d.w
@@ -714,9 +715,11 @@ unknown_80_8564: jsr $808261
 unknown_80_8568: stz $05f5.w
 unknown_80_856b: stz $0686.w
 unknown_80_856e: jmp $82893d
-unknown_80_8572: brk $5c
-unknown_80_8574: adc ($85, S), Y
-unknown_80_8576: bra $08 ; $8580.w
+.db $00
+
+unknown_80_8573: jmp $808573
+
+unknown_80_8577: php
 unknown_80_8578: phb
 unknown_80_8579: phk
 unknown_80_857a: plb
@@ -2533,6 +2536,7 @@ unknown_80_9582: rtl
 
 unknown_80_9583: rep #$30
 unknown_80_9585: jmp $809589
+
 unknown_80_9589: phb
 unknown_80_958a: phd
 unknown_80_958b: pha
@@ -2871,6 +2875,7 @@ unknown_80_9869: rtl
 
 unknown_80_986a: rep #$30
 unknown_80_986c: jmp $809870
+
 unknown_80_9870: phb
 unknown_80_9871: pha
 unknown_80_9872: phx
@@ -9119,20 +9124,27 @@ unknown_80_cd8b: brk $00
 .db $00
 
 .org $7fe0
-unknown_80_ffe0: adc ($85, S), Y
-unknown_80_ffe2: adc ($85, S), Y
-unknown_80_ffe4: adc ($85, S), Y
-unknown_80_ffe6: adc ($85, S), Y
-unknown_80_ffe8: adc ($85, S), Y
-unknown_80_ffea: sta $95, S
-unknown_80_ffec: adc ($85, S), Y
-unknown_80_ffee: ror A
-unknown_80_ffef: tya
-unknown_80_fff0: adc ($85, S), Y
-unknown_80_fff2: adc ($85, S), Y
-unknown_80_fff4: adc ($85, S), Y
-unknown_80_fff6: adc ($85, S), Y
-unknown_80_fff8: adc ($85, S), Y
-unknown_80_fffa: adc ($85, S), Y
-unknown_80_fffc: trb $7384.w
-unknown_80_ffff: .db $85
+unknown_80_7fe0: .dw unknown_80_8573
+unknown_80_7fe2: .dw unknown_80_8573
+
+.snesnativevector
+cop unknown_80_8573
+brk unknown_80_8573
+abort unknown_80_8573
+nmi unknown_80_9583
+unused unknown_80_8573
+irq unknown_80_986a
+.endnativevector
+
+.org $7ff0
+unknown_80_7ff0: .dw unknown_80_8573
+unknown_80_7ff2: .dw unknown_80_8573
+
+.snesemuvector
+cop unknown_80_8573
+unused unknown_80_8573
+abort unknown_80_8573
+nmi unknown_80_8573
+reset unknown_80_841c
+irqbrk unknown_80_8573
+.endemuvector
