@@ -9,6 +9,8 @@
 # these tests aren't really unit tests, but hopefully one day they will be. :)
 #
 
+set -e
+
 changePlatform() {
     echo ""
     echo "************************************************************"
@@ -80,6 +82,10 @@ runTest base_test_1
 runTest base_test_2
 runTest base_test_3
 runTest base_test_4
+runTest checksum_12mbit_lorom
+runTest checksum_24mbit_lorom
+runTest checksum_8mbit_hirom
+runTest checksum_8mbit_lorom
 runTest linker_test
 runTest name_test
 runTest operand_hint_test
@@ -168,5 +174,13 @@ cd ..
 #####################################################################
 
 changePlatform 8008
+runTest linker_test
+cd ..
+
+#####################################################################
+# 8080
+#####################################################################
+
+changePlatform 8080
 runTest linker_test
 cd ..

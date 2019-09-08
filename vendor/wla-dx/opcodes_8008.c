@@ -1,3 +1,5 @@
+#define FILE void
+#include "defines.h"
 struct optcode opt_table[] = {
   { "ACA", 0x88, 0, 0 },
   { "ACB", 0x89, 0, 0 },
@@ -238,5 +240,5 @@ struct optcode opt_table[] = {
   { "XRL", 0xAE, 0, 0 },
   { "XRM", 0xAF, 0, 0 },
 
-  { "E", 0x100, -1, 0 }
+  { "E", 0x100, 0xFF, 0 }
 };

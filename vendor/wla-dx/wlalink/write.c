@@ -2290,7 +2290,7 @@ int generate_sizeof_label_definitions(void) {
 
   struct label *l, *lastL, **labels;
   int labelsN = 0, j;
-  double size;
+  double size = 0.0;
 
 
   if (labels_first == NULL)
@@ -2375,14 +2375,14 @@ int generate_sizeof_label_definitions(void) {
       return FAILED;
     }
 
-    if (strlen(labels[j]->name)+8 >= sizeof(l->name)) {
+    if (strlen(labels[j]->name)+8+1 >= sizeof(l->name)) {
       fprintf(stderr, "GENERATE_SIZEOF_LABEL_DEFINITIONS: Expanded label name \"_sizeof_%s\" is %d characters too large.\n",
               labels[j]->name, (int)(strlen(labels[j]->name)+8+1-sizeof(l->name)));
       free(labels);
       return FAILED;
     }
     else
-      sprintf(l->name, "_sizeof_%s", labels[j]->name);
+      sprintf(l->name, "_sizeof_%.*s", (int)(sizeof(l->name)-8-1), labels[j]->name);
 
     l->status = LABEL_STATUS_DEFINE;
     l->alive = YES;

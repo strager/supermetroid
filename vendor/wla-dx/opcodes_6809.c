@@ -1,3 +1,5 @@
+#define FILE void
+#include "defines.h"
 
 /* got the defines from https://stackoverflow.com/questions/18244726/why-doesnt-c-have-binary-literals */
 #define B0_(X) ((X) % 8 + B1_((X)/8) * 2)
@@ -4922,5 +4924,5 @@ struct optcode opt_table[] = {
   { "TST x", 0x0D, 4, 1, 0 },
   { "TST ?", 0x7D, 2, 0, 0 },
   
-  { "E", 0x100, -1, 0, 0 }
+  { "E", 0x100, 0xFF, 0, 0 }
 };

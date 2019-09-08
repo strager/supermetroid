@@ -100,6 +100,8 @@
 /* 9 - *          16b */
 
 #define OP_SIZE_MAX 16
+#define ARCH_STR "GB-Z80"
+#define WLA_NAME "gb"
 
 #endif
 
@@ -118,6 +120,8 @@
 /* 4 - x (absolute)   */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "6502"
+#define WLA_NAME "6502"
 
 #endif
 
@@ -137,6 +141,8 @@
 /* 5 - x-abs x-rel    */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "WDC65C02"
+#define WLA_NAME "65c02"
 
 #endif
 
@@ -159,6 +165,8 @@
 /* 8 - x-abs x-rel    */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "HUC6280"
+#define WLA_NAME "huc6280"
 
 #endif
 
@@ -177,6 +185,8 @@
 /* 4 - x (absolute)   */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "MSC6510"
+#define WLA_NAME "6510"
 
 #endif
 
@@ -201,6 +211,8 @@
 /* f - ? (13-bit) ~ */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "SPC700"
+#define WLA_NAME "spc700"
 
 #endif
 
@@ -225,6 +237,8 @@
 /* a - * x        24b */
 
 #define OP_SIZE_MAX 20
+#define ARCH_STR "Z80"
+#define WLA_NAME "z80"
 
 #endif
 
@@ -243,6 +257,8 @@
 /* 4 - x (absolute)   */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "MC6800"
+#define WLA_NAME "6800"
 
 #endif
 
@@ -261,6 +277,8 @@
 /* 4 - x (absolute)   */
 
 #define OP_SIZE_MAX 12
+#define ARCH_STR "MC6801"
+#define WLA_NAME "6801"
 
 #endif
 
@@ -286,6 +304,8 @@
 /* 11 - pshs / pshu / puls / pulu */
 
 #define OP_SIZE_MAX 16
+#define ARCH_STR "MC6809"
+#define WLA_NAME "6809"
 
 #endif
 
@@ -303,6 +323,27 @@
 /* 8 - *           8b */
  
 #define OP_SIZE_MAX 12
+#define ARCH_STR "I8008"
+#define WLA_NAME "8008"
+	
+#endif
+
+/**************************************************************/
+/* 8080                                                       */
+/**************************************************************/
+
+#ifdef I8080
+	
+/* opcode types */
+ 
+/* 0 - plain text  8b */
+/* 1 - x              */
+/* 2 - ?              */
+/* 8 - *           8b */
+ 
+#define OP_SIZE_MAX 12
+#define ARCH_STR "I8080"
+#define WLA_NAME "8080"
 	
 #endif
 
@@ -327,30 +368,39 @@
 /* a - x (absolute)   */
 
 #define OP_SIZE_MAX 16
+#define ARCH_STR "W65816"
+#define WLA_NAME "65816"
 
 #endif
 
 
 struct optcode {
   char *op;
-  int  hex;
-  int  type;
+  unsigned short hex;
+  unsigned char type;
 #if defined(Z80)
-  int  hex_x;
+  unsigned char hex_x;
 #endif
-#if defined(Z80) || defined(GB) || defined(I8008)
-  int  value;
+#if defined(Z80) || defined(GB) || defined(I8008) || defined(I8080)
+  unsigned char value;
 #endif
 #if defined(MCS6502) || defined(WDC65C02) || defined(HUC6280) || defined(MCS6510) || defined(MC6800) || defined(MC6801) || defined(MC6809)
-  int  skip_8bit;
+  unsigned char skip_8bit;
 #endif
 #if defined(W65816)
-  int  skip_xbit;
+  unsigned char skip_xbit;
 #endif
 #if defined(MC6809)
-  int  addressing_mode_bits;
+  unsigned char addressing_mode_bits;
 #endif
 };
+
+#ifndef WLA_NAME
+  #error "Unknown WLA_NAME!"
+#endif
+#ifndef ARCH_STR
+  #error "Unknown ARCH_STR!"
+#endif
 
 #define DEFINITION_TYPE_VALUE         0
 #define DEFINITION_TYPE_STRING        1

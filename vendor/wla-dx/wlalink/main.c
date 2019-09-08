@@ -25,7 +25,7 @@
 #define WLALINK_DEBUG
 */
 
-char version_string[] = "$VER: WLALINK 5.11 (15.8.2019)";
+char version_string[] = "$VER: WLALINK 5.12a (15.8.2019)";
 
 #ifdef AMIGA
 long __stack = 200000;
@@ -126,7 +126,7 @@ char *get_stack_item_description(struct stack_item *si, int file_id) {
     else if (type == STACK_ITEM_TYPE_STRING)
       sprintf(sid, "stack_item: label              : %s\n", si->string);
     else if (type == STACK_ITEM_TYPE_STACK) {
-      struct stack *st = find_stack(si->value, file_id);
+      struct stack *st = find_stack((int)si->value, file_id);
 
       if (st->computed == YES)
 	sprintf(sid, "stack_item: (stack) calculation: %d (result = %d/$%x)\n", (int)si->value, st->result, st->result);
@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
     x = FAILED;
 
   if (x == FAILED) {
-    printf("\nWLALINK GB-Z80/Z80/6502/65C02/6510/65816/HUC6280/SPC-700 WLA Macro Assembler Linker v5.11\n");
+    printf("\nWLALINK GB-Z80/Z80/6502/65C02/6510/65816/6800/6801/6809/8008/HUC6280/SPC-700 WLA Macro Assembler Linker v5.12a\n");
     printf("Written by Ville Helin in 2000-2008 - In GitHub since 2014: https://github.com/vhelin/wla-dx\n");
 #ifdef WLALINK_DEBUG
     printf("*** WLALINK_DEBUG defined - this executable is running in DEBUG mode ***\n");
