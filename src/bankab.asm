@@ -13,7 +13,7 @@ unknown_ab_800e: ora $00000a.l, X
 unknown_ab_8012: brk $00
 unknown_ab_8014: brk $00
 unknown_ab_8016: ora [$07]
-unknown_ab_8018: clc 
+unknown_ab_8018: clc
 unknown_ab_8019: ora $201f00, X
 unknown_ab_801d: and $00352a.l, X
 unknown_ab_8021: brk $00
@@ -21,8 +21,8 @@ unknown_ab_8023: brk $00
 unknown_ab_8025: brk $00
 unknown_ab_8027: brk $c0
 unknown_ab_8029: cpy #$b0f0.w
-unknown_ab_802c: sed 
-unknown_ab_802d: pha 
+unknown_ab_802c: sed
+unknown_ab_802d: pha
 unknown_ab_802e: jsr ($00a4.w, X)
 unknown_ab_8031: brk $00
 unknown_ab_8033: brk $00
@@ -56,7 +56,7 @@ unknown_ab_806d: cmp $b3fb.w, X
 unknown_ab_8070: brk $00
 unknown_ab_8072: brk $00
 unknown_ab_8074: mvp $7f, $44
-unknown_ab_8077: tsc 
+unknown_ab_8077: tsc
 unknown_ab_8078: lda $6de2.w, X
 unknown_ab_807b: sta ($68)
 unknown_ab_807d: sta [$b4], Y
@@ -66,15 +66,15 @@ unknown_ab_8085: brk $00
 unknown_ab_8087: brk $c0
 unknown_ab_8089: bra ($f0 - $100) ; $807b.w
 unknown_ab_808b: beq ($f8 - $100) ; $8085.w
-unknown_ab_808d: tya 
-unknown_ab_808e: sed 
-unknown_ab_808f: dey 
+unknown_ab_808d: tya
+unknown_ab_808e: sed
+unknown_ab_808f: dey
 unknown_ab_8090: brk $00
 unknown_ab_8092: brk $00
 unknown_ab_8094: brk $00
 unknown_ab_8096: cpy #$f0c0.w
 unknown_ab_8099: bmi ($e8 - $100) ; $8083.w
-unknown_ab_809b: clc 
+unknown_ab_809b: clc
 unknown_ab_809c: sty $6c, X
 unknown_ab_809e: tsb $fc
 unknown_ab_80a0: brk $00
@@ -88,7 +88,7 @@ unknown_ab_80ae: brk $00
 unknown_ab_80b0: brk $00
 unknown_ab_80b2: .db $42, $00
 unknown_ab_80b4: bit $00
-unknown_ab_80b6: clc 
+unknown_ab_80b6: clc
 unknown_ab_80b7: brk $18
 unknown_ab_80b9: brk $24
 unknown_ab_80bb: brk $42
@@ -107,7 +107,7 @@ unknown_ab_80d6: brk $03
 unknown_ab_80d8: ora ($1e, X)
 unknown_ab_80da: ora $3c26.w, Y
 unknown_ab_80dd: eor $74, S
-unknown_ab_80df: phb 
+unknown_ab_80df: phb
 unknown_ab_80e0: brk $00
 unknown_ab_80e2: brk $00
 unknown_ab_80e4: brk $00
@@ -151,8 +151,8 @@ unknown_ab_813a: ora $433c20, X
 unknown_ab_813e: and $5c, S
 unknown_ab_8140: brk $00
 unknown_ab_8142: beq ($f0 - $100) ; $8134.w
-unknown_ab_8144: sed 
-unknown_ab_8145: iny 
+unknown_ab_8144: sed
+unknown_ab_8145: iny
 unknown_ab_8146: inc $fe86.w, X
 unknown_ab_8149: jmp ($769e.w, X)
 unknown_ab_814c: lda $d3bff1, X
@@ -174,7 +174,7 @@ unknown_ab_816e: brk $00
 unknown_ab_8170: brk $00
 unknown_ab_8172: .db $42, $00
 unknown_ab_8174: bit $00
-unknown_ab_8176: clc 
+unknown_ab_8176: clc
 unknown_ab_8177: brk $18
 unknown_ab_8179: brk $24
 unknown_ab_817b: brk $42
@@ -206,11 +206,11 @@ unknown_ab_81b9: ora ($21, S), Y
 unknown_ab_81bb: cmp $9c37c8, X
 unknown_ab_81bf: adc $00, S
 unknown_ab_81c1: brk $08
-unknown_ab_81c3: clc 
+unknown_ab_81c3: clc
 unknown_ab_81c4: jmp ($9a6c)
 unknown_ab_81c7: dec $b7bd.w, X
 unknown_ab_81ca: dec $0fcb.w
-unknown_ab_81cd: phd 
+unknown_ab_81cd: phd
 unknown_ab_81ce: ora [$07]
 unknown_ab_81d0: brk $00
 unknown_ab_81d2: bvc $28 ; $81fc.w
@@ -240,7 +240,7 @@ unknown_ab_8210: and $2a, X
 unknown_ab_8212: inc A
 unknown_ab_8213: and $0f
 unknown_ab_8215: bmi $07 ; $821e.w
-unknown_ab_8217: clc 
+unknown_ab_8217: clc
 unknown_ab_8218: brk $0f
 unknown_ab_821a: brk $07
 unknown_ab_821c: brk $00
@@ -262,7 +262,7 @@ unknown_ab_8240: ora [$0a]
 unknown_ab_8242: ora $020d.w, X
 unknown_ab_8245: ora $0606.w, Y
 unknown_ab_8248: ora $7e08.w, Y
-unknown_ab_824b: clc 
+unknown_ab_824b: clc
 unknown_ab_824c: sbc [$26], Y
 unknown_ab_824e: sbc $141b50, X
 unknown_ab_8252: asl $02
@@ -272,24 +272,24 @@ unknown_ab_8259: ror $df, X
 unknown_ab_825b: jsr $46b9.w
 unknown_ab_825e: ror $7991.w
 unknown_ab_8261: sbc ($7e), Y
-unknown_ab_8263: pla 
+unknown_ab_8263: pla
 unknown_ab_8264: jmp ($f84c)
-unknown_ab_8267: cld 
+unknown_ab_8267: cld
 unknown_ab_8268: beq $70 ; $82da.w
 unknown_ab_826a: cpx $a3
-unknown_ab_826c: dex 
+unknown_ab_826c: dex
 unknown_ab_826d: eor $90
 unknown_ab_826f: stx $2fd6.w
-unknown_ab_8272: dey 
+unknown_ab_8272: dey
 unknown_ab_8273: sbc [$9d], Y
 unknown_ab_8275: sbc ($0b, S), Y
 unknown_ab_8277: sbc [$d7], Y
 unknown_ab_8279: and $97bf48
-unknown_ab_827d: sei 
+unknown_ab_827d: sei
 unknown_ab_827e: ror $38f1.w
-unknown_ab_8281: php 
-unknown_ab_8282: sei 
-unknown_ab_8283: sei 
+unknown_ab_8281: php
+unknown_ab_8282: sei
+unknown_ab_8283: sei
 unknown_ab_8284: beq $70 ; $82f6.w
 unknown_ab_8286: cpy #$00c0.w
 unknown_ab_8289: brk $00
@@ -297,8 +297,8 @@ unknown_ab_828b: brk $40
 unknown_ab_828d: brk $60
 unknown_ab_828f: brk $44
 unknown_ab_8291: jsr ($fc84.w, X)
-unknown_ab_8294: php 
-unknown_ab_8295: sed 
+unknown_ab_8294: php
+unknown_ab_8295: sed
 unknown_ab_8296: bmi ($f0 - $100) ; $8288.w
 unknown_ab_8298: cpy #$c0c0.w
 unknown_ab_829b: cpy #$e020.w
@@ -314,7 +314,7 @@ unknown_ab_82ae: brk $00
 unknown_ab_82b0: brk $00
 unknown_ab_82b2: .db $42, $00
 unknown_ab_82b4: bit $00
-unknown_ab_82b6: clc 
+unknown_ab_82b6: clc
 unknown_ab_82b7: brk $18
 unknown_ab_82b9: brk $24
 unknown_ab_82bb: brk $42
@@ -333,15 +333,15 @@ unknown_ab_82d9: cmp $e817.w
 unknown_ab_82dc: ora ($ed)
 unknown_ab_82de: ora $7a
 unknown_ab_82e0: inc $4a, X
-unknown_ab_82e2: xba 
+unknown_ab_82e2: xba
 unknown_ab_82e3: ora $57, X
 unknown_ab_82e5: ldy $4afe.w
 unknown_ab_82e8: dec $7ebe.w, X
-unknown_ab_82eb: tay 
-unknown_ab_82ec: plx 
-unknown_ab_82ed: clc 
-unknown_ab_82ee: sed 
-unknown_ab_82ef: inx 
+unknown_ab_82eb: tay
+unknown_ab_82ec: plx
+unknown_ab_82ed: clc
+unknown_ab_82ee: sed
+unknown_ab_82ef: inx
 unknown_ab_82f0: cmp #$9c37.w
 unknown_ab_82f3: adc $ac, S
 unknown_ab_82f5: eor ($49, S), Y
@@ -370,7 +370,7 @@ unknown_ab_8326: lda $dbef.w, Y
 unknown_ab_8329: ldx $7f, Y
 unknown_ab_832b: bvc $7b ; $83a8.w
 unknown_ab_832d: eor $772d3f, X
-unknown_ab_8331: dey 
+unknown_ab_8331: dey
 unknown_ab_8332: ror $89, X
 unknown_ab_8334: rts
 
@@ -383,7 +383,7 @@ unknown_ab_8343: sbc $fe, X
 unknown_ab_8345: jmp ($2cfe.w, X)
 unknown_ab_8348: jsr ($fcdc.w, X)
 unknown_ab_834b: cpx $f8
-unknown_ab_834d: cli 
+unknown_ab_834d: cli
 unknown_ab_834e: beq $20 ; $8370.w
 unknown_ab_8350: ora ($ff, X)
 unknown_ab_8352: beq $0f ; $8363.w
@@ -392,7 +392,7 @@ unknown_ab_8356: and ($df, X)
 unknown_ab_8358: cmp $3f, S
 unknown_ab_835a: sep #$1e
 unknown_ab_835c: mvp $08, $bc
-unknown_ab_835f: sed 
+unknown_ab_835f: sed
 unknown_ab_8360: brk $00
 unknown_ab_8362: brk $00
 unknown_ab_8364: brk $00
@@ -404,7 +404,7 @@ unknown_ab_836e: brk $00
 unknown_ab_8370: brk $00
 unknown_ab_8372: .db $42, $00
 unknown_ab_8374: bit $00
-unknown_ab_8376: clc 
+unknown_ab_8376: clc
 unknown_ab_8377: brk $18
 unknown_ab_8379: brk $24
 unknown_ab_837b: brk $42
@@ -420,9 +420,9 @@ unknown_ab_8395: cmp $e817.w
 unknown_ab_8398: cop $fd
 unknown_ab_839a: ora $7a
 unknown_ab_839c: brk $3f
-unknown_ab_839e: php 
+unknown_ab_839e: php
 unknown_ab_839f: ora $fcae5f
-unknown_ab_83a3: cli 
+unknown_ab_83a3: cli
 unknown_ab_83a4: eor $ac7cbc, X
 unknown_ab_83a8: lda $fcfc59, X
 unknown_ab_83ac: beq $60 ; $840e.w
@@ -445,32 +445,32 @@ unknown_ab_83d7: trb $631c.w
 unknown_ab_83da: lda $58a750
 unknown_ab_83de: ldy #$07
 unknown_ab_83e0: brk $00
-unknown_ab_83e2: clc 
+unknown_ab_83e2: clc
 unknown_ab_83e3: brk $68
 unknown_ab_83e5: bpl $44 ; $842b.w
-unknown_ab_83e7: plp 
-unknown_ab_83e8: pha 
+unknown_ab_83e7: plp
+unknown_ab_83e8: pha
 unknown_ab_83e9: jsr $1008.w
 unknown_ab_83ec: brk $00
 unknown_ab_83ee: brk $00
-unknown_ab_83f0: sec 
-unknown_ab_83f1: sec 
+unknown_ab_83f0: sec
+unknown_ab_83f1: sec
 unknown_ab_83f2: jmp ($fe7c.w, X)
 unknown_ab_83f5: inc $eefe.w, X
 unknown_ab_83f8: inc $7cee.w, X
 unknown_ab_83fb: jmp ($1818.w, X)
 unknown_ab_83fe: brk $00
 unknown_ab_8400: brk $00
-unknown_ab_8402: sei 
-unknown_ab_8403: sei 
+unknown_ab_8402: sei
+unknown_ab_8403: sei
 unknown_ab_8404: inc $ffa6.w, X
 unknown_ab_8407: eor $3aff.w, Y
 unknown_ab_840a: sbc $bdfffe, X
 unknown_ab_840e: ror $7842.w, X
-unknown_ab_8411: sei 
+unknown_ab_8411: sei
 unknown_ab_8412: stx $fe
 unknown_ab_8414: brk $fe
-unknown_ab_8416: cli 
+unknown_ab_8416: cli
 unknown_ab_8417: lda [$3a]
 unknown_ab_8419: cmp $7e
 unknown_ab_841b: sta ($3c, X)
@@ -502,19 +502,19 @@ unknown_ab_8459: sta [$fc]
 unknown_ab_845b: ora $fe, S
 unknown_ab_845d: ora ($fe, X)
 unknown_ab_845f: ora ($00, X)
-unknown_ab_8461: phd 
+unknown_ab_8461: phd
 unknown_ab_8462: cpx #$c7
 unknown_ab_8464: sbc ($ca, X)
 unknown_ab_8466: cpx #$d7
 unknown_ab_8468: sep #$79
 unknown_ab_846a: sbc [$3f]
-unknown_ab_846c: txa 
+unknown_ab_846c: txa
 unknown_ab_846d: and $90, X
 unknown_ab_846f: rol $f7e8.w
 unknown_ab_8472: brk $ff
 unknown_ab_8474: ora $fc, S
 unknown_ab_8476: ora [$f8]
-unknown_ab_8478: php 
+unknown_ab_8478: php
 unknown_ab_8479: sbc [$00], Y
 unknown_ab_847b: sbc $4ef847, X
 unknown_ab_847f: sbc ($60), Y
@@ -555,12 +555,12 @@ unknown_ab_84c3: ora [$00]
 unknown_ab_84c5: brk $40
 unknown_ab_84c7: rti
 
-unknown_ab_84c8: sei 
-unknown_ab_84c9: cld 
+unknown_ab_84c8: sei
+unknown_ab_84c9: cld
 unknown_ab_84ca: bvs ($df - $100) ; $84ab.w
 unknown_ab_84cc: adc $d8dfe2, X
 unknown_ab_84d0: brk $3f
-unknown_ab_84d2: php 
+unknown_ab_84d2: php
 unknown_ab_84d3: ora $a00303
 unknown_ab_84d7: cpx #$9f
 unknown_ab_84d9: adc [$9f]
@@ -569,14 +569,14 @@ unknown_ab_84db: rts
 unknown_ab_84dc: brl $207d ; $a55c.w
 unknown_ab_84df: sbc $dc4cfc, X
 unknown_ab_84e3: bit $ee, X
-unknown_ab_84e5: txs 
-unknown_ab_84e6: ply 
+unknown_ab_84e5: txs
+unknown_ab_84e6: ply
 unknown_ab_84e7: .db $42, $56
 unknown_ab_84e9: per $b6fe ; $3bea.w
 unknown_ab_84ec: inc $fc1c.w, X
 unknown_ab_84ef: pea $fe02.w
 unknown_ab_84f2: adc ($8e)
-unknown_ab_84f4: sec 
+unknown_ab_84f4: sec
 unknown_ab_84f5: dec $98
 unknown_ab_84f7: inc $bd
 unknown_ab_84f9: cmp $bf, S
@@ -599,8 +599,8 @@ unknown_ab_851a: asl $05
 unknown_ab_851c: ora $0c0f0b
 unknown_ab_8520: ora $01010e
 unknown_ab_8524: brk $00
-unknown_ab_8526: php 
-unknown_ab_8527: php 
+unknown_ab_8526: php
+unknown_ab_8527: php
 unknown_ab_8528: cpy $0f18.w
 unknown_ab_852b: inc A
 unknown_ab_852c: ora $f87b3e
@@ -618,7 +618,7 @@ unknown_ab_854a: ror $feb6.w, X
 unknown_ab_854d: trb $f4fc.w
 unknown_ab_8550: jmp ($709c)
 unknown_ab_8553: sty $c6ba.w
-unknown_ab_8556: cld 
+unknown_ab_8556: cld
 unknown_ab_8557: inc $bd
 unknown_ab_8559: cmp $bf, S
 unknown_ab_855b: eor ($1d, X)
@@ -634,7 +634,7 @@ unknown_ab_856f: and $000000.l
 unknown_ab_8573: brk $00
 unknown_ab_8575: brk $1f
 unknown_ab_8577: ora $6f263b, X
-unknown_ab_857b: cli 
+unknown_ab_857b: cli
 unknown_ab_857c: sbc $c7f8b0, X
 unknown_ab_8580: ora [$01]
 unknown_ab_8582: ora [$01]
@@ -643,10 +643,10 @@ unknown_ab_8586: sta $82, S
 unknown_ab_8588: sbc $86
 unknown_ab_858a: sbc $e1ffab, X
 unknown_ab_858e: lda $0c0b8f, X
-unknown_ab_8592: phd 
+unknown_ab_8592: phd
 unknown_ab_8593: tsb $0407.w
 unknown_ab_8596: eor $c6
-unknown_ab_8598: tcs 
+unknown_ab_8598: tcs
 unknown_ab_8599: jsr ($c43b.w, X)
 unknown_ab_859c: and ($de, X)
 unknown_ab_859e: rti
@@ -710,10 +710,10 @@ unknown_ab_8608: inc $ffb8.w, X
 unknown_ab_860b: sbc $7cbafe, X
 unknown_ab_860f: mvp $00, $00
 unknown_ab_8612: brk $00
-unknown_ab_8614: sei 
-unknown_ab_8615: sei 
+unknown_ab_8614: sei
+unknown_ab_8615: sei
 unknown_ab_8616: sta [$ff]
-unknown_ab_8618: sec 
+unknown_ab_8618: sec
 unknown_ab_8619: dec $7c
 unknown_ab_861b: sta $38, S
 unknown_ab_861d: dec $00
@@ -734,8 +734,8 @@ unknown_ab_863f: rti
 unknown_ab_8640: sbc $1f, S
 unknown_ab_8642: sbc $67f81f
 unknown_ab_8646: bit $c5d3.w, X
-unknown_ab_8649: xce 
-unknown_ab_864a: xce 
+unknown_ab_8649: xce
+unknown_ab_864a: xce
 unknown_ab_864b: adc $3ffc.w, X
 unknown_ab_864e: sbc $00ff0f.l, X
 unknown_ab_8652: ora $9f60e0, X
@@ -754,7 +754,7 @@ unknown_ab_8670: bvc ($ef - $100) ; $8661.w
 unknown_ab_8672: eor $ff, S
 unknown_ab_8674: eor ($ff, X)
 unknown_ab_8676: lda ($4f), Y
-unknown_ab_8678: phy 
+unknown_ab_8678: phy
 unknown_ab_8679: lda [$0a]
 unknown_ab_867b: sbc [$09], Y
 unknown_ab_867d: sbc $80ff08, X
@@ -806,14 +806,14 @@ unknown_ab_86d6: ora $631c20, X
 unknown_ab_86da: and $5c, S
 unknown_ab_86dc: adc [$88], Y
 unknown_ab_86de: ror $89, X
-unknown_ab_86e0: sed 
-unknown_ab_86e1: iny 
+unknown_ab_86e0: sed
+unknown_ab_86e1: iny
 unknown_ab_86e2: inc $fe86.w, X
 unknown_ab_86e5: bit $779f.w, X
 unknown_ab_86e8: lda $d3bf71, X
 unknown_ab_86ec: inc $7fbe.w, X
 unknown_ab_86ef: sbc ($40), Y
-unknown_ab_86f1: clv 
+unknown_ab_86f1: clv
 unknown_ab_86f2: bra $7e ; $8772.w
 unknown_ab_86f4: brk $fe
 unknown_ab_86f6: bvs ($8f - $100) ; $8687.w
@@ -832,7 +832,7 @@ unknown_ab_870e: brk $00
 unknown_ab_8710: brk $00
 unknown_ab_8712: .db $42, $00
 unknown_ab_8714: bit $00
-unknown_ab_8716: clc 
+unknown_ab_8716: clc
 unknown_ab_8717: brk $18
 unknown_ab_8719: brk $24
 unknown_ab_871b: brk $42
@@ -848,9 +848,9 @@ unknown_ab_872d: ora $0157.w, X
 unknown_ab_8730: brk $00
 unknown_ab_8732: brk $00
 unknown_ab_8734: brk $00
-unknown_ab_8736: php 
+unknown_ab_8736: php
 unknown_ab_8737: brk $10
-unknown_ab_8739: php 
+unknown_ab_8739: php
 unknown_ab_873a: eor $9d6f.w, X
 unknown_ab_873d: sep #$ff
 unknown_ab_873f: bra $00 ; $8741.w
@@ -889,9 +889,9 @@ unknown_ab_8777: brk $e0
 unknown_ab_8779: rts
 
 unknown_ab_877a: beq $70 ; $87ec.w
-unknown_ab_877c: clv 
+unknown_ab_877c: clv
 unknown_ab_877d: bvc $78 ; $87f7.w
-unknown_ab_877f: dey 
+unknown_ab_877f: dey
 unknown_ab_8780: brk $00
 unknown_ab_8782: brk $00
 unknown_ab_8784: brk $00
@@ -903,7 +903,7 @@ unknown_ab_878e: brk $00
 unknown_ab_8790: brk $00
 unknown_ab_8792: .db $42, $00
 unknown_ab_8794: bit $00
-unknown_ab_8796: clc 
+unknown_ab_8796: clc
 unknown_ab_8797: brk $18
 unknown_ab_8799: brk $24
 unknown_ab_879b: brk $42
@@ -929,11 +929,11 @@ unknown_ab_87c1: brk $00
 unknown_ab_87c3: brk $00
 unknown_ab_87c5: brk $cc
 unknown_ab_87c7: trb $e6
-unknown_ab_87c9: phx 
+unknown_ab_87c9: phx
 unknown_ab_87ca: cmp [$6c], Y
 unknown_ab_87cc: cmp [$1c], Y
-unknown_ab_87ce: xba 
-unknown_ab_87cf: txa 
+unknown_ab_87ce: xba
+unknown_ab_87cf: txa
 unknown_ab_87d0: bra $00 ; $87d2.w
 unknown_ab_87d2: bra ($80 - $100) ; $8754.w
 unknown_ab_87d4: sty $268c.w
@@ -968,7 +968,7 @@ unknown_ab_880c: eor $407820, X
 unknown_ab_8810: ora ($02, X)
 unknown_ab_8812: ora $0c, S
 unknown_ab_8814: ora $2c1310
-unknown_ab_8818: tcs 
+unknown_ab_8818: tcs
 unknown_ab_8819: bit $3f
 unknown_ab_881b: rti
 
@@ -990,7 +990,7 @@ unknown_ab_883d: brk $ff
 unknown_ab_883f: brk $fc
 unknown_ab_8841: brk $ff
 unknown_ab_8843: ora $fe, S
-unknown_ab_8845: phd 
+unknown_ab_8845: phd
 unknown_ab_8846: sbc $e2fe47, X
 unknown_ab_884a: sbc $f17ff2, X
 unknown_ab_884e: bit $03fa.w, X
@@ -1004,9 +1004,9 @@ unknown_ab_8862: bmi $30 ; $8894.w
 unknown_ab_8864: stz $fc
 unknown_ab_8866: cpx $10e0.w
 unknown_ab_8869: bmi ($b8 - $100) ; $8823.w
-unknown_ab_886b: sei 
-unknown_ab_886c: sed 
-unknown_ab_886d: sed 
+unknown_ab_886b: sei
+unknown_ab_886c: sed
+unknown_ab_886d: sed
 unknown_ab_886e: bmi $30 ; $88a0.w
 unknown_ab_8870: ldx $cefe.w, Y
 unknown_ab_8873: inc $fe02.w, X
@@ -1063,16 +1063,16 @@ unknown_ab_88df: and [$fe]
 unknown_ab_88e1: stz $fe, X
 unknown_ab_88e3: cpx $fafe.w
 unknown_ab_88e6: jsr ($f8e4.w, X)
-unknown_ab_88e9: cli 
+unknown_ab_88e9: cli
 unknown_ab_88ea: beq ($e0 - $100) ; $88cc.w
 unknown_ab_88ec: cpx #$00e0.w
 unknown_ab_88ef: brk $75
-unknown_ab_88f1: phb 
+unknown_ab_88f1: phb
 unknown_ab_88f2: jsr $c1de.w
 unknown_ab_88f5: and $461ee2, X
 unknown_ab_88f9: ldx $fc0c.w, Y
-unknown_ab_88fc: clc 
-unknown_ab_88fd: sed 
+unknown_ab_88fc: clc
+unknown_ab_88fd: sed
 unknown_ab_88fe: cpx #$00e0.w
 unknown_ab_8901: brk $00
 unknown_ab_8903: brk $00
@@ -1091,7 +1091,7 @@ unknown_ab_891b: brk $42
 unknown_ab_891d: brk $00
 unknown_ab_891f: brk $01
 unknown_ab_8921: asl $0a
-unknown_ab_8923: phd 
+unknown_ab_8923: phd
 unknown_ab_8924: ora ($01, X)
 unknown_ab_8926: ora ($01, X)
 unknown_ab_8928: brk $00
@@ -1115,9 +1115,9 @@ unknown_ab_8950: sbc $1ce360, X
 unknown_ab_8954: lda [$1c]
 unknown_ab_8956: ora $003f30.l
 unknown_ab_895a: ora $59f67f, X
-unknown_ab_895e: tay 
+unknown_ab_895e: tay
 unknown_ab_895f: adc [$e8], Y
-unknown_ab_8961: sei 
+unknown_ab_8961: sei
 unknown_ab_8962: ldy $3e1c.w, X
 unknown_ab_8965: bit $969e.w, X
 unknown_ab_8968: inc $0ee2.w
@@ -1141,7 +1141,7 @@ unknown_ab_898e: brk $00
 unknown_ab_8990: brk $00
 unknown_ab_8992: .db $42, $00
 unknown_ab_8994: bit $00
-unknown_ab_8996: clc 
+unknown_ab_8996: clc
 unknown_ab_8997: brk $18
 unknown_ab_8999: brk $24
 unknown_ab_899b: brk $42
@@ -1165,7 +1165,7 @@ unknown_ab_89bd: brk $01
 unknown_ab_89bf: cop $37
 unknown_ab_89c1: ora $ff, X
 unknown_ab_89c3: sbc $fb777f, X
-unknown_ab_89c7: plx 
+unknown_ab_89c7: plx
 unknown_ab_89c8: asl $ef1c.w, X
 unknown_ab_89cb: cpx #$66e8.w
 unknown_ab_89ce: sta ($08), Y
@@ -1179,26 +1179,26 @@ unknown_ab_89e1: bra ($f0 - $100) ; $89d3.w
 unknown_ab_89e3: cpx #$80f0.w
 unknown_ab_89e6: beq ($80 - $100) ; $8968.w
 unknown_ab_89e8: bvc $70 ; $8a5a.w
-unknown_ab_89ea: sei 
+unknown_ab_89ea: sei
 unknown_ab_89eb: rts
 
-unknown_ab_89ec: sei 
+unknown_ab_89ec: sei
 unknown_ab_89ed: jsr $10f8.w
 unknown_ab_89f0: beq $30 ; $8a22.w
-unknown_ab_89f2: dey 
-unknown_ab_89f3: sei 
-unknown_ab_89f4: dey 
-unknown_ab_89f5: sei 
-unknown_ab_89f6: php 
+unknown_ab_89f2: dey
+unknown_ab_89f3: sei
+unknown_ab_89f4: dey
+unknown_ab_89f5: sei
+unknown_ab_89f6: php
 unknown_ab_89f7: beq ($88 - $100) ; $8981.w
-unknown_ab_89f9: sed 
+unknown_ab_89f9: sed
 unknown_ab_89fa: sty $fc
 unknown_ab_89fc: tsb $fc
 unknown_ab_89fe: trb $b8e4.w
 unknown_ab_8a01: cpy #$20dc.w
 unknown_ab_8a04: cpy $ae30.w
 unknown_ab_8a07: bne ($f6 - $100) ; $89ff.w
-unknown_ab_8a09: tya 
+unknown_ab_8a09: tya
 unknown_ab_8a0a: dec $b8, X
 unknown_ab_8a0c: dec $a8, X
 unknown_ab_8a0e: ldy $e8, X
@@ -1222,13 +1222,13 @@ unknown_ab_8a39: brk $ff
 unknown_ab_8a3b: brk $ff
 unknown_ab_8a3d: brk $ff
 unknown_ab_8a3f: brk $3d
-unknown_ab_8a41: plx 
+unknown_ab_8a41: plx
 unknown_ab_8a42: ldx $3f7b.w, Y
 unknown_ab_8a45: sbc $fc1e.w, X
 unknown_ab_8a48: sta $f91e7c, X
 unknown_ab_8a4c: ldx $1e7c.w, Y
 unknown_ab_8a4f: jsr ($07f8.w, X)
-unknown_ab_8a52: sed 
+unknown_ab_8a52: sed
 unknown_ab_8a53: ora [$fc]
 unknown_ab_8a55: ora $fc, S
 unknown_ab_8a57: ora $fc, S
@@ -1238,10 +1238,10 @@ unknown_ab_8a5d: ora $fc, S
 unknown_ab_8a5f: ora $bc, S
 unknown_ab_8a61: jmp ($e02c.w, X)
 unknown_ab_8a64: beq ($d0 - $100) ; $8a36.w
-unknown_ab_8a66: cli 
-unknown_ab_8a67: cli 
-unknown_ab_8a68: sei 
-unknown_ab_8a69: iny 
+unknown_ab_8a66: cli
+unknown_ab_8a67: cli
+unknown_ab_8a68: sei
+unknown_ab_8a69: iny
 unknown_ab_8a6a: cpx $14ac.w
 unknown_ab_8a6d: bit $90, X
 unknown_ab_8a6f: bvs $02 ; $8a73.w
@@ -1279,10 +1279,10 @@ unknown_ab_8ab2: brk $00
 unknown_ab_8ab4: brk $00
 unknown_ab_8ab6: ldy #$9fe0.w
 unknown_ab_8ab9: adc $84609f, X
-unknown_ab_8abd: tdc 
+unknown_ab_8abd: tdc
 unknown_ab_8abe: jsr $3eff.w
 unknown_ab_8ac1: bit $3c
-unknown_ab_8ac3: php 
+unknown_ab_8ac3: php
 unknown_ab_8ac4: bit $08, X
 unknown_ab_8ac6: jmp ($a600)
 unknown_ab_8ac9: cpy $fe
@@ -1306,7 +1306,7 @@ unknown_ab_8aee: brk $00
 unknown_ab_8af0: brk $00
 unknown_ab_8af2: .db $42, $00
 unknown_ab_8af4: bit $00
-unknown_ab_8af6: clc 
+unknown_ab_8af6: clc
 unknown_ab_8af7: brk $18
 unknown_ab_8af9: brk $24
 unknown_ab_8afb: brk $42
@@ -1330,7 +1330,7 @@ unknown_ab_8b1c: ora $0c, S
 unknown_ab_8b1e: ora $110f00
 unknown_ab_8b22: bit $3f24.w, X
 unknown_ab_8b25: and $df83bf, X
-unknown_ab_8b29: sei 
+unknown_ab_8b29: sei
 unknown_ab_8b2a: sbc [$1c]
 unknown_ab_8b2c: and [$0e], Y
 unknown_ab_8b2e: adc ($0e, S), Y
@@ -1340,17 +1340,17 @@ unknown_ab_8b37: sbc $fc8778, X
 unknown_ab_8b3b: ora $fe, S
 unknown_ab_8b3d: ora ($fe, X)
 unknown_ab_8b3f: ora ($80, X)
-unknown_ab_8b41: phb 
+unknown_ab_8b41: phb
 unknown_ab_8b42: jsr $e107.w
-unknown_ab_8b45: dex 
+unknown_ab_8b45: dex
 unknown_ab_8b46: cpx #$e2d7.w
 unknown_ab_8b49: sbc $3fe7.w, Y
-unknown_ab_8b4c: txa 
+unknown_ab_8b4c: txa
 unknown_ab_8b4d: and $90, X
 unknown_ab_8b4f: rol $f768.w
 unknown_ab_8b52: cpy #$03ff.w
 unknown_ab_8b55: jsr ($f807.w, X)
-unknown_ab_8b58: php 
+unknown_ab_8b58: php
 unknown_ab_8b59: sbc [$00], Y
 unknown_ab_8b5b: sbc $4ef847, X
 unknown_ab_8b5f: sbc ($60), Y
@@ -1392,26 +1392,26 @@ unknown_ab_8ba8: sbc $38df67, X
 unknown_ab_8bac: and [$0c], Y
 unknown_ab_8bae: adc ($0e, S), Y
 unknown_ab_8bb0: asl $01
-unknown_ab_8bb2: phd 
+unknown_ab_8bb2: phd
 unknown_ab_8bb3: ora [$d7]
 unknown_ab_8bb5: lda $609f6e
 unknown_ab_8bb9: sta $fc07f8, X
 unknown_ab_8bbd: ora $fe, S
 unknown_ab_8bbf: ora ($80, X)
-unknown_ab_8bc1: phb 
+unknown_ab_8bc1: phb
 unknown_ab_8bc2: rts
 
 unknown_ab_8bc3: eor [$61]
 unknown_ab_8bc5: lsr A
 unknown_ab_8bc6: cpx #$e2d7.w
 unknown_ab_8bc9: sbc $ffe7.w, Y
-unknown_ab_8bcc: txa 
+unknown_ab_8bcc: txa
 unknown_ab_8bcd: and $90, X
 unknown_ab_8bcf: rol $f768.w
 unknown_ab_8bd2: bra ($ff - $100) ; $8bd3.w
 unknown_ab_8bd4: sta $fc, S
 unknown_ab_8bd6: ora [$f8]
-unknown_ab_8bd8: php 
+unknown_ab_8bd8: php
 unknown_ab_8bd9: sbc [$00], Y
 unknown_ab_8bdb: sbc $4ef847, X
 unknown_ab_8bdf: sbc ($60), Y
@@ -1443,7 +1443,7 @@ unknown_ab_8c1a: and $403f40, X
 unknown_ab_8c1e: ora $091620, X
 unknown_ab_8c22: jmp ($f903.w, X)
 unknown_ab_8c25: ora [$d4]
-unknown_ab_8c27: pld 
+unknown_ab_8c27: pld
 unknown_ab_8c28: lda #$c357.w
 unknown_ab_8c2b: and $0fdf23, X
 unknown_ab_8c2f: sbc $ff00ff, X
@@ -1503,7 +1503,7 @@ unknown_ab_8cae: brk $00
 unknown_ab_8cb0: brk $00
 unknown_ab_8cb2: .db $42, $00
 unknown_ab_8cb4: bit $00
-unknown_ab_8cb6: clc 
+unknown_ab_8cb6: clc
 unknown_ab_8cb7: brk $18
 unknown_ab_8cb9: brk $24
 unknown_ab_8cbb: brk $42
@@ -1541,7 +1541,7 @@ unknown_ab_8cf9: brk $24
 unknown_ab_8cfb: brk $42
 unknown_ab_8cfd: brk $00
 unknown_ab_8cff: brk $15
-unknown_ab_8d01: clc 
+unknown_ab_8d01: clc
 unknown_ab_8d02: ora $110f10
 unknown_ab_8d06: ora $392f11, X
 unknown_ab_8d0a: ora ($2c, S), Y
@@ -1558,8 +1558,8 @@ unknown_ab_8d1f: rti
 unknown_ab_8d20: sbc $1f, S
 unknown_ab_8d22: sbc $67f81f
 unknown_ab_8d26: bit $c5d3.w, X
-unknown_ab_8d29: xce 
-unknown_ab_8d2a: xce 
+unknown_ab_8d29: xce
+unknown_ab_8d2a: xce
 unknown_ab_8d2b: adc $3ffc.w, X
 unknown_ab_8d2e: sbc $00ff0f.l, X
 unknown_ab_8d32: ora $9f60e0, X
@@ -1578,7 +1578,7 @@ unknown_ab_8d50: bvc ($ef - $100) ; $8d41.w
 unknown_ab_8d52: eor $ff, S
 unknown_ab_8d54: eor ($ff, X)
 unknown_ab_8d56: lda ($4f), Y
-unknown_ab_8d58: phy 
+unknown_ab_8d58: phy
 unknown_ab_8d59: lda [$0a]
 unknown_ab_8d5b: sbc [$09], Y
 unknown_ab_8d5d: sbc $80ff08, X
@@ -1614,8 +1614,8 @@ unknown_ab_8d9f: rti
 unknown_ab_8da0: sbc $1f, S
 unknown_ab_8da2: sbc $67f81f
 unknown_ab_8da6: bit $c5d3.w, X
-unknown_ab_8da9: xce 
-unknown_ab_8daa: xce 
+unknown_ab_8da9: xce
+unknown_ab_8daa: xce
 unknown_ab_8dab: adc $3ffc.w, X
 unknown_ab_8dae: sbc $00ff0f.l, X
 unknown_ab_8db2: ora $9f60e0, X
@@ -1634,7 +1634,7 @@ unknown_ab_8dd0: bvc ($ef - $100) ; $8dc1.w
 unknown_ab_8dd2: eor $ff, S
 unknown_ab_8dd4: eor ($ff, X)
 unknown_ab_8dd6: lda ($4f), Y
-unknown_ab_8dd8: phy 
+unknown_ab_8dd8: phy
 unknown_ab_8dd9: lda [$0a]
 unknown_ab_8ddb: sbc [$09], Y
 unknown_ab_8ddd: sbc $80ff08, X
@@ -1654,7 +1654,7 @@ unknown_ab_8df7: cpx #$e020.w
 unknown_ab_8dfa: jsr $c0e0.w
 unknown_ab_8dfd: cpy #$8080.w
 unknown_ab_8e00: ora #$0706.w
-unknown_ab_8e03: phd 
+unknown_ab_8e03: phd
 unknown_ab_8e04: ora $01, S
 unknown_ab_8e06: ora ($02, X)
 unknown_ab_8e08: brk $01
@@ -1680,7 +1680,7 @@ unknown_ab_8e31: ora $00, S
 unknown_ab_8e33: sbc $00ff00.l, X
 unknown_ab_8e37: sbc $80ff00, X
 unknown_ab_8e3b: sbc $0b3f3e, X
-unknown_ab_8e3f: phd 
+unknown_ab_8e3f: phd
 unknown_ab_8e40: sbc ($0f), Y
 unknown_ab_8e42: cmp $3f, S
 unknown_ab_8e44: ora [$ff]
@@ -1695,7 +1695,7 @@ unknown_ab_8e5d: jsr ($f0f0.w, X)
 unknown_ab_8e60: sbc $fdfffa, X
 unknown_ab_8e64: sbc $b9b7f6, X
 unknown_ab_8e68: and [$39], Y
-unknown_ab_8e6a: tsc 
+unknown_ab_8e6a: tsc
 unknown_ab_8e6b: bit $1f18.w, X
 unknown_ab_8e6e: ora $ff000f
 unknown_ab_8e72: brk $ff
@@ -1704,24 +1704,24 @@ unknown_ab_8e76: eor ($fe, X)
 unknown_ab_8e78: cmp ($fe, X)
 unknown_ab_8e7a: cpy #$60ff.w
 unknown_ab_8e7d: adc $f81f10, X
-unknown_ab_8e81: clv 
-unknown_ab_8e82: sed 
-unknown_ab_8e83: clc 
-unknown_ab_8e84: sed 
-unknown_ab_8e85: dey 
-unknown_ab_8e86: sed 
-unknown_ab_8e87: inx 
-unknown_ab_8e88: inx 
-unknown_ab_8e89: cld 
-unknown_ab_8e8a: iny 
-unknown_ab_8e8b: sec 
+unknown_ab_8e81: clv
+unknown_ab_8e82: sed
+unknown_ab_8e83: clc
+unknown_ab_8e84: sed
+unknown_ab_8e85: dey
+unknown_ab_8e86: sed
+unknown_ab_8e87: inx
+unknown_ab_8e88: inx
+unknown_ab_8e89: cld
+unknown_ab_8e8a: iny
+unknown_ab_8e8b: sec
 unknown_ab_8e8c: bpl ($f0 - $100) ; $8e7e.w
 unknown_ab_8e8e: cpx #$00e0.w
-unknown_ab_8e91: sed 
+unknown_ab_8e91: sed
 unknown_ab_8e92: brk $f8
 unknown_ab_8e94: bra $78 ; $8f0e.w
 unknown_ab_8e96: cpx #$c018.w
-unknown_ab_8e99: sec 
+unknown_ab_8e99: sec
 unknown_ab_8e9a: brk $f8
 unknown_ab_8e9c: brk $f0
 unknown_ab_8e9e: brk $e0
@@ -1736,7 +1736,7 @@ unknown_ab_8eae: brk $00
 unknown_ab_8eb0: brk $00
 unknown_ab_8eb2: .db $42, $00
 unknown_ab_8eb4: bit $00
-unknown_ab_8eb6: clc 
+unknown_ab_8eb6: clc
 unknown_ab_8eb7: brk $18
 unknown_ab_8eb9: brk $24
 unknown_ab_8ebb: brk $42
@@ -1932,7 +1932,7 @@ unknown_ab_9042: brk $00
 unknown_ab_9044: brk $03
 unknown_ab_9046: asl A
 unknown_ab_9047: ora $1b14.w
-unknown_ab_904a: clc 
+unknown_ab_904a: clc
 unknown_ab_904b: ora [$28], Y
 unknown_ab_904d: and [$28], Y
 unknown_ab_904f: and [$00], Y
@@ -1951,10 +1951,10 @@ unknown_ab_9067: rts
 
 unknown_ab_9068: bvc ($b0 - $100) ; $901a.w
 unknown_ab_906a: bmi ($d0 - $100) ; $903c.w
-unknown_ab_906c: plp 
-unknown_ab_906d: cld 
-unknown_ab_906e: plp 
-unknown_ab_906f: cld 
+unknown_ab_906c: plp
+unknown_ab_906d: cld
+unknown_ab_906e: plp
+unknown_ab_906f: cld
 unknown_ab_9070: brk $00
 unknown_ab_9072: brk $00
 unknown_ab_9074: brk $00
@@ -1966,7 +1966,7 @@ unknown_ab_9080: brk $00
 unknown_ab_9082: ora $05
 unknown_ab_9084: inc A
 unknown_ab_9085: ora $273f28, X
-unknown_ab_9089: sec 
+unknown_ab_9089: sec
 unknown_ab_908a: eor $302f70
 unknown_ab_908e: eor $000760.l, X
 unknown_ab_9092: inc A
@@ -1979,10 +1979,10 @@ unknown_ab_909d: brk $80
 unknown_ab_909f: brk $00
 unknown_ab_90a1: brk $c0
 unknown_ab_90a3: cpy #$b090.w
-unknown_ab_90a6: clc 
-unknown_ab_90a7: sed 
-unknown_ab_90a8: iny 
-unknown_ab_90a9: sec 
+unknown_ab_90a6: clc
+unknown_ab_90a7: sed
+unknown_ab_90a8: iny
+unknown_ab_90a9: sec
 unknown_ab_90aa: cpx $14
 unknown_ab_90ac: cpx $1c
 unknown_ab_90ae: jsr ($c00c.w, X)
@@ -1999,7 +1999,7 @@ unknown_ab_90c3: ora ($24, S), Y
 unknown_ab_90c5: and [$4a]
 unknown_ab_90c7: adc $5120.w
 unknown_ab_90ca: lsr $67
-unknown_ab_90cc: php 
+unknown_ab_90cc: php
 unknown_ab_90cd: rol $5966.w
 unknown_ab_90d0: ora $00, S
 unknown_ab_90d2: tsb $5800.w
@@ -2013,12 +2013,12 @@ unknown_ab_90e1: brk $40
 unknown_ab_90e3: rti
 
 unknown_ab_90e4: bcc ($90 - $100) ; $9076.w
-unknown_ab_90e6: tay 
-unknown_ab_90e7: clv 
+unknown_ab_90e6: tay
+unknown_ab_90e7: clv
 unknown_ab_90e8: mvn $24, $ec
 unknown_ab_90eb: cpx $12
 unknown_ab_90ed: adc ($ba)
-unknown_ab_90ef: txa 
+unknown_ab_90ef: txa
 unknown_ab_90f0: cpy #$b800.w
 unknown_ab_90f3: brk $6c
 unknown_ab_90f5: brk $44
@@ -2034,7 +2034,7 @@ unknown_ab_9108: mvp $0b, $57
 unknown_ab_910b: bit $bbb4.w
 unknown_ab_910e: trb $1b
 unknown_ab_9110: ora ($00, X)
-unknown_ab_9112: phd 
+unknown_ab_9112: phd
 unknown_ab_9113: brk $34
 unknown_ab_9115: brk $22
 unknown_ab_9117: brk $08
@@ -2044,8 +2044,8 @@ unknown_ab_911d: ora $a3, S
 unknown_ab_911f: ora $00, S
 unknown_ab_9121: brk $20
 unknown_ab_9123: jsr $8080.w
-unknown_ab_9126: clv 
-unknown_ab_9127: sed 
+unknown_ab_9126: clv
+unknown_ab_9127: sed
 unknown_ab_9128: mvn $a0, $d4
 unknown_ab_912b: rts
 
@@ -2062,9 +2062,9 @@ unknown_ab_913d: bra ($8a - $100) ; $90c9.w
 unknown_ab_913f: bra $00 ; $9141.w
 unknown_ab_9141: brk $00
 unknown_ab_9143: brk $0a
-unknown_ab_9145: pld 
+unknown_ab_9145: pld
 unknown_ab_9146: trb $325f.w
-unknown_ab_9149: tsc 
+unknown_ab_9149: tsc
 unknown_ab_914a: trb $37
 unknown_ab_914c: adc ($6f, X)
 unknown_ab_914e: and ($2d)
@@ -2081,7 +2081,7 @@ unknown_ab_9163: bpl $44 ; $91a9.w
 unknown_ab_9165: cpy $f430.w
 unknown_ab_9168: cpy #$e030.w
 unknown_ab_916b: beq $20 ; $918d.w
-unknown_ab_916d: cli 
+unknown_ab_916d: cli
 unknown_ab_916e: jmp [$e0bc]
 unknown_ab_9171: brk $88
 unknown_ab_9173: brk $20
@@ -2110,8 +2110,8 @@ unknown_ab_919d: brk $aa
 unknown_ab_919f: brk $00
 unknown_ab_91a1: brk $20
 unknown_ab_91a3: jsr $8080.w
-unknown_ab_91a6: sec 
-unknown_ab_91a7: sei 
+unknown_ab_91a6: sec
+unknown_ab_91a7: sei
 unknown_ab_91a8: trb $34
 unknown_ab_91aa: bpl $10 ; $91bc.w
 unknown_ab_91ac: brk $00
@@ -2135,7 +2135,7 @@ unknown_ab_91d0: brk $00
 unknown_ab_91d2: brk $00
 unknown_ab_91d4: brk $00
 unknown_ab_91d6: brk $00
-unknown_ab_91d8: php 
+unknown_ab_91d8: php
 unknown_ab_91d9: brk $00
 unknown_ab_91db: brk $00
 unknown_ab_91dd: brk $00
@@ -2157,7 +2157,7 @@ unknown_ab_91fd: brk $00
 unknown_ab_91ff: brk $0b
 unknown_ab_9201: trb $1e
 unknown_ab_9203: ora ($14), Y
-unknown_ab_9205: tcs 
+unknown_ab_9205: tcs
 unknown_ab_9206: tsb $080b.w
 unknown_ab_9209: ora $030704
 unknown_ab_920d: ora $00, S
@@ -2189,10 +2189,10 @@ unknown_ab_9238: brk $00
 unknown_ab_923a: brk $00
 unknown_ab_923c: brk $00
 unknown_ab_923e: brk $00
-unknown_ab_9240: plp 
+unknown_ab_9240: plp
 unknown_ab_9241: and [$0c], Y
 unknown_ab_9243: ora ($17, S), Y
-unknown_ab_9245: clc 
+unknown_ab_9245: clc
 unknown_ab_9246: ora $0c, S
 unknown_ab_9248: tsb $07
 unknown_ab_924a: ora $03, S
@@ -2202,12 +2202,12 @@ unknown_ab_9250: ora [$07]
 unknown_ab_9252: and $03, S
 unknown_ab_9254: brk $00
 unknown_ab_9256: bpl $00 ; $9258.w
-unknown_ab_9258: php 
+unknown_ab_9258: php
 unknown_ab_9259: brk $00
 unknown_ab_925b: brk $00
 unknown_ab_925d: brk $00
 unknown_ab_925f: brk $28
-unknown_ab_9261: cld 
+unknown_ab_9261: cld
 unknown_ab_9262: rts
 
 unknown_ab_9263: bcc ($d0 - $100) ; $9235.w
@@ -2244,10 +2244,10 @@ unknown_ab_929d: brk $07
 unknown_ab_929f: brk $f4
 unknown_ab_92a1: tsb $18e8.w
 unknown_ab_92a4: cpx $1c
-unknown_ab_92a6: iny 
-unknown_ab_92a7: sec 
-unknown_ab_92a8: php 
-unknown_ab_92a9: inx 
+unknown_ab_92a6: iny
+unknown_ab_92a7: sec
+unknown_ab_92a8: php
+unknown_ab_92a9: inx
 unknown_ab_92aa: bmi ($f0 - $100) ; $929c.w
 unknown_ab_92ac: cpy #$00c0.w
 unknown_ab_92af: brk $02
@@ -2274,16 +2274,16 @@ unknown_ab_92d9: brk $30
 unknown_ab_92db: brk $1c
 unknown_ab_92dd: brk $03
 unknown_ab_92df: brk $58
-unknown_ab_92e1: iny 
+unknown_ab_92e1: iny
 unknown_ab_92e2: sty $8c, X
-unknown_ab_92e4: txa 
-unknown_ab_92e5: tsx 
+unknown_ab_92e4: txa
+unknown_ab_92e5: tsx
 unknown_ab_92e6: bcc ($f4 - $100) ; $92dc.w
-unknown_ab_92e8: tay 
-unknown_ab_92e9: cld 
+unknown_ab_92e8: tay
+unknown_ab_92e9: cld
 unknown_ab_92ea: bpl $10 ; $92fc.w
-unknown_ab_92ec: dey 
-unknown_ab_92ed: dey 
+unknown_ab_92ec: dey
+unknown_ab_92ed: dey
 unknown_ab_92ee: rti
 
 unknown_ab_92ef: rti
@@ -2296,18 +2296,18 @@ unknown_ab_92f9: brk $ec
 unknown_ab_92fb: brk $70
 unknown_ab_92fd: brk $80
 unknown_ab_92ff: brk $d4
-unknown_ab_9301: stp 
-unknown_ab_9302: phk 
+unknown_ab_9301: stp
+unknown_ab_9302: phk
 unknown_ab_9303: jmp $2724.w
 unknown_ab_9306: ora ($13, S), Y
 unknown_ab_9308: asl A
-unknown_ab_9309: phd 
+unknown_ab_9309: phd
 unknown_ab_930a: bpl $18 ; $9324.w
 unknown_ab_930c: ora [$07]
 unknown_ab_930e: brk $00
 unknown_ab_9310: and $03, S
 unknown_ab_9312: bcc $00 ; $9314.w
-unknown_ab_9314: pha 
+unknown_ab_9314: pha
 unknown_ab_9315: brk $6c
 unknown_ab_9317: brk $50
 unknown_ab_9319: brk $24
@@ -2317,8 +2317,8 @@ unknown_ab_931f: brk $54
 unknown_ab_9321: ldy $a0, X
 unknown_ab_9323: stz $40, X
 unknown_ab_9325: cpy #$8888.w
-unknown_ab_9328: plp 
-unknown_ab_9329: sec 
+unknown_ab_9328: plp
+unknown_ab_9329: sec
 unknown_ab_932a: cpy #$00c0.w
 unknown_ab_932d: brk $00
 unknown_ab_932f: brk $82
@@ -2331,7 +2331,7 @@ unknown_ab_933b: brk $d0
 unknown_ab_933d: brk $80
 unknown_ab_933f: brk $58
 unknown_ab_9341: adc [$25]
-unknown_ab_9343: tsc 
+unknown_ab_9343: tsc
 unknown_ab_9344: sta [$99], Y
 unknown_ab_9346: sta $8d
 unknown_ab_9348: eor $374e.w
@@ -2339,7 +2339,7 @@ unknown_ab_934b: and [$00], Y
 unknown_ab_934d: brk $00
 unknown_ab_934f: brk $00
 unknown_ab_9351: brk $48
-unknown_ab_9353: php 
+unknown_ab_9353: php
 unknown_ab_9354: jsr $3200.w
 unknown_ab_9357: brk $80
 unknown_ab_9359: brk $40
@@ -2347,11 +2347,11 @@ unknown_ab_935b: brk $19
 unknown_ab_935d: brk $00
 unknown_ab_935f: brk $bc
 unknown_ab_9361: stx $a8b8.w
-unknown_ab_9364: pha 
-unknown_ab_9365: sec 
+unknown_ab_9364: pha
+unknown_ab_9365: sec
 unknown_ab_9366: brk $f0
 unknown_ab_9368: ldy #$8860.w
-unknown_ab_936b: dey 
+unknown_ab_936b: dey
 unknown_ab_936c: bpl $30 ; $939e.w
 unknown_ab_936e: brk $00
 unknown_ab_9370: rti
@@ -2361,7 +2361,7 @@ unknown_ab_9373: brk $a2
 unknown_ab_9375: jsr $c0c8.w
 unknown_ab_9378: bpl $00 ; $937a.w
 unknown_ab_937a: stz $00
-unknown_ab_937c: php 
+unknown_ab_937c: php
 unknown_ab_937d: brk $f0
 unknown_ab_937f: brk $40
 unknown_ab_9381: rti
@@ -2387,8 +2387,8 @@ unknown_ab_939f: brk $44
 unknown_ab_93a1: pei ($80)
 unknown_ab_93a3: sty $00, X
 unknown_ab_93a5: jsr $0808.w
-unknown_ab_93a8: plp 
-unknown_ab_93a9: sec 
+unknown_ab_93a8: plp
+unknown_ab_93a9: sec
 unknown_ab_93aa: cpy #$00c0.w
 unknown_ab_93ad: brk $00
 unknown_ab_93af: brk $02
@@ -2400,8 +2400,8 @@ unknown_ab_93b9: brk $28
 unknown_ab_93bb: brk $d0
 unknown_ab_93bd: brk $80
 unknown_ab_93bf: brk $17
-unknown_ab_93c1: clc 
-unknown_ab_93c2: phd 
+unknown_ab_93c1: clc
+unknown_ab_93c2: phd
 unknown_ab_93c3: tsb $0704.w
 unknown_ab_93c6: ora $03, S
 unknown_ab_93c8: brk $00
@@ -2410,7 +2410,7 @@ unknown_ab_93cc: brk $00
 unknown_ab_93ce: brk $00
 unknown_ab_93d0: brk $00
 unknown_ab_93d2: brk $00
-unknown_ab_93d4: php 
+unknown_ab_93d4: php
 unknown_ab_93d5: brk $00
 unknown_ab_93d7: brk $00
 unknown_ab_93d9: brk $00
@@ -2439,7 +2439,7 @@ unknown_ab_9401: brk $03
 unknown_ab_9403: ora $0d, S
 unknown_ab_9405: ora $2f1d12
 unknown_ab_9409: bmi $27 ; $9432.w
-unknown_ab_940b: sec 
+unknown_ab_940b: sec
 unknown_ab_940c: eor $706f60, X
 unknown_ab_9410: brk $00
 unknown_ab_9412: brk $00
@@ -2454,10 +2454,10 @@ unknown_ab_9422: bra ($80 - $100) ; $93a4.w
 unknown_ab_9424: rts
 
 unknown_ab_9425: cpx #$30d0.w
-unknown_ab_9428: iny 
-unknown_ab_9429: sec 
-unknown_ab_942a: inx 
-unknown_ab_942b: clc 
+unknown_ab_9428: iny
+unknown_ab_9429: sec
+unknown_ab_942a: inx
+unknown_ab_942b: clc
 unknown_ab_942c: pea $d40c.w
 unknown_ab_942f: bit $0000.w
 unknown_ab_9432: brk $00
@@ -2483,11 +2483,11 @@ unknown_ab_945d: brk $80
 unknown_ab_945f: brk $00
 unknown_ab_9461: brk $50
 unknown_ab_9463: bvs $28 ; $948d.w
-unknown_ab_9465: cld 
+unknown_ab_9465: cld
 unknown_ab_9466: tsb $24
 unknown_ab_9468: bcc ($90 - $100) ; $93fa.w
 unknown_ab_946a: lsr A
-unknown_ab_946b: phx 
+unknown_ab_946b: phx
 unknown_ab_946c: ldy $8c, X
 unknown_ab_946e: stz $8c, X
 unknown_ab_9470: cpx #$8800.w
@@ -2502,7 +2502,7 @@ unknown_ab_9481: brk $00
 unknown_ab_9483: brk $0c
 unknown_ab_9485: tsb $121c.w
 unknown_ab_9488: bit $3820.w, X
-unknown_ab_948b: clc 
+unknown_ab_948b: clc
 unknown_ab_948c: rts
 
 unknown_ab_948d: jsr $8000.w
@@ -2517,7 +2517,7 @@ unknown_ab_949f: brk $00
 unknown_ab_94a1: brk $00
 unknown_ab_94a3: .db $42, $00
 unknown_ab_94a5: bit $00
-unknown_ab_94a7: clc 
+unknown_ab_94a7: clc
 unknown_ab_94a8: brk $18
 unknown_ab_94aa: brk $24
 unknown_ab_94ac: brk $42
@@ -2525,10 +2525,10 @@ unknown_ab_94ae: brk $00
 unknown_ab_94b0: brk $00
 unknown_ab_94b2: .db $42, $42
 unknown_ab_94b4: bit $24
-unknown_ab_94b6: clc 
-unknown_ab_94b7: clc 
-unknown_ab_94b8: clc 
-unknown_ab_94b9: clc 
+unknown_ab_94b6: clc
+unknown_ab_94b7: clc
+unknown_ab_94b8: clc
+unknown_ab_94b9: clc
 unknown_ab_94ba: bit $24
 unknown_ab_94bc: .db $42, $42
 unknown_ab_94be: brk $00
@@ -2536,7 +2536,7 @@ unknown_ab_94c0: brk $00
 unknown_ab_94c2: brk $00
 unknown_ab_94c4: jsr $0020.w
 unknown_ab_94c7: brk $08
-unknown_ab_94c9: dey 
+unknown_ab_94c9: dey
 unknown_ab_94ca: cop $02
 unknown_ab_94cc: brk $00
 unknown_ab_94ce: bra ($80 - $100) ; $9450.w
@@ -2553,7 +2553,7 @@ unknown_ab_94df: tsb $80
 unknown_ab_94e1: bra $00 ; $94e3.w
 unknown_ab_94e3: brk $00
 unknown_ab_94e5: brk $08
-unknown_ab_94e7: php 
+unknown_ab_94e7: php
 unknown_ab_94e8: brk $00
 unknown_ab_94ea: brk $00
 unknown_ab_94ec: jsr $0020.w
@@ -2566,7 +2566,7 @@ unknown_ab_94f9: rti
 
 unknown_ab_94fa: brk $00
 unknown_ab_94fc: brk $20
-unknown_ab_94fe: php 
+unknown_ab_94fe: php
 unknown_ab_94ff: brk $00
 unknown_ab_9501: brk $00
 unknown_ab_9503: brk $00
@@ -2650,7 +2650,7 @@ unknown_ab_959d: brk $02
 unknown_ab_959f: brk $00
 unknown_ab_95a1: brk $00
 unknown_ab_95a3: brk $08
-unknown_ab_95a5: php 
+unknown_ab_95a5: php
 unknown_ab_95a6: brk $00
 unknown_ab_95a8: brk $00
 unknown_ab_95aa: bpl ($90 - $100) ; $953c.w
@@ -2713,10 +2713,10 @@ unknown_ab_961b: brk $00
 unknown_ab_961d: brk $00
 unknown_ab_961f: brk $ec
 unknown_ab_9621: trb $0cf4.w
-unknown_ab_9624: inx 
-unknown_ab_9625: clc 
-unknown_ab_9626: pla 
-unknown_ab_9627: tya 
+unknown_ab_9624: inx
+unknown_ab_9625: clc
+unknown_ab_9626: pla
+unknown_ab_9627: tya
 unknown_ab_9628: bcc $70 ; $969a.w
 unknown_ab_962a: rts
 
@@ -2732,13 +2732,13 @@ unknown_ab_963c: brk $00
 unknown_ab_963e: brk $00
 unknown_ab_9640: .db $42, $65
 unknown_ab_9642: eor $825f.w, X
-unknown_ab_9645: txs 
+unknown_ab_9645: txs
 unknown_ab_9646: ora ($0c), Y
-unknown_ab_9648: pld 
+unknown_ab_9648: pld
 unknown_ab_9649: bit $5757.w, X
 unknown_ab_964c: brk $08
 unknown_ab_964e: ora $05
-unknown_ab_9650: tya 
+unknown_ab_9650: tya
 unknown_ab_9651: brk $a0
 unknown_ab_9653: brk $65
 unknown_ab_9655: brk $62
@@ -2750,7 +2750,7 @@ unknown_ab_965f: brk $24
 unknown_ab_9661: jmp $647818
 unknown_ab_9665: ldy $50
 unknown_ab_9667: beq ($a8 - $100) ; $9611.w
-unknown_ab_9669: tya 
+unknown_ab_9669: tya
 unknown_ab_966a: bpl $30 ; $969c.w
 unknown_ab_966c: rts
 
@@ -2768,10 +2768,10 @@ unknown_ab_967f: brk $00
 unknown_ab_9681: brk $00
 unknown_ab_9683: brk $00
 unknown_ab_9685: brk $28
-unknown_ab_9687: sec 
+unknown_ab_9687: sec
 unknown_ab_9688: bpl $28 ; $96b2.w
-unknown_ab_968a: plp 
-unknown_ab_968b: clc 
+unknown_ab_968a: plp
+unknown_ab_968b: clc
 unknown_ab_968c: rti
 
 unknown_ab_968d: brk $00
@@ -2787,7 +2787,7 @@ unknown_ab_969f: brk $00
 unknown_ab_96a1: brk $00
 unknown_ab_96a3: .db $42, $00
 unknown_ab_96a5: bit $00
-unknown_ab_96a7: clc 
+unknown_ab_96a7: clc
 unknown_ab_96a8: brk $18
 unknown_ab_96aa: brk $24
 unknown_ab_96ac: brk $42
@@ -2795,10 +2795,10 @@ unknown_ab_96ae: brk $00
 unknown_ab_96b0: brk $00
 unknown_ab_96b2: .db $42, $42
 unknown_ab_96b4: bit $24
-unknown_ab_96b6: clc 
-unknown_ab_96b7: clc 
-unknown_ab_96b8: clc 
-unknown_ab_96b9: clc 
+unknown_ab_96b6: clc
+unknown_ab_96b7: clc
+unknown_ab_96b8: clc
+unknown_ab_96b9: clc
 unknown_ab_96ba: bit $24
 unknown_ab_96bc: .db $42, $42
 unknown_ab_96be: brk $00
@@ -2837,12 +2837,12 @@ unknown_ab_96fc: jsr $8000.w
 unknown_ab_96ff: brk $02
 unknown_ab_9701: cop $08
 unknown_ab_9703: ora #$0b03.w
-unknown_ab_9706: php 
+unknown_ab_9706: php
 unknown_ab_9707: trb $3424.w
 unknown_ab_970a: brk $20
 unknown_ab_970c: brk $00
 unknown_ab_970e: brk $00
-unknown_ab_9710: php 
+unknown_ab_9710: php
 unknown_ab_9711: brk $04
 unknown_ab_9713: brk $10
 unknown_ab_9715: brk $03
@@ -2871,7 +2871,7 @@ unknown_ab_973b: brk $00
 unknown_ab_973d: brk $00
 unknown_ab_973f: brk $00
 unknown_ab_9741: brk $08
-unknown_ab_9743: php 
+unknown_ab_9743: php
 unknown_ab_9744: cop $02
 unknown_ab_9746: brk $00
 unknown_ab_9748: brk $00
@@ -2892,8 +2892,8 @@ unknown_ab_9764: brk $00
 unknown_ab_9766: jsr $4020.w
 unknown_ab_9769: rti
 
-unknown_ab_976a: php 
-unknown_ab_976b: php 
+unknown_ab_976a: php
+unknown_ab_976b: php
 unknown_ab_976c: brk $00
 unknown_ab_976e: brk $00
 unknown_ab_9770: brk $00
@@ -2945,8 +2945,8 @@ unknown_ab_97c4: rti
 
 unknown_ab_97c5: rti
 
-unknown_ab_97c6: php 
-unknown_ab_97c7: php 
+unknown_ab_97c6: php
+unknown_ab_97c7: php
 unknown_ab_97c8: brk $00
 unknown_ab_97ca: brk $00
 unknown_ab_97cc: brk $00
@@ -2963,7 +2963,7 @@ unknown_ab_97e0: brk $00
 unknown_ab_97e2: brk $00
 unknown_ab_97e4: brk $00
 unknown_ab_97e6: cop $02
-unknown_ab_97e8: php 
+unknown_ab_97e8: php
 unknown_ab_97e9: brk $00
 unknown_ab_97eb: brk $10
 unknown_ab_97ed: bpl $00 ; $97ef.w
@@ -2992,9 +2992,9 @@ unknown_ab_981d: ora ($3f, X)
 unknown_ab_981f: brk $80
 unknown_ab_9821: bra $63 ; $9886.w
 unknown_ab_9823: jmp ($456b.w, X)
-unknown_ab_9826: phk 
+unknown_ab_9826: phk
 unknown_ab_9827: eor [$67]
-unknown_ab_9829: sei 
+unknown_ab_9829: sei
 unknown_ab_982a: rts
 
 unknown_ab_982b: rts
@@ -3002,7 +3002,7 @@ unknown_ab_982b: rts
 unknown_ab_982c: lda ($bc, S), Y
 unknown_ab_982e: bvs $70 ; $98a0.w
 unknown_ab_9830: sbc $00c080.l, X
-unknown_ab_9834: cld 
+unknown_ab_9834: cld
 unknown_ab_9835: brk $fb
 unknown_ab_9837: brk $d4
 unknown_ab_9839: brk $ff
@@ -3014,8 +3014,8 @@ unknown_ab_9842: sbc $1f, S
 unknown_ab_9844: sbc ($1c)
 unknown_ab_9846: beq $3c ; $9884.w
 unknown_ab_9848: sbc $1f, S
-unknown_ab_984a: phd 
-unknown_ab_984b: phd 
+unknown_ab_984a: phd
+unknown_ab_984b: phd
 unknown_ab_984c: inc $1e
 unknown_ab_984e: and $00ff1f.l
 unknown_ab_9852: ora $00
@@ -3492,7 +3492,7 @@ unknown_ab_9c01: brk $00
 unknown_ab_9c03: brk $01
 unknown_ab_9c05: ora ($01, X)
 unknown_ab_9c07: brk $0a
-unknown_ab_9c09: php 
+unknown_ab_9c09: php
 unknown_ab_9c0a: ora $1b01.w
 unknown_ab_9c0d: ora ($33, S), Y
 unknown_ab_9c0f: and $000000.l
@@ -3502,7 +3502,7 @@ unknown_ab_9c17: cop $07
 unknown_ab_9c19: tsb $101e.w
 unknown_ab_9c1c: tsb $1c11.w
 unknown_ab_9c1f: jsr $090301
-unknown_ab_9c23: clc 
+unknown_ab_9c23: clc
 unknown_ab_9c24: asl $2f00.w
 unknown_ab_9c27: jmp $b707.w
 unknown_ab_9c2a: sbc $ffff.w, X
@@ -3511,7 +3511,7 @@ unknown_ab_9c2f: bra $00 ; $9c31.w
 unknown_ab_9c31: ora $07, S
 unknown_ab_9c33: asl $f0ff.w, X
 unknown_ab_9c36: beq $30 ; $9c68.w
-unknown_ab_9c38: pha 
+unknown_ab_9c38: pha
 unknown_ab_9c39: jsr ($8700.w, X)
 unknown_ab_9c3c: asl $01
 unknown_ab_9c3e: ora [$00]
@@ -3520,8 +3520,8 @@ unknown_ab_9c43: tsb $1d
 unknown_ab_9c45: brk $80
 unknown_ab_9c47: mvp $0d, $e4
 unknown_ab_9c4a: beq ($fa - $100) ; $9c46.w
-unknown_ab_9c4c: pla 
-unknown_ab_9c4d: ply 
+unknown_ab_9c4c: pla
+unknown_ab_9c4d: ply
 unknown_ab_9c4e: inc $c0ff.w, X
 unknown_ab_9c51: beq ($f8 - $100) ; $9c4b.w
 unknown_ab_9c53: trb $03ff.w
@@ -3536,16 +3536,16 @@ unknown_ab_9c66: cpy #$2000.w
 unknown_ab_9c69: brk $50
 unknown_ab_9c6b: rti
 
-unknown_ab_9c6c: plp 
+unknown_ab_9c6c: plp
 unknown_ab_9c6d: jsr $a028.w
 unknown_ab_9c70: brk $00
 unknown_ab_9c72: brk $00
 unknown_ab_9c74: bra ($80 - $100) ; $9bf6.w
 unknown_ab_9c76: cpy #$30c0.w
 unknown_ab_9c79: beq ($d8 - $100) ; $9c53.w
-unknown_ab_9c7b: sec 
-unknown_ab_9c7c: inx 
-unknown_ab_9c7d: clc 
+unknown_ab_9c7b: sec
+unknown_ab_9c7c: inx
+unknown_ab_9c7d: clc
 unknown_ab_9c7e: cpx $001c.w
 unknown_ab_9c81: brk $00
 unknown_ab_9c83: brk $00
@@ -3559,10 +3559,10 @@ unknown_ab_9c92: brk $00
 unknown_ab_9c94: ora ($03, X)
 unknown_ab_9c96: ora $06, S
 unknown_ab_9c98: ora $141e1c
-unknown_ab_9c9c: sec 
+unknown_ab_9c9c: sec
 unknown_ab_9c9d: and [$1a]
 unknown_ab_9c9f: bit $08
-unknown_ab_9ca1: clc 
+unknown_ab_9ca1: clc
 unknown_ab_9ca2: sty $98
 unknown_ab_9ca4: and ($d1), Y
 unknown_ab_9ca6: cmp $f73f.w, X
@@ -3571,7 +3571,7 @@ unknown_ab_9cad: bvs $7f ; $9d2e.w
 unknown_ab_9caf: cpy #$1e06.w
 unknown_ab_9cb2: adc $19eee1, X
 unknown_ab_9cb6: cpy #$000e.w
-unknown_ab_9cb9: sec 
+unknown_ab_9cb9: sec
 unknown_ab_9cba: brk $60
 unknown_ab_9cbc: bra ($c0 - $100) ; $9c7e.w
 unknown_ab_9cbe: and $d050c0, X
@@ -3584,9 +3584,9 @@ unknown_ab_9cce: sbc $2020.w, Y
 unknown_ab_9cd1: beq ($fc - $100) ; $9ccf.w
 unknown_ab_9cd3: tsb $83ff.w
 unknown_ab_9cd6: ora $071979, X
-unknown_ab_9cda: tcs 
+unknown_ab_9cda: tcs
 unknown_ab_9cdb: ora [$67]
-unknown_ab_9cdd: clc 
+unknown_ab_9cdd: clc
 unknown_ab_9cde: cmp $000020.l, X
 unknown_ab_9ce2: brk $00
 unknown_ab_9ce4: bra $00 ; $9ce6.w
@@ -3599,8 +3599,8 @@ unknown_ab_9cf3: brk $80
 unknown_ab_9cf5: bra $40 ; $9d37.w
 unknown_ab_9cf7: cpx #$f010.w
 unknown_ab_9cfa: bne $30 ; $9d2c.w
-unknown_ab_9cfc: inx 
-unknown_ab_9cfd: tya 
+unknown_ab_9cfc: inx
+unknown_ab_9cfd: tya
 unknown_ab_9cfe: cpx $5c
 unknown_ab_9d00: brk $00
 unknown_ab_9d02: brk $00
@@ -3608,14 +3608,14 @@ unknown_ab_9d04: brk $00
 unknown_ab_9d06: brk $06
 unknown_ab_9d08: ora ($0b, X)
 unknown_ab_9d0a: ora $12, S
-unknown_ab_9d0c: phd 
+unknown_ab_9d0c: phd
 unknown_ab_9d0d: trb $0827.w
 unknown_ab_9d10: brk $00
 unknown_ab_9d12: brk $00
 unknown_ab_9d14: ora [$07]
 unknown_ab_9d16: ora $111e09
 unknown_ab_9d1a: and $3726.w, X
-unknown_ab_9d1d: plp 
+unknown_ab_9d1d: plp
 unknown_ab_9d1e: ror $0850.w, X
 unknown_ab_9d21: inc A
 unknown_ab_9d22: ora $2005.w, Y
@@ -3629,7 +3629,7 @@ unknown_ab_9d34: sbc $10cd0d, X
 unknown_ab_9d38: bpl ($e1 - $100) ; $9d1b.w
 unknown_ab_9d3a: cpx #$0141.w
 unknown_ab_9d3d: adc $804100, X
-unknown_ab_9d41: dey 
+unknown_ab_9d41: dey
 unknown_ab_9d42: and $2521c1
 unknown_ab_9d46: brl $e1f8 ; $7f41.w
 unknown_ab_9d49: asl $00ff.w, X
@@ -3641,21 +3641,21 @@ unknown_ab_9d54: cmp $7efa.w, X
 unknown_ab_9d57: sta [$ff]
 unknown_ab_9d59: ora ($9f, X)
 unknown_ab_9d5b: brk $0f
-unknown_ab_9d5d: php 
+unknown_ab_9d5d: php
 unknown_ab_9d5e: ora $000088.l
 unknown_ab_9d62: brk $00
 unknown_ab_9d64: bra ($80 - $100) ; $9ce6.w
 unknown_ab_9d66: cpx #$b0d0.w
 unknown_ab_9d69: jsr $0078.w
-unknown_ab_9d6c: sed 
+unknown_ab_9d6c: sed
 unknown_ab_9d6d: brk $0c
 unknown_ab_9d6f: bra $00 ; $9d71.w
 unknown_ab_9d71: brk $00
 unknown_ab_9d73: brk $40
 unknown_ab_9d75: cpy #$30e0.w
 unknown_ab_9d78: bmi ($d0 - $100) ; $9d4a.w
-unknown_ab_9d7a: sed 
-unknown_ab_9d7b: sed 
+unknown_ab_9d7a: sed
+unknown_ab_9d7b: sed
 unknown_ab_9d7c: cpy $c47c.w
 unknown_ab_9d7f: jmp ($0000.w, X)
 unknown_ab_9d82: brk $00
@@ -3673,7 +3673,7 @@ unknown_ab_9d9a: asl $1c08.w
 unknown_ab_9d9d: bpl $3c ; $9ddb.w
 unknown_ab_9d9f: bmi $05 ; $9da6.w
 unknown_ab_9da1: ora $2700.w
-unknown_ab_9da4: dey 
+unknown_ab_9da4: dey
 unknown_ab_9da5: bcc ($ff - $100) ; $9da6.w
 unknown_ab_9da7: bmi ($ff - $100) ; $9da8.w
 unknown_ab_9da9: rol $5fc7.w, X
@@ -3686,11 +3686,11 @@ unknown_ab_9dba: jsr $1c3e.w
 unknown_ab_9dbd: adc $6c, S
 unknown_ab_9dbf: sta ($a0, X)
 unknown_ab_9dc1: bcs $11 ; $9dd4.w
-unknown_ab_9dc3: sed 
+unknown_ab_9dc3: sed
 unknown_ab_9dc4: ora $70, S
 unknown_ab_9dc6: sta $c63a.w
 unknown_ab_9dc9: and ($db), Y
-unknown_ab_9dcb: sed 
+unknown_ab_9dcb: sed
 unknown_ab_9dcc: ldy $ffc8.w
 unknown_ab_9dcf: jsr ($f040.w, X)
 unknown_ab_9dd2: sbc $1b, S
@@ -3703,15 +3703,15 @@ unknown_ab_9de2: bra $00 ; $9de4.w
 unknown_ab_9de4: rts
 
 unknown_ab_9de5: jsr $00f0.w
-unknown_ab_9de8: sed 
+unknown_ab_9de8: sed
 unknown_ab_9de9: jsr $9078.w
 unknown_ab_9dec: jsr ($7c00.w, X)
 unknown_ab_9def: brk $00
 unknown_ab_9df1: brk $80
 unknown_ab_9df3: bra $40 ; $9e35.w
 unknown_ab_9df5: cpx #$f090.w
-unknown_ab_9df8: pla 
-unknown_ab_9df9: cld 
+unknown_ab_9df8: pla
+unknown_ab_9df9: cld
 unknown_ab_9dfa: ldy $6c, X
 unknown_ab_9dfc: cpx $3c
 unknown_ab_9dfe: jmp [$173c]
@@ -3747,7 +3747,7 @@ unknown_ab_9e4c: ldy $f93f.w, X
 unknown_ab_9e4f: adc $0102.w, Y
 unknown_ab_9e52: ora $00810c.l
 unknown_ab_9e56: cmp $00, S
-unknown_ab_9e58: tsc 
+unknown_ab_9e58: tsc
 unknown_ab_9e59: cpy #$40bf.w
 unknown_ab_9e5c: cmp $7c, S
 unknown_ab_9e5e: stx $47
@@ -3764,7 +3764,7 @@ unknown_ab_9e77: rol $23df.w, X
 unknown_ab_9e7a: sbc $bd23.w, X
 unknown_ab_9e7d: adc $7d, S
 unknown_ab_9e7f: cmp $5f, S
-unknown_ab_9e81: pha 
+unknown_ab_9e81: pha
 unknown_ab_9e82: and [$18], Y
 unknown_ab_9e84: ora [$38], Y
 unknown_ab_9e86: and [$78]
@@ -3774,37 +3774,37 @@ unknown_ab_9e8e: ora $483653, X
 unknown_ab_9e92: jmp ($6c50)
 unknown_ab_9e95: bvc ($dc - $100) ; $9e73.w
 unknown_ab_9e97: ldy #$a0dc.w
-unknown_ab_9e9a: cli 
+unknown_ab_9e9a: cli
 unknown_ab_9e9b: ldy #$a078.w
 unknown_ab_9e9e: cpx $f0b1.w
 unknown_ab_9ea1: sbc $77dfd7
-unknown_ab_9ea5: inx 
+unknown_ab_9ea5: inx
 unknown_ab_9ea6: eor $e0dfe0, X
 unknown_ab_9eaa: sta $d8b7f0
-unknown_ab_9eae: xce 
+unknown_ab_9eae: xce
 unknown_ab_9eaf: trb $2f10.w
 unknown_ab_9eb2: jsr $9038.w
 unknown_ab_9eb5: ldy #$a098.w
-unknown_ab_9eb8: clc 
+unknown_ab_9eb8: clc
 unknown_ab_9eb9: jsr $700c.w
 unknown_ab_9ebc: rol $c8
 unknown_ab_9ebe: sbc $0c, S
-unknown_ab_9ec0: cld 
+unknown_ab_9ec0: cld
 unknown_ab_9ec1: cpy #$f0d8.w
 unknown_ab_9ec4: jsr ($7cf2.w, X)
-unknown_ab_9ec7: plx 
+unknown_ab_9ec7: plx
 unknown_ab_9ec8: ldy $fc7b.w, X
-unknown_ab_9ecb: tcs 
-unknown_ab_9ecc: plx 
+unknown_ab_9ecb: tcs
+unknown_ab_9ecc: plx
 unknown_ab_9ecd: ora ($f0, S), Y
 unknown_ab_9ecf: trb $3f
 unknown_ab_9ed1: cpx #$300f.w
 unknown_ab_9ed4: ora $8510.w
-unknown_ab_9ed7: dey 
+unknown_ab_9ed7: dey
 unknown_ab_9ed8: lsr $48
 unknown_ab_9eda: ora [$08]
 unknown_ab_9edc: ora $ef0e.w
-unknown_ab_9edf: tcs 
+unknown_ab_9edf: tcs
 unknown_ab_9ee0: pei ($00)
 unknown_ab_9ee2: jmp ($2c00.w, X)
 unknown_ab_9ee5: brk $24
@@ -3830,7 +3830,7 @@ unknown_ab_9f11: rts
 unknown_ab_9f12: trb $3860.w
 unknown_ab_9f15: and ($76, X)
 unknown_ab_9f17: adc $c67a.w, X
-unknown_ab_9f1a: sed 
+unknown_ab_9f1a: sed
 unknown_ab_9f1b: stx $f8
 unknown_ab_9f1d: brl $837d ; $229d.w
 unknown_ab_9f20: adc $f977ff, X
@@ -3839,7 +3839,7 @@ unknown_ab_9f28: sbc $c1fec0, X
 unknown_ab_9f2c: inc $fe01.w, X
 unknown_ab_9f2f: sta ($00, X)
 unknown_ab_9f31: bra $08 ; $9f3b.w
-unknown_ab_9f33: dey 
+unknown_ab_9f33: dey
 unknown_ab_9f34: bmi $30 ; $9f66.w
 unknown_ab_9f36: and ($20, X)
 unknown_ab_9f38: ora ($00, X)
@@ -3849,7 +3849,7 @@ unknown_ab_9f3e: ror $bf81.w, X
 unknown_ab_9f41: beq ($bf - $100) ; $9f02.w
 unknown_ab_9f43: jsr ($dcd6.w, X)
 unknown_ab_9f46: jsr ($7e3d.w, X)
-unknown_ab_9f49: plx 
+unknown_ab_9f49: plx
 unknown_ab_9f4a: adc $fde3.w, X
 unknown_ab_9f4d: cmp $fc, S
 unknown_ab_9f4f: brl $4003 ; $df55.w
@@ -3863,14 +3863,14 @@ unknown_ab_9f5e: ora [$01]
 unknown_ab_9f60: stx $b0, Y
 unknown_ab_9f62: asl $10, X
 unknown_ab_9f64: ror A
-unknown_ab_9f65: tay 
+unknown_ab_9f65: tay
 unknown_ab_9f66: ror $3788.w
 unknown_ab_9f69: bcc $15 ; $9f80.w
 unknown_ab_9f6b: sty $1f
 unknown_ab_9f6d: stx $a03e.w
 unknown_ab_9f70: adc ($ce)
 unknown_ab_9f72: sbc ($ee)
-unknown_ab_9f74: phx 
+unknown_ab_9f74: phx
 unknown_ab_9f75: rol $fd, X
 unknown_ab_9f77: ora [$ed], Y
 unknown_ab_9f79: ora $f70bfd, X
@@ -3880,7 +3880,7 @@ unknown_ab_9f84: asl $053f.w
 unknown_ab_9f87: rol $6645.w
 unknown_ab_9f8a: and $46
 unknown_ab_9f8c: sta [$c6]
-unknown_ab_9f8e: txa 
+unknown_ab_9f8e: txa
 unknown_ab_9f8f: cmp $38
 unknown_ab_9f91: jsr $3928.w
 unknown_ab_9f94: bvs $4f ; $9fe5.w
@@ -3905,7 +3905,7 @@ unknown_ab_9fbb: cop $c2
 unknown_ab_9fbd: ora $fe08c7
 unknown_ab_9fc1: ldx $3cff.w, Y
 unknown_ab_9fc4: sbc ($0c, S), Y
-unknown_ab_9fc6: xce 
+unknown_ab_9fc6: xce
 unknown_ab_9fc7: tsb $fd
 unknown_ab_9fc9: cop $ff
 unknown_ab_9fcb: brk $fd
@@ -3918,17 +3918,17 @@ unknown_ab_9fda: sta ($00, X)
 unknown_ab_9fdc: sbc $00, S
 unknown_ab_9fde: ora $20dee0, X
 unknown_ab_9fe2: lsr $00
-unknown_ab_9fe4: txa 
-unknown_ab_9fe5: plp 
+unknown_ab_9fe4: txa
+unknown_ab_9fe5: plp
 unknown_ab_9fe6: cpx $54
 unknown_ab_9fe8: cmp $48, X
 unknown_ab_9fea: cmp [$48], Y
 unknown_ab_9fec: sta $888600
 unknown_ab_9ff0: sbc ($1e)
 unknown_ab_9ff2: sbc ($fe)
-unknown_ab_9ff4: plx 
+unknown_ab_9ff4: plx
 unknown_ab_9ff5: lsr $bd, X
-unknown_ab_9ff7: phk 
+unknown_ab_9ff7: phk
 unknown_ab_9ff8: lda $bd47.w, X
 unknown_ab_9ffb: eor [$fb]
 unknown_ab_9ffd: eor [$7e]
@@ -3942,7 +3942,7 @@ unknown_ab_a00d: ora ($66)
 unknown_ab_a00f: ora #$607c.w
 unknown_ab_a012: inc $ff90.w
 unknown_ab_a015: bcc ($b7 - $100) ; $9fce.w
-unknown_ab_a017: sed 
+unknown_ab_a017: sed
 unknown_ab_a018: lda $4c7be8, X
 unknown_ab_a01c: eor $4e67.w, X
 unknown_ab_a01f: adc ($7f, S), Y
@@ -3957,10 +3957,10 @@ unknown_ab_a033: bra $0e ; $a043.w
 unknown_ab_a035: sta ($be, X)
 unknown_ab_a037: cmp $f8, S
 unknown_ab_a039: mvp $fc, $cf
-unknown_ab_a03c: xce 
+unknown_ab_a03c: xce
 unknown_ab_a03d: asl $ed
 unknown_ab_a03f: cop $7e
-unknown_ab_a041: sed 
+unknown_ab_a041: sed
 unknown_ab_a042: sbc $c3f0c0, X
 unknown_ab_a046: cpx #$c083.w
 unknown_ab_a049: sta [$00]
@@ -3968,7 +3968,7 @@ unknown_ab_a04b: ora $001f81.l
 unknown_ab_a04f: inc $8107.w, X
 unknown_ab_a052: ora [$80]
 unknown_ab_a054: ora $001f80.l
-unknown_ab_a058: tsc 
+unknown_ab_a058: tsc
 unknown_ab_a059: brk $f3
 unknown_ab_a05b: brk $ee
 unknown_ab_a05d: ora ($ff, X)
@@ -4012,7 +4012,7 @@ unknown_ab_a0b4: bra $00 ; $a0b6.w
 unknown_ab_a0b6: cpy #$40
 unknown_ab_a0b8: cmp $00cf00.l, X
 unknown_ab_a0bc: sbc $c1be00, X
-unknown_ab_a0c0: xce 
+unknown_ab_a0c0: xce
 unknown_ab_a0c1: trb $d813.w
 unknown_ab_a0c4: lda ($f0, X)
 unknown_ab_a0c6: cmp ($f0, X)
@@ -4030,9 +4030,9 @@ unknown_ab_a0dd: bra ($ff - $100) ; $a0de.w
 unknown_ab_a0df: sta ($ed, X)
 unknown_ab_a0e1: tsb $ef
 unknown_ab_a0e3: tsb $bb
-unknown_ab_a0e5: php 
-unknown_ab_a0e6: clv 
-unknown_ab_a0e7: clc 
+unknown_ab_a0e5: php
+unknown_ab_a0e6: clv
+unknown_ab_a0e7: clc
 unknown_ab_a0e8: ldy $7e08.w
 unknown_ab_a0eb: brk $9c
 unknown_ab_a0ed: brk $68
@@ -4078,7 +4078,7 @@ unknown_ab_a14d: jsr ($7000.w, X)
 unknown_ab_a150: ora $111f09
 unknown_ab_a154: ora $7b03.w, X
 unknown_ab_a157: stx $8f
-unknown_ab_a159: sed 
+unknown_ab_a159: sed
 unknown_ab_a15a: lda $c03340, X
 unknown_ab_a15e: sbc $a83d80
 unknown_ab_a162: ora $421fc2, X
@@ -4094,7 +4094,7 @@ unknown_ab_a178: dec $f27a.w
 unknown_ab_a17b: rol $7cb4.w, X
 unknown_ab_a17e: ldy $0d7c.w, X
 unknown_ab_a181: eor $41
-unknown_ab_a183: phk 
+unknown_ab_a183: phk
 unknown_ab_a184: ora #$1a
 unknown_ab_a186: rti
 
@@ -4109,19 +4109,19 @@ unknown_ab_a195: jmp $487f.w
 unknown_ab_a198: adc $383f78
 unknown_ab_a19c: and $3c2f38
 unknown_ab_a1a0: and $e8cff8
-unknown_ab_a1a4: stp 
+unknown_ab_a1a4: stp
 unknown_ab_a1a5: jmp ($3e5d.w, X)
 unknown_ab_a1a8: adc $3e11.w, X
-unknown_ab_a1ab: php 
+unknown_ab_a1ab: php
 unknown_ab_a1ac: ora [$04], Y
 unknown_ab_a1ae: ora $0701.w, X
-unknown_ab_a1b1: cld 
+unknown_ab_a1b1: cld
 unknown_ab_a1b2: bpl $70 ; $a224.w
 unknown_ab_a1b4: tsb $14
 unknown_ab_a1b6: brl $ae12 ; $4fcb.w
 unknown_ab_a1b9: bpl ($f7 - $100) ; $a1b2.w
-unknown_ab_a1bb: php 
-unknown_ab_a1bc: xce 
+unknown_ab_a1bb: php
+unknown_ab_a1bc: xce
 unknown_ab_a1bd: tsb $07fe.w
 unknown_ab_a1c0: cmp $1af630, X
 unknown_ab_a1c4: sbc $10
@@ -4132,7 +4132,7 @@ unknown_ab_a1cc: beq $13 ; $a1e1.w
 unknown_ab_a1ce: cpy #$cb
 unknown_ab_a1d0: cmp $13ed30
 unknown_ab_a1d4: and $047f0e, X
-unknown_ab_a1d8: xce 
+unknown_ab_a1d8: xce
 unknown_ab_a1d9: tsb $fb
 unknown_ab_a1db: tsb $ef
 unknown_ab_a1dd: trb $f43f.w
@@ -4149,7 +4149,7 @@ unknown_ab_a1fd: asl $3ed2.w, X
 unknown_ab_a200: and [$00], Y
 unknown_ab_a202: ora $001f00.l, X
 unknown_ab_a206: ora $0b04.w
-unknown_ab_a209: phd 
+unknown_ab_a209: phd
 unknown_ab_a20a: cop $02
 unknown_ab_a20c: brk $00
 unknown_ab_a20e: brk $00
@@ -4164,10 +4164,10 @@ unknown_ab_a220: sta [$09]
 unknown_ab_a222: ora ($c0, X)
 unknown_ab_a224: sta ($38, X)
 unknown_ab_a226: cmp ($0e, X)
-unknown_ab_a228: xce 
+unknown_ab_a228: xce
 unknown_ab_a229: brk $bf
 unknown_ab_a22b: bra $2b ; $a258.w
-unknown_ab_a22d: php 
+unknown_ab_a22d: php
 unknown_ab_a22e: asl $f600.w
 unknown_ab_a231: ora ($ff, X)
 unknown_ab_a233: brk $3f
@@ -4177,11 +4177,11 @@ unknown_ab_a239: sbc $e87f9f, X
 unknown_ab_a23d: sbc [$1f], Y
 unknown_ab_a23f: ora $e6fc80, X
 unknown_ab_a243: beq ($ff - $100) ; $a244.w
-unknown_ab_a245: dey 
+unknown_ab_a245: dey
 unknown_ab_a246: sbc $46ffb0, X
 unknown_ab_a24a: sbc $01fd08, X
-unknown_ab_a24e: sec 
-unknown_ab_a24f: php 
+unknown_ab_a24e: sec
+unknown_ab_a24f: php
 unknown_ab_a250: ror $0e83.w, X
 unknown_ab_a253: sbc $77877a, X
 unknown_ab_a257: sta $b8b94e
@@ -4190,12 +4190,12 @@ unknown_ab_a25d: sbc $f87870, X
 unknown_ab_a261: cpy #$f8
 unknown_ab_a263: brk $fc
 unknown_ab_a265: trb $f8
-unknown_ab_a267: plp 
+unknown_ab_a267: plp
 unknown_ab_a268: beq $10 ; $a27a.w
 unknown_ab_a26a: ldy #$20
 unknown_ab_a26c: brk $00
 unknown_ab_a26e: brk $00
-unknown_ab_a270: dex 
+unknown_ab_a270: dex
 unknown_ab_a271: rol $fc14.w, X
 unknown_ab_a274: bvs ($ec - $100) ; $a262.w
 unknown_ab_a276: ldy #$d8
@@ -4205,22 +4205,22 @@ unknown_ab_a27c: brk $00
 unknown_ab_a27e: brk $00
 unknown_ab_a280: bit $1d02.w, X
 unknown_ab_a283: ora ($3e, X)
-unknown_ab_a285: plp 
+unknown_ab_a285: plp
 unknown_ab_a286: ora $080f14, X
 unknown_ab_a28a: cop $00
 unknown_ab_a28c: ora ($00, X)
 unknown_ab_a28e: brk $00
-unknown_ab_a290: tsc 
+unknown_ab_a290: tsc
 unknown_ab_a291: bit $3e25.w, X
 unknown_ab_a294: tsb $0637.w
-unknown_ab_a297: tcs 
+unknown_ab_a297: tcs
 unknown_ab_a298: ora ($0f, X)
 unknown_ab_a29a: asl $07
 unknown_ab_a29c: ora ($01, X)
 unknown_ab_a29e: brk $00
 unknown_ab_a2a0: cmp ($1e), Y
-unknown_ab_a2a2: pld 
-unknown_ab_a2a3: clc 
+unknown_ab_a2a2: pld
+unknown_ab_a2a3: clc
 unknown_ab_a2a4: sta ($d0, S), Y
 unknown_ab_a2a6: jmp $03da40
 unknown_ab_a2aa: sbc $1f01.w, X
@@ -4228,15 +4228,15 @@ unknown_ab_a2ad: brk $03
 unknown_ab_a2af: brk $ef
 unknown_ab_a2b1: and ($f7), Y
 unknown_ab_a2b3: ora $571cef
-unknown_ab_a2b7: clv 
+unknown_ab_a2b7: clv
 unknown_ab_a2b8: ora ($fc, S), Y
 unknown_ab_a2ba: sbc ($fe), Y
-unknown_ab_a2bc: cld 
+unknown_ab_a2bc: cld
 unknown_ab_a2bd: cmp $870f0f, X
 unknown_ab_a2c1: bvs $02 ; $a2c5.w
-unknown_ab_a2c3: sec 
+unknown_ab_a2c3: sec
 unknown_ab_a2c4: sta $01
-unknown_ab_a2c6: phx 
+unknown_ab_a2c6: phx
 unknown_ab_a2c7: brk $17
 unknown_ab_a2c9: beq ($fe - $100) ; $a2c9.w
 unknown_ab_a2cb: cpx #$f8
@@ -4250,7 +4250,7 @@ unknown_ab_a2db: ora $f0fc1c, X
 unknown_ab_a2df: beq $68 ; $a349.w
 unknown_ab_a2e1: rts
 
-unknown_ab_a2e2: cld 
+unknown_ab_a2e2: cld
 unknown_ab_a2e3: cpy #$30
 unknown_ab_a2e5: brk $e0
 unknown_ab_a2e7: brk $e0
@@ -4258,7 +4258,7 @@ unknown_ab_a2e9: jsr $8080.w
 unknown_ab_a2ec: brk $00
 unknown_ab_a2ee: brk $00
 unknown_ab_a2f0: jmp ($c89c)
-unknown_ab_a2f3: sec 
+unknown_ab_a2f3: sec
 unknown_ab_a2f4: bpl ($f0 - $100) ; $a2e6.w
 unknown_ab_a2f6: bmi ($f0 - $100) ; $a2e8.w
 unknown_ab_a2f8: cpy #$e0
@@ -4268,7 +4268,7 @@ unknown_ab_a2fe: brk $00
 unknown_ab_a300: bmi $23 ; $a325.w
 unknown_ab_a302: trb $1d01.w
 unknown_ab_a305: ora ($0e), Y
-unknown_ab_a307: php 
+unknown_ab_a307: php
 unknown_ab_a308: ora $00, S
 unknown_ab_a30a: ora ($01, X)
 unknown_ab_a30c: brk $00
@@ -4303,10 +4303,10 @@ unknown_ab_a354: sbc ($ef), Y
 unknown_ab_a356: sbc $3fcc3f, X
 unknown_ab_a35a: sta $f8787f
 unknown_ab_a35e: cpy #$c0
-unknown_ab_a360: sed 
+unknown_ab_a360: sed
 unknown_ab_a361: jsr $40c8.w
-unknown_ab_a364: sec 
-unknown_ab_a365: php 
+unknown_ab_a364: sec
+unknown_ab_a365: php
 unknown_ab_a366: bmi $10 ; $a378.w
 unknown_ab_a368: rti
 
@@ -4324,7 +4324,7 @@ unknown_ab_a37f: brk $02
 unknown_ab_a381: ora ($1b, X)
 unknown_ab_a383: cop $0d
 unknown_ab_a385: ora ($0d, X)
-unknown_ab_a387: php 
+unknown_ab_a387: php
 unknown_ab_a388: ora $00, S
 unknown_ab_a38a: brk $00
 unknown_ab_a38c: brk $00
@@ -4340,10 +4340,10 @@ unknown_ab_a39e: brk $00
 unknown_ab_a3a0: bpl ($8b - $100) ; $a32d.w
 unknown_ab_a3a2: brk $e7
 unknown_ab_a3a4: bra $18 ; $a3be.w
-unknown_ab_a3a6: xce 
+unknown_ab_a3a6: xce
 unknown_ab_a3a7: tsb $bf
 unknown_ab_a3a9: brk $df
-unknown_ab_a3ab: clc 
+unknown_ab_a3ab: clc
 unknown_ab_a3ac: ora $00030e.l, X
 unknown_ab_a3b0: sbc $18fe04, X
 unknown_ab_a3b4: sbc $f8e7e0, X
@@ -4362,19 +4362,19 @@ unknown_ab_a3d3: ora $f7, S
 unknown_ab_a3d5: asl $3cdf.w
 unknown_ab_a3d8: jmp ($f8f3.w, X)
 unknown_ab_a3db: sta $78bfc7, X
-unknown_ab_a3df: sei 
+unknown_ab_a3df: sei
 unknown_ab_a3e0: pea $f000.w
 unknown_ab_a3e3: brk $68
 unknown_ab_a3e5: brk $78
-unknown_ab_a3e7: php 
+unknown_ab_a3e7: php
 unknown_ab_a3e8: cpy #$00
 unknown_ab_a3ea: bra $00 ; $a3ec.w
 unknown_ab_a3ec: brk $00
 unknown_ab_a3ee: brk $00
 unknown_ab_a3f0: bit $fc
 unknown_ab_a3f2: cpx $fc
-unknown_ab_a3f4: plp 
-unknown_ab_a3f5: sed 
+unknown_ab_a3f4: plp
+unknown_ab_a3f5: sed
 unknown_ab_a3f6: bmi ($f8 - $100) ; $a3f0.w
 unknown_ab_a3f8: rts
 
@@ -4401,20 +4401,20 @@ unknown_ab_a423: ror $16
 unknown_ab_a425: tsb $3a
 unknown_ab_a427: adc ($7f, S), Y
 unknown_ab_a429: sbc $e4cfff, X
-unknown_ab_a42d: txy 
+unknown_ab_a42d: txy
 unknown_ab_a42e: sbc $0f0390, X
 unknown_ab_a432: ora $ccfb78, X
 unknown_ab_a436: cpy $803f.w
-unknown_ab_a439: pha 
+unknown_ab_a439: pha
 unknown_ab_a43a: bpl ($88 - $100) ; $a3c4.w
 unknown_ab_a43c: ora [$9b]
 unknown_ab_a43e: bit $0010.w
 unknown_ab_a441: brk $44
 unknown_ab_a443: bmi $16 ; $a45b.w
-unknown_ab_a445: php 
+unknown_ab_a445: php
 unknown_ab_a446: adc [$ec]
-unknown_ab_a448: xba 
-unknown_ab_a449: sed 
+unknown_ab_a448: xba
+unknown_ab_a449: sed
 unknown_ab_a44a: ror $bc, X
 unknown_ab_a44c: jsr ($f81d.w, X)
 unknown_ab_a44f: ora $f0f0.w
@@ -4429,9 +4429,9 @@ unknown_ab_a462: brk $00
 unknown_ab_a464: brk $00
 unknown_ab_a466: bra $00 ; $a468.w
 unknown_ab_a468: bvs $00 ; $a46a.w
-unknown_ab_a46a: tya 
-unknown_ab_a46b: pha 
-unknown_ab_a46c: pha 
+unknown_ab_a46a: tya
+unknown_ab_a46b: pha
+unknown_ab_a46c: pha
 unknown_ab_a46d: bit $24
 unknown_ab_a46f: trb $00
 unknown_ab_a471: brk $00
@@ -4439,8 +4439,8 @@ unknown_ab_a473: brk $00
 unknown_ab_a475: brk $e0
 unknown_ab_a477: cpx #$70
 unknown_ab_a479: beq ($d0 - $100) ; $a44b.w
-unknown_ab_a47b: sec 
-unknown_ab_a47c: inx 
+unknown_ab_a47b: sec
+unknown_ab_a47c: inx
 unknown_ab_a47d: trb $0cf0.w
 unknown_ab_a480: brk $00
 unknown_ab_a482: brk $01
@@ -4449,7 +4449,7 @@ unknown_ab_a486: brk $00
 unknown_ab_a488: brk $03
 unknown_ab_a48a: brk $02
 unknown_ab_a48c: ora ($29, X)
-unknown_ab_a48e: phd 
+unknown_ab_a48e: phd
 unknown_ab_a48f: eor ($00, S), Y
 unknown_ab_a491: brk $00
 unknown_ab_a493: ora ($03, X)
@@ -4470,7 +4470,7 @@ unknown_ab_a4b8: ora ($80, X)
 unknown_ab_a4ba: brk $00
 unknown_ab_a4bc: ora ($01, X)
 unknown_ab_a4be: ora [$06]
-unknown_ab_a4c0: php 
+unknown_ab_a4c0: php
 unknown_ab_a4c1: tsb $037e.w
 unknown_ab_a4c4: ora $42
 unknown_ab_a4c6: sta ($b8, X)
@@ -4495,8 +4495,8 @@ unknown_ab_a4f1: brk $00
 unknown_ab_a4f3: brk $00
 unknown_ab_a4f5: bra $60 ; $a557.w
 unknown_ab_a4f7: cpx #$58
-unknown_ab_a4f9: clv 
-unknown_ab_a4fa: inx 
+unknown_ab_a4f9: clv
+unknown_ab_a4fa: inx
 unknown_ab_a4fb: bit $c4, X
 unknown_ab_a4fd: jsr ($fc64.w, X)
 unknown_ab_a500: brk $00
@@ -4511,17 +4511,17 @@ unknown_ab_a511: brk $00
 unknown_ab_a513: brk $01
 unknown_ab_a515: ora $05, S
 unknown_ab_a517: asl $0f
-unknown_ab_a519: clc 
+unknown_ab_a519: clc
 unknown_ab_a51a: asl $0c10.w, X
 unknown_ab_a51d: bmi $3c ; $a55b.w
 unknown_ab_a51f: jsr $0439.w
 unknown_ab_a522: ora ($23)
-unknown_ab_a524: clc 
+unknown_ab_a524: clc
 unknown_ab_a525: asl $59df.w, X
 unknown_ab_a528: cmp $31dfe0, X
-unknown_ab_a52c: nop 
+unknown_ab_a52c: nop
 unknown_ab_a52d: ora $373fdf
-unknown_ab_a531: sec 
+unknown_ab_a531: sec
 unknown_ab_a532: adc $e746.w, X
 unknown_ab_a535: sbc $60a0.w, Y
 unknown_ab_a538: bpl $20 ; $a55a.w
@@ -4534,7 +4534,7 @@ unknown_ab_a547: sbc ($d3, X)
 unknown_ab_a549: asl $e3e8.w
 unknown_ab_a54c: sbc $f0
 unknown_ab_a54e: inc $fc, X
-unknown_ab_a550: tya 
+unknown_ab_a550: tya
 unknown_ab_a551: jmp ($ef77.w, X)
 unknown_ab_a554: stz $7fe1.w, X
 unknown_ab_a557: trb $27f9.w
@@ -4558,13 +4558,13 @@ unknown_ab_a576: rts
 
 unknown_ab_a577: cpx #$20
 unknown_ab_a579: cpx #$f8
-unknown_ab_a57b: sed 
+unknown_ab_a57b: sed
 unknown_ab_a57c: cpy $a6fc.w
 unknown_ab_a57f: ror $0000.w, X
 unknown_ab_a582: brk $00
 unknown_ab_a584: cop $02
 unknown_ab_a586: brk $05
-unknown_ab_a588: php 
+unknown_ab_a588: php
 unknown_ab_a589: asl A
 unknown_ab_a58a: ora ($14, X)
 unknown_ab_a58c: ora [$10], Y
@@ -4575,21 +4575,21 @@ unknown_ab_a594: ora ($03, X)
 unknown_ab_a596: ora $06, S
 unknown_ab_a598: ora [$0c]
 unknown_ab_a59a: asl $0c18.w
-unknown_ab_a59d: clc 
+unknown_ab_a59d: clc
 unknown_ab_a59e: trb $0210.w
 unknown_ab_a5a1: asl $03
 unknown_ab_a5a3: rti
 
 unknown_ab_a5a4: tsb $ff20.w
-unknown_ab_a5a7: php 
+unknown_ab_a5a7: php
 unknown_ab_a5a8: sbc [$08], Y
 unknown_ab_a5aa: pea $ff07.w
 unknown_ab_a5ad: ora $012fcc, X
 unknown_ab_a5b1: ora [$3f]
 unknown_ab_a5b3: jmp ($d0ff.w, X)
 unknown_ab_a5b6: pea $1708.w
-unknown_ab_a5b9: php 
-unknown_ab_a5ba: clc 
+unknown_ab_a5b9: php
+unknown_ab_a5ba: clc
 unknown_ab_a5bb: ora $d31820
 unknown_ab_a5bf: and ($30, S), Y
 unknown_ab_a5c1: brk $fe
@@ -4599,15 +4599,15 @@ unknown_ab_a5c7: bpl ($e4 - $100) ; $a5ad.w
 unknown_ab_a5c9: rts
 
 unknown_ab_a5ca: rol $faf8.w, X
-unknown_ab_a5cd: sed 
+unknown_ab_a5cd: sed
 unknown_ab_a5ce: sbc $f0f014, X
 unknown_ab_a5d2: inc $fd1e.w
 unknown_ab_a5d5: ora [$7e]
 unknown_ab_a5d7: ora #$9f
-unknown_ab_a5d9: sei 
+unknown_ab_a5d9: sei
 unknown_ab_a5da: ora [$c8]
 unknown_ab_a5dc: ora [$04]
-unknown_ab_a5de: phd 
+unknown_ab_a5de: phd
 unknown_ab_a5df: tsb $00
 unknown_ab_a5e1: brk $00
 unknown_ab_a5e3: brk $c0
@@ -4615,10 +4615,10 @@ unknown_ab_a5e5: rti
 
 unknown_ab_a5e6: beq $10 ; $a5f8.w
 unknown_ab_a5e8: beq ($80 - $100) ; $a56a.w
-unknown_ab_a5ea: sei 
+unknown_ab_a5ea: sei
 unknown_ab_a5eb: rti
 
-unknown_ab_a5ec: sec 
+unknown_ab_a5ec: sec
 unknown_ab_a5ed: jsr $303c.w
 unknown_ab_a5f0: brk $00
 unknown_ab_a5f2: brk $00
@@ -4627,7 +4627,7 @@ unknown_ab_a5f6: rts
 
 unknown_ab_a5f7: beq ($90 - $100) ; $a589.w
 unknown_ab_a5f9: bvs ($c8 - $100) ; $a5c3.w
-unknown_ab_a5fb: sec 
+unknown_ab_a5fb: sec
 unknown_ab_a5fc: cpx $f41c.w
 unknown_ab_a5ff: tsb $4b41.w
 unknown_ab_a602: ora [$36], Y
@@ -4638,7 +4638,7 @@ unknown_ab_a60a: eor [$10]
 unknown_ab_a60c: cmp $59fdb6, X
 unknown_ab_a610: bit $6876.w, X
 unknown_ab_a613: jmp $78cc78
-unknown_ab_a617: dey 
+unknown_ab_a617: dey
 unknown_ab_a618: sbc ($88), Y
 unknown_ab_a61a: sbc $9e6988, X
 unknown_ab_a61e: ldx $f9
@@ -4649,7 +4649,7 @@ unknown_ab_a628: lda $7ff6.w, Y
 unknown_ab_a62b: cpy #$7f
 unknown_ab_a62d: cpy #$7f
 unknown_ab_a62f: brk $27
-unknown_ab_a631: clc 
+unknown_ab_a631: clc
 unknown_ab_a632: bvs $1f ; $a653.w
 unknown_ab_a634: rti
 
@@ -4664,7 +4664,7 @@ unknown_ab_a642: inc $7d82.w, X
 unknown_ab_a645: cmp $dcdf.w
 unknown_ab_a648: sbc $31dd3c, X
 unknown_ab_a64c: jmp [$f830]
-unknown_ab_a64f: sec 
+unknown_ab_a64f: sec
 unknown_ab_a650: sta $837d01
 unknown_ab_a654: and ($cf)
 unknown_ab_a656: and $78, S
@@ -4675,7 +4675,7 @@ unknown_ab_a65e: cmp [$20]
 unknown_ab_a660: trb $80
 unknown_ab_a662: tsb $88
 unknown_ab_a664: asl $ce58.w
-unknown_ab_a667: sed 
+unknown_ab_a667: sed
 unknown_ab_a668: dec $ea50.w, X
 unknown_ab_a66b: ora ($f6), Y
 unknown_ab_a66d: ldy $d7
@@ -4683,25 +4683,25 @@ unknown_ab_a66f: sty $f4
 unknown_ab_a671: tsb $06fe.w
 unknown_ab_a674: sbc ($8e)
 unknown_ab_a676: rol $ce, X
-unknown_ab_a678: tax 
+unknown_ab_a678: tax
 unknown_ab_a679: ror $27fa.w, X
 unknown_ab_a67c: eor $7d23.w, X
 unknown_ab_a67f: and $0f, S
-unknown_ab_a681: pld 
+unknown_ab_a681: pld
 unknown_ab_a682: ora $533613, X
 unknown_ab_a686: asl $7f, X
 unknown_ab_a688: ora $6e
 unknown_ab_a68a: eor [$54]
-unknown_ab_a68c: plb 
+unknown_ab_a68c: plb
 unknown_ab_a68d: bit $0f, X
 unknown_ab_a68f: mvn $49, $70
-unknown_ab_a692: pla 
+unknown_ab_a692: pla
 unknown_ab_a693: bvc ($e8 - $100) ; $a67d.w
 unknown_ab_a695: sta ($e8), Y
 unknown_ab_a697: sta ($f9, S), Y
 unknown_ab_a699: stx $bb, Y
 unknown_ab_a69b: cpx $64db.w
-unknown_ab_a69e: xce 
+unknown_ab_a69e: xce
 unknown_ab_a69f: bit $ff
 unknown_ab_a6a1: cmp ($19, X)
 unknown_ab_a6a3: adc $3f, X
@@ -4717,13 +4717,13 @@ unknown_ab_a6ba: cmp ($42, X)
 unknown_ab_a6bc: sta ($82, X)
 unknown_ab_a6be: bra ($83 - $100) ; $a643.w
 unknown_ab_a6c0: bit $ecf0.w, X
-unknown_ab_a6c3: ply 
+unknown_ab_a6c3: ply
 unknown_ab_a6c4: pea $fa3f.w
 unknown_ab_a6c7: asl $0dfd.w, X
 unknown_ab_a6ca: sbc $1ced1e
 unknown_ab_a6ce: sbc $0b0c.w, Y
 unknown_ab_a6d1: beq ($87 - $100) ; $a65a.w
-unknown_ab_a6d3: clc 
+unknown_ab_a6d3: clc
 unknown_ab_a6d4: ora $0c, S
 unknown_ab_a6d6: ora ($07, X)
 unknown_ab_a6d8: brl $9103 ; $37de.w
@@ -4740,17 +4740,17 @@ unknown_ab_a6ea: cmp $320b20
 unknown_ab_a6ee: asl A
 unknown_ab_a6ef: ora ($f6)
 unknown_ab_a6f1: rol $3af6.w, X
-unknown_ab_a6f4: nop 
+unknown_ab_a6f4: nop
 unknown_ab_a6f5: asl $9eea.w, X
 unknown_ab_a6f8: lda $1ffd7f, X
-unknown_ab_a6fc: plx 
+unknown_ab_a6fc: plx
 unknown_ab_a6fd: ora $0dfa.w
 unknown_ab_a700: and [$20], Y
 unknown_ab_a702: and [$00]
 unknown_ab_a704: bit $3b
 unknown_ab_a706: and [$17], Y
 unknown_ab_a708: and $0e679f
-unknown_ab_a70c: phk 
+unknown_ab_a70c: phk
 unknown_ab_a70d: tsb $8c43.w
 unknown_ab_a710: ora $7f20.w, Y
 unknown_ab_a713: rti
@@ -4759,20 +4759,20 @@ unknown_ab_a714: jmp $5c6863
 unknown_ab_a718: bvs ($c8 - $100) ; $a6e2.w
 unknown_ab_a71a: beq ($88 - $100) ; $a6a4.w
 unknown_ab_a71c: sbc ($8c)
-unknown_ab_a71e: ply 
+unknown_ab_a71e: ply
 unknown_ab_a71f: sty $9f
 unknown_ab_a721: adc $bff87f, X
 unknown_ab_a725: ldy #$df
 unknown_ab_a727: cpx #$cf
 unknown_ab_a729: beq ($ef - $100) ; $a71a.w
 unknown_ab_a72b: bvs ($f7 - $100) ; $a724.w
-unknown_ab_a72d: clc 
-unknown_ab_a72e: plx 
-unknown_ab_a72f: phd 
+unknown_ab_a72d: clc
+unknown_ab_a72e: plx
+unknown_ab_a72f: phd
 unknown_ab_a730: bra $60 ; $a792.w
 unknown_ab_a732: brk $c0
 unknown_ab_a734: bvc ($e0 - $100) ; $a716.w
-unknown_ab_a736: clc 
+unknown_ab_a736: clc
 unknown_ab_a737: jsr $3008.w
 unknown_ab_a73a: ora $080710
 unknown_ab_a73e: trb $0f
@@ -4789,14 +4789,14 @@ unknown_ab_a757: cop $1f
 unknown_ab_a759: tsb $fb
 unknown_ab_a75b: asl $07
 unknown_ab_a75d: inc $8305.w, X
-unknown_ab_a760: plx 
+unknown_ab_a760: plx
 unknown_ab_a761: brk $be
 unknown_ab_a763: trb $3f
 unknown_ab_a765: cop $1f
 unknown_ab_a767: asl A
 unknown_ab_a768: ora $8900.w, Y
 unknown_ab_a76b: brk $82
-unknown_ab_a76d: php 
+unknown_ab_a76d: php
 unknown_ab_a76e: eor $98, S
 unknown_ab_a770: sbc ($1e)
 unknown_ab_a772: inc $fb1a.w
@@ -4805,14 +4805,14 @@ unknown_ab_a778: sbc $7c07.w, X
 unknown_ab_a77b: ora [$7c]
 unknown_ab_a77d: ora [$be]
 unknown_ab_a77f: ora [$07]
-unknown_ab_a781: php 
+unknown_ab_a781: php
 unknown_ab_a782: ora [$1b], Y
 unknown_ab_a784: ora [$06]
 unknown_ab_a786: ora $583738
 unknown_ab_a78a: ora [$58], Y
 unknown_ab_a78c: eor [$18], Y
 unknown_ab_a78e: sta ($19)
-unknown_ab_a790: tsc 
+unknown_ab_a790: tsc
 unknown_ab_a791: bmi $2c ; $a7bf.w
 unknown_ab_a793: and ($79, S), Y
 unknown_ab_a795: ror $4877.w, X
@@ -4824,10 +4824,10 @@ unknown_ab_a7a1: cpy $f8ff.w
 unknown_ab_a7a4: cmp $f0eff0, X
 unknown_ab_a7a8: sbc $ef6870, X
 unknown_ab_a7ac: lsr $ddff.w, X
-unknown_ab_a7af: xce 
+unknown_ab_a7af: xce
 unknown_ab_a7b0: bit $e4, X
 unknown_ab_a7b2: brk $60
-unknown_ab_a7b4: php 
+unknown_ab_a7b4: php
 unknown_ab_a7b5: jsr $3009.w
 unknown_ab_a7b8: ora $9f9010
 unknown_ab_a7bc: bra ($b0 - $100) ; $a76e.w
@@ -4850,7 +4850,7 @@ unknown_ab_a7e0: stz $fe10.w
 unknown_ab_a7e3: brk $5f
 unknown_ab_a7e5: brk $5d
 unknown_ab_a7e7: brk $67
-unknown_ab_a7e9: dex 
+unknown_ab_a7e9: dex
 unknown_ab_a7ea: ror $c0
 unknown_ab_a7ec: adc [$c1]
 unknown_ab_a7ee: lsr $c8
@@ -4864,11 +4864,11 @@ unknown_ab_a7ff: adc [$98]
 unknown_ab_a801: ora $50, S
 unknown_ab_a803: ora ($80, X)
 unknown_ab_a805: ora ($a0), Y
-unknown_ab_a807: clc 
+unknown_ab_a807: clc
 unknown_ab_a808: beq $58 ; $a862.w
 unknown_ab_a80a: beq $4c ; $a858.w
 unknown_ab_a80c: bvs $2d ; $a83b.w
-unknown_ab_a80e: cli 
+unknown_ab_a80e: cli
 unknown_ab_a80f: ora [$7e]
 unknown_ab_a811: sep #$3f
 unknown_ab_a813: sbc ($3f, X)
@@ -4877,7 +4877,7 @@ unknown_ab_a817: cpx #$ef
 unknown_ab_a819: bcs ($df - $100) ; $a7fa.w
 unknown_ab_a81b: bcs $7f ; $a89c.w
 unknown_ab_a81d: bvc $4f ; $a86e.w
-unknown_ab_a81f: sei 
+unknown_ab_a81f: sei
 unknown_ab_a820: adc $bf0241, X
 unknown_ab_a824: and $387fff, X
 unknown_ab_a828: ror $b050.w, X
@@ -4888,18 +4888,18 @@ unknown_ab_a833: adc $c06000, X
 unknown_ab_a837: jsr $40a1.w
 unknown_ab_a83a: sbc $60bb40, X
 unknown_ab_a83e: jmp ($78e0.w, X)
-unknown_ab_a841: cld 
+unknown_ab_a841: cld
 unknown_ab_a842: pea $f8f8.w
 unknown_ab_a845: inc $0794.w
-unknown_ab_a848: clc 
+unknown_ab_a848: clc
 unknown_ab_a849: ora $0f, S
 unknown_ab_a84b: ora $02
 unknown_ab_a84d: asl $fc02.w, X
 unknown_ab_a850: and [$f0]
 unknown_ab_a852: ora $081710
-unknown_ab_a856: tdc 
+unknown_ab_a856: tdc
 unknown_ab_a857: tsb $04ff.w
-unknown_ab_a85a: plx 
+unknown_ab_a85a: plx
 unknown_ab_a85b: ora [$fd]
 unknown_ab_a85d: ora $fa, S
 unknown_ab_a85f: ora [$5f]
@@ -4913,7 +4913,7 @@ unknown_ab_a871: and $d9, S
 unknown_ab_a873: and [$f1], Y
 unknown_ab_a875: ora $fa1ff3, X
 unknown_ab_a879: rol $fe46.w, X
-unknown_ab_a87c: txs 
+unknown_ab_a87c: txs
 unknown_ab_a87d: inc $74
 unknown_ab_a87f: sty $82d1.w
 unknown_ab_a882: eor $20
@@ -4928,14 +4928,14 @@ unknown_ab_a895: rep #$7d
 unknown_ab_a897: rep #$bd
 unknown_ab_a899: sbc $fffbbe
 unknown_ab_a89d: beq $67 ; $a906.w
-unknown_ab_a89f: sei 
+unknown_ab_a89f: sei
 unknown_ab_a8a0: inc $ff07.w, X
 unknown_ab_a8a3: ora [$fe]
 unknown_ab_a8a5: asl $fd3d.w
-unknown_ab_a8a8: clc 
-unknown_ab_a8a9: xce 
+unknown_ab_a8a8: clc
+unknown_ab_a8a9: xce
 unknown_ab_a8aa: cpy #$40de.w
-unknown_ab_a8ad: sei 
+unknown_ab_a8ad: sei
 unknown_ab_a8ae: cpy #$8070.w
 unknown_ab_a8b1: ora ($80, X)
 unknown_ab_a8b3: ora ($c1, X)
@@ -4946,14 +4946,14 @@ unknown_ab_a8bc: lda $40bfc0, X
 unknown_ab_a8c0: sbc $08fa1c, X
 unknown_ab_a8c4: inc $f0, X
 unknown_ab_a8c6: sbc ($f0)
-unknown_ab_a8c8: tcs 
-unknown_ab_a8c9: tya 
+unknown_ab_a8c8: tcs
+unknown_ab_a8c9: tya
 unknown_ab_a8ca: ora $1c1d1c, X
 unknown_ab_a8ce: ora $e338.w, Y
 unknown_ab_a8d1: tsb $f7
 unknown_ab_a8d3: tsb $f80f.w
 unknown_ab_a8d6: adc $04ff0c, X
-unknown_ab_a8da: xce 
+unknown_ab_a8da: xce
 unknown_ab_a8db: tsb $fb
 unknown_ab_a8dd: asl $df
 unknown_ab_a8df: ora [$0f]
@@ -4964,7 +4964,7 @@ unknown_ab_a8e5: rts
 unknown_ab_a8e6: asl $3e60.w, X
 unknown_ab_a8e9: cpx #$c06c.w
 unknown_ab_a8ec: jmp $203c00
-unknown_ab_a8f0: xce 
+unknown_ab_a8f0: xce
 unknown_ab_a8f1: ora $0ffd.w
 unknown_ab_a8f4: sbc $eb1f.w
 unknown_ab_a8f7: ora $ae3eda, X
@@ -4976,19 +4976,19 @@ unknown_ab_a906: asl $33, X
 unknown_ab_a908: eor $6a11.w
 unknown_ab_a90b: bmi $21 ; $a92e.w
 unknown_ab_a90d: brk $39
-unknown_ab_a90f: php 
-unknown_ab_a910: tdc 
+unknown_ab_a90f: php
+unknown_ab_a910: tdc
 unknown_ab_a911: sta $fb
 unknown_ab_a913: sta $bb
 unknown_ab_a915: cpy $6d
 unknown_ab_a917: lsr $637e.w, X
 unknown_ab_a91a: adc $706f41, X
 unknown_ab_a91e: and $07ff30
-unknown_ab_a922: xce 
+unknown_ab_a922: xce
 unknown_ab_a923: ora [$7f]
 unknown_ab_a925: stx $3f
 unknown_ab_a927: dec $1e
-unknown_ab_a929: xce 
+unknown_ab_a929: xce
 unknown_ab_a92a: cmp $3ed1.w, X
 unknown_ab_a92d: brk $71
 unknown_ab_a92f: cop $18
@@ -5002,7 +5002,7 @@ unknown_ab_a940: sbc $f1f3.w, Y
 unknown_ab_a943: ora $c0, S
 unknown_ab_a945: cop $f2
 unknown_ab_a947: asl $fc05.w, X
-unknown_ab_a94a: phd 
+unknown_ab_a94a: phd
 unknown_ab_a94b: sbc $787e.w, Y
 unknown_ab_a94e: cpx $00
 unknown_ab_a950: asl $01
@@ -5019,11 +5019,11 @@ unknown_ab_a969: mvp $40, $36
 unknown_ab_a96c: ror $7c00.w, X
 unknown_ab_a96f: brk $6f
 unknown_ab_a971: sta $f57ff9, X
-unknown_ab_a975: tcs 
+unknown_ab_a975: tcs
 unknown_ab_a976: sbc $1b, X
 unknown_ab_a978: cmp $3b, X
 unknown_ab_a97a: sbc ($3f, S), Y
-unknown_ab_a97c: tsx 
+unknown_ab_a97c: tsx
 unknown_ab_a97d: ror $fe6e.w, X
 unknown_ab_a980: eor ($1c, S), Y
 unknown_ab_a982: lda ($4c, X)
@@ -5031,7 +5031,7 @@ unknown_ab_a984: sbc $0c, S
 unknown_ab_a986: inc $07, X
 unknown_ab_a988: eor $09, X
 unknown_ab_a98a: bvs $2c ; $a9b8.w
-unknown_ab_a98c: sec 
+unknown_ab_a98c: sec
 unknown_ab_a98d: asl $3c
 unknown_ab_a98f: ora ($ec), Y
 unknown_ab_a991: bcc ($fe - $100) ; $a991.w
@@ -5043,16 +5043,16 @@ unknown_ab_a99e: and [$2e], Y
 unknown_ab_a9a0: lda $f9b6f0, X
 unknown_ab_a9a4: inc $e9, X
 unknown_ab_a9a6: inc $a0c1.w, X
-unknown_ab_a9a9: clv 
+unknown_ab_a9a9: clv
 unknown_ab_a9aa: cmp ($18), Y
-unknown_ab_a9ac: pla 
+unknown_ab_a9ac: pla
 unknown_ab_a9ad: ora $012232
 unknown_ab_a9b1: rti
 
-unknown_ab_a9b2: php 
-unknown_ab_a9b3: pha 
-unknown_ab_a9b4: clc 
-unknown_ab_a9b5: pha 
+unknown_ab_a9b2: php
+unknown_ab_a9b3: pha
+unknown_ab_a9b4: clc
+unknown_ab_a9b5: pha
 unknown_ab_a9b6: bmi ($c0 - $100) ; $a978.w
 unknown_ab_a9b8: eor $30efe0, X
 unknown_ab_a9bc: sbc [$18], Y
@@ -5096,14 +5096,14 @@ unknown_ab_aa1a: ora ($03, X)
 unknown_ab_aa1c: brk $00
 unknown_ab_aa1e: brk $00
 unknown_ab_aa20: bpl $5f ; $aa81.w
-unknown_ab_aa22: plp 
+unknown_ab_aa22: plp
 unknown_ab_aa23: sta $f952e6
 unknown_ab_aa27: asl A
 unknown_ab_aa28: sbc $efc1.w, X
 unknown_ab_aa2b: jsr $007e.w
 unknown_ab_aa2e: ora $ef00.w
 unknown_ab_aa31: bcs ($f7 - $100) ; $aa2a.w
-unknown_ab_aa33: clc 
+unknown_ab_aa33: clc
 unknown_ab_aa34: adc $ef8f.w, X
 unknown_ab_aa37: pea $3ef9.w
 unknown_ab_aa3a: and [$df]
@@ -5131,26 +5131,26 @@ unknown_ab_aa6c: brk $00
 unknown_ab_aa6e: brk $00
 unknown_ab_aa70: cpx $1c
 unknown_ab_aa72: cpx $c81c.w
-unknown_ab_aa75: sec 
-unknown_ab_aa76: clc 
-unknown_ab_aa77: sed 
+unknown_ab_aa75: sec
+unknown_ab_aa76: clc
+unknown_ab_aa77: sed
 unknown_ab_aa78: rts
 
 unknown_ab_aa79: cpx #$c080.w
 unknown_ab_aa7c: brk $00
 unknown_ab_aa7e: brk $00
-unknown_ab_aa80: sec 
+unknown_ab_aa80: sec
 unknown_ab_aa81: tsb $1c
 unknown_ab_aa83: ora [$1f]
 unknown_ab_aa85: ora $0f, S
 unknown_ab_aa87: brk $0b
-unknown_ab_aa89: php 
+unknown_ab_aa89: php
 unknown_ab_aa8a: cop $02
 unknown_ab_aa8c: brk $00
 unknown_ab_aa8e: brk $00
 unknown_ab_aa90: and [$38]
 unknown_ab_aa92: and [$38], Y
-unknown_ab_aa94: tcs 
+unknown_ab_aa94: tcs
 unknown_ab_aa95: trb $0f0c.w
 unknown_ab_aa98: asl $0f
 unknown_ab_aa9a: ora ($03, X)
@@ -5167,7 +5167,7 @@ unknown_ab_aab0: sbc $20ff40, X
 unknown_ab_aab4: jsr ($df13.w, X)
 unknown_ab_aab7: rol $b857.w, X
 unknown_ab_aaba: lda $fc, S
-unknown_ab_aabc: sei 
+unknown_ab_aabc: sei
 unknown_ab_aabd: adc $320f0f, X
 unknown_ab_aac1: beq ($e6 - $100) ; $aaa9.w
 unknown_ab_aac3: sbc $35, S
@@ -5178,10 +5178,10 @@ unknown_ab_aacc: inc $e002.w, X
 unknown_ab_aacf: jsr $0d3e.w
 unknown_ab_aad2: sbc $f8f718, X
 unknown_ab_aad6: cmp [$38], Y
-unknown_ab_aad8: cld 
+unknown_ab_aad8: cld
 unknown_ab_aad9: and $3c3fcb, X
 unknown_ab_aadd: inc $e0c0.w, X
-unknown_ab_aae0: clv 
+unknown_ab_aae0: clv
 unknown_ab_aae1: cpx #$c070.w
 unknown_ab_aae4: beq ($c0 - $100) ; $aaa6.w
 unknown_ab_aae6: cpx #$c080.w
@@ -5189,7 +5189,7 @@ unknown_ab_aae9: brk $00
 unknown_ab_aaeb: brk $00
 unknown_ab_aaed: brk $00
 unknown_ab_aaef: brk $e8
-unknown_ab_aaf1: clc 
+unknown_ab_aaf1: clc
 unknown_ab_aaf2: bne $30 ; $ab24.w
 unknown_ab_aaf4: bne $30 ; $ab26.w
 unknown_ab_aaf6: bcs $70 ; $ab68.w
@@ -5198,7 +5198,7 @@ unknown_ab_aaf8: rts
 unknown_ab_aaf9: cpx #$8080.w
 unknown_ab_aafc: brk $00
 unknown_ab_aafe: brk $00
-unknown_ab_ab00: clc 
+unknown_ab_ab00: clc
 unknown_ab_ab01: tsb $273e.w
 unknown_ab_ab04: ora $000700.l
 unknown_ab_ab08: ora [$04]
@@ -5206,14 +5206,14 @@ unknown_ab_ab0a: brk $00
 unknown_ab_ab0c: brk $00
 unknown_ab_ab0e: brk $00
 unknown_ab_ab10: and $381730
-unknown_ab_ab14: clc 
+unknown_ab_ab14: clc
 unknown_ab_ab15: ora $030f0e, X
 unknown_ab_ab19: ora [$00]
 unknown_ab_ab1b: brk $00
 unknown_ab_ab1d: brk $00
 unknown_ab_ab1f: brk $80
 unknown_ab_ab21: and ($60), Y
-unknown_ab_ab23: clv 
+unknown_ab_ab23: clv
 unknown_ab_ab24: ldy #$b89c.w
 unknown_ab_ab27: ora $7700fc
 unknown_ab_ab2b: ora [$1d]
@@ -5226,7 +5226,7 @@ unknown_ab_ab36: and [$f8], Y
 unknown_ab_ab38: sbc $f8e7ff
 unknown_ab_ab3c: and ($3e), Y
 unknown_ab_ab3e: ora $80300f
-unknown_ab_ab42: tsc 
+unknown_ab_ab42: tsc
 unknown_ab_ab43: ora ($1f)
 unknown_ab_ab45: cpx $3f
 unknown_ab_ab47: cpy #$017f.w
@@ -5236,7 +5236,7 @@ unknown_ab_ab4f: brk $7e
 unknown_ab_ab51: ora #$19ef.w
 unknown_ab_ab54: sbc $d213.w, X
 unknown_ab_ab57: and $b7fefd, X
-unknown_ab_ab5b: tdc 
+unknown_ab_ab5b: tdc
 unknown_ab_ab5c: asl $f0fe.w, X
 unknown_ab_ab5f: beq ($ec - $100) ; $ab4d.w
 unknown_ab_ab61: jsr $10f8.w
@@ -5250,8 +5250,8 @@ unknown_ab_ab6b: brk $00
 unknown_ab_ab6d: brk $00
 unknown_ab_ab6f: brk $64
 unknown_ab_ab71: jmp [$ecdc]
-unknown_ab_ab74: sec 
-unknown_ab_ab75: sed 
+unknown_ab_ab74: sec
+unknown_ab_ab75: sed
 unknown_ab_ab76: rts
 
 unknown_ab_ab77: ldy #$40c0.w
@@ -5259,15 +5259,15 @@ unknown_ab_ab7a: bra ($80 - $100) ; $aafc.w
 unknown_ab_ab7c: brk $00
 unknown_ab_ab7e: brk $00
 unknown_ab_ab80: rol $11, X
-unknown_ab_ab82: tcs 
-unknown_ab_ab83: php 
+unknown_ab_ab82: tcs
+unknown_ab_ab83: php
 unknown_ab_ab84: ora $020601
 unknown_ab_ab88: ora $00, S
 unknown_ab_ab8a: ora $02, S
 unknown_ab_ab8c: brk $00
 unknown_ab_ab8e: brk $00
 unknown_ab_ab90: and ($2e, S), Y
-unknown_ab_ab92: tcs 
+unknown_ab_ab92: tcs
 unknown_ab_ab93: ora [$0d], Y
 unknown_ab_ab95: asl $0506.w
 unknown_ab_ab98: asl $07
@@ -5276,11 +5276,11 @@ unknown_ab_ab9c: brk $00
 unknown_ab_ab9e: brk $00
 unknown_ab_aba0: asl $0580.w
 unknown_ab_aba3: bvs ($c5 - $100) ; $ab6a.w
-unknown_ab_aba5: clc 
+unknown_ab_aba5: clc
 unknown_ab_aba6: inc $c300.w, X
 unknown_ab_aba9: brk $fd
 unknown_ab_abab: trb $80fd.w
-unknown_ab_abae: phd 
+unknown_ab_abae: phd
 unknown_ab_abaf: brk $ff
 unknown_ab_abb1: ora ($ff, X)
 unknown_ab_abb3: brl $e2ff ; $8eb5.w
@@ -5307,8 +5307,8 @@ unknown_ab_abeb: brk $80
 unknown_ab_abed: bra $00 ; $abef.w
 unknown_ab_abef: brk $64
 unknown_ab_abf1: jsr ($fcec.w, X)
-unknown_ab_abf4: clv 
-unknown_ab_abf5: sed 
+unknown_ab_abf4: clv
+unknown_ab_abf5: sed
 unknown_ab_abf6: jsr $60e0.w
 unknown_ab_abf9: cpx #$c0c0.w
 unknown_ab_abfc: brk $80
@@ -5317,7 +5317,7 @@ unknown_ab_ac00: ora ($01, X)
 unknown_ab_ac02: ora [$07]
 unknown_ab_ac04: ora #$160f.w
 unknown_ab_ac07: ora $1817.w, Y
-unknown_ab_ac0a: tcs 
+unknown_ab_ac0a: tcs
 unknown_ab_ac0b: asl $1e15.w, X
 unknown_ab_ac0e: asl A
 unknown_ab_ac0f: ora $060002, X
@@ -5330,33 +5330,33 @@ unknown_ab_ac21: brk $60
 unknown_ab_ac23: rts
 
 unknown_ab_ac24: bcc ($f0 - $100) ; $ac16.w
-unknown_ab_ac26: inx 
-unknown_ab_ac27: tya 
-unknown_ab_ac28: inx 
-unknown_ab_ac29: tya 
-unknown_ab_ac2a: tay 
-unknown_ab_ac2b: sed 
+unknown_ab_ac26: inx
+unknown_ab_ac27: tya
+unknown_ab_ac28: inx
+unknown_ab_ac29: tya
+unknown_ab_ac2a: tay
+unknown_ab_ac2b: sed
 unknown_ab_ac2c: bne ($f0 - $100) ; $ac1e.w
-unknown_ab_ac2e: sec 
-unknown_ab_ac2f: sei 
+unknown_ab_ac2e: sec
+unknown_ab_ac2f: sei
 unknown_ab_ac30: cpy #$e000.w
 unknown_ab_ac33: rts
 
 unknown_ab_ac34: bvs $70 ; $aca6.w
-unknown_ab_ac36: sei 
-unknown_ab_ac37: sei 
-unknown_ab_ac38: sei 
-unknown_ab_ac39: sei 
-unknown_ab_ac3a: sei 
-unknown_ab_ac3b: sei 
-unknown_ab_ac3c: sei 
+unknown_ab_ac36: sei
+unknown_ab_ac37: sei
+unknown_ab_ac38: sei
+unknown_ab_ac39: sei
+unknown_ab_ac3a: sei
+unknown_ab_ac3b: sei
+unknown_ab_ac3c: sei
 unknown_ab_ac3d: bvs ($f0 - $100) ; $ac2f.w
 unknown_ab_ac3f: bvs $01 ; $ac42.w
 unknown_ab_ac41: ora ($07, X)
 unknown_ab_ac43: ora [$09]
 unknown_ab_ac45: ora $171916
-unknown_ab_ac49: clc 
-unknown_ab_ac4a: tcs 
+unknown_ab_ac49: clc
+unknown_ab_ac4a: tcs
 unknown_ab_ac4b: asl $1e15.w, X
 unknown_ab_ac4e: asl A
 unknown_ab_ac4f: ora $060002, X
@@ -5369,26 +5369,26 @@ unknown_ab_ac61: brk $60
 unknown_ab_ac63: rts
 
 unknown_ab_ac64: bcc ($f0 - $100) ; $ac56.w
-unknown_ab_ac66: inx 
-unknown_ab_ac67: tya 
-unknown_ab_ac68: inx 
-unknown_ab_ac69: tya 
-unknown_ab_ac6a: tay 
-unknown_ab_ac6b: sed 
+unknown_ab_ac66: inx
+unknown_ab_ac67: tya
+unknown_ab_ac68: inx
+unknown_ab_ac69: tya
+unknown_ab_ac6a: tay
+unknown_ab_ac6b: sed
 unknown_ab_ac6c: bne ($f0 - $100) ; $ac5e.w
-unknown_ab_ac6e: sec 
-unknown_ab_ac6f: sei 
+unknown_ab_ac6e: sec
+unknown_ab_ac6f: sei
 unknown_ab_ac70: cpy #$e000.w
 unknown_ab_ac73: rts
 
 unknown_ab_ac74: bvs $70 ; $ace6.w
-unknown_ab_ac76: sei 
-unknown_ab_ac77: sei 
-unknown_ab_ac78: sei 
-unknown_ab_ac79: sei 
-unknown_ab_ac7a: sei 
-unknown_ab_ac7b: sei 
-unknown_ab_ac7c: sei 
+unknown_ab_ac76: sei
+unknown_ab_ac77: sei
+unknown_ab_ac78: sei
+unknown_ab_ac79: sei
+unknown_ab_ac7a: sei
+unknown_ab_ac7b: sei
+unknown_ab_ac7c: sei
 unknown_ab_ac7d: bvs ($f0 - $100) ; $ac6f.w
 unknown_ab_ac7f: bvs $02 ; $ac83.w
 unknown_ab_ac81: ora $01, S
@@ -5480,7 +5480,7 @@ unknown_ab_ad2b: bne ($90 - $100) ; $acbd.w
 unknown_ab_ad2d: bne $00 ; $ad2f.w
 unknown_ab_ad2f: jsr $00a8.w
 unknown_ab_ad32: cpx $00
-unknown_ab_ad34: tyx 
+unknown_ab_ad34: tyx
 unknown_ab_ad35: brk $b4
 unknown_ab_ad37: brk $11
 unknown_ab_ad39: brk $00
@@ -5541,7 +5541,7 @@ unknown_ab_ada5: brk $00
 unknown_ab_ada7: brk $01
 unknown_ab_ada9: ora ($07, X)
 unknown_ab_adab: ora $0d
-unknown_ab_adad: phd 
+unknown_ab_adad: phd
 unknown_ab_adae: ora #$0005.w
 unknown_ab_adb1: brk $00
 unknown_ab_adb3: brk $00
@@ -5571,13 +5571,13 @@ unknown_ab_ade1: rts
 
 unknown_ab_ade2: ldy #$40b0.w
 unknown_ab_ade5: cpy #$f010.w
-unknown_ab_ade8: plp 
-unknown_ab_ade9: pla 
+unknown_ab_ade8: plp
+unknown_ab_ade9: pla
 unknown_ab_adea: dec A
-unknown_ab_adeb: sei 
+unknown_ab_adeb: sei
 unknown_ab_adec: pea $f8f4.w
-unknown_ab_adef: sed 
-unknown_ab_adf0: php 
+unknown_ab_adef: sed
+unknown_ab_adf0: php
 unknown_ab_adf1: brk $c8
 unknown_ab_adf3: brk $78
 unknown_ab_adf5: brk $1c
@@ -5595,31 +5595,31 @@ unknown_ab_ae0f: tsb $16
 unknown_ab_ae11: asl $13
 unknown_ab_ae13: brk $17
 unknown_ab_ae15: brk $0c
-unknown_ab_ae17: clc 
-unknown_ab_ae18: php 
-unknown_ab_ae19: clc 
+unknown_ab_ae17: clc
+unknown_ab_ae18: php
+unknown_ab_ae19: clc
 unknown_ab_ae1a: tsb $0518.w
 unknown_ab_ae1d: tsb $0401.w
-unknown_ab_ae20: inx 
-unknown_ab_ae21: inx 
+unknown_ab_ae20: inx
+unknown_ab_ae21: inx
 unknown_ab_ae22: beq ($f0 - $100) ; $ae14.w
 unknown_ab_ae24: brk $00
 unknown_ab_ae26: brk $00
 unknown_ab_ae28: cpy #$88c0.w
-unknown_ab_ae2b: dey 
+unknown_ab_ae2b: dey
 unknown_ab_ae2c: bpl $10 ; $ae3e.w
 unknown_ab_ae2e: brk $00
 unknown_ab_ae30: bvs $60 ; $ae92.w
-unknown_ab_ae32: php 
+unknown_ab_ae32: php
 unknown_ab_ae33: brk $f8
 unknown_ab_ae35: brk $f8
 unknown_ab_ae37: bpl $38 ; $ae71.w
-unknown_ab_ae39: clc 
+unknown_ab_ae39: clc
 unknown_ab_ae3a: bvs $18 ; $ae54.w
 unknown_ab_ae3c: cpx #$a030.w
 unknown_ab_ae3f: jsr $1f16.w
 unknown_ab_ae42: ora $0f, S
-unknown_ab_ae44: php 
+unknown_ab_ae44: php
 unknown_ab_ae45: ora ($13, X)
 unknown_ab_ae47: ora $31, S
 unknown_ab_ae49: jsr $103130
@@ -5632,17 +5632,17 @@ unknown_ab_ae58: tsb $0e3a.w
 unknown_ab_ae5b: and $01, S
 unknown_ab_ae5d: ora ($00), Y
 unknown_ab_ae5f: brk $e8
-unknown_ab_ae61: inx 
+unknown_ab_ae61: inx
 unknown_ab_ae62: beq ($f0 - $100) ; $ae54.w
 unknown_ab_ae64: brk $00
 unknown_ab_ae66: brk $00
 unknown_ab_ae68: tsb $04
 unknown_ab_ae6a: tsb $04
-unknown_ab_ae6c: php 
-unknown_ab_ae6d: php 
+unknown_ab_ae6c: php
+unknown_ab_ae6d: php
 unknown_ab_ae6e: brk $00
 unknown_ab_ae70: bvs $60 ; $aed2.w
-unknown_ab_ae72: php 
+unknown_ab_ae72: php
 unknown_ab_ae73: brk $f8
 unknown_ab_ae75: brk $f8
 unknown_ab_ae77: bpl ($f8 - $100) ; $ae71.w
@@ -5668,10 +5668,10 @@ unknown_ab_aea0: bvs ($f0 - $100) ; $ae92.w
 unknown_ab_aea2: jmp $fcf8dc
 unknown_ab_aea6: jsr ($f0fc.w, X)
 unknown_ab_aea9: beq $68 ; $af13.w
-unknown_ab_aeab: pla 
-unknown_ab_aeac: php 
+unknown_ab_aeab: pla
+unknown_ab_aeac: php
 unknown_ab_aead: brk $0c
-unknown_ab_aeaf: php 
+unknown_ab_aeaf: php
 unknown_ab_aeb0: rts
 
 unknown_ab_aeb1: brk $64
@@ -5680,7 +5680,7 @@ unknown_ab_aeb5: brk $80
 unknown_ab_aeb7: brk $0c
 unknown_ab_aeb9: brk $90
 unknown_ab_aebb: brk $f0
-unknown_ab_aebd: tya 
+unknown_ab_aebd: tya
 unknown_ab_aebe: bne ($9c - $100) ; $ae5c.w
 unknown_ab_aec0: brk $00
 unknown_ab_aec2: brk $00
@@ -5705,7 +5705,7 @@ unknown_ab_aee6: brk $00
 unknown_ab_aee8: brk $00
 unknown_ab_aeea: cpx #$70e0.w
 unknown_ab_aeed: beq ($e5 - $100) ; $aed4.w
-unknown_ab_aeef: xba 
+unknown_ab_aeef: xba
 unknown_ab_aef0: brk $00
 unknown_ab_aef2: brk $00
 unknown_ab_aef4: brk $00
@@ -5734,15 +5734,15 @@ unknown_ab_af1d: ora $203f21
 unknown_ab_af21: ldy #$c040.w
 unknown_ab_af24: jmp ($d8fc.w, X)
 unknown_ab_af27: jmp [$fcfc]
-unknown_ab_af2a: sed 
-unknown_ab_af2b: sed 
+unknown_ab_af2a: sed
+unknown_ab_af2b: sed
 unknown_ab_af2c: rts
 
 unknown_ab_af2d: rts
 
 unknown_ab_af2e: asl $04
 unknown_ab_af30: bvc $00 ; $af32.w
-unknown_ab_af32: sei 
+unknown_ab_af32: sei
 unknown_ab_af33: brk $64
 unknown_ab_af35: brk $e0
 unknown_ab_af37: brk $20
@@ -5803,8 +5803,8 @@ unknown_ab_afa5: cpx #$d0d0.w
 unknown_ab_afa8: bcc ($90 - $100) ; $af3a.w
 unknown_ab_afaa: brk $00
 unknown_ab_afac: bvs $50 ; $affe.w
-unknown_ab_afae: cli 
-unknown_ab_afaf: pla 
+unknown_ab_afae: cli
+unknown_ab_afaf: pla
 unknown_ab_afb0: lda $0c00.w, Y
 unknown_ab_afb3: brk $50
 unknown_ab_afb5: brk $a0
@@ -5831,8 +5831,8 @@ unknown_ab_afdd: brk $00
 unknown_ab_afdf: brk $30
 unknown_ab_afe1: bmi ($84 - $100) ; $af67.w
 unknown_ab_afe3: sty $cc
-unknown_ab_afe5: pha 
-unknown_ab_afe6: iny 
+unknown_ab_afe5: pha
+unknown_ab_afe6: iny
 unknown_ab_afe7: bra $40 ; $b029.w
 unknown_ab_afe9: brk $00
 unknown_ab_afeb: brk $00
@@ -5841,7 +5841,7 @@ unknown_ab_afef: brk $ce
 unknown_ab_aff1: brk $7a
 unknown_ab_aff3: sty $32
 unknown_ab_aff5: sty $c834.w
-unknown_ab_aff8: clv 
+unknown_ab_aff8: clv
 unknown_ab_aff9: rti
 
 unknown_ab_affa: rts
@@ -5850,7 +5850,7 @@ unknown_ab_affb: brk $00
 unknown_ab_affd: brk $00
 unknown_ab_afff: brk $10
 unknown_ab_b001: brk $00
-unknown_ab_b003: php 
+unknown_ab_b003: php
 unknown_ab_b004: brk $04
 unknown_ab_b006: ora ($01, X)
 unknown_ab_b008: tsb $05
@@ -5858,7 +5858,7 @@ unknown_ab_b00a: ora ($04, X)
 unknown_ab_b00c: ora $06, S
 unknown_ab_b00e: ora $06
 unknown_ab_b010: bpl $10 ; $b022.w
-unknown_ab_b012: php 
+unknown_ab_b012: php
 unknown_ab_b013: brk $0d
 unknown_ab_b015: brk $07
 unknown_ab_b017: brk $0f
@@ -5899,7 +5899,7 @@ unknown_ab_b05b: brk $0c
 unknown_ab_b05d: brk $1f
 unknown_ab_b05f: brk $00
 unknown_ab_b061: brk $04
-unknown_ab_b063: php 
+unknown_ab_b063: php
 unknown_ab_b064: brk $30
 unknown_ab_b066: cpy #$40c0.w
 unknown_ab_b069: cpy #$d050.w
@@ -5932,7 +5932,7 @@ unknown_ab_b09d: asl $05
 unknown_ab_b09f: asl $67
 unknown_ab_b0a1: adc [$20]
 unknown_ab_b0a3: cpx #$20ac.w
-unknown_ab_b0a6: plp 
+unknown_ab_b0a6: plp
 unknown_ab_b0a7: jsr $e020.w
 unknown_ab_b0aa: bit $98e0.w
 unknown_ab_b0ad: brk $00
@@ -5942,7 +5942,7 @@ unknown_ab_b0b3: beq ($d8 - $100) ; $b08d.w
 unknown_ab_b0b5: jsr $a0d8.w
 unknown_ab_b0b8: bpl ($f0 - $100) ; $b0aa.w
 unknown_ab_b0ba: bpl ($f0 - $100) ; $b0ac.w
-unknown_ab_b0bc: pla 
+unknown_ab_b0bc: pla
 unknown_ab_b0bd: jsr $f0e0.w
 unknown_ab_b0c0: brk $00
 unknown_ab_b0c2: brk $00
@@ -5978,7 +5978,7 @@ unknown_ab_b0fc: brk $00
 unknown_ab_b0fe: brk $00
 unknown_ab_b100: cop $03
 unknown_ab_b102: cop $03
-unknown_ab_b104: tcs 
+unknown_ab_b104: tcs
 unknown_ab_b105: cop $02
 unknown_ab_b107: ora $02, S
 unknown_ab_b109: ora $03, S
@@ -5997,7 +5997,7 @@ unknown_ab_b121: per $e223 ; $9347.w
 unknown_ab_b124: lda $2c21.w
 unknown_ab_b127: jsr $e020.w
 unknown_ab_b12a: bit $e0
-unknown_ab_b12c: tya 
+unknown_ab_b12c: tya
 unknown_ab_b12d: brk $00
 unknown_ab_b12f: brk $9d
 unknown_ab_b131: beq $1f ; $b152.w
@@ -6085,7 +6085,7 @@ unknown_ab_b1d9: ora ($01, X)
 unknown_ab_b1db: ora ($02, X)
 unknown_ab_b1dd: ora $01, S
 unknown_ab_b1df: ora $e8, S
-unknown_ab_b1e1: cli 
+unknown_ab_b1e1: cli
 unknown_ab_b1e2: rts
 
 unknown_ab_b1e3: rts
@@ -6114,10 +6114,10 @@ unknown_ab_b213: brk $3e
 unknown_ab_b215: asl $0e1f.w
 unknown_ab_b218: ora $000f00.l
 unknown_ab_b21c: ora $000600.l
-unknown_ab_b220: tay 
-unknown_ab_b221: tya 
-unknown_ab_b222: pha 
-unknown_ab_b223: php 
+unknown_ab_b220: tay
+unknown_ab_b221: tya
+unknown_ab_b222: pha
+unknown_ab_b223: php
 unknown_ab_b224: jsr $3090.w
 unknown_ab_b227: bvc ($c0 - $100) ; $b1e9.w
 unknown_ab_b229: cpy #$a080.w
@@ -6144,10 +6144,10 @@ unknown_ab_b255: asl A
 unknown_ab_b256: ora $000f0e.l, X
 unknown_ab_b25a: ora $003f00.l, X
 unknown_ab_b25e: bpl $00 ; $b260.w
-unknown_ab_b260: clv 
-unknown_ab_b261: tay 
-unknown_ab_b262: pla 
-unknown_ab_b263: php 
+unknown_ab_b260: clv
+unknown_ab_b261: tay
+unknown_ab_b262: pla
+unknown_ab_b263: php
 unknown_ab_b264: brk $90
 unknown_ab_b266: bmi $50 ; $b2b8.w
 unknown_ab_b268: cpy #$b0c0.w
@@ -6167,7 +6167,7 @@ unknown_ab_b283: brk $00
 unknown_ab_b285: brk $00
 unknown_ab_b287: brk $03
 unknown_ab_b289: ora $08, S
-unknown_ab_b28b: php 
+unknown_ab_b28b: php
 unknown_ab_b28c: ora #$1504.w
 unknown_ab_b28f: tsb $0706.w
 unknown_ab_b292: ora $03, S
@@ -6182,18 +6182,18 @@ unknown_ab_b2a4: brk $00
 unknown_ab_b2a6: bra ($80 - $100) ; $b228.w
 unknown_ab_b2a8: bra ($80 - $100) ; $b22a.w
 unknown_ab_b2aa: bcc ($90 - $100) ; $b23c.w
-unknown_ab_b2ac: php 
+unknown_ab_b2ac: php
 unknown_ab_b2ad: bpl ($84 - $100) ; $b233.w
-unknown_ab_b2af: dey 
+unknown_ab_b2af: dey
 unknown_ab_b2b0: bvs ($f0 - $100) ; $b2a2.w
 unknown_ab_b2b2: beq ($f0 - $100) ; $b2a4.w
 unknown_ab_b2b4: cpx #$6000.w
 unknown_ab_b2b7: cpx #$f040.w
 unknown_ab_b2ba: rts
 
-unknown_ab_b2bb: clv 
-unknown_ab_b2bc: sed 
-unknown_ab_b2bd: sec 
+unknown_ab_b2bb: clv
+unknown_ab_b2bc: sed
+unknown_ab_b2bd: sec
 unknown_ab_b2be: tsb $000c.w
 unknown_ab_b2c1: brk $00
 unknown_ab_b2c3: brk $00
@@ -6228,8 +6228,8 @@ unknown_ab_b302: brk $00
 unknown_ab_b304: brk $00
 unknown_ab_b306: brk $00
 unknown_ab_b308: ora $03, S
-unknown_ab_b30a: php 
-unknown_ab_b30b: php 
+unknown_ab_b30a: php
+unknown_ab_b30b: php
 unknown_ab_b30c: ora #$1504.w
 unknown_ab_b30f: tsb $0706.w
 unknown_ab_b312: ora $03, S
@@ -6244,18 +6244,18 @@ unknown_ab_b324: brk $00
 unknown_ab_b326: bra ($80 - $100) ; $b2a8.w
 unknown_ab_b328: bra ($80 - $100) ; $b2aa.w
 unknown_ab_b32a: bcc ($90 - $100) ; $b2bc.w
-unknown_ab_b32c: php 
+unknown_ab_b32c: php
 unknown_ab_b32d: bpl ($84 - $100) ; $b2b3.w
-unknown_ab_b32f: dey 
+unknown_ab_b32f: dey
 unknown_ab_b330: bvs ($f0 - $100) ; $b322.w
 unknown_ab_b332: beq ($f0 - $100) ; $b324.w
 unknown_ab_b334: cpx #$6000.w
 unknown_ab_b337: cpx #$f040.w
 unknown_ab_b33a: rts
 
-unknown_ab_b33b: sed 
-unknown_ab_b33c: sed 
-unknown_ab_b33d: sei 
+unknown_ab_b33b: sed
+unknown_ab_b33c: sed
+unknown_ab_b33d: sei
 unknown_ab_b33e: tsb $000c.w
 unknown_ab_b341: brk $00
 unknown_ab_b343: brk $00
@@ -6305,22 +6305,22 @@ unknown_ab_b3a1: jsr $e060.w
 unknown_ab_b3a4: cpx #$e0e0.w
 unknown_ab_b3a7: rts
 
-unknown_ab_b3a8: clv 
+unknown_ab_b3a8: clv
 unknown_ab_b3a9: bvs $70 ; $b41b.w
-unknown_ab_b3ab: sed 
+unknown_ab_b3ab: sed
 unknown_ab_b3ac: cpx #$f460.w
-unknown_ab_b3af: sec 
+unknown_ab_b3af: sec
 unknown_ab_b3b0: ora $fc, S
 unknown_ab_b3b2: stx $38, Y
-unknown_ab_b3b4: clc 
+unknown_ab_b3b4: clc
 unknown_ab_b3b5: bmi $18 ; $b3cf.w
-unknown_ab_b3b7: sed 
+unknown_ab_b3b7: sed
 unknown_ab_b3b8: mvn $98, $20
 unknown_ab_b3bb: rts
 
-unknown_ab_b3bc: clc 
-unknown_ab_b3bd: sed 
-unknown_ab_b3be: clc 
+unknown_ab_b3bc: clc
+unknown_ab_b3bd: sed
+unknown_ab_b3be: clc
 unknown_ab_b3bf: cpx #$0400.w
 unknown_ab_b3c2: asl $02
 unknown_ab_b3c4: asl $02
@@ -6646,10 +6646,10 @@ unknown_ab_b64f: brk $20
 unknown_ab_b651: jsr $2020.w
 unknown_ab_b654: bpl $10 ; $b666.w
 unknown_ab_b656: bpl $10 ; $b668.w
-unknown_ab_b658: php 
-unknown_ab_b659: php 
-unknown_ab_b65a: php 
-unknown_ab_b65b: php 
+unknown_ab_b658: php
+unknown_ab_b659: php
+unknown_ab_b65a: php
+unknown_ab_b65b: php
 unknown_ab_b65c: tsb $04
 unknown_ab_b65e: tsb $04
 unknown_ab_b660: tsb $00
@@ -6679,8 +6679,8 @@ unknown_ab_b68f: brk $00
 unknown_ab_b691: brk $00
 unknown_ab_b693: brk $c0
 unknown_ab_b695: cpy #$3030.w
-unknown_ab_b698: php 
-unknown_ab_b699: php 
+unknown_ab_b698: php
+unknown_ab_b699: php
 unknown_ab_b69a: asl $06
 unknown_ab_b69c: ora ($01, X)
 unknown_ab_b69e: brk $00
@@ -6878,9 +6878,9 @@ unknown_ab_b81e: brk $00
 unknown_ab_b820: jsr $1020.w
 unknown_ab_b823: bpl $10 ; $b835.w
 unknown_ab_b825: bpl $08 ; $b82f.w
-unknown_ab_b827: php 
-unknown_ab_b828: php 
-unknown_ab_b829: php 
+unknown_ab_b827: php
+unknown_ab_b828: php
+unknown_ab_b829: php
 unknown_ab_b82a: tsb $04
 unknown_ab_b82c: tsb $04
 unknown_ab_b82e: ora $03, S
@@ -6947,9 +6947,9 @@ unknown_ab_b8a1: rti
 unknown_ab_b8a2: jsr $1020.w
 unknown_ab_b8a5: bpl $10 ; $b8b7.w
 unknown_ab_b8a7: bpl $08 ; $b8b1.w
-unknown_ab_b8a9: php 
-unknown_ab_b8aa: php 
-unknown_ab_b8ab: php 
+unknown_ab_b8a9: php
+unknown_ab_b8aa: php
+unknown_ab_b8ab: php
 unknown_ab_b8ac: tsb $04
 unknown_ab_b8ae: cop $02
 unknown_ab_b8b0: brk $40
@@ -6994,10 +6994,10 @@ unknown_ab_b8fc: brk $00
 unknown_ab_b8fe: brk $00
 unknown_ab_b900: sty $84
 unknown_ab_b902: stz $64
-unknown_ab_b904: clc 
-unknown_ab_b905: clc 
-unknown_ab_b906: php 
-unknown_ab_b907: php 
+unknown_ab_b904: clc
+unknown_ab_b905: clc
+unknown_ab_b906: php
+unknown_ab_b907: php
 unknown_ab_b908: tsb $04
 unknown_ab_b90a: tsb $04
 unknown_ab_b90c: cop $02
@@ -7049,8 +7049,8 @@ unknown_ab_b966: brk $00
 unknown_ab_b968: brk $00
 unknown_ab_b96a: ora ($01, X)
 unknown_ab_b96c: asl $06
-unknown_ab_b96e: php 
-unknown_ab_b96f: php 
+unknown_ab_b96e: php
+unknown_ab_b96f: php
 unknown_ab_b970: brk $00
 unknown_ab_b972: brk $00
 unknown_ab_b974: brk $00
@@ -7099,7 +7099,7 @@ unknown_ab_b9c2: brk $00
 unknown_ab_b9c4: brk $00
 unknown_ab_b9c6: brk $00
 unknown_ab_b9c8: cpy #$38c0.w
-unknown_ab_b9cb: sec 
+unknown_ab_b9cb: sec
 unknown_ab_b9cc: asl $06
 unknown_ab_b9ce: ora ($01, X)
 unknown_ab_b9d0: brk $00
@@ -7114,8 +7114,8 @@ unknown_ab_b9e0: brk $00
 unknown_ab_b9e2: ora ($01, X)
 unknown_ab_b9e4: cop $02
 unknown_ab_b9e6: tsb $04
-unknown_ab_b9e8: clc 
-unknown_ab_b9e9: clc 
+unknown_ab_b9e8: clc
+unknown_ab_b9e9: clc
 unknown_ab_b9ea: jsr $4020.w
 unknown_ab_b9ed: rti
 
@@ -7144,8 +7144,8 @@ unknown_ab_ba1a: brk $00
 unknown_ab_ba1c: brk $00
 unknown_ab_ba1e: brk $00
 unknown_ab_ba20: ora [$07]
-unknown_ab_ba22: clc 
-unknown_ab_ba23: clc 
+unknown_ab_ba22: clc
+unknown_ab_ba23: clc
 unknown_ab_ba24: jsr $0060.w
 unknown_ab_ba27: bra $00 ; $ba29.w
 unknown_ab_ba29: brk $00
@@ -7153,7 +7153,7 @@ unknown_ab_ba2b: brk $00
 unknown_ab_ba2d: brk $00
 unknown_ab_ba2f: brk $00
 unknown_ab_ba31: ora [$00]
-unknown_ab_ba33: clc 
+unknown_ab_ba33: clc
 unknown_ab_ba34: brk $60
 unknown_ab_ba36: brk $80
 unknown_ab_ba38: brk $00
@@ -7161,8 +7161,8 @@ unknown_ab_ba3a: brk $00
 unknown_ab_ba3c: brk $00
 unknown_ab_ba3e: brk $00
 unknown_ab_ba40: bra ($80 - $100) ; $b9c2.w
-unknown_ab_ba42: sei 
-unknown_ab_ba43: sei 
+unknown_ab_ba42: sei
+unknown_ab_ba43: sei
 unknown_ab_ba44: ora [$07]
 unknown_ab_ba46: brk $00
 unknown_ab_ba48: brk $00
@@ -7219,8 +7219,8 @@ unknown_ab_baa4: brk $00
 unknown_ab_baa6: brk $00
 unknown_ab_baa8: brk $00
 unknown_ab_baaa: ora [$07]
-unknown_ab_baac: php 
-unknown_ab_baad: php 
+unknown_ab_baac: php
+unknown_ab_baad: php
 unknown_ab_baae: brk $00
 unknown_ab_bab0: brk $02
 unknown_ab_bab2: brk $01
@@ -7460,8 +7460,8 @@ unknown_ab_bc8a: brk $00
 unknown_ab_bc8c: brk $00
 unknown_ab_bc8e: brk $00
 unknown_ab_bc90: ora [$07]
-unknown_ab_bc92: clc 
-unknown_ab_bc93: clc 
+unknown_ab_bc92: clc
+unknown_ab_bc93: clc
 unknown_ab_bc94: jsr $0060.w
 unknown_ab_bc97: bra $00 ; $bc99.w
 unknown_ab_bc99: brk $00
@@ -7480,7 +7480,7 @@ unknown_ab_bcb1: bra $60 ; $bd13.w
 unknown_ab_bcb3: rts
 
 unknown_ab_bcb4: bpl $10 ; $bcc6.w
-unknown_ab_bcb6: php 
+unknown_ab_bcb6: php
 unknown_ab_bcb7: tsb $0200.w
 unknown_ab_bcba: brk $01
 unknown_ab_bcbc: brk $00
@@ -7594,7 +7594,7 @@ unknown_ab_bd91: brk $00
 unknown_ab_bd93: brk $00
 unknown_ab_bd95: ora ($00, X)
 unknown_ab_bd97: asl $00
-unknown_ab_bd99: clc 
+unknown_ab_bd99: clc
 unknown_ab_bd9a: brk $60
 unknown_ab_bd9c: brk $80
 unknown_ab_bd9e: brk $00
@@ -7677,7 +7677,7 @@ unknown_ab_be3a: brk $98
 unknown_ab_be3c: brk $60
 unknown_ab_be3e: brk $40
 unknown_ab_be40: ora [$00]
-unknown_ab_be42: clc 
+unknown_ab_be42: clc
 unknown_ab_be43: brk $60
 unknown_ab_be45: brk $80
 unknown_ab_be47: brk $00
@@ -7686,7 +7686,7 @@ unknown_ab_be4b: brk $00
 unknown_ab_be4d: brk $00
 unknown_ab_be4f: brk $00
 unknown_ab_be51: ora [$00]
-unknown_ab_be53: clc 
+unknown_ab_be53: clc
 unknown_ab_be54: brk $60
 unknown_ab_be56: brk $80
 unknown_ab_be58: brk $00
@@ -7773,7 +7773,7 @@ unknown_ab_bf00: brk $00
 unknown_ab_bf02: brk $00
 unknown_ab_bf04: brk $00
 unknown_ab_bf06: beq $00 ; $bf08.w
-unknown_ab_bf08: php 
+unknown_ab_bf08: php
 unknown_ab_bf09: brk $00
 unknown_ab_bf0b: brk $00
 unknown_ab_bf0d: brk $00
@@ -7885,7 +7885,7 @@ unknown_ab_bfe2: brk $00
 unknown_ab_bfe4: brk $00
 unknown_ab_bfe6: brk $00
 unknown_ab_bfe8: brk $00
-unknown_ab_bfea: sei 
+unknown_ab_bfea: sei
 unknown_ab_bfeb: brk $07
 unknown_ab_bfed: brk $00
 unknown_ab_bfef: brk $00
@@ -7894,7 +7894,7 @@ unknown_ab_bff3: brk $00
 unknown_ab_bff5: brk $00
 unknown_ab_bff7: brk $80
 unknown_ab_bff9: bra $78 ; $c073.w
-unknown_ab_bffb: sei 
+unknown_ab_bffb: sei
 unknown_ab_bffc: ora [$07]
 unknown_ab_bffe: brk $00
 unknown_ab_c000: trb $221c.w
@@ -7963,8 +7963,8 @@ unknown_ab_c083: brk $c0
 unknown_ab_c085: brk $30
 unknown_ab_c087: brk $00
 unknown_ab_c089: cpx #$1000.w
-unknown_ab_c08c: sed 
-unknown_ab_c08d: php 
+unknown_ab_c08c: sed
+unknown_ab_c08d: php
 unknown_ab_c08e: brk $f8
 unknown_ab_c090: brk $00
 unknown_ab_c092: brk $00
@@ -7973,7 +7973,7 @@ unknown_ab_c097: brk $f0
 unknown_ab_c099: brk $00
 unknown_ab_c09b: bpl ($f0 - $100) ; $c08d.w
 unknown_ab_c09d: brk $f0
-unknown_ab_c09f: php 
+unknown_ab_c09f: php
 unknown_ab_c0a0: brk $00
 unknown_ab_c0a2: brk $00
 unknown_ab_c0a4: brk $00
@@ -7990,8 +7990,8 @@ unknown_ab_c0ba: ora ($00, X)
 unknown_ab_c0bc: brk $00
 unknown_ab_c0be: ora [$00]
 unknown_ab_c0c0: ora $03, S
-unknown_ab_c0c2: phd 
-unknown_ab_c0c3: phd 
+unknown_ab_c0c2: phd
+unknown_ab_c0c3: phd
 unknown_ab_c0c4: jsr $002f.w
 unknown_ab_c0c7: brk $f2
 unknown_ab_c0c9: sbc $ff04ff, X
@@ -8066,7 +8066,7 @@ unknown_ab_c160: brk $00
 unknown_ab_c162: brk $00
 unknown_ab_c164: ora ($00, X)
 unknown_ab_c166: asl $00
-unknown_ab_c168: clc 
+unknown_ab_c168: clc
 unknown_ab_c169: ora [$00]
 unknown_ab_c16b: rts
 
@@ -8203,7 +8203,7 @@ unknown_ab_c276: sbc $000f00.l, X
 unknown_ab_c27a: brk $00
 unknown_ab_c27c: brk $00
 unknown_ab_c27e: brk $00
-unknown_ab_c280: php 
+unknown_ab_c280: php
 unknown_ab_c281: brk $00
 unknown_ab_c283: tsb $04
 unknown_ab_c285: tsb $f8
@@ -8268,14 +8268,14 @@ unknown_ab_c2ff: brk $00
 unknown_ab_c301: brk $01
 unknown_ab_c303: ora ($00, X)
 unknown_ab_c305: asl $18
-unknown_ab_c307: sed 
+unknown_ab_c307: sed
 unknown_ab_c308: brk $00
 unknown_ab_c30a: bra $00 ; $c30c.w
 unknown_ab_c30c: brk $00
 unknown_ab_c30e: brk $00
 unknown_ab_c310: brk $00
 unknown_ab_c312: brk $00
-unknown_ab_c314: sed 
+unknown_ab_c314: sed
 unknown_ab_c315: brk $e0
 unknown_ab_c317: brk $60
 unknown_ab_c319: brk $80
@@ -8425,8 +8425,8 @@ unknown_ab_c445: cop $04
 unknown_ab_c447: tsb $04
 unknown_ab_c449: ora [$04]
 unknown_ab_c44b: tsb $08
-unknown_ab_c44d: php 
-unknown_ab_c44e: php 
+unknown_ab_c44d: php
+unknown_ab_c44e: php
 unknown_ab_c44f: ora $020001
 unknown_ab_c453: brk $00
 unknown_ab_c455: brk $00
@@ -8457,8 +8457,8 @@ unknown_ab_c484: jsr $2020.w
 unknown_ab_c487: jsr $1010.w
 unknown_ab_c48a: bpl $1f ; $c4ab.w
 unknown_ab_c48c: bpl $10 ; $c49e.w
-unknown_ab_c48e: php 
-unknown_ab_c48f: php 
+unknown_ab_c48e: php
+unknown_ab_c48f: php
 unknown_ab_c490: ora $000000.l
 unknown_ab_c494: ora ($00, X)
 unknown_ab_c496: ora ($00, X)
@@ -8467,10 +8467,10 @@ unknown_ab_c49a: ora $000000.l
 unknown_ab_c49e: ora [$00]
 unknown_ab_c4a0: bcc ($f0 - $100) ; $c492.w
 unknown_ab_c4a2: bpl $10 ; $c4b4.w
-unknown_ab_c4a4: php 
-unknown_ab_c4a5: php 
-unknown_ab_c4a6: php 
-unknown_ab_c4a7: php 
+unknown_ab_c4a4: php
+unknown_ab_c4a5: php
+unknown_ab_c4a6: php
+unknown_ab_c4a7: php
 unknown_ab_c4a8: bpl $10 ; $c4ba.w
 unknown_ab_c4aa: bpl ($f0 - $100) ; $c49c.w
 unknown_ab_c4ac: bpl $10 ; $c4be.w
@@ -8504,7 +8504,7 @@ unknown_ab_c4e3: brk $01
 unknown_ab_c4e5: ora ($02, X)
 unknown_ab_c4e7: cop $04
 unknown_ab_c4e9: tsb $18
-unknown_ab_c4eb: clc 
+unknown_ab_c4eb: clc
 unknown_ab_c4ec: jsr $4020.w
 unknown_ab_c4ef: rti
 
@@ -8621,8 +8621,8 @@ unknown_ab_c5db: brk $00
 unknown_ab_c5dd: brk $00
 unknown_ab_c5df: brk $ff
 unknown_ab_c5e1: sbc $aaaa55, X
-unknown_ab_c5e5: tax 
-unknown_ab_c5e6: tax 
+unknown_ab_c5e5: tax
+unknown_ab_c5e6: tax
 unknown_ab_c5e7: sbc $75aaaa, X
 unknown_ab_c5eb: adc $1a, X
 unknown_ab_c5ed: inc A
@@ -8672,8 +8672,8 @@ unknown_ab_c644: jsr $2020.w
 unknown_ab_c647: jsr $1010.w
 unknown_ab_c64a: bpl $1f ; $c66b.w
 unknown_ab_c64c: bpl $10 ; $c65e.w
-unknown_ab_c64e: php 
-unknown_ab_c64f: php 
+unknown_ab_c64e: php
+unknown_ab_c64f: php
 unknown_ab_c650: ora $000000.l
 unknown_ab_c654: ora ($00, X)
 unknown_ab_c656: ora ($00, X)
@@ -8682,10 +8682,10 @@ unknown_ab_c65a: ora $000000.l
 unknown_ab_c65e: ora [$00]
 unknown_ab_c660: bcc ($f0 - $100) ; $c652.w
 unknown_ab_c662: bpl $10 ; $c674.w
-unknown_ab_c664: php 
-unknown_ab_c665: php 
-unknown_ab_c666: php 
-unknown_ab_c667: php 
+unknown_ab_c664: php
+unknown_ab_c665: php
+unknown_ab_c666: php
+unknown_ab_c667: php
 unknown_ab_c668: bpl $10 ; $c67a.w
 unknown_ab_c66a: bpl ($f0 - $100) ; $c65c.w
 unknown_ab_c66c: bpl $10 ; $c67e.w
@@ -8827,7 +8827,7 @@ unknown_ab_c783: brk $00
 unknown_ab_c785: brk $ff
 unknown_ab_c787: sbc $ff0000, X
 unknown_ab_c78b: inc $38c6.w, X
-unknown_ab_c78e: sec 
+unknown_ab_c78e: sec
 unknown_ab_c78f: brk $04
 unknown_ab_c791: brk $04
 unknown_ab_c793: brk $08
@@ -8906,7 +8906,7 @@ unknown_ab_c825: brk $00
 unknown_ab_c827: brk $01
 unknown_ab_c829: brk $06
 unknown_ab_c82b: ora [$0f]
-unknown_ab_c82d: clc 
+unknown_ab_c82d: clc
 unknown_ab_c82e: jsr $00df.w
 unknown_ab_c831: brk $00
 unknown_ab_c833: brk $00
@@ -9047,7 +9047,7 @@ unknown_ab_c94d: jsr $7f7f.w
 unknown_ab_c950: ora ($00, X)
 unknown_ab_c952: cop $00
 unknown_ab_c954: ora [$00]
-unknown_ab_c956: php 
+unknown_ab_c956: php
 unknown_ab_c957: brk $07
 unknown_ab_c959: brk $0f
 unknown_ab_c95b: brk $1f
@@ -9102,14 +9102,14 @@ unknown_ab_c9bb: brk $00
 unknown_ab_c9bd: brk $00
 unknown_ab_c9bf: brk $ff
 unknown_ab_c9c1: sbc $aaaa55, X
-unknown_ab_c9c5: tax 
-unknown_ab_c9c6: tax 
+unknown_ab_c9c5: tax
+unknown_ab_c9c6: tax
 unknown_ab_c9c7: sbc $55aaaa, X
 unknown_ab_c9cb: eor $aa, X
-unknown_ab_c9cd: tax 
+unknown_ab_c9cd: tax
 unknown_ab_c9ce: eor $ff, X
 unknown_ab_c9d0: sbc $00ff00.l, X
-unknown_ab_c9d4: tax 
+unknown_ab_c9d4: tax
 unknown_ab_c9d5: brk $ff
 unknown_ab_c9d7: brk $aa
 unknown_ab_c9d9: brk $55
@@ -9118,8 +9118,8 @@ unknown_ab_c9dd: brk $ff
 unknown_ab_c9df: brk $ff
 unknown_ab_c9e1: sbc $5454a8, X
 unknown_ab_c9e5: mvn $f8, $50
-unknown_ab_c9e8: cli 
-unknown_ab_c9e9: cli 
+unknown_ab_c9e8: cli
+unknown_ab_c9e9: cli
 unknown_ab_c9ea: bcs ($b0 - $100) ; $c99c.w
 unknown_ab_c9ec: bvc $50 ; $ca3e.w
 unknown_ab_c9ee: rts
@@ -9142,7 +9142,7 @@ unknown_ab_ca0c: brk $00
 unknown_ab_ca0e: brk $00
 unknown_ab_ca10: brk $00
 unknown_ab_ca12: asl $00
-unknown_ab_ca14: clc 
+unknown_ab_ca14: clc
 unknown_ab_ca15: brk $1f
 unknown_ab_ca17: brk $00
 unknown_ab_ca19: brk $00
@@ -9177,15 +9177,15 @@ unknown_ab_ca59: brk $c0
 unknown_ab_ca5b: brk $3f
 unknown_ab_ca5d: brk $00
 unknown_ab_ca5f: brk $08
-unknown_ab_ca61: sed 
-unknown_ab_ca62: php 
+unknown_ab_ca61: sed
+unknown_ab_ca62: php
 unknown_ab_ca63: brk $04
 unknown_ab_ca65: brk $04
 unknown_ab_ca67: jsr ($fefe.w, X)
 unknown_ab_ca6a: brk $00
 unknown_ab_ca6c: cmp ($00, X)
 unknown_ab_ca6e: and $00f000.l, X
-unknown_ab_ca72: php 
+unknown_ab_ca72: php
 unknown_ab_ca73: brk $04
 unknown_ab_ca75: brk $f8
 unknown_ab_ca77: brk $fc
@@ -9197,12 +9197,12 @@ unknown_ab_ca81: ora $0f0010, X
 unknown_ab_ca85: bpl $1f ; $caa6.w
 unknown_ab_ca87: ora [$00], Y
 unknown_ab_ca89: brk $07
-unknown_ab_ca8b: php 
+unknown_ab_ca8b: php
 unknown_ab_ca8c: cop $06
 unknown_ab_ca8e: brk $00
 unknown_ab_ca90: ora $000f00.l
 unknown_ab_ca94: ora $001700.l
-unknown_ab_ca98: php 
+unknown_ab_ca98: php
 unknown_ab_ca99: brk $07
 unknown_ab_ca9b: brk $00
 unknown_ab_ca9d: brk $01
@@ -9273,14 +9273,14 @@ unknown_ab_cb21: brk $00
 unknown_ab_cb23: brk $00
 unknown_ab_cb25: brk $fc
 unknown_ab_cb27: jsr ($0000.w, X)
-unknown_ab_cb2a: iny 
-unknown_ab_cb2b: sed 
+unknown_ab_cb2a: iny
+unknown_ab_cb2b: sed
 unknown_ab_cb2c: brk $00
 unknown_ab_cb2e: brk $00
 unknown_ab_cb30: tsb $00
 unknown_ab_cb32: tsb $00
 unknown_ab_cb34: tsb $00
-unknown_ab_cb36: sed 
+unknown_ab_cb36: sed
 unknown_ab_cb37: brk $04
 unknown_ab_cb39: brk $30
 unknown_ab_cb3b: brk $38
@@ -9325,7 +9325,7 @@ unknown_ab_cb8c: brk $00
 unknown_ab_cb8e: brk $00
 unknown_ab_cb90: ora ($00, X)
 unknown_ab_cb92: asl $00
-unknown_ab_cb94: clc 
+unknown_ab_cb94: clc
 unknown_ab_cb95: brk $c0
 unknown_ab_cb97: brk $c0
 unknown_ab_cb99: brk $00
@@ -9348,7 +9348,7 @@ unknown_ab_cbb9: brk $00
 unknown_ab_cbbb: brk $00
 unknown_ab_cbbd: brk $00
 unknown_ab_cbbf: brk $aa
-unknown_ab_cbc1: tax 
+unknown_ab_cbc1: tax
 unknown_ab_cbc2: brk $01
 unknown_ab_cbc4: bmi $08 ; $cbce.w
 unknown_ab_cbc6: ora $0200.w
@@ -9402,7 +9402,7 @@ unknown_ab_cc2a: and ($ff), Y
 unknown_ab_cc2c: jmp $00074c.l
 unknown_ab_cc30: beq $0c ; $cc3e.w
 unknown_ab_cc32: ora $fb
-unknown_ab_cc34: php 
+unknown_ab_cc34: php
 unknown_ab_cc35: sbc [$80], Y
 unknown_ab_cc37: adc $e03fc0, X
 unknown_ab_cc3b: ora $00bf43.l, X
@@ -9414,7 +9414,7 @@ unknown_ab_cc4b: per $f08c ; $bcda.w
 unknown_ab_cc4e: sta [$e8], Y
 unknown_ab_cc50: ora [$00]
 unknown_ab_cc52: adc ($8e), Y
-unknown_ab_cc54: clv 
+unknown_ab_cc54: clv
 unknown_ab_cc55: cmp [$5c]
 unknown_ab_cc57: sbc $08, S
 unknown_ab_cc59: sbc [$82], Y
@@ -9450,14 +9450,14 @@ unknown_ab_cc9b: sbc [$00], Y
 unknown_ab_cc9d: sbc $80ff00, X
 unknown_ab_cca1: bra $20 ; $ccc3.w
 unknown_ab_cca3: brk $b0
-unknown_ab_cca5: tay 
-unknown_ab_cca6: cld 
+unknown_ab_cca5: tay
+unknown_ab_cca6: cld
 unknown_ab_cca7: jmp [$5cd8]
 unknown_ab_ccaa: lda $c18d.w, Y
 unknown_ab_ccad: and ($7b), Y
-unknown_ab_ccaf: xce 
+unknown_ab_ccaf: xce
 unknown_ab_ccb0: cpx #$1860.w
-unknown_ab_ccb3: sed 
+unknown_ab_ccb3: sed
 unknown_ab_ccb4: sty $7c
 unknown_ab_ccb6: asl A
 unknown_ab_ccb7: inc $42, X
@@ -9494,7 +9494,7 @@ unknown_ab_ccfe: bvs ($8f - $100) ; $cc8f.w
 unknown_ab_cd00: cpy $aa27.w
 unknown_ab_cd03: adc [$51]
 unknown_ab_cd05: cmp $c4724e, X
-unknown_ab_cd09: sei 
+unknown_ab_cd09: sei
 unknown_ab_cd0a: cmp $f0ce71
 unknown_ab_cd0e: cmp $f916d0
 unknown_ab_cd12: asl $f9, X
@@ -9505,9 +9505,9 @@ unknown_ab_cd1d: sbc $00ff20.l, X
 unknown_ab_cd21: cpx #$38e8.w
 unknown_ab_cd24: jmp $b488.w
 unknown_ab_cd27: adc ($8a)
-unknown_ab_cd29: pha 
+unknown_ab_cd29: pha
 unknown_ab_cd2a: eor $396a47, X
-unknown_ab_cd2e: pla 
+unknown_ab_cd2e: pla
 unknown_ab_cd2f: sbc $3800e0
 unknown_ab_cd33: cpy #$f60a.w
 unknown_ab_cd36: brk $fe
@@ -9517,10 +9517,10 @@ unknown_ab_cd3c: brk $ff
 unknown_ab_cd3e: bpl ($ff - $100) ; $cd3f.w
 unknown_ab_cd40: and ($1f, S), Y
 unknown_ab_cd42: cmp $11ae.w
-unknown_ab_cd45: xba 
+unknown_ab_cd45: xba
 unknown_ab_cd46: bvs ($82 - $100) ; $ccca.w
 unknown_ab_cd48: and ($c2), Y
-unknown_ab_cd4a: tsx 
+unknown_ab_cd4a: tsx
 unknown_ab_cd4b: eor $bc, S
 unknown_ab_cd4d: cmp ($4a, X)
 unknown_ab_cd4f: beq ($d9 - $100) ; $cd2a.w
@@ -9532,16 +9532,16 @@ unknown_ab_cd5b: sbc $01ff00, X
 unknown_ab_cd5f: sbc $500000, X
 unknown_ab_cd63: rti
 
-unknown_ab_cd64: cld 
+unknown_ab_cd64: cld
 unknown_ab_cd65: bne ($d8 - $100) ; $cd3f.w
-unknown_ab_cd67: cli 
-unknown_ab_cd68: tya 
+unknown_ab_cd67: cli
+unknown_ab_cd68: tya
 unknown_ab_cd69: stz $5cb0.w
 unknown_ab_cd6c: rep #$ea
 unknown_ab_cd6e: lda ($b2)
 unknown_ab_cd70: bpl ($f0 - $100) ; $cd62.w
-unknown_ab_cd72: pha 
-unknown_ab_cd73: clv 
+unknown_ab_cd72: pha
+unknown_ab_cd73: clv
 unknown_ab_cd74: tsb $fc
 unknown_ab_cd76: jmp $82b4.w
 unknown_ab_cd79: ror $fe02.w, X
@@ -9568,7 +9568,7 @@ unknown_ab_cda5: brk $00
 unknown_ab_cda7: brk $80
 unknown_ab_cda9: bra ($c0 - $100) ; $cd6b.w
 unknown_ab_cdab: cpy #$4010.w
-unknown_ab_cdae: cli 
+unknown_ab_cdae: cli
 unknown_ab_cdaf: and $000000.l
 unknown_ab_cdb3: brk $00
 unknown_ab_cdb5: brk $00
@@ -9583,7 +9583,7 @@ unknown_ab_cdc3: brk $00
 unknown_ab_cdc5: brk $00
 unknown_ab_cdc7: brk $00
 unknown_ab_cdc9: brk $00
-unknown_ab_cdcb: clc 
+unknown_ab_cdcb: clc
 unknown_ab_cdcc: rti
 
 unknown_ab_cdcd: adc $00df97.l, X
@@ -9594,7 +9594,7 @@ unknown_ab_cdd7: brk $00
 unknown_ab_cdd9: brk $98
 unknown_ab_cddb: bra ($cf - $100) ; $cdac.w
 unknown_ab_cddd: bcs $15 ; $cdf4.w
-unknown_ab_cddf: nop 
+unknown_ab_cddf: nop
 unknown_ab_cde0: brk $00
 unknown_ab_cde2: brk $00
 unknown_ab_cde4: brk $00
@@ -9666,7 +9666,7 @@ unknown_ab_ce7c: tsb $003f.w
 unknown_ab_ce7f: brk $1e
 unknown_ab_ce81: cpx #$a05e.w
 unknown_ab_ce84: adc $fc, S
-unknown_ab_ce86: cli 
+unknown_ab_ce86: cli
 unknown_ab_ce87: sbc $ffffdb, X
 unknown_ab_ce8b: sbc $0107e7, X
 unknown_ab_ce8f: asl $00
@@ -9678,21 +9678,21 @@ unknown_ab_cea1: lda [$b3]
 unknown_ab_cea3: eor $ce5ea2
 unknown_ab_cea7: jsr ($cc84.w, X)
 unknown_ab_ceaa: bne ($f0 - $100) ; $ce9c.w
-unknown_ab_ceac: sed 
+unknown_ab_ceac: sed
 unknown_ab_cead: beq ($c0 - $100) ; $ce6f.w
 unknown_ab_ceaf: brk $58
 unknown_ab_ceb1: sbc $01ff00, X
 unknown_ab_ceb5: sbc $32fe00, X
 unknown_ab_ceb9: inc $fc0c.w, X
 unknown_ab_cebc: tsb $fc
-unknown_ab_cebe: sec 
-unknown_ab_cebf: sed 
+unknown_ab_cebe: sec
+unknown_ab_cebf: sed
 unknown_ab_cec0: asl $38
 unknown_ab_cec2: rol $2630.w
-unknown_ab_cec5: sec 
+unknown_ab_cec5: sec
 unknown_ab_cec6: ora $1c, S
 unknown_ab_cec8: ora ($0c, S), Y
-unknown_ab_ceca: php 
+unknown_ab_ceca: php
 unknown_ab_cecb: ora [$06]
 unknown_ab_cecd: ora $02, S
 unknown_ab_cecf: ora ($40, X)
@@ -9705,7 +9705,7 @@ unknown_ab_cee1: lsr $1314.w, X
 unknown_ab_cee4: .db $42, $22
 unknown_ab_cee6: eor $20, S
 unknown_ab_cee8: inc $ec11.w, X
-unknown_ab_ceeb: tcs 
+unknown_ab_ceeb: tcs
 unknown_ab_ceec: tsb $ff
 unknown_ab_ceee: sbc $a758ff
 unknown_ab_cef2: bpl ($ef - $100) ; $cee3.w
@@ -9717,7 +9717,7 @@ unknown_ab_cefc: brk $ff
 unknown_ab_cefe: brk $ff
 unknown_ab_cf00: sbc $e7c2f2, X
 unknown_ab_cf04: sbc $6c, S
-unknown_ab_cf06: cli 
+unknown_ab_cf06: cli
 unknown_ab_cf07: ora $02031c, X
 unknown_ab_cf0b: ora ($01, X)
 unknown_ab_cf0d: ora ($00, X)
@@ -9759,8 +9759,8 @@ unknown_ab_cf70: rts
 
 unknown_ab_cf71: jsr ($fc00.w, X)
 unknown_ab_cf74: brk $fc
-unknown_ab_cf76: dey 
-unknown_ab_cf77: sed 
+unknown_ab_cf76: dey
+unknown_ab_cf77: sed
 unknown_ab_cf78: bra ($f0 - $100) ; $cf6a.w
 unknown_ab_cf7a: rts
 
@@ -9839,7 +9839,7 @@ unknown_ab_d023: rti
 
 unknown_ab_d024: cpx #$6a00.w
 unknown_ab_d027: sty $f0, X
-unknown_ab_d029: txy 
+unknown_ab_d029: txy
 unknown_ab_d02a: jmp [$73f9]
 unknown_ab_d02d: adc $7f4d.w, X
 unknown_ab_d030: brk $00
@@ -9853,7 +9853,7 @@ unknown_ab_d041: rti
 
 unknown_ab_d042: cpy #$d000.w
 unknown_ab_d045: brk $10
-unknown_ab_d047: inx 
+unknown_ab_d047: inx
 unknown_ab_d048: eor $464a.w, X
 unknown_ab_d04b: adc $ce35.w, X
 unknown_ab_d04e: and [$c4], Y
@@ -9864,7 +9864,7 @@ unknown_ab_d057: beq ($aa - $100) ; $d003.w
 unknown_ab_d059: sbc $9d, X
 unknown_ab_d05b: sep #$0c
 unknown_ab_d05d: sbc ($04, S), Y
-unknown_ab_d05f: xce 
+unknown_ab_d05f: xce
 unknown_ab_d060: brk $00
 unknown_ab_d062: brk $00
 unknown_ab_d064: brk $00
@@ -9883,8 +9883,8 @@ unknown_ab_d07d: brk $60
 unknown_ab_d07f: bra ($ce - $100) ; $d04f.w
 unknown_ab_d081: eor $08, S
 unknown_ab_d083: sbc $85, X
-unknown_ab_d085: tdc 
-unknown_ab_d086: pha 
+unknown_ab_d085: tdc
+unknown_ab_d086: pha
 unknown_ab_d087: lda ($dc)
 unknown_ab_d089: sbc ($dc, X)
 unknown_ab_d08b: cpx #$f14f.w
@@ -9897,14 +9897,14 @@ unknown_ab_d09a: brk $ff
 unknown_ab_d09c: brk $ff
 unknown_ab_d09e: brk $ff
 unknown_ab_d0a0: cpy #$68f0.w
-unknown_ab_d0a3: sed 
+unknown_ab_d0a3: sed
 unknown_ab_d0a4: jmp ($70bc.w, X)
 unknown_ab_d0a7: bcc $74 ; $d11d.w
 unknown_ab_d0a9: beq $74 ; $d11f.w
 unknown_ab_d0ab: bvc ($cc - $100) ; $d079.w
 unknown_ab_d0ad: lsr $8e7c.w
 unknown_ab_d0b0: beq $00 ; $d0b2.w
-unknown_ab_d0b2: sec 
+unknown_ab_d0b2: sec
 unknown_ab_d0b3: cpy #$c03c.w
 unknown_ab_d0b6: asl $ee, X
 unknown_ab_d0b8: cop $fe
@@ -9914,7 +9914,7 @@ unknown_ab_d0be: ora $fb
 unknown_ab_d0c0: brk $00
 unknown_ab_d0c2: asl $2d0e.w
 unknown_ab_d0c5: and ($65, X)
-unknown_ab_d0c7: cli 
+unknown_ab_d0c7: cli
 unknown_ab_d0c8: bmi $7e ; $d148.w
 unknown_ab_d0ca: ora $07
 unknown_ab_d0cc: ora $03, S
@@ -9943,7 +9943,7 @@ unknown_ab_d0f4: brk $80
 unknown_ab_d0f6: brk $c0
 unknown_ab_d0f8: bra $70 ; $d16a.w
 unknown_ab_d0fa: bne $28 ; $d124.w
-unknown_ab_d0fc: cli 
+unknown_ab_d0fc: cli
 unknown_ab_d0fd: ldy $00
 unknown_ab_d0ff: jsr ($0100.w, X)
 unknown_ab_d102: asl A
@@ -9962,7 +9962,7 @@ unknown_ab_d11b: and $004180.l, X
 unknown_ab_d11f: bra ($c0 - $100) ; $d0e1.w
 unknown_ab_d121: jsr $dee0.w
 unknown_ab_d124: rol $1ba1.w, X
-unknown_ab_d127: txa 
+unknown_ab_d127: txa
 unknown_ab_d128: and $93, S
 unknown_ab_d12a: cmp $f90620, X
 unknown_ab_d12e: brk $0e
@@ -10003,19 +10003,19 @@ unknown_ab_d17d: inc $fc00.w, X
 unknown_ab_d180: brk $00
 unknown_ab_d182: cop $1e
 unknown_ab_d184: and $517301, X
-unknown_ab_d188: pha 
+unknown_ab_d188: pha
 unknown_ab_d189: eor #$1c3d.w
-unknown_ab_d18c: php 
-unknown_ab_d18d: php 
+unknown_ab_d18c: php
+unknown_ab_d18d: php
 unknown_ab_d18e: bit $0024.w
 unknown_ab_d191: brk $00
 unknown_ab_d193: asl $3f00.w, X
 unknown_ab_d196: bpl $6f ; $d207.w
-unknown_ab_d198: php 
+unknown_ab_d198: php
 unknown_ab_d199: adc [$5c], Y
 unknown_ab_d19b: adc $48, S
 unknown_ab_d19d: adc [$04], Y
-unknown_ab_d19f: tsc 
+unknown_ab_d19f: tsc
 unknown_ab_d1a0: brk $00
 unknown_ab_d1a2: brk $00
 unknown_ab_d1a4: brk $00
@@ -10034,15 +10034,15 @@ unknown_ab_d1be: brk $f8
 unknown_ab_d1c0: bit $3b3c.w, X
 unknown_ab_d1c3: eor $81814a
 unknown_ab_d1c7: brk $d8
-unknown_ab_d1c9: cli 
+unknown_ab_d1c9: cli
 unknown_ab_d1ca: lda $0325bf, X
-unknown_ab_d1ce: clc 
-unknown_ab_d1cf: clc 
+unknown_ab_d1ce: clc
+unknown_ab_d1cf: clc
 unknown_ab_d1d0: brk $3c
 unknown_ab_d1d2: brk $7f
 unknown_ab_d1d4: brk $ff
 unknown_ab_d1d6: brk $ff
-unknown_ab_d1d8: cli 
+unknown_ab_d1d8: cli
 unknown_ab_d1d9: lda [$3f]
 unknown_ab_d1db: cpy #$7f40.w
 unknown_ab_d1de: bit $3c
@@ -10063,7 +10063,7 @@ unknown_ab_d1fa: brk $00
 unknown_ab_d1fc: brk $00
 unknown_ab_d1fe: brk $00
 unknown_ab_d200: bit $0610.w
-unknown_ab_d203: sec 
+unknown_ab_d203: sec
 unknown_ab_d204: ora [$18]
 unknown_ab_d206: ora ($0c, S), Y
 unknown_ab_d208: ora $0c0e.w, Y
@@ -10094,11 +10094,11 @@ unknown_ab_d241: brl $8a78 ; $5cbc.w
 unknown_ab_d244: inc $06, X
 unknown_ab_d246: ror $0b, X
 unknown_ab_d248: dec A
-unknown_ab_d249: tdc 
+unknown_ab_d249: tdc
 unknown_ab_d24a: per $3b92 ; $0ddf.w
 unknown_ab_d24d: cmp ($3f, X)
 unknown_ab_d24f: cpy #$ff00.w
-unknown_ab_d252: php 
+unknown_ab_d252: php
 unknown_ab_d253: sbc [$00], Y
 unknown_ab_d255: sbc $80ff80, X
 unknown_ab_d259: sbc $00ff01.l, X
@@ -10113,10 +10113,10 @@ unknown_ab_d26e: bvs $71 ; $d2e1.w
 unknown_ab_d270: brk $f0
 unknown_ab_d272: bmi ($d0 - $100) ; $d244.w
 unknown_ab_d274: brk $f0
-unknown_ab_d276: php 
-unknown_ab_d277: sed 
-unknown_ab_d278: clc 
-unknown_ab_d279: inx 
+unknown_ab_d276: php
+unknown_ab_d277: sed
+unknown_ab_d278: clc
+unknown_ab_d279: inx
 unknown_ab_d27a: tsb $09f8.w
 unknown_ab_d27d: inc $ff88.w, X
 unknown_ab_d280: cmp $7976f1
@@ -10159,15 +10159,15 @@ unknown_ab_d2d8: brk $00
 unknown_ab_d2da: brk $00
 unknown_ab_d2dc: brk $00
 unknown_ab_d2de: brk $00
-unknown_ab_d2e0: dey 
+unknown_ab_d2e0: dey
 unknown_ab_d2e1: asl $6c
-unknown_ab_d2e3: txy 
+unknown_ab_d2e3: txy
 unknown_ab_d2e4: jsr $6716c1
 unknown_ab_d2e8: ora $321e67, X
 unknown_ab_d2ec: tsb $1c
 unknown_ab_d2ee: brk $00
 unknown_ab_d2f0: brk $fe
-unknown_ab_d2f2: php 
+unknown_ab_d2f2: php
 unknown_ab_d2f3: sbc [$00], Y
 unknown_ab_d2f5: sbc $067906, X
 unknown_ab_d2f9: adc $3e00.w, Y
@@ -10177,11 +10177,11 @@ unknown_ab_d300: trb $3e2a.w
 unknown_ab_d303: eor $4126.w, Y
 unknown_ab_d306: bit $53, X
 unknown_ab_d308: bit $4a, X
-unknown_ab_d30a: pla 
+unknown_ab_d30a: pla
 unknown_ab_d30b: ldx $c4
 unknown_ab_d30d: .db $42, $c4
-unknown_ab_d30f: ply 
-unknown_ab_d310: php 
+unknown_ab_d30f: ply
+unknown_ab_d310: php
 unknown_ab_d311: rol $18, X
 unknown_ab_d313: adc [$00]
 unknown_ab_d315: adc $006f10.l, X
@@ -10190,22 +10190,22 @@ unknown_ab_d31c: rti
 
 unknown_ab_d31d: ldx $be40.w, Y
 unknown_ab_d320: bmi ($9e - $100) ; $d2c0.w
-unknown_ab_d322: pla 
+unknown_ab_d322: pla
 unknown_ab_d323: trb $5c0c.w
 unknown_ab_d326: stz $4c
 unknown_ab_d328: tsb $1824.w
 unknown_ab_d32b: tsb $1e
 unknown_ab_d32d: asl $0e, X
 unknown_ab_d32f: ora #$ce30.w
-unknown_ab_d332: sec 
+unknown_ab_d332: sec
 unknown_ab_d333: mvp $44, $38
-unknown_ab_d336: sec 
+unknown_ab_d336: sec
 unknown_ab_d337: mvp $24, $18
-unknown_ab_d33a: clc 
+unknown_ab_d33a: clc
 unknown_ab_d33b: tsb $0c
 unknown_ab_d33d: ora ($06)
 unknown_ab_d33f: ora #$1b10.w
-unknown_ab_d342: tcs 
+unknown_ab_d342: tcs
 unknown_ab_d343: ora [$13], Y
 unknown_ab_d345: ora [$2a]
 unknown_ab_d347: rol $24
@@ -10255,18 +10255,18 @@ unknown_ab_d3a5: sep #$f4
 unknown_ab_d3a7: adc ($2c)
 unknown_ab_d3a9: rol A
 unknown_ab_d3aa: ldy $1880.w
-unknown_ab_d3ad: clc 
+unknown_ab_d3ad: clc
 unknown_ab_d3ae: brk $00
 unknown_ab_d3b0: brk $fc
 unknown_ab_d3b2: rti
 
 unknown_ab_d3b3: ldx $1ee0.w, Y
 unknown_ab_d3b6: bvs ($8e - $100) ; $d346.w
-unknown_ab_d3b8: plp 
+unknown_ab_d3b8: plp
 unknown_ab_d3b9: dec $00, X
 unknown_ab_d3bb: jsr ($7860.w, X)
 unknown_ab_d3be: brk $00
-unknown_ab_d3c0: sec 
+unknown_ab_d3c0: sec
 unknown_ab_d3c1: bit $14
 unknown_ab_d3c3: ora ($63)
 unknown_ab_d3c5: and ($b3, X)
@@ -10321,12 +10321,12 @@ unknown_ab_d441: brk $80
 unknown_ab_d443: bra $34 ; $d479.w
 unknown_ab_d445: pea $cece.w
 unknown_ab_d448: stz $149e.w, X
-unknown_ab_d44b: tcs 
+unknown_ab_d44b: tcs
 unknown_ab_d44c: and ($3c, S), Y
 unknown_ab_d44e: eor ($5c, S), Y
 unknown_ab_d450: cpy #$c0
 unknown_ab_d452: bvs ($f0 - $100) ; $d444.w
-unknown_ab_d454: php 
+unknown_ab_d454: php
 unknown_ab_d455: jsr ($fe30.w, X)
 unknown_ab_d458: adc ($ff, X)
 unknown_ab_d45a: cpx #$ff
@@ -10354,8 +10354,8 @@ unknown_ab_d487: cmp ($63, X)
 unknown_ab_d489: rts
 
 unknown_ab_d48a: lda ($30, S), Y
-unknown_ab_d48c: cli 
-unknown_ab_d48d: clc 
+unknown_ab_d48c: cli
+unknown_ab_d48d: clc
 unknown_ab_d48e: bit $04
 unknown_ab_d490: bvs ($ff - $100) ; $d491.w
 unknown_ab_d492: brk $ff
@@ -10365,17 +10365,17 @@ unknown_ab_d498: rts
 
 unknown_ab_d499: sta $98cf30, X
 unknown_ab_d49d: sbc [$44]
-unknown_ab_d49f: tdc 
+unknown_ab_d49f: tdc
 unknown_ab_d4a0: ora [$16]
 unknown_ab_d4a2: cmp #$91
 unknown_ab_d4a4: rep #$dc
 unknown_ab_d4a6: adc ($f4, S), Y
-unknown_ab_d4a8: tsc 
-unknown_ab_d4a9: sed 
-unknown_ab_d4aa: tya 
+unknown_ab_d4a8: tsc
+unknown_ab_d4a9: sed
+unknown_ab_d4aa: tya
 unknown_ab_d4ab: adc $7d97.w, Y
 unknown_ab_d4ae: ror $6718.w, X
-unknown_ab_d4b1: sed 
+unknown_ab_d4b1: sed
 unknown_ab_d4b2: and ($fe, X)
 unknown_ab_d4b4: jsr $08ff.w
 unknown_ab_d4b7: sbc $06ff04, X
@@ -10402,24 +10402,24 @@ unknown_ab_d4e5: bra ($e0 - $100) ; $d4c7.w
 unknown_ab_d4e7: rti
 
 unknown_ab_d4e8: beq $20 ; $d50a.w
-unknown_ab_d4ea: sei 
+unknown_ab_d4ea: sei
 unknown_ab_d4eb: sty $bc, X
 unknown_ab_d4ed: cpy #$d0ae.w
 unknown_ab_d4f0: brk $80
 unknown_ab_d4f2: brk $80
 unknown_ab_d4f4: bra $40 ; $d536.w
 unknown_ab_d4f6: cpy #$e820.w
-unknown_ab_d4f9: clc 
+unknown_ab_d4f9: clc
 unknown_ab_d4fa: beq $0c ; $d508.w
-unknown_ab_d4fc: plx 
+unknown_ab_d4fc: plx
 unknown_ab_d4fd: asl $fd
 unknown_ab_d4ff: ora $07, S
-unknown_ab_d501: tcd 
+unknown_ab_d501: tcd
 unknown_ab_d502: ora $3d, S
 unknown_ab_d504: ora $0c, S
-unknown_ab_d506: php 
+unknown_ab_d506: php
 unknown_ab_d507: ora $09
-unknown_ab_d509: php 
+unknown_ab_d509: php
 unknown_ab_d50a: ora $05
 unknown_ab_d50c: ora [$05]
 unknown_ab_d50e: ora ($02, X)
@@ -10431,11 +10431,11 @@ unknown_ab_d518: bpl $1f ; $d539.w
 unknown_ab_d51a: ora #$0e
 unknown_ab_d51c: ora ($06, X)
 unknown_ab_d51e: tsb $07
-unknown_ab_d520: ply 
+unknown_ab_d520: ply
 unknown_ab_d521: sbc $ffffff, X
 unknown_ab_d525: adc $78fdff, X
 unknown_ab_d529: jsr ($fff0.w, X)
-unknown_ab_d52c: sei 
+unknown_ab_d52c: sei
 unknown_ab_d52d: ora [$5e], Y
 unknown_ab_d52f: adc [$ff]
 unknown_ab_d531: brk $ff
@@ -10448,17 +10448,17 @@ unknown_ab_d53e: adc [$98]
 unknown_ab_d540: brk $80
 unknown_ab_d542: cpy #$6060.w
 unknown_ab_d545: ldy #$70a0.w
-unknown_ab_d548: pla 
+unknown_ab_d548: pla
 unknown_ab_d549: cpx #$0c77.w
 unknown_ab_d54c: adc $e92a90, X
 unknown_ab_d550: brk $80
 unknown_ab_d552: brk $e0
-unknown_ab_d554: tya 
-unknown_ab_d555: sei 
+unknown_ab_d554: tya
+unknown_ab_d555: sei
 unknown_ab_d556: cpx $661c.w
 unknown_ab_d559: stz $837c.w, X
 unknown_ab_d55c: beq $0f ; $d56d.w
-unknown_ab_d55e: xba 
+unknown_ab_d55e: xba
 unknown_ab_d55f: trb $00
 unknown_ab_d561: brk $00
 unknown_ab_d563: brk $00
@@ -10467,7 +10467,7 @@ unknown_ab_d567: brk $00
 unknown_ab_d569: brk $00
 unknown_ab_d56b: brk $c0
 unknown_ab_d56d: brk $e0
-unknown_ab_d56f: php 
+unknown_ab_d56f: php
 unknown_ab_d570: brk $00
 unknown_ab_d572: brk $00
 unknown_ab_d574: brk $00
@@ -10475,9 +10475,9 @@ unknown_ab_d576: brk $00
 unknown_ab_d578: brk $00
 unknown_ab_d57a: cpy #$30c0.w
 unknown_ab_d57d: beq ($90 - $100) ; $d50f.w
-unknown_ab_d57f: sei 
+unknown_ab_d57f: sei
 unknown_ab_d580: and ($31)
-unknown_ab_d582: phd 
+unknown_ab_d582: phd
 unknown_ab_d583: bpl $0d ; $d592.w
 unknown_ab_d585: ora ($06, X)
 unknown_ab_d587: tsb $01
@@ -10508,7 +10508,7 @@ unknown_ab_d5c3: beq $04 ; $d5c9.w
 unknown_ab_d5c5: inc $fa20.w, X
 unknown_ab_d5c8: sta ($ff, X)
 unknown_ab_d5ca: ora ($ed)
-unknown_ab_d5cc: tdc 
+unknown_ab_d5cc: tdc
 unknown_ab_d5cd: ora [$61]
 unknown_ab_d5cf: ora $0e0000, X
 unknown_ab_d5d3: inc $ff01.w, X
@@ -10524,7 +10524,7 @@ unknown_ab_d5e6: brk $40
 unknown_ab_d5e8: bra ($80 - $100) ; $d56a.w
 unknown_ab_d5ea: cpx #$e0e0.w
 unknown_ab_d5ed: beq ($e8 - $100) ; $d5d7.w
-unknown_ab_d5ef: sed 
+unknown_ab_d5ef: sed
 unknown_ab_d5f0: brk $00
 unknown_ab_d5f2: brk $00
 unknown_ab_d5f4: brk $00
@@ -10532,13 +10532,13 @@ unknown_ab_d5f6: bra ($c0 - $100) ; $d5b8.w
 unknown_ab_d5f8: rts
 
 unknown_ab_d5f9: cpx #$f010.w
-unknown_ab_d5fc: php 
-unknown_ab_d5fd: sed 
+unknown_ab_d5fc: php
+unknown_ab_d5fd: sed
 unknown_ab_d5fe: tsb $fc
 unknown_ab_d600: eor ($7e, X)
 unknown_ab_d602: sty $8dfc.w
 unknown_ab_d605: sbc $ef97.w, X
-unknown_ab_d608: nop 
+unknown_ab_d608: nop
 unknown_ab_d609: dec $4c
 unknown_ab_d60b: rti
 
@@ -10552,9 +10552,9 @@ unknown_ab_d61a: ora $7f, S
 unknown_ab_d61c: ora ($6f)
 unknown_ab_d61e: asl $8267.w, X
 unknown_ab_d621: adc ($e8)
-unknown_ab_d623: clc 
+unknown_ab_d623: clc
 unknown_ab_d624: bit $05, X
-unknown_ab_d626: clc 
+unknown_ab_d626: clc
 unknown_ab_d627: brk $98
 unknown_ab_d629: asl $4a
 unknown_ab_d62b: lsr $0e
@@ -10570,26 +10570,26 @@ unknown_ab_d64a: ora [$38]
 unknown_ab_d64c: and $3d, S
 unknown_ab_d64e: sta [$34]
 unknown_ab_d650: cpy #$c4ff.w
-unknown_ab_d653: xce 
+unknown_ab_d653: xce
 unknown_ab_d654: cpy #$c0ff.w
 unknown_ab_d657: sbc $c0fedd, X
 unknown_ab_d65b: sbc $07fe81, X
-unknown_ab_d65f: sed 
+unknown_ab_d65f: sed
 unknown_ab_d660: brk $00
 unknown_ab_d662: brk $00
 unknown_ab_d664: bra ($80 - $100) ; $d5e6.w
 unknown_ab_d666: cpy #$0000.w
 unknown_ab_d669: bpl ($c4 - $100) ; $d62f.w
 unknown_ab_d66b: trb $d2
-unknown_ab_d66d: tya 
-unknown_ab_d66e: inx 
+unknown_ab_d66d: tya
+unknown_ab_d66e: inx
 unknown_ab_d66f: sbc $c040.w
 unknown_ab_d672: jsr $10e0.w
 unknown_ab_d675: beq $00 ; $d677.w
 unknown_ab_d677: beq $10 ; $d689.w
-unknown_ab_d679: inx 
+unknown_ab_d679: inx
 unknown_ab_d67a: trb $e8
-unknown_ab_d67c: tya 
+unknown_ab_d67c: tya
 unknown_ab_d67d: ror $ec
 unknown_ab_d67f: ora ($12, S), Y
 unknown_ab_d681: cop $0c
@@ -10609,9 +10609,9 @@ unknown_ab_d69d: brk $00
 unknown_ab_d69f: brk $59
 unknown_ab_d6a1: and ($19), Y
 unknown_ab_d6a3: and ($14), Y
-unknown_ab_d6a5: clc 
+unknown_ab_d6a5: clc
 unknown_ab_d6a6: tsb $4670.w
-unknown_ab_d6a9: sec 
+unknown_ab_d6a9: sec
 unknown_ab_d6aa: ora $14, S
 unknown_ab_d6ac: ora ($08, X)
 unknown_ab_d6ae: brk $02
@@ -10620,14 +10620,14 @@ unknown_ab_d6b2: ora ($fe, X)
 unknown_ab_d6b4: brk $ff
 unknown_ab_d6b6: brk $ff
 unknown_ab_d6b8: bra ($ff - $100) ; $d6b9.w
-unknown_ab_d6ba: pla 
+unknown_ab_d6ba: pla
 unknown_ab_d6bb: adc $010f06, X
 unknown_ab_d6bf: ora $8e, S
 unknown_ab_d6c1: bne ($8e - $100) ; $d651.w
 unknown_ab_d6c3: cpx #$f4c3.w
 unknown_ab_d6c6: ora ($32, X)
 unknown_ab_d6c8: bne $19 ; $d6e3.w
-unknown_ab_d6ca: phk 
+unknown_ab_d6ca: phk
 unknown_ab_d6cb: lsr $13fd.w
 unknown_ab_d6ce: inc $0f, X
 unknown_ab_d6d0: cpx #$f03f.w
@@ -10636,7 +10636,7 @@ unknown_ab_d6d7: cmp $48e71e
 unknown_ab_d6db: lda [$12], Y
 unknown_ab_d6dd: sbc $f807.w
 unknown_ab_d6e0: cmp $27f2.w
-unknown_ab_d6e3: sec 
+unknown_ab_d6e3: sec
 unknown_ab_d6e4: and [$18], Y
 unknown_ab_d6e6: lda ($3e, X)
 unknown_ab_d6e8: sbc [$3f], Y
@@ -10675,11 +10675,11 @@ unknown_ab_d738: ora ($3e, X)
 unknown_ab_d73a: ora ($1e, X)
 unknown_ab_d73c: brk $0f
 unknown_ab_d73e: brk $07
-unknown_ab_d740: stp 
+unknown_ab_d740: stp
 unknown_ab_d741: jmp [$bcb3]
 unknown_ab_d744: cmp [$ea], Y
 unknown_ab_d746: ora $cc3f60, X
-unknown_ab_d74a: phd 
+unknown_ab_d74a: phd
 unknown_ab_d74b: pea $f907.w
 unknown_ab_d74e: tsb $fb
 unknown_ab_d750: cmp $40bf20, X
@@ -10687,7 +10687,7 @@ unknown_ab_d754: sbc $807f10
 unknown_ab_d758: sbc $00ff00.l, X
 unknown_ab_d75c: sbc $00ff00.l, X
 unknown_ab_d760: bne $24 ; $d786.w
-unknown_ab_d762: inx 
+unknown_ab_d762: inx
 unknown_ab_d763: trb $e4
 unknown_ab_d765: asl $0af4.w, X
 unknown_ab_d768: pea $e40a.w
@@ -10709,10 +10709,10 @@ unknown_ab_d78c: brk $00
 unknown_ab_d78e: brk $00
 unknown_ab_d790: brk $00
 unknown_ab_d792: mvp $28, $44
-unknown_ab_d795: plp 
+unknown_ab_d795: plp
 unknown_ab_d796: bpl $10 ; $d7a8.w
-unknown_ab_d798: plp 
-unknown_ab_d799: plp 
+unknown_ab_d798: plp
+unknown_ab_d799: plp
 unknown_ab_d79a: mvp $00, $44
 unknown_ab_d79d: brk $00
 unknown_ab_d79f: brk $bf
@@ -10723,7 +10723,7 @@ unknown_ab_d7a9: sta $382af0, X
 unknown_ab_d7ad: and ($31), Y
 unknown_ab_d7af: and $61, X
 unknown_ab_d7b1: stz $1fec.w, X
-unknown_ab_d7b4: ply 
+unknown_ab_d7b4: ply
 unknown_ab_d7b5: sbc $03fe01, X
 unknown_ab_d7b9: jsr ($dd26.w, X)
 unknown_ab_d7bc: lda [$ce], Y
@@ -10731,10 +10731,10 @@ unknown_ab_d7be: lda ($cf)
 unknown_ab_d7c0: rts
 
 unknown_ab_d7c1: ora $281d25, X
-unknown_ab_d7c5: clc 
+unknown_ab_d7c5: clc
 unknown_ab_d7c6: adc $03, S
-unknown_ab_d7c8: pla 
-unknown_ab_d7c9: php 
+unknown_ab_d7c8: pla
+unknown_ab_d7c9: php
 unknown_ab_d7ca: rti
 
 unknown_ab_d7cb: bit $c0
@@ -10744,16 +10744,16 @@ unknown_ab_d7d1: sbc $07ff02, X
 unknown_ab_d7d5: sbc $07ff1c, X
 unknown_ab_d7d9: sbc $0fff0b, X
 unknown_ab_d7dd: sbc $c0ff1e, X
-unknown_ab_d7e1: sed 
+unknown_ab_d7e1: sed
 unknown_ab_d7e2: pea $a6fc.w
 unknown_ab_d7e5: ldx $80
 unknown_ab_d7e7: bra $6f ; $d858.w
 unknown_ab_d7e9: adc $a61f17
-unknown_ab_d7ed: plx 
+unknown_ab_d7ed: plx
 unknown_ab_d7ee: cpy $fa
 unknown_ab_d7f0: tsb $fc
 unknown_ab_d7f2: cop $fe
-unknown_ab_d7f4: cli 
+unknown_ab_d7f4: cli
 unknown_ab_d7f5: inc $ff7f.w, X
 unknown_ab_d7f8: bcc ($ff - $100) ; $d7f9.w
 unknown_ab_d7fa: cpx #$01ff.w
@@ -10796,12 +10796,12 @@ unknown_ab_d853: brk $00
 unknown_ab_d855: brk $00
 unknown_ab_d857: brk $c0
 unknown_ab_d859: cpy #$f070.w
-unknown_ab_d85c: php 
-unknown_ab_d85d: sed 
+unknown_ab_d85c: php
+unknown_ab_d85d: sed
 unknown_ab_d85e: tsb $4efc.w
 unknown_ab_d861: stx $58
 unknown_ab_d863: tsb $2e
-unknown_ab_d865: php 
+unknown_ab_d865: php
 unknown_ab_d866: and $1d0d.w
 unknown_ab_d869: tsb $0606.w
 unknown_ab_d86c: asl $06
@@ -10813,16 +10813,16 @@ unknown_ab_d877: and ($2c, S), Y
 unknown_ab_d879: and ($16, S), Y
 unknown_ab_d87b: ora $1916.w, Y
 unknown_ab_d87e: cop $0d
-unknown_ab_d880: plp 
-unknown_ab_d881: tya 
-unknown_ab_d882: sec 
-unknown_ab_d883: iny 
-unknown_ab_d884: pha 
+unknown_ab_d880: plp
+unknown_ab_d881: tya
+unknown_ab_d882: sec
+unknown_ab_d883: iny
+unknown_ab_d884: pha
 unknown_ab_d885: rti
 
 unknown_ab_d886: and $90e1.w
 unknown_ab_d889: adc ($4c), Y
-unknown_ab_d88b: sec 
+unknown_ab_d88b: sec
 unknown_ab_d88c: jmp ($641d)
 unknown_ab_d88f: ora $7f87.w, X
 unknown_ab_d892: cmp [$3f]
@@ -10833,7 +10833,7 @@ unknown_ab_d89a: ora $ff, S
 unknown_ab_d89c: cop $ff
 unknown_ab_d89e: cop $ff
 unknown_ab_d8a0: jmp ($3c78.w, X)
-unknown_ab_d8a3: tsx 
+unknown_ab_d8a3: tsx
 unknown_ab_d8a4: asl $9b8e.w
 unknown_ab_d8a7: cpx $1c
 unknown_ab_d8a9: cpx #$ac3e.w
@@ -10841,7 +10841,7 @@ unknown_ab_d8ac: inc $9e64.w, X
 unknown_ab_d8af: asl $88
 unknown_ab_d8b1: sbc [$40], Y
 unknown_ab_d8b3: sbc $04ff70, X
-unknown_ab_d8b7: xce 
+unknown_ab_d8b7: xce
 unknown_ab_d8b8: brk $ff
 unknown_ab_d8ba: bit $7cd3.w
 unknown_ab_d8bd: sta $16, S
@@ -10863,14 +10863,14 @@ unknown_ab_d8db: rts
 
 unknown_ab_d8dc: ldy #$c040.w
 unknown_ab_d8df: bmi ($ec - $100) ; $d8cd.w
-unknown_ab_d8e1: tdc 
+unknown_ab_d8e1: tdc
 unknown_ab_d8e2: trb $5ea7.w
 unknown_ab_d8e5: and $b4dfb5
 unknown_ab_d8e9: cmp $3ccfbe, X
 unknown_ab_d8ed: eor [$1f]
 unknown_ab_d8ef: and [$79]
 unknown_ab_d8f1: stx $07
-unknown_ab_d8f3: sed 
+unknown_ab_d8f3: sed
 unknown_ab_d8f4: ora $e01f70
 unknown_ab_d8f8: ora $f00fe0, X
 unknown_ab_d8fc: ora [$78]
@@ -10888,15 +10888,15 @@ unknown_ab_d918: sbc $00ff00.l, X
 unknown_ab_d91c: sbc $00ff00.l, X
 unknown_ab_d920: beq $0a ; $d92c.w
 unknown_ab_d922: jsr ($f501.w, X)
-unknown_ab_d925: phd 
-unknown_ab_d926: xce 
+unknown_ab_d925: phd
+unknown_ab_d926: xce
 unknown_ab_d927: ora [$f7]
 unknown_ab_d929: ora #$e4
 unknown_ab_d92b: inc A
 unknown_ab_d92c: stx $7e
-unknown_ab_d92e: clc 
+unknown_ab_d92e: clc
 unknown_ab_d92f: jsr ($06fc.w, X)
-unknown_ab_d932: sed 
+unknown_ab_d932: sed
 unknown_ab_d933: ora [$f8]
 unknown_ab_d935: ora [$fe]
 unknown_ab_d937: ora ($f8, X)
@@ -10922,7 +10922,7 @@ unknown_ab_d96e: brk $00
 unknown_ab_d970: beq $0c ; $d97e.w
 unknown_ab_d972: beq $0c ; $d980.w
 unknown_ab_d974: cpx #$c01c.w
-unknown_ab_d977: sec 
+unknown_ab_d977: sec
 unknown_ab_d978: bra $70 ; $d9ea.w
 unknown_ab_d97a: brk $c0
 unknown_ab_d97c: brk $80
@@ -10937,10 +10937,10 @@ unknown_ab_d98c: brk $00
 unknown_ab_d98e: brk $00
 unknown_ab_d990: brk $00
 unknown_ab_d992: mvp $28, $44
-unknown_ab_d995: plp 
+unknown_ab_d995: plp
 unknown_ab_d996: bpl $10 ; $d9a8.w
-unknown_ab_d998: plp 
-unknown_ab_d999: plp 
+unknown_ab_d998: plp
+unknown_ab_d999: plp
 unknown_ab_d99a: mvp $00, $44
 unknown_ab_d99d: brk $00
 unknown_ab_d99f: brk $e4
@@ -10960,7 +10960,7 @@ unknown_ab_d9c3: ora [$8c]
 unknown_ab_d9c5: stx $cf40.w
 unknown_ab_d9c8: rti
 
-unknown_ab_d9c9: wai 
+unknown_ab_d9c9: wai
 unknown_ab_d9ca: cmp $d2, S
 unknown_ab_d9cc: sbc $c843f6
 unknown_ab_d9d0: bit $10ff.w, X
@@ -10975,7 +10975,7 @@ unknown_ab_d9e6: rts
 unknown_ab_d9e7: bvs ($90 - $100) ; $d979.w
 unknown_ab_d9e9: rts
 
-unknown_ab_d9ea: cld 
+unknown_ab_d9ea: cld
 unknown_ab_d9eb: bra ($e0 - $100) ; $d9cd.w
 unknown_ab_d9ed: cpy #$88e0.w
 unknown_ab_d9f0: ora ($ff, X)
@@ -10983,7 +10983,7 @@ unknown_ab_d9f2: jsr $82de.w
 unknown_ab_d9f5: inc $fe82.w, X
 unknown_ab_d9f8: per $809e ; $5a99.w
 unknown_ab_d9fb: jmp ($3cc0.w, X)
-unknown_ab_d9fe: dey 
+unknown_ab_d9fe: dey
 unknown_ab_d9ff: stz $40, X
 unknown_ab_da01: adc $9cff8c, X
 unknown_ab_da05: cpx $8df5.w
@@ -11002,7 +11002,7 @@ unknown_ab_da25: adc $2a1060, X
 unknown_ab_da29: inc A
 unknown_ab_da2a: jsr $3000.w
 unknown_ab_da2d: cop $30
-unknown_ab_da2f: php 
+unknown_ab_da2f: php
 unknown_ab_da30: brk $ff
 unknown_ab_da32: brk $ff
 unknown_ab_da34: brk $ff
@@ -11012,7 +11012,7 @@ unknown_ab_da3e: ora [$ff]
 unknown_ab_da40: ldy $70fc.w
 unknown_ab_da43: bvs $0e ; $da53.w
 unknown_ab_da45: asl $8f8f.w
-unknown_ab_da48: phy 
+unknown_ab_da48: phy
 unknown_ab_da49: eor $1c13.w, X
 unknown_ab_da4c: ora ($3c, S), Y
 unknown_ab_da4e: adc #$78
@@ -11042,7 +11042,7 @@ unknown_ab_da82: ora [$0f], Y
 unknown_ab_da84: ora $1f, S
 unknown_ab_da86: sta $1787.w, X
 unknown_ab_da89: ora $8c180d
-unknown_ab_da8d: php 
+unknown_ab_da8d: php
 unknown_ab_da8e: .db $42, $3c
 unknown_ab_da90: ora ($ff, X)
 unknown_ab_da92: brk $ff
@@ -11071,19 +11071,19 @@ unknown_ab_dac2: brk $d0
 unknown_ab_dac4: rti
 
 unknown_ab_dac5: ldy #$a848.w
-unknown_ab_dac8: inx 
-unknown_ab_dac9: cli 
-unknown_ab_daca: sei 
+unknown_ab_dac8: inx
+unknown_ab_dac9: cli
+unknown_ab_daca: sei
 unknown_ab_dacb: bcc ($b8 - $100) ; $da85.w
 unknown_ab_dacd: cpy #$e89c.w
 unknown_ab_dad0: cpy #$c030.w
 unknown_ab_dad3: bmi ($e0 - $100) ; $dab5.w
 unknown_ab_dad5: bpl ($e0 - $100) ; $dab7.w
-unknown_ab_dad7: clc 
+unknown_ab_dad7: clc
 unknown_ab_dad8: bvs ($88 - $100) ; $da62.w
 unknown_ab_dada: beq $08 ; $dae4.w
 unknown_ab_dadc: beq $08 ; $dae6.w
-unknown_ab_dade: sed 
+unknown_ab_dade: sed
 unknown_ab_dadf: tsb $0d
 unknown_ab_dae1: and [$1f], Y
 unknown_ab_dae3: bpl $09 ; $daee.w
@@ -11092,7 +11092,7 @@ unknown_ab_dae9: brk $00
 unknown_ab_daeb: brk $00
 unknown_ab_daed: brk $00
 unknown_ab_daef: brk $07
-unknown_ab_daf1: sec 
+unknown_ab_daf1: sec
 unknown_ab_daf2: brk $1f
 unknown_ab_daf4: ora ($0e, X)
 unknown_ab_daf6: brk $03
@@ -11114,7 +11114,7 @@ unknown_ab_db1b: brk $00
 unknown_ab_db1d: brk $00
 unknown_ab_db1f: brk $0c
 unknown_ab_db21: cpx $98
-unknown_ab_db23: iny 
+unknown_ab_db23: iny
 unknown_ab_db24: bmi $10 ; $db36.w
 unknown_ab_db26: cpx #$8020.w
 unknown_ab_db29: brk $00
@@ -11129,13 +11129,13 @@ unknown_ab_db3a: brk $00
 unknown_ab_db3c: brk $00
 unknown_ab_db3e: brk $00
 unknown_ab_db40: ora ($01, X)
-unknown_ab_db42: clc 
+unknown_ab_db42: clc
 unknown_ab_db43: asl $7f3c.w, X
-unknown_ab_db46: clv 
+unknown_ab_db46: clv
 unknown_ab_db47: sbc $0ecc0f, X
-unknown_ab_db4b: pla 
+unknown_ab_db4b: pla
 unknown_ab_db4c: ldy $e4dc.w, X
-unknown_ab_db4f: clv 
+unknown_ab_db4f: clv
 unknown_ab_db50: inc $e1ff.w, X
 unknown_ab_db53: sbc $00ff00.l, X
 unknown_ab_db57: sbc $10fb34, X
@@ -11144,17 +11144,17 @@ unknown_ab_db5f: eor [$40]
 unknown_ab_db61: rti
 
 unknown_ab_db62: bcs ($f0 - $100) ; $db54.w
-unknown_ab_db64: sei 
-unknown_ab_db65: sed 
+unknown_ab_db64: sei
+unknown_ab_db65: sed
 unknown_ab_db66: rts
 
 unknown_ab_db67: ldy #$20c0.w
 unknown_ab_db6a: cpy #$8000.w
 unknown_ab_db6d: brk $00
 unknown_ab_db6f: brk $b8
-unknown_ab_db71: sed 
-unknown_ab_db72: php 
-unknown_ab_db73: sed 
+unknown_ab_db71: sed
+unknown_ab_db72: php
+unknown_ab_db73: sed
 unknown_ab_db74: brk $f8
 unknown_ab_db76: bpl ($f0 - $100) ; $db68.w
 unknown_ab_db78: bpl ($f0 - $100) ; $db6a.w
@@ -11170,10 +11170,10 @@ unknown_ab_db8c: brk $00
 unknown_ab_db8e: brk $00
 unknown_ab_db90: brk $00
 unknown_ab_db92: mvp $28, $44
-unknown_ab_db95: plp 
+unknown_ab_db95: plp
 unknown_ab_db96: bpl $10 ; $dba8.w
-unknown_ab_db98: plp 
-unknown_ab_db99: plp 
+unknown_ab_db98: plp
+unknown_ab_db99: plp
 unknown_ab_db9a: mvp $00, $44
 unknown_ab_db9d: brk $00
 unknown_ab_db9f: brk $46
@@ -11183,7 +11183,7 @@ unknown_ab_dba5: asl $27
 unknown_ab_dba7: trb $00
 unknown_ab_dba9: rol $06, X
 unknown_ab_dbab: bpl $04 ; $dbb1.w
-unknown_ab_dbad: php 
+unknown_ab_dbad: php
 unknown_ab_dbae: tsb $18
 unknown_ab_dbb0: bra ($ff - $100) ; $dbb1.w
 unknown_ab_dbb2: brk $7f
@@ -11194,7 +11194,7 @@ unknown_ab_dbbf: ora $5df2eb, X
 unknown_ab_dbc3: cpy #$d0c9.w
 unknown_ab_dbc6: adc $5e39.w
 unknown_ab_dbc9: eor $47e4f3
-unknown_ab_dbcd: sei 
+unknown_ab_dbcd: sei
 unknown_ab_dbce: cmp [$e9]
 unknown_ab_dbd0: cop $fd
 unknown_ab_dbd2: jsr $20ff.w
@@ -11214,13 +11214,13 @@ unknown_ab_dbee: bcs ($c8 - $100) ; $dbb8.w
 unknown_ab_dbf0: bne $2c ; $dc1e.w
 unknown_ab_dbf2: jmp [$f020]
 unknown_ab_dbf5: tsb $0cf0.w
-unknown_ab_dbf8: sed 
+unknown_ab_dbf8: sed
 unknown_ab_dbf9: tsb $b0
 unknown_ab_dbfb: jmp $0cf0.w
-unknown_ab_dbfe: sed 
+unknown_ab_dbfe: sed
 unknown_ab_dbff: brk $4c
 unknown_ab_dc01: bmi $04 ; $dc07.w
-unknown_ab_dc03: clc 
+unknown_ab_dc03: clc
 unknown_ab_dc04: tsb $08
 unknown_ab_dc06: cop $00
 unknown_ab_dc08: ora [$04]
@@ -11235,7 +11235,7 @@ unknown_ab_dc17: ora $000700.l
 unknown_ab_dc1b: ora $02, S
 unknown_ab_dc1d: ora $01, S
 unknown_ab_dc1f: ora ($c6, X)
-unknown_ab_dc21: sed 
+unknown_ab_dc21: sed
 unknown_ab_dc22: eor $348260
 unknown_ab_dc26: lda $20, S
 unknown_ab_dc28: sta $94, S
@@ -11247,13 +11247,13 @@ unknown_ab_dc35: cmp $98df3c
 unknown_ab_dc39: adc $08cf34
 unknown_ab_dc3d: sbc [$1b], Y
 unknown_ab_dc3f: cpx $5c
-unknown_ab_dc41: pla 
+unknown_ab_dc41: pla
 unknown_ab_dc42: jmp $e8d662
 unknown_ab_dc46: rol $2530.w
 unknown_ab_dc49: inc A
 unknown_ab_dc4a: adc $78c770
 unknown_ab_dc4e: rep #$fd
-unknown_ab_dc50: ply 
+unknown_ab_dc50: ply
 unknown_ab_dc51: stx $7c
 unknown_ab_dc53: brl $03fd ; $e053.w
 unknown_ab_dc56: and $1ec3.w, X
@@ -11294,7 +11294,7 @@ unknown_ab_dc9c: brk $00
 unknown_ab_dc9e: brk $01
 unknown_ab_dca0: brk $00
 unknown_ab_dca2: ora $07
-unknown_ab_dca4: clc 
+unknown_ab_dca4: clc
 unknown_ab_dca5: ora $643f30, X
 unknown_ab_dca9: adc $ad, S
 unknown_ab_dcab: sbc $7a, S
@@ -11352,18 +11352,18 @@ unknown_ab_dd16: rol $39
 unknown_ab_dd18: jsr $403f.w
 unknown_ab_dd1b: adc $407f40, X
 unknown_ab_dd1f: adc $2a1064, X
-unknown_ab_dd23: clc 
+unknown_ab_dd23: clc
 unknown_ab_dd24: cpy #$c930.w
 unknown_ab_dd27: and $79b8.w, Y
 unknown_ab_dd2a: bmi ($f6 - $100) ; $dd22.w
-unknown_ab_dd2c: tya 
+unknown_ab_dd2c: tya
 unknown_ab_dd2d: jmp ($f5f3.w, X)
 unknown_ab_dd30: ora $ff, S
 unknown_ab_dd32: ora ($ff, X)
 unknown_ab_dd34: ora ($ff, X)
 unknown_ab_dd36: asl $ff
 unknown_ab_dd38: asl $ff
-unknown_ab_dd3a: php 
+unknown_ab_dd3a: php
 unknown_ab_dd3b: sbc $09ff00, X
 unknown_ab_dd3f: inc $60f4.w, X
 unknown_ab_dd42: pea $f040.w
@@ -11372,15 +11372,15 @@ unknown_ab_dd45: rts
 unknown_ab_dd46: bne ($d4 - $100) ; $dd1c.w
 unknown_ab_dd48: bra ($d8 - $100) ; $dd22.w
 unknown_ab_dd4a: sty $fc, X
-unknown_ab_dd4c: dey 
+unknown_ab_dd4c: dey
 unknown_ab_dd4d: cpx #$30c8.w
 unknown_ab_dd50: cpx #$c11f.w
 unknown_ab_dd53: and $d49f61, X
 unknown_ab_dd57: rol A
-unknown_ab_dd58: cld 
+unknown_ab_dd58: cld
 unknown_ab_dd59: bit $fc
 unknown_ab_dd5b: brk $e0
-unknown_ab_dd5d: clc 
+unknown_ab_dd5d: clc
 unknown_ab_dd5e: bvs ($88 - $100) ; $dce8.w
 unknown_ab_dd60: brk $00
 unknown_ab_dd62: brk $00
@@ -11408,14 +11408,14 @@ unknown_ab_dd8c: brk $00
 unknown_ab_dd8e: brk $00
 unknown_ab_dd90: brk $00
 unknown_ab_dd92: mvp $28, $44
-unknown_ab_dd95: plp 
+unknown_ab_dd95: plp
 unknown_ab_dd96: bpl $10 ; $dda8.w
-unknown_ab_dd98: plp 
-unknown_ab_dd99: plp 
+unknown_ab_dd98: plp
+unknown_ab_dd99: plp
 unknown_ab_dd9a: mvp $00, $44
 unknown_ab_dd9d: brk $00
 unknown_ab_dd9f: brk $05
-unknown_ab_dda1: php 
+unknown_ab_dda1: php
 unknown_ab_dda2: ora $08
 unknown_ab_dda4: ora $0d, S
 unknown_ab_dda6: ora [$00]
@@ -11426,7 +11426,7 @@ unknown_ab_ddae: brk $07
 unknown_ab_ddb0: brk $0f
 unknown_ab_ddb2: brk $0f
 unknown_ab_ddb4: ora ($0e, X)
-unknown_ab_ddb6: php 
+unknown_ab_ddb6: php
 unknown_ab_ddb7: ora $080f08
 unknown_ab_ddbb: ora $080f08
 unknown_ab_ddbf: ora $8e604e
@@ -11434,7 +11434,7 @@ unknown_ab_ddc3: rts
 
 unknown_ab_ddc4: lsr $48
 unknown_ab_ddc6: ora $c461.w
-unknown_ab_ddc9: pha 
+unknown_ab_ddc9: pha
 unknown_ab_ddca: stz $a8
 unknown_ab_ddcc: cmp $cee0.w, X
 unknown_ab_ddcf: sbc ($70, S), Y
@@ -11442,18 +11442,18 @@ unknown_ab_ddd1: sta $709f70, X
 unknown_ab_ddd5: lda $709e71, X
 unknown_ab_ddd9: lda $e0ff10, X
 unknown_ab_dddd: ora $b80cf3, X
-unknown_ab_dde1: iny 
-unknown_ab_dde2: tya 
+unknown_ab_dde1: iny
+unknown_ab_dde2: tya
 unknown_ab_dde3: cpx #$c0f8.w
-unknown_ab_dde6: clv 
-unknown_ab_dde7: cld 
-unknown_ab_dde8: tya 
+unknown_ab_dde6: clv
+unknown_ab_dde7: cld
+unknown_ab_dde8: tya
 unknown_ab_dde9: cpx $98
 unknown_ab_ddeb: cpx $b8
 unknown_ab_dded: cpy #$c8b0.w
-unknown_ab_ddf0: sed 
+unknown_ab_ddf0: sed
 unknown_ab_ddf1: brk $f0
-unknown_ab_ddf3: php 
+unknown_ab_ddf3: php
 unknown_ab_ddf4: beq $08 ; $ddfe.w
 unknown_ab_ddf6: jsr ($f004.w, X)
 unknown_ab_ddf9: tsb $0cf0.w
@@ -11489,8 +11489,8 @@ unknown_ab_de40: sbc $c5fe.w, X
 unknown_ab_de43: cmp $fc91.w
 unknown_ab_de46: cmp ($fc, S), Y
 unknown_ab_de48: sbc $ff, X
-unknown_ab_de4a: sed 
-unknown_ab_de4b: sed 
+unknown_ab_de4a: sed
+unknown_ab_de4b: sed
 unknown_ab_de4c: sbc $8605df, X
 unknown_ab_de50: sbc $c502.w, X
 unknown_ab_de53: dec A
@@ -11510,8 +11510,8 @@ unknown_ab_de71: rts
 
 unknown_ab_de72: bcs $70 ; $dee4.w
 unknown_ab_de74: bcc $70 ; $dee6.w
-unknown_ab_de76: sed 
-unknown_ab_de77: clc 
+unknown_ab_de76: sed
+unknown_ab_de77: clc
 unknown_ab_de78: tsb $fc
 unknown_ab_de7a: .db $42, $be
 unknown_ab_de7c: sbc $f907.w, Y
@@ -11529,7 +11529,7 @@ unknown_ab_de93: ora $04, S
 unknown_ab_de95: ora [$04]
 unknown_ab_de97: ora [$09]
 unknown_ab_de99: asl $0e09.w
-unknown_ab_de9c: phd 
+unknown_ab_de9c: phd
 unknown_ab_de9d: tsb $0c0b.w
 unknown_ab_dea0: ora ($01, X)
 unknown_ab_dea2: bvs $18 ; $debc.w
@@ -11547,9 +11547,9 @@ unknown_ab_debb: adc [$10], Y
 unknown_ab_debd: sbc $6aff18, X
 unknown_ab_dec1: ora $43, X
 unknown_ab_dec3: and $c93f43, X
-unknown_ab_dec7: tsc 
+unknown_ab_dec7: tsc
 unknown_ab_dec8: sta [$07]
-unknown_ab_deca: tax 
+unknown_ab_deca: tax
 unknown_ab_decb: rol A
 unknown_ab_decc: asl $06
 unknown_ab_dece: cop $a2
@@ -11557,7 +11557,7 @@ unknown_ab_ded0: brk $ff
 unknown_ab_ded2: brk $ff
 unknown_ab_ded4: brk $ff
 unknown_ab_ded6: tsb $ff
-unknown_ab_ded8: sei 
+unknown_ab_ded8: sei
 unknown_ab_ded9: sbc $79ff15, X
 unknown_ab_dedd: sbc $80ff5d, X
 unknown_ab_dee1: bra ($e0 - $100) ; $dec3.w
@@ -11570,14 +11570,14 @@ unknown_ab_deef: bpl $60 ; $df51.w
 unknown_ab_def1: cpx #$f010.w
 unknown_ab_def4: bpl ($f0 - $100) ; $dee6.w
 unknown_ab_def6: bpl ($f0 - $100) ; $dee8.w
-unknown_ab_def8: php 
-unknown_ab_def9: sed 
-unknown_ab_defa: php 
-unknown_ab_defb: sed 
-unknown_ab_defc: pha 
-unknown_ab_defd: sed 
-unknown_ab_defe: inx 
-unknown_ab_deff: sed 
+unknown_ab_def8: php
+unknown_ab_def9: sed
+unknown_ab_defa: php
+unknown_ab_defb: sed
+unknown_ab_defc: pha
+unknown_ab_defd: sed
+unknown_ab_defe: inx
+unknown_ab_deff: sed
 unknown_ab_df00: ora $27, X
 unknown_ab_df02: ora $14, S
 unknown_ab_df04: tsb $12
@@ -11593,14 +11593,14 @@ unknown_ab_df1d: rol $7e41.w, X
 unknown_ab_df20: lda $70, X
 unknown_ab_df22: eor $6d41.w
 unknown_ab_df25: bmi $49 ; $df70.w
-unknown_ab_df27: cli 
+unknown_ab_df27: cli
 unknown_ab_df28: sbc $d1, X
 unknown_ab_df2a: sta $cf
 unknown_ab_df2c: asl $1eb1.w
 unknown_ab_df2f: lda $09, S
 unknown_ab_df31: inc $fe31.w, X
 unknown_ab_df34: brk $ff
-unknown_ab_df36: pha 
+unknown_ab_df36: pha
 unknown_ab_df37: lda [$c8], Y
 unknown_ab_df39: and $e134fb, X
 unknown_ab_df3d: lsr $7cc3.w, X
@@ -11636,22 +11636,22 @@ unknown_ab_df81: brk $80
 unknown_ab_df83: brk $e0
 unknown_ab_df85: brk $d0
 unknown_ab_df87: cpy #$c850.w
-unknown_ab_df8a: plp 
+unknown_ab_df8a: plp
 unknown_ab_df8b: cpx #$6488.w
-unknown_ab_df8e: clc 
+unknown_ab_df8e: clc
 unknown_ab_df8f: pea $c0c0.w
 unknown_ab_df92: rts
 
 unknown_ab_df93: cpx #$f010.w
-unknown_ab_df96: iny 
-unknown_ab_df97: sec 
+unknown_ab_df96: iny
+unknown_ab_df97: sec
 unknown_ab_df98: cpy $3c
 unknown_ab_df9a: cpx $1c
 unknown_ab_df9c: sep #$1e
 unknown_ab_df9e: sbc ($0e)
 unknown_ab_dfa0: ora $090a.w
-unknown_ab_dfa3: php 
-unknown_ab_dfa4: php 
+unknown_ab_dfa3: php
+unknown_ab_dfa4: php
 unknown_ab_dfa5: ora $111a.w, Y
 unknown_ab_dfa8: asl $1917.w
 unknown_ab_dfab: ora ($0b), Y
@@ -11667,14 +11667,14 @@ unknown_ab_dfc5: adc $fef8.w, X
 unknown_ab_dfc8: sbc $feff.w, Y
 unknown_ab_dfcb: sbc $8fffff, X
 unknown_ab_dfcf: sbc [$47], Y
-unknown_ab_dfd1: clv 
+unknown_ab_dfd1: clv
 unknown_ab_dfd2: sbc $827d10
 unknown_ab_dfd6: inc $ff01.w, X
 unknown_ab_dfd9: brk $ff
 unknown_ab_dfdb: brk $ff
 unknown_ab_dfdd: brk $b7
-unknown_ab_dfdf: pha 
-unknown_ab_dfe0: sei 
+unknown_ab_dfdf: pha
+unknown_ab_dfe0: sei
 unknown_ab_dfe1: sty $b8
 unknown_ab_dfe3: cpy $e4
 unknown_ab_dfe5: jmp [$e45c]
@@ -11682,10 +11682,10 @@ unknown_ab_dfe8: trb $38bc.w
 unknown_ab_dfeb: jmp [$c034]
 unknown_ab_dfee: pea $f0f8.w
 unknown_ab_dff1: tsb $0cf0.w
-unknown_ab_dff4: sed 
+unknown_ab_dff4: sed
 unknown_ab_dff5: tsb $50
 unknown_ab_dff7: ldy $669a.w
-unknown_ab_dffa: plx 
+unknown_ab_dffa: plx
 unknown_ab_dffb: asl $f2
 unknown_ab_dffd: asl $06fa.w
 unknown_ab_e000: brk $00
@@ -11726,7 +11726,7 @@ unknown_ab_e052: adc $9d87.w, Y
 unknown_ab_e055: per $22dd ; $0335.w
 unknown_ab_e058: cmp $a326.w, Y
 unknown_ab_e05b: jmp $07fc03
-unknown_ab_e05f: sed 
+unknown_ab_e05f: sed
 unknown_ab_e060: jsr ($7674.w, X)
 unknown_ab_e063: ldx $3fcf.w
 unknown_ab_e066: ora ($f9)
@@ -11747,7 +11747,7 @@ unknown_ab_e085: eor $0e5f2e, X
 unknown_ab_e089: and $1b033f, X
 unknown_ab_e08d: ora $0f170a, X
 unknown_ab_e091: bvs $07 ; $e09a.w
-unknown_ab_e093: sei 
+unknown_ab_e093: sei
 unknown_ab_e094: ora $601f60, X
 unknown_ab_e098: ora $3c0320, X
 unknown_ab_e09c: ora $180700, X
@@ -11761,14 +11761,14 @@ unknown_ab_e0b2: sbc $02fd00, X
 unknown_ab_e0b6: sbc $00ff00.l, X
 unknown_ab_e0ba: sbc $00ff00.l, X
 unknown_ab_e0be: sbc $707400, X
-unknown_ab_e0c2: tay 
+unknown_ab_e0c2: tay
 unknown_ab_e0c3: bcs $78 ; $e13d.w
-unknown_ab_e0c5: inx 
-unknown_ab_e0c6: sec 
+unknown_ab_e0c5: inx
+unknown_ab_e0c6: sec
 unknown_ab_e0c7: cpy #$68
 unknown_ab_e0c9: bcc ($e8 - $100) ; $e0b3.w
-unknown_ab_e0cb: clc 
-unknown_ab_e0cc: sed 
+unknown_ab_e0cb: clc
+unknown_ab_e0cc: sed
 unknown_ab_e0cd: brk $f8
 unknown_ab_e0cf: brk $72
 unknown_ab_e0d1: stx $4cb4.w
@@ -11793,13 +11793,13 @@ unknown_ab_e0fa: ora [$08]
 unknown_ab_e0fc: ora $001f10.l
 unknown_ab_e100: eor $b57b7f, X
 unknown_ab_e104: ora $8a, X
-unknown_ab_e106: phd 
+unknown_ab_e106: phd
 unknown_ab_e107: ora $5e
 unknown_ab_e109: tsb $f8
 unknown_ab_e10b: ora $fa00.w
 unknown_ab_e10e: brk $d8
 unknown_ab_e110: ora $ce3160, X
-unknown_ab_e114: sed 
+unknown_ab_e114: sed
 unknown_ab_e115: ora [$fc]
 unknown_ab_e117: ora $fd, S
 unknown_ab_e119: ora $fa, S
@@ -11813,7 +11813,7 @@ unknown_ab_e12c: sbc [$bf]
 unknown_ab_e12e: lda $f986fe
 unknown_ab_e132: adc $ed92.w
 unknown_ab_e135: ora ($e6)
-unknown_ab_e137: tcs 
+unknown_ab_e137: tcs
 unknown_ab_e138: cmp $4fb021, X
 unknown_ab_e13c: lda [$58]
 unknown_ab_e13e: lda $701c50
@@ -11827,13 +11827,13 @@ unknown_ab_e150: stz $f8e1.w, X
 unknown_ab_e153: ora [$e2]
 unknown_ab_e155: asl $3ccc.w, X
 unknown_ab_e158: beq ($f0 - $100) ; $e14a.w
-unknown_ab_e15a: sec 
-unknown_ab_e15b: sed 
+unknown_ab_e15a: sec
+unknown_ab_e15b: sed
 unknown_ab_e15c: beq $7e ; $e1dc.w
 unknown_ab_e15e: sta $40bf1f, X
 unknown_ab_e162: sbc $07f900, X
 unknown_ab_e166: sbc $29d600, X
-unknown_ab_e16a: dey 
+unknown_ab_e16a: dey
 unknown_ab_e16b: adc [$10], Y
 unknown_ab_e16d: sbc $fffc88
 unknown_ab_e171: brk $ff
@@ -11858,7 +11858,7 @@ unknown_ab_e199: ora $e21ee0
 unknown_ab_e19d: asl $3cc0.w, X
 unknown_ab_e1a0: ora [$08], Y
 unknown_ab_e1a2: ora $271f13
-unknown_ab_e1a6: clc 
+unknown_ab_e1a6: clc
 unknown_ab_e1a7: adc [$1e]
 unknown_ab_e1a9: adc $1c231e
 unknown_ab_e1ad: and [$0b]
@@ -11880,7 +11880,7 @@ unknown_ab_e1d6: sbc $00ff00.l, X
 unknown_ab_e1da: sbc $00ff00.l, X
 unknown_ab_e1de: sbc $283800, X
 unknown_ab_e1e2: cpx $14e0.w
-unknown_ab_e1e5: inx 
+unknown_ab_e1e5: inx
 unknown_ab_e1e6: rol $c8, X
 unknown_ab_e1e8: inc $fe40.w, X
 unknown_ab_e1eb: brk $fe
@@ -11908,7 +11908,7 @@ unknown_ab_e21a: brk $01
 unknown_ab_e21c: ora $04, S
 unknown_ab_e21e: ora [$08]
 unknown_ab_e220: brk $0f
-unknown_ab_e222: sec 
+unknown_ab_e222: sec
 unknown_ab_e223: ora [$80]
 unknown_ab_e225: ror $0c31.w, X
 unknown_ab_e228: adc [$08]
@@ -11916,7 +11916,7 @@ unknown_ab_e22a: sta [$ba], Y
 unknown_ab_e22c: sbc $ab07.w, Y
 unknown_ab_e22f: eor $430906, X
 unknown_ab_e233: jmp ($857a.w, X)
-unknown_ab_e236: sed 
+unknown_ab_e236: sed
 unknown_ab_e237: ora [$80]
 unknown_ab_e239: sbc $ff7c83, X
 unknown_ab_e23d: brk $ff
@@ -11927,7 +11927,7 @@ unknown_ab_e247: asl $4ff7.w
 unknown_ab_e24a: lda $f47f.w, X
 unknown_ab_e24d: sbc $0cfe6c, X
 unknown_ab_e251: sbc ($37, S), Y
-unknown_ab_e253: iny 
+unknown_ab_e253: iny
 unknown_ab_e254: ora $0ef2.w
 unknown_ab_e257: sbc ($7f), Y
 unknown_ab_e259: bra ($ff - $100) ; $e25a.w
@@ -11977,9 +11977,9 @@ unknown_ab_e2b8: ora [$f8]
 unknown_ab_e2ba: brk $7f
 unknown_ab_e2bc: brk $1e
 unknown_ab_e2be: brk $00
-unknown_ab_e2c0: sed 
+unknown_ab_e2c0: sed
 unknown_ab_e2c1: bpl ($d0 - $100) ; $e293.w
-unknown_ab_e2c3: sec 
+unknown_ab_e2c3: sec
 unknown_ab_e2c4: bpl ($f0 - $100) ; $e2b6.w
 unknown_ab_e2c6: bmi ($f0 - $100) ; $e2b8.w
 unknown_ab_e2c8: cpx #$a0
@@ -11987,17 +11987,17 @@ unknown_ab_e2ca: brk $00
 unknown_ab_e2cc: brk $00
 unknown_ab_e2ce: brk $00
 unknown_ab_e2d0: pea $f00c.w
-unknown_ab_e2d3: php 
+unknown_ab_e2d3: php
 unknown_ab_e2d4: cpx #$10
 unknown_ab_e2d6: cpx #$10
 unknown_ab_e2d8: bra $60 ; $e33a.w
 unknown_ab_e2da: brk $00
 unknown_ab_e2dc: brk $00
 unknown_ab_e2de: brk $00
-unknown_ab_e2e0: plp 
+unknown_ab_e2e0: plp
 unknown_ab_e2e1: and [$40]
 unknown_ab_e2e3: eor $c34d11
-unknown_ab_e2e7: txy 
+unknown_ab_e2e7: txy
 unknown_ab_e2e8: and #$89
 unknown_ab_e2ea: ora ($b1, X)
 unknown_ab_e2ec: sta ($81, X)
@@ -12014,8 +12014,8 @@ unknown_ab_e303: rts
 unknown_ab_e304: asl $c1
 unknown_ab_e306: ora $4243.w
 unknown_ab_e309: sta $96ae.w
-unknown_ab_e30c: sec 
-unknown_ab_e30d: sec 
+unknown_ab_e30c: sec
+unknown_ab_e30d: sec
 unknown_ab_e30e: rti
 
 unknown_ab_e30f: cpx #$cf
@@ -12034,7 +12034,7 @@ unknown_ab_e32a: ora ($01, X)
 unknown_ab_e32c: ora ($01, X)
 unknown_ab_e32e: brk $00
 unknown_ab_e330: eor [$f8], Y
-unknown_ab_e332: tcd 
+unknown_ab_e332: tcd
 unknown_ab_e333: jsr ($ff3e.w, X)
 unknown_ab_e336: eor $f774ff, X
 unknown_ab_e33a: rep #$c3
@@ -12052,7 +12052,7 @@ unknown_ab_e34e: brk $00
 unknown_ab_e350: cpy #$00
 unknown_ab_e352: cpx #$00
 unknown_ab_e354: beq $00 ; $e356.w
-unknown_ab_e356: clv 
+unknown_ab_e356: clv
 unknown_ab_e357: cpy #$6c
 unknown_ab_e359: bvs $1e ; $e379.w
 unknown_ab_e35b: trb $0000.w
@@ -12061,7 +12061,7 @@ unknown_ab_e360: sta $00fc.w
 unknown_ab_e363: sbc $feff03, X
 unknown_ab_e367: inc $70f1.w, X
 unknown_ab_e36a: inc $0001.w, X
-unknown_ab_e36d: sed 
+unknown_ab_e36d: sed
 unknown_ab_e36e: brk $00
 unknown_ab_e370: jsr ($ff03.w, X)
 unknown_ab_e373: brk $ff
@@ -12070,8 +12070,8 @@ unknown_ab_e377: ora ($70, X)
 unknown_ab_e379: sta $06ff00
 unknown_ab_e37d: inc $f8f8.w, X
 unknown_ab_e380: jmp $00d044.l
-unknown_ab_e384: clc 
-unknown_ab_e385: pla 
+unknown_ab_e384: clc
+unknown_ab_e385: pla
 unknown_ab_e386: cpy #$30
 unknown_ab_e388: cpy #$00
 unknown_ab_e38a: brk $00
@@ -12087,7 +12087,7 @@ unknown_ab_e39b: bra $00 ; $e39d.w
 unknown_ab_e39d: brk $00
 unknown_ab_e39f: brk $0b
 unknown_ab_e3a1: ora [$07], Y
-unknown_ab_e3a3: php 
+unknown_ab_e3a3: php
 unknown_ab_e3a4: ora [$03]
 unknown_ab_e3a6: ora ($02, X)
 unknown_ab_e3a8: brk $01
@@ -12115,10 +12115,10 @@ unknown_ab_e3d4: sbc $00ff00.l, X
 unknown_ab_e3d8: eor $7b04a0, X
 unknown_ab_e3dc: brk $3f
 unknown_ab_e3de: brk $00
-unknown_ab_e3e0: plx 
+unknown_ab_e3e0: plx
 unknown_ab_e3e1: ora $f2
 unknown_ab_e3e3: asl $7a84.w
-unknown_ab_e3e6: sec 
+unknown_ab_e3e6: sec
 unknown_ab_e3e7: jsr ($b830.w, X)
 unknown_ab_e3ea: brk $30
 unknown_ab_e3ec: cpy #$00
@@ -12127,7 +12127,7 @@ unknown_ab_e3f0: jsr ($fe03.w, X)
 unknown_ab_e3f3: brk $f8
 unknown_ab_e3f5: asl $f8
 unknown_ab_e3f7: tsb $b0
-unknown_ab_e3f9: pha 
+unknown_ab_e3f9: pha
 unknown_ab_e3fa: brk $f0
 unknown_ab_e3fc: brk $c0
 unknown_ab_e3fe: brk $00
@@ -12138,7 +12138,7 @@ unknown_ab_e40a: brk $80
 unknown_ab_e40c: brk $00
 unknown_ab_e40e: brk $00
 unknown_ab_e410: ora $201f10
-unknown_ab_e414: sec 
+unknown_ab_e414: sec
 unknown_ab_e415: eor [$62]
 unknown_ab_e417: asl $b050.w, X
 unknown_ab_e41a: rti
@@ -12181,7 +12181,7 @@ unknown_ab_e464: brk $00
 unknown_ab_e466: brk $00
 unknown_ab_e468: brk $03
 unknown_ab_e46a: asl $09
-unknown_ab_e46c: php 
+unknown_ab_e46c: php
 unknown_ab_e46d: trb $16
 unknown_ab_e46f: rol $0000.w
 unknown_ab_e472: brk $00
@@ -12196,7 +12196,7 @@ unknown_ab_e483: brk $00
 unknown_ab_e485: brk $00
 unknown_ab_e487: brk $30
 unknown_ab_e489: beq $4b ; $e4d6.w
-unknown_ab_e48b: tsc 
+unknown_ab_e48b: tsc
 unknown_ab_e48c: trb $0c
 unknown_ab_e48e: and ($0f, S), Y
 unknown_ab_e490: brk $00
@@ -12213,7 +12213,7 @@ unknown_ab_e4a4: brk $00
 unknown_ab_e4a6: ora ($03, X)
 unknown_ab_e4a8: ora $04, S
 unknown_ab_e4aa: trb $3aff.w
-unknown_ab_e4ad: tdc 
+unknown_ab_e4ad: tdc
 unknown_ab_e4ae: inc $00c1.w, X
 unknown_ab_e4b1: brk $00
 unknown_ab_e4b3: brk $00
@@ -12225,7 +12225,7 @@ unknown_ab_e4be: brk $ff
 unknown_ab_e4c0: brk $00
 unknown_ab_e4c2: brk $00
 unknown_ab_e4c4: bvs ($f0 - $100) ; $e4b6.w
-unknown_ab_e4c6: iny 
+unknown_ab_e4c6: iny
 unknown_ab_e4c7: rol $f838.w, X
 unknown_ab_e4ca: lda ($70)
 unknown_ab_e4cc: eor ($b0, S), Y
@@ -12241,14 +12241,14 @@ unknown_ab_e4e5: brk $00
 unknown_ab_e4e7: brk $80
 unknown_ab_e4e9: bra ($8f - $100) ; $e47a.w
 unknown_ab_e4eb: eor $fbd360
-unknown_ab_e4ef: wai 
+unknown_ab_e4ef: wai
 unknown_ab_e4f0: brk $00
 unknown_ab_e4f2: brk $00
 unknown_ab_e4f4: brk $00
 unknown_ab_e4f6: bra ($80 - $100) ; $e478.w
 unknown_ab_e4f8: cpx #$60
 unknown_ab_e4fa: bpl ($ff - $100) ; $e4fb.w
-unknown_ab_e4fc: phk 
+unknown_ab_e4fc: phk
 unknown_ab_e4fd: ldy $bc47.w, X
 unknown_ab_e500: brk $00
 unknown_ab_e502: brk $00
@@ -12271,7 +12271,7 @@ unknown_ab_e526: brk $40
 unknown_ab_e528: rti
 
 unknown_ab_e529: bmi $60 ; $e58b.w
-unknown_ab_e52b: clc 
+unknown_ab_e52b: clc
 unknown_ab_e52c: rti
 
 unknown_ab_e52d: jsr $f232.w
@@ -12279,8 +12279,8 @@ unknown_ab_e530: brk $00
 unknown_ab_e532: brk $00
 unknown_ab_e534: cpy #$c0
 unknown_ab_e536: bmi ($f0 - $100) ; $e528.w
-unknown_ab_e538: php 
-unknown_ab_e539: sed 
+unknown_ab_e538: php
+unknown_ab_e539: sed
 unknown_ab_e53a: tsb $fc
 unknown_ab_e53c: asl $01fe.w, X
 unknown_ab_e53f: sbc $000000.l, X
@@ -12292,10 +12292,10 @@ unknown_ab_e54c: brk $00
 unknown_ab_e54e: brk $00
 unknown_ab_e550: brk $00
 unknown_ab_e552: mvp $28, $44
-unknown_ab_e555: plp 
+unknown_ab_e555: plp
 unknown_ab_e556: bpl $10 ; $e568.w
-unknown_ab_e558: plp 
-unknown_ab_e559: plp 
+unknown_ab_e558: plp
+unknown_ab_e559: plp
 unknown_ab_e55a: mvp $00, $44
 unknown_ab_e55d: brk $00
 unknown_ab_e55f: brk $00
@@ -12308,10 +12308,10 @@ unknown_ab_e56c: brk $00
 unknown_ab_e56e: brk $00
 unknown_ab_e570: brk $00
 unknown_ab_e572: mvp $28, $44
-unknown_ab_e575: plp 
+unknown_ab_e575: plp
 unknown_ab_e576: bpl $10 ; $e588.w
-unknown_ab_e578: plp 
-unknown_ab_e579: plp 
+unknown_ab_e578: plp
+unknown_ab_e579: plp
 unknown_ab_e57a: mvp $00, $44
 unknown_ab_e57d: brk $00
 unknown_ab_e57f: brk $00
@@ -12332,10 +12332,10 @@ unknown_ab_e59b: ora $04, S
 unknown_ab_e59d: ora [$08]
 unknown_ab_e59f: ora $18033a
 unknown_ab_e5a3: jsr $04730e
-unknown_ab_e5a7: sei 
+unknown_ab_e5a7: sei
 unknown_ab_e5a8: stx $3b7e.w
 unknown_ab_e5ab: jmp $0e3d.w
-unknown_ab_e5ae: tyx 
+unknown_ab_e5ae: tyx
 unknown_ab_e5af: lsr $7c43.w, X
 unknown_ab_e5b2: eor $7d, S
 unknown_ab_e5b4: sta $fc, S
@@ -12364,8 +12364,8 @@ unknown_ab_e5e8: cpy #$00
 unknown_ab_e5ea: bra $00 ; $e5ec.w
 unknown_ab_e5ec: bra ($80 - $100) ; $e56e.w
 unknown_ab_e5ee: brk $c0
-unknown_ab_e5f0: iny 
-unknown_ab_e5f1: sec 
+unknown_ab_e5f0: iny
+unknown_ab_e5f1: sec
 unknown_ab_e5f2: cpy #$30
 unknown_ab_e5f4: cpx #$00
 unknown_ab_e5f6: cpy #$00
@@ -12397,17 +12397,17 @@ unknown_ab_e623: brk $80
 unknown_ab_e625: cpy #$f0
 unknown_ab_e627: bmi ($90 - $100) ; $e5b9.w
 unknown_ab_e629: bvs $48 ; $e673.w
-unknown_ab_e62b: clv 
-unknown_ab_e62c: clc 
-unknown_ab_e62d: sed 
-unknown_ab_e62e: php 
-unknown_ab_e62f: sed 
+unknown_ab_e62b: clv
+unknown_ab_e62c: clc
+unknown_ab_e62d: sed
+unknown_ab_e62e: php
+unknown_ab_e62f: sed
 unknown_ab_e630: brk $00
 unknown_ab_e632: brk $00
 unknown_ab_e634: cpy #$30
 unknown_ab_e636: beq $08 ; $e640.w
 unknown_ab_e638: beq $08 ; $e642.w
-unknown_ab_e63a: sed 
+unknown_ab_e63a: sed
 unknown_ab_e63b: tsb $f8
 unknown_ab_e63d: tsb $f8
 unknown_ab_e63f: tsb $00
@@ -12436,10 +12436,10 @@ unknown_ab_e66c: brk $00
 unknown_ab_e66e: brk $00
 unknown_ab_e670: brk $00
 unknown_ab_e672: mvp $28, $44
-unknown_ab_e675: plp 
+unknown_ab_e675: plp
 unknown_ab_e676: bpl $10 ; $e688.w
-unknown_ab_e678: plp 
-unknown_ab_e679: plp 
+unknown_ab_e678: plp
+unknown_ab_e679: plp
 unknown_ab_e67a: mvp $00, $44
 unknown_ab_e67d: brk $00
 unknown_ab_e67f: brk $76
@@ -12448,7 +12448,7 @@ unknown_ab_e685: inc $ec5d.w, X
 unknown_ab_e688: ldy #$e0
 unknown_ab_e68a: ora ($00, X)
 unknown_ab_e68c: ora [$00]
-unknown_ab_e68e: phd 
+unknown_ab_e68e: phd
 unknown_ab_e68f: brk $01
 unknown_ab_e691: inc $7887.w, X
 unknown_ab_e694: dec $0c31.w
@@ -12474,7 +12474,7 @@ unknown_ab_e6c1: sbc $97609f, X
 unknown_ab_e6c5: ror $976b.w
 unknown_ab_e6c8: and $84874b
 unknown_ab_e6cc: lda $b487.w, Y
-unknown_ab_e6cf: phb 
+unknown_ab_e6cf: phb
 unknown_ab_e6d0: ldy #$5f
 unknown_ab_e6d2: trb $1ee3.w
 unknown_ab_e6d5: sbc ($0f, X)
@@ -12487,7 +12487,7 @@ unknown_ab_e6e1: cmp #$b4
 unknown_ab_e6e3: cpy $c4bc.w
 unknown_ab_e6e6: inc $d566.w, X
 unknown_ab_e6e9: adc $fc8c.w
-unknown_ab_e6ec: sed 
+unknown_ab_e6ec: sed
 unknown_ab_e6ed: sbc $c1c0.w, Y
 unknown_ab_e6f0: cmp $3e
 unknown_ab_e6f2: .db $42, $bf
@@ -12497,7 +12497,7 @@ unknown_ab_e6f8: cop $ff
 unknown_ab_e6fa: sta $7f, S
 unknown_ab_e6fc: asl $ff
 unknown_ab_e6fe: rol $84ff.w, X
-unknown_ab_e701: tyx 
+unknown_ab_e701: tyx
 unknown_ab_e702: ora [$7b]
 unknown_ab_e704: dec A
 unknown_ab_e705: cpy $0567.w
@@ -12505,7 +12505,7 @@ unknown_ab_e708: inc $fb03.w, X
 unknown_ab_e70b: ora [$4b]
 unknown_ab_e70d: ldy $00, X
 unknown_ab_e70f: sbc $077887, X
-unknown_ab_e713: sed 
+unknown_ab_e713: sed
 unknown_ab_e714: cop $fd
 unknown_ab_e716: ora $fc, S
 unknown_ab_e718: brk $ff
@@ -12517,9 +12517,9 @@ unknown_ab_e722: adc [$10], Y
 unknown_ab_e724: lsr A
 unknown_ab_e725: and $1869.w, Y
 unknown_ab_e728: eor $893c.w
-unknown_ab_e72b: sed 
-unknown_ab_e72c: tyx 
-unknown_ab_e72d: sed 
+unknown_ab_e72b: sed
+unknown_ab_e72c: tyx
+unknown_ab_e72d: sed
 unknown_ab_e72e: rts
 
 unknown_ab_e72f: cpx #$80
@@ -12535,7 +12535,7 @@ unknown_ab_e749: cmp [$51]
 unknown_ab_e74b: dec $bd
 unknown_ab_e74d: ldx #$10
 unknown_ab_e74f: and [$95]
-unknown_ab_e751: nop 
+unknown_ab_e751: nop
 unknown_ab_e752: sta ($fe, X)
 unknown_ab_e754: stz $db
 unknown_ab_e756: and ($fe, X)
@@ -12556,18 +12556,18 @@ unknown_ab_e77b: brk $7f
 unknown_ab_e77d: bra $6f ; $e7ee.w
 unknown_ab_e77f: bcc $07 ; $e788.w
 unknown_ab_e781: ora $04
-unknown_ab_e783: php 
+unknown_ab_e783: php
 unknown_ab_e784: ora $00
-unknown_ab_e786: php 
+unknown_ab_e786: php
 unknown_ab_e787: ora $02, S
 unknown_ab_e789: tsb $601f.w
 unknown_ab_e78c: ora $675167, X
 unknown_ab_e790: ora #$0e
 unknown_ab_e792: bpl $1f ; $e7b3.w
-unknown_ab_e794: clc 
+unknown_ab_e794: clc
 unknown_ab_e795: ora $301c13, X
 unknown_ab_e799: and $077f00, X
-unknown_ab_e79d: sei 
+unknown_ab_e79d: sei
 unknown_ab_e79e: ora [$78]
 unknown_ab_e7a0: lda $ff3f7b, X
 unknown_ab_e7a4: inc $fcff.w, X
@@ -12651,10 +12651,10 @@ unknown_ab_e84c: brk $00
 unknown_ab_e84e: brk $00
 unknown_ab_e850: brk $00
 unknown_ab_e852: mvp $28, $44
-unknown_ab_e855: plp 
+unknown_ab_e855: plp
 unknown_ab_e856: bpl $10 ; $e868.w
-unknown_ab_e858: plp 
-unknown_ab_e859: plp 
+unknown_ab_e858: plp
+unknown_ab_e859: plp
 unknown_ab_e85a: mvp $00, $44
 unknown_ab_e85d: brk $00
 unknown_ab_e85f: brk $00
@@ -12667,10 +12667,10 @@ unknown_ab_e86c: brk $00
 unknown_ab_e86e: brk $00
 unknown_ab_e870: brk $00
 unknown_ab_e872: mvp $28, $44
-unknown_ab_e875: plp 
+unknown_ab_e875: plp
 unknown_ab_e876: bpl $10 ; $e888.w
-unknown_ab_e878: plp 
-unknown_ab_e879: plp 
+unknown_ab_e878: plp
+unknown_ab_e879: plp
 unknown_ab_e87a: mvp $00, $44
 unknown_ab_e87d: brk $00
 unknown_ab_e87f: brk $78
@@ -12698,7 +12698,7 @@ unknown_ab_e8ae: rti
 unknown_ab_e8af: eor ($80, X)
 unknown_ab_e8b1: adc $007f80.l, X
 unknown_ab_e8b5: sbc $04f50a, X
-unknown_ab_e8b9: xce 
+unknown_ab_e8b9: xce
 unknown_ab_e8ba: brk $ff
 unknown_ab_e8bc: brk $ff
 unknown_ab_e8be: ldx $bfff.w, Y
@@ -12710,25 +12710,25 @@ unknown_ab_e8c6: rep #$80
 unknown_ab_e8c8: bit $b73c.w, X
 unknown_ab_e8cb: lda [$01], Y
 unknown_ab_e8cd: sbc ($47, X)
-unknown_ab_e8cf: clv 
+unknown_ab_e8cf: clv
 unknown_ab_e8d0: brk $ff
 unknown_ab_e8d2: brk $ff
 unknown_ab_e8d4: brk $ff
 unknown_ab_e8d6: brk $ff
 unknown_ab_e8d8: ldy $37c3.w, X
-unknown_ab_e8db: iny 
+unknown_ab_e8db: iny
 unknown_ab_e8dc: ora ($fe, X)
 unknown_ab_e8de: brk $ff
 unknown_ab_e8e0: bit $fed3.w
 unknown_ab_e8e3: ora ($fe, X)
-unknown_ab_e8e5: plp 
+unknown_ab_e8e5: plp
 unknown_ab_e8e6: ora ($01), Y
 unknown_ab_e8e8: eor ($52)
 unknown_ab_e8ea: sbc $d4d7ff, X
 unknown_ab_e8ee: beq $0f ; $e8ff.w
 unknown_ab_e8f0: brk $ff
 unknown_ab_e8f2: brk $ff
-unknown_ab_e8f4: plp 
+unknown_ab_e8f4: plp
 unknown_ab_e8f5: cmp [$01], Y
 unknown_ab_e8f7: inc $ad52.w, X
 unknown_ab_e8fa: sbc $2bd400, X
@@ -12736,15 +12736,15 @@ unknown_ab_e8fe: brk $ff
 unknown_ab_e900: sta $9372.w
 unknown_ab_e903: rts
 
-unknown_ab_e904: pha 
-unknown_ab_e905: php 
-unknown_ab_e906: pha 
-unknown_ab_e907: php 
+unknown_ab_e904: pha
+unknown_ab_e905: php
+unknown_ab_e906: pha
+unknown_ab_e907: php
 unknown_ab_e908: sbc $86e63f, X
 unknown_ab_e90c: cmp $1fe021, X
 unknown_ab_e910: brk $ff
 unknown_ab_e912: brk $ff
-unknown_ab_e914: php 
+unknown_ab_e914: php
 unknown_ab_e915: sbc [$08], Y
 unknown_ab_e917: sbc [$3f], Y
 unknown_ab_e919: cpy #$86
@@ -12796,10 +12796,10 @@ unknown_ab_e98c: brk $00
 unknown_ab_e98e: brk $00
 unknown_ab_e990: brk $00
 unknown_ab_e992: mvp $28, $44
-unknown_ab_e995: plp 
+unknown_ab_e995: plp
 unknown_ab_e996: bpl $10 ; $e9a8.w
-unknown_ab_e998: plp 
-unknown_ab_e999: plp 
+unknown_ab_e998: plp
+unknown_ab_e999: plp
 unknown_ab_e99a: mvp $00, $44
 unknown_ab_e99d: brk $00
 unknown_ab_e99f: brk $00
@@ -12812,10 +12812,10 @@ unknown_ab_e9ac: brk $00
 unknown_ab_e9ae: brk $00
 unknown_ab_e9b0: brk $00
 unknown_ab_e9b2: mvp $28, $44
-unknown_ab_e9b5: plp 
+unknown_ab_e9b5: plp
 unknown_ab_e9b6: bpl $10 ; $e9c8.w
-unknown_ab_e9b8: plp 
-unknown_ab_e9b9: plp 
+unknown_ab_e9b8: plp
+unknown_ab_e9b9: plp
 unknown_ab_e9ba: mvp $00, $44
 unknown_ab_e9bd: brk $00
 unknown_ab_e9bf: brk $00
@@ -12828,10 +12828,10 @@ unknown_ab_e9cc: brk $00
 unknown_ab_e9ce: brk $00
 unknown_ab_e9d0: brk $00
 unknown_ab_e9d2: mvp $28, $44
-unknown_ab_e9d5: plp 
+unknown_ab_e9d5: plp
 unknown_ab_e9d6: bpl $10 ; $e9e8.w
-unknown_ab_e9d8: plp 
-unknown_ab_e9d9: plp 
+unknown_ab_e9d8: plp
+unknown_ab_e9d9: plp
 unknown_ab_e9da: mvp $00, $44
 unknown_ab_e9dd: brk $00
 unknown_ab_e9df: brk $00
@@ -12844,10 +12844,10 @@ unknown_ab_e9ec: brk $00
 unknown_ab_e9ee: brk $00
 unknown_ab_e9f0: brk $00
 unknown_ab_e9f2: mvp $28, $44
-unknown_ab_e9f5: plp 
+unknown_ab_e9f5: plp
 unknown_ab_e9f6: bpl $10 ; $ea08.w
-unknown_ab_e9f8: plp 
-unknown_ab_e9f9: plp 
+unknown_ab_e9f8: plp
+unknown_ab_e9f9: plp
 unknown_ab_e9fa: mvp $00, $44
 unknown_ab_e9fd: brk $00
 unknown_ab_e9ff: brk $18
@@ -12856,7 +12856,7 @@ unknown_ab_ea05: sbc $42ff7e, X
 unknown_ab_ea09: sbc $42ff42, X
 unknown_ab_ea0d: sbc $e7ff00, X
 unknown_ab_ea11: sbc [$db]
-unknown_ab_ea13: stp 
+unknown_ab_ea13: stp
 unknown_ab_ea14: lda $81bd.w, X
 unknown_ab_ea17: sta ($bd, X)
 unknown_ab_ea19: lda $bdbd.w, X
@@ -12886,11 +12886,11 @@ unknown_ab_ea63: sbc $22ff22, X
 unknown_ab_ea67: sbc $24ff22, X
 unknown_ab_ea6b: sbc $00ff78.l, X
 unknown_ab_ea6f: sbc $db8787, X
-unknown_ab_ea73: stp 
+unknown_ab_ea73: stp
 unknown_ab_ea74: cmp $dddd.w, X
 unknown_ab_ea77: cmp $dddd.w, X
-unknown_ab_ea7a: stp 
-unknown_ab_ea7b: stp 
+unknown_ab_ea7a: stp
+unknown_ab_ea7b: stp
 unknown_ab_ea7c: sta [$87]
 unknown_ab_ea7e: sbc $ff7eff, X
 unknown_ab_ea82: rti
@@ -12945,15 +12945,15 @@ unknown_ab_eb23: sbc $04ff04, X
 unknown_ab_eb27: sbc $44ff04, X
 unknown_ab_eb2b: sbc $00ff38.l, X
 unknown_ab_eb2f: sbc $fbf1f1, X
-unknown_ab_eb33: xce 
-unknown_ab_eb34: xce 
-unknown_ab_eb35: xce 
-unknown_ab_eb36: xce 
-unknown_ab_eb37: xce 
-unknown_ab_eb38: xce 
-unknown_ab_eb39: xce 
-unknown_ab_eb3a: tyx 
-unknown_ab_eb3b: tyx 
+unknown_ab_eb33: xce
+unknown_ab_eb34: xce
+unknown_ab_eb35: xce
+unknown_ab_eb36: xce
+unknown_ab_eb37: xce
+unknown_ab_eb38: xce
+unknown_ab_eb39: xce
+unknown_ab_eb3a: tyx
+unknown_ab_eb3b: tyx
 unknown_ab_eb3c: cmp [$c7]
 unknown_ab_eb3e: sbc $ff42ff, X
 unknown_ab_eb42: mvp $48, $ff
@@ -12963,8 +12963,8 @@ unknown_ab_eb4d: sbc $bdff00, X
 unknown_ab_eb51: lda $bbbb.w, X
 unknown_ab_eb54: lda [$b7], Y
 unknown_ab_eb56: sta $b7b78f
-unknown_ab_eb5a: tyx 
-unknown_ab_eb5b: tyx 
+unknown_ab_eb5a: tyx
+unknown_ab_eb5b: tyx
 unknown_ab_eb5c: lda $ffbd.w, X
 unknown_ab_eb5f: sbc $40ff40, X
 unknown_ab_eb63: sbc $40ff40, X
@@ -13014,11 +13014,11 @@ unknown_ab_ec03: sbc $42ff42, X
 unknown_ab_ec07: sbc $24ff42, X
 unknown_ab_ec0b: sbc $00ff18.l, X
 unknown_ab_ec0f: sbc $dbe7e7, X
-unknown_ab_ec13: stp 
+unknown_ab_ec13: stp
 unknown_ab_ec14: lda $bdbd.w, X
 unknown_ab_ec17: lda $bdbd.w, X
-unknown_ab_ec1a: stp 
-unknown_ab_ec1b: stp 
+unknown_ab_ec1a: stp
+unknown_ab_ec1b: stp
 unknown_ab_ec1c: sbc [$e7]
 unknown_ab_ec1e: sbc $ff7cff, X
 unknown_ab_ec22: .db $42, $ff
@@ -13031,17 +13031,17 @@ unknown_ab_ec33: lda $bdbd.w, X
 unknown_ab_ec36: sta $83, S
 unknown_ab_ec38: lda $bfbfbf, X
 unknown_ab_ec3c: lda $ffffbf, X
-unknown_ab_ec40: clc 
+unknown_ab_ec40: clc
 unknown_ab_ec41: sbc $42ff24, X
 unknown_ab_ec45: sbc $4aff42, X
 unknown_ab_ec49: sbc $1aff24, X
 unknown_ab_ec4d: sbc $e7ff00, X
 unknown_ab_ec51: sbc [$db]
-unknown_ab_ec53: stp 
+unknown_ab_ec53: stp
 unknown_ab_ec54: lda $bdbd.w, X
 unknown_ab_ec57: lda $b5b5.w, X
-unknown_ab_ec5a: stp 
-unknown_ab_ec5b: stp 
+unknown_ab_ec5a: stp
+unknown_ab_ec5b: stp
 unknown_ab_ec5c: sbc $e5
 unknown_ab_ec5e: sbc $ff7cff, X
 unknown_ab_ec62: .db $42, $ff
@@ -13053,8 +13053,8 @@ unknown_ab_ec71: sta $bd, S
 unknown_ab_ec73: lda $bdbd.w, X
 unknown_ab_ec76: sta $83, S
 unknown_ab_ec78: lda [$b7], Y
-unknown_ab_ec7a: tyx 
-unknown_ab_ec7b: tyx 
+unknown_ab_ec7a: tyx
+unknown_ab_ec7b: tyx
 unknown_ab_ec7c: lda $ffbd.w, X
 unknown_ab_ec7f: sbc $42ff3c, X
 unknown_ab_ec83: sbc $3cff40, X
@@ -13094,20 +13094,20 @@ unknown_ab_ece2: .db $42, $ff
 unknown_ab_ece4: .db $42, $ff
 unknown_ab_ece6: bit $ff
 unknown_ab_ece8: bit $ff
-unknown_ab_ecea: clc 
+unknown_ab_ecea: clc
 unknown_ab_eceb: sbc $00ff18.l, X
 unknown_ab_ecef: sbc $bdbdbd, X
 unknown_ab_ecf3: lda $bdbd.w, X
-unknown_ab_ecf6: stp 
-unknown_ab_ecf7: stp 
-unknown_ab_ecf8: stp 
-unknown_ab_ecf9: stp 
+unknown_ab_ecf6: stp
+unknown_ab_ecf7: stp
+unknown_ab_ecf8: stp
+unknown_ab_ecf9: stp
 unknown_ab_ecfa: sbc [$e7]
 unknown_ab_ecfc: sbc [$e7]
 unknown_ab_ecfe: sbc $ff42ff, X
 unknown_ab_ed02: .db $42, $ff
 unknown_ab_ed04: .db $42, $ff
-unknown_ab_ed06: phy 
+unknown_ab_ed06: phy
 unknown_ab_ed07: sbc $66ff5a, X
 unknown_ab_ed0b: sbc $00ff42.l, X
 unknown_ab_ed0f: sbc $bdbdbd, X
@@ -13119,14 +13119,14 @@ unknown_ab_ed1d: lda $ffff.w, X
 unknown_ab_ed20: .db $42, $ff
 unknown_ab_ed22: .db $42, $ff
 unknown_ab_ed24: bit $ff
-unknown_ab_ed26: clc 
+unknown_ab_ed26: clc
 unknown_ab_ed27: sbc $42ff24, X
 unknown_ab_ed2b: sbc $00ff42.l, X
 unknown_ab_ed2f: sbc $bdbdbd, X
 unknown_ab_ed33: lda $dbdb.w, X
 unknown_ab_ed36: sbc [$e7]
-unknown_ab_ed38: stp 
-unknown_ab_ed39: stp 
+unknown_ab_ed38: stp
+unknown_ab_ed39: stp
 unknown_ab_ed3a: lda $bdbd.w, X
 unknown_ab_ed3d: lda $ffff.w, X
 unknown_ab_ed40: mvp $44, $ff
@@ -13134,9 +13134,9 @@ unknown_ab_ed43: sbc $38ff44, X
 unknown_ab_ed47: sbc $10ff10, X
 unknown_ab_ed4b: sbc $00ff10.l, X
 unknown_ab_ed4f: sbc $bbbbbb, X
-unknown_ab_ed53: tyx 
-unknown_ab_ed54: tyx 
-unknown_ab_ed55: tyx 
+unknown_ab_ed53: tyx
+unknown_ab_ed54: tyx
+unknown_ab_ed55: tyx
 unknown_ab_ed56: cmp [$c7]
 unknown_ab_ed58: sbc $efefef
 unknown_ab_ed5c: sbc $ffffef
@@ -13190,7 +13190,7 @@ unknown_ab_edf7: sbc $ffffff, X
 unknown_ab_edfb: sbc $ffffff, X
 unknown_ab_edff: sbc $42c33c, X
 unknown_ab_ee03: lda $b946.w, X
-unknown_ab_ee06: phy 
+unknown_ab_ee06: phy
 unknown_ab_ee07: lda $62
 unknown_ab_ee09: sta $bd42.w, X
 unknown_ab_ee0c: bit $00c3.w, X
@@ -13233,37 +13233,37 @@ unknown_ab_ee78: sbc $bdfd.w, X
 unknown_ab_ee7b: lda $c3c3.w, X
 unknown_ab_ee7e: sbc $fb04ff, X
 unknown_ab_ee82: tsb $14f3.w
-unknown_ab_ee85: xba 
+unknown_ab_ee85: xba
 unknown_ab_ee86: bit $db
 unknown_ab_ee88: ror $0481.w, X
-unknown_ab_ee8b: xce 
+unknown_ab_ee8b: xce
 unknown_ab_ee8c: tsb $fb
 unknown_ab_ee8e: brk $ff
-unknown_ab_ee90: xce 
-unknown_ab_ee91: xce 
+unknown_ab_ee90: xce
+unknown_ab_ee91: xce
 unknown_ab_ee92: sbc ($f3, S), Y
-unknown_ab_ee94: xba 
-unknown_ab_ee95: xba 
-unknown_ab_ee96: stp 
-unknown_ab_ee97: stp 
+unknown_ab_ee94: xba
+unknown_ab_ee95: xba
+unknown_ab_ee96: stp
+unknown_ab_ee97: stp
 unknown_ab_ee98: sta ($81, X)
-unknown_ab_ee9a: xce 
-unknown_ab_ee9b: xce 
-unknown_ab_ee9c: xce 
-unknown_ab_ee9d: xce 
+unknown_ab_ee9a: xce
+unknown_ab_ee9b: xce
+unknown_ab_ee9c: xce
+unknown_ab_ee9d: xce
 unknown_ab_ee9e: sbc $817eff, X
 unknown_ab_eea2: rti
 
 unknown_ab_eea3: lda $048778, X
-unknown_ab_eea7: xce 
+unknown_ab_eea7: xce
 unknown_ab_eea8: cop $fd
 unknown_ab_eeaa: mvp $38, $bb
 unknown_ab_eead: cmp [$00]
 unknown_ab_eeaf: sbc $bf8181, X
 unknown_ab_eeb3: lda $fb8787, X
-unknown_ab_eeb7: xce 
+unknown_ab_eeb7: xce
 unknown_ab_eeb8: sbc $bbfd.w, X
-unknown_ab_eebb: tyx 
+unknown_ab_eebb: tyx
 unknown_ab_eebc: cmp [$c7]
 unknown_ab_eebe: sbc $e31cff, X
 unknown_ab_eec2: jsr $40df.w
@@ -13278,7 +13278,7 @@ unknown_ab_eedc: cmp $c3, S
 unknown_ab_eede: sbc $817eff, X
 unknown_ab_eee2: .db $42, $bd
 unknown_ab_eee4: tsb $fb
-unknown_ab_eee6: php 
+unknown_ab_eee6: php
 unknown_ab_eee7: sbc [$10], Y
 unknown_ab_eee9: sbc $10ef10
 unknown_ab_eeed: sbc $81ff00
@@ -13302,13 +13302,13 @@ unknown_ab_ef22: .db $42, $bd
 unknown_ab_ef24: .db $42, $bd
 unknown_ab_ef26: rol $02c1.w, X
 unknown_ab_ef29: sbc $fb04.w, X
-unknown_ab_ef2c: sec 
+unknown_ab_ef2c: sec
 unknown_ab_ef2d: cmp [$00]
 unknown_ab_ef2f: sbc $bdc3c3, X
 unknown_ab_ef33: lda $bdbd.w, X
 unknown_ab_ef36: cmp ($c1, X)
 unknown_ab_ef38: sbc $fbfd.w, X
-unknown_ab_ef3b: xce 
+unknown_ab_ef3b: xce
 unknown_ab_ef3c: cmp [$c7]
 unknown_ab_ef3e: sbc $e718ff, X
 unknown_ab_ef42: bit $db
@@ -13318,8 +13318,8 @@ unknown_ab_ef49: lda $bd42.w, X
 unknown_ab_ef4c: .db $42, $bd
 unknown_ab_ef4e: brk $ff
 unknown_ab_ef50: sbc [$e7]
-unknown_ab_ef52: stp 
-unknown_ab_ef53: stp 
+unknown_ab_ef52: stp
+unknown_ab_ef53: stp
 unknown_ab_ef54: lda $81bd.w, X
 unknown_ab_ef57: sta ($bd, X)
 unknown_ab_ef59: lda $bdbd.w, X
@@ -13347,17 +13347,17 @@ unknown_ab_ef95: lda $bfbfbf, X
 unknown_ab_ef99: lda $e3dddd, X
 unknown_ab_ef9d: sbc $ff, S
 unknown_ab_ef9f: sbc $248778, X
-unknown_ab_efa3: stp 
+unknown_ab_efa3: stp
 unknown_ab_efa4: jsr $dd22dd
 unknown_ab_efa8: jsr $db24dd
-unknown_ab_efac: sei 
+unknown_ab_efac: sei
 unknown_ab_efad: sta [$00]
 unknown_ab_efaf: sbc $db8787, X
-unknown_ab_efb3: stp 
+unknown_ab_efb3: stp
 unknown_ab_efb4: cmp $dddd.w, X
 unknown_ab_efb7: cmp $dddd.w, X
-unknown_ab_efba: stp 
-unknown_ab_efbb: stp 
+unknown_ab_efba: stp
+unknown_ab_efbb: stp
 unknown_ab_efbc: sta [$87]
 unknown_ab_efbe: sbc $817eff, X
 unknown_ab_efc2: rti
@@ -13387,10 +13387,10 @@ unknown_ab_f009: sbc $3aff44, X
 unknown_ab_f00d: sbc $ffff00, X
 unknown_ab_f011: sbc $c3ffff, X
 unknown_ab_f015: cmp $fb, S
-unknown_ab_f017: xce 
+unknown_ab_f017: xce
 unknown_ab_f018: cmp $c3, S
-unknown_ab_f01a: tyx 
-unknown_ab_f01b: tyx 
+unknown_ab_f01a: tyx
+unknown_ab_f01b: tyx
 unknown_ab_f01c: cmp $c5
 unknown_ab_f01e: sbc $ff40ff, X
 unknown_ab_f022: rti
@@ -13466,7 +13466,7 @@ unknown_ab_f104: bmi ($ff - $100) ; $f105.w
 unknown_ab_f106: bpl ($ff - $100) ; $f107.w
 unknown_ab_f108: bpl ($ff - $100) ; $f109.w
 unknown_ab_f10a: bpl ($ff - $100) ; $f10b.w
-unknown_ab_f10c: sec 
+unknown_ab_f10c: sec
 unknown_ab_f10d: sbc $efff00, X
 unknown_ab_f111: sbc $cfffff
 unknown_ab_f115: cmp $efefef
@@ -13478,13 +13478,13 @@ unknown_ab_f127: sbc $04ff04, X
 unknown_ab_f12b: sbc $38ff44, X
 unknown_ab_f12f: sbc $fffbfb, X
 unknown_ab_f133: sbc $fbf3f3, X
-unknown_ab_f137: xce 
-unknown_ab_f138: xce 
-unknown_ab_f139: xce 
-unknown_ab_f13a: xce 
-unknown_ab_f13b: xce 
-unknown_ab_f13c: tyx 
-unknown_ab_f13d: tyx 
+unknown_ab_f137: xce
+unknown_ab_f138: xce
+unknown_ab_f139: xce
+unknown_ab_f13a: xce
+unknown_ab_f13b: xce
+unknown_ab_f13c: tyx
+unknown_ab_f13d: tyx
 unknown_ab_f13e: cmp [$c7]
 unknown_ab_f140: rti
 
@@ -13493,18 +13493,18 @@ unknown_ab_f145: sbc $50ff48, X
 unknown_ab_f149: sbc $44ff68, X
 unknown_ab_f14d: sbc $bfff00, X
 unknown_ab_f151: lda $bbbfbf, X
-unknown_ab_f155: tyx 
+unknown_ab_f155: tyx
 unknown_ab_f156: lda [$b7], Y
 unknown_ab_f158: lda $9797af
-unknown_ab_f15c: tyx 
-unknown_ab_f15d: tyx 
+unknown_ab_f15c: tyx
+unknown_ab_f15d: tyx
 unknown_ab_f15e: sbc $ff30ff, X
 unknown_ab_f162: bpl ($ff - $100) ; $f163.w
 unknown_ab_f164: bpl ($ff - $100) ; $f165.w
 unknown_ab_f166: bpl ($ff - $100) ; $f167.w
 unknown_ab_f168: bpl ($ff - $100) ; $f169.w
 unknown_ab_f16a: bpl ($ff - $100) ; $f16b.w
-unknown_ab_f16c: sec 
+unknown_ab_f16c: sec
 unknown_ab_f16d: sbc $cfff00, X
 unknown_ab_f171: cmp $efefef
 unknown_ab_f175: sbc $efefef
@@ -13607,12 +13607,12 @@ unknown_ab_f2a4: .db $42, $ff
 unknown_ab_f2a6: .db $42, $ff
 unknown_ab_f2a8: .db $42, $ff
 unknown_ab_f2aa: bit $ff
-unknown_ab_f2ac: clc 
+unknown_ab_f2ac: clc
 unknown_ab_f2ad: sbc $ffff00, X
 unknown_ab_f2b1: sbc $bdffff, X
 unknown_ab_f2b5: lda $bdbd.w, X
 unknown_ab_f2b8: lda $dbbd.w, X
-unknown_ab_f2bb: stp 
+unknown_ab_f2bb: stp
 unknown_ab_f2bc: sbc [$e7]
 unknown_ab_f2be: sbc $ff00ff, X
 unknown_ab_f2c2: brk $ff
@@ -13630,10 +13630,10 @@ unknown_ab_f2e7: sbc $24ff18, X
 unknown_ab_f2eb: sbc $00ff42.l, X
 unknown_ab_f2ef: sbc $ffffff, X
 unknown_ab_f2f3: sbc $dbbdbd, X
-unknown_ab_f2f7: stp 
+unknown_ab_f2f7: stp
 unknown_ab_f2f8: sbc [$e7]
-unknown_ab_f2fa: stp 
-unknown_ab_f2fb: stp 
+unknown_ab_f2fa: stp
+unknown_ab_f2fb: stp
 unknown_ab_f2fc: lda $ffbd.w, X
 unknown_ab_f2ff: sbc $00ff00.l, X
 unknown_ab_f303: sbc $42ff42, X
@@ -13651,7 +13651,7 @@ unknown_ab_f329: sbc $7eff20, X
 unknown_ab_f32d: sbc $ffff00, X
 unknown_ab_f331: sbc $81ffff, X
 unknown_ab_f335: sta ($fb, X)
-unknown_ab_f337: xce 
+unknown_ab_f337: xce
 unknown_ab_f338: sbc [$e7]
 unknown_ab_f33a: cmp $8181df, X
 unknown_ab_f33e: sbc $f00fff, X
@@ -13716,16 +13716,16 @@ unknown_ab_f3fd: sbc $00ffff.l, X
 unknown_ab_f401: brk $00
 unknown_ab_f403: brk $00
 unknown_ab_f405: brk $18
-unknown_ab_f407: clc 
+unknown_ab_f407: clc
 unknown_ab_f408: ora $bf1d.w, X
 unknown_ab_f40b: lda [$ce], Y
-unknown_ab_f40d: xce 
+unknown_ab_f40d: xce
 unknown_ab_f40e: stz $66, X
 unknown_ab_f410: brk $00
 unknown_ab_f412: brk $00
 unknown_ab_f414: brk $00
-unknown_ab_f416: clc 
-unknown_ab_f417: clc 
+unknown_ab_f416: clc
+unknown_ab_f417: clc
 unknown_ab_f418: ora $bf1d.w, X
 unknown_ab_f41b: lda $7dffcf, X
 unknown_ab_f41f: adc $000000.l, X
@@ -13740,7 +13740,7 @@ unknown_ab_f433: brk $00
 unknown_ab_f435: brk $93
 unknown_ab_f437: sta ($fe, S), Y
 unknown_ab_f439: inc $fcf4.w, X
-unknown_ab_f43c: tcd 
+unknown_ab_f43c: tcd
 unknown_ab_f43d: sbc $7efe5e, X
 unknown_ab_f441: ror $d2b6.w, X
 unknown_ab_f444: dec $56de.w, X
@@ -13777,8 +13777,8 @@ unknown_ab_f489: cpy #$e0
 unknown_ab_f48b: rts
 
 unknown_ab_f48c: bcc ($90 - $100) ; $f41e.w
-unknown_ab_f48e: sei 
-unknown_ab_f48f: cli 
+unknown_ab_f48e: sei
+unknown_ab_f48f: cli
 unknown_ab_f490: brk $00
 unknown_ab_f492: brk $00
 unknown_ab_f494: brk $00
@@ -13786,7 +13786,7 @@ unknown_ab_f496: bra ($80 - $100) ; $f418.w
 unknown_ab_f498: cpy #$c0
 unknown_ab_f49a: jsr $f0e0.w
 unknown_ab_f49d: beq ($f8 - $100) ; $f497.w
-unknown_ab_f49f: sed 
+unknown_ab_f49f: sed
 unknown_ab_f4a0: brk $00
 unknown_ab_f4a2: brk $00
 unknown_ab_f4a4: brk $00
@@ -13808,7 +13808,7 @@ unknown_ab_f4c7: brk $c0
 unknown_ab_f4c9: cpy #$40
 unknown_ab_f4cb: bra ($f0 - $100) ; $f4bd.w
 unknown_ab_f4cd: beq ($a8 - $100) ; $f477.w
-unknown_ab_f4cf: sed 
+unknown_ab_f4cf: sed
 unknown_ab_f4d0: brk $00
 unknown_ab_f4d2: brk $00
 unknown_ab_f4d4: brk $00
@@ -13816,16 +13816,16 @@ unknown_ab_f4d6: brk $00
 unknown_ab_f4d8: cpy #$c0
 unknown_ab_f4da: cpy #$c0
 unknown_ab_f4dc: beq ($f0 - $100) ; $f4ce.w
-unknown_ab_f4de: sei 
-unknown_ab_f4df: sed 
+unknown_ab_f4de: sei
+unknown_ab_f4df: sed
 unknown_ab_f4e0: ror $7e7e.w, X
-unknown_ab_f4e3: ply 
+unknown_ab_f4e3: ply
 unknown_ab_f4e4: adc $774b.w
 unknown_ab_f4e7: adc $6a, X
 unknown_ab_f4e9: lsr $7b7b.w
 unknown_ab_f4ec: adc $7e4b.w
 unknown_ab_f4ef: ror $7e7e.w, X
-unknown_ab_f4f2: ply 
+unknown_ab_f4f2: ply
 unknown_ab_f4f3: ror $7f73.w, X
 unknown_ab_f4f6: adc $7e767f, X
 unknown_ab_f4fa: adc $7f737f, X
@@ -13851,8 +13851,8 @@ unknown_ab_f526: bra ($80 - $100) ; $f4a8.w
 unknown_ab_f528: cpy #$c0
 unknown_ab_f52a: cpx #$e0
 unknown_ab_f52c: bvs $70 ; $f59e.w
-unknown_ab_f52e: sei 
-unknown_ab_f52f: cli 
+unknown_ab_f52e: sei
+unknown_ab_f52f: cli
 unknown_ab_f530: brk $00
 unknown_ab_f532: brk $00
 unknown_ab_f534: brk $00
@@ -13860,8 +13860,8 @@ unknown_ab_f536: bra ($80 - $100) ; $f4b8.w
 unknown_ab_f538: cpy #$c0
 unknown_ab_f53a: cpx #$e0
 unknown_ab_f53c: beq ($f0 - $100) ; $f52e.w
-unknown_ab_f53e: tya 
-unknown_ab_f53f: sed 
+unknown_ab_f53e: tya
+unknown_ab_f53f: sed
 unknown_ab_f540: brk $00
 unknown_ab_f542: brk $00
 unknown_ab_f544: brk $00
@@ -13910,28 +13910,28 @@ unknown_ab_f5a0: brk $00
 unknown_ab_f5a2: bit $6e3c.w, X
 unknown_ab_f5a5: ror $3e, X
 unknown_ab_f5a7: rol $2424.w
-unknown_ab_f5aa: sec 
-unknown_ab_f5ab: sec 
+unknown_ab_f5aa: sec
+unknown_ab_f5ab: sec
 unknown_ab_f5ac: bmi $30 ; $f5de.w
 unknown_ab_f5ae: brk $00
 unknown_ab_f5b0: brk $00
 unknown_ab_f5b2: bit $763c.w, X
 unknown_ab_f5b5: ror $3e2a.w, X
 unknown_ab_f5b8: bit $283c.w, X
-unknown_ab_f5bb: sec 
+unknown_ab_f5bb: sec
 unknown_ab_f5bc: bmi $30 ; $f5ee.w
 unknown_ab_f5be: brk $00
 unknown_ab_f5c0: brk $00
-unknown_ab_f5c2: clc 
-unknown_ab_f5c3: clc 
+unknown_ab_f5c2: clc
+unknown_ab_f5c3: clc
 unknown_ab_f5c4: bit $3c, X
 unknown_ab_f5c6: rol $6e2a.w, X
 unknown_ab_f5c9: ror $7e7e.w
 unknown_ab_f5cc: brk $00
 unknown_ab_f5ce: brk $00
 unknown_ab_f5d0: brk $00
-unknown_ab_f5d2: clc 
-unknown_ab_f5d3: clc 
+unknown_ab_f5d2: clc
+unknown_ab_f5d3: clc
 unknown_ab_f5d4: bit $2a3c.w, X
 unknown_ab_f5d7: rol $7e5a.w, X
 unknown_ab_f5da: ror $007e.w, X
@@ -14026,8 +14026,8 @@ unknown_ab_f6b8: brk $00
 unknown_ab_f6ba: brk $00
 unknown_ab_f6bc: brk $00
 unknown_ab_f6be: brk $00
-unknown_ab_f6c0: pla 
-unknown_ab_f6c1: cli 
+unknown_ab_f6c0: pla
+unknown_ab_f6c1: cli
 unknown_ab_f6c2: bcs ($b0 - $100) ; $f674.w
 unknown_ab_f6c4: ldy #$20
 unknown_ab_f6c6: cpy #$c0
@@ -14035,8 +14035,8 @@ unknown_ab_f6c8: bra ($80 - $100) ; $f64a.w
 unknown_ab_f6ca: brk $00
 unknown_ab_f6cc: brk $00
 unknown_ab_f6ce: brk $00
-unknown_ab_f6d0: cld 
-unknown_ab_f6d1: sed 
+unknown_ab_f6d0: cld
+unknown_ab_f6d1: sed
 unknown_ab_f6d2: bne ($f0 - $100) ; $f6c4.w
 unknown_ab_f6d4: cpx #$e0
 unknown_ab_f6d6: cpy #$c0
@@ -14046,8 +14046,8 @@ unknown_ab_f6dc: brk $00
 unknown_ab_f6de: brk $00
 unknown_ab_f6e0: brk $00
 unknown_ab_f6e2: sbc $abffff, X
-unknown_ab_f6e6: plb 
-unknown_ab_f6e7: plb 
+unknown_ab_f6e6: plb
+unknown_ab_f6e7: plb
 unknown_ab_f6e8: sbc [$f7], Y
 unknown_ab_f6ea: cmp $f7bb99
 unknown_ab_f6ee: jmp ($006c)
@@ -14056,8 +14056,8 @@ unknown_ab_f6f3: sbc $ffffff, X
 unknown_ab_f6f7: sbc $b9ffab, X
 unknown_ab_f6fb: sbc $6cffff, X
 unknown_ab_f6ff: jmp ($1b1f)
-unknown_ab_f702: phd 
-unknown_ab_f703: phd 
+unknown_ab_f702: phd
+unknown_ab_f703: phd
 unknown_ab_f704: ora [$06]
 unknown_ab_f706: cop $03
 unknown_ab_f708: ora ($01, X)
@@ -14101,8 +14101,8 @@ unknown_ab_f758: brk $00
 unknown_ab_f75a: brk $00
 unknown_ab_f75c: brk $00
 unknown_ab_f75e: brk $00
-unknown_ab_f760: sec 
-unknown_ab_f761: sec 
+unknown_ab_f760: sec
+unknown_ab_f761: sec
 unknown_ab_f762: beq ($f0 - $100) ; $f754.w
 unknown_ab_f764: cpx #$60
 unknown_ab_f766: cpy #$c0
@@ -14110,8 +14110,8 @@ unknown_ab_f768: bra ($80 - $100) ; $f6ea.w
 unknown_ab_f76a: brk $00
 unknown_ab_f76c: brk $00
 unknown_ab_f76e: brk $00
-unknown_ab_f770: sed 
-unknown_ab_f771: sed 
+unknown_ab_f770: sed
+unknown_ab_f771: sed
 unknown_ab_f772: bvs ($f0 - $100) ; $f764.w
 unknown_ab_f774: rts
 
@@ -14126,16 +14126,16 @@ unknown_ab_f783: bmi $3c ; $f7c1.w
 unknown_ab_f785: bit $262e.w, X
 unknown_ab_f788: dec A
 unknown_ab_f789: rol $343c.w, X
-unknown_ab_f78c: sec 
-unknown_ab_f78d: sec 
+unknown_ab_f78c: sec
+unknown_ab_f78d: sec
 unknown_ab_f78e: brk $00
 unknown_ab_f790: brk $00
 unknown_ab_f792: bmi $30 ; $f7c4.w
 unknown_ab_f794: bit $363c.w
 unknown_ab_f797: rol $3e3e.w, X
 unknown_ab_f79a: bit $3c
-unknown_ab_f79c: sec 
-unknown_ab_f79d: sec 
+unknown_ab_f79c: sec
+unknown_ab_f79d: sec
 unknown_ab_f79e: brk $00
 unknown_ab_f7a0: brk $00
 unknown_ab_f7a2: tsb $1c0c.w
@@ -14154,28 +14154,28 @@ unknown_ab_f7c2: brk $00
 unknown_ab_f7c4: ror $767e.w, X
 unknown_ab_f7c7: ror $7c, X
 unknown_ab_f7c9: mvn $3c, $2c
-unknown_ab_f7cc: clc 
-unknown_ab_f7cd: clc 
+unknown_ab_f7cc: clc
+unknown_ab_f7cd: clc
 unknown_ab_f7ce: brk $00
 unknown_ab_f7d0: brk $00
 unknown_ab_f7d2: brk $00
 unknown_ab_f7d4: ror $5a7e.w, X
 unknown_ab_f7d7: ror $7c54.w, X
 unknown_ab_f7da: bit $183c.w, X
-unknown_ab_f7dd: clc 
+unknown_ab_f7dd: clc
 unknown_ab_f7de: brk $00
 unknown_ab_f7e0: brk $00
 unknown_ab_f7e2: bmi $30 ; $f814.w
-unknown_ab_f7e4: sei 
-unknown_ab_f7e5: sei 
+unknown_ab_f7e4: sei
+unknown_ab_f7e5: sei
 unknown_ab_f7e6: stz $54, X
 unknown_ab_f7e8: lsr $66, X
 unknown_ab_f7ea: ror $207e.w, X
 unknown_ab_f7ed: jsr $0000.w
 unknown_ab_f7f0: brk $00
 unknown_ab_f7f2: bmi $30 ; $f824.w
-unknown_ab_f7f4: pla 
-unknown_ab_f7f5: sei 
+unknown_ab_f7f4: pla
+unknown_ab_f7f5: sei
 unknown_ab_f7f6: jmp $7e6a7c
 unknown_ab_f7fa: ror $207e.w, X
 unknown_ab_f7fd: jsr $0000.w

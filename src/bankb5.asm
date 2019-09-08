@@ -1156,11 +1156,11 @@ unknown_b5_90a4: ora $0c1f0c, X
 unknown_b5_90a8: ora $0c1f0c, X
 unknown_b5_90ac: ora $0c1f0c, X
 unknown_b5_90b0: ora $4c270c, X
-unknown_b5_90b4: tcs 
+unknown_b5_90b4: tcs
 unknown_b5_90b5: tsb $0c1b.w
-unknown_b5_90b8: tcs 
+unknown_b5_90b8: tcs
 unknown_b5_90b9: tsb $0c1b.w
-unknown_b5_90bc: tcs 
+unknown_b5_90bc: tcs
 unknown_b5_90bd: tsb $0c27.w
 unknown_b5_90c0: ora $0c1f0c, X
 unknown_b5_90c4: ora $0c1f0c, X
@@ -1176,11 +1176,11 @@ unknown_b5_90e6: jsr $0c220c
 unknown_b5_90ea: jsr $4c210c
 unknown_b5_90ee: and ($0c, X)
 unknown_b5_90f0: jsr $4c270c
-unknown_b5_90f4: tcs 
+unknown_b5_90f4: tcs
 unknown_b5_90f5: tsb $0c1b.w
-unknown_b5_90f8: tcs 
+unknown_b5_90f8: tcs
 unknown_b5_90f9: tsb $0c1b.w
-unknown_b5_90fc: tcs 
+unknown_b5_90fc: tcs
 unknown_b5_90fd: tsb $0c27.w
 unknown_b5_9100: ora $0c1f0c, X
 unknown_b5_9104: ora $0c1f0c, X
@@ -1195,11 +1195,11 @@ unknown_b5_9124: ora $0c1f0c, X
 unknown_b5_9128: ora $0c1f0c, X
 unknown_b5_912c: ora $0c1f0c, X
 unknown_b5_9130: ora $4c270c, X
-unknown_b5_9134: tcs 
+unknown_b5_9134: tcs
 unknown_b5_9135: tsb $0c1b.w
-unknown_b5_9138: tcs 
+unknown_b5_9138: tcs
 unknown_b5_9139: tsb $0c1b.w
-unknown_b5_913c: tcs 
+unknown_b5_913c: tcs
 unknown_b5_913d: tsb $0c27.w
 unknown_b5_9140: ora $0c1f0c, X
 unknown_b5_9144: ora $0c1f0c, X
@@ -1209,7 +1209,7 @@ unknown_b5_9150: ora $0c1f0c, X
 unknown_b5_9154: ora $0c230c, X
 unknown_b5_9158: ora $0c1f0c, X
 unknown_b5_915c: ora $0c290c, X
-unknown_b5_9160: pld 
+unknown_b5_9160: pld
 unknown_b5_9161: tsb $4c21.w
 unknown_b5_9164: and ($0c, X)
 unknown_b5_9166: and $0c
@@ -1230,7 +1230,7 @@ unknown_b5_918c: ora $0c1f0c, X
 unknown_b5_9190: ora $0c1f0c, X
 unknown_b5_9194: ora $0c230c, X
 unknown_b5_9198: ora $0c290c, X
-unknown_b5_919c: pld 
+unknown_b5_919c: pld
 unknown_b5_919d: tsb $0c28.w
 unknown_b5_91a0: rol A
 unknown_b5_91a1: tsb $0c1f.w
@@ -1700,11 +1700,11 @@ unknown_b5_9880: and ($0c, X)
 unknown_b5_9882: sta $0c1f4c
 unknown_b5_9886: ora $0c1f0c, X
 unknown_b5_988a: ora $4c270c, X
-unknown_b5_988e: tcs 
+unknown_b5_988e: tcs
 unknown_b5_988f: tsb $0c1b.w
-unknown_b5_9892: tcs 
+unknown_b5_9892: tcs
 unknown_b5_9893: tsb $0c1b.w
-unknown_b5_9896: tcs 
+unknown_b5_9896: tcs
 unknown_b5_9897: tsb $8c26.w
 unknown_b5_989a: and $cc
 unknown_b5_989c: ora $0c1f0c, X
@@ -1720,7 +1720,7 @@ unknown_b5_98c0: ora $0c1f0c, X
 unknown_b5_98c4: ora $0c1f0c, X
 unknown_b5_98c8: ora $0c1f0c, X
 unknown_b5_98cc: adc [$0c], Y
-unknown_b5_98ce: tcs 
+unknown_b5_98ce: tcs
 unknown_b5_98cf: tsb $0c1b.w
 unknown_b5_98d2: and ($0c, X)
 unknown_b5_98d4: and ($4c, X)
@@ -1739,9 +1739,9 @@ unknown_b5_9900: ora $0c1f0c, X
 unknown_b5_9904: ora $0c1f0c, X
 unknown_b5_9908: ora $0c1f0c, X
 unknown_b5_990c: and [$4c]
-unknown_b5_990e: tcs 
+unknown_b5_990e: tcs
 unknown_b5_990f: tsb $0c1b.w
-unknown_b5_9912: tcs 
+unknown_b5_9912: tcs
 unknown_b5_9913: tsb $0c1b.w
 unknown_b5_9916: and [$0c]
 unknown_b5_9918: ora $0c1f0c, X
@@ -1759,11 +1759,11 @@ unknown_b5_9943: tsb $0c22.w
 unknown_b5_9946: and ($4c, X)
 unknown_b5_9948: stx $250c.w
 unknown_b5_994b: jmp $8c25.w
-unknown_b5_994e: tcs 
+unknown_b5_994e: tcs
 unknown_b5_994f: tsb $0c1b.w
-unknown_b5_9952: tcs 
+unknown_b5_9952: tcs
 unknown_b5_9953: tsb $0c1b.w
-unknown_b5_9956: tcs 
+unknown_b5_9956: tcs
 unknown_b5_9957: tsb $0c26.w
 unknown_b5_995a: and $4c
 unknown_b5_995c: ora $0c1f0c, X
@@ -2370,7 +2370,7 @@ unknown_b5_a200: ora $001f00.l, X
 unknown_b5_a204: bit $8c
 unknown_b5_a206: and ($0c, X)
 unknown_b5_a208: jsr $0c220c
-unknown_b5_a20c: pld 
+unknown_b5_a20c: pld
 unknown_b5_a20d: jmp $4c29.w
 unknown_b5_a210: ora $001f00.l, X
 unknown_b5_a214: ora $8c2500, X
@@ -2393,7 +2393,7 @@ unknown_b5_a23e: ora $001f00.l, X
 unknown_b5_a242: ora $001f00.l, X
 unknown_b5_a246: ora $001f00.l, X
 unknown_b5_a24a: ora $4c2a00, X
-unknown_b5_a24e: plp 
+unknown_b5_a24e: plp
 unknown_b5_a24f: jmp $4c2b.w
 unknown_b5_a252: and #$1f4c.w
 unknown_b5_a255: brk $1f
@@ -2473,7 +2473,7 @@ unknown_b5_a327: brk $1f
 unknown_b5_a329: brk $ce
 unknown_b5_a32b: tsb $001f.w
 unknown_b5_a32e: and [$4c]
-unknown_b5_a330: tcs 
+unknown_b5_a330: tcs
 unknown_b5_a331: tsb $cc25.w
 unknown_b5_a334: ora $001f00.l, X
 unknown_b5_a338: ora $0c2300, X
@@ -2567,7 +2567,7 @@ unknown_b5_a43e: ora $001f00.l, X
 unknown_b5_a442: ora $001f00.l, X
 unknown_b5_a446: ror $278c.w
 unknown_b5_a449: jmp $0c1b.w
-unknown_b5_a44c: tcs 
+unknown_b5_a44c: tcs
 unknown_b5_a44d: tsb $0c1b.w
 unknown_b5_a450: and $4c
 unknown_b5_a452: ora $8c2400, X
@@ -2991,7 +2991,7 @@ unknown_b5_aab0: ora $001f00.l, X
 unknown_b5_aab4: ora $001f00.l, X
 unknown_b5_aab8: ora $001f00.l, X
 unknown_b5_aabc: ora $001f00.l, X
-unknown_b5_aac0: tcs 
+unknown_b5_aac0: tcs
 unknown_b5_aac1: tsb $0c1b.w
 unknown_b5_aac4: and [$0c]
 unknown_b5_aac6: and $0c, S
@@ -3010,7 +3010,7 @@ unknown_b5_aaf0: ora $001f00.l, X
 unknown_b5_aaf4: ora $001f00.l, X
 unknown_b5_aaf8: ora $001f00.l, X
 unknown_b5_aafc: ora $001f00.l, X
-unknown_b5_ab00: tcs 
+unknown_b5_ab00: tcs
 unknown_b5_ab01: tsb $0c1b.w
 unknown_b5_ab04: and [$0c]
 unknown_b5_ab06: and $0c, S
@@ -4513,7 +4513,7 @@ unknown_b5_c166: rol $0c
 unknown_b5_c168: rol $0c
 unknown_b5_c16a: and $4c
 unknown_b5_c16c: and ($0c, X)
-unknown_b5_c16e: tcs 
+unknown_b5_c16e: tcs
 unknown_b5_c16f: jmp $4c1b.w
 unknown_b5_c172: and $4c
 unknown_b5_c174: ora $001f00.l, X
@@ -4530,7 +4530,7 @@ unknown_b5_c19a: ora $8c2500, X
 unknown_b5_c19e: jsr $0c210c
 unknown_b5_c1a2: and ($4c, X)
 unknown_b5_c1a4: and [$4c]
-unknown_b5_c1a6: tcs 
+unknown_b5_c1a6: tcs
 unknown_b5_c1a7: tsb $8c26.w
 unknown_b5_c1aa: and $cc
 unknown_b5_c1ac: dec $270c.w
@@ -4553,7 +4553,7 @@ unknown_b5_c1e6: and $cc
 unknown_b5_c1e8: stx $1fcc.w
 unknown_b5_c1eb: brk $ce
 unknown_b5_c1ed: tsb $cc27.w
-unknown_b5_c1f0: tcs 
+unknown_b5_c1f0: tcs
 unknown_b5_c1f1: tsb $0c27.w
 unknown_b5_c1f4: and $0c, S
 unknown_b5_c1f6: bit $0c
@@ -4631,17 +4631,17 @@ unknown_b5_c2d0: ora $001f00.l, X
 unknown_b5_c2d4: and [$cc]
 unknown_b5_c2d6: and [$0c]
 unknown_b5_c2d8: and $8c
-unknown_b5_c2da: tcs 
+unknown_b5_c2da: tcs
 unknown_b5_c2db: tsb $0c1b.w
-unknown_b5_c2de: tcs 
+unknown_b5_c2de: tcs
 unknown_b5_c2df: tsb $0c1b.w
 unknown_b5_c2e2: and $cc
 unknown_b5_c2e4: and ($0c, X)
 unknown_b5_c2e6: and ($4c, X)
 unknown_b5_c2e8: and [$cc]
-unknown_b5_c2ea: tcs 
+unknown_b5_c2ea: tcs
 unknown_b5_c2eb: sty $4c1b.w
-unknown_b5_c2ee: tcs 
+unknown_b5_c2ee: tcs
 unknown_b5_c2ef: jmp $cc1b.w
 unknown_b5_c2f2: and [$0c]
 unknown_b5_c2f4: and ($0c, X)
@@ -4656,7 +4656,7 @@ unknown_b5_c310: ora $001f00.l, X
 unknown_b5_c314: and [$4c]
 unknown_b5_c316: adc [$4c], Y
 unknown_b5_c318: jsr $4c270c
-unknown_b5_c31c: tcs 
+unknown_b5_c31c: tcs
 unknown_b5_c31d: tsb $0c1b.w
 unknown_b5_c320: and [$0c]
 unknown_b5_c322: ora $001f00.l, X
@@ -4716,7 +4716,7 @@ unknown_b5_c3d0: ora $001f00.l, X
 unknown_b5_c3d4: and [$cc]
 unknown_b5_c3d6: and [$8c]
 unknown_b5_c3d8: ora $cc2700, X
-unknown_b5_c3dc: tcs 
+unknown_b5_c3dc: tcs
 unknown_b5_c3dd: sty $8c26.w
 unknown_b5_c3e0: and $cc
 unknown_b5_c3e2: ora $4c2700, X
@@ -4735,7 +4735,7 @@ unknown_b5_c408: ora $001f00.l, X
 unknown_b5_c40c: ora $001f00.l, X
 unknown_b5_c410: ora $001f00.l, X
 unknown_b5_c414: and [$4c]
-unknown_b5_c416: tcs 
+unknown_b5_c416: tcs
 unknown_b5_c417: tsb $4c21.w
 unknown_b5_c41a: and $8c
 unknown_b5_c41c: and $cc
@@ -6079,7 +6079,7 @@ unknown_b5_d49a: ora $001f00.l, X
 unknown_b5_d49e: ora $0c4d00, X
 unknown_b5_d4a2: and $0c, S
 unknown_b5_d4a4: and [$4c]
-unknown_b5_d4a6: tcs 
+unknown_b5_d4a6: tcs
 unknown_b5_d4a7: tsb $0c27.w
 unknown_b5_d4aa: ora $001f00.l, X
 unknown_b5_d4ae: ora $001f00.l, X
@@ -6098,7 +6098,7 @@ unknown_b5_d4da: sta $0c220c
 unknown_b5_d4de: jsr $4c210c
 unknown_b5_d4e2: bit $8c
 unknown_b5_d4e4: and [$4c]
-unknown_b5_d4e6: tcs 
+unknown_b5_d4e6: tcs
 unknown_b5_d4e7: tsb $0c27.w
 unknown_b5_d4ea: ora $001f00.l, X
 unknown_b5_d4ee: ora $001f00.l, X
@@ -6119,7 +6119,7 @@ unknown_b5_d51e: rol $0c
 unknown_b5_d520: rol $0c
 unknown_b5_d522: and $4c
 unknown_b5_d524: and [$4c]
-unknown_b5_d526: tcs 
+unknown_b5_d526: tcs
 unknown_b5_d527: tsb $0c27.w
 unknown_b5_d52a: ora $001f00.l, X
 unknown_b5_d52e: ora $001f00.l, X
@@ -6140,7 +6140,7 @@ unknown_b5_d55e: rol $8c
 unknown_b5_d560: rol $8c
 unknown_b5_d562: and $cc
 unknown_b5_d564: and [$4c]
-unknown_b5_d566: tcs 
+unknown_b5_d566: tcs
 unknown_b5_d567: tsb $0c27.w
 unknown_b5_d56a: ora $001f00.l, X
 unknown_b5_d56e: ora $001f00.l, X
