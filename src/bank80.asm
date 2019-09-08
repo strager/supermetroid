@@ -1,6 +1,7 @@
 .include "src/common.asm"
 
 .bank ($80 - $80) slot $0
+.base $80
 .org $0
 
 unknown_80_8000: brk $00
@@ -575,11 +576,12 @@ unknown_80_8419: plb
 unknown_80_841a: plp
 unknown_80_841b: rtl
 
-unknown_80_841c: sei
-unknown_80_841d: clc
-unknown_80_841e: xce
-unknown_80_841f: jmp $808423
-
+interrupt_reset:
+  sei
+  clc
+  xce
+  jml @body
+@body:
 unknown_80_8423: sep #$20
 unknown_80_8425: lda #$01
 unknown_80_8427: sta $420d.w
@@ -717,7 +719,8 @@ unknown_80_856b: stz $0686.w
 unknown_80_856e: jmp $82893d
 .db $00
 
-unknown_80_8573: jmp $808573
+interrupt_other:
+  jml interrupt_other
 
 unknown_80_8577: php
 unknown_80_8578: phb
@@ -2534,65 +2537,66 @@ unknown_80_957e: sta $05cf.w
 unknown_80_9581: plp
 unknown_80_9582: rtl
 
-unknown_80_9583: rep #$30
-unknown_80_9585: jmp $809589
-
-unknown_80_9589: phb
-unknown_80_958a: phd
-unknown_80_958b: pha
-unknown_80_958c: phx
-unknown_80_958d: phy
-unknown_80_958e: phk
-unknown_80_958f: plb
-unknown_80_9590: lda #$0000.w
-unknown_80_9593: tcd
-unknown_80_9594: sep #$10
-unknown_80_9596: ldx $4210.w
-unknown_80_9599: ldx $05b4.w
-unknown_80_959c: beq $64 ; $9602.w
-unknown_80_959e: jsr $933a.w
-unknown_80_95a1: jsr $9376.w
-unknown_80_95a4: jsr $9416.w
-unknown_80_95a7: jsr $91ee.w
-unknown_80_95aa: ldx #$00
-unknown_80_95ac: lda $18b4.w, X
-unknown_80_95af: beq $09 ; $95ba.w
-unknown_80_95b1: ldy $18c0.w, X
-unknown_80_95b4: lda $18d8.w, X
-unknown_80_95b7: sta $4302.w, Y
-unknown_80_95ba: inx
-unknown_80_95bb: inx
-unknown_80_95bc: cpx #$0c
-unknown_80_95be: bne ($ec - $100) ; $95ac.w
-unknown_80_95c0: ldx $55
-unknown_80_95c2: cpx #$07
-unknown_80_95c4: beq $06 ; $95cc.w
-unknown_80_95c6: ldx $56
-unknown_80_95c8: cpx #$07
-unknown_80_95ca: bne $04 ; $95d0.w
-unknown_80_95cc: jsr $808bba
-unknown_80_95d0: jsr $808c83
-unknown_80_95d4: jsr $808ea2
-unknown_80_95d8: sep #$10
-unknown_80_95da: rep #$20
-unknown_80_95dc: ldx $85
-unknown_80_95de: stx $420c.w
-unknown_80_95e1: jsr $809459
-unknown_80_95e5: ldx #$00
-unknown_80_95e7: stx $05b4.w
-unknown_80_95ea: stx $05ba.w
-unknown_80_95ed: ldx $05b5.w
-unknown_80_95f0: inx
-unknown_80_95f1: stx $05b5.w
-unknown_80_95f4: inc $05b6.w
-unknown_80_95f7: rep #$30
-unknown_80_95f9: inc $05b8.w
-unknown_80_95fc: ply
-unknown_80_95fd: plx
-unknown_80_95fe: pla
-unknown_80_95ff: pld
-unknown_80_9600: plb
-unknown_80_9601: rti
+interrupt_nmi:
+  rep #$30
+  jml @body
+@body:
+  phb
+  phd
+  pha
+  phx
+  phy
+  phk
+  plb
+  lda #$0000.w
+  tcd
+  sep #$10
+  ldx $4210.w
+  ldx $05b4.w
+  beq $64 ; $9602.w
+  jsr $933a.w
+  jsr $9376.w
+  jsr $9416.w
+  jsr $91ee.w
+  ldx #$00
+  lda $18b4.w, X
+  beq $09 ; $95ba.w
+  ldy $18c0.w, X
+  lda $18d8.w, X
+  sta $4302.w, Y
+  inx
+  inx
+  cpx #$0c
+  bne ($ec - $100) ; $95ac.w
+  ldx $55
+  cpx #$07
+  beq $06 ; $95cc.w
+  ldx $56
+  cpx #$07
+  bne $04 ; $95d0.w
+  jsr $808bba
+  jsr $808c83
+  jsr $808ea2
+  sep #$10
+  rep #$20
+  ldx $85
+  stx $420c.w
+  jsr $809459
+  ldx #$00
+  stx $05b4.w
+  stx $05ba.w
+  ldx $05b5.w
+  inx
+  stx $05b5.w
+  inc $05b6.w
+  rep #$30
+  inc $05b8.w
+  ply
+  plx
+  pla
+  pld
+  plb
+  rti
 
 unknown_80_9602: ldx $05ba.w
 unknown_80_9605: inx
@@ -2873,26 +2877,27 @@ unknown_80_9867: plp
 unknown_80_9868: sei
 unknown_80_9869: rtl
 
-unknown_80_986a: rep #$30
-unknown_80_986c: jmp $809870
-
-unknown_80_9870: phb
-unknown_80_9871: pha
-unknown_80_9872: phx
-unknown_80_9873: phy
-unknown_80_9874: phk
-unknown_80_9875: plb
-unknown_80_9876: lda $4211.w
-unknown_80_9879: ldx $ab
-unknown_80_987b: jsr ($9616.w, X)
-unknown_80_987e: sta $ab
-unknown_80_9880: sty $4209.w
-unknown_80_9883: stx $4207.w
-unknown_80_9886: ply
-unknown_80_9887: plx
-unknown_80_9888: pla
-unknown_80_9889: plb
-unknown_80_988a: rti
+interrupt_irq:
+  rep #$30
+  jml @body
+@body:
+  phb
+  pha
+  phx
+  phy
+  phk
+  plb
+  lda $4211.w
+  ldx $ab
+  jsr ($9616.w, X)
+  sta $ab
+  sty $4209.w
+  stx $4207.w
+  ply
+  plx
+  pla
+  plb
+  rti
 
 unknown_80_988b: ora $2c0f2c
 unknown_80_988f: ora $2c0f2c
@@ -9124,27 +9129,27 @@ unknown_80_cd8b: brk $00
 .db $00
 
 .org $7fe0
-unknown_80_7fe0: .dw unknown_80_8573
-unknown_80_7fe2: .dw unknown_80_8573
+unknown_80_7fe0: .dw interrupt_other
+unknown_80_7fe2: .dw interrupt_other
 
 .snesnativevector
-cop unknown_80_8573
-brk unknown_80_8573
-abort unknown_80_8573
-nmi unknown_80_9583
-unused unknown_80_8573
-irq unknown_80_986a
+cop interrupt_other
+brk interrupt_other
+abort interrupt_other
+nmi interrupt_nmi
+unused interrupt_other
+irq interrupt_irq
 .endnativevector
 
 .org $7ff0
-unknown_80_7ff0: .dw unknown_80_8573
-unknown_80_7ff2: .dw unknown_80_8573
+unknown_80_7ff0: .dw interrupt_other
+unknown_80_7ff2: .dw interrupt_other
 
 .snesemuvector
-cop unknown_80_8573
-unused unknown_80_8573
-abort unknown_80_8573
-nmi unknown_80_8573
-reset unknown_80_841c
-irqbrk unknown_80_8573
+cop interrupt_other
+unused interrupt_other
+abort interrupt_other
+nmi interrupt_other
+reset interrupt_reset
+irqbrk interrupt_other
 .endemuvector
