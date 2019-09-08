@@ -1,3 +1,4 @@
+.include "include/io.asm"
 .include "src/common.asm"
 
 .bank ($80 - $80) slot $0
@@ -582,8 +583,8 @@ interrupt_reset:
   jml @body
 @body:
   sep #$20
-  lda #$01
-  sta $420d.w
+  lda #IO_MEMSEL_FASTROM
+  sta IO_MEMSEL
   sta $86
   rep #$30
   ldx #$1fff.w
@@ -595,10 +596,10 @@ interrupt_reset:
   sep #$30
   ldx #$04
 @unknown_80_843c:
-  lda $4212.w
+  lda IO_HVBJOY
   bpl @unknown_80_843c
 @unknown_80_8441:
-  lda $4212.w
+  lda IO_HVBJOY
   bmi @unknown_80_8441
   dex
   bne @unknown_80_843c
@@ -625,16 +626,16 @@ interrupt_reset:
   sep #$30
   ldx #$04
 @unknown_80_8475:
-  lda $4212.w
+  lda IO_HVBJOY
   bpl @unknown_80_8475
 @unknown_80_847a:
-  lda $4212.w
+  lda IO_HVBJOY
   bmi @unknown_80_847a
   dex
   bne @unknown_80_8475
   sep #$20
-  lda #$8f
-  sta $2100.w
+  lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
+  sta IO_INIDISP
   rep #$30
   pea $7e00.w
   plb
@@ -655,7 +656,7 @@ interrupt_reset:
   phk
   plb
   sep #$30
-  stz $4200.w
+  stz IO_NMITIMEN
   stz $84
   lda #$8f
   sta $51
@@ -691,15 +692,15 @@ interrupt_reset:
   stz $0721.w
   jsl unknown_80_834b
   rep #$30
-  stz $2140.w
-  stz $2142.w
+  stz IO_APUI00
+  stz IO_APUI02
   sep #$30
   ldx #$04
 @unknown_80_8525:
-  lda $4212.w
+  lda IO_HVBJOY
   bpl @unknown_80_8525
 @unknown_80_852a:
-  lda $4212.w
+  lda IO_HVBJOY
   bmi @unknown_80_852a
   dex
   bne @unknown_80_8525
@@ -2624,6 +2625,7 @@ unknown_80_960c: cpx $05bb.w
 unknown_80_960f: bcc ($e6 - $100) ; $95f7.w
 unknown_80_9611: stx $05bb.w
 unknown_80_9614: bra ($e1 - $100) ; $95f7.w
+
 unknown_80_9616: ror $8096.w
 unknown_80_9619: stx $8b, Y
 unknown_80_961b: stx $a9, Y
@@ -2905,12 +2907,12 @@ interrupt_irq:
   phy
   phk
   plb
-  lda $4211.w
+  lda IO_TIMEUP
   ldx $ab
-  jsr ($9616.w, X)
+  jsr (unknown_80_9616, X)
   sta $ab
-  sty $4209.w
-  stx $4207.w
+  sty IO_VTIME
+  stx IO_HTIME
   ply
   plx
   pla
