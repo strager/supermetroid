@@ -23,3 +23,5 @@ version $00
 .endsnes
 
 .emptyfill $ff
+
+.base $80
