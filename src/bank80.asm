@@ -2143,12 +2143,17 @@ unknown_80_91e3: plb
 unknown_80_91e4: plp
 unknown_80_91e5: rtl
 
-unknown_80_91e6: brk $10
-unknown_80_91e8: jsr $4030.w
-unknown_80_91eb: bvc $60 ; $924d.w
-unknown_80_91ed: bvs ($a6 - $100) ; $9195.w
-unknown_80_91ef: sty $8e
-unknown_80_91f1: brk $42
+unknown_80_91e6: .db $00
+unknown_80_91e7: .db $10
+unknown_80_91e8: .db $20
+unknown_80_91e9: .db $30
+unknown_80_91ea: .db $40
+unknown_80_91eb: .db $50
+unknown_80_91ec: .db $60
+unknown_80_91ed: .db $70
+
+unknown_80_91ee: ldx $84
+unknown_80_91f0: stx $4200.w
 unknown_80_91f3: ldx $51
 unknown_80_91f5: stx $2100.w
 unknown_80_91f8: ldx $52
@@ -2553,35 +2558,39 @@ interrupt_nmi:
   sep #$10
   ldx $4210.w
   ldx $05b4.w
-  beq $64 ; $9602.w
-  jsr $933a.w
-  jsr $9376.w
-  jsr $9416.w
-  jsr $91ee.w
+  beq unknown_80_9602
+  jsr unknown_80_933a
+  jsr unknown_80_9376
+  jsr unknown_80_9416
+  jsr unknown_80_91ee
   ldx #$00
+@unknown_80_95ac:
   lda $18b4.w, X
-  beq $09 ; $95ba.w
+  beq @unknown_80_95ba
   ldy $18c0.w, X
   lda $18d8.w, X
   sta $4302.w, Y
+@unknown_80_95ba:
   inx
   inx
   cpx #$0c
-  bne ($ec - $100) ; $95ac.w
+  bne @unknown_80_95ac
   ldx $55
   cpx #$07
-  beq $06 ; $95cc.w
+  beq @unknown_80_95cc
   ldx $56
   cpx #$07
-  bne $04 ; $95d0.w
-  jsr $808bba
-  jsr $808c83
-  jsr $808ea2
+  bne @unknown_80_95d0
+@unknown_80_95cc:
+  jsl unknown_80_8bba
+@unknown_80_95d0:
+  jsl unknown_80_8c83
+  jsl unknown_80_8ea2
   sep #$10
   rep #$20
   ldx $85
   stx $420c.w
-  jsr $809459
+  jsl unknown_80_9459
   ldx #$00
   stx $05b4.w
   stx $05ba.w
