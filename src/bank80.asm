@@ -2692,7 +2692,7 @@ interrupt_nmi:
   sep #$10
   ldx $4210.w
   ldx $05b4.w
-  beq unknown_80_9602
+  beq @unknown_80_9602
   jsr unknown_80_933a
   jsr unknown_80_9376
   jsr unknown_80_9416
@@ -2732,6 +2732,7 @@ interrupt_nmi:
   inx
   stx $05b5.w
   inc $05b6.w
+@unknown_80_95f7:
   rep #$30
   inc $05b8.w
   ply
@@ -2740,15 +2741,15 @@ interrupt_nmi:
   pld
   plb
   rti
-
-unknown_80_9602: ldx $05ba.w
-/*unknown_80_9605:*/ inx
-/*unknown_80_9606:*/ stx $05ba.w
-/*unknown_80_9609:*/ ldx $05ba.w
-/*unknown_80_960c:*/ cpx $05bb.w
-/*unknown_80_960f:*/ bcc ($e6 - $100) ; $95f7.w
-/*unknown_80_9611:*/ stx $05bb.w
-/*unknown_80_9614:*/ bra ($e1 - $100) ; $95f7.w
+@unknown_80_9602:
+  ldx $05ba.w
+  inx
+  stx $05ba.w
+  ldx $05ba.w
+  cpx $05bb.w
+  bcc @unknown_80_95f7
+  stx $05bb.w
+  bra @unknown_80_95f7
 
 unknown_80_9616: ror $8096.w
 /*unknown_80_9619:*/ stx $8b, Y
