@@ -916,11 +916,11 @@ unknown_80_85f6:
   and [$b4], Y
   bra @unknown_80_865d
 @unknown_80_865d:
-  bpl @unknown_80_8608
-  cop $8d
-  phd
-  .db $42, $9c
-  and ($21, X)
+  .db $10
+@unknown_80_865e:
+  lda #$02
+  sta $420b.w
+  stz $2121.w
   jsr $8091a9
   ora ($00, X)
   jsr $8ee400
@@ -1012,11 +1012,11 @@ unknown_80_85f6:
   and [$bc], Y
   bra @unknown_80_8727
 @unknown_80_8727:
-  bpl @unknown_80_86d2
-  cop $8d
-  phd
-  .db $42, $9c
-  and ($21, X)
+  .db $10
+@unknown_80_8728:
+  lda #$02
+  sta $420b.w
+  stz $2121.w
   jsr $8091a9
   ora ($00, X)
   jsr $8ee400
