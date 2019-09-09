@@ -1,4 +1,4 @@
-.include "src/common.asm"
+.include "include/common.asm"
 
 .macro DATA_BANK
 .bank (\1 - $80) slot $0

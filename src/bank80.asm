@@ -1,6 +1,6 @@
+.include "include/common.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
-.include "src/common.asm"
 
 .bank ($80 - $80) slot $0
 .org $0

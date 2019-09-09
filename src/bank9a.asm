@@ -1,4 +1,4 @@
-.include "src/common.asm"
+.include "include/common.asm"
 
 .bank ($9a - $80) slot $0
 .org $0
