@@ -5,139 +5,163 @@
 .bank ($80 - $80) slot $0
 .org $0
 
-unknown_80_8000: brk $00
-unknown_80_8002: brk $00
-unknown_80_8004: brk $00
-unknown_80_8006: brk $00
-unknown_80_8008: brk $00
-unknown_80_800a: lda $02, S
-unknown_80_800c: sta $04
-unknown_80_800e: lda $01, S
-unknown_80_8010: sta $03
-unknown_80_8012: clc
-unknown_80_8013: adc #$0003.w
-unknown_80_8016: sta $01, S
-unknown_80_8018: ldy #$0001.w
-unknown_80_801b: lda [$03], Y
-unknown_80_801d: sta $00
-unknown_80_801f: iny
-unknown_80_8020: lda [$03], Y
-unknown_80_8022: sta $01
-unknown_80_8024: jsr $8028.w
-unknown_80_8027: rtl
+unknown_80_8000: .db $00
+unknown_80_8001: .db $00
+unknown_80_8002: .db $00
+unknown_80_8003: .db $00
+unknown_80_8004: .db $00
+unknown_80_8005: .db $00
+unknown_80_8006: .db $00
+unknown_80_8007: .db $00
+unknown_80_8008: .db $00
+unknown_80_8009: .db $00
 
-unknown_80_8028: lda $808008
-unknown_80_802c: beq $01 ; $802f.w
-unknown_80_802e: rts
+unknown_80_800a:
+  lda $02, S
+  sta $04
+  lda $01, S
+  sta $03
+  clc
+  adc #$0003.w
+  sta $01, S
+  ldy #$0001.w
+  lda [$03], Y
+  sta $00
+  iny
+  lda [$03], Y
+  sta $01
+  jsr unknown_80_8028
+  rtl
 
-unknown_80_802f: php
-unknown_80_8030: phb
-unknown_80_8031: rep #$30
-unknown_80_8033: lda #$ffff.w
-unknown_80_8036: sta $000617.l
-unknown_80_803a: sep #$20
-unknown_80_803c: rep #$10
-unknown_80_803e: lda #$ff
-unknown_80_8040: sta $002140.l
-unknown_80_8044: ldy $00
-unknown_80_8046: lda $02
-unknown_80_8048: pha
-unknown_80_8049: plb
-unknown_80_804a: rep #$30
-unknown_80_804c: jsr $8059.w
-unknown_80_804f: lda #$0000.w
-unknown_80_8052: sta $000617.l
-unknown_80_8056: plb
-unknown_80_8057: plp
-unknown_80_8058: rts
+unknown_80_8028:
+  lda $808008
+  beq @unknown_80_802f
+  rts
+@unknown_80_802f:
+  php
+  phb
+  rep #$30
+  lda #$ffff.w
+  sta $000617.l
+  sep #$20
+  rep #$10
+  lda #$ff
+  sta $002140.l
+  ldy $00
+  lda $02
+  pha
+  plb
+  rep #$30
+  jsr unknown_80_8059
+  lda #$0000.w
+  sta $000617.l
+  plb
+  plp
+  rts
 
-unknown_80_8059: php
-unknown_80_805a: rep #$30
-unknown_80_805c: lda #$3000.w
-unknown_80_805f: sta $000641.l
-unknown_80_8063: lda #$bbaa.w
-unknown_80_8066: cmp $002140.l
-unknown_80_806a: beq $0d ; $8079.w
-unknown_80_806c: lda $000641.l
-unknown_80_8070: dec A
-unknown_80_8071: sta $000641.l
-unknown_80_8075: bne ($ec - $100) ; $8063.w
-unknown_80_8077: bra ($fe - $100) ; $8077.w
-unknown_80_8079: sep #$20
-unknown_80_807b: lda #$cc
-unknown_80_807d: bra $2f ; $80ae.w
-unknown_80_807f: lda $0000.w, Y
-unknown_80_8082: jsr $8103.w
-unknown_80_8085: xba
-unknown_80_8086: lda #$00
-unknown_80_8088: bra $0f ; $8099.w
-unknown_80_808a: xba
-unknown_80_808b: lda $0000.w, Y
-unknown_80_808e: jsr $8103.w
-unknown_80_8091: xba
-unknown_80_8092: cmp $002140.l
-unknown_80_8096: bne ($fa - $100) ; $8092.w
-unknown_80_8098: inc A
-unknown_80_8099: rep #$20
-unknown_80_809b: sta $002140.l
-unknown_80_809f: sep #$20
-unknown_80_80a1: dex
-unknown_80_80a2: bne ($e6 - $100) ; $808a.w
-unknown_80_80a4: cmp $002140.l
-unknown_80_80a8: bne ($fa - $100) ; $80a4.w
-unknown_80_80aa: adc #$03
-unknown_80_80ac: beq ($fc - $100) ; $80aa.w
-unknown_80_80ae: pha
-unknown_80_80af: rep #$20
-unknown_80_80b1: lda $0000.w, Y
-unknown_80_80b4: jsr $8100.w
-unknown_80_80b7: tax
-unknown_80_80b8: lda $0000.w, Y
-unknown_80_80bb: jsr $8100.w
-unknown_80_80be: sta $002142.l
-unknown_80_80c2: sep #$20
-unknown_80_80c4: cpx #$0001.w
-unknown_80_80c7: lda #$00
-unknown_80_80c9: rol A
-unknown_80_80ca: sta $002141.l
-unknown_80_80ce: adc #$7f
-unknown_80_80d0: pla
-unknown_80_80d1: sta $002140.l
-unknown_80_80d5: phx
-unknown_80_80d6: ldx #$1000.w
-unknown_80_80d9: dex
-unknown_80_80da: beq $16 ; $80f2.w
-unknown_80_80dc: cmp $002140.l
-unknown_80_80e0: bne ($f7 - $100) ; $80d9.w
-unknown_80_80e2: plx
-unknown_80_80e3: bvs ($9a - $100) ; $807f.w
-unknown_80_80e5: sep #$20
-unknown_80_80e7: stz $2141.w
-unknown_80_80ea: stz $2142.w
-unknown_80_80ed: stz $2143.w
-unknown_80_80f0: plp
-unknown_80_80f1: rts
+unknown_80_8059:
+  php
+  rep #$30
+  lda #$3000.w
+  sta $000641.l
+@unknown_80_8063:
+  lda #$bbaa.w
+  cmp $002140.l
+  beq @unknown_80_8079
+  lda $000641.l
+  dec A
+  sta $000641.l
+  bne @unknown_80_8063
+@unknown_80_8077:
+  bra @unknown_80_8077
+@unknown_80_8079:
+  sep #$20
+  lda #$cc
+  bra @unknown_80_80ae
+@unknown_80_807f:
+  lda $0000.w, Y
+  jsr unknown_80_8103
+  xba
+  lda #$00
+  bra @unknown_80_8099
+@unknown_80_808a:
+  xba
+  lda $0000.w, Y
+  jsr unknown_80_8103
+  xba
+@unknown_80_8092:
+  cmp $002140.l
+  bne @unknown_80_8092
+  inc A
+@unknown_80_8099:
+  rep #$20
+  sta $002140.l
+  sep #$20
+  dex
+  bne @unknown_80_808a
+@unknown_80_80a4:
+  cmp $002140.l
+  bne @unknown_80_80a4
+@unknown_80_80aa:
+  adc #$03
+  beq @unknown_80_80aa
+@unknown_80_80ae:
+  pha
+  rep #$20
+  lda $0000.w, Y
+  jsr unknown_80_8100
+  tax
+  lda $0000.w, Y
+  jsr unknown_80_8100
+  sta $002142.l
+  sep #$20
+  cpx #$0001.w
+  lda #$00
+  rol A
+  sta $002141.l
+  adc #$7f
+  pla
+  sta $002140.l
+  phx
+  ldx #$1000.w
+@unknown_80_80d9:
+  dex
+  beq @unknown_80_80f2
+  cmp $002140.l
+  bne @unknown_80_80d9
+  plx
+  bvs @unknown_80_807f
+  sep #$20
+  stz $2141.w
+  stz $2142.w
+  stz $2143.w
+  plp
+  rts
+@unknown_80_80f2:
+  sep #$20
+  stz $2141.w
+  stz $2142.w
+  stz $2143.w
+  plx
+  plp
+  rts
 
-unknown_80_80f2: sep #$20
-unknown_80_80f4: stz $2141.w
-unknown_80_80f7: stz $2142.w
-unknown_80_80fa: stz $2143.w
-unknown_80_80fd: plx
-unknown_80_80fe: plp
-unknown_80_80ff: rts
+unknown_80_8100:
+  iny
+  beq unknown_80_8107
+  ; Fall through
+unknown_80_8103:
+  iny
+  beq unknown_80_8107
+  rts
 
-unknown_80_8100: iny
-unknown_80_8101: beq $04 ; $8107.w
-unknown_80_8103: iny
-unknown_80_8104: beq $01 ; $8107.w
-unknown_80_8106: rts
-
-unknown_80_8107: inc $02
-unknown_80_8109: pei ($01)
-unknown_80_810b: plb
-unknown_80_810c: plb
-unknown_80_810d: ldy #$8000.w
-unknown_80_8110: rts
+unknown_80_8107:
+  inc $02
+  pei ($01)
+  plb
+  plb
+  ldy #$8000.w
+  rts
 
 unknown_80_8111: sep #$20
 unknown_80_8113: lda $05e5.w
