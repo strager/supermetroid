@@ -84,6 +84,7 @@ supermetroid-ntsc.sfc: $(BUILD)/linkfile $(OBJECTS) $(WLALINK)
 	$(WLALINK) -s $(BUILD)/linkfile $(@)
 
 $(BUILD)/linkfile: Makefile
+	@mkdir -p $(dir $(@))
 	{ printf '[objects]\n' && printf '%s\n' $(OBJECTS) ; } >$(@)
 
 -include $(DEPENDENCY_FILES)
