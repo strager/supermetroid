@@ -625,8 +625,16 @@ interrupt_reset:
 
   jsl unknown_8b_9146
   jsl unknown_80_800a
-  brk $80
-  cmp $782080
+
+unknown_80_845d: .db $00
+unknown_80_845e: .db $80
+unknown_80_845f: .db $cf
+
+unknown_80_8460:
+  bra unknown_80_8482
+
+unknown_80_8462:
+  sei
   clc
   xce
   rep #$30
@@ -646,6 +654,8 @@ interrupt_reset:
   bmi @unknown_80_847a
   dex
   bne @unknown_80_8475
+  ; Fall through
+unknown_80_8482:
   sep #$20
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
   sta IO_INIDISP
