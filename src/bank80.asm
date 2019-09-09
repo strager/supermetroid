@@ -767,7 +767,7 @@ unknown_80_8482:
   stz $0686.w
   jml unknown_82_893d
 
-.db $00
+  .db $00
 
 interrupt_other:
   jml interrupt_other
@@ -9187,7 +9187,7 @@ unknown_80_cd86: phd
 unknown_80_cd87: ora ($01, X)
 unknown_80_cd89: bpl $00 ; $cd8b.w
 unknown_80_cd8b: brk $00
-.db $00
+  .db $00
 
 .org $7fe0
 unknown_80_7fe0: .dw interrupt_other
