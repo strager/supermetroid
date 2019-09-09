@@ -68,7 +68,7 @@
 /*unknown_81_8083:*/ plp
 /*unknown_81_8084:*/ rtl
 
-/*unknown_81_8085:*/ rep #$30
+unknown_81_8085: rep #$30
 /*unknown_81_8087:*/ phb
 /*unknown_81_8088:*/ phx
 /*unknown_81_8089:*/ phy
