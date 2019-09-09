@@ -576,7 +576,7 @@ unknown_80_834b:
 /*unknown_80_83f4:*/ plp
 /*unknown_80_83f5:*/ rtl
 
-/*unknown_80_83f6:*/ php
+unknown_80_83f6: php
 /*unknown_80_83f7:*/ phb
 /*unknown_80_83f8:*/ phk
 /*unknown_80_83f9:*/ plb
@@ -1197,17 +1197,18 @@ unknown_80_88d1:
   sep #$30
   rts
 
-unknown_80_88eb: php
-/*unknown_80_88ec:*/ phb
-/*unknown_80_88ed:*/ phk
-/*unknown_80_88ee:*/ plb
-/*unknown_80_88ef:*/ rep #$30
-/*unknown_80_88f1:*/ ldx #$3000.w
-/*unknown_80_88f4:*/ ldy #$0800.w
-/*unknown_80_88f7:*/ jsr $8083f6
-/*unknown_80_88fb:*/ plb
-/*unknown_80_88fc:*/ plp
-/*unknown_80_88fd:*/ rtl
+unknown_80_88eb:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  ldx #$3000.w
+  ldy #$0800.w
+  jsl unknown_80_83f6
+  plb
+  plp
+  rtl
 
 unknown_80_88fe: php
 /*unknown_80_88ff:*/ phb
