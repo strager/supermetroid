@@ -591,6 +591,8 @@ interrupt_reset:
   sta $86
   rep #$30
 
+  ; TODO(strager): The following code is duplicated in unknown_80_8462.
+  ; Consolidate.
 @configure_stack:
   ldx #MEM_STACK_TOP - 1
   txs
@@ -618,7 +620,7 @@ interrupt_reset:
 @clear_low_ram:
   ldx #MEM_LOW_RAM_END - 2
 @@loop:
-  stz 0.w, X
+  stz.w 0, X
   dex
   dex
   bpl @@loop
@@ -638,12 +640,21 @@ unknown_80_8462:
   clc
   xce
   rep #$30
-  ldx #$1fff.w
+
+  ; TODO(strager): The following code is duplicated in interrupt_reset.
+  ; Consolidate.
+@configure_stack:
+  ldx #MEM_STACK_TOP - 1
   txs
+
+@configure_direct_page_register:
   lda #$0000.w
   tcd
+
+@configure_data_bank_register:
   phk
-  plb
+  plb ; db := $80
+
   sep #$30
   ldx #$04
 @unknown_80_8475:
@@ -660,22 +671,29 @@ unknown_80_8482:
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
   sta IO_INIDISP
   rep #$30
-  pea $7e00.w
-  plb
-  plb
-  ldx #$1ffe.w
-@unknown_80_8493:
-  stz $0000.w, X
-  stz $2000.w, X
-  stz $4000.w, X
-  stz $6000.w, X
-  stz $8000.w, X
-  stz $a000.w, X
-  stz $c000.w, X
-  stz $e000.w, X
+
+@clear_ram:
+.define CHUNK_COUNT 8
+.define CHUNK_SIZE $10000 / CHUNK_COUNT
+  pea MEM_LOW_HIGH_RAM_BANK << 8
+  plb ; db = $00
+  plb ; db = MEM_LOW_HIGH_RAM_BANK
+  ldx #CHUNK_SIZE - 2
+@@loop:
+  stz.w CHUNK_SIZE * 0, X
+  stz.w CHUNK_SIZE * 1, X
+  stz.w CHUNK_SIZE * 2, X
+  stz.w CHUNK_SIZE * 3, X
+  stz.w CHUNK_SIZE * 4, X
+  stz.w CHUNK_SIZE * 5, X
+  stz.w CHUNK_SIZE * 6, X
+  stz.w CHUNK_SIZE * 7, X
   dex
   dex
-  bpl @unknown_80_8493
+  bpl @@loop
+.undefine CHUNK_SIZE
+.undefine CHUNK_COUNT
+
   phk
   plb
   sep #$30
