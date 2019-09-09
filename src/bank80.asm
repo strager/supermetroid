@@ -2421,28 +2421,30 @@ unknown_80_91ee:
   stx IO_M7Y
   rts
 
-unknown_80_933a: lda #$0400.w
-/*unknown_80_933d:*/ sta $4300.w
-/*unknown_80_9340:*/ lda #$0370.w
-/*unknown_80_9343:*/ sta $4302.w
-/*unknown_80_9346:*/ ldx #$8e00.w
-/*unknown_80_9349:*/ tsb $43
-/*unknown_80_934b:*/ lda #$0220.w
-/*unknown_80_934e:*/ sta $4305.w
-/*unknown_80_9351:*/ stz $2102.w
-/*unknown_80_9354:*/ lda #$2200.w
-/*unknown_80_9357:*/ sta $4310.w
-/*unknown_80_935a:*/ lda #$c000.w
-/*unknown_80_935d:*/ sta $4312.w
-/*unknown_80_9360:*/ ldx #$8e7e.w
-/*unknown_80_9363:*/ trb $43
-/*unknown_80_9365:*/ lda #$0200.w
-/*unknown_80_9368:*/ sta $4315.w
-/*unknown_80_936b:*/ ldx #$8e00.w
-/*unknown_80_936e:*/ and ($21, X)
-/*unknown_80_9370:*/ ldx #$8e03.w
-/*unknown_80_9373:*/ phd
-/*unknown_80_9374:*/ .db $42, $60
+unknown_80_933a:
+  lda #$0400.w
+  sta $4300.w
+  lda #$0370.w
+  sta $4302.w
+  ldx #$00.b
+  stx $4304.w
+  lda #$0220.w
+  sta $4305.w
+  stz $2102.w
+  lda #$2200.w
+  sta $4310.w
+  lda #$c000.w
+  sta $4312.w
+  ldx #$7e.b
+  stx $4314.w
+  lda #$0200.w
+  sta $4315.w
+  ldx #$00.b
+  stx $2121.w
+  ldx #$03.b
+  stx $420b.w
+  rts
+
 unknown_80_9376: phb
 /*unknown_80_9377:*/ ldx #$da92.w
 /*unknown_80_937a:*/ plb
