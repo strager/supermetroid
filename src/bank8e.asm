@@ -3,7 +3,7 @@
 .bank ($8e - $80) slot $0
 .org $0
 
-/*unknown_8e_8000:*/ brk $00
+unknown_8e_8000: brk $00
 /*unknown_8e_8002:*/ brk $00
 /*unknown_8e_8004:*/ brk $3c
 /*unknown_8e_8006:*/ clc
@@ -7421,7 +7421,7 @@
 /*unknown_8e_bffa:*/ brk $00
 /*unknown_8e_bffc:*/ brk $00
 /*unknown_8e_bffe:*/ brk $00
-/*unknown_8e_c000:*/ brk $00
+unknown_8e_c000: brk $00
 /*unknown_8e_c002:*/ brk $00
 /*unknown_8e_c004:*/ brk $00
 /*unknown_8e_c006:*/ brk $00
@@ -11464,7 +11464,8 @@
 /*unknown_8e_e3f9:*/ brk $0f
 /*unknown_8e_e3fb:*/ brk $0f
 /*unknown_8e_e3fd:*/ brk $0f
-/*unknown_8e_e3ff:*/ brk $00
+/*unknown_8e_e3ff:*/ .db $00
+unknown_8e_e400: .db $00
 /*unknown_8e_e401:*/ brk $ff
 /*unknown_8e_e403:*/ adc $ff4bff, X
 /*unknown_8e_e407:*/ ora ($9f, S), Y
@@ -11685,7 +11686,8 @@
 /*unknown_8e_e5f4:*/ adc $045604, X
 /*unknown_8e_e5f8:*/ jmp $2300.w
 /*unknown_8e_e5fb:*/ brk $ff
-/*unknown_8e_e5fd:*/ adc $ff0000, X
+/*unknown_8e_e5fd:*/ .db $7f, $00, $00
+unknown_8e_e600: .db $ff
 /*unknown_8e_e601:*/ sbc $ffffff, X
 /*unknown_8e_e605:*/ sbc $ffffff, X
 /*unknown_8e_e609:*/ sbc $ffffff, X

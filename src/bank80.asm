@@ -5,6 +5,14 @@
 .bank ($80 - $80) slot $0
 .org $0
 
+.struct unknown_80_91a9@parameters
+channel_index: db ; Index of the HDMA channel (0 through 7).
+dmap: db          ; Value to store into IO_DMAPX.
+bbad: db          ; Value to store into IO_BBADX.
+a1: dl            ; Value to store into IO_A1TX and IO_A1BX.
+das: dw           ; Value to store into IO_DASX.
+.endst
+
 unknown_80_8000: .db $00
 unknown_80_8001: .db $00
 unknown_80_8002: .db $00
@@ -898,10 +906,14 @@ unknown_80_85f6:
   lda #$80
   sta IO_VMAIN
   jsl unknown_80_91a9
-  ora ($01, X)
-  clc
-  brk $80
-  stx $4000.w
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_8e_8000
+das: .dw unknown_8e_c000 - unknown_8e_8000
+.ENDST
+
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   lda #$00
@@ -911,20 +923,26 @@ unknown_80_85f6:
   lda #$80
   sta IO_VMAIN
   jsl unknown_80_91a9
-  ora ($01, X)
-  clc
-  and [$b4], Y
-  bra @unknown_80_865d
-@unknown_80_865d:
-  .db $10
-@unknown_80_865e:
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_80_b437
+das: .dw unknown_80_c437 - unknown_80_b437
+.ENDST
+
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   stz IO_CGADD
   jsl unknown_80_91a9
-  ora ($00, X)
-  jsl $8ee400
-  brk $02
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
+bbad: .db IO_BBAD_CGRAM
+a1: .dl unknown_8e_e400
+das: .dw unknown_8e_e600 - unknown_8e_e400
+.ENDST
+
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   stz IO_CGADSUB
@@ -995,10 +1013,14 @@ unknown_80_85f6:
   lda #$80
   sta IO_VMAIN
   jsl unknown_80_91a9
-  ora ($01, X)
-  clc
-  brk $80
-  stx $4000.w
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_8e_8000
+das: .dw unknown_8e_c000 - unknown_8e_8000
+.ENDST
+
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   lda #$00
@@ -1007,21 +1029,27 @@ unknown_80_85f6:
   sta IO_VMADDH
   lda #$80
   sta IO_VMAIN
-  jsr $8091a9
-  ora ($01, X)
-  clc
-  and [$bc], Y
-  bra @unknown_80_8727
-@unknown_80_8727:
-  .db $10
-@unknown_80_8728:
+  jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_80_bc37
+das: .dw unknown_80_cc37 - unknown_80_bc37
+.ENDST
+
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   stz IO_CGADD
   jsl unknown_80_91a9
-  ora ($00, X)
-  jsr $8ee400
-  brk $02
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO
+bbad: .db IO_BBAD_CGRAM
+a1: .dl unknown_8e_e400
+das: .dw unknown_8e_e600 - unknown_8e_e400
+.ENDST
+
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   stz IO_CGADSUB
@@ -2244,38 +2272,60 @@ unknown_80_8ea2:
 /*unknown_80_91a7:*/ nop
 /*unknown_80_91a8:*/ rts
 
-unknown_80_91a9: php
-/*unknown_80_91aa:*/ phb
-/*unknown_80_91ab:*/ rep #$30
-/*unknown_80_91ad:*/ lda $04, S
-/*unknown_80_91af:*/ pha
-/*unknown_80_91b0:*/ plb
-/*unknown_80_91b1:*/ plb
-/*unknown_80_91b2:*/ lda $03, S
-/*unknown_80_91b4:*/ tay
-/*unknown_80_91b5:*/ lda $0001.w, Y
-/*unknown_80_91b8:*/ and #$00ff.w
-/*unknown_80_91bb:*/ tax
-/*unknown_80_91bc:*/ lda $8091e6, X
-/*unknown_80_91c0:*/ and #$00ff.w
-/*unknown_80_91c3:*/ tax
-/*unknown_80_91c4:*/ lda $0002.w, Y
-/*unknown_80_91c7:*/ sta $4300.w, X
-/*unknown_80_91ca:*/ lda $0004.w, Y
-/*unknown_80_91cd:*/ sta $4302.w, X
-/*unknown_80_91d0:*/ lda $0006.w, Y
-/*unknown_80_91d3:*/ sta $4304.w, X
-/*unknown_80_91d6:*/ lda $0007.w, Y
-/*unknown_80_91d9:*/ sta $4305.w, X
-/*unknown_80_91dc:*/ tya
-/*unknown_80_91dd:*/ clc
-/*unknown_80_91de:*/ adc #$0008.w
-/*unknown_80_91e1:*/ sta $03, S
-/*unknown_80_91e3:*/ plb
-/*unknown_80_91e4:*/ plp
-/*unknown_80_91e5:*/ rtl
+; Call this procedure with the following sequence:
+;
+;   jsl unknown_80_91a9
+; .dstruct instanceof unknown_80_91a9@parameters values
+; channel_index: .db 1
+; dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
+; bbad: .db IO_BBAD_CGRAM
+; a1: .dl unknown_8e_e400
+; das: .dw unknown_8e_e600 - unknown_8e_e400
+; .ENDST
+; @resume:
+;
+; unknown_80_91a9 returns execution at @resume (i.e. after the
+; unknown_80_91a9@parameters data).
+;
+; See the definition of unknown_80_91a9@parameters for details on what each
+; parameter means.
+unknown_80_91a9:
+  ; Below, read 'SS' as the value of S on procedure entry.
+  ; Below, read 'RA' as the 24-bit address of the last byte of the jsr instruction (i.e.
+  ; the return address).
+  ; On procedure entry, [SS] = RA
+  php
+  phb
+  rep #$30
+  lda $04, S ; Address: SS + 2, pointing to the bank of RA.
+  pha
+  plb
+  plb
+  lda $03, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
+  tay ; Y := RA
+  lda unknown_80_91a9@parameters.channel_index + 1, Y
+  and #$00ff.w
+  tax
+  lda @io_dma_offset.l, X
+  and #$00ff.w
+  tax
+  lda unknown_80_91a9@parameters.dmap + 1, Y
+  sta IO_DMAP0, X ; Address: IO_DMAPX and IO_BBADX
+  lda unknown_80_91a9@parameters.a1 + 1, Y
+  sta IO_A1T0, X ; Address: IO_A1TX
+  lda unknown_80_91a9@parameters.a1 + 2 + 1, Y
+  sta IO_A1B0, X ; Address: IO_A1BX
+  lda unknown_80_91a9@parameters.das + 1, Y
+  sta IO_DAS0, X ; Address: IO_DASX
+  tya ; A := RA
+  clc
+  adc #$0008.w ; Skip past @parameters.
+  sta $03, S ; Return to the instruction after @parameters.
+  plb
+  plp
+  rtl
 
-/*unknown_80_91e6:*/ .db $00
+@io_dma_offset: .db $00
 /*unknown_80_91e7:*/ .db $10
 /*unknown_80_91e8:*/ .db $20
 /*unknown_80_91e9:*/ .db $30
@@ -6210,7 +6260,7 @@ interrupt_irq:
 /*unknown_80_b431:*/ sbc $4a
 /*unknown_80_b433:*/ sta $4a
 /*unknown_80_b435:*/ bra ($9c - $100) ; $b3d3.w
-/*unknown_80_b437:*/ ora $000f00.l
+unknown_80_b437: ora $000f00.l
 /*unknown_80_b43b:*/ ora $000f00.l
 /*unknown_80_b43f:*/ ora $000f00.l
 /*unknown_80_b443:*/ ora $000f00.l
@@ -7072,7 +7122,8 @@ interrupt_irq:
 /*unknown_80_bc30:*/ brk $0f
 /*unknown_80_bc32:*/ brk $0f
 /*unknown_80_bc34:*/ brk $0f
-/*unknown_80_bc36:*/ brk $0f
+/*unknown_80_bc36:*/ .db $00
+unknown_80_bc37: .db $0f
 /*unknown_80_bc38:*/ brk $0f
 /*unknown_80_bc3a:*/ brk $0f
 /*unknown_80_bc3c:*/ brk $0f
@@ -8096,7 +8147,8 @@ interrupt_irq:
 /*unknown_80_c430:*/ brk $0f
 /*unknown_80_c432:*/ brk $0f
 /*unknown_80_c434:*/ brk $0f
-/*unknown_80_c436:*/ brk $08
+/*unknown_80_c436:*/ .db $00
+unknown_80_c437: .db $08
 /*unknown_80_c438:*/ phb
 /*unknown_80_c439:*/ phk
 /*unknown_80_c43a:*/ plb
@@ -9099,7 +9151,8 @@ interrupt_irq:
 /*unknown_80_cc2f:*/ brk $00
 /*unknown_80_cc31:*/ bcs $00 ; $cc33.w
 /*unknown_80_cc33:*/ brk $00
-/*unknown_80_cc35:*/ bit $c4e8.w
+/*unknown_80_cc35:*/ .db $2c, $e8
+unknown_80_cc37: .db $c4
 /*unknown_80_cc38:*/ plb
 /*unknown_80_cc39:*/ brk $00
 /*unknown_80_cc3b:*/ brk $00
