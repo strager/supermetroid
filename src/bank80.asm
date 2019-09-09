@@ -1210,17 +1210,18 @@ unknown_80_88eb:
   plp
   rtl
 
-unknown_80_88fe: php
-/*unknown_80_88ff:*/ phb
-/*unknown_80_8900:*/ phk
-/*unknown_80_8901:*/ plb
-/*unknown_80_8902:*/ rep #$30
-/*unknown_80_8904:*/ ldx #$4000.w
-/*unknown_80_8907:*/ ldy #$0800.w
-/*unknown_80_890a:*/ jsr $8083f6
-/*unknown_80_890e:*/ plb
-/*unknown_80_890f:*/ plp
-/*unknown_80_8910:*/ rtl
+unknown_80_88fe:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  ldx #$4000.w
+  ldy #$0800.w
+  jsl unknown_80_83f6
+  plb
+  plp
+  rtl
 
 unknown_80_8911: php
 /*unknown_80_8912:*/ phb
