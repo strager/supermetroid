@@ -1600,45 +1600,49 @@ unknown_80_8bd3:
   tax
   jmp @unknown_80_8bd4
 
-unknown_80_8c83: php
-/*unknown_80_8c84:*/ rep #$30
-/*unknown_80_8c86:*/ ldx $0330.w
-/*unknown_80_8c89:*/ beq $3e ; $8cc9.w
-/*unknown_80_8c8b:*/ stz $d0, X
-/*unknown_80_8c8d:*/ lda #$1801.w
-/*unknown_80_8c90:*/ sta $4310.w
-/*unknown_80_8c93:*/ ldy #$0000.w
-/*unknown_80_8c96:*/ lda $00d0.w, Y
-/*unknown_80_8c99:*/ beq $2e ; $8cc9.w
-/*unknown_80_8c9b:*/ sta $4315.w
-/*unknown_80_8c9e:*/ lda $00d2.w, Y
-/*unknown_80_8ca1:*/ sta $4312.w
-/*unknown_80_8ca4:*/ lda $00d3.w, Y
-/*unknown_80_8ca7:*/ sta $4313.w
-/*unknown_80_8caa:*/ lda #$0080.w
-/*unknown_80_8cad:*/ ldx $d5, Y
-/*unknown_80_8caf:*/ bpl $01 ; $8cb2.w
-/*unknown_80_8cb1:*/ inc A
-/*unknown_80_8cb2:*/ sta $2115.w
-/*unknown_80_8cb5:*/ stx $2116.w
-/*unknown_80_8cb8:*/ sep #$20
-/*unknown_80_8cba:*/ lda #$02
-/*unknown_80_8cbc:*/ sta $420b.w
-/*unknown_80_8cbf:*/ rep #$20
-/*unknown_80_8cc1:*/ tya
-/*unknown_80_8cc2:*/ clc
-/*unknown_80_8cc3:*/ adc #$0007.w
-/*unknown_80_8cc6:*/ tay
-/*unknown_80_8cc7:*/ bra ($cd - $100) ; $8c96.w
-/*unknown_80_8cc9:*/ stz $0330.w
-/*unknown_80_8ccc:*/ sep #$20
-/*unknown_80_8cce:*/ rep #$10
-/*unknown_80_8cd0:*/ jsr $8cd8.w
-/*unknown_80_8cd3:*/ jsr $8dac.w
-/*unknown_80_8cd6:*/ plp
-/*unknown_80_8cd7:*/ rtl
+unknown_80_8c83:
+  php
+  rep #$30
+  ldx $0330.w
+  beq @unknown_80_8cc9
+  stz $d0, X
+  lda #$1801.w
+  sta $4310.w
+  ldy #$0000.w
+@unknown_80_8c96:
+  lda $00d0.w, Y
+  beq @unknown_80_8cc9
+  sta $4315.w
+  lda $00d2.w, Y
+  sta $4312.w
+  lda $00d3.w, Y
+  sta $4313.w
+  lda #$0080.w
+  ldx $d5, Y
+  bpl @unknown_80_8cb2
+  inc A
+@unknown_80_8cb2:
+  sta $2115.w
+  stx $2116.w
+  sep #$20
+  lda #$02
+  sta $420b.w
+  rep #$20
+  tya
+  clc
+  adc #$0007.w
+  tay
+  bra @unknown_80_8c96
+@unknown_80_8cc9:
+  stz $0330.w
+  sep #$20
+  rep #$10
+  jsr unknown_80_8cd8
+  jsr unknown_80_8dac
+  plp
+  rtl
 
-/*unknown_80_8cd8:*/ lda #$81
+unknown_80_8cd8: lda #$81
 /*unknown_80_8cda:*/ sta $2115.w
 /*unknown_80_8cdd:*/ lda $0962.w
 /*unknown_80_8ce0:*/ beq $62 ; $8d44.w
@@ -1718,7 +1722,7 @@ unknown_80_8c83: php
 /*unknown_80_8da8:*/ sta $420b.w
 /*unknown_80_8dab:*/ rts
 
-/*unknown_80_8dac:*/ lda #$80
+unknown_80_8dac: lda #$80
 /*unknown_80_8dae:*/ sta $2115.w
 /*unknown_80_8db1:*/ lda $0970.w
 /*unknown_80_8db4:*/ beq $70 ; $8e26.w
