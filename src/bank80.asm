@@ -3090,7 +3090,7 @@ interrupt_irq:
   rti
 
 unknown_80_988b:
-.incbin "graphics/unknown_80_988b.bin" fsize unknown_80_988b@size
+  .incbin "graphics/unknown_80_988b.bin" fsize unknown_80_988b@size
 .export unknown_80_988b@size
 
 /*unknown_80_98cb:*/ ora $2c0f2c
@@ -6245,13 +6245,13 @@ das: .dw unknown_80_988b@size
 /*unknown_80_b435:*/ bra ($9c - $100) ; $b3d3.w
 
 unknown_80_b437:
-.incbin "graphics/unknown_80_b437.bin"
+  .incbin "graphics/unknown_80_b437.bin"
 
 unknown_80_bc37:
-.incbin "graphics/unknown_80_bc37.bin"
+  .incbin "graphics/unknown_80_bc37.bin"
 
 unknown_80_c437:
-.incbin "graphics/unknown_80_c437.bin"
+  .incbin "graphics/unknown_80_c437.bin"
 
 unknown_80_cc37: .db $c4
 /*unknown_80_cc38:*/ plb

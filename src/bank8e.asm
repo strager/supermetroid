@@ -4,7 +4,7 @@
 .org $0
 
 unknown_8e_8000:
-.incbin "graphics/unknown_8e_8000.bin" fsize unknown_8e_8000@size
+  .incbin "graphics/unknown_8e_8000.bin" fsize unknown_8e_8000@size
 .export unknown_8e_8000@size
 
 unknown_8e_c000:
@@ -1042,7 +1042,7 @@ unknown_8e_d600:
 /*unknown_8e_e3ff:*/ .db $00
 
 unknown_8e_e400:
-.incbin "graphics/unknown_8e_e400.bin" fsize unknown_8e_e400@size
+  .incbin "graphics/unknown_8e_e400.bin" fsize unknown_8e_e400@size
 .export unknown_8e_e400@size
 
 /*unknown_8e_e600:*/ .db $ff

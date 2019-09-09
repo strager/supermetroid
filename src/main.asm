@@ -3,7 +3,7 @@
 .macro DATA_BANK
 .bank (\1 - $80) slot $0
 .org $0
-.incbin "data/\2"
+  .incbin "data/\2"
 .endm
 
   DATA_BANK $b7, bankb7.bin
