@@ -1,4 +1,6 @@
 .include "include/common.asm"
+.include "include/io.asm"
+.include "include/unknown_80_91a9.asm"
 
 .bank ($a7 - $80) slot $0
 .org $0
@@ -4573,208 +4575,13 @@
 /*unknown_a7_a711:*/ pei ($c3)
 /*unknown_a7_a713:*/ sed
 /*unknown_a7_a714:*/ brk $33
-/*unknown_a7_a716:*/ and $f34cff, X
-/*unknown_a7_a71a:*/ eor $f0cbe0, X
-/*unknown_a7_a71e:*/ lda $8fc0.w, Y
-/*unknown_a7_a721:*/ beq ($b6 - $100) ; $a6d9.w
-/*unknown_a7_a723:*/ cmp #$ceb1.w
-/*unknown_a7_a726:*/ brk $ff
-/*unknown_a7_a728:*/ and $c639c0, X
-/*unknown_a7_a72c:*/ bit $76c3.w, X
-/*unknown_a7_a72f:*/ bit #$8e71.w
-/*unknown_a7_a732:*/ adc $807f80, X
-/*unknown_a7_a736:*/ sbc $ff3fff, X
-/*unknown_a7_a73a:*/ sta $bf4e7f
-/*unknown_a7_a73e:*/ sbc [$1f]
-/*unknown_a7_a740:*/ sbc $3fcf1f
-/*unknown_a7_a744:*/ ora $fc03ff, X
-/*unknown_a7_a748:*/ xce
-/*unknown_a7_a749:*/ tsb $ff
-/*unknown_a7_a74b:*/ brk $ff
-/*unknown_a7_a74d:*/ brk $fe
-/*unknown_a7_a74f:*/ ora ($fd, X)
-/*unknown_a7_a751:*/ cop $f3
-/*unknown_a7_a753:*/ tsb $17e8.w
-/*unknown_a7_a756:*/ ora [$ff]
-/*unknown_a7_a758:*/ sta $fffeff
-/*unknown_a7_a75c:*/ inc $ffff.w, X
-/*unknown_a7_a75f:*/ sbc $f6ffff, X
-/*unknown_a7_a763:*/ sbc $feffc3, X
-/*unknown_a7_a767:*/ ora ($fe, X)
-/*unknown_a7_a769:*/ ora ($fd, X)
-/*unknown_a7_a76b:*/ cop $fd
-/*unknown_a7_a76d:*/ cop $ff
-/*unknown_a7_a76f:*/ brk $bb
-/*unknown_a7_a771:*/ mvp $f0, $0f
-/*unknown_a7_a774:*/ and $f9ffc0, X
-/*unknown_a7_a778:*/ ora [$fe]
-/*unknown_a7_a77a:*/ ora ($ef, S), Y
-/*unknown_a7_a77c:*/ and #$bdd7.w
-/*unknown_a7_a77f:*/ cmp $d5, S
-/*unknown_a7_a781:*/ xba
-/*unknown_a7_a782:*/ sbc ($ff, X)
-/*unknown_a7_a784:*/ adc ($ff, X)
-/*unknown_a7_a786:*/ asl $f9
-/*unknown_a7_a788:*/ sbc $fc06.w, Y
-/*unknown_a7_a78b:*/ ora $fe, S
-/*unknown_a7_a78d:*/ ora ($7e, X)
-/*unknown_a7_a78f:*/ sta ($be, X)
-/*unknown_a7_a791:*/ eor ($de, X)
-/*unknown_a7_a793:*/ and ($de, X)
-/*unknown_a7_a795:*/ and ($8d, X)
-/*unknown_a7_a797:*/ sbc ($0b)
-/*unknown_a7_a799:*/ pea $ffe0.w
-/*unknown_a7_a79c:*/ ora $1fe7ff
-/*unknown_a7_a7a0:*/ tcd
-/*unknown_a7_a7a1:*/ lda [$b4]
-/*unknown_a7_a7a3:*/ phk
-/*unknown_a7_a7a4:*/ jsr ($7f03.w, X)
-/*unknown_a7_a7a7:*/ bra $7f ; $a828.w
-/*unknown_a7_a7a9:*/ bra $1f ; $a7ca.w
-/*unknown_a7_a7ab:*/ cpx #$0ff0.w
-/*unknown_a7_a7ae:*/ inc $ff01.w, X
-/*unknown_a7_a7b1:*/ brk $ff
-/*unknown_a7_a7b3:*/ brk $cf
-/*unknown_a7_a7b5:*/ bmi $3e ; $a7f5.w
-/*unknown_a7_a7b7:*/ sbc $7ffd3e, X
-/*unknown_a7_a7bb:*/ sed
-/*unknown_a7_a7bc:*/ xce
-/*unknown_a7_a7bd:*/ pea $f6f9.w
-/*unknown_a7_a7c0:*/ sbc $fae5f0
-/*unknown_a7_a7c4:*/ sbc $fc, S
-/*unknown_a7_a7c6:*/ cmp ($2e), Y
-/*unknown_a7_a7c8:*/ sbc $1c, S
-/*unknown_a7_a7ca:*/ cmp [$38]
-/*unknown_a7_a7cc:*/ cmp $b14e30
-/*unknown_a7_a7d0:*/ rol $9fc1.w, X
-/*unknown_a7_a7d3:*/ rts
 
-/*unknown_a7_a7d4:*/ cmp $1fe120, X
-/*unknown_a7_a7d8:*/ cpx $7a13.w
-/*unknown_a7_a7db:*/ sta $9e
-/*unknown_a7_a7dd:*/ ora ($99, X)
-/*unknown_a7_a7df:*/ asl $ff
-/*unknown_a7_a7e1:*/ brk $fe
-/*unknown_a7_a7e3:*/ ora ($f8, X)
-/*unknown_a7_a7e5:*/ sta [$ff]
-/*unknown_a7_a7e7:*/ brk $ff
-/*unknown_a7_a7e9:*/ brk $9f
-/*unknown_a7_a7eb:*/ rts
+unknown_a7_a716:
+  .incbin "graphics/unknown_a7_a716.bin" fsize unknown_a7_a716@size
 
-/*unknown_a7_a7ec:*/ adc $9867d0
-/*unknown_a7_a7f0:*/ ora [$f8]
-/*unknown_a7_a7f2:*/ sta $00ff70.l
-/*unknown_a7_a7f6:*/ sbc ($ff, X)
-/*unknown_a7_a7f8:*/ lda $ff, S
-/*unknown_a7_a7fa:*/ jsr ($70ff.w, X)
-/*unknown_a7_a7fd:*/ sbc $66ff60, X
-/*unknown_a7_a801:*/ sbc $fc43.w, Y
-/*unknown_a7_a804:*/ eor $21def0
-/*unknown_a7_a808:*/ jsr ($e303.w, X)
-/*unknown_a7_a80b:*/ trb $10ef.w
-/*unknown_a7_a80e:*/ sbc $20df00, X
-/*unknown_a7_a812:*/ sbc $02fd00, X
-/*unknown_a7_a816:*/ lsr $ce81.w
-/*unknown_a7_a819:*/ ora ($f8, X)
-/*unknown_a7_a81b:*/ ora [$b4]
-/*unknown_a7_a81d:*/ phk
-/*unknown_a7_a81e:*/ lda ($4f), Y
-/*unknown_a7_a820:*/ and $df, S
-/*unknown_a7_a822:*/ cop $ff
-/*unknown_a7_a824:*/ ora $68b7ff
-/*unknown_a7_a828:*/ lda [$48], Y
-/*unknown_a7_a82a:*/ cmp $00ff30.l
-/*unknown_a7_a82e:*/ inc $fd01.w, X
-/*unknown_a7_a831:*/ cop $fd
-/*unknown_a7_a833:*/ cop $f1
-/*unknown_a7_a835:*/ asl $f966.w
-/*unknown_a7_a838:*/ adc ($fe), Y
-/*unknown_a7_a83a:*/ bvs ($ff - $100) ; $a83b.w
-/*unknown_a7_a83c:*/ jsr ($87ff.w, X)
-/*unknown_a7_a83f:*/ sbc $1dff03, X
-/*unknown_a7_a843:*/ cmp $3e, S
-/*unknown_a7_a845:*/ cmp ($ff, X)
-/*unknown_a7_a847:*/ brk $ef
-/*unknown_a7_a849:*/ bpl ($cf - $100) ; $a81a.w
-/*unknown_a7_a84b:*/ bmi ($cb - $100) ; $a818.w
-/*unknown_a7_a84d:*/ bit $ff, X
-/*unknown_a7_a84f:*/ brk $ff
-/*unknown_a7_a851:*/ brk $ef
-/*unknown_a7_a853:*/ bpl ($cf - $100) ; $a824.w
-/*unknown_a7_a855:*/ bmi ($ec - $100) ; $a843.w
-/*unknown_a7_a857:*/ ora ($68, S), Y
-/*unknown_a7_a859:*/ sta [$41], Y
-/*unknown_a7_a85b:*/ lda $8fff03, X
-/*unknown_a7_a85f:*/ sbc $f8fffe, X
-/*unknown_a7_a863:*/ sbc $fffef1, X
-/*unknown_a7_a867:*/ brk $ff
-/*unknown_a7_a869:*/ brk $ff
-/*unknown_a7_a86b:*/ brk $fe
-/*unknown_a7_a86d:*/ ora ($f7, X)
-/*unknown_a7_a86f:*/ php
-/*unknown_a7_a870:*/ sbc $00ff00.l, X
-/*unknown_a7_a874:*/ sbc $f0cf00, X
-/*unknown_a7_a878:*/ sbc $fce3f0
-/*unknown_a7_a87c:*/ sep #$fd
-/*unknown_a7_a87e:*/ sbc ($fe), Y
-/*unknown_a7_a880:*/ cop $ff
-/*unknown_a7_a882:*/ nop
-/*unknown_a7_a883:*/ ora [$9d], Y
-/*unknown_a7_a885:*/ ora $fc, S
-/*unknown_a7_a887:*/ ora $9e, S
-/*unknown_a7_a889:*/ adc ($1f, X)
-/*unknown_a7_a88b:*/ cpx #$1f
-/*unknown_a7_a88d:*/ cpx #$8f
-/*unknown_a7_a88f:*/ bvs ($fd - $100) ; $a88e.w
-/*unknown_a7_a891:*/ cop $fd
-/*unknown_a7_a893:*/ cop $fe
-/*unknown_a7_a895:*/ eor ($3f, X)
-/*unknown_a7_a897:*/ sbc $c7ffff, X
-/*unknown_a7_a89b:*/ sbc $e09f.w, Y
-/*unknown_a7_a89e:*/ sta $f18ee0, X
-/*unknown_a7_a8a2:*/ cmp $ff, S
-/*unknown_a7_a8a4:*/ sbc $3ec17f, X
-/*unknown_a7_a8a8:*/ ora ($fe, X)
-/*unknown_a7_a8aa:*/ rol $7fc1.w, X
-/*unknown_a7_a8ad:*/ bra $77 ; $a926.w
-/*unknown_a7_a8af:*/ dey
-/*unknown_a7_a8b0:*/ adc $c33c80, X
-/*unknown_a7_a8b4:*/ bra $7f ; $a935.w
-/*unknown_a7_a8b6:*/ stz $8b, X
-/*unknown_a7_a8b8:*/ lda $c1c7.w, Y
-/*unknown_a7_a8bb:*/ sbc $fffffb, X
-/*unknown_a7_a8bf:*/ sbc $feff9f, X
-/*unknown_a7_a8c3:*/ sbc $ffff3c, X
-/*unknown_a7_a8c7:*/ brk $ff
-/*unknown_a7_a8c9:*/ brk $ff
-/*unknown_a7_a8cb:*/ brk $e7
-/*unknown_a7_a8cd:*/ clc
-/*unknown_a7_a8ce:*/ and [$d8]
-/*unknown_a7_a8d0:*/ adc $f00f90
-/*unknown_a7_a8d4:*/ cmp $fcf320, X
-/*unknown_a7_a8d8:*/ sbc ($fd)
-/*unknown_a7_a8da:*/ adc $f9fe.w, Y
-/*unknown_a7_a8dd:*/ sbc $fcfff8, X
-/*unknown_a7_a8e1:*/ sbc $0fff3f, X
-/*unknown_a7_a8e5:*/ sbc $20df.w, X
-/*unknown_a7_a8e8:*/ cmp $38c720, X
-/*unknown_a7_a8ec:*/ ora [$f8]
-/*unknown_a7_a8ee:*/ cmp [$38]
-/*unknown_a7_a8f0:*/ sbc $1c, S
-/*unknown_a7_a8f2:*/ sed
-/*unknown_a7_a8f3:*/ ora [$f2]
-/*unknown_a7_a8f5:*/ ora $039d.w
-/*unknown_a7_a8f8:*/ sbc $0b, X
-/*unknown_a7_a8fa:*/ lda $d347.w, Y
-/*unknown_a7_a8fd:*/ and $0fdfa7
-/*unknown_a7_a901:*/ sbc $fff91f, X
-/*unknown_a7_a905:*/ sbc $8e916e
-/*unknown_a7_a909:*/ adc ($fe), Y
-/*unknown_a7_a90b:*/ ora ($fc, X)
-/*unknown_a7_a90d:*/ ora $f8, S
-/*unknown_a7_a90f:*/ ora [$f0]
-/*unknown_a7_a911:*/ ora $1019e6
-/*unknown_a7_a915:*/ sbc $a00120
+.accu 8
+.index 8
+/*unknown_a7_a916:*/ jsr $a001.w
 /*unknown_a7_a919:*/ brk $40
 /*unknown_a7_a91b:*/ brk $03
 /*unknown_a7_a91d:*/ brk $05
@@ -7518,27 +7325,32 @@
 /*unknown_a7_c212:*/ sta $2117.w
 /*unknown_a7_c215:*/ lda #$80
 /*unknown_a7_c217:*/ sta $2115.w
-/*unknown_a7_c21a:*/ jsr $8091a9
-/*unknown_a7_c21e:*/ ora ($01, X)
-/*unknown_a7_c220:*/ clc
-/*unknown_a7_c221:*/ asl $a7, X
-/*unknown_a7_c223:*/ lda [$00]
-/*unknown_a7_c225:*/ cop $a9
-/*unknown_a7_c227:*/ cop $8d
-/*unknown_a7_c229:*/ phd
-/*unknown_a7_c22a:*/ .db $42, $a9
-/*unknown_a7_c22c:*/ brk $8d
-/*unknown_a7_c22e:*/ asl $21, X
+/*unknown_a7_c21a:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_a7_a716
+das: .dw unknown_a7_a716@size
+.ENDST
+
+/*unknown_a7_c226:*/ lda #$02
+/*unknown_a7_c228:*/ sta $420b.w
+/*unknown_a7_c22B:*/ lda #$00
+/*unknown_a7_c22D:*/ sta $2116.w
 /*unknown_a7_c230:*/ lda #$40
 /*unknown_a7_c232:*/ sta $2117.w
 /*unknown_a7_c235:*/ lda #$80
 /*unknown_a7_c237:*/ sta $2115.w
-/*unknown_a7_c23a:*/ jsr $8091a9
-/*unknown_a7_c23e:*/ ora ($01, X)
-/*unknown_a7_c240:*/ clc
-/*unknown_a7_c241:*/ brk $b2
-/*unknown_a7_c243:*/ txs
-/*unknown_a7_c244:*/ brk $08
+/*unknown_a7_c23a:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_9a_b200
+das: .dw $800
+.ENDST
+
 /*unknown_a7_c246:*/ lda #$02
 /*unknown_a7_c248:*/ sta $420b.w
 /*unknown_a7_c24b:*/ jmp $c278.w
@@ -7553,11 +7365,15 @@
 /*unknown_a7_c25f:*/ sta $2117.w
 /*unknown_a7_c262:*/ lda #$80
 /*unknown_a7_c264:*/ sta $2115.w
-/*unknown_a7_c267:*/ jsr $8091a9
-/*unknown_a7_c26b:*/ ora ($01, X)
-/*unknown_a7_c26d:*/ clc
-/*unknown_a7_c26e:*/ brk $50
-/*unknown_a7_c270:*/ ror $0400.w, X
+/*unknown_a7_c267:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl $7e5000
+das: .dw $400
+.ENDST
+
 /*unknown_a7_c273:*/ lda #$02
 /*unknown_a7_c275:*/ sta $420b.w
 /*unknown_a7_c278:*/ lda #$00
@@ -7567,11 +7383,15 @@
 /*unknown_a7_c281:*/ sta $2117.w
 /*unknown_a7_c284:*/ lda #$80
 /*unknown_a7_c286:*/ sta $2115.w
-/*unknown_a7_c289:*/ jsr $8091a9
-/*unknown_a7_c28d:*/ ora ($01, X)
-/*unknown_a7_c28f:*/ clc
-/*unknown_a7_c290:*/ brk $20
-/*unknown_a7_c292:*/ ror $0800.w, X
+/*unknown_a7_c289:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl $7e2000
+das: .dw $800
+.ENDST
+
 /*unknown_a7_c295:*/ lda #$02
 /*unknown_a7_c297:*/ sta $420b.w
 /*unknown_a7_c29a:*/ jsr $808382
@@ -7589,11 +7409,15 @@
 /*unknown_a7_c2b1:*/ sta $2117.w
 /*unknown_a7_c2b4:*/ lda #$80
 /*unknown_a7_c2b6:*/ sta $2115.w
-/*unknown_a7_c2b9:*/ jsr $8091a9
-/*unknown_a7_c2bd:*/ ora ($01, X)
-/*unknown_a7_c2bf:*/ clc
-/*unknown_a7_c2c0:*/ brk $50
-/*unknown_a7_c2c2:*/ ror $0400.w, X
+/*unknown_a7_c2b9:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl $7e5000
+das: .dw $400
+.ENDST
+
 /*unknown_a7_c2c5:*/ lda #$02
 /*unknown_a7_c2c7:*/ sta $420b.w
 /*unknown_a7_c2ca:*/ rep #$30
