@@ -3096,23 +3096,10 @@ interrupt_irq:
   plb
   rti
 
-/*unknown_80_988b:*/ ora $2c0f2c
-/*unknown_80_988f:*/ ora $2c0f2c
-/*unknown_80_9893:*/ ora $2c0f2c
-/*unknown_80_9897:*/ ora $2c0f2c
-/*unknown_80_989b:*/ ora $2c0f2c
-/*unknown_80_989f:*/ ora $2c0f2c
-/*unknown_80_98a3:*/ ora $2c0f2c
-/*unknown_80_98a7:*/ ora $2c0f2c
-/*unknown_80_98ab:*/ ora $2c0f2c
-/*unknown_80_98af:*/ ora $2c0f2c
-/*unknown_80_98b3:*/ ora $2c0f2c
-/*unknown_80_98b7:*/ ora $2c0f2c
-/*unknown_80_98bb:*/ ora $2c0f2c
-/*unknown_80_98bf:*/ ora $1d2c.w, X
-/*unknown_80_98c2:*/ bit $2c1d.w
-/*unknown_80_98c5:*/ ora $1d2c.w, X
-/*unknown_80_98c8:*/ bit $2c1c.w
+unknown_80_988b:
+.incbin "graphics/unknown_80_988b.bin" fsize unknown_80_988b@size
+.export unknown_80_988b@size
+
 /*unknown_80_98cb:*/ ora $2c0f2c
 /*unknown_80_98cf:*/ ora $2c0f2c
 /*unknown_80_98d3:*/ ora $2c0f2c
@@ -3293,14 +3280,17 @@ interrupt_irq:
 /*unknown_80_9a82:*/ sta $2116.w
 /*unknown_80_9a85:*/ lda #$0080.w
 /*unknown_80_9a88:*/ sta $2115.w
-/*unknown_80_9a8b:*/ jsr $8091a9
-/*unknown_80_9a8f:*/ ora ($01, X)
-/*unknown_80_9a91:*/ clc
-/*unknown_80_9a92:*/ phb
-/*unknown_80_9a93:*/ tya
-/*unknown_80_9a94:*/ bra $40 ; $9ad6.w
-/*unknown_80_9a96:*/ brk $e2
-/*unknown_80_9a98:*/ jsr $02a9.w
+/*unknown_80_9a8b:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_80_988b
+das: .dw unknown_80_988b@size
+.ENDST
+
+/*unknown_80_9a97:*/ sep #$20
+/*unknown_80_9a99:*/ lda #$02
 /*unknown_80_9a9b:*/ sta $420b.w
 /*unknown_80_9a9e:*/ rep #$20
 /*unknown_80_9aa0:*/ ldx #$0000.w
