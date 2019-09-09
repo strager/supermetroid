@@ -871,46 +871,46 @@ interrupt_other:
 unknown_80_85f6:
   php
   sep #$30
-  lda $808000
+  lda unknown_80_8000.l
   beq @unknown_80_8602
-  jmp $86e1.w
+  jmp @unknown_80_86e1
 @unknown_80_8602:
   lda $00ffd9.l
   cmp #$00
 @unknown_80_8608:
   beq @unknown_80_8614
-  lda $213f.w
-  bit #$10
+  lda IO_STAT78
+  bit #IO_STAT78_PAL
   beq @unknown_80_861b
-  jmp $8693.w
+  jmp @unknown_80_8693
 @unknown_80_8614:
   lda $213f.w
   bit #$10
   beq @unknown_80_8693
 @unknown_80_861b:
-  lda #$8f
-  sta $2100.w
-  stz $4200.w
+  lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
+  sta IO_INIDISP
+  stz IO_NMITIMEN
   lda #$00
-  sta $2116.w
+  sta IO_VMADDL
   lda #$00
-  sta $2117.w
+  sta IO_VMADDH
   lda #$80
-  sta $2115.w
-  jsr $8091a9
+  sta IO_VMAIN
+  jsl unknown_80_91a9
   ora ($01, X)
   clc
   brk $80
   stx $4000.w
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   lda #$00
-  sta $2116.w
+  sta IO_VMADDL
   lda #$40
-  sta $2117.w
+  sta IO_VMADDH
   lda #$80
-  sta $2115.w
-  jsr $8091a9
+  sta IO_VMAIN
+  jsl unknown_80_91a9
   ora ($01, X)
   clc
   and [$b4], Y
@@ -918,25 +918,25 @@ unknown_80_85f6:
 @unknown_80_865d:
   .db $10
 @unknown_80_865e:
-  lda #$02
-  sta $420b.w
-  stz $2121.w
-  jsr $8091a9
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  stz IO_CGADD
+  jsl unknown_80_91a9
   ora ($00, X)
-  jsr $8ee400
+  jsl $8ee400
   brk $02
-  lda #$02
-  sta $420b.w
-  stz $2131.w
-  stz $212d.w
-  lda #$01
-  sta $212c.w
-  lda #$0f
-  sta $2100.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  stz IO_CGADSUB
+  stz IO_TS
+  lda #IO_TM_BG1
+  sta IO_TM
+  lda #IO_INIDISP_MAX_BRIGHTNESS
+  sta IO_INIDISP
   lda #$00
-  sta $210b.w
+  sta IO_BG12NBA
   lda #$40
-  sta $2107.w
+  sta IO_BG1SC
 @unknown_80_8691:
   bra @unknown_80_8691
 @unknown_80_8693:
@@ -980,32 +980,33 @@ unknown_80_85f6:
   dex
   dex
   bpl @unknown_80_86d5
+@unknown_80_86e1:
   plp
   rts
 @unknown_80_86e3:
   sep #$20
-  lda #$8f
-  sta $2100.w
-  stz $4200.w
+  lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
+  sta IO_INIDISP
+  stz IO_NMITIMEN
   lda #$00
-  sta $2116.w
+  sta IO_VMADDL
   lda #$00
-  sta $2117.w
+  sta IO_VMADDH
   lda #$80
-  sta $2115.w
-  jsr $8091a9
+  sta IO_VMAIN
+  jsl unknown_80_91a9
   ora ($01, X)
   clc
   brk $80
   stx $4000.w
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   lda #$00
-  sta $2116.w
+  sta IO_VMADDL
   lda #$40
-  sta $2117.w
+  sta IO_VMADDH
   lda #$80
-  sta $2115.w
+  sta IO_VMAIN
   jsr $8091a9
   ora ($01, X)
   clc
@@ -1014,25 +1015,25 @@ unknown_80_85f6:
 @unknown_80_8727:
   .db $10
 @unknown_80_8728:
-  lda #$02
-  sta $420b.w
-  stz $2121.w
-  jsr $8091a9
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  stz IO_CGADD
+  jsl unknown_80_91a9
   ora ($00, X)
   jsr $8ee400
   brk $02
-  lda #$02
-  sta $420b.w
-  stz $2131.w
-  stz $212d.w
-  lda #$01
-  sta $212c.w
-  lda #$0f
-  sta $2100.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  stz IO_CGADSUB
+  stz IO_TS
+  lda #IO_TM_BG1
+  sta IO_TM
+  lda #IO_INIDISP_MAX_BRIGHTNESS
+  sta IO_INIDISP
   lda #$00
-  sta $210b.w
+  sta IO_BG12NBA
   lda #$40
-  sta $2107.w
+  sta IO_BG1SC
 @unknown_80_875b:
   bra @unknown_80_875b
 
@@ -2243,7 +2244,7 @@ unknown_80_8ea2:
 /*unknown_80_91a7:*/ nop
 /*unknown_80_91a8:*/ rts
 
-/*unknown_80_91a9:*/ php
+unknown_80_91a9: php
 /*unknown_80_91aa:*/ phb
 /*unknown_80_91ab:*/ rep #$30
 /*unknown_80_91ad:*/ lda $04, S

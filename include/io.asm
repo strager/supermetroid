@@ -71,6 +71,8 @@
 
 ; PPU: VRAM address (16 bits)
 .define IO_VMADD $2116.w
+.define IO_VMADDL IO_VMADD + 0
+.define IO_VMADDH IO_VMADD + 1
 
 ; PPU: VRAM data write (16 bits)
 .define IO_VMDATA $2118.w
@@ -170,6 +172,13 @@
 
 ; PPU: display control 2
 .define IO_SETINI $2133.w
+
+; PPU: PPU1 status and PPU1 version number
+.define IO_STAT77 $213e.w
+
+; PPU: PPU2 status and PPU2 version number
+.define IO_STAT78 $213f.w
+.define IO_STAT78_PAL $10.b
 
 ; APU: main CPU to sound CPU communication port 0
 .define IO_APUI00 $2140.w
