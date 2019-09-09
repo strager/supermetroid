@@ -211,6 +211,8 @@
 
 ; CPU: select general purpose DMA channels and start transfer
 .define IO_MDMAEN $420b.w
+.define IO_MDMAEN_0 1 << 0
+.define IO_MDMAEN_1 1 << 1
 
 ; CPU: select H-blank DMA (H-DMA) channels
 .define IO_HDMAEN $420c.w
@@ -224,3 +226,39 @@
 
 ; CPU: H/V-Blank flag and joypad busy flag
 .define IO_HVBJOY $4212.w
+
+; CPU: DMA/HDMA parameters (channel 0)
+.define IO_DMAP0 $4300.w
+
+; CPU: DMA/HDMA I/O bus address (channel 0)
+.define IO_BBAD0 $4301.w
+.define IO_BBAD_CGRAM $22.b
+.define IO_BBAD_OAM $04.b
+
+; CPU: HDMA table start address; DMA current address (16 bits) (channel 0)
+.define IO_A1T0 $4302.w
+
+; CPU: HDMA table start address bank; DMA current address bank (channel 0)
+.define IO_A1B0 $4304.w
+
+; CPU: Indirect HDMA address; DMA byte counter (16 bits) (channel 0)
+.define IO_DAS0 $4305.w
+
+; CPU: Indirect HDMA address bank (channel 0)
+.define IO_DASB0 $4307.w
+
+; CPU: HDMA table current address (16 bits) (channel 0)
+.define IO_A2A0 $4308.w
+
+; CPU: HDMA line counter (channel 0)
+.define IO_NTRL0 $430a.w
+
+; CPU: DMA (channel 1)
+.define IO_DMAP1 $4310.w
+.define IO_BBAD1 $4311.w
+.define IO_A1T1 $4312.w
+.define IO_A1B1 $4314.w
+.define IO_DAS1 $4315.w
+.define IO_DASB1 $4317.w
+.define IO_A2A1 $4318.w
+.define IO_NTRL1 $431a.w

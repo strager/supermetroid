@@ -2422,27 +2422,27 @@ unknown_80_91ee:
   rts
 
 unknown_80_933a:
-  lda #$0400.w
-  sta $4300.w
+  lda #IO_BBAD_OAM << 8
+  sta IO_DMAP0 ; and IO_BBAD0
   lda #$0370.w
-  sta $4302.w
+  sta IO_A1T0
   ldx #$00.b
-  stx $4304.w
+  stx IO_A1B0
   lda #$0220.w
-  sta $4305.w
-  stz $2102.w
-  lda #$2200.w
-  sta $4310.w
+  sta IO_DAS0
+  stz IO_OAMADD
+  lda #IO_BBAD_CGRAM << 8
+  sta IO_DMAP1 ; and IO_BBAD1
   lda #$c000.w
-  sta $4312.w
+  sta IO_A1T1
   ldx #$7e.b
-  stx $4314.w
+  stx IO_A1B1
   lda #$0200.w
-  sta $4315.w
+  sta IO_DAS1
   ldx #$00.b
-  stx $2121.w
-  ldx #$03.b
-  stx $420b.w
+  stx IO_CGADD
+  ldx.b #IO_MDMAEN_0 | IO_MDMAEN_1
+  stx IO_MDMAEN
   rts
 
 unknown_80_9376: phb
