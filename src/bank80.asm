@@ -911,7 +911,7 @@ channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_BBAD_VRAM
 a1: .dl unknown_8e_8000
-das: .dw unknown_8e_c000 - unknown_8e_8000
+das: .dw unknown_8e_8000@size
 .ENDST
 
   lda #IO_MDMAEN_1
@@ -940,7 +940,7 @@ channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_BBAD_CGRAM
 a1: .dl unknown_8e_e400
-das: .dw unknown_8e_e600 - unknown_8e_e400
+das: .dw unknown_8e_e400@size
 .ENDST
 
   lda #IO_MDMAEN_1
@@ -1018,7 +1018,7 @@ channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_BBAD_VRAM
 a1: .dl unknown_8e_8000
-das: .dw unknown_8e_c000 - unknown_8e_8000
+das: .dw unknown_8e_8000@size
 .ENDST
 
   lda #IO_MDMAEN_1
@@ -1047,7 +1047,7 @@ channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO
 bbad: .db IO_BBAD_CGRAM
 a1: .dl unknown_8e_e400
-das: .dw unknown_8e_e600 - unknown_8e_e400
+das: .dw unknown_8e_e400@size
 .ENDST
 
   lda #IO_MDMAEN_1
@@ -2280,7 +2280,7 @@ unknown_80_8ea2:
 ; dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 ; bbad: .db IO_BBAD_CGRAM
 ; a1: .dl unknown_8e_e400
-; das: .dw unknown_8e_e600 - unknown_8e_e400
+; das: .dw unknown_8e_e400@size
 ; .ENDST
 ; @resume:
 ;

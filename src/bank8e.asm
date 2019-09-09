@@ -4,9 +4,10 @@
 .org $0
 
 unknown_8e_8000:
-.incbin "graphics/unknown_8e_8000.bin"
+.incbin "graphics/unknown_8e_8000.bin" fsize unknown_8e_8000@size
+.export unknown_8e_8000@size
 
-unknown_8e_c000: brk $00
+/*unknown_8e_c000:*/ brk $00
 /*unknown_8e_c002:*/ brk $00
 /*unknown_8e_c004:*/ brk $00
 /*unknown_8e_c006:*/ brk $00
@@ -4052,9 +4053,10 @@ unknown_8e_c000: brk $00
 /*unknown_8e_e3ff:*/ .db $00
 
 unknown_8e_e400:
-.incbin "graphics/unknown_8e_e400.bin"
+.incbin "graphics/unknown_8e_e400.bin" fsize unknown_8e_e400@size
+.export unknown_8e_e400@size
 
-unknown_8e_e600: .db $ff
+/*unknown_8e_e600:*/ .db $ff
 /*unknown_8e_e601:*/ sbc $ffffff, X
 /*unknown_8e_e605:*/ sbc $ffffff, X
 /*unknown_8e_e609:*/ sbc $ffffff, X
