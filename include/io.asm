@@ -20,13 +20,35 @@
 
 ; CPU: interrupt enable and joypad request
 .define IO_NMITIMEN $4200.w
+.define IO_NMITIMEN_ENABLE_JOYPAD $01.b
 .define IO_NMITIMEN_ENABLE_VBLANK $80.b
+
+; CPU: joypad programmable I/O port (open-collector output)
+.define IO_WRIO $4201.w
+
+; CPU: set unsigned 8-bit multiplicand
+.define IO_WRMPYA $4202.w
+
+; CPU: set unsigned 8-bit multiplier and start multiplication
+.define IO_WRMPYB $4203.w
+
+; CPU: set unsigned 16-bit dividend (16 bits)
+.define IO_WRDIV $4204.w
+
+; CPU: set unsigned 8-bit divisor and start division
+.define IO_WRDIVB $4206.w
 
 ; CPU: H-count timer setting (16 bits)
 .define IO_HTIME $4207.w
 
 ; CPU: V-count timer setting (16 bits)
 .define IO_VTIME $4209.w
+
+; CPU: select general purpose DMA channels and start transfer
+.define IO_MDMAEN $420b.w
+
+; CPU: select H-blank DMA (H-DMA) channels
+.define IO_HDMAEN $420c.w
 
 ; CPU: memory-2 waitstate control
 .define IO_MEMSEL $420d.w

@@ -1034,26 +1034,27 @@ unknown_80_85f6:
 @unknown_80_875b:
   bra @unknown_80_875b
 
-unknown_80_875d: lda #$01
-/*unknown_80_875f:*/ sta $4200.w
-/*unknown_80_8762:*/ sta $84
-/*unknown_80_8764:*/ stz $4201.w
-/*unknown_80_8767:*/ stz $4202.w
-/*unknown_80_876a:*/ stz $4203.w
-/*unknown_80_876d:*/ stz $4204.w
-/*unknown_80_8770:*/ stz $4205.w
-/*unknown_80_8773:*/ stz $4206.w
-/*unknown_80_8776:*/ stz $4207.w
-/*unknown_80_8779:*/ stz $4208.w
-/*unknown_80_877c:*/ stz $4209.w
-/*unknown_80_877f:*/ stz $420a.w
-/*unknown_80_8782:*/ stz $420b.w
-/*unknown_80_8785:*/ stz $420c.w
-/*unknown_80_8788:*/ stz $85
-/*unknown_80_878a:*/ lda #$01
-/*unknown_80_878c:*/ sta $420d.w
-/*unknown_80_878f:*/ sta $86
-/*unknown_80_8791:*/ rts
+unknown_80_875d:
+  lda #IO_NMITIMEN_ENABLE_JOYPAD
+  sta IO_NMITIMEN
+  sta $84
+  stz IO_WRIO
+  stz IO_WRMPYA
+  stz IO_WRMPYB
+  stz IO_WRDIV + 0
+  stz IO_WRDIV + 1
+  stz IO_WRDIVB
+  stz IO_HTIME + 0
+  stz IO_HTIME + 1
+  stz IO_VTIME + 0
+  stz IO_VTIME + 1
+  stz IO_MDMAEN
+  stz IO_HDMAEN
+  stz $85
+  lda #IO_MEMSEL_FASTROM
+  sta IO_MEMSEL
+  sta $86
+  rts
 
 unknown_80_8792: lda #$8f
 /*unknown_80_8794:*/ sta $2100.w
