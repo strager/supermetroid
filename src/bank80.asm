@@ -1,4 +1,5 @@
 .include "include/io.asm"
+.include "include/memory.asm"
 .include "src/common.asm"
 
 .bank ($80 - $80) slot $0
@@ -582,17 +583,26 @@ interrupt_reset:
   xce
   jml @body
 @body:
+
+@configure_fastrom:
   sep #$20
   lda #IO_MEMSEL_FASTROM
   sta IO_MEMSEL
   sta $86
   rep #$30
-  ldx #$1fff.w
+
+@configure_stack:
+  ldx #MEM_STACK_TOP - 1
   txs
+
+@configure_direct_page_register:
   lda #$0000.w
   tcd
+
+@configure_data_bank_register:
   phk
-  plb
+  plb ; db := $80
+
   sep #$30
   ldx #$04
 @unknown_80_843c:
@@ -604,12 +614,15 @@ interrupt_reset:
   dex
   bne @unknown_80_843c
   rep #$30
-  ldx #$1ffe.w
-@unknown_80_844e:
-  stz $0000.w, X
+
+@clear_low_ram:
+  ldx #MEM_LOW_RAM_END - 2
+@@loop:
+  stz 0.w, X
   dex
   dex
-  bpl @unknown_80_844e
+  bpl @@loop
+
   jsl unknown_8b_9146
   jsl unknown_80_800a
   brk $80
