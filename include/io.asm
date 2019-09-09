@@ -6,130 +6,130 @@
 .define IO_INIDISP_FORCE_BLANK $80.b
 .define IO_INIDISP_MAX_BRIGHTNESS $0f.b
 
-; CPU: object size and object base
+; PPU: object size and object base
 .define IO_OBSEL $2101.w
 
-; CPU: OAM address and priority rotation (16 bits)
+; PPU: OAM address and priority rotation (16 bits)
 .define IO_OAMADD $2102.w
 .define IO_OAMADD_HIGH_OBJECT_PRIORITY $8000.w
 
-; CPU: OAM data write (write-twice)
+; PPU: OAM data write (write-twice)
 .define IO_OAMDATA $2104.w
 
-; CPU: BG mode and BG character size
+; PPU: BG mode and BG character size
 .define IO_BGMODE $2105.w
 .define IO_BGMODE_1 $01.b
 .define IO_BGMODE_1_BG3_HIGH_PRIORITY $08.b
 
-; CPU: mosaic size and mosaic enable
+; PPU: mosaic size and mosaic enable
 .define IO_MOSAIC $2106.w
 
-; CPU: BG1 screen base and screen size
+; PPU: BG1 screen base and screen size
 .define IO_BG1SC $2107.w
 
-; CPU: BG2 screen base and screen size
+; PPU: BG2 screen base and screen size
 .define IO_BG2SC $2108.w
 
-; CPU: BG3 screen base and screen size
+; PPU: BG3 screen base and screen size
 .define IO_BG3SC $2109.w
 
-; CPU: BG4 screen base and screen Size
+; PPU: BG4 screen base and screen Size
 .define IO_BG4SC $210a.w
 
-; CPU: BG character data area designation
+; PPU: BG character data area designation
 .define IO_BG12NBA $210b.w
 
-; CPU: BG character data area designation
+; PPU: BG character data area designation
 .define IO_BG34NBA $210c.w
 
-; CPU: BG1 horizontal scroll (X) and M7HOFS
+; PPU: BG1 horizontal scroll (X) and M7HOFS
 .define IO_BG1HOFS $210d.w
 
-; CPU: BG1 vertical scroll (Y) and M7VOFS
+; PPU: BG1 vertical scroll (Y) and M7VOFS
 .define IO_BG1VOFS $210e.w
 
-; CPU: BG2 horizontal scroll (X)
+; PPU: BG2 horizontal scroll (X)
 .define IO_BG2HOFS $210f.w
 
-; CPU: BG2 vertical scroll (Y)
+; PPU: BG2 vertical scroll (Y)
 .define IO_BG2VOFS $2110.w
 
-; CPU: BG3 horizontal scroll (X)
+; PPU: BG3 horizontal scroll (X)
 .define IO_BG3HOFS $2111.w
 
-; CPU: BG3 vertical scroll (Y)
+; PPU: BG3 vertical scroll (Y)
 .define IO_BG3VOFS $2112.w
 
-; CPU: BG4 horizontal scroll (X)
+; PPU: BG4 horizontal scroll (X)
 .define IO_BG4HOFS $2113.w
 
-; CPU: BG4 vertical scroll (Y)
+; PPU: BG4 vertical scroll (Y)
 .define IO_BG4VOFS $2114.w
 
-; CPU: VRAM address increment mode
+; PPU: VRAM address increment mode
 .define IO_VMAIN $2115.w
 
-; CPU: VRAM address (16 bits)
+; PPU: VRAM address (16 bits)
 .define IO_VMADD $2116.w
 
-; CPU: VRAM data write (16 bits)
+; PPU: VRAM data write (16 bits)
 .define IO_VMDATA $2118.w
 
-; CPU: rotation/scaling mode settings
+; PPU: rotation/scaling mode settings
 .define IO_M7SEL $211a.w
 
-; CPU: rotation/scaling parameter A and maths 16-bit operand
+; PPU: rotation/scaling parameter A and maths 16-bit operand
 .define IO_M7A $211b.w
 
-; CPU: rotation/scaling parameter B and maths 8-bit operand
+; PPU: rotation/scaling parameter B and maths 8-bit operand
 .define IO_M7B $211c.w
 
-; CPU: rotation/scaling parameter C
+; PPU: rotation/scaling parameter C
 .define IO_M7C $211d.w
 
-; CPU: rotation/scaling parameter D
+; PPU: rotation/scaling parameter D
 .define IO_M7D $211e.w
 
-; CPU: rotation/scaling center coordinate X
+; PPU: rotation/scaling center coordinate X
 .define IO_M7X $211f.w
 
-; CPU: rotation/scaling center coordinate Y
+; PPU: rotation/scaling center coordinate Y
 .define IO_M7Y $2120.w
 
-; CPU: palette CGRAM address
+; PPU: palette CGRAM address
 .define IO_CGADD $2121.w
 
-; CPU: palette CGRAM data write
+; PPU: palette CGRAM data write
 .define IO_CGDATA $2122.w
 
-; CPU: window BG1/BG2 mask settings
+; PPU: window BG1/BG2 mask settings
 .define IO_W12SEL $2123.w
 
-; CPU: window BG3/BG4 mask settings
+; PPU: window BG3/BG4 mask settings
 .define IO_W34SEL $2124.w
 
-; CPU: window OBJ/MATH mask settings
+; PPU: window OBJ/MATH mask settings
 .define IO_WOBJSEL $2125.w
 
-; CPU: window 1 left position (X1)
+; PPU: window 1 left position (X1)
 .define IO_WH0 $2126.w
 
-; CPU: window 1 right position (X2)
+; PPU: window 1 right position (X2)
 .define IO_WH1 $2127.w
 
-; CPU: window 2 left position (X1)
+; PPU: window 2 left position (X1)
 .define IO_WH2 $2128.w
 
-; CPU: window 2 right position (X2)
+; PPU: window 2 right position (X2)
 .define IO_WH3 $2129.w
 
-; CPU: window 1/2 mask logic (BG1-BG4)
+; PPU: window 1/2 mask logic (BG1-BG4)
 .define IO_WBGLOG $212a.w
 
-; CPU: window 1/2 mask logic (OBJ/MATH)
+; PPU: window 1/2 mask logic (OBJ/MATH)
 .define IO_WOBJLOG $212b.w
 
-; CPU: main screen designation
+; PPU: main screen designation
 .define IO_TM $212c.w
 .define IO_TM_BG1 $01.w
 .define IO_TM_BG2 $02.w
@@ -137,7 +137,7 @@
 .define IO_TM_BG4 $08.w
 .define IO_TM_OBJ $10.w
 
-; CPU: sub screen designation
+; PPU: sub screen designation
 .define IO_TS $212d.w
 .define IO_TS_BG1 IO_TM_BG1
 .define IO_TS_BG2 IO_TM_BG2
@@ -145,30 +145,30 @@
 .define IO_TS_BG4 IO_TM_BG4
 .define IO_TS_OBJ IO_TM_OBJ
 
-; CPU: window area main screen disable
+; PPU: window area main screen disable
 .define IO_TMW $212e.w
 
-; CPU: window area sub screen disable
+; PPU: window area sub screen disable
 .define IO_TSW $212f.w
 
-; CPU: color math control register A
+; PPU: color math control register A
 .define IO_CGWSEL $2130.w
 .define IO_CGWSEL_BACKDROP_BG_OBJ $02.b
 
-; CPU: color math control register B
+; PPU: color math control register B
 .define IO_CGADSUB $2131.w
 .define IO_CGADSUB_BG1 $01.b
 .define IO_CGADSUB_BACKDROP $20.b
 .define IO_CGADSUB_MAIN_PLUS_SUB $00.b
 .define IO_CGADSUB_MAIN_MINUS_SUB $80.b
 
-; CPU: color math sub screen backdrop color
+; PPU: color math sub screen backdrop color
 .define IO_COLDATA $2132.w
 .define IO_COLDATA_BLUE $80.b
 .define IO_COLDATA_GREEN $40.b
 .define IO_COLDATA_RED $20.b
 
-; CPU: display control 2
+; PPU: display control 2
 .define IO_SETINI $2133.w
 
 ; APU: main CPU to sound CPU communication port 0
