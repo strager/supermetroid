@@ -247,6 +247,7 @@
 .define IO_BBAD_CGRAM $22.b
 .define IO_BBAD_OAM $04.b
 .define IO_BBAD_RAM $80.b
+.define IO_BBAD_UNKNOWN_19 $19.b
 .define IO_BBAD_VRAM $18.b
 
 ; CPU: HDMA table start address; DMA current address (16 bits) (channel 0)
