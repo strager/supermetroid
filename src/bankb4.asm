@@ -1,4 +1,6 @@
 .include "include/common.asm"
+.include "include/io.asm"
+.include "include/unknown_80_91a9.asm"
 
 .bank ($b4 - $80) slot $0
 .org $0
@@ -2303,16 +2305,18 @@
 /*unknown_b4_99f8:*/ sta $2117.w
 /*unknown_b4_99fb:*/ lda #$80
 /*unknown_b4_99fd:*/ sta $2115.w
-/*unknown_b4_9a00:*/ jsr $8091a9
-/*unknown_b4_9a04:*/ ora ($01, X)
-/*unknown_b4_9a06:*/ clc
-/*unknown_b4_9a07:*/ brk $80
-/*unknown_b4_9a09:*/ bcs $00 ; $9a0b.w
-/*unknown_b4_9a0b:*/ bpl ($a9 - $100) ; $99b6.w
-/*unknown_b4_9a0d:*/ cop $8d
-/*unknown_b4_9a0f:*/ phd
-/*unknown_b4_9a10:*/ .db $42, $9c
-/*unknown_b4_9a12:*/ brk $21
+/*unknown_b4_9a00:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_b0_8000
+das: .dw unknown_b0_8000@size
+.ENDST
+
+/*unknown_B4_9a0c:*/ lda #$02
+/*unknown_B4_9a0e:*/ sta $420b.w
+/*unknown_B4_9a11:*/ stz $2100.w
 /*unknown_b4_9a14:*/ rep #$20
 /*unknown_b4_9a16:*/ inc $185c.w
 /*unknown_b4_9a19:*/ lda #$0001.w
@@ -2327,12 +2331,15 @@
 /*unknown_b4_9a2b:*/ sta $2117.w
 /*unknown_b4_9a2e:*/ lda #$80
 /*unknown_b4_9a30:*/ sta $2115.w
-/*unknown_b4_9a33:*/ jsr $8091a9
-/*unknown_b4_9a37:*/ ora ($01, X)
-/*unknown_b4_9a39:*/ clc
-/*unknown_b4_9a3a:*/ brk $ea
-/*unknown_b4_9a3c:*/ plb
-/*unknown_b4_9a3d:*/ brk $0a
+/*unknown_b4_9a33:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_ab_ea00
+das: .dw unknown_ab_ea00@size
+.ENDST
+
 /*unknown_b4_9a3f:*/ lda #$02
 /*unknown_b4_9a41:*/ sta $420b.w
 /*unknown_b4_9a44:*/ stz $2100.w
