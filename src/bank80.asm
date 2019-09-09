@@ -1504,19 +1504,22 @@ unknown_80_8b1a:
 /*unknown_80_8bb4:*/ adc #$0009.w
 /*unknown_80_8bb7:*/ tay
 /*unknown_80_8bb8:*/ bra ($9b - $100) ; $8b55.w
-unknown_80_8bba: php
-/*unknown_80_8bbb:*/ rep #$10
-/*unknown_80_8bbd:*/ ldx $0334.w
-/*unknown_80_8bc0:*/ beq $0f ; $8bd1.w
-/*unknown_80_8bc2:*/ ldx #$02d0.w
-/*unknown_80_8bc5:*/ jsr $808bd3
-/*unknown_80_8bc9:*/ rep #$20
-/*unknown_80_8bcb:*/ stz $02d0.w
-/*unknown_80_8bce:*/ stz $0334.w
-/*unknown_80_8bd1:*/ plp
-/*unknown_80_8bd2:*/ rtl
 
-/*unknown_80_8bd3:*/ php
+unknown_80_8bba:
+  php
+  rep #$10
+  ldx $0334.w
+  beq @unknown_80_8bd1
+  ldx #$02d0.w
+  jsl unknown_80_8bd3
+  rep #$20
+  stz $02d0.w
+  stz $0334.w
+@unknown_80_8bd1:
+  plp
+  rtl
+
+unknown_80_8bd3: php
 /*unknown_80_8bd4:*/ sep #$20
 /*unknown_80_8bd6:*/ lda $0000.w, X
 /*unknown_80_8bd9:*/ bmi $36 ; $8c11.w
