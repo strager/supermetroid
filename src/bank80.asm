@@ -1186,17 +1186,18 @@ unknown_80_8792:
 /*unknown_80_88ce:*/ sep #$30
 /*unknown_80_88d0:*/ rts
 
-unknown_80_88d1: rep #$30
-/*unknown_80_88d3:*/ lda #$1c2f.w
-/*unknown_80_88d6:*/ jsr $8088eb
-/*unknown_80_88da:*/ lda #$1c2f.w
-/*unknown_80_88dd:*/ jsr $8088fe
-/*unknown_80_88e1:*/ lda #$1c2f.w
-/*unknown_80_88e4:*/ jsr $808911
-/*unknown_80_88e8:*/ sep #$30
-/*unknown_80_88ea:*/ rts
+unknown_80_88d1:
+  rep #$30
+  lda #$1c2f.w
+  jsl unknown_80_88eb
+  lda #$1c2f.w
+  jsl unknown_80_88fe
+  lda #$1c2f.w
+  jsl unknown_80_8911
+  sep #$30
+  rts
 
-/*unknown_80_88eb:*/ php
+unknown_80_88eb: php
 /*unknown_80_88ec:*/ phb
 /*unknown_80_88ed:*/ phk
 /*unknown_80_88ee:*/ plb
@@ -1208,7 +1209,7 @@ unknown_80_88d1: rep #$30
 /*unknown_80_88fc:*/ plp
 /*unknown_80_88fd:*/ rtl
 
-/*unknown_80_88fe:*/ php
+unknown_80_88fe: php
 /*unknown_80_88ff:*/ phb
 /*unknown_80_8900:*/ phk
 /*unknown_80_8901:*/ plb
@@ -1220,7 +1221,7 @@ unknown_80_88d1: rep #$30
 /*unknown_80_890f:*/ plp
 /*unknown_80_8910:*/ rtl
 
-/*unknown_80_8911:*/ php
+unknown_80_8911: php
 /*unknown_80_8912:*/ phb
 /*unknown_80_8913:*/ phk
 /*unknown_80_8914:*/ plb
