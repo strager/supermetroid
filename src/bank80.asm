@@ -223,22 +223,25 @@ unknown_80_818b: plb
 unknown_80_818c: plp
 unknown_80_818d: rtl
 
-unknown_80_818e: tax
-unknown_80_818f: bpl $01 ; $8192.w
-unknown_80_8191: brk $9c
-unknown_80_8193: sbc [$05]
-unknown_80_8195: pha
-unknown_80_8196: and #$0007.w
-unknown_80_8199: sec
-unknown_80_819a: rol $05e7.w
-unknown_80_819d: dec A
-unknown_80_819e: bpl ($fa - $100) ; $819a.w
-unknown_80_81a0: pla
-unknown_80_81a1: lsr A
-unknown_80_81a2: lsr A
-unknown_80_81a3: lsr A
-unknown_80_81a4: tax
-unknown_80_81a5: rtl
+unknown_80_818e:
+  tax
+  bpl @unknown_80_8192
+  .db $00
+@unknown_80_8192:
+  stz $05e7
+  pha
+  and #$0007.w
+  sec
+@unknown_80_819a:
+  rol $05e7.w
+  dec A
+  bpl @unknown_80_819a
+  pla
+  lsr A
+  lsr A
+  lsr A
+  tax
+  rtl
 
 unknown_80_81a6: phx
 unknown_80_81a7: phy
@@ -294,7 +297,7 @@ unknown_80_81fa: phx
 unknown_80_81fb: phy
 unknown_80_81fc: php
 unknown_80_81fd: rep #$30
-unknown_80_81ff: jsr $80818e
+unknown_80_81ff: jsl unknown_80_818e
 unknown_80_8203: lda $7ed820, X
 unknown_80_8207: ora $05e7.w
 unknown_80_820a: sta $7ed820, X
@@ -307,7 +310,7 @@ unknown_80_8212: phx
 unknown_80_8213: phy
 unknown_80_8214: php
 unknown_80_8215: rep #$30
-unknown_80_8217: jsr $80818e
+unknown_80_8217: jsl unknown_80_818e
 unknown_80_821b: lda $05e7.w
 unknown_80_821e: eor #$ffff.w
 unknown_80_8221: sta $05e7.w
@@ -323,7 +326,7 @@ unknown_80_8233: phx
 unknown_80_8234: phy
 unknown_80_8235: php
 unknown_80_8236: rep #$30
-unknown_80_8238: jsr $80818e
+unknown_80_8238: jsl unknown_80_818e
 unknown_80_823c: lda $7ed820, X
 unknown_80_8240: and $05e7.w
 unknown_80_8243: bne $05 ; $824a.w
