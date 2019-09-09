@@ -344,7 +344,7 @@ unknown_80_818e:
 
 /*unknown_80_824f:*/ phx
 /*unknown_80_8250:*/ ldx #$000a.w
-/*unknown_80_8253:*/ lda $8082b9, X
+/*unknown_80_8253:*/ lda unknown_80_82b9.l, X
 /*unknown_80_8257:*/ sta $701fe0, X
 /*unknown_80_825b:*/ dex
 /*unknown_80_825c:*/ dex
@@ -379,7 +379,7 @@ unknown_80_8294:
   ldx #$000a.w
 @unknown_80_8297:
   lda $701fe0, X
-  cmp $8082b9, X
+  cmp unknown_80_82b9.l, X
   bne @unknown_80_82ab
   dex
   dex
@@ -390,16 +390,12 @@ unknown_80_8294:
   plx
   rtl
 
-unknown_80_82ad: adc $6461.w
-/*unknown_80_82b0:*/ adc ($64, X)
-/*unknown_80_82b2:*/ adc ($6d, X)
-/*unknown_80_82b4:*/ adc $79
-/*unknown_80_82b6:*/ adc $736e68
-/*unknown_80_82ba:*/ adc $70, X
-/*unknown_80_82bc:*/ adc $72
-/*unknown_80_82be:*/ adc $7465.w
-/*unknown_80_82c1:*/ adc ($6f)
-/*unknown_80_82c3:*/ adc #$4864.w
+unknown_80_82ad:
+  .db "madadameyohn"
+unknown_80_82b9:
+  .db "supermetroid"
+
+/*unknown_80_82c5:*/ pha
 /*unknown_80_82c6:*/ php
 /*unknown_80_82c7:*/ sep #$20
 /*unknown_80_82c9:*/ lda $4212.w
