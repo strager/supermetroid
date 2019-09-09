@@ -1278,24 +1278,26 @@ unknown_80_8911:
 /*unknown_80_896c:*/ plp
 /*unknown_80_896d:*/ rtl
 
-unknown_80_896e: php
-/*unknown_80_896f:*/ rep #$30
-/*unknown_80_8971:*/ lda $0590.w
-/*unknown_80_8974:*/ cmp #$0200.w
-/*unknown_80_8977:*/ bpl $14 ; $898d.w
-/*unknown_80_8979:*/ lsr A
-/*unknown_80_897a:*/ sta $12
-/*unknown_80_897c:*/ lsr A
-/*unknown_80_897d:*/ adc $12
-/*unknown_80_897f:*/ clc
-/*unknown_80_8980:*/ adc #$8992.w
-/*unknown_80_8983:*/ sta $12
-/*unknown_80_8985:*/ lda #$00f0.w
-/*unknown_80_8988:*/ sep #$30
-/*unknown_80_898a:*/ jmp ($0012)
-/*unknown_80_898d:*/ stz $0590.w
-/*unknown_80_8990:*/ plp
-/*unknown_80_8991:*/ rtl
+unknown_80_896e:
+  php
+  rep #$30
+  lda $0590.w
+  cmp #$0200.w
+  bpl @unknown_80_898d
+  lsr A
+  sta $12
+  lsr A
+  adc $12
+  clc
+  adc #$8992.w
+  sta $12
+  lda #$00f0.w
+  sep #$30
+  jmp ($0012)
+@unknown_80_898d:
+  stz $0590.w
+  plp
+  rtl
 
 /*unknown_80_8992:*/ sta $0371.w
 /*unknown_80_8995:*/ sta $0375.w
