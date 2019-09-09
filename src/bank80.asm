@@ -576,20 +576,22 @@ unknown_80_834b:
 /*unknown_80_83f4:*/ plp
 /*unknown_80_83f5:*/ rtl
 
-unknown_80_83f6: php
-/*unknown_80_83f7:*/ phb
-/*unknown_80_83f8:*/ phk
-/*unknown_80_83f9:*/ plb
-/*unknown_80_83fa:*/ rep #$30
-/*unknown_80_83fc:*/ sta $7e0000, X
-/*unknown_80_8400:*/ inx
-/*unknown_80_8401:*/ inx
-/*unknown_80_8402:*/ dey
-/*unknown_80_8403:*/ dey
-/*unknown_80_8404:*/ bne ($f6 - $100) ; $83fc.w
-/*unknown_80_8406:*/ plb
-/*unknown_80_8407:*/ plp
-/*unknown_80_8408:*/ rtl
+unknown_80_83f6:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+@loop:
+  sta MEM_LOW_HIGH_RAM_BANK << 16, X
+  inx
+  inx
+  dey
+  dey
+  bne @loop
+  plb
+  plp
+  rtl
 
 /*unknown_80_8409:*/ php
 /*unknown_80_840a:*/ phb
