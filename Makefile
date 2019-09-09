@@ -58,6 +58,7 @@ SOURCES = \
   src/bankb3.asm \
   src/bankb4.asm \
   src/bankb5.asm \
+  src/bankb6.asm \
   src/main.asm
 
 OBJECTS = $(patsubst %.asm,$(BUILD)/%.asm.o,$(SOURCES))

@@ -6,7 +6,6 @@
 .incbin "data/\2"
 .endm
 
-  DATA_BANK $b6, bankb6.bin
   DATA_BANK $b7, bankb7.bin
   DATA_BANK $b8, bankb8.bin
   DATA_BANK $b9, bankb9.bin

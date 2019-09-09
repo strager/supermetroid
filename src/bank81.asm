@@ -1,4 +1,6 @@
 .include "include/common.asm"
+.include "include/io.asm"
+.include "include/unknown_80_91a9.asm"
 
 .bank ($81 - $80) slot $0
 .org $0
@@ -1719,11 +1721,15 @@ unknown_81_8085: rep #$30
 /*unknown_81_8de5:*/ sta $2117.w
 /*unknown_81_8de8:*/ lda #$80
 /*unknown_81_8dea:*/ sta $2115.w
-/*unknown_81_8ded:*/ jsr $8091a9
-/*unknown_81_8df1:*/ ora ($01, X)
-/*unknown_81_8df3:*/ clc
-/*unknown_81_8df4:*/ brk $80
-/*unknown_81_8df6:*/ stx $5600.w
+/*unknown_81_8ded:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_8e_8000
+das: .dw unknown_8e_8000@size + unknown_8e_c000@size
+.ENDST
+
 /*unknown_81_8df9:*/ lda #$02
 /*unknown_81_8dfb:*/ sta $420b.w
 /*unknown_81_8dfe:*/ lda #$00
@@ -1732,12 +1738,16 @@ unknown_81_8085: rep #$30
 /*unknown_81_8e05:*/ sta $2117.w
 /*unknown_81_8e08:*/ lda #$80
 /*unknown_81_8e0a:*/ sta $2115.w
-/*unknown_81_8e0d:*/ jsr $8091a9
-/*unknown_81_8e11:*/ ora ($01, X)
-/*unknown_81_8e13:*/ clc
-/*unknown_81_8e14:*/ brk $80
-/*unknown_81_8e16:*/ ldx $00, Y
-/*unknown_81_8e18:*/ jsr $02a9.w
+/*unknown_81_8e0d:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_b6_8000
+das: .dw unknown_b6_8000@size
+.ENDST
+
+/*unknown_81_8e19:*/ lda #$02
 /*unknown_81_8e1b:*/ sta $420b.w
 /*unknown_81_8e1e:*/ lda #$00
 /*unknown_81_8e20:*/ sta $2116.w
@@ -1745,12 +1755,16 @@ unknown_81_8085: rep #$30
 /*unknown_81_8e25:*/ sta $2117.w
 /*unknown_81_8e28:*/ lda #$80
 /*unknown_81_8e2a:*/ sta $2115.w
-/*unknown_81_8e2d:*/ jsr $8091a9
-/*unknown_81_8e31:*/ ora ($01, X)
-/*unknown_81_8e33:*/ clc
-/*unknown_81_8e34:*/ brk $c0
-/*unknown_81_8e36:*/ ldx $00, Y
-/*unknown_81_8e38:*/ jsr $02a9.w
+/*unknown_81_8e2d:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_b6_c000
+das: .dw unknown_b6_c000@size
+.ENDST
+
+/*unknown_81_8e39:*/ lda #$02
 /*unknown_81_8e3b:*/ sta $420b.w
 /*unknown_81_8e3e:*/ lda #$00
 /*unknown_81_8e40:*/ sta $2116.w
@@ -1758,11 +1772,15 @@ unknown_81_8085: rep #$30
 /*unknown_81_8e45:*/ sta $2117.w
 /*unknown_81_8e48:*/ lda #$80
 /*unknown_81_8e4a:*/ sta $2115.w
-/*unknown_81_8e4d:*/ jsr $8091a9
-/*unknown_81_8e51:*/ ora ($01, X)
-/*unknown_81_8e53:*/ clc
-/*unknown_81_8e54:*/ brk $d6
-/*unknown_81_8e56:*/ stx $0600.w
+/*unknown_81_8e4d:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_8e_d600
+das: .dw unknown_8e_d600@size
+.ENDST
+
 /*unknown_81_8e59:*/ lda #$02
 /*unknown_81_8e5b:*/ sta $420b.w
 /*unknown_81_8e5e:*/ plp
@@ -2034,12 +2052,15 @@ unknown_81_8085: rep #$30
 /*unknown_81_9087:*/ sta $2117.w
 /*unknown_81_908a:*/ lda #$80
 /*unknown_81_908c:*/ sta $2115.w
-/*unknown_81_908f:*/ jsr $8091a9
-/*unknown_81_9093:*/ ora ($01, X)
-/*unknown_81_9095:*/ clc
-/*unknown_81_9096:*/ brk $b2
-/*unknown_81_9098:*/ txs
-/*unknown_81_9099:*/ brk $20
+/*unknown_81_908f:*/ jsl unknown_80_91a9
+.dstruct instanceof unknown_80_91a9@parameters values
+channel_index: .db 1
+dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
+bbad: .db IO_BBAD_VRAM
+a1: .dl unknown_9a_b200
+das: .dw unknown_9a_b200@size
+.ENDST
+
 /*unknown_81_909b:*/ lda #$02
 /*unknown_81_909d:*/ sta $420b.w
 /*unknown_81_90a0:*/ rep #$30

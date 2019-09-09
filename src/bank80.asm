@@ -1,17 +1,10 @@
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
+.include "include/unknown_80_91a9.asm"
 
 .bank ($80 - $80) slot $0
 .org $0
-
-.struct unknown_80_91a9@parameters
-channel_index: db ; Index of the HDMA channel (0 through 7).
-dmap: db          ; Value to store into IO_DMAPX.
-bbad: db          ; Value to store into IO_BBADX.
-a1: dl            ; Value to store into IO_A1TX and IO_A1BX.
-das: dw           ; Value to store into IO_DASX.
-.endst
 
 unknown_80_8000: .db $00
 unknown_80_8001: .db $00
