@@ -2285,104 +2285,104 @@ unknown_80_8ea2:
 
 unknown_80_91ee:
   ldx $84
-  stx $4200.w
+  stx IO_NMITIMEN
   ldx $51
-  stx $2100.w
+  stx IO_INIDISP
   ldx $52
-  stx $2101.w
+  stx IO_OBSEL
   ldx $55
-  stx $2105.w
+  stx IO_BGMODE
   ldx $57
-  stx $2106.w
+  stx IO_MOSAIC
   ldx $58
-  stx $2107.w
+  stx IO_BG1SC
   ldx $59
-  stx $2108.w
+  stx IO_BG2SC
   ldx $5a
-  stx $2109.w
+  stx IO_BG3SC
   ldx $5c
-  stx $210a.w
+  stx IO_BG4SC
   ldx $5d
-  stx $210b.w
+  stx IO_BG12NBA
   ldx $5e
-  stx $210c.w
+  stx IO_BG34NBA
   ldx $5f
-  stx $211a.w
+  stx IO_M7SEL
   ldx $60
-  stx $2123.w
+  stx IO_W12SEL
   ldx $61
-  stx $2124.w
+  stx IO_W34SEL
   ldx $62
-  stx $2125.w
+  stx IO_WOBJSEL
   ldx $63
-  stx $2126.w
+  stx IO_WH0
   ldx $64
-  stx $2127.w
+  stx IO_WH1
   ldx $65
-  stx $2128.w
+  stx IO_WH2
   ldx $66
-  stx $2129.w
+  stx IO_WH3
   ldx $67
-  stx $212a.w
+  stx IO_WBGLOG
   ldx $68
-  stx $212b.w
+  stx IO_WOBJLOG
   ldx $69
   stx $6a
-  stx $212c.w
+  stx IO_TM
   ldx $6c
-  stx $212e.w
+  stx IO_TMW
   ldx $6b
-  stx $212d.w
+  stx IO_TS
   ldx $6d
-  stx $212f.w
+  stx IO_TSW
   ldx $6f
-  stx $2130.w
+  stx IO_CGWSEL
   ldx $72
-  stx $2131.w
+  stx IO_CGADSUB
   ldx $6e
   stx $70
   ldx $71
   stx $73
   ldx $74
-  stx $2132.w
+  stx IO_COLDATA
   ldx $75
-  stx $2132.w
+  stx IO_COLDATA
   ldx $76
-  stx $2132.w
+  stx IO_COLDATA
   ldx $77
-  stx $2133.w
+  stx IO_SETINI
   ldx $b1
-  stx $210d.w
+  stx IO_BG1HOFS
   ldx $b2
-  stx $210d.w
+  stx IO_BG1HOFS
   ldx $b3
-  stx $210e.w
+  stx IO_BG1VOFS
   ldx $b4
-  stx $210e.w
+  stx IO_BG1VOFS
   ldx $b5
-  stx $210f.w
+  stx IO_BG2HOFS
   ldx $b6
-  stx $210f.w
+  stx IO_BG2HOFS
   ldx $b7
-  stx $2110.w
+  stx IO_BG2VOFS
   ldx $b8
-  stx $2110.w
+  stx IO_BG2VOFS
   ldx $b9
-  stx $2111.w
+  stx IO_BG3HOFS
   ldx $ba
-  stx $2111.w
+  stx IO_BG3HOFS
   ldx $bb
-  stx $2112.w
+  stx IO_BG3VOFS
   ldx $bc
-  stx $2112.w
+  stx IO_BG3VOFS
   ldx $bd
-  stx $2113.w
+  stx IO_BG4HOFS
   ldx $be
-  stx $2113.w
+  stx IO_BG4HOFS
   ldx $bf
-  stx $2114.w
+  stx IO_BG4VOFS
   ldx $c0
-  stx $2114.w
+  stx IO_BG4VOFS
   ldx $56
   stx $07ec.w
   lda $55
@@ -2396,29 +2396,29 @@ unknown_80_91ee:
   rts
 @unknown_80_92fd:
   ldx $78
-  stx $211b.w
+  stx IO_M7A
   ldx $79
-  stx $211b.w
+  stx IO_M7A
   ldx $7a
-  stx $211c.w
+  stx IO_M7B
   ldx $7b
-  stx $211c.w
+  stx IO_M7B
   ldx $7c
-  stx $211d.w
+  stx IO_M7C
   ldx $7d
-  stx $211d.w
+  stx IO_M7C
   ldx $7e
-  stx $211e.w
+  stx IO_M7D
   ldx $7f
-  stx $211e.w
+  stx IO_M7D
   ldx $80
-  stx $211f.w
+  stx IO_M7X
   ldx $81
-  stx $211f.w
+  stx IO_M7X
   ldx $82
-  stx $2120.w
+  stx IO_M7Y
   ldx $83
-  stx $2120.w
+  stx IO_M7Y
   rts
 
 unknown_80_933a: lda #$0400.w
