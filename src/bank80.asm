@@ -1432,26 +1432,27 @@ unknown_80_896e:
 /*unknown_80_8b18:*/ plp
 /*unknown_80_8b19:*/ rtl
 
-unknown_80_8b1a: php
-/*unknown_80_8b1b:*/ rep #$30
-/*unknown_80_8b1d:*/ stz $0570.w
-/*unknown_80_8b20:*/ stz $0572.w
-/*unknown_80_8b23:*/ stz $0574.w
-/*unknown_80_8b26:*/ stz $0576.w
-/*unknown_80_8b29:*/ stz $0578.w
-/*unknown_80_8b2c:*/ stz $057a.w
-/*unknown_80_8b2f:*/ stz $057c.w
-/*unknown_80_8b32:*/ stz $057e.w
-/*unknown_80_8b35:*/ stz $0580.w
-/*unknown_80_8b38:*/ stz $0582.w
-/*unknown_80_8b3b:*/ stz $0584.w
-/*unknown_80_8b3e:*/ stz $0586.w
-/*unknown_80_8b41:*/ stz $0588.w
-/*unknown_80_8b44:*/ stz $058a.w
-/*unknown_80_8b47:*/ stz $058c.w
-/*unknown_80_8b4a:*/ stz $058e.w
-/*unknown_80_8b4d:*/ plp
-/*unknown_80_8b4e:*/ rtl
+unknown_80_8b1a:
+  php
+  rep #$30
+  stz $0570.w
+  stz $0572.w
+  stz $0574.w
+  stz $0576.w
+  stz $0578.w
+  stz $057a.w
+  stz $057c.w
+  stz $057e.w
+  stz $0580.w
+  stz $0582.w
+  stz $0584.w
+  stz $0586.w
+  stz $0588.w
+  stz $058a.w
+  stz $058c.w
+  stz $058e.w
+  plp
+  rtl
 
 /*unknown_80_8b4f:*/ phx
 /*unknown_80_8b50:*/ phy
