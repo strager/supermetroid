@@ -20,6 +20,7 @@
 
 ; CPU: interrupt enable and joypad request
 .define IO_NMITIMEN $4200.w
+.define IO_NMITIMEN_ENABLE_VBLANK $80.b
 
 ; CPU: H-count timer setting (16 bits)
 .define IO_HTIME $4207.w

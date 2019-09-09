@@ -462,18 +462,19 @@ unknown_80_82b9:
 /*unknown_80_8349:*/ plp
 /*unknown_80_834a:*/ rtl
 
-unknown_80_834b: php
-/*unknown_80_834c:*/ phb
-/*unknown_80_834d:*/ phk
-/*unknown_80_834e:*/ plb
-/*unknown_80_834f:*/ sep #$20
-/*unknown_80_8351:*/ lda $84
-/*unknown_80_8353:*/ ora #$80
-/*unknown_80_8355:*/ sta $4200.w
-/*unknown_80_8358:*/ sta $84
-/*unknown_80_835a:*/ plb
-/*unknown_80_835b:*/ plp
-/*unknown_80_835c:*/ rtl
+unknown_80_834b:
+  php
+  phb
+  phk
+  plb
+  sep #$20
+  lda $84
+  ora #IO_NMITIMEN_ENABLE_VBLANK
+  sta IO_NMITIMEN
+  sta $84
+  plb
+  plp
+  rtl
 
 /*unknown_80_835d:*/ php
 /*unknown_80_835e:*/ phb
