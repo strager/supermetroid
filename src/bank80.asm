@@ -375,17 +375,20 @@ unknown_80_8261:
   plx
   rtl
 
-unknown_80_8294: ldx #$000a.w
-/*unknown_80_8297:*/ lda $701fe0, X
-/*unknown_80_829b:*/ cmp $8082b9, X
-/*unknown_80_829f:*/ bne $0a ; $82ab.w
-/*unknown_80_82a1:*/ dex
-/*unknown_80_82a2:*/ dex
-/*unknown_80_82a3:*/ bpl ($f2 - $100) ; $8297.w
-/*unknown_80_82a5:*/ lda #$0004.w
-/*unknown_80_82a8:*/ sta $1f59.w
-/*unknown_80_82ab:*/ plx
-/*unknown_80_82ac:*/ rtl
+unknown_80_8294:
+  ldx #$000a.w
+@unknown_80_8297:
+  lda $701fe0, X
+  cmp $8082b9, X
+  bne @unknown_80_82ab
+  dex
+  dex
+  bpl @unknown_80_8297
+  lda #$0004.w
+  sta $1f59.w
+@unknown_80_82ab:
+  plx
+  rtl
 
 unknown_80_82ad: adc $6461.w
 /*unknown_80_82b0:*/ adc ($64, X)
