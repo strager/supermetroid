@@ -18,13 +18,35 @@ unknown_80_8007: .db $00
 unknown_80_8008: .db $00
 unknown_80_8009: .db $00
 
+.struct unknown_80_800a@parameters
+unknown_0: db
+unknown_1: db
+unknown_2: db
+.endst
+.define unknown_80_800a@parameters@size _sizeof_unknown_80_800a@parameters
+
+; Call this procedure with the following sequence:
+;
+;   jsl unknown_80_800a
+; .dstruct instanceof unknown_80_800a@parameters values
+; unknown_0: .db $00
+; unknown_1: .db $80
+; unknown_2: .db $cf
+; .ENDST
+; @resume:
+;
+; unknown_80_800a returns execution at @resume (i.e. after the
+; unknown_80_800a@parameters data).
+;
+; See the definition of unknown_80_800a@parameters for details on what each
+; parameter means.
 unknown_80_800a:
   lda $02, S
   sta $04
   lda $01, S
   sta $03
   clc
-  adc #$0003.w
+  adc #unknown_80_800a@parameters@size.w
   sta $01, S
   ldy #$0001.w
   lda [$03], Y
@@ -660,10 +682,11 @@ interrupt_reset:
 
   jsl unknown_8b_9146
   jsl unknown_80_800a
-
-unknown_80_845d: .db $00
-unknown_80_845e: .db $80
-unknown_80_845f: .db $cf
+.dstruct instanceof unknown_80_800a@parameters values
+unknown_0: .db $00
+unknown_1: .db $80
+unknown_2: .db $cf
+.ENDST
 
 unknown_80_8460:
   bra unknown_80_8482
