@@ -11607,29 +11607,53 @@ das: .dw $800
 /*unknown_82_e036:*/ bra ($a4 - $100) ; $dfdc.w
 /*unknown_82_e038:*/ rts
 
-/*unknown_82_e039:*/ lda $01, S
+.struct unknown_82_e039@parameters
+unknown_0: db
+unknown_1: dw
+unknown_2: dw
+unknown_3: dw
+.endst
+
+; Call this procedure with the following sequence:
+;
+;   jsl unknown_82_e039
+; .dstruct instanceof unknown_82_e039@parameters values
+; unknown_0: .db $00
+; unknown_1: .dw $7e20
+; unknown_2: .dw $0000
+; unknown_3: .dw $2000
+; .ENDST
+; @resume:
+;
+; unknown_82_e039 returns execution at @resume (i.e. after the
+; unknown_82_e039@parameters data).
+;
+; See the definition of unknown_82_e039@parameters for details on what each
+; parameter means.
+unknown_82_e039:
+  lda $01, S
 /*unknown_82_e03b:*/ inc A
-/*unknown_82_e03c:*/ sta $ad
+/*unknown_82_e03c:*/ sta $ad ; [$ad] := @parameters.unknown_0
 /*unknown_82_e03e:*/ phb
 /*unknown_82_e03f:*/ phk
 /*unknown_82_e040:*/ plb
 /*unknown_82_e041:*/ lda ($ad)
 /*unknown_82_e043:*/ sta $05c0.w
-/*unknown_82_e046:*/ inc $ad
+/*unknown_82_e046:*/ inc $ad ; [$ad] := @parameters.unknown_1
 /*unknown_82_e048:*/ lda ($ad)
 /*unknown_82_e04a:*/ sta $05c1.w
 /*unknown_82_e04d:*/ inc $ad
-/*unknown_82_e04f:*/ inc $ad
+/*unknown_82_e04f:*/ inc $ad ; [$ad] := @parameters.unknown_2
 /*unknown_82_e051:*/ lda ($ad)
 /*unknown_82_e053:*/ sta $05be.w
 /*unknown_82_e056:*/ inc $ad
-/*unknown_82_e058:*/ inc $ad
+/*unknown_82_e058:*/ inc $ad ; [$ad] := @parameters.unknown_3
 /*unknown_82_e05a:*/ lda ($ad)
 /*unknown_82_e05c:*/ sta $05c3.w
 /*unknown_82_e05f:*/ plb
 /*unknown_82_e060:*/ lda $ad
 /*unknown_82_e062:*/ inc A
-/*unknown_82_e063:*/ sta $01, S
+/*unknown_82_e063:*/ sta $01, S ; Return to the instruction after @parameters.
 /*unknown_82_e065:*/ lda #$8000.w
 /*unknown_82_e068:*/ tsb $05bc.w
 /*unknown_82_e06b:*/ lda $05bc.w
@@ -12064,36 +12088,59 @@ unknown: .dl $7ec200
 .ENDST
 
   jsr $e039
-/*unknown_82_e449:*/ brk $20
-/*unknown_82_e44b:*/ ror $0000.w, X
-/*unknown_82_e44e:*/ brk $20
-/*unknown_82_e450:*/ jsr $e039.w
-/*unknown_82_e453:*/ brk $40
-/*unknown_82_e455:*/ ror $1000.w, X
-/*unknown_82_e458:*/ brk $20
-/*unknown_82_e45a:*/ jsr $e039.w
-/*unknown_82_e45d:*/ brk $60
-/*unknown_82_e45f:*/ ror $2000.w, X
-/*unknown_82_e462:*/ brk $10
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e20
+unknown_2: .dw $0000
+unknown_3: .dw $2000
+.ENDST
+
+/*unknown_82_e450:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e40
+unknown_2: .dw $1000
+unknown_3: .dw $2000
+.ENDST
+
+/*unknown_82_e45a:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e60
+unknown_2: .dw $2000
+unknown_3: .dw $1000
+.ENDST
+
 /*unknown_82_e464:*/ lda $07b3.w
 /*unknown_82_e467:*/ bit #$0006.w
 /*unknown_82_e46a:*/ beq $26 ; $e492.w
 /*unknown_82_e46c:*/ lda $078d.w
 /*unknown_82_e46f:*/ cmp #$947a.w
 /*unknown_82_e472:*/ beq $1e ; $e492.w
-/*unknown_82_e474:*/ jsr $e039.w
-/*unknown_82_e477:*/ brk $70
-/*unknown_82_e479:*/ ror $2800.w, X
-/*unknown_82_e47c:*/ brk $10
-/*unknown_82_e47e:*/ jsr $e039.w
-/*unknown_82_e481:*/ brk $80
-/*unknown_82_e483:*/ ror $3000.w, X
-/*unknown_82_e486:*/ brk $20
-/*unknown_82_e488:*/ jsr $e039.w
-/*unknown_82_e48b:*/ brk $b2
-/*unknown_82_e48d:*/ txs
-/*unknown_82_e48e:*/ brk $40
-/*unknown_82_e490:*/ brk $10
+/*unknown_82_e474:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e70
+unknown_2: .dw $2800
+unknown_3: .dw $1000
+.ENDST
+
+/*unknown_82_e47e:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e80
+unknown_2: .dw $3000
+unknown_3: .dw $2000
+.ENDST
+
+/*unknown_82_e488:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $9ab2
+unknown_2: .dw $4000
+unknown_3: .dw $1000
+.ENDST
+
 /*unknown_82_e492:*/ lda $0791.w
 /*unknown_82_e495:*/ and #$0003.w
 /*unknown_82_e498:*/ cmp #$0003.w
@@ -12177,11 +12224,15 @@ unknown: .dl $7ec200
 /*unknown_82_e574:*/ dex
 /*unknown_82_e575:*/ dex
 /*unknown_82_e576:*/ bpl ($f4 - $100) ; $e56c.w
-/*unknown_82_e578:*/ jsr $e039.w
-/*unknown_82_e57b:*/ brk $40
-/*unknown_82_e57d:*/ ror $5880.w, X
-/*unknown_82_e580:*/ brk $0f
-/*unknown_82_e582:*/ rts
+/*unknown_82_e578:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e40
+unknown_2: .dw $5880
+unknown_3: .dw $0f00
+.ENDST
+
+  rts
 
 /*unknown_82_e583:*/ ldx #$07fe.w
 /*unknown_82_e586:*/ lda #$0338.w
@@ -12190,11 +12241,15 @@ unknown: .dl $7ec200
 /*unknown_82_e591:*/ dex
 /*unknown_82_e592:*/ dex
 /*unknown_82_e593:*/ bpl ($f4 - $100) ; $e589.w
-/*unknown_82_e595:*/ jsr $e039.w
-/*unknown_82_e598:*/ brk $40
-/*unknown_82_e59a:*/ ror $4800.w, X
-/*unknown_82_e59d:*/ brk $10
-/*unknown_82_e59f:*/ rts
+/*unknown_82_e595:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e40
+unknown_2: .dw $4800
+unknown_3: .dw $1000
+.ENDST
+
+  rts
 
 /*unknown_82_e5a0:*/ ldx #$07fe.w
 /*unknown_82_e5a3:*/ lda #$0338.w
@@ -12203,15 +12258,23 @@ unknown: .dl $7ec200
 /*unknown_82_e5ae:*/ dex
 /*unknown_82_e5af:*/ dex
 /*unknown_82_e5b0:*/ bpl ($f4 - $100) ; $e5a6.w
-/*unknown_82_e5b2:*/ jsr $e039.w
-/*unknown_82_e5b5:*/ brk $40
-/*unknown_82_e5b7:*/ ror $4000.w, X
-/*unknown_82_e5ba:*/ brk $10
-/*unknown_82_e5bc:*/ jsr $e039.w
-/*unknown_82_e5bf:*/ brk $40
-/*unknown_82_e5c1:*/ ror $4800.w, X
-/*unknown_82_e5c4:*/ brk $10
-/*unknown_82_e5c6:*/ rts
+/*unknown_82_e5b2:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e40
+unknown_2: .dw $4000
+unknown_3: .dw $1000
+.ENDST
+
+/*unknown_82_e5bc:*/ jsr unknown_82_e039
+.dstruct instanceof unknown_82_e039@parameters values
+unknown_0: .db $00
+unknown_1: .dw $7e40
+unknown_2: .dw $4800
+unknown_3: .dw $1000
+.ENDST
+
+  rts
 
 /*unknown_82_e5c7:*/ cmp [$e5], Y
 /*unknown_82_e5c9:*/ xba
