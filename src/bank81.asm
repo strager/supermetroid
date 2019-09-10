@@ -11793,41 +11793,11 @@ das: .dw unknown_9a_b200@size
 /*unknown_81_fef2:*/ sbc $ffffff, X
 /*unknown_81_fef6:*/ sbc $ffffff, X
 /*unknown_81_fefa:*/ sbc $ffffff, X
-/*unknown_81_fefe:*/ sbc $5320ff, X
-/*unknown_81_ff02:*/ bvs $65 ; $ff69.w
-/*unknown_81_ff04:*/ adc $69, S
-/*unknown_81_ff06:*/ adc ($6c, X)
-/*unknown_81_ff08:*/ jsr $6874.w
-/*unknown_81_ff0b:*/ adc ($6e, X)
-/*unknown_81_ff0d:*/ rtl
+/*unknown_81_fefe:*/ .db $ff, $ff
 
-/*unknown_81_ff0e:*/ adc ($20, S), Y
-/*unknown_81_ff10:*/ jsr $2020.w
-/*unknown_81_ff13:*/ jsr $2020.w
-/*unknown_81_ff16:*/ jsr $2032.w
-/*unknown_81_ff19:*/ jsr $2020.w
-/*unknown_81_ff1c:*/ jsr $2020.w
-/*unknown_81_ff1f:*/ jsr $2020.w
-/*unknown_81_ff22:*/ eor [$65]
-/*unknown_81_ff24:*/ ror $696a.w
-/*unknown_81_ff27:*/ jsr $754b.w
-/*unknown_81_ff2a:*/ per $746f ; $739c.w
-/*unknown_81_ff2d:*/ adc ($20, X)
-/*unknown_81_ff2f:*/ jsr $2020.w
-/*unknown_81_ff32:*/ jsr $2020.w
-/*unknown_81_ff35:*/ jsr $2620.w
-/*unknown_81_ff38:*/ jsr $2020.w
-/*unknown_81_ff3b:*/ jsr $2020.w
-/*unknown_81_ff3e:*/ jsr $6120.w
-/*unknown_81_ff41:*/ jmp ($206c)
-/*unknown_81_ff44:*/ stz $65
-/*unknown_81_ff46:*/ per $6775 ; $66be.w
-/*unknown_81_ff49:*/ jsr $7473.w
-/*unknown_81_ff4c:*/ adc ($66, X)
-/*unknown_81_ff4e:*/ ror $2e
-/*unknown_81_ff50:*/ jsr $2020.w
-/*unknown_81_ff53:*/ jsr $2020.w
-/*unknown_81_ff56:*/ jsr $2020.w
-/*unknown_81_ff59:*/ jsr $2020.w
-/*unknown_81_ff5c:*/ jsr $2020.w
-/*unknown_81_ff5f:*/ jsr $ffff.w
+  .db " Special thanks "
+  .db "       2        "
+  .db "  Genji Kubota  "
+  .db "       &        "
+  .db "all debug staff."
+  .db "                "
