@@ -7742,51 +7742,20 @@
 /*unknown_a6_c450:*/ ora ($00, X)
 /*unknown_a6_c452:*/ cop $00
 /*unknown_a6_c454:*/ ora $0500.w
-/*unknown_a6_c457:*/ eor ($53), Y
-/*unknown_a6_c459:*/ eor $4c
-/*unknown_a6_c45b:*/ lsr $20
-/*unknown_a6_c45d:*/ mvp $53, $45
-/*unknown_a6_c460:*/ mvn $55, $52
-/*unknown_a6_c463:*/ eor $54, S
-/*unknown_a6_c465:*/ jsr $4553.w
-/*unknown_a6_c468:*/ eor ($55), Y
-/*unknown_a6_c46a:*/ eor $4e
-/*unknown_a6_c46c:*/ eor $45, S
-/*unknown_a6_c46e:*/ ora $4500.w
-/*unknown_a6_c471:*/ eor ($41), Y
-/*unknown_a6_c473:*/ eor $54, S
-/*unknown_a6_c475:*/ eor #$4156.w
-/*unknown_a6_c478:*/ mvn $44, $45
-/*unknown_a6_c47b:*/ jsr $5645.w
-/*unknown_a6_c47e:*/ eor ($43, X)
-/*unknown_a6_c480:*/ eor $41, X
-/*unknown_a6_c482:*/ mvn $0d, $45
-/*unknown_a6_c485:*/ brk $85
-/*unknown_a6_c487:*/ eor ($43), Y
-/*unknown_a6_c489:*/ eor $4e4f4c
-/*unknown_a6_c48d:*/ eor $4920.w, Y
-/*unknown_a6_c490:*/ eor $454d.w
-/*unknown_a6_c493:*/ mvp $41, $49
-/*unknown_a6_c496:*/ mvn $4c, $45
-/*unknown_a6_c499:*/ eor $0000.w, Y
+/*unknown_a6_c457:*/ .db $51
+  .db "SELF DESTRUCT SEQUENCE", $0d, $00
+  .db $45, $51
+  .db "ACTIVATED EVACUATE", $0d, $00
+  .db $85, $51
+  .db "COLONY IMMEDIATELY", $00
+  .db $00
 /*unknown_a6_c49c:*/ ora ($00, X)
 /*unknown_a6_c49e:*/ cop $00
 /*unknown_a6_c4a0:*/ ora $0500.w
-/*unknown_a6_c4a3:*/ eor #$4954.w
-/*unknown_a6_c4a6:*/ eor $2045.w
-/*unknown_a6_c4a9:*/ .db $42, $4f
-/*unknown_a6_c4ab:*/ eor $2042.w
-/*unknown_a6_c4ae:*/ eor ($45, S), Y
-/*unknown_a6_c4b0:*/ mvn $0d, $21
-/*unknown_a6_c4b3:*/ brk $45
-/*unknown_a6_c4b5:*/ eor #$5345.w
-/*unknown_a6_c4b8:*/ eor $41, S
-/*unknown_a6_c4ba:*/ bvc $45 ; $c501.w
-/*unknown_a6_c4bc:*/ jsr $4d49.w
-/*unknown_a6_c4bf:*/ eor $4445.w
-/*unknown_a6_c4c2:*/ eor #$5441.w
-/*unknown_a6_c4c5:*/ eor $4c
-/*unknown_a6_c4c7:*/ eor $0021.w, Y
+  .db $49
+/*unknown_a6_c4a3:*/ .db "TIME BOMB SET!", $0d, $00
+  .db $45, $49
+  .db "ESCAPE IMMEDIATELY!", $00
 /*unknown_a6_c4ca:*/ brk $00
 /*unknown_a6_c4cc:*/ cop $00
 /*unknown_a6_c4ce:*/ cpy #$00b0.w
