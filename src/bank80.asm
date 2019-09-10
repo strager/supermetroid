@@ -2,6 +2,7 @@
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/unknown_80_91a9.asm"
+.include "include/unknown_80_b0ff.asm"
 
 .bank ($80 - $80) slot $0
 .org $0
@@ -2284,8 +2285,8 @@ unknown_80_8ea2:
 ; parameter means.
 unknown_80_91a9:
   ; Below, read 'SS' as the value of S on procedure entry.
-  ; Below, read 'RA' as the 24-bit address of the last byte of the jsr instruction (i.e.
-  ; the return address).
+  ; Below, read 'RA' as the 24-bit address of the last byte of the jsr
+  ; instruction (i.e. the return address).
   ; On procedure entry, [SS] = RA
   php
   phb
@@ -5786,13 +5787,31 @@ das: .dw unknown_80_988b@size
 /*unknown_80_b0fd:*/ plp
 /*unknown_80_b0fe:*/ rtl
 
-/*unknown_80_b0ff:*/ lda $02, S
+; Call this procedure with the following sequence:
+;
+;   jsl unknown_80_b0ff
+; .dstruct instanceof unknown_80_b0ff@parameters values
+; unknown: .dl $7f5000
+; .ENDST
+; @resume:
+;
+; unknown_80_b0ff returns execution at @resume (i.e. after the
+; unknown_80_b0ff@parameters data).
+;
+; See the definition of unknown_80_b0ff@parameters for details on what each
+; parameter means.
+unknown_80_b0ff:
+  ; Below, read 'SS' as the value of S on procedure entry.
+  ; Below, read 'RA' as the 24-bit address of the last byte of the jsr
+  ; instruction (i.e. the return address).
+  ; On procedure entry, [SS] = RA
+  lda $02, S ; Address: SS + 2, pointing to the bank of RA.
 /*unknown_80_b101:*/ sta $45
-/*unknown_80_b103:*/ lda $01, S
+/*unknown_80_b103:*/ lda $01, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
 /*unknown_80_b105:*/ sta $44
 /*unknown_80_b107:*/ clc
-/*unknown_80_b108:*/ adc #$0003.w
-/*unknown_80_b10b:*/ sta $01, S
+/*unknown_80_b108:*/ adc #unknown_80_b0ff@parameters@size
+/*unknown_80_b10b:*/ sta $01, S ; Return to the instruction after @parameters.
 /*unknown_80_b10d:*/ ldy #$0001.w
 /*unknown_80_b110:*/ lda [$44], Y
 /*unknown_80_b112:*/ sta $4c

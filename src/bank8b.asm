@@ -1,6 +1,7 @@
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/unknown_80_91a9.asm"
+.include "include/unknown_80_b0ff.asm"
 
 .bank ($8b - $80) slot $0
 .org $0
@@ -2207,16 +2208,19 @@ unknown_8b_9146: php
 /*unknown_8b_9296:*/ sta $48
 /*unknown_8b_9298:*/ lda #$80d8.w
 /*unknown_8b_929b:*/ sta $47
-/*unknown_8b_929d:*/ jsr $80b0ff
-/*unknown_8b_92a1:*/ brk $50
-/*unknown_8b_92a3:*/ adc $a930e2, X
-/*unknown_8b_92a7:*/ brk $8d
-/*unknown_8b_92a9:*/ asl $21, X
-/*unknown_8b_92ab:*/ lda #$8d60.w
-/*unknown_8b_92ae:*/ ora [$21], Y
-/*unknown_8b_92b0:*/ lda #$8d80.w
-/*unknown_8b_92b3:*/ ora $21, X
-/*unknown_8b_92b5:*/ jsl unknown_80_91a9
+/*unknown_8b_929d:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f5000
+.ENDST
+
+  sep #$30
+  lda #$00
+  sta $2116.w
+  lda #$60
+  sta $2117.w
+  lda #$80
+  sta $2115.w
+  jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
