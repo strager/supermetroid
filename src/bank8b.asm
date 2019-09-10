@@ -3359,27 +3359,38 @@ das: .dw $4000
 /*unknown_8b_9ba9:*/ sta $48
 /*unknown_8b_9bab:*/ lda #$e000.w
 /*unknown_8b_9bae:*/ sta $47
-/*unknown_8b_9bb0:*/ jsr $80b0ff
-/*unknown_8b_9bb4:*/ brk $00
-/*unknown_8b_9bb6:*/ adc $9600a9, X
-/*unknown_8b_9bba:*/ sta $48
-/*unknown_8b_9bbc:*/ lda #$fc04.w
-/*unknown_8b_9bbf:*/ sta $47
-/*unknown_8b_9bc1:*/ jsr $80b0ff
-/*unknown_8b_9bc5:*/ brk $40
-/*unknown_8b_9bc7:*/ adc $9500a9, X
-/*unknown_8b_9bcb:*/ sta $48
-/*unknown_8b_9bcd:*/ lda #$80d8.w
-/*unknown_8b_9bd0:*/ sta $47
-/*unknown_8b_9bd2:*/ jsr $80b0ff
-/*unknown_8b_9bd6:*/ brk $50
-/*unknown_8b_9bd8:*/ adc $9500a9, X
-/*unknown_8b_9bdc:*/ sta $48
-/*unknown_8b_9bde:*/ lda #$a5e1.w
-/*unknown_8b_9be1:*/ sta $47
-/*unknown_8b_9be3:*/ jsr $80b0ff
-/*unknown_8b_9be7:*/ brk $90
-  .db $7f
+/*unknown_8b_9bb0:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$fc04.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f4000
+.ENDST
+
+  lda #$9500.w
+  sta $48
+  lda #$80d8.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f5000
+.ENDST
+
+  lda #$9500.w
+  sta $48
+  lda #$a5e1.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f9000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -4339,39 +4350,56 @@ das: .dw $4000
 /*unknown_8b_a3f1:*/ sta $48
 /*unknown_8b_a3f3:*/ lda #$f90e.w
 /*unknown_8b_a3f6:*/ sta $47
-/*unknown_8b_a3f8:*/ jsr $80b0ff
-/*unknown_8b_a3fc:*/ brk $00
-/*unknown_8b_a3fe:*/ adc $9500a9, X
-/*unknown_8b_a402:*/ sta $48
-/*unknown_8b_a404:*/ lda #$d089.w
-/*unknown_8b_a407:*/ sta $47
-/*unknown_8b_a409:*/ jsr $80b0ff
-/*unknown_8b_a40d:*/ brk $80
-/*unknown_8b_a40f:*/ adc $9700a9, X
-/*unknown_8b_a413:*/ sta $48
-/*unknown_8b_a415:*/ lda #$88cc.w
-/*unknown_8b_a418:*/ sta $47
-/*unknown_8b_a41a:*/ jsr $80b0ff
-/*unknown_8b_a41e:*/ brk $90
-/*unknown_8b_a420:*/ adc $9600a9, X
-/*unknown_8b_a424:*/ sta $48
-/*unknown_8b_a426:*/ lda #$ff14.w
-/*unknown_8b_a429:*/ sta $47
-/*unknown_8b_a42b:*/ jsr $80b0ff
-/*unknown_8b_a42f:*/ brk $98
-/*unknown_8b_a431:*/ adc $9500a9, X
-/*unknown_8b_a435:*/ sta $48
-/*unknown_8b_a437:*/ lda #$e4c2.w
-/*unknown_8b_a43a:*/ sta $47
-/*unknown_8b_a43c:*/ jsr $80b0ff
-/*unknown_8b_a440:*/ brk $b8
-/*unknown_8b_a442:*/ adc $9700a9, X
-/*unknown_8b_a446:*/ sta $48
-/*unknown_8b_a448:*/ lda #$8d12.w
-/*unknown_8b_a44b:*/ sta $47
-/*unknown_8b_a44d:*/ jsr $80b0ff
-/*unknown_8b_a451:*/ brk $e0
-  .db $7f
+/*unknown_8b_a3f8:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9500
+  sta $48
+  lda #$d089.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f8000
+.ENDST
+
+  lda #$9700
+  sta $48
+  lda #$88cc.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f9000
+.ENDST
+
+  lda #$9600
+  sta $48
+  lda #$ff14.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f9800
+.ENDST
+
+  lda #$9500
+  sta $48
+  lda #$e4c2.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fb800
+.ENDST
+
+  lda #$9700
+  sta $48
+  lda #$8d12.w
+  sta $47
+  jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fe000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -4497,16 +4525,18 @@ das: .dw $2400
 /*unknown_8b_a53b:*/ sta $48
 /*unknown_8b_a53d:*/ lda #$d713.w
 /*unknown_8b_a540:*/ sta $47
-/*unknown_8b_a542:*/ jsr $80b0ff
-/*unknown_8b_a546:*/ brk $a0
-/*unknown_8b_a548:*/ adc $834b22, X
-/*unknown_8b_a54c:*/ bra ($a9 - $100) ; $a4f7.w
-/*unknown_8b_a54e:*/ ora $00, S
-/*unknown_8b_a550:*/ sta $0723.w
-/*unknown_8b_a553:*/ sta $0725.w
-/*unknown_8b_a556:*/ jsr $888288
-/*unknown_8b_a55a:*/ jsr $8dc4d8
-/*unknown_8b_a55e:*/ jsr $8dc4c2
+/*unknown_8b_a542:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fa000
+.ENDST
+
+  jsr $80834b
+  lda #$0003.w
+  sta $0723
+  sta $0725
+  jsr $888288
+  jsr $8dc4d8
+  jsr $8dc4c2
 /*unknown_8b_a562:*/ stz $078d.w
 /*unknown_8b_a565:*/ stz $0911.w
 /*unknown_8b_a568:*/ stz $0915.w
@@ -7033,21 +7063,29 @@ das: .dw $600
 /*unknown_8b_bcbf:*/ sta $48
 /*unknown_8b_bcc1:*/ lda #$a82f.w
 /*unknown_8b_bcc4:*/ sta $47
-/*unknown_8b_bcc6:*/ jsr $80b0ff
-/*unknown_8b_bcca:*/ brk $00
-/*unknown_8b_bccc:*/ adc $9600a9, X
-/*unknown_8b_bcd0:*/ sta $48
-/*unknown_8b_bcd2:*/ lda #$fe69.w
-/*unknown_8b_bcd5:*/ sta $47
-/*unknown_8b_bcd7:*/ jsr $80b0ff
-/*unknown_8b_bcdb:*/ brk $40
-/*unknown_8b_bcdd:*/ adc $9600a9, X
-/*unknown_8b_bce1:*/ sta $48
-/*unknown_8b_bce3:*/ lda #$d10a.w
-/*unknown_8b_bce6:*/ sta $47
-/*unknown_8b_bce8:*/ jsr $80b0ff
-/*unknown_8b_bcec:*/ brk $50
-  .db $7f
+/*unknown_8b_bcc6:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$fe69.w
+  sta $47
+/*unknown_8b_bcd7:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f4000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$d10a.w
+  sta $47
+/*unknown_8b_bce8:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f5000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -7540,21 +7578,29 @@ das: .dw $4000
 /*unknown_8b_c157:*/ sta $48
 /*unknown_8b_c159:*/ lda #$a82f.w
 /*unknown_8b_c15c:*/ sta $47
-/*unknown_8b_c15e:*/ jsr $80b0ff
-/*unknown_8b_c162:*/ brk $00
-/*unknown_8b_c164:*/ adc $9600a9, X
-/*unknown_8b_c168:*/ sta $48
-/*unknown_8b_c16a:*/ lda #$fe69.w
-/*unknown_8b_c16d:*/ sta $47
-/*unknown_8b_c16f:*/ jsr $80b0ff
-/*unknown_8b_c173:*/ brk $40
-/*unknown_8b_c175:*/ adc $9600a9, X
-/*unknown_8b_c179:*/ sta $48
-/*unknown_8b_c17b:*/ lda #$d10a.w
-/*unknown_8b_c17e:*/ sta $47
-/*unknown_8b_c180:*/ jsr $80b0ff
-/*unknown_8b_c184:*/ brk $50
-  .db $7f
+/*unknown_8b_c15e:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$fe69.w
+  sta $47
+/*unknown_8b_c16f:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f4000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$d10a.w
+  sta $47
+/*unknown_8b_c180:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f5000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -8124,15 +8170,20 @@ das: .dw $1a00
 /*unknown_8b_c6b0:*/ sta $48
 /*unknown_8b_c6b2:*/ lda #$8adb.w
 /*unknown_8b_c6b5:*/ sta $47
-/*unknown_8b_c6b7:*/ jsr $80b0ff
-/*unknown_8b_c6bb:*/ brk $90
-/*unknown_8b_c6bd:*/ adc $9600a9, X
-/*unknown_8b_c6c1:*/ sta $48
-/*unknown_8b_c6c3:*/ lda #$ec76.w
-/*unknown_8b_c6c6:*/ sta $47
-/*unknown_8b_c6c8:*/ jsr $80b0ff
-/*unknown_8b_c6cc:*/ brk $50
-  .db $7f
+/*unknown_8b_c6b7:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f9000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$ec76.w
+  sta $47
+/*unknown_8b_c6c8:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f5000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -9777,21 +9828,29 @@ das: .dw $4000
 /*unknown_8b_d4b7:*/ sta $48
 /*unknown_8b_d4b9:*/ lda #$bcd6.w
 /*unknown_8b_d4bc:*/ sta $47
-/*unknown_8b_d4be:*/ jsr $80b0ff
-/*unknown_8b_d4c2:*/ brk $00
-/*unknown_8b_d4c4:*/ adc $9900a9, X
-/*unknown_8b_d4c8:*/ sta $48
-/*unknown_8b_d4ca:*/ lda #$a56f.w
-/*unknown_8b_d4cd:*/ sta $47
-/*unknown_8b_d4cf:*/ jsr $80b0ff
-/*unknown_8b_d4d3:*/ brk $40
-/*unknown_8b_d4d5:*/ adc $9900a9, X
-/*unknown_8b_d4d9:*/ sta $48
-/*unknown_8b_d4db:*/ lda #$d17e.w
-/*unknown_8b_d4de:*/ sta $47
-/*unknown_8b_d4e0:*/ jsr $80b0ff
-/*unknown_8b_d4e4:*/ brk $80
-  .db $7f
+/*unknown_8b_d4be:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$a56f.w
+  sta $47
+/*unknown_8b_d4cf:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f4000
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$d17e.w
+  sta $47
+/*unknown_8b_d4e0:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f8000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -9866,22 +9925,31 @@ das: .dw $4000
 /*unknown_8b_d56e:*/ sta $48
 /*unknown_8b_d570:*/ lda #$8304.w
 /*unknown_8b_d573:*/ sta $47
-/*unknown_8b_d575:*/ jsr $80b0ff
-/*unknown_8b_d579:*/ brk $80
-/*unknown_8b_d57b:*/ adc $9500a9, X
-/*unknown_8b_d57f:*/ sta $48
-/*unknown_8b_d581:*/ lda #$a82f.w
-/*unknown_8b_d584:*/ sta $47
-/*unknown_8b_d586:*/ jsr $80b0ff
-/*unknown_8b_d58a:*/ brk $00
-/*unknown_8b_d58c:*/ adc $9600a9, X
-/*unknown_8b_d590:*/ sta $48
-/*unknown_8b_d592:*/ lda #$fe69.w
-/*unknown_8b_d595:*/ sta $47
-/*unknown_8b_d597:*/ jsr $80b0ff
-/*unknown_8b_d59b:*/ brk $40
-/*unknown_8b_d59d:*/ adc $0300a2, X
-/*unknown_8b_d5a1:*/ lda #$8c8c.w
+/*unknown_8b_d575:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f8000
+.ENDST
+
+  lda #$9500.w
+  sta $48
+  lda #$a82f.w
+  sta $47
+/*unknown_8b_d586:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9600.w
+  sta $48
+  lda #$fe69.w
+  sta $47
+/*unknown_8b_d597:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f4000
+.ENDST
+
+  ldx #$0300
+  lda #$8c8c.w
 /*unknown_8b_d5a4:*/ sta $7f4000, X
 /*unknown_8b_d5a8:*/ inx
 /*unknown_8b_d5a9:*/ inx
@@ -9891,49 +9959,68 @@ das: .dw $4000
 /*unknown_8b_d5b2:*/ sta $48
 /*unknown_8b_d5b4:*/ lda #$b5c1.w
 /*unknown_8b_d5b7:*/ sta $47
-/*unknown_8b_d5b9:*/ jsr $80b0ff
-/*unknown_8b_d5bd:*/ brk $e0
-/*unknown_8b_d5bf:*/ adc $9800a9, X
-/*unknown_8b_d5c3:*/ sta $48
-/*unknown_8b_d5c5:*/ lda #$b857.w
-/*unknown_8b_d5c8:*/ sta $47
-/*unknown_8b_d5ca:*/ jsr $80b0ff
-/*unknown_8b_d5ce:*/ brk $e8
-/*unknown_8b_d5d0:*/ adc $9800a9, X
-/*unknown_8b_d5d4:*/ sta $48
-/*unknown_8b_d5d6:*/ lda #$baed.w
-/*unknown_8b_d5d9:*/ sta $47
-/*unknown_8b_d5db:*/ jsr $80b0ff
-/*unknown_8b_d5df:*/ brk $f0
-/*unknown_8b_d5e1:*/ adc $9800a9, X
-/*unknown_8b_d5e5:*/ sta $48
-/*unknown_8b_d5e7:*/ lda #$bccd.w
-/*unknown_8b_d5ea:*/ sta $47
-/*unknown_8b_d5ec:*/ jsr $80b0ff
-/*unknown_8b_d5f0:*/ brk $f8
-/*unknown_8b_d5f2:*/ adc $9700a9, X
-/*unknown_8b_d5f6:*/ sta $48
-/*unknown_8b_d5f8:*/ lda #$e7de.w
-/*unknown_8b_d5fb:*/ sta $47
-/*unknown_8b_d5fd:*/ jsr $80b0ff
-/*unknown_8b_d601:*/ brk $a0
-/*unknown_8b_d603:*/ ror $00a9.w, X
-/*unknown_8b_d606:*/ sta $4885.w, Y
-/*unknown_8b_d609:*/ lda #$d65b.w
-/*unknown_8b_d60c:*/ sta $47
-/*unknown_8b_d60e:*/ jsr $80b0ff
-/*unknown_8b_d612:*/ brk $20
-/*unknown_8b_d614:*/ ror $00a9.w, X
-/*unknown_8b_d617:*/ sta $4885.w, Y
-/*unknown_8b_d61a:*/ lda #$d932.w
-/*unknown_8b_d61d:*/ sta $47
-/*unknown_8b_d61f:*/ jsr $80b0ff
-/*unknown_8b_d623:*/ brk $60
-/*unknown_8b_d625:*/ ror $00a9.w, X
-/*unknown_8b_d628:*/ ora ($8d, X)
-/*unknown_8b_d62a:*/ tcs
-/*unknown_8b_d62b:*/ and ($85, X)
-/*unknown_8b_d62d:*/ sei
+/*unknown_8b_d5b9:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fe000
+.ENDST
+
+  lda #$9800.w
+  sta $48
+  lda #$b857.w
+  sta $47
+/*unknown_8b_d5ca:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fe800
+.ENDST
+
+  lda #$9800.w
+  sta $48
+  lda #$baed.w
+  sta $47
+/*unknown_8b_d5db:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7ff000
+.ENDST
+
+  lda #$9800.w
+  sta $48
+  lda #$bccd.w
+  sta $47
+/*unknown_8b_d5ec:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7ff800
+.ENDST
+
+  lda #$9700.w
+  sta $48
+  lda #$e7de.w
+  sta $47
+/*unknown_8b_d5fd:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7ea000
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$d65b.w
+  sta $47
+/*unknown_8b_d60e:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e2000
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$d932.w
+  sta $47
+/*unknown_8b_d61f:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e6000
+.ENDST
+
+  lda #$0100.w
+  sta $211b
+  sta $78
 /*unknown_8b_d62e:*/ stz $211c.w
 /*unknown_8b_d631:*/ stz $7a
 /*unknown_8b_d633:*/ stz $211d.w
@@ -10072,9 +10159,11 @@ das: .dw $4000
 /*unknown_8b_d778:*/ sta $48
 /*unknown_8b_d77a:*/ lda #$ed4f.w
 /*unknown_8b_d77d:*/ sta $47
-/*unknown_8b_d77f:*/ jsr $80b0ff
-/*unknown_8b_d783:*/ brk $20
-  .db $7e
+/*unknown_8b_d77f:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e2000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -10188,9 +10277,11 @@ das: .dw $4000
 /*unknown_8b_d87e:*/ sta $48
 /*unknown_8b_d880:*/ lda #$9101.w
 /*unknown_8b_d883:*/ sta $47
-/*unknown_8b_d885:*/ jsr $80b0ff
-/*unknown_8b_d889:*/ brk $60
-  .db $7e
+/*unknown_8b_d885:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e6000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -10869,53 +10960,74 @@ das: .dw $1000
 /*unknown_8b_de9f:*/ sta $48
 /*unknown_8b_dea1:*/ lda #$9803.w
 /*unknown_8b_dea4:*/ sta $47
-/*unknown_8b_dea6:*/ jsr $80b0ff
-/*unknown_8b_deaa:*/ brk $00
-/*unknown_8b_deac:*/ adc $9700a9, X
-/*unknown_8b_deb0:*/ sta $48
-/*unknown_8b_deb2:*/ lda #$b957.w
-/*unknown_8b_deb5:*/ sta $47
-/*unknown_8b_deb7:*/ jsr $80b0ff
-/*unknown_8b_debb:*/ brk $20
-/*unknown_8b_debd:*/ ror $00a9.w, X
-/*unknown_8b_dec0:*/ sta [$85], Y
-/*unknown_8b_dec2:*/ pha
-/*unknown_8b_dec3:*/ lda #$d7fc.w
-/*unknown_8b_dec6:*/ sta $47
-/*unknown_8b_dec8:*/ jsr $80b0ff
-/*unknown_8b_decc:*/ brk $60
-/*unknown_8b_dece:*/ ror $00a9.w, X
-/*unknown_8b_ded1:*/ sta [$85], Y
-/*unknown_8b_ded3:*/ pha
-/*unknown_8b_ded4:*/ lda #$e7de.w
-/*unknown_8b_ded7:*/ sta $47
-/*unknown_8b_ded9:*/ jsr $80b0ff
-/*unknown_8b_dedd:*/ brk $c0
-/*unknown_8b_dedf:*/ adc $9700a9, X
-/*unknown_8b_dee3:*/ sta $48
-/*unknown_8b_dee5:*/ lda #$96f4.w
-/*unknown_8b_dee8:*/ sta $47
-/*unknown_8b_deea:*/ jsr $80b0ff
-/*unknown_8b_deee:*/ brk $e0
-/*unknown_8b_def0:*/ adc $9700a9, X
-/*unknown_8b_def4:*/ sta $48
-/*unknown_8b_def6:*/ lda #$f987.w
-/*unknown_8b_def9:*/ sta $47
-/*unknown_8b_defb:*/ jsr $80b0ff
-/*unknown_8b_deff:*/ brk $40
-/*unknown_8b_df01:*/ adc $9900a9, X
-/*unknown_8b_df05:*/ sta $48
-/*unknown_8b_df07:*/ lda #$da9f.w
-/*unknown_8b_df0a:*/ sta $47
-/*unknown_8b_df0c:*/ jsr $80b0ff
-/*unknown_8b_df10:*/ brk $e8
-/*unknown_8b_df12:*/ adc $9900a9, X
-/*unknown_8b_df16:*/ sta $48
-/*unknown_8b_df18:*/ lda #$dab1.w
-/*unknown_8b_df1b:*/ sta $47
-/*unknown_8b_df1d:*/ jsr $80b0ff
-/*unknown_8b_df21:*/ brk $f0
-  .db $7f
+/*unknown_8b_dea6:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$9700.w
+  sta $48
+  lda #$b957.w
+  sta $47
+/*unknown_8b_deb7:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e2000
+.ENDST
+
+  lda #$9700.w
+  sta $48
+  lda #$d7fc.w
+  sta $47
+/*unknown_8b_dec8:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e6000
+.ENDST
+
+  lda #$9700.w
+  sta $48
+  lda #$e7de.w
+  sta $47
+/*unknown_8b_ded9:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fc000
+.ENDST
+
+  lda #$9700.w
+  sta $48
+  lda #$96f4.w
+  sta $47
+/*unknown_8b_deea:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fe000
+.ENDST
+
+  lda #$9700.w
+  sta $48
+  lda #$f987.w
+  sta $47
+/*unknown_8b_defb:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f4000
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$da9f.w
+  sta $47
+/*unknown_8b_df0c:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7fe800
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$dab1.w
+  sta $47
+/*unknown_8b_df1d:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7ff000
+.ENDST
+
   sep #$30
   lda #$00
   sta $2116.w
@@ -11024,18 +11136,23 @@ das: .dw $800
 /*unknown_8b_dfeb:*/ sta $48
 /*unknown_8b_dfed:*/ lda #$e089.w
 /*unknown_8b_dff0:*/ sta $47
-/*unknown_8b_dff2:*/ jsr $80b0ff
-/*unknown_8b_dff6:*/ brk $60
-/*unknown_8b_dff8:*/ ror $00a9.w, X
-/*unknown_8b_dffb:*/ sta $4885.w, Y
-/*unknown_8b_dffe:*/ lda #$ecc4.w
-/*unknown_8b_e001:*/ sta $47
-/*unknown_8b_e003:*/ jsr $80b0ff
-/*unknown_8b_e007:*/ brk $80
-/*unknown_8b_e009:*/ ror $e0ad.w, X
-/*unknown_8b_e00c:*/ ora #$03c9.w
-/*unknown_8b_e00f:*/ brk $10
-  .db $24
+/*unknown_8b_dff2:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e6000
+.ENDST
+
+  lda #$9900.w
+  sta $48
+  lda #$ecc4.w
+  sta $47
+/*unknown_8b_e003:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7e8000
+.ENDST
+
+  lda $09e0.w
+  cmp #$0003.w
+  bpl $24
   sep #$30
   lda #$00
   sta $2116.w
@@ -11116,11 +11233,14 @@ das: .dw $4000
 /*unknown_8b_e0c0:*/ sta $48
 /*unknown_8b_e0c2:*/ lda #$eeff.w
 /*unknown_8b_e0c5:*/ sta $47
-/*unknown_8b_e0c7:*/ jsr $80b0ff
-/*unknown_8b_e0cb:*/ brk $00
-/*unknown_8b_e0cd:*/ adc $007fa9.l, X
-/*unknown_8b_e0d1:*/ jsr $8b95ce
-/*unknown_8b_e0d5:*/ lda #$007f.w
+/*unknown_8b_e0c7:*/ jsl unknown_80_b0ff
+.dstruct instanceof unknown_80_b0ff@parameters values
+unknown: .dl $7f0000
+.ENDST
+
+  lda #$007f.w
+  jsr $8b95ce
+  lda #$007f.w
 /*unknown_8b_e0d8:*/ jsr $98f9.w
 /*unknown_8b_e0db:*/ jsr $98e3.w
 /*unknown_8b_e0de:*/ lda #$0003.w
