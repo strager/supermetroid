@@ -53,7 +53,14 @@ var_reserve_tank_timer: dw ; $7e0757
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c0) export
-var_unknown_09c0: dw ; $7e09c0
+var_reserve_tank_configuration: dw ; $7e09c0
+.ende
+.define reserve_tank_configuration_automatic $0001.w
+.export reserve_tank_configuration_automatic
+.define reserve_tank_configuration_manual $0002.w
+.export reserve_tank_configuration_manual
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $09c2) export
 var_unknown_09c2: dw ; $7e09c2
 var_unknown_09c4: dw ; $7e09c4
 var_unknown_09c6: ds $e ; $7e09c6

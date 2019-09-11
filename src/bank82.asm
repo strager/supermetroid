@@ -5435,8 +5435,8 @@ unknown_82_ac8b:
   and #$ff00.w
   cmp #$0100.w
   beq @unknown_82_ace7
-  lda var_unknown_09c0.w
-  cmp #$0001.w
+  lda var_reserve_tank_configuration.w
+  cmp #reserve_tank_configuration_automatic
   beq @unknown_82_ace7
   lda var_pause_weapons_selected_list.w
   clc
@@ -5657,11 +5657,11 @@ unknown_82_ae8b:
   beq @end
   lda #$0037.w
   jsl unknown_80_9049
-  lda var_unknown_09c0.w
-  cmp #$0001.w
+  lda var_reserve_tank_configuration.w
+  cmp #reserve_tank_configuration_automatic
   bne @unknown_82_aed3
-  lda #$0002.w
-  sta var_unknown_09c0.w
+  lda #reserve_tank_configuration_manual
+  sta var_reserve_tank_configuration.w
   jsr unknown_82_af33
   php
   rep #$30
@@ -5680,8 +5680,8 @@ unknown_82_ae8b:
   plp
   bra @end
 @unknown_82_aed3:
-  lda #$0001.w
-  sta var_unknown_09c0.w
+  lda #reserve_tank_configuration_automatic
+  sta var_reserve_tank_configuration.w
   jsr unknown_82_aefd
   php
   rep #$30
