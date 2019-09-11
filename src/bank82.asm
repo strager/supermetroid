@@ -5725,52 +5725,52 @@ unknown_82_af33:
 unknown_82_af4f:
   php
   rep #$30
-  lda $0757.w
+  lda var_unknown_0757.w
   bne @unknown_82_af6b
   lda var_unknown_8f
   bit #IO_JOY_A
   beq @unknown_82_afbc
-  lda $09d6.w
+  lda var_unknown_09d6.w
   clc
   adc #$0007.w
   and #$fff8.w
-  sta $0757.w
+  sta var_unknown_0757.w
 @unknown_82_af6b:
-  lda $0757.w
+  lda var_unknown_0757.w
   dec A
-  sta $0757.w
+  sta var_unknown_0757.w
   and #$0007.w
   cmp #$0007.w
   bne @unknown_82_af81
   lda #$002d.w
   jsl unknown_80_914d
 @unknown_82_af81:
-  lda $09c2.w
+  lda var_unknown_09c2.w
   clc
   adc $bf04.w
-  sta $09c2.w
-  cmp $09c4.w
+  sta var_unknown_09c2.w
+  cmp var_unknown_09c4.w
   bmi @unknown_82_af98
-  lda $09c4.w
-  sta $09c2.w
+  lda var_unknown_09c4.w
+  sta var_unknown_09c2.w
   bra @unknown_82_afb0
 @unknown_82_af98:
-  lda $09d6.w
+  lda var_unknown_09d6.w
   sec
-  sbc $bf04.w
-  sta $09d6.w
+  sbc unknown_82_bf04.w
+  sta var_unknown_09d6.w
   beq @unknown_82_afb0
 @unknown_82_afa4:
   bpl @unknown_82_afbc
-  lda $09c2.w
+  lda var_unknown_09c2.w
   clc
-  adc $09d6.w
-  sta $09c2.w
+  adc var_unknown_09d6.w
+  sta var_unknown_09c2.w
 @unknown_82_afb0:
-  stz $09d6.w
-  stz $0757.w
+  stz var_unknown_09d6.w
+  stz var_unknown_0757.w
   jsr unknown_82_ae46
-  stz $0755.w
+  stz var_unknown_0755.w
 @unknown_82_afbc:
   plp
   rts
@@ -7701,7 +7701,7 @@ unknown_82_bdbb: sbc ($06, X)
 /*unknown_82_befe:*/ cmp #$07
 /*unknown_82_bf00:*/ bmi @unknown_82_bec6
 @unknown_82_bf02: bra @unknown_82_bf02
-/*unknown_82_bf04:*/ ora ($00, X)
+unknown_82_bf04: ora ($00, X)
 /*unknown_82_bf06:*/ ora $1a25.w, Y
 /*unknown_82_bf09:*/ and $1b
 /*unknown_82_bf0b:*/ and $46
