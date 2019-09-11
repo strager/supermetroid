@@ -47,8 +47,9 @@ var_unknown_a5: dw ; $7e00a5
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0755) export
-var_unknown_0755: dw ; $7e0755
-var_unknown_0757: dw ; $7e0757
+var_pause_weapons_selected_list: db ; $7e0755
+var_pause_weapons_selected_item: db ; $7e0756
+var_reserve_tank_timer: dw ; $7e0757
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c0) export

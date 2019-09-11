@@ -5371,7 +5371,7 @@ das: .dw $800
 unknown_82_ac4f:
   php
   rep #$30
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$00ff.w
   asl A
   tax
@@ -5391,7 +5391,7 @@ unknown_82_ac68:
 unknown_82_ac70:
   php
   rep #$30
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -5409,7 +5409,7 @@ unknown_82_ac87:
 unknown_82_ac8b:
   php
   rep #$30
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sta0 var_unknown_12
   lda var_new_pressed_buttons
   bit #IO_JOY_RIGHT
@@ -5431,17 +5431,17 @@ unknown_82_ac8b:
   bne @unknown_82_acef
   bit #IO_JOY_DOWN
   beq @unknown_82_acb0
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$ff00.w
   cmp #$0100.w
   beq @unknown_82_ace7
   lda var_unknown_09c0.w
   cmp #$0001.w
   beq @unknown_82_ace7
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   clc
   adc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   lda var_unknown_09d6.w
   beq @unknown_82_ace7
   lda #$0037.w
@@ -5452,15 +5452,15 @@ unknown_82_ac8b:
   jsr unknown_82_b456
   bra @unknown_82_ad08
 @unknown_82_acef:
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$ff00.w
   beq @unknown_82_ad08
   lda #$0037.w
   jsl unknown_80_9049
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sec
   sbc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
 @unknown_82_ad08:
   plp
   rts
@@ -5733,7 +5733,7 @@ unknown_82_af33:
 unknown_82_af4f:
   php
   rep #$30
-  lda var_unknown_0757.w
+  lda var_reserve_tank_timer.w
   bne @unknown_82_af6b
   lda var_new_pressed_buttons
   bit #IO_JOY_A
@@ -5742,11 +5742,11 @@ unknown_82_af4f:
   clc
   adc #$0007.w
   and #$fff8.w
-  sta var_unknown_0757.w
+  sta var_reserve_tank_timer.w
 @unknown_82_af6b:
-  lda var_unknown_0757.w
+  lda var_reserve_tank_timer.w
   dec A
-  sta var_unknown_0757.w
+  sta var_reserve_tank_timer.w
   and #$0007.w
   cmp #$0007.w
   bne @unknown_82_af81
@@ -5776,9 +5776,9 @@ unknown_82_af4f:
   sta var_unknown_09c2.w
 @unknown_82_afb0:
   stz var_unknown_09d6.w
-  stz var_unknown_0757.w
+  stz var_reserve_tank_timer.w
   jsr unknown_82_ae46
-  stz var_unknown_0755.w
+  stz var_pause_weapons_selected_list.w
 @unknown_82_afbc:
   plp
   rts
@@ -5800,7 +5800,7 @@ unknown_82_afbe: php
 unknown_82_afdb:
   php
   rep #$30
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sta0 var_unknown_12
   lda var_new_pressed_buttons
   bit #IO_JOY_RIGHT
@@ -5823,13 +5823,13 @@ unknown_82_afdb:
   bne @unknown_82_b046
   bit #IO_JOY_UP
   beq @unknown_82_b066
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$ff00.w
   beq @unknown_82_b034
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sec
   sbc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -5843,18 +5843,18 @@ unknown_82_afdb:
   cmp #$0000.w
   bne @unknown_82_b066
   lda var_unknown_12
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   bra @unknown_82_b066
 @unknown_82_b046:
   lda var_unknown_0a76.w
   bne @unknown_82_b066
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   cmp #$0401.w
   beq @unknown_82_b066
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   clc
   adc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -5914,7 +5914,7 @@ unknown_82_b0c2: php
 unknown_82_b0d2:
   php
   rep #$30
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sta0 var_unknown_12
   lda var_new_pressed_buttons
   bit #IO_JOY_LEFT
@@ -5926,7 +5926,7 @@ unknown_82_b0d2:
   cmp #$0000.w
   bne @unknown_82_b14e
   lda var_unknown_12
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
 @unknown_82_b0f6:
   ldx #$0000.w
   jsr unknown_82_b456
@@ -5936,14 +5936,14 @@ unknown_82_b0d2:
   bne @unknown_82_b133
   bit #IO_JOY_DOWN
   beq @unknown_82_b14e
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$ff00.w
   cmp #$0500.w
   beq @unknown_82_b12b
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   clc
   adc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -5956,13 +5956,13 @@ unknown_82_b0d2:
   jsr unknown_82_b511
   bra @unknown_82_b14e
 @unknown_82_b133:
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$ff00.w
   beq @unknown_82_b14e
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sec
   sbc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -5984,7 +5984,7 @@ unknown_82_b150: php
 unknown_82_b160:
   php
   rep #$30
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sta var_unknown_12
   lda var_new_pressed_buttons
   bit #IO_JOY_LEFT
@@ -6001,20 +6001,20 @@ unknown_82_b160:
   cmp #$0000.w
   bne @unknown_82_b1de
   lda var_unknown_12
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   bra @unknown_82_b1de
 @unknown_82_b191:
   bit #IO_JOY_DOWN
   bne @unknown_82_b1c3
   bit #IO_JOY_UP
   beq @unknown_82_b1de
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$ff00.w
   beq @unknown_82_b1bb
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   sec
   sbc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -6027,13 +6027,13 @@ unknown_82_b160:
   jsr unknown_82_b4e6
   bra @unknown_82_b1de
 @unknown_82_b1c3:
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   cmp #$0203.w
   beq @unknown_82_b1de
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   clc
   adc #$0100.w
-  sta var_unknown_0755.w
+  sta var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
@@ -6515,12 +6515,12 @@ unknown_82_b568:
 @unknown_82_b574:
   lda #$0038.w
   jsl unknown_80_9049
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   and #$00ff.w
   asl A
   tax
   sta0 var_unknown_1a
-  lda var_unknown_0755.w
+  lda var_pause_weapons_selected_list.w
   xba
   and #$00ff.w
   asl A
