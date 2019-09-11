@@ -1,3 +1,4 @@
+.include "include/asm.asm"
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/unknown_80_91a9.asm"
@@ -5792,8 +5793,8 @@ unknown_82_af4f:
 unknown_82_afdb:
   php
   rep #$30
-  lda $0755.w
-  sta $12
+  lda var_unknown_0755.w
+  sta0 var_unknown_12
   lda var_unknown_8f
   bit #IO_JOY_RIGHT
   beq @unknown_82_b00a
@@ -5815,13 +5816,13 @@ unknown_82_afdb:
   bne @unknown_82_b046
   bit #IO_JOY_UP
   beq @unknown_82_b066
-  lda $0755.w
+  lda var_unknown_0755.w
   and #$ff00.w
   beq @unknown_82_b034
-  lda $0755.w
+  lda var_unknown_0755.w
   sec
   sbc #$0100.w
-  sta $0755.w
+  sta var_unknown_0755.w
   xba
   and #$00ff.w
   asl A
@@ -5834,19 +5835,19 @@ unknown_82_afdb:
   jsr unknown_82_b43f
   cmp #$0000.w
   bne @unknown_82_b066
-  lda $12
-  sta $0755.w
+  lda var_unknown_12
+  sta var_unknown_0755.w
   bra @unknown_82_b066
 @unknown_82_b046:
-  lda $0a76.w
+  lda var_unknown_0a76.w
   bne @unknown_82_b066
-  lda $0755.w
+  lda var_unknown_0755.w
   cmp #$0401.w
   beq @unknown_82_b066
-  lda $0755.w
+  lda var_unknown_0755.w
   clc
   adc #$0100.w
-  sta $0755.w
+  sta var_unknown_0755.w
   xba
   and #$00ff.w
   asl A
