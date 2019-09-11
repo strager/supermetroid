@@ -57,8 +57,40 @@ var_reserve_tank_timer: dw ; $7e0757
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0998) export
-var_unknown_0998: dw ; $7e0998
+var_game_state: db ; $7e0998
 .ende
+.define game_state_unknown_00 $00.b
+.export game_state_unknown_00
+.define game_state_unknown_02 $02.b
+.export game_state_unknown_02
+.define game_state_title_screen $01.b
+.export game_state_title_screen
+.define game_state_menu $04.b
+.export game_state_menu
+.define game_state_loading_map $05.b
+.export game_state_loading_map
+.define game_state_saving $07.b
+.export game_state_saving
+.define game_state_playing $08.b
+.export game_state_playing
+.define game_state_unknown_13 $13.b
+.export game_state_unknown_13
+.define game_state_unknown_1b $1b.b
+.export game_state_unknown_1b
+.define game_state_unknown_1e $1e.b
+.export game_state_unknown_1e
+.define game_state_unknown_19 $19.b
+.export game_state_unknown_19
+.define game_state_unknown_22 $22.b
+.export game_state_unknown_22
+.define game_state_game_over $24.b
+.export game_state_game_over
+.define game_state_unknown_25 $25.b
+.export game_state_unknown_25
+.define game_state_unknown_27 $27.b
+.export game_state_unknown_27
+.define game_state_unknown_28 $28.b
+.export game_state_unknown_28
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c0) export
 var_reserve_tank_configuration: dw ; $7e09c0

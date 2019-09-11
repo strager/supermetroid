@@ -9,8 +9,8 @@
 
 /*unknown_82_8000:*/ php
 /*unknown_82_8001:*/ rep #$30
-/*unknown_82_8003:*/ lda $0998.w
-/*unknown_82_8006:*/ cmp #$0028.w
+/*unknown_82_8003:*/ lda var_game_state.w
+/*unknown_82_8006:*/ cmp #game_state_unknown_28
 /*unknown_82_8009:*/ bne @unknown_82_801d
 /*unknown_82_800b:*/ jsr unknown_82_819b
 /*unknown_82_800e:*/ jsr unknown_82_82e2
@@ -65,8 +65,8 @@
 /*unknown_82_809c:*/ jsr $888288
 /*unknown_82_80a0:*/ jsr $878000
 /*unknown_82_80a4:*/ jsr $908e0f
-/*unknown_82_80a8:*/ lda $0998.w
-/*unknown_82_80ab:*/ cmp #$0028.w
+/*unknown_82_80a8:*/ lda var_game_state.w
+/*unknown_82_80ab:*/ cmp #game_state_unknown_28
 /*unknown_82_80ae:*/ bne @unknown_82_80b3
 /*unknown_82_80b0:*/ jmp @unknown_82_8146
 @unknown_82_80b3: lda $7ed914
@@ -80,7 +80,7 @@
 /*unknown_82_80cd:*/ jsr $808338
 /*unknown_82_80d1:*/ dec $0da0.w
 /*unknown_82_80d4:*/ bpl @unknown_82_80c9
-/*unknown_82_80d6:*/ inc $0998.w
+/*unknown_82_80d6:*/ inc var_game_state.w
 /*unknown_82_80d9:*/ php
 /*unknown_82_80da:*/ rep #$30
 /*unknown_82_80dc:*/ ldy #$0200.w
@@ -102,8 +102,8 @@
 /*unknown_82_80fd:*/ jsr $808338
 /*unknown_82_8101:*/ dec $0da0.w
 /*unknown_82_8104:*/ bpl @unknown_82_80f9
-/*unknown_82_8106:*/ lda #$0007.w
-/*unknown_82_8109:*/ sta $0998.w
+/*unknown_82_8106:*/ lda #game_state_saving
+/*unknown_82_8109:*/ sta var_game_state.w
 /*unknown_82_810c:*/ php
 /*unknown_82_810d:*/ rep #$30
 /*unknown_82_810f:*/ ldy #$0200.w
@@ -157,7 +157,7 @@
 /*unknown_82_8176:*/ sta $12
 /*unknown_82_8178:*/ ldx #$0000.w
 /*unknown_82_817b:*/ jsr ($0012.w, X)
-/*unknown_82_817e:*/ inc $0998.w
+/*unknown_82_817e:*/ inc var_game_state.w
 /*unknown_82_8181:*/ php
 /*unknown_82_8182:*/ rep #$30
 /*unknown_82_8184:*/ ldy #$0200.w
@@ -397,7 +397,7 @@ das: .dw $800
 /*unknown_82_8376:*/ dec $0aa0.w
 /*unknown_82_8379:*/ beq @unknown_82_837d
 /*unknown_82_837b:*/ bpl @unknown_82_8386
-@unknown_82_837d: inc $0998.w
+@unknown_82_837d: inc var_game_state.w
 /*unknown_82_8380:*/ stz $0723.w
 /*unknown_82_8383:*/ stz $0725.w
 @unknown_82_8386: plp
@@ -437,9 +437,9 @@ das: .dw $800
 /*unknown_82_83ce:*/ rep #$20
 /*unknown_82_83d0:*/ stz $0723.w
 /*unknown_82_83d3:*/ stz $0725.w
-/*unknown_82_83d6:*/ lda #$0022.w
+/*unknown_82_83d6:*/ lda #game_state_unknown_22
 /*unknown_82_83d9:*/ sta $7ed914
-/*unknown_82_83dd:*/ sta $0998.w
+/*unknown_82_83dd:*/ sta var_game_state.w
 /*unknown_82_83e0:*/ lda $0952.w
 /*unknown_82_83e3:*/ jsr $818000
 /*unknown_82_83e7:*/ lda #$c11b.w
@@ -464,8 +464,8 @@ das: .dw $800
 /*unknown_82_841a:*/ sta $7ec402
 /*unknown_82_841e:*/ jsr unknown_82_da02
 /*unknown_82_8421:*/ bcc @unknown_82_842f
-/*unknown_82_8423:*/ lda #$0024.w
-/*unknown_82_8426:*/ sta $0998.w
+/*unknown_82_8423:*/ lda #game_state_game_over
+/*unknown_82_8426:*/ sta var_game_state.w
 /*unknown_82_8429:*/ stz $0723.w
 /*unknown_82_842c:*/ stz $0725.w
 @unknown_82_842f: plp
@@ -519,13 +519,13 @@ das: .dw $800
 /*unknown_82_84a3:*/ dex
 /*unknown_82_84a4:*/ dex
 /*unknown_82_84a5:*/ bpl @unknown_82_84a0
-/*unknown_82_84a7:*/ lda #$0019.w
-/*unknown_82_84aa:*/ sta $0998.w
+/*unknown_82_84a7:*/ lda #game_state_unknown_19
+/*unknown_82_84aa:*/ sta var_game_state.w
 /*unknown_82_84ad:*/ plp
 /*unknown_82_84ae:*/ rts
 
-@unknown_82_84af: lda #$0025.w
-/*unknown_82_84b2:*/ sta $0998.w
+@unknown_82_84af: lda #game_state_unknown_25
+/*unknown_82_84b2:*/ sta var_game_state.w
 /*unknown_82_84b5:*/ lda #$c11b.w
 /*unknown_82_84b8:*/ sta $1f51.w
 /*unknown_82_84bb:*/ plp
@@ -561,8 +561,8 @@ das: .dw $800
 /*unknown_82_84f8:*/ rep #$20
 /*unknown_82_84fa:*/ stz $0723.w
 /*unknown_82_84fd:*/ stz $0725.w
-/*unknown_82_8500:*/ lda #$0027.w
-/*unknown_82_8503:*/ sta $0998.w
+/*unknown_82_8500:*/ lda #game_state_unknown_27
+/*unknown_82_8503:*/ sta var_game_state.w
 /*unknown_82_8506:*/ lda #$d480.w
 /*unknown_82_8509:*/ sta $1f51.w
 /*unknown_82_850c:*/ stz $0943.w
@@ -582,7 +582,7 @@ das: .dw $800
 /*unknown_82_8530:*/ jsr unknown_82_8b44
 /*unknown_82_8533:*/ jsr $808338
 /*unknown_82_8537:*/ jsr $8884b9
-/*unknown_82_853b:*/ inc $0998.w
+/*unknown_82_853b:*/ inc var_game_state.w
 /*unknown_82_853e:*/ sep #$20
 /*unknown_82_8540:*/ lda #$0f
 /*unknown_82_8542:*/ sta $51
@@ -611,7 +611,7 @@ das: .dw $800
 /*unknown_82_8572:*/ bra @unknown_82_857a
 @unknown_82_8574: lda #$0001.w
 /*unknown_82_8577:*/ sta $0dec.w
-@unknown_82_857a: inc $0998.w
+@unknown_82_857a: inc var_game_state.w
 /*unknown_82_857d:*/ stz $05f5.w
 /*unknown_82_8580:*/ sep #$20
 /*unknown_82_8582:*/ lda #$80
@@ -630,7 +630,7 @@ das: .dw $800
 /*unknown_82_859c:*/ beq @unknown_82_85a1
 /*unknown_82_859e:*/ jsr unknown_82_8637
 @unknown_82_85a1: jsr $80834b
-/*unknown_82_85a5:*/ inc $0998.w
+/*unknown_82_85a5:*/ inc var_game_state.w
 /*unknown_82_85a8:*/ stz $0723.w
 /*unknown_82_85ab:*/ stz $0725.w
 /*unknown_82_85ae:*/ jsr $88829e
@@ -674,8 +674,8 @@ das: .dw $800
 
 /*unknown_82_85fb:*/ php
 /*unknown_82_85fc:*/ rep #$30
-/*unknown_82_85fe:*/ lda #$0001.w
-/*unknown_82_8601:*/ sta $0998.w
+/*unknown_82_85fe:*/ lda #game_state_title_screen
+/*unknown_82_8601:*/ sta var_game_state.w
 /*unknown_82_8604:*/ lda $0dec.w
 /*unknown_82_8607:*/ bmi @unknown_82_862f
 /*unknown_82_8609:*/ bne @unknown_82_861d
@@ -695,8 +695,8 @@ das: .dw $800
 /*unknown_82_862d:*/ plp
 /*unknown_82_862e:*/ rts
 
-@unknown_82_862f: lda #$0028.w
-/*unknown_82_8632:*/ sta $0998.w
+@unknown_82_862f: lda #game_state_unknown_28
+/*unknown_82_8632:*/ sta var_game_state.w
 /*unknown_82_8635:*/ plp
 /*unknown_82_8636:*/ rts
 
@@ -1055,7 +1055,7 @@ unknown_82_8679: php
 unknown_82_893d: phk
 /*unknown_82_893e:*/ plb
 /*unknown_82_893f:*/ rep #$20
-/*unknown_82_8941:*/ stz $0998.w
+/*unknown_82_8941:*/ stz var_game_state.w ; game_state_unknown_00
 /*unknown_82_8944:*/ stz $0df4.w
 /*unknown_82_8947:*/ cli
 @unknown_82_8948: php
@@ -1067,7 +1067,7 @@ unknown_82_893d: phk
 /*unknown_82_895a:*/ stz $071d.w
 /*unknown_82_895d:*/ stz $071f.w
 /*unknown_82_8960:*/ stz $0721.w
-/*unknown_82_8963:*/ lda $0998.w
+/*unknown_82_8963:*/ lda var_game_state.w
 /*unknown_82_8966:*/ and #$00ff.w
 /*unknown_82_8969:*/ asl A
 /*unknown_82_896a:*/ tax
@@ -1267,7 +1267,7 @@ unknown_82_893d: phk
 /*unknown_82_8afc:*/ bne @unknown_82_8b04
 /*unknown_82_8afe:*/ lda #$0003.w
 /*unknown_82_8b01:*/ sta $1f55.w
-@unknown_82_8b04: inc $0998.w
+@unknown_82_8b04: inc var_game_state.w
 /*unknown_82_8b07:*/ rts
 
 /*unknown_82_8b08:*/ jsr $8b9a22
@@ -1283,7 +1283,7 @@ unknown_82_893d: phk
 
 /*unknown_82_8b18:*/ php
 /*unknown_82_8b19:*/ rep #$30
-/*unknown_82_8b1b:*/ inc $0998.w
+/*unknown_82_8b1b:*/ inc var_game_state.w
 /*unknown_82_8b1e:*/ plp
 /*unknown_82_8b1f:*/ rts
 
@@ -1298,7 +1298,7 @@ unknown_82_893d: phk
 /*unknown_82_8b32:*/ rep #$20
 /*unknown_82_8b34:*/ stz $0723.w
 /*unknown_82_8b37:*/ stz $0725.w
-/*unknown_82_8b3a:*/ inc $0998.w
+/*unknown_82_8b3a:*/ inc var_game_state.w
 @unknown_82_8b3d: plp
 /*unknown_82_8b3e:*/ rts
 
@@ -1506,7 +1506,7 @@ unknown_82_8ca1: php
 /*unknown_82_8ce0:*/ jsr $80834b
 /*unknown_82_8ce4:*/ stz $0723.w
 /*unknown_82_8ce7:*/ stz $0725.w
-/*unknown_82_8cea:*/ inc $0998.w
+/*unknown_82_8cea:*/ inc var_game_state.w
 @unknown_82_8ced: plp
 /*unknown_82_8cee:*/ rts
 
@@ -1546,7 +1546,7 @@ unknown_82_8ca1: php
 /*unknown_82_8d41:*/ stz $05fd.w
 /*unknown_82_8d44:*/ stz $05ff.w
 /*unknown_82_8d47:*/ jsr $80a211
-/*unknown_82_8d4b:*/ inc $0998.w
+/*unknown_82_8d4b:*/ inc var_game_state.w
 /*unknown_82_8d4e:*/ plb
 /*unknown_82_8d4f:*/ plp
 /*unknown_82_8d50:*/ rts
@@ -2008,7 +2008,7 @@ unknown_82_9009: php
 /*unknown_82_90db:*/ rep #$20
 /*unknown_82_90dd:*/ stz $0723.w
 /*unknown_82_90e0:*/ stz $0725.w
-/*unknown_82_90e3:*/ inc $0998.w
+/*unknown_82_90e3:*/ inc var_game_state.w
 @unknown_82_90e6: plp
 /*unknown_82_90e7:*/ rts
 
@@ -2280,7 +2280,7 @@ unknown_82_927f: ldx $05ff.w
 /*unknown_82_933e:*/ rep #$20
 /*unknown_82_9340:*/ stz $0723.w
 /*unknown_82_9343:*/ stz $0725.w
-/*unknown_82_9346:*/ inc $0998.w
+/*unknown_82_9346:*/ inc var_game_state.w
 @unknown_82_9349: plp
 /*unknown_82_934a:*/ rts
 
@@ -2314,7 +2314,7 @@ unknown_82_934b: lda $0763.w
 /*unknown_82_9396:*/ jsr $82be2f
 /*unknown_82_939a:*/ plb
 /*unknown_82_939b:*/ plp
-/*unknown_82_939c:*/ inc $0998.w
+/*unknown_82_939c:*/ inc var_game_state.w
 /*unknown_82_939f:*/ plp
 /*unknown_82_93a0:*/ rts
 
@@ -2329,8 +2329,8 @@ unknown_82_934b: lda $0763.w
 /*unknown_82_93b3:*/ rep #$20
 /*unknown_82_93b5:*/ stz $0723.w
 /*unknown_82_93b8:*/ stz $0725.w
-/*unknown_82_93bb:*/ lda #$0008.w
-/*unknown_82_93be:*/ sta $0998.w
+/*unknown_82_93bb:*/ lda #game_state_playing
+/*unknown_82_93be:*/ sta var_game_state.w
 @unknown_82_93c1: plp
 /*unknown_82_93c2:*/ rts
 
@@ -4565,7 +4565,7 @@ unknown_82_a5b7: php
 /*unknown_82_a5e0:*/ sta $0753.w
 /*unknown_82_a5e3:*/ lda #$000b.w
 /*unknown_82_a5e6:*/ sta $0729.w
-/*unknown_82_a5e9:*/ inc $0998.w
+/*unknown_82_a5e9:*/ inc var_game_state.w
 @unknown_82_a5ec: jsr $a84d.w
 /*unknown_82_a5ef:*/ plp
 /*unknown_82_a5f0:*/ rts
@@ -11147,14 +11147,14 @@ unknown_82_db69:
   beq @unknown_82_db95
   lda #$8000.w
   sta var_unknown_0a78.w
-  lda #$001b.w
-  sta var_unknown_0998.w
+  lda #game_state_unknown_1b
+  sta var_game_state.w
   lda #$001b.w
   jsl unknown_90_f084
   bra @unknown_82_dbb2
 @unknown_82_db95:
-  lda var_unknown_0998.w
-  cmp #$0008.w
+  lda var_game_state.w
+  cmp #game_state_playing
   beq @unknown_82_db9f
   plp
   rts
@@ -11163,8 +11163,8 @@ unknown_82_db69:
   sta var_unknown_0a78.w
   lda #$0011.w
   jsl unknown_90_f084
-  lda #$0013.w
-  sta var_unknown_0998.w
+  lda #game_state_unknown_13
+  sta var_game_state.w
 @unknown_82_dbb2:
   lda var_unknown_09da.w
   clc
@@ -11212,8 +11212,8 @@ unknown_82_db69:
 /*unknown_82_dc13:*/ jsr unknown_82_dc31
 /*unknown_82_dc16:*/ bcc @unknown_82_dc28
 /*unknown_82_dc18:*/ stz var_unknown_0a78.w
-/*unknown_82_dc1b:*/ lda #$0008.w
-/*unknown_82_dc1e:*/ sta var_unknown_0998.w
+/*unknown_82_dc1b:*/ lda #game_state_playing
+/*unknown_82_dc1e:*/ sta var_game_state.w
 /*unknown_82_dc21:*/ lda #$0010.w
 /*unknown_82_dc24:*/ jsl unknown_90_f084
 @unknown_82_dc28: jsr unknown_82_8b44
@@ -11296,7 +11296,7 @@ unknown_82_dc31:
 /*unknown_82_dcd2:*/ stz $0a04.w
 /*unknown_82_dcd5:*/ stz $18a8.w
 /*unknown_82_dcd8:*/ stz $18aa.w
-/*unknown_82_dcdb:*/ inc $0998.w
+/*unknown_82_dcdb:*/ inc var_game_state.w
 /*unknown_82_dcde:*/ plp
 /*unknown_82_dcdf:*/ rts
 
@@ -11339,7 +11339,7 @@ unknown_82_dc31:
 /*unknown_82_dd33:*/ sta $0de2.w
 /*unknown_82_dd36:*/ stz $0de4.w
 /*unknown_82_dd39:*/ stz $0de6.w
-/*unknown_82_dd3c:*/ inc $0998.w
+/*unknown_82_dd3c:*/ inc var_game_state.w
 /*unknown_82_dd3f:*/ stz $0592.w
 /*unknown_82_dd42:*/ lda #$0002.w
 /*unknown_82_dd45:*/ jsr $809021
@@ -11363,7 +11363,7 @@ unknown_82_dc31:
 /*unknown_82_dd78:*/ jsr $808ef4
 /*unknown_82_dd7c:*/ bcs @unknown_82_dd85
 /*unknown_82_dd7e:*/ jsr $9bb3a7
-/*unknown_82_dd82:*/ inc $0998.w
+/*unknown_82_dd82:*/ inc var_game_state.w
 @unknown_82_dd85: plp
 /*unknown_82_dd86:*/ rts
 
@@ -11373,7 +11373,7 @@ unknown_82_dc31:
 /*unknown_82_dd8e:*/ dec $0de8.w
 /*unknown_82_dd91:*/ beq @unknown_82_dd95
 /*unknown_82_dd93:*/ bpl @unknown_82_dd98
-@unknown_82_dd95: inc $0998.w
+@unknown_82_dd95: inc var_game_state.w
 @unknown_82_dd98: plp
 /*unknown_82_dd99:*/ rts
 
@@ -11382,7 +11382,7 @@ unknown_82_dc31:
 /*unknown_82_dd9d:*/ jsr $9bb441
 /*unknown_82_dda1:*/ tax
 /*unknown_82_dda2:*/ beq @unknown_82_dda9
-/*unknown_82_dda4:*/ inc $0998.w
+/*unknown_82_dda4:*/ inc var_game_state.w
 /*unknown_82_dda7:*/ bra @unknown_82_ddad
 @unknown_82_dda9: jsr $908998
 @unknown_82_ddad: plp
@@ -11396,7 +11396,7 @@ unknown_82_dc31:
 /*unknown_82_ddb9:*/ lda #$0001.w
 /*unknown_82_ddbc:*/ sta $0723.w
 /*unknown_82_ddbf:*/ sta $0725.w
-/*unknown_82_ddc2:*/ inc $0998.w
+/*unknown_82_ddc2:*/ inc var_game_state.w
 @unknown_82_ddc5: plp
 /*unknown_82_ddc6:*/ rts
 
@@ -11411,7 +11411,7 @@ unknown_82_dc31:
 /*unknown_82_ddda:*/ rep #$20
 /*unknown_82_dddc:*/ stz $0723.w
 /*unknown_82_dddf:*/ stz $0725.w
-/*unknown_82_dde2:*/ inc $0998.w
+/*unknown_82_dde2:*/ inc var_game_state.w
 /*unknown_82_dde5:*/ stz $0727.w
 /*unknown_82_dde8:*/ stz $05f5.w
 /*unknown_82_ddeb:*/ plp
@@ -11724,8 +11724,8 @@ unknown_82_e039:
 /*unknown_82_e071:*/ php
 /*unknown_82_e072:*/ phb
 /*unknown_82_e073:*/ rep #$30
-/*unknown_82_e075:*/ lda $0998.w
-/*unknown_82_e078:*/ cmp #$0028.w
+/*unknown_82_e075:*/ lda var_game_state.w
+/*unknown_82_e078:*/ cmp #game_state_unknown_28
 /*unknown_82_e07b:*/ bcs @unknown_82_e098
 /*unknown_82_e07d:*/ lda $07cb.w
 /*unknown_82_e080:*/ beq @unknown_82_e098
@@ -11743,7 +11743,7 @@ unknown_82_e039:
 /*unknown_82_e09b:*/ php
 /*unknown_82_e09c:*/ phb
 /*unknown_82_e09d:*/ rep #$30
-/*unknown_82_e09f:*/ lda $0998.w
+/*unknown_82_e09f:*/ lda var_game_state.w
 /*unknown_82_e0a2:*/ cmp #$0028.w
 /*unknown_82_e0a5:*/ bcs @unknown_82_e0d2
 /*unknown_82_e0a7:*/ lda $07c9.w
@@ -11770,8 +11770,8 @@ unknown_82_e039:
 /*unknown_82_e0d5:*/ php
 /*unknown_82_e0d6:*/ phb
 /*unknown_82_e0d7:*/ rep #$30
-/*unknown_82_e0d9:*/ lda $0998.w
-/*unknown_82_e0dc:*/ cmp #$0028.w
+/*unknown_82_e0d9:*/ lda var_game_state.w
+/*unknown_82_e0dc:*/ cmp #game_state_unknown_28
 /*unknown_82_e0df:*/ bcs @unknown_82_e110
 /*unknown_82_e0e1:*/ lda $07c9.w
 /*unknown_82_e0e4:*/ beq @unknown_82_e110
@@ -11805,8 +11805,8 @@ unknown_82_e039:
 /*unknown_82_e11a:*/ rep #$30
 /*unknown_82_e11c:*/ phy
 /*unknown_82_e11d:*/ tay
-/*unknown_82_e11e:*/ lda $0998.w
-/*unknown_82_e121:*/ cmp #$0028.w
+/*unknown_82_e11e:*/ lda var_game_state.w
+/*unknown_82_e121:*/ cmp #game_state_unknown_28
 /*unknown_82_e124:*/ bcs @unknown_82_e134
 /*unknown_82_e126:*/ lda #$0000.w
 /*unknown_82_e129:*/ jsr $808ff7
@@ -11848,7 +11848,7 @@ unknown_82_e039:
 /*unknown_82_e174:*/ plp
 /*unknown_82_e175:*/ rts
 
-@unknown_82_e176: inc $0998.w
+@unknown_82_e176: inc var_game_state.w
 /*unknown_82_e179:*/ plp
 /*unknown_82_e17a:*/ jmp @unknown_82_e1b7
 /*unknown_82_e17d:*/ lda $0e16.w
@@ -11948,7 +11948,7 @@ unknown_82_e039:
 /*unknown_82_e279:*/ sta $05f5.w
 /*unknown_82_e27c:*/ lda #$e29e.w
 /*unknown_82_e27f:*/ sta $099c.w
-/*unknown_82_e282:*/ inc $0998.w
+/*unknown_82_e282:*/ inc var_game_state.w
 /*unknown_82_e285:*/ plb
 /*unknown_82_e286:*/ plp
 /*unknown_82_e287:*/ rts
@@ -12523,8 +12523,8 @@ unknown_82_e5eb: lda $0003.w, Y
 /*unknown_82_e75a:*/ jsr $848270
 /*unknown_82_e75e:*/ stz $0795.w
 /*unknown_82_e761:*/ stz $0797.w
-/*unknown_82_e764:*/ lda #$0008.w
-/*unknown_82_e767:*/ sta $0998.w
+/*unknown_82_e764:*/ lda #game_state_playing
+/*unknown_82_e767:*/ sta var_game_state.w
 @unknown_82_e76a: rts
 
 /*unknown_82_e76b:*/ php
@@ -13416,8 +13416,8 @@ unknown_82_ee55: sep #$20
 /*unknown_82_ee7a:*/ rep #$20
 /*unknown_82_ee7c:*/ stz $0723.w
 /*unknown_82_ee7f:*/ stz $0725.w
-/*unknown_82_ee82:*/ lda #$0004.w
-/*unknown_82_ee85:*/ sta $0998.w
+/*unknown_82_ee82:*/ lda #game_state_menu
+/*unknown_82_ee85:*/ sta var_game_state.w
 /*unknown_82_ee88:*/ stz $0727.w
 /*unknown_82_ee8b:*/ stz $0de2.w
 /*unknown_82_ee8e:*/ rts
@@ -13449,14 +13449,14 @@ unknown_82_ee55: sep #$20
 /*unknown_82_eec1:*/ beq @unknown_82_eef6
 @unknown_82_eec3: lda $7ed914
 /*unknown_82_eec7:*/ beq @unknown_82_eed9
-/*unknown_82_eec9:*/ sta $0998.w
+/*unknown_82_eec9:*/ sta var_game_state.w
 /*unknown_82_eecc:*/ cmp #$0022.w
 /*unknown_82_eecf:*/ bne @unknown_82_eeef
 /*unknown_82_eed1:*/ lda #$c11b.w
 /*unknown_82_eed4:*/ sta $1f51.w
 /*unknown_82_eed7:*/ bra @unknown_82_eeef
-@unknown_82_eed9: lda #$001e.w
-/*unknown_82_eedc:*/ sta $0998.w
+@unknown_82_eed9: lda #game_state_unknown_1e
+/*unknown_82_eedc:*/ sta var_game_state.w
 /*unknown_82_eedf:*/ lda #$a395.w
 /*unknown_82_eee2:*/ sta $1f51.w
 /*unknown_82_eee5:*/ stz $099e.w
@@ -13471,15 +13471,15 @@ unknown_82_ee55: sep #$20
 @unknown_82_eef6: lda $7ed914
 /*unknown_82_eefa:*/ cmp #$0005.w
 /*unknown_82_eefd:*/ beq @unknown_82_ef11
-/*unknown_82_eeff:*/ lda #$0005.w
-/*unknown_82_ef02:*/ sta $0998.w
+/*unknown_82_eeff:*/ lda #game_state_loading_map
+/*unknown_82_ef02:*/ sta var_game_state.w
 /*unknown_82_ef05:*/ sta $7ed914
 /*unknown_82_ef09:*/ lda $0952.w
 /*unknown_82_ef0c:*/ jsr $818000
 /*unknown_82_ef10:*/ rts
 
-@unknown_82_ef11: lda #$0005.w
-/*unknown_82_ef14:*/ sta $0998.w
+@unknown_82_ef11: lda #game_state_loading_map
+/*unknown_82_ef14:*/ sta var_game_state.w
 /*unknown_82_ef17:*/ rts
 
 /*unknown_82_ef18:*/ jsr $808924
@@ -13904,8 +13904,8 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f2a5:*/ sta $1acd.w, Y
 /*unknown_82_f2a8:*/ rts
 
-/*unknown_82_f2a9:*/ lda $0998.w
-/*unknown_82_f2ac:*/ cmp #$0002.w
+/*unknown_82_f2a9:*/ lda var_game_state.w
+/*unknown_82_f2ac:*/ cmp #game_state_unknown_02
 /*unknown_82_f2af:*/ beq @unknown_82_f2be
 /*unknown_82_f2b1:*/ lda #$0001.w
 /*unknown_82_f2b4:*/ sta $1b1d.w, X
@@ -14002,8 +14002,8 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f372:*/ sta $1acd.w, Y
 /*unknown_82_f375:*/ rts
 
-/*unknown_82_f376:*/ lda $0998.w
-/*unknown_82_f379:*/ cmp #$0002.w
+/*unknown_82_f376:*/ lda var_game_state.w
+/*unknown_82_f379:*/ cmp #game_state_unknown_02
 /*unknown_82_f37c:*/ bne @unknown_82_f391
 /*unknown_82_f37e:*/ lda $0de2.w
 /*unknown_82_f381:*/ cmp #$0006.w
@@ -14089,8 +14089,8 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f428:*/ sta $1acd.w, Y
 /*unknown_82_f42b:*/ rts
 
-/*unknown_82_f42c:*/ lda $0998.w
-/*unknown_82_f42f:*/ cmp #$0002.w
+/*unknown_82_f42c:*/ lda var_game_state.w
+/*unknown_82_f42f:*/ cmp #game_state_unknown_02
 /*unknown_82_f432:*/ beq @unknown_82_f441
 /*unknown_82_f434:*/ lda #$0001.w
 /*unknown_82_f437:*/ sta $1b1d.w, X
