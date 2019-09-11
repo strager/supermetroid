@@ -5744,7 +5744,7 @@ das: .dw unknown_80_988b@size
 /*unknown_80_b06d:*/ stz IO_VMADDL
 /*unknown_80_b070:*/ stz IO_VMADDH
 /*unknown_80_b073:*/ ldx #$4000.w
-/*unknown_80_b076:*/ stz $2118.w
+/*unknown_80_b076:*/ stz IO_VMDATA
 /*unknown_80_b079:*/ dex
 /*unknown_80_b07a:*/ bne ($fa - $100) ; $b076.w
 /*unknown_80_b07c:*/ ldy #$0000.w
@@ -5753,7 +5753,7 @@ das: .dw unknown_80_988b@size
 /*unknown_80_b083:*/ phy
 /*unknown_80_b084:*/ ldy #$0020.w
 /*unknown_80_b087:*/ lda $98c000, X
-/*unknown_80_b08b:*/ sta $2118.w
+/*unknown_80_b08b:*/ sta IO_VMDATA
 /*unknown_80_b08e:*/ inx
 /*unknown_80_b08f:*/ dey
 /*unknown_80_b090:*/ bne ($f5 - $100) ; $b087.w
