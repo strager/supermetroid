@@ -3,6 +3,10 @@
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $12) export
 var_unknown_12: dw ; $7e0012
+var_unknown_14: dw ; $7e0014
+var_unknown_16: dw ; $7e0016
+var_unknown_18: dw ; $7e0018
+var_unknown_1a: dw ; $7e001a
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $84) export

@@ -6508,39 +6508,39 @@ unknown_82_b568:
 @unknown_82_b574:
   lda #$0038.w
   jsl unknown_80_9049
-  lda $0755.w
+  lda var_unknown_0755.w
   and #$00ff.w
   asl A
   tax
-  sta $1a
-  lda $0755.w
+  sta0 var_unknown_1a
+  lda var_unknown_0755.w
   xba
   and #$00ff.w
   asl A
-  sta $12
-  lda $c02c.w, X
+  sta var_unknown_12
+  lda unknown_82_c02c.w, X
   clc
-  adc $12
+  adc var_unknown_12
   tay
   lda $0000.w, Y
   sta $00
-  lda $c03c.w, X
+  lda unknown_82_c03c.w, X
   tay
-  lda $c034.w, X
+  lda unknown_82_c034.w, X
   clc
-  adc $12
+  adc var_unknown_12
   tax
   lda $0000.w, Y
   bit $0000.w, X
   bne @unknown_82_b5ca
   ora $0000.w, X
   sta $0000.w, Y
-  lda $18
-  sta $16
-  ldx $1a
-  lda $c044.w, X
+  lda var_unknown_18
+  sta0 var_unknown_16
+  ldx var_unknown_1a
+  lda unknown_82_c044.w, X
   clc
-  adc $12
+  adc var_unknown_12
   tay
   lda $0000.w, Y
   tax
@@ -6549,14 +6549,14 @@ unknown_82_b568:
 @unknown_82_b5ca:
   lda $0000.w, X
   eor #$ffff.w
-  sta $12
+  sta var_unknown_12
   lda $0000.w, Y
-  and $12
+  and var_unknown_12
   sta $0000.w, Y
   lda #$0c00.w
-  sta $12
-  lda $18
-  sta $16
+  sta var_unknown_12
+  lda var_unknown_18
+  sta var_unknown_16
   jsr unknown_82_a29d
 @unknown_82_b5e6:
   plp
@@ -7839,20 +7839,24 @@ unknown_82_bf2a: lsr $3d, X
 /*unknown_82_c026:*/ brk $00
 /*unknown_82_c028:*/ brk $00
 /*unknown_82_c02a:*/ brk $00
-/*unknown_82_c02c:*/ pla
-/*unknown_82_c02d:*/ cpy #$c06c.w
-/*unknown_82_c030:*/ ror $c0, X
-/*unknown_82_c032:*/ brl $00c0 ; $c0f5.w
-/*unknown_82_c035:*/ brk $4c
-/*unknown_82_c037:*/ cpy #$c056.w
-/*unknown_82_c03a:*/ per $00c0 ; $c0fd.w
-/*unknown_82_c03d:*/ brk $a6
-/*unknown_82_c03f:*/ ora #$a2
-/*unknown_82_c041:*/ ora #$a2
-/*unknown_82_c043:*/ ora #$00
-/*unknown_82_c045:*/ brk $8c
-/*unknown_82_c047:*/ cpy #$c096.w
-/*unknown_82_c04a:*/ ldx #$00c0.w
+unknown_82_c02c: .dw $c068
+unknown_82_c02e: .dw $c06c
+unknown_82_c030: .dw $c076
+unknown_82_c032: .dw $c082
+unknown_82_c034: .dw $0000
+unknown_82_c036: .dw $c04c
+unknown_82_c038: .dw $c056
+unknown_82_c03a: .dw $c062
+unknown_82_c03c: .dw $0000
+unknown_82_c03e: .dw $09a6
+unknown_82_c040: .dw $09a2
+unknown_82_c042: .dw $09a2
+unknown_82_c044: .dw $0000
+unknown_82_c046: .dw $c08c
+unknown_82_c048: .dw $c096
+unknown_82_c04a: .dw $c0a2
+unknown_82_c04c: .db $00
+
 /*unknown_82_c04d:*/ bpl @unknown_82_c051
 /*unknown_82_c04f:*/ brk $01
 @unknown_82_c051: brk $04
