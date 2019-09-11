@@ -1,0 +1,8 @@
+language: nix
+
+os:
+  - linux
+  - osx
+
+script:
+  - nix-shell --run 'phases="buildPhase checkPhase" ; genericBuild'
