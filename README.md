@@ -11,7 +11,15 @@ This project produces the following ROMs:
 
 ### Linux
 
-Building on Linux is not yet supported.
+Prerequisites:
+
+* [CMake][cmake-download] version 2.8.9 or newer (included in [Nix](#nix))
+* GNU Make (included in [Nix](#nix))
+* GCC or Clang (included in [Nix](#nix))
+
+Instructions:
+
+1. Run `make` from a terminal (such as GNOME Terminal or Konsole).
 
 ### macOS
 
@@ -23,7 +31,7 @@ Prerequisites:
 
 Instructions:
 
-1. Run `make` from Terminal.app
+1. Run `make` from Terminal.app.
 
 ### Windows
 
