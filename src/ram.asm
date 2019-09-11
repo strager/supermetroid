@@ -75,22 +75,22 @@ var_game_state: db ; $7e0998
 .export game_state_saving
 .define game_state_playing $08.b
 .export game_state_playing
-.define game_state_unknown_13 $13.b
-.export game_state_unknown_13
-.define game_state_unknown_1b $1b.b
-.export game_state_unknown_1b
+.define game_state_dying_no_health $13.b
+.export game_state_dying_no_health
+.define game_state_dying_black_out $19.b
+.export game_state_dying_black_out
+.define game_state_reserve_tanks_auto $1b.b
+.export game_state_reserve_tanks_auto
 .define game_state_unknown_1e $1e.b
 .export game_state_unknown_1e
-.define game_state_unknown_19 $19.b
-.export game_state_unknown_19
-.define game_state_unknown_22 $22.b
-.export game_state_unknown_22
+.define game_state_ceres_escaped $22.b
+.export game_state_ceres_escaped
 .define game_state_game_over $24.b
 .export game_state_game_over
-.define game_state_unknown_25 $25.b
-.export game_state_unknown_25
-.define game_state_unknown_27 $27.b
-.export game_state_unknown_27
+.define game_state_ceres_escape_failed $25.b
+.export game_state_ceres_escape_failed
+.define game_state_credits $27.b
+.export game_state_credits
 .define game_state_unknown_28 $28.b
 .export game_state_unknown_28
 

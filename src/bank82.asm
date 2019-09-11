@@ -437,7 +437,7 @@ unknown_82_8388: php
 /*unknown_82_83ce:*/ rep #$20
 /*unknown_82_83d0:*/ stz $0723.w
 /*unknown_82_83d3:*/ stz $0725.w
-/*unknown_82_83d6:*/ lda #game_state_unknown_22
+/*unknown_82_83d6:*/ lda #game_state_ceres_escaped
 /*unknown_82_83d9:*/ sta $7ed914
 /*unknown_82_83dd:*/ sta var_game_state.w
 /*unknown_82_83e0:*/ lda $0952.w
@@ -519,12 +519,12 @@ unknown_82_8431: php
 /*unknown_82_84a3:*/ dex
 /*unknown_82_84a4:*/ dex
 /*unknown_82_84a5:*/ bpl @unknown_82_84a0
-/*unknown_82_84a7:*/ lda #game_state_unknown_19
+/*unknown_82_84a7:*/ lda #game_state_dying_black_out
 /*unknown_82_84aa:*/ sta var_game_state.w
 /*unknown_82_84ad:*/ plp
 /*unknown_82_84ae:*/ rts
 
-@unknown_82_84af: lda #game_state_unknown_25
+@unknown_82_84af: lda #game_state_ceres_escape_failed
 /*unknown_82_84b2:*/ sta var_game_state.w
 /*unknown_82_84b5:*/ lda #$c11b.w
 /*unknown_82_84b8:*/ sta $1f51.w
@@ -561,7 +561,7 @@ unknown_82_84bd: php
 /*unknown_82_84f8:*/ rep #$20
 /*unknown_82_84fa:*/ stz $0723.w
 /*unknown_82_84fd:*/ stz $0725.w
-/*unknown_82_8500:*/ lda #game_state_unknown_27
+/*unknown_82_8500:*/ lda #game_state_credits
 /*unknown_82_8503:*/ sta var_game_state.w
 /*unknown_82_8506:*/ lda #$d480.w
 /*unknown_82_8509:*/ sta $1f51.w
@@ -1099,27 +1099,27 @@ unknown_82_893d: phk
   .dw unknown_82_9324 ; game_state_unknown_10
   .dw unknown_82_9367 ; game_state_unknown_11
   .dw unknown_82_93a1 ; game_state_unknown_12
-  .dw unknown_82_dc80 ; game_state_unknown_13
+  .dw unknown_82_dc80 ; game_state_dying_no_health
   .dw unknown_82_dce0 ; game_state_unknown_14
   .dw unknown_82_dd71 ; game_state_unknown_15
   .dw unknown_82_dd87 ; game_state_unknown_16
   .dw unknown_82_dd9a ; game_state_unknown_17
   .dw unknown_82_ddaf ; game_state_unknown_18
-  .dw unknown_82_ddc7 ; game_state_unknown_19
+  .dw unknown_82_ddc7 ; game_state_dying_black_out
   .dw unknown_82_89e0 ; game_state_unknown_1a
-  .dw unknown_82_dc10 ; game_state_unknown_1b
+  .dw unknown_82_dc10 ; game_state_reserve_tanks_auto
   .dw unknown_82_8b3f ; game_state_unknown_1c
   .dw unknown_82_89db ; game_state_unknown_1d
   .dw unknown_82_8b0e ; game_state_unknown_1e
   .dw unknown_82_8000 ; game_state_unknown_1f
   .dw unknown_82_8367 ; game_state_unknown_20
   .dw unknown_82_8388 ; game_state_unknown_21
-  .dw unknown_82_8b0e ; game_state_unknown_22
+  .dw unknown_82_8b0e ; game_state_ceres_escaped
   .dw unknown_82_8411 ; game_state_unknown_23
   .dw unknown_82_8431 ; game_state_game_over
-  .dw unknown_82_8b0e ; game_state_unknown_25
+  .dw unknown_82_8b0e ; game_state_ceres_escape_failed
   .dw unknown_82_84bd ; game_state_unknown_26
-  .dw unknown_82_8b13 ; game_state_unknown_27
+  .dw unknown_82_8b13 ; game_state_credits
   .dw unknown_82_8000 ; game_state_unknown_28
   .dw unknown_82_852d ; game_state_unknown_29
   .dw unknown_82_8548 ; game_state_unknown_2a
@@ -11154,7 +11154,7 @@ unknown_82_db69:
   beq @unknown_82_db95
   lda #$8000.w
   sta var_unknown_0a78.w
-  lda #game_state_unknown_1b
+  lda #game_state_reserve_tanks_auto
   sta var_game_state.w
   lda #$001b.w
   jsl unknown_90_f084
@@ -11170,7 +11170,7 @@ unknown_82_db69:
   sta var_unknown_0a78.w
   lda #$0011.w
   jsl unknown_90_f084
-  lda #game_state_unknown_13
+  lda #game_state_dying_no_health
   sta var_game_state.w
 @unknown_82_dbb2:
   lda var_unknown_09da.w
