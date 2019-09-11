@@ -41,7 +41,7 @@ Building on Windows is not yet supported.
 
 ### Nix
 
-You can build on macOS using [Nix][nix-download].
+You can build on Linux and macOS using [Nix][nix-download].
 
 Instructions:
 
