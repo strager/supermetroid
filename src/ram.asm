@@ -19,21 +19,16 @@ var_unknown_89: dw ; $7e0089
 ; See IO_JOY_ for possible values.
 var_pressed_buttons: dw ; $7e008b
 var_pressed_buttons_p2: dw ; $7e008d
-
-; Related to var_pressed_buttons.
-var_unknown_8f: dw ; $7e008f
-; Related to var_pressed_buttons_p2.
-var_unknown_91: dw ; $7e0091
+var_new_pressed_buttons: dw ; $7e008f
+var_new_pressed_buttons_p2: dw ; $7e0091
 
 ; Related to var_pressed_buttons.
 var_unknown_93: dw ; $7e0093
 ; Related to var_pressed_buttons_p2.
 var_unknown_95: dw ; $7e0095
 
-; Related to var_pressed_buttons.
-var_unknown_97: dw ; $7e0097
-; Related to var_pressed_buttons_p2.
-var_unknown_99: dw ; $7e0099
+var_pressed_buttons_last_frame: dw ; $7e0097
+var_pressed_buttons_last_frame_p2: dw ; $7e0099
 
 var_unknown_9b: db ; $7e009b
 var_unknown_9c: db ; $7e009c

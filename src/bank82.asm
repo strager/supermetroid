@@ -593,7 +593,7 @@ das: .dw $800
 /*unknown_82_8548:*/ php
 /*unknown_82_8549:*/ rep #$30
 /*unknown_82_854b:*/ jsr unknown_82_8b44
-/*unknown_82_854e:*/ lda var_unknown_8f
+/*unknown_82_854e:*/ lda var_new_pressed_buttons
 /*unknown_82_8550:*/ beq @unknown_82_855a
 /*unknown_82_8552:*/ lda #$0001.w
 /*unknown_82_8555:*/ sta $0dec.w
@@ -604,7 +604,7 @@ das: .dw $800
 @unknown_82_8561: stz $0dec.w
 /*unknown_82_8564:*/ ldx #$005a.w
 @unknown_82_8567: jsr $808338
-/*unknown_82_856b:*/ lda var_unknown_8f
+/*unknown_82_856b:*/ lda var_new_pressed_buttons
 /*unknown_82_856d:*/ bne @unknown_82_8574
 /*unknown_82_856f:*/ dex
 /*unknown_82_8570:*/ bne @unknown_82_8567
@@ -5411,7 +5411,7 @@ unknown_82_ac8b:
   rep #$30
   lda var_unknown_0755.w
   sta0 var_unknown_12
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_RIGHT
   beq @unknown_82_acb2
   bit #IO_JOY_DOWN
@@ -5650,7 +5650,7 @@ unknown_82_ae46: php
 unknown_82_ae8b:
   php
   rep #$30
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_A
   beq @end
   lda var_unknown_09d4.w
@@ -5735,7 +5735,7 @@ unknown_82_af4f:
   rep #$30
   lda var_unknown_0757.w
   bne @unknown_82_af6b
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_A
   beq @unknown_82_afbc
   lda var_unknown_09d6.w
@@ -5802,7 +5802,7 @@ unknown_82_afdb:
   rep #$30
   lda var_unknown_0755.w
   sta0 var_unknown_12
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_RIGHT
   beq @unknown_82_b00a
   bit #IO_JOY_UP
@@ -5916,7 +5916,7 @@ unknown_82_b0d2:
   rep #$30
   lda var_unknown_0755.w
   sta0 var_unknown_12
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_LEFT
   beq @unknown_82_b0fe
   bit #IO_JOY_DOWN
@@ -5986,7 +5986,7 @@ unknown_82_b160:
   rep #$30
   lda var_unknown_0755.w
   sta var_unknown_12
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_LEFT
   beq @unknown_82_b191
   bit #IO_JOY_UP
@@ -6507,7 +6507,7 @@ unknown_82_b53f: php
 unknown_82_b568:
   php
   rep #$30
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_A
   bne @unknown_82_b574
   plp
@@ -13275,7 +13275,7 @@ unknown_82_ed28: php
 unknown_82_ed42:
   php
   rep #$30
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   and #IO_JOY_UP
   beq @unknown_82_ed60
   lda #$0037.w
@@ -13286,7 +13286,7 @@ unknown_82_ed42:
   sta $099e.w
   bra @unknown_82_ed7d
 @unknown_82_ed60:
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   and #IO_JOY_DOWN
   beq @unknown_82_ed7d
   lda #$0037.w
@@ -13298,7 +13298,7 @@ unknown_82_ed42:
   bne @unknown_82_ed7d
   stz $099e.w
 @unknown_82_ed7d:
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_B
   bne @unknown_82_ed9f
   bit #IO_JOY_A
@@ -13593,7 +13593,7 @@ unknown_82_ee55: sep #$20
 /*unknown_82_f023:*/ rts
 
 unknown_82_f024:
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   and #IO_JOY_UP
   beq @unknown_82_f03f
   lda #$0037.w
@@ -13604,7 +13604,7 @@ unknown_82_f024:
   sta $099e.w
   bra @unknown_82_f05c
 @unknown_82_f03f:
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   and #$0400.w
   beq @unknown_82_f05c
   lda #$0037.w
@@ -13616,7 +13616,7 @@ unknown_82_f024:
   bne @unknown_82_f05c
   stz $099e.w
 @unknown_82_f05c:
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_B
   beq @unknown_82_f071
   lda #$0038.w
@@ -13625,7 +13625,7 @@ unknown_82_f024:
   jsr unknown_82_ee55
   rts
 @unknown_82_f071:
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   bit #IO_JOY_A | IO_JOY_LEFT | IO_JOY_RIGHT | IO_JOY_START
   beq @unknown_82_f087
   lda #$0038.w
@@ -13755,7 +13755,7 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f179:*/ sta $099e.w
 /*unknown_82_f17c:*/ bra @unknown_82_f1a3
 @unknown_82_f17e: rts
-@unknown_82_f17f: lda var_unknown_8f
+@unknown_82_f17f: lda var_new_pressed_buttons
 /*unknown_82_f181:*/ and #IO_JOY_DOWN
 /*unknown_82_f184:*/ beq @unknown_82_f1b1
 /*unknown_82_f186:*/ lda #$0037.w
@@ -13776,7 +13776,7 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f1ad:*/ sta $0de2.w
 /*unknown_82_f1b0:*/ rts
 
-@unknown_82_f1b1: lda var_unknown_8f
+@unknown_82_f1b1: lda var_new_pressed_buttons
 /*unknown_82_f1b3:*/ beq @unknown_82_f1c5
 /*unknown_82_f1b5:*/ lda #$0038.w
 /*unknown_82_f1b8:*/ jsr $809049
@@ -13858,7 +13858,7 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f259:*/ jsr $f587.w
 /*unknown_82_f25c:*/ rts
 
-/*unknown_82_f25d:*/ lda var_unknown_8f
+/*unknown_82_f25d:*/ lda var_new_pressed_buttons
 /*unknown_82_f25f:*/ bit #IO_JOY_START | IO_JOY_A
 /*unknown_82_f262:*/ bne @unknown_82_f265
 /*unknown_82_f264:*/ rts

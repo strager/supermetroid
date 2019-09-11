@@ -2627,13 +2627,13 @@ unknown_80_9459:
   rep #$20
   lda IO_JOY1
   sta0 var_pressed_buttons
-  eor var_unknown_97
+  eor var_pressed_buttons_last_frame
   and var_pressed_buttons
-  sta0 var_unknown_8f
+  sta0 var_new_pressed_buttons
   sta0 var_unknown_93
   lda var_pressed_buttons
   beq @unknown_80_9488
-  cmp var_unknown_97
+  cmp var_pressed_buttons_last_frame
   bne @unknown_80_9488
   dec var_unknown_a3
   bne @unknown_80_948c
@@ -2647,7 +2647,7 @@ unknown_80_9459:
   sta var_unknown_a3
 @unknown_80_948c:
   lda var_pressed_buttons
-  sta var_unknown_97
+  sta var_pressed_buttons_last_frame
   lda $05d1.w
   bne @unknown_80_9497
   plp
@@ -2655,13 +2655,13 @@ unknown_80_9459:
 @unknown_80_9497:
   lda IO_JOY2
   sta var_pressed_buttons_p2
-  eor var_unknown_99
+  eor var_pressed_buttons_last_frame_p2
   and var_pressed_buttons_p2
-  sta var_unknown_91
+  sta var_new_pressed_buttons_p2
   sta var_unknown_95
   lda var_pressed_buttons_p2
   beq @unknown_80_94ba
-  cmp var_unknown_99
+  cmp var_pressed_buttons_last_frame_p2
   bne @unknown_80_94ba
   dec var_unknown_a5
   bne @unknown_80_94be
@@ -2675,7 +2675,7 @@ unknown_80_9459:
   sta var_unknown_a5
 @unknown_80_94be:
   lda var_pressed_buttons_p2
-  sta var_unknown_99
+  sta var_pressed_buttons_last_frame_p2
   lda $0617.w
   bne @unknown_80_94d4
   lda var_pressed_buttons
@@ -2690,7 +2690,7 @@ unknown_80_9459:
   stz $05c7.w
   lda #$ffef.w
   trb var_pressed_buttons_p2
-  trb var_unknown_91
+  trb var_new_pressed_buttons_p2
   plp
   rtl
 @unknown_80_94e8:
@@ -2704,20 +2704,20 @@ unknown_80_9459:
   and #IO_JOY_SELECT | IO_JOY_L
   cmp #IO_JOY_SELECT | IO_JOY_L
   bne @unknown_80_9509
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   sta $05c5.w
   stz var_pressed_buttons
-  stz var_unknown_8f
+  stz var_new_pressed_buttons
 @unknown_80_9509:
   lda var_pressed_buttons
   and #IO_JOY_SELECT | IO_JOY_R
   cmp #IO_JOY_SELECT | IO_JOY_R
   bne @unknown_80_951f
-  lda var_unknown_8f
+  lda var_new_pressed_buttons
   sta $05c7.w
   lda #$e0f0.w
   stz var_pressed_buttons
-  stz var_unknown_8f
+  stz var_new_pressed_buttons
 @unknown_80_951f:
   lda $05c7.w
   bit #$0080.w
