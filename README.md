@@ -17,9 +17,9 @@ Building on Linux is not yet supported.
 
 Prerequisites:
 
-* [CMake][cmake-download] version 2.8.9 or newer
-* GNU Make (included in Xcode)
-* GCC or Clang (included in Xcode)
+* [CMake][cmake-download] version 2.8.9 or newer (included in [Nix](#nix))
+* GNU Make (included in [Nix](#nix) and Xcode)
+* GCC or Clang (included in [Nix](#nix) and Xcode)
 
 Instructions:
 
@@ -29,4 +29,14 @@ Instructions:
 
 Building on Windows is not yet supported.
 
+### Nix
+
+You can build on macOS using [Nix][nix-download].
+
+Instructions:
+
+1. Run `nix-shell`.
+2. In the shell, run `make`.
+
 [cmake-download]: https://cmake.org/download/
+[nix-download]: https://nixos.org/nix/download.html
