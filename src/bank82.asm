@@ -13260,49 +13260,54 @@ unknown: .dl $7fe000
 /*unknown_82_ed40:*/ plp
 /*unknown_82_ed41:*/ rts
 
-/*unknown_82_ed42:*/ php
-/*unknown_82_ed43:*/ rep #$30
-/*unknown_82_ed45:*/ lda $8f
-/*unknown_82_ed47:*/ and #$0800.w
-/*unknown_82_ed4a:*/ beq $14 ; $ed60.w
-/*unknown_82_ed4c:*/ lda #$0037.w
-/*unknown_82_ed4f:*/ jsr $809049
-/*unknown_82_ed53:*/ dec $099e.w
-/*unknown_82_ed56:*/ bpl $25 ; $ed7d.w
-/*unknown_82_ed58:*/ lda #$0004.w
-/*unknown_82_ed5b:*/ sta $099e.w
-/*unknown_82_ed5e:*/ bra $1d ; $ed7d.w
-/*unknown_82_ed60:*/ lda $8f
-/*unknown_82_ed62:*/ and #$0400.w
-/*unknown_82_ed65:*/ beq $16 ; $ed7d.w
-/*unknown_82_ed67:*/ lda #$0037.w
-/*unknown_82_ed6a:*/ jsr $809049
-/*unknown_82_ed6e:*/ lda $099e.w
-/*unknown_82_ed71:*/ inc A
-/*unknown_82_ed72:*/ sta $099e.w
-/*unknown_82_ed75:*/ cmp #$0005.w
-/*unknown_82_ed78:*/ bne $03 ; $ed7d.w
-/*unknown_82_ed7a:*/ stz $099e.w
-/*unknown_82_ed7d:*/ lda $8f
-/*unknown_82_ed7f:*/ bit #$8000.w
-/*unknown_82_ed82:*/ bne $1b ; $ed9f.w
-/*unknown_82_ed84:*/ bit #$0080.w
-/*unknown_82_ed87:*/ bne $05 ; $ed8e.w
-/*unknown_82_ed89:*/ bit #$1000.w
-/*unknown_82_ed8c:*/ beq $0f ; $ed9d.w
-/*unknown_82_ed8e:*/ lda #$0038.w
-/*unknown_82_ed91:*/ jsr $809049
-/*unknown_82_ed95:*/ lda $099e.w
-/*unknown_82_ed98:*/ asl A
-/*unknown_82_ed99:*/ tax
-/*unknown_82_ed9a:*/ jsr ($eda7.w, X)
-/*unknown_82_ed9d:*/ plp
-/*unknown_82_ed9e:*/ rts
-
-/*unknown_82_ed9f:*/ lda #$000b.w
-/*unknown_82_eda2:*/ sta $0de2.w
-/*unknown_82_eda5:*/ plp
-/*unknown_82_eda6:*/ rts
+unknown_82_ed42:
+  php
+  rep #$30
+  lda var_unknown_8f
+  and #IO_JOY_UP
+  beq @unknown_82_ed60
+  lda #$0037.w
+  jsl unknown_80_9049
+  dec $099e.w
+  bpl @unknown_82_ed7d
+  lda #$0004.w
+  sta $099e.w
+  bra @unknown_82_ed7d
+@unknown_82_ed60:
+  lda var_unknown_8f
+  and #IO_JOY_DOWN
+  beq @unknown_82_ed7d
+  lda #$0037.w
+  jsl unknown_80_9049
+  lda $099e.w
+  inc A
+  sta $099e.w
+  cmp #$0005.w
+  bne @unknown_82_ed7d
+  stz $099e.w
+@unknown_82_ed7d:
+  lda var_unknown_8f
+  bit #IO_JOY_B
+  bne @unknown_82_ed9f
+  bit #IO_JOY_A
+  bne @unknown_82_ed8e
+  bit #IO_JOY_START
+  beq @unknown_82_ed9d
+@unknown_82_ed8e:
+  lda #$0038.w
+  jsl unknown_80_9049
+  lda $099e.w
+  asl A
+  tax
+  jsr ($eda7.w, X)
+@unknown_82_ed9d:
+  plp
+  rts
+@unknown_82_ed9f:
+  lda #$000b.w
+  sta $0de2.w
+  plp
+  rts
 
 /*unknown_82_eda7:*/ lda ($ed), Y
 /*unknown_82_eda9:*/ phx
