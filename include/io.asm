@@ -246,6 +246,25 @@
 
 ; CPU: H/V-Blank flag and joypad busy flag
 .define IO_HVBJOY $4212.w
+.define IO_HVBJOY_JOYPAD_BUSY $01.b
+
+; CPU: Joypad 1 (16 bits)
+.define IO_JOY1 $4218.w
+.define IO_JOY_R 1.w << 4
+.define IO_JOY_L 1.w << 5
+.define IO_JOY_X 1.w << 6
+.define IO_JOY_A 1.w << 7
+.define IO_JOY_RIGHT 1.w << 8
+.define IO_JOY_LEFT 1.w << 9
+.define IO_JOY_DOWN 1.w << 10
+.define IO_JOY_UP 1.w << 11
+.define IO_JOY_START 1.w << 12
+.define IO_JOY_SELECT 1.w << 13
+.define IO_JOY_Y 1.w << 14
+.define IO_JOY_B 1.w << 15
+
+; CPU: Joypad 2 (16 bits)
+.define IO_JOY2 $421a.w
 
 ; CPU: DMA/HDMA parameters (channel 0)
 .define IO_DMAP0 $4300.w

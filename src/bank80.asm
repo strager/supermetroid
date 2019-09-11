@@ -2616,11 +2616,11 @@ unknown_80_9416: phb
 
 unknown_80_9459: php
 /*unknown_80_945a:*/ sep #$20
-/*unknown_80_945c:*/ lda $4212.w
-/*unknown_80_945f:*/ and #$01
+/*unknown_80_945c:*/ lda IO_HVBJOY
+/*unknown_80_945f:*/ and #IO_HVBJOY_JOYPAD_BUSY
 /*unknown_80_9461:*/ bne ($f9 - $100) ; $945c.w
 /*unknown_80_9463:*/ rep #$20
-/*unknown_80_9465:*/ lda $4218.w
+/*unknown_80_9465:*/ lda IO_JOY1
 /*unknown_80_9468:*/ sta $8b
 /*unknown_80_946a:*/ eor $97
 /*unknown_80_946c:*/ and $8b
@@ -2646,7 +2646,7 @@ unknown_80_9459: php
 /*unknown_80_9495:*/ plp
 /*unknown_80_9496:*/ rtl
 
-/*unknown_80_9497:*/ lda $421a.w
+/*unknown_80_9497:*/ lda IO_JOY2
 /*unknown_80_949a:*/ sta $8d
 /*unknown_80_949c:*/ eor $99
 /*unknown_80_949e:*/ and $8d
