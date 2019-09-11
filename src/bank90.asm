@@ -12392,7 +12392,7 @@ unknown_90_ea7f: lda $09c2.w
 /*unknown_90_eaa7:*/ sta $0a6a.w
 @unknown_90_eaaa: rts
 
-/*unknown_90_eaab:*/ php
+unknown_90_eaab: php
 /*unknown_90_eaac:*/ rep #$30
 /*unknown_90_eaae:*/ jsr unknown_90_ea7f
 /*unknown_90_eab1:*/ plp

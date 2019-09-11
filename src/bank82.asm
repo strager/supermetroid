@@ -11211,50 +11211,54 @@ unknown_82_db69:
 /*unknown_82_dc11:*/ rep #$30
 /*unknown_82_dc13:*/ jsr unknown_82_dc31
 /*unknown_82_dc16:*/ bcc @unknown_82_dc28
-/*unknown_82_dc18:*/ stz $0a78.w
+/*unknown_82_dc18:*/ stz var_unknown_0a78.w
 /*unknown_82_dc1b:*/ lda #$0008.w
-/*unknown_82_dc1e:*/ sta $0998.w
+/*unknown_82_dc1e:*/ sta var_unknown_0998.w
 /*unknown_82_dc21:*/ lda #$0010.w
-/*unknown_82_dc24:*/ jsr $90f084
-@unknown_82_dc28: jsr $8b44.w
-/*unknown_82_dc2b:*/ jsr $90eaab
+/*unknown_82_dc24:*/ jsl unknown_90_f084
+@unknown_82_dc28: jsr unknown_82_8b44
+/*unknown_82_dc2b:*/ jsl unknown_90_eaab
 /*unknown_82_dc2f:*/ plp
 /*unknown_82_dc30:*/ rts
 
-unknown_82_dc31: lda $09d6.w
-/*unknown_82_dc34:*/ beq @unknown_82_dc77
-/*unknown_82_dc36:*/ lda $05b6.w
-/*unknown_82_dc39:*/ bit #$0007.w
-/*unknown_82_dc3c:*/ bne @unknown_82_dc45
-/*unknown_82_dc3e:*/ lda #$002d.w
-/*unknown_82_dc41:*/ jsr $809139
-@unknown_82_dc45: lda $09c2.w
-/*unknown_82_dc48:*/ clc
-/*unknown_82_dc49:*/ adc #$0001.w
-/*unknown_82_dc4c:*/ sta $09c2.w
-/*unknown_82_dc4f:*/ cmp $09c4.w
-/*unknown_82_dc52:*/ bmi @unknown_82_dc5c
-/*unknown_82_dc54:*/ lda $09c4.w
-/*unknown_82_dc57:*/ sta $09c2.w
-/*unknown_82_dc5a:*/ bra @unknown_82_dc74
-@unknown_82_dc5c: lda $09d6.w
-/*unknown_82_dc5f:*/ sec
-/*unknown_82_dc60:*/ sbc #$0001.w
-/*unknown_82_dc63:*/ sta $09d6.w
-/*unknown_82_dc66:*/ beq @unknown_82_dc74
-/*unknown_82_dc68:*/ bpl @unknown_82_dc77
-/*unknown_82_dc6a:*/ lda $09c2.w
-/*unknown_82_dc6d:*/ clc
-/*unknown_82_dc6e:*/ adc $09d6.w
-/*unknown_82_dc71:*/ sta $09c2.w
-@unknown_82_dc74: stz $09d6.w
-@unknown_82_dc77: lda $09d6.w
-/*unknown_82_dc7a:*/ bne @unknown_82_dc7e
-/*unknown_82_dc7c:*/ sec
-/*unknown_82_dc7d:*/ rts
-
+unknown_82_dc31:
+  lda var_player_cur_reserve_tanks.w
+  beq @unknown_82_dc77
+  lda var_unknown_05b6.w
+  bit #$0007.w
+  bne @unknown_82_dc45
+  lda #$002d.w
+  jsl unknown_80_9139
+@unknown_82_dc45:
+  lda var_player_cur_health.w
+  clc
+  adc #$0001.w
+  sta var_player_cur_health.w
+  cmp var_player_max_health.w
+  bmi @unknown_82_dc5c
+  lda var_player_max_health.w
+  sta var_player_cur_health.w
+  bra @unknown_82_dc74
+@unknown_82_dc5c:
+  lda var_player_cur_reserve_tanks.w
+  sec
+  sbc #$0001.w
+  sta var_player_cur_reserve_tanks.w
+  beq @unknown_82_dc74
+  bpl @unknown_82_dc77
+  lda var_player_cur_health.w
+  clc
+  adc var_player_cur_reserve_tanks.w
+  sta var_player_cur_health.w
+@unknown_82_dc74:
+  stz var_player_cur_reserve_tanks.w
+@unknown_82_dc77:
+  lda var_player_cur_reserve_tanks.w
+  bne @unknown_82_dc7e
+  sec
+  rts
 @unknown_82_dc7e: clc
-/*unknown_82_dc7f:*/ rts
+  rts
 
 /*unknown_82_dc80:*/ php
 /*unknown_82_dc81:*/ rep #$30
