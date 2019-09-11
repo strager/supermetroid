@@ -61,11 +61,11 @@ var_reserve_tank_configuration: dw ; $7e09c0
 .export reserve_tank_configuration_manual
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c2) export
-var_unknown_09c2: dw ; $7e09c2
-var_unknown_09c4: dw ; $7e09c4
+var_player_cur_health: dw ; $7e09c2
+var_player_max_health: dw ; $7e09c4
 var_unknown_09c6: ds $e ; $7e09c6
-var_unknown_09d4: dw ; $7e09d4
-var_unknown_09d6: dw ; $7e09d6
+var_player_max_reserve_tanks: dw ; $7e09d4
+var_player_cur_reserve_tanks: dw ; $7e09d6
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0a76) export

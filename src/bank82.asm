@@ -5442,7 +5442,7 @@ unknown_82_ac8b:
   clc
   adc #$0100.w
   sta var_pause_weapons_selected_list.w
-  lda var_unknown_09d6.w
+  lda var_player_cur_reserve_tanks.w
   beq @unknown_82_ace7
   lda #$0037.w
   jsl unknown_80_9049
@@ -5653,7 +5653,7 @@ unknown_82_ae8b:
   lda var_new_pressed_buttons
   bit #IO_JOY_A
   beq @end
-  lda var_unknown_09d4.w
+  lda var_player_max_reserve_tanks.w
   beq @end
   lda #$0037.w
   jsl unknown_80_9049
@@ -5738,7 +5738,7 @@ unknown_82_af4f:
   lda var_new_pressed_buttons
   bit #IO_JOY_A
   beq @unknown_82_afbc
-  lda var_unknown_09d6.w
+  lda var_player_cur_reserve_tanks.w
   clc
   adc #$0007.w
   and #$fff8.w
@@ -5753,29 +5753,29 @@ unknown_82_af4f:
   lda #$002d.w
   jsl unknown_80_914d
 @unknown_82_af81:
-  lda var_unknown_09c2.w
+  lda var_player_cur_health.w
   clc
   adc $bf04.w
-  sta var_unknown_09c2.w
-  cmp var_unknown_09c4.w
+  sta var_player_cur_health.w
+  cmp var_player_max_health.w
   bmi @unknown_82_af98
-  lda var_unknown_09c4.w
-  sta var_unknown_09c2.w
+  lda var_player_max_health.w
+  sta var_player_cur_health.w
   bra @unknown_82_afb0
 @unknown_82_af98:
-  lda var_unknown_09d6.w
+  lda var_player_cur_reserve_tanks.w
   sec
   sbc unknown_82_bf04.w
-  sta var_unknown_09d6.w
+  sta var_player_cur_reserve_tanks.w
   beq @unknown_82_afb0
 @unknown_82_afa4:
   bpl @unknown_82_afbc
-  lda var_unknown_09c2.w
+  lda var_player_cur_health.w
   clc
-  adc var_unknown_09d6.w
-  sta var_unknown_09c2.w
+  adc var_player_cur_reserve_tanks.w
+  sta var_player_cur_health.w
 @unknown_82_afb0:
-  stz var_unknown_09d6.w
+  stz var_player_cur_reserve_tanks.w
   stz var_reserve_tank_timer.w
   jsr unknown_82_ae46
   stz var_pause_weapons_selected_list.w
