@@ -592,7 +592,7 @@ das: .dw $800
 /*unknown_82_8548:*/ php
 /*unknown_82_8549:*/ rep #$30
 /*unknown_82_854b:*/ jsr unknown_82_8b44
-/*unknown_82_854e:*/ lda $8f
+/*unknown_82_854e:*/ lda var_unknown_8f
 /*unknown_82_8550:*/ beq @unknown_82_855a
 /*unknown_82_8552:*/ lda #$0001.w
 /*unknown_82_8555:*/ sta $0dec.w
@@ -603,7 +603,7 @@ das: .dw $800
 @unknown_82_8561: stz $0dec.w
 /*unknown_82_8564:*/ ldx #$005a.w
 @unknown_82_8567: jsr $808338
-/*unknown_82_856b:*/ lda $8f
+/*unknown_82_856b:*/ lda var_unknown_8f
 /*unknown_82_856d:*/ bne @unknown_82_8574
 /*unknown_82_856f:*/ dex
 /*unknown_82_8570:*/ bne @unknown_82_8567
@@ -13743,9 +13743,8 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f179:*/ sta $099e.w
 /*unknown_82_f17c:*/ bra @unknown_82_f1a3
 @unknown_82_f17e: rts
-
-@unknown_82_f17f: lda $8f
-/*unknown_82_f181:*/ and #$0400.w
+@unknown_82_f17f: lda var_unknown_8f
+/*unknown_82_f181:*/ and #IO_JOY_DOWN
 /*unknown_82_f184:*/ beq @unknown_82_f1b1
 /*unknown_82_f186:*/ lda #$0037.w
 /*unknown_82_f189:*/ jsr $809049
@@ -13761,12 +13760,11 @@ unknown_82_f0b9: lda $099e.w
 @unknown_82_f1a3: lda #$0009.w
 /*unknown_82_f1a6:*/ sta $0de2.w
 /*unknown_82_f1a9:*/ rts
-
 @unknown_82_f1aa: lda #$000a.w
 /*unknown_82_f1ad:*/ sta $0de2.w
 /*unknown_82_f1b0:*/ rts
 
-@unknown_82_f1b1: lda $8f
+@unknown_82_f1b1: lda var_unknown_8f
 /*unknown_82_f1b3:*/ beq @unknown_82_f1c5
 /*unknown_82_f1b5:*/ lda #$0038.w
 /*unknown_82_f1b8:*/ jsr $809049
@@ -13848,11 +13846,10 @@ unknown_82_f0b9: lda $099e.w
 /*unknown_82_f259:*/ jsr $f587.w
 /*unknown_82_f25c:*/ rts
 
-/*unknown_82_f25d:*/ lda $8f
-/*unknown_82_f25f:*/ bit #$1080.w
+/*unknown_82_f25d:*/ lda var_unknown_8f
+/*unknown_82_f25f:*/ bit #IO_JOY_START | IO_JOY_A
 /*unknown_82_f262:*/ bne @unknown_82_f265
 /*unknown_82_f264:*/ rts
-
 @unknown_82_f265: jsr $f558.w
 /*unknown_82_f268:*/ bcs @unknown_82_f270
 /*unknown_82_f26a:*/ stz $099e.w
