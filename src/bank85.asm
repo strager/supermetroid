@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/io.asm"
 
 .bank ($85 - $80) slot $0
 .org $0
@@ -189,7 +190,7 @@
 /*unknown_85_81b2:*/ jsr $8136.w
 /*unknown_85_81b5:*/ rep #$20
 /*unknown_85_81b7:*/ lda #$5880.w
-/*unknown_85_81ba:*/ sta $2116.w
+/*unknown_85_81ba:*/ sta IO_VMADD
 /*unknown_85_81bd:*/ lda $2139.w
 /*unknown_85_81c0:*/ lda #$3981.w
 /*unknown_85_81c3:*/ sta $4310.w
@@ -202,8 +203,8 @@
 /*unknown_85_81d8:*/ stz $4317.w
 /*unknown_85_81db:*/ stz $4319.w
 /*unknown_85_81de:*/ sep #$20
-/*unknown_85_81e0:*/ lda #$80
-/*unknown_85_81e2:*/ sta $2115.w
+/*unknown_85_81e0:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_85_81e2:*/ sta IO_VMAIN
 /*unknown_85_81e5:*/ lda #$02
 /*unknown_85_81e7:*/ sta $420b.w
 /*unknown_85_81ea:*/ jsr $808f0c
@@ -219,7 +220,7 @@
 /*unknown_85_8201:*/ bpl ($f8 - $100) ; $81fb.w
 /*unknown_85_8203:*/ jsr $8136.w
 /*unknown_85_8206:*/ lda #$5880.w
-/*unknown_85_8209:*/ sta $2116.w
+/*unknown_85_8209:*/ sta IO_VMADD
 /*unknown_85_820c:*/ lda #$1801.w
 /*unknown_85_820f:*/ sta $4310.w
 /*unknown_85_8212:*/ lda #$3800.w
@@ -231,8 +232,8 @@
 /*unknown_85_8224:*/ stz $4317.w
 /*unknown_85_8227:*/ stz $4319.w
 /*unknown_85_822a:*/ sep #$20
-/*unknown_85_822c:*/ lda #$80
-/*unknown_85_822e:*/ sta $2115.w
+/*unknown_85_822c:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_85_822e:*/ sta IO_VMAIN
 /*unknown_85_8231:*/ lda #$02
 /*unknown_85_8233:*/ sta $420b.w
 /*unknown_85_8236:*/ jsr $808f0c
@@ -353,7 +354,7 @@
 /*unknown_85_8329:*/ clc
 /*unknown_85_832a:*/ adc $34
 /*unknown_85_832c:*/ sta $34
-/*unknown_85_832e:*/ sta $2116.w
+/*unknown_85_832e:*/ sta IO_VMADD
 /*unknown_85_8331:*/ lda #$1801.w
 /*unknown_85_8334:*/ sta $4310.w
 /*unknown_85_8337:*/ lda #$3200.w
@@ -365,8 +366,8 @@
 /*unknown_85_8348:*/ stz $4317.w
 /*unknown_85_834b:*/ stz $4319.w
 /*unknown_85_834e:*/ sep #$20
-/*unknown_85_8350:*/ lda #$80
-/*unknown_85_8352:*/ sta $2115.w
+/*unknown_85_8350:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_85_8352:*/ sta IO_VMAIN
 /*unknown_85_8355:*/ lda #$02
 /*unknown_85_8357:*/ sta $420b.w
 /*unknown_85_835a:*/ jsr $808f0c
@@ -574,7 +575,7 @@
 /*unknown_85_8537:*/ lda #$59a0.w
 /*unknown_85_853a:*/ sta $34
 /*unknown_85_853c:*/ lda $34
-/*unknown_85_853e:*/ sta $2116.w
+/*unknown_85_853e:*/ sta IO_VMADD
 /*unknown_85_8541:*/ lda #$1801.w
 /*unknown_85_8544:*/ sta $4310.w
 /*unknown_85_8547:*/ lda #$3200.w
@@ -586,8 +587,8 @@
 /*unknown_85_8559:*/ stz $4317.w
 /*unknown_85_855c:*/ stz $4319.w
 /*unknown_85_855f:*/ sep #$20
-/*unknown_85_8561:*/ lda #$80
-/*unknown_85_8563:*/ sta $2115.w
+/*unknown_85_8561:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_85_8563:*/ sta IO_VMAIN
 /*unknown_85_8566:*/ lda #$02
 /*unknown_85_8568:*/ sta $420b.w
 /*unknown_85_856b:*/ jsr $808f0c
@@ -674,7 +675,7 @@
 /*unknown_85_861c:*/ jsr $8136.w
 /*unknown_85_861f:*/ rep #$20
 /*unknown_85_8621:*/ lda #$5880.w
-/*unknown_85_8624:*/ sta $2116.w
+/*unknown_85_8624:*/ sta IO_VMADD
 /*unknown_85_8627:*/ lda #$1801.w
 /*unknown_85_862a:*/ sta $4310.w
 /*unknown_85_862d:*/ lda #$4100.w
@@ -686,8 +687,8 @@
 /*unknown_85_863f:*/ stz $4317.w
 /*unknown_85_8642:*/ stz $4319.w
 /*unknown_85_8645:*/ sep #$20
-/*unknown_85_8647:*/ lda #$80
-/*unknown_85_8649:*/ sta $2115.w
+/*unknown_85_8647:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_85_8649:*/ sta IO_VMAIN
 /*unknown_85_864c:*/ lda #$02
 /*unknown_85_864e:*/ sta $420b.w
 /*unknown_85_8651:*/ jsr $8136.w

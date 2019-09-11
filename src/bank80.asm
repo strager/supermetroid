@@ -909,8 +909,8 @@ unknown_80_85f6:
   beq @unknown_80_861b
   jmp @unknown_80_8693
 @unknown_80_8614:
-  lda $213f.w
-  bit #$10
+  lda IO_STAT78
+  bit #IO_STAT78_PAL
   beq @unknown_80_8693
 @unknown_80_861b:
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
@@ -1611,9 +1611,9 @@ unknown_80_8bd3:
   lda #$18.b
   sta $4311.w
   ldy $0006.w, X
-  sty $2116.w
+  sty IO_VMADD
   lda $0008.w, X
-  sta $2115.w
+  sta IO_VMAIN
   lda #$02.b
   sta $420b.w
   rep #$21
@@ -1635,9 +1635,9 @@ unknown_80_8bd3:
   lda #$19.b
   sta $4311.w
   ldy $0006.w, X
-  sty $2116.w
+  sty IO_VMADD
   lda $0008.w, X
-  sta $2115.w
+  sta IO_VMAIN
   lda #$02.b
   sta $420b.w
   rep #$21
@@ -1663,13 +1663,13 @@ unknown_80_8c83:
   sta $4312.w
   lda $00d3.w, Y
   sta $4313.w
-  lda #$0080.w
+  lda #IO_VMAIN_INCREMENT_HIGH
   ldx $d5, Y
   bpl @unknown_80_8cb2
   inc A
 @unknown_80_8cb2:
-  sta $2115.w
-  stx $2116.w
+  sta IO_VMAIN ; NOTE: This stores to IO_VMADDL too.
+  stx IO_VMADD
   sep #$20
   lda #$02
   sta $420b.w
@@ -1689,13 +1689,13 @@ unknown_80_8c83:
   rtl
 
 unknown_80_8cd8:
-  lda #$81
-  sta $2115.w
+  lda #IO_VMAIN_INCREMENT_32 | IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
   lda $0962.w
   beq @unknown_80_8d44
   stz $0962.w
   ldy $095a.w
-  sty $2116.w
+  sty IO_VMADD
   ldx #$1801.w
   stx $4310.w
   ldx #$c8c8.w
@@ -1707,7 +1707,7 @@ unknown_80_8cd8:
   lda #$02
   sta $420b.w
   iny
-  sty $2116.w
+  sty IO_VMADD
   stx $4315.w
   ldx #$c908.w
   stx $4312.w
@@ -1719,11 +1719,11 @@ unknown_80_8cd8:
   beq @unknown_80_8d44
   stx $4315.w
   ldy $095c.w
-  sty $2116.w
+  sty IO_VMADD
   lda #$02
   sta $420b.w
   iny
-  sty $2116.w
+  sty IO_VMADD
   stx $4315.w
   ldx $0960.w
   stx $4312.w
@@ -1734,7 +1734,7 @@ unknown_80_8cd8:
   beq @unknown_80_8dab
   stz $097e.w
   ldy $0976.w
-  sty $2116.w
+  sty IO_VMADD
   ldx #$1801.w
   stx $4310.w
   ldx #$c9d0.w
@@ -1746,7 +1746,7 @@ unknown_80_8cd8:
   lda #$02
   sta $420b.w
   iny
-  sty $2116.w
+  sty IO_VMADD
   stx $4315.w
   ldx #$ca10.w
   stx $4312.w
@@ -1758,11 +1758,11 @@ unknown_80_8cd8:
   beq @unknown_80_8dab
   stx $4315.w
   ldy $0978.w
-  sty $2116.w
+  sty IO_VMADD
   lda #$02
   sta $420b.w
   iny
-  sty $2116.w
+  sty IO_VMADD
   stx $4315.w
   ldx $097c.w
   stx $4312.w
@@ -1772,13 +1772,13 @@ unknown_80_8cd8:
   rts
 
 unknown_80_8dac:
-  lda #$80
-  sta $2115.w
+  lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
   lda $0970.w
   beq @unknown_80_8e26
   stz $0970.w
   ldy $0968.w
-  sty $2116.w
+  sty IO_VMADD
   ldx #$1801.w
   stx $4310.w
   ldx #$c948.w
@@ -1792,7 +1792,7 @@ unknown_80_8dac:
   rep #$20
   tya
   ora #$0020.w
-  sta $2116.w
+  sta IO_VMADD
   sep #$20
   stx $4315.w
   ldx #$c98c.w
@@ -1805,13 +1805,13 @@ unknown_80_8dac:
   beq @unknown_80_8e26
   stx $4315.w
   ldy $096a.w
-  sty $2116.w
+  sty IO_VMADD
   lda #$02
   sta $420b.w
   rep #$20
   tya
   ora #$0020.w
-  sta $2116.w
+  sta IO_VMADD
   sep #$20
   stx $4315.w
   ldx $096e.w
@@ -1823,7 +1823,7 @@ unknown_80_8dac:
   beq @unknown_80_8ea1
   stz $098c.w
   ldy $0984.w
-  sty $2116.w
+  sty IO_VMADD
   ldx #$1801.w
   stx $4310.w
   ldx #$ca50.w
@@ -1837,7 +1837,7 @@ unknown_80_8dac:
   rep #$20
   tya
   ora #$0020.w
-  sta $2116.w
+  sta IO_VMADD
   sep #$20
   stx $4315.w
   ldx #$ca94.w
@@ -1850,7 +1850,7 @@ unknown_80_8dac:
   beq @unknown_80_8ea1
   stx $4315.w
   ldy $0986.w
-  sty $2116.w
+  sty IO_VMADD
   lda #$02
   sta $420b.w
   sep #$02
@@ -1861,7 +1861,7 @@ unknown_80_8dac:
   rep #$20
   tya
   ora #$0020.w
-  sta $2116.w
+  sta IO_VMADD
   sep #$20
   stx $4315.w
   ldx $098a.w
@@ -1881,13 +1881,13 @@ unknown_80_8ea2:
 @unknown_80_8eac:
   stz $0340.w, X
   ldx #$00
-  lda #$80
-  sta $2115.w
+  lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
 @unknown_80_8eb6:
   rep #$20
   lda $0340.w, X
   beq @unknown_80_8eef
-  sta $2116.w
+  sta IO_VMADD
   lda $2139.w
   lda $0342.w, X
   sta $4310.w
@@ -2524,7 +2524,7 @@ unknown_80_9376: phb
 /*unknown_80_9387:*/ ldy #$ad02.w
 /*unknown_80_938a:*/ ora $3c8507, X
 /*unknown_80_938e:*/ lda #$6000.w
-/*unknown_80_9391:*/ sta $2116.w
+/*unknown_80_9391:*/ sta IO_VMADD
 /*unknown_80_9394:*/ lda #$1801.w
 /*unknown_80_9397:*/ sta $4310.w
 /*unknown_80_939a:*/ lda ($3c)
@@ -2542,7 +2542,7 @@ unknown_80_9376: phb
 /*unknown_80_93b2:*/ iny
 /*unknown_80_93b3:*/ stx $420b.w
 /*unknown_80_93b6:*/ lda #$6100.w
-/*unknown_80_93b9:*/ sta $2116.w
+/*unknown_80_93b9:*/ sta IO_VMADD
 /*unknown_80_93bc:*/ lda $14
 /*unknown_80_93be:*/ sta $4312.w
 /*unknown_80_93c1:*/ lda ($3c), Y
@@ -2555,7 +2555,7 @@ unknown_80_9376: phb
 /*unknown_80_93d3:*/ and ($07, X)
 /*unknown_80_93d5:*/ sta $3c
 /*unknown_80_93d7:*/ lda #$6080.w
-/*unknown_80_93da:*/ sta $2116.w
+/*unknown_80_93da:*/ sta IO_VMADD
 /*unknown_80_93dd:*/ lda #$1801.w
 /*unknown_80_93e0:*/ sta $4310.w
 /*unknown_80_93e3:*/ lda ($3c)
@@ -2573,7 +2573,7 @@ unknown_80_9376: phb
 /*unknown_80_93fb:*/ iny
 /*unknown_80_93fc:*/ stx $420b.w
 /*unknown_80_93ff:*/ lda #$6180.w
-/*unknown_80_9402:*/ sta $2116.w
+/*unknown_80_9402:*/ sta IO_VMADD
 /*unknown_80_9405:*/ lda $14
 /*unknown_80_9407:*/ sta $4312.w
 /*unknown_80_940a:*/ lda ($3c), Y
@@ -2601,7 +2601,7 @@ unknown_80_9416: phb
 /*unknown_80_943a:*/ lda $1f31.w, X
 /*unknown_80_943d:*/ sta $4305.w
 /*unknown_80_9440:*/ lda $1f3d.w, X
-/*unknown_80_9443:*/ sta $2116.w
+/*unknown_80_9443:*/ sta IO_VMADD
 /*unknown_80_9446:*/ ldy #$8c80.w
 /*unknown_80_9449:*/ ora $21, X
 /*unknown_80_944b:*/ ldy #$8c01.w
@@ -2838,7 +2838,7 @@ unknown_80_9616:
   lda #$80
   sta $2100.w
   ldx $05be.w
-  stx $2116.w
+  stx IO_VMADD
   ldx #$1801.w
   stx $4310.w
   ldx $05c0.w
@@ -2847,8 +2847,8 @@ unknown_80_9616:
   sta $4314.w
   ldx $05c3.w
   stx $4315.w
-  lda #$80
-  sta $2115.w
+  lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
   lda #$02
   sta $420b.w
   lda #$80
@@ -3294,9 +3294,9 @@ unknown_80_988b:
 /*unknown_80_9a7c:*/ plb
 /*unknown_80_9a7d:*/ rep #$30
 /*unknown_80_9a7f:*/ lda #$5800.w
-/*unknown_80_9a82:*/ sta $2116.w
-/*unknown_80_9a85:*/ lda #$0080.w
-/*unknown_80_9a88:*/ sta $2115.w
+/*unknown_80_9a82:*/ sta IO_VMADD
+/*unknown_80_9a85:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_80_9a88:*/ sta IO_VMAIN
 /*unknown_80_9a8b:*/ jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
@@ -4148,7 +4148,7 @@ das: .dw unknown_80_988b@size
 /*unknown_80_a23f:*/ php
 /*unknown_80_a240:*/ rep #$20
 /*unknown_80_a242:*/ lda #$4800.w
-/*unknown_80_a245:*/ sta $2116.w
+/*unknown_80_a245:*/ sta IO_VMADD
 /*unknown_80_a248:*/ lda #$1808.w
 /*unknown_80_a24b:*/ sta $4310.w
 /*unknown_80_a24e:*/ lda #$a29a.w
@@ -4158,13 +4158,13 @@ das: .dw unknown_80_988b@size
 /*unknown_80_a25a:*/ lda #$0800.w
 /*unknown_80_a25d:*/ sta $4315.w
 /*unknown_80_a260:*/ sep #$20
-/*unknown_80_a262:*/ lda #$00
-/*unknown_80_a264:*/ sta $2115.w
+/*unknown_80_a262:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_LOW
+/*unknown_80_a264:*/ sta IO_VMAIN
 /*unknown_80_a267:*/ lda #$02
 /*unknown_80_a269:*/ sta $420b.w
 /*unknown_80_a26c:*/ rep #$20
 /*unknown_80_a26e:*/ lda #$4800.w
-/*unknown_80_a271:*/ sta $2116.w
+/*unknown_80_a271:*/ sta IO_VMADD
 /*unknown_80_a274:*/ lda #$1908.w
 /*unknown_80_a277:*/ sta $4310.w
 /*unknown_80_a27a:*/ lda #$a29a.w
@@ -4174,8 +4174,8 @@ das: .dw unknown_80_988b@size
 /*unknown_80_a286:*/ lda #$0800.w
 /*unknown_80_a289:*/ sta $4315.w
 /*unknown_80_a28c:*/ sep #$20
-/*unknown_80_a28e:*/ lda #$80
-/*unknown_80_a290:*/ sta $2115.w
+/*unknown_80_a28e:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_80_a290:*/ sta IO_VMAIN
 /*unknown_80_a293:*/ lda #$02
 /*unknown_80_a295:*/ sta $420b.w
 /*unknown_80_a298:*/ plp
@@ -4185,7 +4185,7 @@ das: .dw unknown_80_988b@size
 /*unknown_80_a29b:*/ ora $08, S
 /*unknown_80_a29d:*/ rep #$20
 /*unknown_80_a29f:*/ lda #$5880.w
-/*unknown_80_a2a2:*/ sta $2116.w
+/*unknown_80_a2a2:*/ sta IO_VMADD
 /*unknown_80_a2a5:*/ lda #$1808.w
 /*unknown_80_a2a8:*/ sta $4310.w
 /*unknown_80_a2ab:*/ lda #$a2f7.w
@@ -4195,13 +4195,13 @@ das: .dw unknown_80_988b@size
 /*unknown_80_a2b7:*/ lda #$0780.w
 /*unknown_80_a2ba:*/ sta $4315.w
 /*unknown_80_a2bd:*/ sep #$20
-/*unknown_80_a2bf:*/ lda #$00
-/*unknown_80_a2c1:*/ sta $2115.w
+/*unknown_80_a2bf:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_LOW
+/*unknown_80_a2c1:*/ sta IO_VMAIN
 /*unknown_80_a2c4:*/ lda #$02
 /*unknown_80_a2c6:*/ sta $420b.w
 /*unknown_80_a2c9:*/ rep #$20
 /*unknown_80_a2cb:*/ lda #$5880.w
-/*unknown_80_a2ce:*/ sta $2116.w
+/*unknown_80_a2ce:*/ sta IO_VMADD
 /*unknown_80_a2d1:*/ lda #$1908.w
 /*unknown_80_a2d4:*/ sta $4310.w
 /*unknown_80_a2d7:*/ lda #$a2f8.w
@@ -4211,8 +4211,8 @@ das: .dw unknown_80_988b@size
 /*unknown_80_a2e3:*/ lda #$0780.w
 /*unknown_80_a2e6:*/ sta $4315.w
 /*unknown_80_a2e9:*/ sep #$20
-/*unknown_80_a2eb:*/ lda #$80
-/*unknown_80_a2ed:*/ sta $2115.w
+/*unknown_80_a2eb:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_80_a2ed:*/ sta IO_VMAIN
 /*unknown_80_a2f0:*/ lda #$02
 /*unknown_80_a2f2:*/ sta $420b.w
 /*unknown_80_a2f5:*/ plp
@@ -5726,9 +5726,9 @@ das: .dw unknown_80_988b@size
 /*unknown_80_b03e:*/ rtl
 
 /*unknown_80_b03f:*/ jsr $80836f
-/*unknown_80_b043:*/ lda #$0080.w
-/*unknown_80_b046:*/ sta $2115.w
-/*unknown_80_b049:*/ stz $2116.w
+/*unknown_80_b043:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+/*unknown_80_b046:*/ sta IO_VMAIN
+/*unknown_80_b049:*/ stz IO_VMADD
 /*unknown_80_b04c:*/ lda #$1900.w
 /*unknown_80_b04f:*/ sta $4310.w
 /*unknown_80_b052:*/ lda #$8000.w
@@ -5740,16 +5740,16 @@ das: .dw unknown_80_988b@size
 /*unknown_80_b062:*/ sta $4314.w
 /*unknown_80_b065:*/ lda #$02
 /*unknown_80_b067:*/ sta $420b.w
-/*unknown_80_b06a:*/ stz $2115.w
-/*unknown_80_b06d:*/ stz $2116.w
-/*unknown_80_b070:*/ stz $2117.w
+/*unknown_80_b06a:*/ stz IO_VMAIN
+/*unknown_80_b06d:*/ stz IO_VMADDL
+/*unknown_80_b070:*/ stz IO_VMADDH
 /*unknown_80_b073:*/ ldx #$4000.w
 /*unknown_80_b076:*/ stz $2118.w
 /*unknown_80_b079:*/ dex
 /*unknown_80_b07a:*/ bne ($fa - $100) ; $b076.w
 /*unknown_80_b07c:*/ ldy #$0000.w
 /*unknown_80_b07f:*/ tyx
-/*unknown_80_b080:*/ sty $2116.w
+/*unknown_80_b080:*/ sty IO_VMADD
 /*unknown_80_b083:*/ phy
 /*unknown_80_b084:*/ ldy #$0020.w
 /*unknown_80_b087:*/ lda $98c000, X

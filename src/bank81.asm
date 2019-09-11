@@ -1716,11 +1716,11 @@ unknown_81_8085: rep #$30
 /*unknown_81_8ddb:*/ php
 /*unknown_81_8ddc:*/ sep #$30
 /*unknown_81_8dde:*/ lda #$00
-/*unknown_81_8de0:*/ sta $2116.w
+/*unknown_81_8de0:*/ sta IO_VMADDL
 /*unknown_81_8de3:*/ lda #$00
-/*unknown_81_8de5:*/ sta $2117.w
-/*unknown_81_8de8:*/ lda #$80
-/*unknown_81_8dea:*/ sta $2115.w
+/*unknown_81_8de5:*/ sta IO_VMADDH
+/*unknown_81_8de8:*/ lda #IO_VMAIN_INCREMENT_HIGH
+/*unknown_81_8dea:*/ sta IO_VMAIN
 /*unknown_81_8ded:*/ jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
@@ -1733,11 +1733,11 @@ das: .dw unknown_8e_8000@size + unknown_8e_c000@size
 /*unknown_81_8df9:*/ lda #$02
 /*unknown_81_8dfb:*/ sta $420b.w
 /*unknown_81_8dfe:*/ lda #$00
-/*unknown_81_8e00:*/ sta $2116.w
+/*unknown_81_8e00:*/ sta IO_VMADDL
 /*unknown_81_8e03:*/ lda #$30
-/*unknown_81_8e05:*/ sta $2117.w
-/*unknown_81_8e08:*/ lda #$80
-/*unknown_81_8e0a:*/ sta $2115.w
+/*unknown_81_8e05:*/ sta IO_VMADDH
+/*unknown_81_8e08:*/ lda #IO_VMAIN_INCREMENT_HIGH
+/*unknown_81_8e0a:*/ sta IO_VMAIN
 /*unknown_81_8e0d:*/ jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
@@ -1750,11 +1750,11 @@ das: .dw unknown_b6_8000@size
 /*unknown_81_8e19:*/ lda #$02
 /*unknown_81_8e1b:*/ sta $420b.w
 /*unknown_81_8e1e:*/ lda #$00
-/*unknown_81_8e20:*/ sta $2116.w
+/*unknown_81_8e20:*/ sta IO_VMADDL
 /*unknown_81_8e23:*/ lda #$60
-/*unknown_81_8e25:*/ sta $2117.w
-/*unknown_81_8e28:*/ lda #$80
-/*unknown_81_8e2a:*/ sta $2115.w
+/*unknown_81_8e25:*/ sta IO_VMADDH
+/*unknown_81_8e28:*/ lda #IO_VMAIN_INCREMENT_HIGH
+/*unknown_81_8e2a:*/ sta IO_VMAIN
 /*unknown_81_8e2d:*/ jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
@@ -1767,11 +1767,11 @@ das: .dw unknown_b6_c000@size
 /*unknown_81_8e39:*/ lda #$02
 /*unknown_81_8e3b:*/ sta $420b.w
 /*unknown_81_8e3e:*/ lda #$00
-/*unknown_81_8e40:*/ sta $2116.w
+/*unknown_81_8e40:*/ sta IO_VMADDL
 /*unknown_81_8e43:*/ lda #$40
-/*unknown_81_8e45:*/ sta $2117.w
-/*unknown_81_8e48:*/ lda #$80
-/*unknown_81_8e4a:*/ sta $2115.w
+/*unknown_81_8e45:*/ sta IO_VMADDH
+/*unknown_81_8e48:*/ lda #IO_VMAIN_INCREMENT_HIGH
+/*unknown_81_8e4a:*/ sta IO_VMAIN
 /*unknown_81_8e4d:*/ jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
@@ -2047,11 +2047,11 @@ das: .dw unknown_8e_d600@size
 
 /*unknown_81_907e:*/ sep #$30
 /*unknown_81_9080:*/ lda #$00
-/*unknown_81_9082:*/ sta $2116.w
+/*unknown_81_9082:*/ sta IO_VMADDL
 /*unknown_81_9085:*/ lda #$40
-/*unknown_81_9087:*/ sta $2117.w
-/*unknown_81_908a:*/ lda #$80
-/*unknown_81_908c:*/ sta $2115.w
+/*unknown_81_9087:*/ sta IO_VMADDH
+/*unknown_81_908a:*/ lda #IO_VMAIN_INCREMENT_HIGH
+/*unknown_81_908c:*/ sta IO_VMAIN
 /*unknown_81_908f:*/ jsl unknown_80_91a9
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1

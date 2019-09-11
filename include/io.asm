@@ -68,6 +68,10 @@
 
 ; PPU: VRAM address increment mode
 .define IO_VMAIN $2115.w
+.define IO_VMAIN_INCREMENT_1 $00.b
+.define IO_VMAIN_INCREMENT_32 $01.b
+.define IO_VMAIN_INCREMENT_HIGH $80.b
+.define IO_VMAIN_INCREMENT_LOW $00.b
 
 ; PPU: VRAM address (16 bits)
 .define IO_VMADD $2116.w
