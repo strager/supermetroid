@@ -481,8 +481,8 @@ unknown_80_8338: php
 /*unknown_80_833b:*/ plb
 /*unknown_80_833c:*/ sep #$30
 /*unknown_80_833e:*/ lda #$01
-/*unknown_80_8340:*/ sta $05b4.w
-@unknown_80_8343: lda $05b4.w
+/*unknown_80_8340:*/ sta var_unknown_05b4.w
+@unknown_80_8343: lda var_unknown_05b4.w
 /*unknown_80_8346:*/ bne @unknown_80_8343
 /*unknown_80_8348:*/ plb
 /*unknown_80_8349:*/ plp
@@ -2780,7 +2780,7 @@ interrupt_nmi:
   tcd
   sep #$10
   ldx $4210.w
-  ldx $05b4.w
+  ldx var_unknown_05b4.w
   beq @unknown_80_9602
   jsr unknown_80_933a
   jsr unknown_80_9376
@@ -2815,7 +2815,7 @@ interrupt_nmi:
   stx $420c.w
   jsl unknown_80_9459
   ldx #$00
-  stx $05b4.w
+  stx var_unknown_05b4.w
   stx $05ba.w
   ldx $05b5.w
   inx
@@ -3028,8 +3028,8 @@ unknown_80_9616:
 @unknown_80_97b1: lda #$0010.w
 @unknown_80_97b4: ldy #$0000.w
 /*unknown_80_97b7:*/ ldx #$0098.w
-/*unknown_80_97ba:*/ stz $05b4.w
-/*unknown_80_97bd:*/ inc $05b4.w
+/*unknown_80_97ba:*/ stz var_unknown_05b4.w
+/*unknown_80_97bd:*/ inc var_unknown_05b4.w
 /*unknown_80_97c0:*/ rts
 
 /*unknown_80_97c1:*/ sep #$20
@@ -3073,8 +3073,8 @@ unknown_80_9616:
 @unknown_80_981a: lda #$0016.w
 @unknown_80_981d: ldy #$0000.w
 /*unknown_80_9820:*/ ldx #$0098.w
-/*unknown_80_9823:*/ stz $05b4.w
-/*unknown_80_9826:*/ inc $05b4.w
+/*unknown_80_9823:*/ stz var_unknown_05b4.w
+/*unknown_80_9826:*/ inc var_unknown_05b4.w
 /*unknown_80_9829:*/ rts
 
 /*unknown_80_982a:*/ php

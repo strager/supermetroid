@@ -50,7 +50,8 @@ var_unknown_a5: dw ; $7e00a5
 var_unknown_0590: dw ; $7e0590
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $05b6) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $05b4) export
+var_unknown_05b4: dw ; $7e05b4
 var_unknown_05b6: dw ; $7e05b6
 .ende
 
