@@ -7,6 +7,8 @@ This project produces the following ROMs:
 * `supermetroid-ntsc.sfc`, the NTSC (Japan/USA) version of Super Metroid. SHA-1
   digest: `da957f0d63d14cb441d215462904c4fa8519c613`
 
+Want to help? [Contribute changes to supermetroid](CONTRIBUTING.md).
+
 ## Building
 
 [![Build Status](https://travis-ci.org/strager/supermetroid.svg?branch=master)](https://travis-ci.org/strager/supermetroid)
