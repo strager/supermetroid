@@ -11133,74 +11133,79 @@ unknown_82_db0c: rep #$30
 /*unknown_82_db66:*/ bne @unknown_82_db44
 /*unknown_82_db68:*/ rts
 
-unknown_82_db69: php
-/*unknown_82_db6a:*/ rep #$30
-/*unknown_82_db6c:*/ lda $09c2.w
-/*unknown_82_db6f:*/ beq @unknown_82_db73
-/*unknown_82_db71:*/ bpl @unknown_82_dbb2
-@unknown_82_db73: lda $09c0.w
-/*unknown_82_db76:*/ bit #$0001.w
-/*unknown_82_db79:*/ beq @unknown_82_db95
-/*unknown_82_db7b:*/ lda $09d6.w
-/*unknown_82_db7e:*/ beq @unknown_82_db95
-/*unknown_82_db80:*/ lda #$8000.w
-/*unknown_82_db83:*/ sta $0a78.w
-/*unknown_82_db86:*/ lda #$001b.w
-/*unknown_82_db89:*/ sta $0998.w
-/*unknown_82_db8c:*/ lda #$001b.w
-/*unknown_82_db8f:*/ jsr $90f084
-/*unknown_82_db93:*/ bra @unknown_82_dbb2
-@unknown_82_db95: lda $0998.w
-/*unknown_82_db98:*/ cmp #$0008.w
-/*unknown_82_db9b:*/ beq @unknown_82_db9f
-/*unknown_82_db9d:*/ plp
-/*unknown_82_db9e:*/ rts
-
-@unknown_82_db9f: lda #$8000.w
-/*unknown_82_dba2:*/ sta $0a78.w
-/*unknown_82_dba5:*/ lda #$0011.w
-/*unknown_82_dba8:*/ jsr $90f084
-/*unknown_82_dbac:*/ lda #$0013.w
-/*unknown_82_dbaf:*/ sta $0998.w
-@unknown_82_dbb2: lda $09da.w
-/*unknown_82_dbb5:*/ clc
-/*unknown_82_dbb6:*/ adc #$0001.w
-/*unknown_82_dbb9:*/ sta $09da.w
-/*unknown_82_dbbc:*/ cmp #$003c.w
-/*unknown_82_dbbf:*/ bmi @unknown_82_dbf2
-/*unknown_82_dbc1:*/ stz $09da.w
-/*unknown_82_dbc4:*/ lda $09dc.w
-/*unknown_82_dbc7:*/ clc
-/*unknown_82_dbc8:*/ adc #$0001.w
-/*unknown_82_dbcb:*/ sta $09dc.w
-/*unknown_82_dbce:*/ cmp #$003c.w
-/*unknown_82_dbd1:*/ bmi @unknown_82_dbf2
-/*unknown_82_dbd3:*/ stz $09dc.w
-/*unknown_82_dbd6:*/ lda $09de.w
-/*unknown_82_dbd9:*/ clc
-/*unknown_82_dbda:*/ adc #$0001.w
-/*unknown_82_dbdd:*/ sta $09de.w
-/*unknown_82_dbe0:*/ cmp #$003c.w
-/*unknown_82_dbe3:*/ bmi @unknown_82_dbf2
-/*unknown_82_dbe5:*/ stz $09de.w
-/*unknown_82_dbe8:*/ lda $09e0.w
-/*unknown_82_dbeb:*/ clc
-/*unknown_82_dbec:*/ adc #$0001.w
-/*unknown_82_dbef:*/ sta $09e0.w
-@unknown_82_dbf2: lda $09e0.w
-/*unknown_82_dbf5:*/ cmp #$0064.w
-/*unknown_82_dbf8:*/ bpl @unknown_82_dbfc
-/*unknown_82_dbfa:*/ plp
-/*unknown_82_dbfb:*/ rts
-
-@unknown_82_dbfc: lda #$003b.w
-/*unknown_82_dbff:*/ sta $09da.w
-/*unknown_82_dc02:*/ sta $09dc.w
-/*unknown_82_dc05:*/ sta $09de.w
-/*unknown_82_dc08:*/ lda #$0063.w
-/*unknown_82_dc0b:*/ sta $09e0.w
-/*unknown_82_dc0e:*/ plp
-/*unknown_82_dc0f:*/ rts
+unknown_82_db69:
+  php
+  rep #$30
+  lda var_player_cur_health.w
+  beq @unknown_82_db73
+  bpl @unknown_82_dbb2
+@unknown_82_db73:
+  lda var_reserve_tank_configuration.w
+  bit #$0001.w
+  beq @unknown_82_db95
+  lda var_player_cur_reserve_tanks.w
+  beq @unknown_82_db95
+  lda #$8000.w
+  sta var_unknown_0a78.w
+  lda #$001b.w
+  sta var_unknown_0998.w
+  lda #$001b.w
+  jsl unknown_90_f084
+  bra @unknown_82_dbb2
+@unknown_82_db95:
+  lda var_unknown_0998.w
+  cmp #$0008.w
+  beq @unknown_82_db9f
+  plp
+  rts
+@unknown_82_db9f:
+  lda #$8000.w
+  sta var_unknown_0a78.w
+  lda #$0011.w
+  jsl unknown_90_f084
+  lda #$0013.w
+  sta var_unknown_0998.w
+@unknown_82_dbb2:
+  lda var_unknown_09da.w
+  clc
+  adc #$0001.w
+  sta var_unknown_09da.w
+  cmp #$003c.w
+  bmi @unknown_82_dbf2
+  stz var_unknown_09da.w
+  lda var_unknown_09dc.w
+  clc
+  adc #$0001.w
+  sta var_unknown_09dc.w
+  cmp #$003c.w
+  bmi @unknown_82_dbf2
+  stz var_unknown_09dc.w
+  lda var_unknown_09de.w
+  clc
+  adc #$0001.w
+  sta var_unknown_09de.w
+  cmp #$003c.w
+  bmi @unknown_82_dbf2
+  stz var_unknown_09de.w
+  lda var_unknown_09e0.w
+  clc
+  adc #$0001.w
+  sta var_unknown_09e0.w
+@unknown_82_dbf2:
+  lda var_unknown_09e0.w
+  cmp #$0064.w
+  bpl @unknown_82_dbfc
+  plp
+  rts
+@unknown_82_dbfc:
+  lda #$003b.w
+  sta var_unknown_09da.w
+  sta var_unknown_09dc.w
+  sta var_unknown_09de.w
+  lda #$0063.w
+  sta var_unknown_09e0.w
+  plp
+  rts
 
 /*unknown_82_dc10:*/ php
 /*unknown_82_dc11:*/ rep #$30

@@ -52,6 +52,10 @@ var_pause_weapons_selected_item: db ; $7e0756
 var_reserve_tank_timer: dw ; $7e0757
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0998) export
+var_unknown_0998: dw ; $7e0998
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c0) export
 var_reserve_tank_configuration: dw ; $7e09c0
 .ende
@@ -66,10 +70,16 @@ var_player_max_health: dw ; $7e09c4
 var_unknown_09c6: ds $e ; $7e09c6
 var_player_max_reserve_tanks: dw ; $7e09d4
 var_player_cur_reserve_tanks: dw ; $7e09d6
+var_unknown_09d8: dw ; $7e09d8
+var_unknown_09da: dw ; $7e09da
+var_unknown_09dc: dw ; $7e09dc
+var_unknown_09de: dw ; $7e09de
+var_unknown_09e0: dw ; $7e09e0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0a76) export
 var_unknown_0a76: dw ; $7e0a76
+var_unknown_0a78: dw ; $7e0a78
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3a8e) export

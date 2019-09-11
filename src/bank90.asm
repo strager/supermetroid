@@ -13060,7 +13060,7 @@ unknown_90_eee7: lda $0b3e.w
 /*unknown_90_f080:*/ sta $0a58.w
 @unknown_90_f083: rts
 
-/*unknown_90_f084:*/ php
+unknown_90_f084: php
 /*unknown_90_f085:*/ phb
 /*unknown_90_f086:*/ phk
 /*unknown_90_f087:*/ plb
