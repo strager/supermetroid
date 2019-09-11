@@ -61,10 +61,12 @@ var_game_state: db ; $7e0998
 .ende
 .define game_state_unknown_00 $00.b
 .export game_state_unknown_00
-.define game_state_unknown_02 $02.b
-.export game_state_unknown_02
 .define game_state_title_screen $01.b
 .export game_state_title_screen
+.define game_state_unknown_02 $02.b
+.export game_state_unknown_02
+.define game_state_unknown_03 $03.b
+.export game_state_unknown_03
 .define game_state_menu $04.b
 .export game_state_menu
 .define game_state_loading_map $05.b
