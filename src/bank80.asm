@@ -1,3 +1,4 @@
+.include "include/asm.asm"
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
@@ -2621,7 +2622,7 @@ unknown_80_9459: php
 /*unknown_80_9461:*/ bne ($f9 - $100) ; $945c.w
 /*unknown_80_9463:*/ rep #$20
 /*unknown_80_9465:*/ lda IO_JOY1
-/*unknown_80_9468:*/ sta $8b
+/*unknown_80_9468:*/ sta0 var_pressed_buttons
 /*unknown_80_946a:*/ eor $97
 /*unknown_80_946c:*/ and $8b
 /*unknown_80_946e:*/ sta $8f

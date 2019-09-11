@@ -59,7 +59,8 @@ SOURCES = \
   src/bankb4.asm \
   src/bankb5.asm \
   src/bankb6.asm \
-  src/main.asm
+  src/main.asm \
+  src/ram.asm
 
 OBJECTS = $(patsubst %.asm,$(BUILD)/%.asm.o,$(SOURCES))
 DEPENDENCY_FILES = $(patsubst %,%.d,$(OBJECTS))
