@@ -2615,135 +2615,149 @@ unknown_80_9416: phb
 /*unknown_80_9457:*/ plb
 /*unknown_80_9458:*/ rts
 
-unknown_80_9459: php
-/*unknown_80_945a:*/ sep #$20
-/*unknown_80_945c:*/ lda IO_HVBJOY
-/*unknown_80_945f:*/ and #IO_HVBJOY_JOYPAD_BUSY
-/*unknown_80_9461:*/ bne ($f9 - $100) ; $945c.w
-/*unknown_80_9463:*/ rep #$20
-/*unknown_80_9465:*/ lda IO_JOY1
-/*unknown_80_9468:*/ sta0 var_pressed_buttons
-/*unknown_80_946a:*/ eor $97
-/*unknown_80_946c:*/ and $8b
-/*unknown_80_946e:*/ sta $8f
-/*unknown_80_9470:*/ sta $93
-/*unknown_80_9472:*/ lda $8b
-/*unknown_80_9474:*/ beq $12 ; $9488.w
-/*unknown_80_9476:*/ cmp $97
-/*unknown_80_9478:*/ bne $0e ; $9488.w
-/*unknown_80_947a:*/ dec $a3
-/*unknown_80_947c:*/ bne $0e ; $948c.w
-/*unknown_80_947e:*/ lda $8b
-/*unknown_80_9480:*/ sta $93
-/*unknown_80_9482:*/ lda $89
-/*unknown_80_9484:*/ sta $a3
-/*unknown_80_9486:*/ bra $04 ; $948c.w
-/*unknown_80_9488:*/ lda $87
-/*unknown_80_948a:*/ sta $a3
-/*unknown_80_948c:*/ lda $8b
-/*unknown_80_948e:*/ sta $97
-/*unknown_80_9490:*/ lda $05d1.w
-/*unknown_80_9493:*/ bne $02 ; $9497.w
-/*unknown_80_9495:*/ plp
-/*unknown_80_9496:*/ rtl
-
-/*unknown_80_9497:*/ lda IO_JOY2
-/*unknown_80_949a:*/ sta $8d
-/*unknown_80_949c:*/ eor $99
-/*unknown_80_949e:*/ and $8d
-/*unknown_80_94a0:*/ sta $91
-/*unknown_80_94a2:*/ sta $95
-/*unknown_80_94a4:*/ lda $8d
-/*unknown_80_94a6:*/ beq $12 ; $94ba.w
-/*unknown_80_94a8:*/ cmp $99
-/*unknown_80_94aa:*/ bne $0e ; $94ba.w
-/*unknown_80_94ac:*/ dec $a5
-/*unknown_80_94ae:*/ bne $0e ; $94be.w
-/*unknown_80_94b0:*/ lda $8d
-/*unknown_80_94b2:*/ sta $95
-/*unknown_80_94b4:*/ lda $89
-/*unknown_80_94b6:*/ sta $a5
-/*unknown_80_94b8:*/ bra $04 ; $94be.w
-/*unknown_80_94ba:*/ lda $87
-/*unknown_80_94bc:*/ sta $a5
-/*unknown_80_94be:*/ lda $8d
-/*unknown_80_94c0:*/ sta $99
-/*unknown_80_94c2:*/ lda $0617.w
-/*unknown_80_94c5:*/ bne $0d ; $94d4.w
-/*unknown_80_94c7:*/ lda $8b
-/*unknown_80_94c9:*/ cmp #$3030.w
-/*unknown_80_94cc:*/ bne $06 ; $94d4.w
-/*unknown_80_94ce:*/ stz $05f5.w
-/*unknown_80_94d1:*/ jmp $8462.w
-/*unknown_80_94d4:*/ lda $05d1.w
-/*unknown_80_94d7:*/ bne $0f ; $94e8.w
-/*unknown_80_94d9:*/ stz $05c5.w
-/*unknown_80_94dc:*/ stz $05c7.w
-/*unknown_80_94df:*/ lda #$ffef.w
-/*unknown_80_94e2:*/ trb $8d
-/*unknown_80_94e4:*/ trb $91
-/*unknown_80_94e6:*/ plp
-/*unknown_80_94e7:*/ rtl
-
-/*unknown_80_94e8:*/ stz $05c5.w
-/*unknown_80_94eb:*/ stz $05c7.w
-/*unknown_80_94ee:*/ bit $05cf.w
-/*unknown_80_94f1:*/ bvc $03 ; $94f6.w
-/*unknown_80_94f3:*/ jmp $9581.w
-/*unknown_80_94f6:*/ lda $8b
-/*unknown_80_94f8:*/ and #$2020.w
-/*unknown_80_94fb:*/ cmp #$2020.w
-/*unknown_80_94fe:*/ bne $09 ; $9509.w
-/*unknown_80_9500:*/ lda $8f
-/*unknown_80_9502:*/ sta $05c5.w
-/*unknown_80_9505:*/ stz $8b
-/*unknown_80_9507:*/ stz $8f
-/*unknown_80_9509:*/ lda $8b
-/*unknown_80_950b:*/ and #$2010.w
-/*unknown_80_950e:*/ cmp #$2010.w
-/*unknown_80_9511:*/ bne $0c ; $951f.w
-/*unknown_80_9513:*/ lda $8f
-/*unknown_80_9515:*/ sta $05c7.w
-/*unknown_80_9518:*/ lda #$e0f0.w
-/*unknown_80_951b:*/ stz $8b
-/*unknown_80_951d:*/ stz $8f
-/*unknown_80_951f:*/ lda $05c7.w
-/*unknown_80_9522:*/ bit #$0080.w
-/*unknown_80_9525:*/ beq $07 ; $952e.w
-/*unknown_80_9527:*/ lda $84
-/*unknown_80_9529:*/ eor #$0030.w
-/*unknown_80_952c:*/ sta $84
-/*unknown_80_952e:*/ lda $05c7.w
-/*unknown_80_9531:*/ bit #$8000.w
-/*unknown_80_9534:*/ beq $3a ; $9570.w
-/*unknown_80_9536:*/ lda $05cf.w
-/*unknown_80_9539:*/ eor #$8000.w
-/*unknown_80_953c:*/ sta $05cf.w
-/*unknown_80_953f:*/ bpl $1d ; $955e.w
-/*unknown_80_9541:*/ lda $09c6.w
-/*unknown_80_9544:*/ sta $05c9.w
-/*unknown_80_9547:*/ lda $09ca.w
-/*unknown_80_954a:*/ sta $05cb.w
-/*unknown_80_954d:*/ lda $09ce.w
-/*unknown_80_9550:*/ sta $05cd.w
-/*unknown_80_9553:*/ stz $09c6.w
-/*unknown_80_9556:*/ stz $09ca.w
-/*unknown_80_9559:*/ stz $09ce.w
-/*unknown_80_955c:*/ bra $12 ; $9570.w
-/*unknown_80_955e:*/ lda $05c9.w
-/*unknown_80_9561:*/ sta $09c6.w
-/*unknown_80_9564:*/ lda $05cb.w
-/*unknown_80_9567:*/ sta $09ca.w
-/*unknown_80_956a:*/ lda $05cd.w
-/*unknown_80_956d:*/ sta $09ce.w
-/*unknown_80_9570:*/ lda $05c7.w
-/*unknown_80_9573:*/ bit #$0040.w
-/*unknown_80_9576:*/ beq $09 ; $9581.w
-/*unknown_80_9578:*/ lda $05cf.w
-/*unknown_80_957b:*/ eor #$2000.w
-/*unknown_80_957e:*/ sta $05cf.w
-/*unknown_80_9581:*/ plp
-/*unknown_80_9582:*/ rtl
+unknown_80_9459:
+  php
+  sep #$20
+@unknown_80_945c:
+  lda IO_HVBJOY
+  and #IO_HVBJOY_JOYPAD_BUSY
+  bne @unknown_80_945c
+  rep #$20
+  lda IO_JOY1
+  sta0 var_pressed_buttons
+  eor var_unknown_97
+  and var_pressed_buttons
+  sta0 var_unknown_8f
+  sta0 var_unknown_93
+  lda var_pressed_buttons
+  beq @unknown_80_9488
+  cmp var_unknown_97
+  bne @unknown_80_9488
+  dec var_unknown_a3
+  bne @unknown_80_948c
+  lda var_pressed_buttons
+  sta0 var_unknown_93
+  lda var_unknown_89
+  sta var_unknown_a3
+  bra @unknown_80_948c
+@unknown_80_9488:
+  lda var_unknown_87
+  sta var_unknown_a3
+@unknown_80_948c:
+  lda var_pressed_buttons
+  sta var_unknown_97
+  lda $05d1.w
+  bne @unknown_80_9497
+  plp
+  rtl
+@unknown_80_9497:
+  lda IO_JOY2
+  sta var_pressed_buttons_p2
+  eor var_unknown_99
+  and var_pressed_buttons_p2
+  sta var_unknown_91
+  sta var_unknown_95
+  lda var_pressed_buttons_p2
+  beq @unknown_80_94ba
+  cmp var_unknown_99
+  bne @unknown_80_94ba
+  dec var_unknown_a5
+  bne @unknown_80_94be
+  lda var_pressed_buttons_p2
+  sta var_unknown_95
+  lda var_unknown_89
+  sta var_unknown_a5
+  bra @unknown_80_94be
+@unknown_80_94ba:
+  lda var_unknown_87
+  sta var_unknown_a5
+@unknown_80_94be:
+  lda var_pressed_buttons_p2
+  sta var_unknown_99
+  lda $0617.w
+  bne @unknown_80_94d4
+  lda var_pressed_buttons
+  cmp #IO_JOY_SELECT | IO_JOY_START | IO_JOY_L | IO_JOY_R
+  bne @unknown_80_94d4
+  stz $05f5.w
+  jmp unknown_80_8462
+@unknown_80_94d4:
+  lda $05d1.w
+  bne @unknown_80_94e8
+  stz $05c5.w
+  stz $05c7.w
+  lda #$ffef.w
+  trb var_pressed_buttons_p2
+  trb var_unknown_91
+  plp
+  rtl
+@unknown_80_94e8:
+  stz $05c5.w
+  stz $05c7.w
+  bit $05cf.w
+  bvc @unknown_80_94f6
+  jmp @unknown_80_9581
+@unknown_80_94f6:
+  lda var_pressed_buttons
+  and #IO_JOY_SELECT | IO_JOY_L
+  cmp #IO_JOY_SELECT | IO_JOY_L
+  bne @unknown_80_9509
+  lda var_unknown_8f
+  sta $05c5.w
+  stz var_pressed_buttons
+  stz var_unknown_8f
+@unknown_80_9509:
+  lda var_pressed_buttons
+  and #IO_JOY_SELECT | IO_JOY_R
+  cmp #IO_JOY_SELECT | IO_JOY_R
+  bne @unknown_80_951f
+  lda var_unknown_8f
+  sta $05c7.w
+  lda #$e0f0.w
+  stz var_pressed_buttons
+  stz var_unknown_8f
+@unknown_80_951f:
+  lda $05c7.w
+  bit #$0080.w
+  beq @unknown_80_952e
+  lda var_unknown_84
+  eor #$0030.w
+  sta var_unknown_84
+@unknown_80_952e:
+  lda $05c7.w
+  bit #$8000.w
+  beq @unknown_80_9570
+  lda $05cf.w
+  eor #$8000.w
+  sta $05cf.w
+  bpl @unknown_80_955e
+  lda $09c6.w
+  sta $05c9.w
+  lda $09ca.w
+  sta $05cb.w
+  lda $09ce.w
+  sta $05cd.w
+  stz $09c6.w
+  stz $09ca.w
+  stz $09ce.w
+  bra @unknown_80_9570
+@unknown_80_955e:
+  lda $05c9.w
+  sta $09c6.w
+  lda $05cb.w
+  sta $09ca.w
+  lda $05cd.w
+  sta $09ce.w
+@unknown_80_9570:
+  lda $05c7.w
+  bit #$0040.w
+  beq @unknown_80_9581
+  lda $05cf.w
+  eor #$2000.w
+  sta $05cf.w
+@unknown_80_9581:
+  plp
+  rtl
 
 interrupt_nmi:
   rep #$30
