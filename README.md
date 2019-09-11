@@ -9,6 +9,8 @@ This project produces the following ROMs:
 
 ## Building
 
+[![Build Status](https://travis-ci.org/strager/supermetroid.svg?branch=master)](https://travis-ci.org/strager/supermetroid)
+
 ### Linux
 
 Prerequisites:
