@@ -20,6 +20,7 @@
 .define IO_BGMODE $2105.w
 .define IO_BGMODE_1 $01.b
 .define IO_BGMODE_1_BG3_HIGH_PRIORITY $08.b
+.define IO_BGMODE_7 $07.b
 
 ; PPU: mosaic size and mosaic enable
 .define IO_MOSAIC $2106.w
@@ -83,6 +84,7 @@
 
 ; PPU: rotation/scaling mode settings
 .define IO_M7SEL $211a.w
+.define IO_M7SEL_OVER_FILL_TRANSPARENT $80.b
 
 ; PPU: rotation/scaling parameter A and maths 16-bit operand
 .define IO_M7A $211b.w
@@ -176,6 +178,8 @@
 
 ; PPU: display control 2
 .define IO_SETINI $2133.w
+.define IO_SETINI_224_LINES $00.b
+.define IO_SETINI_PROGRESSIVE_SCAN $00.b
 
 ; PPU: PPU1 status and PPU1 version number
 .define IO_STAT77 $213e.w
