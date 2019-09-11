@@ -5388,22 +5388,25 @@ unknown_82_ac68:
   .dw unknown_82_b0c2
   .dw unknown_82_b150
 
-unknown_82_ac70: php
-/*unknown_82_ac71:*/ rep #$30
-/*unknown_82_ac73:*/ lda $0755.w
-/*unknown_82_ac76:*/ xba
-/*unknown_82_ac77:*/ and #$00ff.w
-/*unknown_82_ac7a:*/ asl A
-/*unknown_82_ac7b:*/ tax
-/*unknown_82_ac7c:*/ jsr ($ac87.w, X)
-/*unknown_82_ac7f:*/ jsr $ac8b.w
-/*unknown_82_ac82:*/ jsr unknown_82_ad0a
-/*unknown_82_ac85:*/ plp
-/*unknown_82_ac86:*/ rts
+unknown_82_ac70:
+  php
+  rep #$30
+  lda var_unknown_0755.w
+  xba
+  and #$00ff.w
+  asl A
+  tax
+  jsr (unknown_82_ac87, X)
+  jsr unknown_82_ac8b
+  jsr unknown_82_ad0a
+  plp
+  rts
 
 unknown_82_ac87:
-  phb
-  ldx unknown_82_af4f.w
+  .dw unknown_82_ae8b
+  .dw unknown_82_af4f
+
+unknown_82_ac8b:
   php
   rep #$30
   lda $0755.w
