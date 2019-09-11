@@ -5644,57 +5644,57 @@ unknown_82_ae8b:
   rep #$30
   lda var_unknown_8f
   bit #IO_JOY_A
-  beq @unknown_82_aefb
-  lda $09d4.w
-  beq @unknown_82_aefb
+  beq @end
+  lda var_unknown_09d4.w
+  beq @end
   lda #$0037.w
   jsl unknown_80_9049
-  lda $09c0.w
+  lda var_unknown_09c0.w
   cmp #$0001.w
   bne @unknown_82_aed3
   lda #$0002.w
-  sta $09c0.w
+  sta var_unknown_09c0.w
   jsr unknown_82_af33
   php
   rep #$30
   ldy #$0008.w
   ldx #$0000.w
 @unknown_82_aebb:
-  lda $7e3a8e, X
+  lda var_unknown_3a8e.l, X
   and #$fc00.w
-  ora $82bf22, X
-  sta $7e3a8e, X
+  ora unknown_82_bf22.l, X
+  sta var_unknown_3a8e.l, X
   inx
   inx
   dey
   dey
   bne @unknown_82_aebb
   plp
-  bra @unknown_82_aefb
+  bra @end
 @unknown_82_aed3:
   lda #$0001.w
-  sta $09c0.w
-  jsr $aefd.w
+  sta var_unknown_09c0.w
+  jsr unknown_82_aefd
   php
   rep #$30
   ldy #$0008.w
   ldx #$0000.w
 @unknown_82_aee5:
-  lda $7e3a8e, X
+  lda var_unknown_3a8e.l, X
   and #$fc00.w
-  ora $82bf2a, X
-  sta $7e3a8e, X
+  ora unknown_82_bf2a.l, X
+  sta var_unknown_3a8e.l, X
   inx
   inx
   dey
   dey
   bne @unknown_82_aee5
   plp
-@unknown_82_aefb:
+@end:
   plp
   rts
 
-/*unknown_82_aefd:*/ ldy #$998b.w
+unknown_82_aefd: ldy #$998b.w
 /*unknown_82_af00:*/ lda $09d6.w
 /*unknown_82_af03:*/ bne @unknown_82_af08
 /*unknown_82_af05:*/ ldy #$9997.w
@@ -7714,11 +7714,11 @@ unknown_82_bdbb: sbc ($06, X)
 /*unknown_82_bf1b:*/ bit $3c84.w, X
 /*unknown_82_bf1e:*/ sta $3c
 /*unknown_82_bf20:*/ stx $3c
-/*unknown_82_bf22:*/ lsr $3d
+unknown_82_bf22: lsr $3d
 /*unknown_82_bf24:*/ eor [$3d]
 /*unknown_82_bf26:*/ pha
 /*unknown_82_bf27:*/ and $3d49.w, X
-/*unknown_82_bf2a:*/ lsr $3d, X
+unknown_82_bf2a: lsr $3d, X
 /*unknown_82_bf2c:*/ eor [$3d], Y
 /*unknown_82_bf2e:*/ cli
 /*unknown_82_bf2f:*/ and $3d59.w, X
