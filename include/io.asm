@@ -11,7 +11,10 @@
 
 ; PPU: OAM address and priority rotation (16 bits)
 .define IO_OAMADD $2102.w
+.define IO_OAMADDL IO_OAMADD + 0
+.define IO_OAMADDH IO_OAMADD + 1
 .define IO_OAMADD_HIGH_OBJECT_PRIORITY $8000.w
+.define IO_OAMADDH_HIGH_OBJECT_PRIORITY IO_OAMADD_HIGH_OBJECT_PRIORITY >> 8
 
 ; PPU: OAM data write (write-twice)
 .define IO_OAMDATA $2104.w
