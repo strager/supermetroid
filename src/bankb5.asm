@@ -27,7 +27,7 @@
 /*unknown_b5_8054:*/ ora $001f00.l, X
 /*unknown_b5_8058:*/ ora $001f00.l, X
 /*unknown_b5_805c:*/ ora $001f00.l, X
-/*unknown_b5_8060:*/ ora $001f00.l, X
+@unknown_b5_8060: ora $001f00.l, X
 /*unknown_b5_8064:*/ ora $001f00.l, X
 /*unknown_b5_8068:*/ ora $001f00.l, X
 /*unknown_b5_806c:*/ ora $001f00.l, X
@@ -57,7 +57,7 @@
 /*unknown_b5_80c6:*/ ora $001f00.l, X
 /*unknown_b5_80ca:*/ ora $001f00.l, X
 /*unknown_b5_80ce:*/ ora $001f00.l, X
-/*unknown_b5_80d2:*/ bpl ($8c - $100) ; $8060.w
+/*unknown_b5_80d2:*/ bpl @unknown_b5_8060
 /*unknown_b5_80d4:*/ ora $001f00.l, X
 /*unknown_b5_80d8:*/ ora $001f00.l, X
 /*unknown_b5_80dc:*/ ora $001f00.l, X

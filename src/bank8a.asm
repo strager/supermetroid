@@ -3,50 +3,50 @@
 .bank ($8a - $80) slot $0
 .org $0
 
-/*unknown_8a_8000:*/ bvc $18 ; $801a.w
+/*unknown_8a_8000:*/ bvc @unknown_8a_801a
 /*unknown_8a_8002:*/ eor ($18), Y
 /*unknown_8a_8004:*/ eor ($18)
-/*unknown_8a_8006:*/ bvc $18 ; $8020.w
+/*unknown_8a_8006:*/ bvc @unknown_8a_8020
 /*unknown_8a_8008:*/ eor ($18), Y
 /*unknown_8a_800a:*/ eor ($18)
-/*unknown_8a_800c:*/ bvc $18 ; $8026.w
+/*unknown_8a_800c:*/ bvc @unknown_8a_8026
 /*unknown_8a_800e:*/ eor ($18), Y
 /*unknown_8a_8010:*/ eor ($18)
-/*unknown_8a_8012:*/ bvc $18 ; $802c.w
+/*unknown_8a_8012:*/ bvc @unknown_8a_802c
 /*unknown_8a_8014:*/ eor ($18), Y
 /*unknown_8a_8016:*/ eor ($18)
-/*unknown_8a_8018:*/ bvc $18 ; $8032.w
-/*unknown_8a_801a:*/ eor ($18), Y
+/*unknown_8a_8018:*/ bvc @unknown_8a_8032
+@unknown_8a_801a: eor ($18), Y
 /*unknown_8a_801c:*/ eor ($18)
-/*unknown_8a_801e:*/ bvc $18 ; $8038.w
-/*unknown_8a_8020:*/ eor ($18), Y
+/*unknown_8a_801e:*/ bvc @unknown_8a_8038
+@unknown_8a_8020: eor ($18), Y
 /*unknown_8a_8022:*/ eor ($18)
-/*unknown_8a_8024:*/ bvc $18 ; $803e.w
-/*unknown_8a_8026:*/ eor ($18), Y
+/*unknown_8a_8024:*/ bvc @unknown_8a_803e
+@unknown_8a_8026: eor ($18), Y
 /*unknown_8a_8028:*/ eor ($18)
-/*unknown_8a_802a:*/ bvc $18 ; $8044.w
-/*unknown_8a_802c:*/ eor ($18), Y
+/*unknown_8a_802a:*/ bvc @unknown_8a_8044
+@unknown_8a_802c: eor ($18), Y
 /*unknown_8a_802e:*/ eor ($18)
-/*unknown_8a_8030:*/ bvc $18 ; $804a.w
-/*unknown_8a_8032:*/ eor ($18), Y
+/*unknown_8a_8030:*/ bvc @unknown_8a_804a
+@unknown_8a_8032: eor ($18), Y
 /*unknown_8a_8034:*/ eor ($18)
-/*unknown_8a_8036:*/ bvc $18 ; $8050.w
-/*unknown_8a_8038:*/ eor ($18), Y
+/*unknown_8a_8036:*/ bvc @unknown_8a_8050
+@unknown_8a_8038: eor ($18), Y
 /*unknown_8a_803a:*/ eor ($18)
-/*unknown_8a_803c:*/ bvc $18 ; $8056.w
-/*unknown_8a_803e:*/ eor ($18), Y
+/*unknown_8a_803c:*/ bvc @unknown_8a_8056
+@unknown_8a_803e: eor ($18), Y
 /*unknown_8a_8040:*/ eor ($18, S), Y
 /*unknown_8a_8042:*/ eor ($18, S), Y
-/*unknown_8a_8044:*/ eor ($18, S), Y
+@unknown_8a_8044: eor ($18, S), Y
 /*unknown_8a_8046:*/ eor ($18, S), Y
 /*unknown_8a_8048:*/ eor ($18, S), Y
-/*unknown_8a_804a:*/ eor ($18, S), Y
+@unknown_8a_804a: eor ($18, S), Y
 /*unknown_8a_804c:*/ eor ($18, S), Y
 /*unknown_8a_804e:*/ eor ($18, S), Y
-/*unknown_8a_8050:*/ eor ($18, S), Y
+@unknown_8a_8050: eor ($18, S), Y
 /*unknown_8a_8052:*/ eor ($18, S), Y
 /*unknown_8a_8054:*/ eor ($18, S), Y
-/*unknown_8a_8056:*/ eor ($18, S), Y
+@unknown_8a_8056: eor ($18, S), Y
 /*unknown_8a_8058:*/ eor ($18, S), Y
 /*unknown_8a_805a:*/ eor ($18, S), Y
 /*unknown_8a_805c:*/ eor ($18, S), Y
@@ -1083,35 +1083,35 @@
 /*unknown_8a_887f:*/ tsb $0050.w
 /*unknown_8a_8882:*/ eor ($00), Y
 /*unknown_8a_8884:*/ eor ($00)
-/*unknown_8a_8886:*/ bvc $00 ; $8888.w
-/*unknown_8a_8888:*/ eor ($00), Y
+/*unknown_8a_8886:*/ bvc @unknown_8a_8888
+@unknown_8a_8888: eor ($00), Y
 /*unknown_8a_888a:*/ eor ($00)
-/*unknown_8a_888c:*/ bvc $00 ; $888e.w
-/*unknown_8a_888e:*/ eor ($00), Y
+/*unknown_8a_888c:*/ bvc @unknown_8a_888e
+@unknown_8a_888e: eor ($00), Y
 /*unknown_8a_8890:*/ eor ($00)
-/*unknown_8a_8892:*/ bvc $00 ; $8894.w
-/*unknown_8a_8894:*/ eor ($00), Y
+/*unknown_8a_8892:*/ bvc @unknown_8a_8894
+@unknown_8a_8894: eor ($00), Y
 /*unknown_8a_8896:*/ eor ($00)
-/*unknown_8a_8898:*/ bvc $00 ; $889a.w
-/*unknown_8a_889a:*/ eor ($00), Y
+/*unknown_8a_8898:*/ bvc @unknown_8a_889a
+@unknown_8a_889a: eor ($00), Y
 /*unknown_8a_889c:*/ eor ($00)
-/*unknown_8a_889e:*/ bvc $00 ; $88a0.w
-/*unknown_8a_88a0:*/ eor ($00), Y
+/*unknown_8a_889e:*/ bvc @unknown_8a_88a0
+@unknown_8a_88a0: eor ($00), Y
 /*unknown_8a_88a2:*/ eor ($00)
-/*unknown_8a_88a4:*/ bvc $00 ; $88a6.w
-/*unknown_8a_88a6:*/ eor ($00), Y
+/*unknown_8a_88a4:*/ bvc @unknown_8a_88a6
+@unknown_8a_88a6: eor ($00), Y
 /*unknown_8a_88a8:*/ eor ($00)
-/*unknown_8a_88aa:*/ bvc $00 ; $88ac.w
-/*unknown_8a_88ac:*/ eor ($00), Y
+/*unknown_8a_88aa:*/ bvc @unknown_8a_88ac
+@unknown_8a_88ac: eor ($00), Y
 /*unknown_8a_88ae:*/ eor ($00)
-/*unknown_8a_88b0:*/ bvc $00 ; $88b2.w
-/*unknown_8a_88b2:*/ eor ($00), Y
+/*unknown_8a_88b0:*/ bvc @unknown_8a_88b2
+@unknown_8a_88b2: eor ($00), Y
 /*unknown_8a_88b4:*/ eor ($00)
-/*unknown_8a_88b6:*/ bvc $00 ; $88b8.w
-/*unknown_8a_88b8:*/ eor ($00), Y
+/*unknown_8a_88b6:*/ bvc @unknown_8a_88b8
+@unknown_8a_88b8: eor ($00), Y
 /*unknown_8a_88ba:*/ eor ($00)
-/*unknown_8a_88bc:*/ bvc $00 ; $88be.w
-/*unknown_8a_88be:*/ eor ($00), Y
+/*unknown_8a_88bc:*/ bvc @unknown_8a_88be
+@unknown_8a_88be: eor ($00), Y
 /*unknown_8a_88c0:*/ eor ($00, S), Y
 /*unknown_8a_88c2:*/ eor ($00, S), Y
 /*unknown_8a_88c4:*/ eor ($00, S), Y
@@ -2129,60 +2129,60 @@
 /*unknown_8a_90c2:*/ sta ($38), Y
 /*unknown_8a_90c4:*/ sta ($38)
 /*unknown_8a_90c6:*/ sta ($38, S), Y
-/*unknown_8a_90c8:*/ bcc $38 ; $9102.w
+/*unknown_8a_90c8:*/ bcc @unknown_8a_9102
 /*unknown_8a_90ca:*/ sta ($38), Y
 /*unknown_8a_90cc:*/ sta ($38)
 /*unknown_8a_90ce:*/ sta ($38, S), Y
-/*unknown_8a_90d0:*/ bcc $38 ; $910a.w
+/*unknown_8a_90d0:*/ bcc @unknown_8a_910a
 /*unknown_8a_90d2:*/ sta ($38), Y
 /*unknown_8a_90d4:*/ sta ($38)
 /*unknown_8a_90d6:*/ sta ($38, S), Y
-/*unknown_8a_90d8:*/ bcc $38 ; $9112.w
+/*unknown_8a_90d8:*/ bcc @unknown_8a_9112
 /*unknown_8a_90da:*/ sta ($38), Y
 /*unknown_8a_90dc:*/ sta ($38)
 /*unknown_8a_90de:*/ sta ($38, S), Y
-/*unknown_8a_90e0:*/ bcc $38 ; $911a.w
+/*unknown_8a_90e0:*/ bcc @unknown_8a_911a
 /*unknown_8a_90e2:*/ sta ($38), Y
 /*unknown_8a_90e4:*/ sta ($38)
 /*unknown_8a_90e6:*/ sta ($38, S), Y
-/*unknown_8a_90e8:*/ bcc $38 ; $9122.w
+/*unknown_8a_90e8:*/ bcc @unknown_8a_9122
 /*unknown_8a_90ea:*/ sta ($38), Y
 /*unknown_8a_90ec:*/ sta ($38)
 /*unknown_8a_90ee:*/ sta ($38, S), Y
-/*unknown_8a_90f0:*/ bcc $38 ; $912a.w
+/*unknown_8a_90f0:*/ bcc @unknown_8a_912a
 /*unknown_8a_90f2:*/ sta ($38), Y
 /*unknown_8a_90f4:*/ sta ($38)
 /*unknown_8a_90f6:*/ sta ($38, S), Y
-/*unknown_8a_90f8:*/ bcc $38 ; $9132.w
+/*unknown_8a_90f8:*/ bcc @unknown_8a_9132
 /*unknown_8a_90fa:*/ sta ($38), Y
 /*unknown_8a_90fc:*/ sta ($38)
 /*unknown_8a_90fe:*/ sta ($38, S), Y
 /*unknown_8a_9100:*/ sty $38, X
-/*unknown_8a_9102:*/ sta $38, X
+@unknown_8a_9102: sta $38, X
 /*unknown_8a_9104:*/ stx $38, Y
 /*unknown_8a_9106:*/ sta [$38], Y
 /*unknown_8a_9108:*/ sty $38, X
-/*unknown_8a_910a:*/ sta $38, X
+@unknown_8a_910a: sta $38, X
 /*unknown_8a_910c:*/ stx $38, Y
 /*unknown_8a_910e:*/ sta [$38], Y
 /*unknown_8a_9110:*/ sty $38, X
-/*unknown_8a_9112:*/ sta $38, X
+@unknown_8a_9112: sta $38, X
 /*unknown_8a_9114:*/ stx $38, Y
 /*unknown_8a_9116:*/ sta [$38], Y
 /*unknown_8a_9118:*/ sty $38, X
-/*unknown_8a_911a:*/ sta $38, X
+@unknown_8a_911a: sta $38, X
 /*unknown_8a_911c:*/ stx $38, Y
 /*unknown_8a_911e:*/ sta [$38], Y
 /*unknown_8a_9120:*/ sty $38, X
-/*unknown_8a_9122:*/ sta $38, X
+@unknown_8a_9122: sta $38, X
 /*unknown_8a_9124:*/ stx $38, Y
 /*unknown_8a_9126:*/ sta [$38], Y
 /*unknown_8a_9128:*/ sty $38, X
-/*unknown_8a_912a:*/ sta $38, X
+@unknown_8a_912a: sta $38, X
 /*unknown_8a_912c:*/ stx $38, Y
 /*unknown_8a_912e:*/ sta [$38], Y
 /*unknown_8a_9130:*/ sty $38, X
-/*unknown_8a_9132:*/ sta $38, X
+@unknown_8a_9132: sta $38, X
 /*unknown_8a_9134:*/ stx $38, Y
 /*unknown_8a_9136:*/ sta [$38], Y
 /*unknown_8a_9138:*/ sty $38, X
@@ -3490,7 +3490,7 @@
 /*unknown_8a_9a65:*/ clc
 /*unknown_8a_9a66:*/ lsr $4e18.w
 /*unknown_8a_9a69:*/ clc
-/*unknown_8a_9a6a:*/ bvc $18 ; $9a84.w
+/*unknown_8a_9a6a:*/ bvc @unknown_8a_9a84
 /*unknown_8a_9a6c:*/ lsr $4e18.w
 /*unknown_8a_9a6f:*/ clc
 /*unknown_8a_9a70:*/ lsr $4e18.w
@@ -3503,7 +3503,7 @@
 /*unknown_8a_9a7f:*/ clc
 /*unknown_8a_9a80:*/ lsr $4e18.w
 /*unknown_8a_9a83:*/ clc
-/*unknown_8a_9a84:*/ lsr $4e18.w
+@unknown_8a_9a84: lsr $4e18.w
 /*unknown_8a_9a87:*/ clc
 /*unknown_8a_9a88:*/ lsr $4e18.w
 /*unknown_8a_9a8b:*/ clc
@@ -4168,7 +4168,7 @@
 /*unknown_8a_9fb1:*/ clc
 /*unknown_8a_9fb2:*/ lsr $4e18.w
 /*unknown_8a_9fb5:*/ clc
-/*unknown_8a_9fb6:*/ bvc $18 ; $9fd0.w
+/*unknown_8a_9fb6:*/ bvc @unknown_8a_9fd0
 /*unknown_8a_9fb8:*/ lsr $4e18.w
 /*unknown_8a_9fbb:*/ clc
 /*unknown_8a_9fbc:*/ lsr $4e18.w
@@ -4181,7 +4181,7 @@
 /*unknown_8a_9fcb:*/ clc
 /*unknown_8a_9fcc:*/ lsr $4e18.w
 /*unknown_8a_9fcf:*/ clc
-/*unknown_8a_9fd0:*/ lsr $4e18.w
+@unknown_8a_9fd0: lsr $4e18.w
 /*unknown_8a_9fd3:*/ clc
 /*unknown_8a_9fd4:*/ lsr $4e18.w
 /*unknown_8a_9fd7:*/ clc
@@ -4377,7 +4377,7 @@
 /*unknown_8a_a153:*/ sec
 /*unknown_8a_a154:*/ lsr $4e38.w
 /*unknown_8a_a157:*/ sec
-/*unknown_8a_a158:*/ bvc $38 ; $a192.w
+/*unknown_8a_a158:*/ bvc @unknown_8a_a192
 /*unknown_8a_a15a:*/ lsr $5038.w
 /*unknown_8a_a15d:*/ sec
 /*unknown_8a_a15e:*/ lsr $4e38.w
@@ -4406,7 +4406,7 @@
 /*unknown_8a_a18c:*/ lsr $4e38.w
 /*unknown_8a_a18f:*/ sec
 /*unknown_8a_a190:*/ bvc $38 ; $a1ca.w
-/*unknown_8a_a192:*/ lsr $5238.w
+@unknown_8a_a192: lsr $5238.w
 /*unknown_8a_a195:*/ sec
 /*unknown_8a_a196:*/ lsr $4e38.w
 /*unknown_8a_a199:*/ sec
@@ -4419,14 +4419,14 @@
 /*unknown_8a_a1a6:*/ bvc $38 ; $a1e0.w
 /*unknown_8a_a1a8:*/ lsr $4e38.w
 /*unknown_8a_a1ab:*/ sec
-/*unknown_8a_a1ac:*/ bvc $38 ; $a1e6.w
+/*unknown_8a_a1ac:*/ bvc @unknown_8a_a1e6
 /*unknown_8a_a1ae:*/ lsr $4e38.w
 /*unknown_8a_a1b1:*/ sec
 /*unknown_8a_a1b2:*/ lsr $4e38.w
 /*unknown_8a_a1b5:*/ sec
 /*unknown_8a_a1b6:*/ lsr $5038.w
 /*unknown_8a_a1b9:*/ sec
-/*unknown_8a_a1ba:*/ bvc $38 ; $a1f4.w
+/*unknown_8a_a1ba:*/ bvc @unknown_8a_a1f4
 /*unknown_8a_a1bc:*/ lsr $5038.w
 /*unknown_8a_a1bf:*/ sec
 /*unknown_8a_a1c0:*/ mvn $4e, $38
@@ -4448,14 +4448,14 @@
 /*unknown_8a_a1e1:*/ sec
 /*unknown_8a_a1e2:*/ lsr $4e38.w
 /*unknown_8a_a1e5:*/ sec
-/*unknown_8a_a1e6:*/ lsr $4e38.w
+@unknown_8a_a1e6: lsr $4e38.w
 /*unknown_8a_a1e9:*/ sec
 /*unknown_8a_a1ea:*/ bvc $38 ; $a224.w
 /*unknown_8a_a1ec:*/ lsr $5038.w
 /*unknown_8a_a1ef:*/ sec
 /*unknown_8a_a1f0:*/ lsr $5238.w
 /*unknown_8a_a1f3:*/ sec
-/*unknown_8a_a1f4:*/ bvc $38 ; $a22e.w
+@unknown_8a_a1f4: bvc @unknown_8a_a22e
 /*unknown_8a_a1f6:*/ lsr $5038.w
 /*unknown_8a_a1f9:*/ sec
 /*unknown_8a_a1fa:*/ bvc $38 ; $a234.w
@@ -4471,7 +4471,7 @@
 /*unknown_8a_a20f:*/ sec
 /*unknown_8a_a210:*/ lsr $5438.w
 /*unknown_8a_a213:*/ sec
-/*unknown_8a_a214:*/ bvc $38 ; $a24e.w
+/*unknown_8a_a214:*/ bvc @unknown_8a_a24e
 /*unknown_8a_a216:*/ mvn $4e, $38
 /*unknown_8a_a219:*/ sec
 /*unknown_8a_a21a:*/ mvn $4e, $38
@@ -4484,7 +4484,7 @@
 /*unknown_8a_a229:*/ sec
 /*unknown_8a_a22a:*/ lsr $5438.w
 /*unknown_8a_a22d:*/ sec
-/*unknown_8a_a22e:*/ lsr $4e38.w
+@unknown_8a_a22e: lsr $4e38.w
 /*unknown_8a_a231:*/ sec
 /*unknown_8a_a232:*/ lsr $4e38.w
 /*unknown_8a_a235:*/ sec
@@ -4500,7 +4500,7 @@
 /*unknown_8a_a249:*/ sec
 /*unknown_8a_a24a:*/ lsr $5438.w
 /*unknown_8a_a24d:*/ sec
-/*unknown_8a_a24e:*/ lsr $4e38.w
+@unknown_8a_a24e: lsr $4e38.w
 /*unknown_8a_a251:*/ sec
 /*unknown_8a_a252:*/ lsr $4e38.w
 /*unknown_8a_a255:*/ sec
@@ -4519,7 +4519,7 @@
 /*unknown_8a_a26f:*/ sec
 /*unknown_8a_a270:*/ lsr $5438.w
 /*unknown_8a_a273:*/ sec
-/*unknown_8a_a274:*/ bvc $38 ; $a2ae.w
+/*unknown_8a_a274:*/ bvc @unknown_8a_a2ae
 /*unknown_8a_a276:*/ lsr $4e38.w
 /*unknown_8a_a279:*/ sec
 /*unknown_8a_a27a:*/ lsr $5138.w
@@ -4548,7 +4548,7 @@
 /*unknown_8a_a2a9:*/ sec
 /*unknown_8a_a2aa:*/ lsr $5038.w
 /*unknown_8a_a2ad:*/ sec
-/*unknown_8a_a2ae:*/ lsr $4e38.w
+@unknown_8a_a2ae: lsr $4e38.w
 /*unknown_8a_a2b1:*/ sec
 /*unknown_8a_a2b2:*/ lsr $4e38.w
 /*unknown_8a_a2b5:*/ sec
@@ -4581,13 +4581,13 @@
 /*unknown_8a_a2eb:*/ sec
 /*unknown_8a_a2ec:*/ lsr $4e38.w
 /*unknown_8a_a2ef:*/ sec
-/*unknown_8a_a2f0:*/ bvc $38 ; $a32a.w
+/*unknown_8a_a2f0:*/ bvc @unknown_8a_a32a
 /*unknown_8a_a2f2:*/ lsr $4e38.w
 /*unknown_8a_a2f5:*/ sec
 /*unknown_8a_a2f6:*/ eor ($38)
 /*unknown_8a_a2f8:*/ lsr $4e38.w
 /*unknown_8a_a2fb:*/ sec
-/*unknown_8a_a2fc:*/ bvc $38 ; $a336.w
+/*unknown_8a_a2fc:*/ bvc @unknown_8a_a336
 /*unknown_8a_a2fe:*/ bvc $38 ; $a338.w
 /*unknown_8a_a300:*/ lsr $5138.w
 /*unknown_8a_a303:*/ sec
@@ -4610,19 +4610,19 @@
 /*unknown_8a_a324:*/ eor ($38)
 /*unknown_8a_a326:*/ lsr $4e38.w
 /*unknown_8a_a329:*/ sec
-/*unknown_8a_a32a:*/ lsr $5038.w
+@unknown_8a_a32a: lsr $5038.w
 /*unknown_8a_a32d:*/ sec
 /*unknown_8a_a32e:*/ lsr $4e38.w
 /*unknown_8a_a331:*/ sec
 /*unknown_8a_a332:*/ lsr $5038.w
 /*unknown_8a_a335:*/ sec
-/*unknown_8a_a336:*/ lsr $4e38.w
+@unknown_8a_a336: lsr $4e38.w
 /*unknown_8a_a339:*/ sec
 /*unknown_8a_a33a:*/ lsr $4e38.w
 /*unknown_8a_a33d:*/ sec
 /*unknown_8a_a33e:*/ lsr $5438.w
 /*unknown_8a_a341:*/ sec
-/*unknown_8a_a342:*/ bvc $38 ; $a37c.w
+/*unknown_8a_a342:*/ bvc @unknown_8a_a37c
 /*unknown_8a_a344:*/ lsr $5438.w
 /*unknown_8a_a347:*/ sec
 /*unknown_8a_a348:*/ lsr $4e38.w
@@ -4637,7 +4637,7 @@
 /*unknown_8a_a35b:*/ sec
 /*unknown_8a_a35c:*/ lsr $4e38.w
 /*unknown_8a_a35f:*/ sec
-/*unknown_8a_a360:*/ bvc $38 ; $a39a.w
+/*unknown_8a_a360:*/ bvc @unknown_8a_a39a
 /*unknown_8a_a362:*/ lsr $4e38.w
 /*unknown_8a_a365:*/ sec
 /*unknown_8a_a366:*/ lsr $5438.w
@@ -4650,8 +4650,8 @@
 /*unknown_8a_a374:*/ mvn $4e, $38
 /*unknown_8a_a377:*/ sec
 /*unknown_8a_a378:*/ eor ($38)
-/*unknown_8a_a37a:*/ bvc $38 ; $a3b4.w
-/*unknown_8a_a37c:*/ bvc $38 ; $a3b6.w
+/*unknown_8a_a37a:*/ bvc @unknown_8a_a3b4
+@unknown_8a_a37c: bvc $38 ; $a3b6.w
 /*unknown_8a_a37e:*/ lsr $4e38.w
 /*unknown_8a_a381:*/ sec
 /*unknown_8a_a382:*/ lsr $4e38.w
@@ -4666,7 +4666,7 @@
 /*unknown_8a_a395:*/ sec
 /*unknown_8a_a396:*/ mvn $51, $38
 /*unknown_8a_a399:*/ sec
-/*unknown_8a_a39a:*/ eor ($38)
+@unknown_8a_a39a: eor ($38)
 /*unknown_8a_a39c:*/ lsr $4e38.w
 /*unknown_8a_a39f:*/ sec
 /*unknown_8a_a3a0:*/ lsr $4e38.w
@@ -4679,7 +4679,7 @@
 /*unknown_8a_a3af:*/ sec
 /*unknown_8a_a3b0:*/ lsr $4e38.w
 /*unknown_8a_a3b3:*/ sec
-/*unknown_8a_a3b4:*/ lsr $4e38.w
+@unknown_8a_a3b4: lsr $4e38.w
 /*unknown_8a_a3b7:*/ sec
 /*unknown_8a_a3b8:*/ lsr $5438.w
 /*unknown_8a_a3bb:*/ sec
@@ -4700,7 +4700,7 @@
 /*unknown_8a_a3d9:*/ sec
 /*unknown_8a_a3da:*/ lsr $5138.w
 /*unknown_8a_a3dd:*/ sec
-/*unknown_8a_a3de:*/ bvc $38 ; $a418.w
+/*unknown_8a_a3de:*/ bvc @unknown_8a_a418
 /*unknown_8a_a3e0:*/ lsr $5238.w
 /*unknown_8a_a3e3:*/ sec
 /*unknown_8a_a3e4:*/ lsr $4e38.w
@@ -4729,13 +4729,13 @@
 /*unknown_8a_a412:*/ eor ($38), Y
 /*unknown_8a_a414:*/ lsr $5138.w
 /*unknown_8a_a417:*/ sec
-/*unknown_8a_a418:*/ lsr $4e38.w
+@unknown_8a_a418: lsr $4e38.w
 /*unknown_8a_a41b:*/ sec
 /*unknown_8a_a41c:*/ lsr $4e38.w
 /*unknown_8a_a41f:*/ sec
 /*unknown_8a_a420:*/ lsr $4e38.w
 /*unknown_8a_a423:*/ sec
-/*unknown_8a_a424:*/ bvc $38 ; $a45e.w
+/*unknown_8a_a424:*/ bvc @unknown_8a_a45e
 /*unknown_8a_a426:*/ lsr $4e38.w
 /*unknown_8a_a429:*/ sec
 /*unknown_8a_a42a:*/ lsr $5438.w
@@ -4764,7 +4764,7 @@
 /*unknown_8a_a459:*/ sec
 /*unknown_8a_a45a:*/ lsr $5038.w
 /*unknown_8a_a45d:*/ sec
-/*unknown_8a_a45e:*/ lsr $5038.w
+@unknown_8a_a45e: lsr $5038.w
 /*unknown_8a_a461:*/ sec
 /*unknown_8a_a462:*/ lsr $4e38.w
 /*unknown_8a_a465:*/ sec
@@ -4772,7 +4772,7 @@
 /*unknown_8a_a469:*/ sec
 /*unknown_8a_a46a:*/ mvn $4e, $38
 /*unknown_8a_a46d:*/ sec
-/*unknown_8a_a46e:*/ bvc $38 ; $a4a8.w
+/*unknown_8a_a46e:*/ bvc @unknown_8a_a4a8
 /*unknown_8a_a470:*/ lsr $4e38.w
 /*unknown_8a_a473:*/ sec
 /*unknown_8a_a474:*/ mvn $4e, $38
@@ -4781,7 +4781,7 @@
 /*unknown_8a_a47b:*/ sec
 /*unknown_8a_a47c:*/ lsr $4e38.w
 /*unknown_8a_a47f:*/ sec
-/*unknown_8a_a480:*/ bvc $38 ; $a4ba.w
+/*unknown_8a_a480:*/ bvc @unknown_8a_a4ba
 /*unknown_8a_a482:*/ bvc $38 ; $a4bc.w
 /*unknown_8a_a484:*/ lsr $4e38.w
 /*unknown_8a_a487:*/ sec
@@ -4801,16 +4801,16 @@
 /*unknown_8a_a4a2:*/ bvc $38 ; $a4dc.w
 /*unknown_8a_a4a4:*/ mvn $4e, $38
 /*unknown_8a_a4a7:*/ sec
-/*unknown_8a_a4a8:*/ lsr $5038.w
+@unknown_8a_a4a8: lsr $5038.w
 /*unknown_8a_a4ab:*/ sec
 /*unknown_8a_a4ac:*/ lsr $4e38.w
 /*unknown_8a_a4af:*/ sec
-/*unknown_8a_a4b0:*/ bvc $38 ; $a4ea.w
+/*unknown_8a_a4b0:*/ bvc @unknown_8a_a4ea
 /*unknown_8a_a4b2:*/ lsr $4e38.w
 /*unknown_8a_a4b5:*/ sec
 /*unknown_8a_a4b6:*/ lsr $4e38.w
 /*unknown_8a_a4b9:*/ sec
-/*unknown_8a_a4ba:*/ lsr $5438.w
+@unknown_8a_a4ba: lsr $5438.w
 /*unknown_8a_a4bd:*/ sec
 /*unknown_8a_a4be:*/ lsr $4e38.w
 /*unknown_8a_a4c1:*/ sec
@@ -4823,7 +4823,7 @@
 /*unknown_8a_a4cf:*/ sec
 /*unknown_8a_a4d0:*/ lsr $4e38.w
 /*unknown_8a_a4d3:*/ sec
-/*unknown_8a_a4d4:*/ bvc $38 ; $a50e.w
+/*unknown_8a_a4d4:*/ bvc @unknown_8a_a50e
 /*unknown_8a_a4d6:*/ lsr $4e38.w
 /*unknown_8a_a4d9:*/ sec
 /*unknown_8a_a4da:*/ lsr $4e38.w
@@ -4834,13 +4834,13 @@
 /*unknown_8a_a4e5:*/ sec
 /*unknown_8a_a4e6:*/ lsr $5038.w
 /*unknown_8a_a4e9:*/ sec
-/*unknown_8a_a4ea:*/ lsr $4e38.w
+@unknown_8a_a4ea: lsr $4e38.w
 /*unknown_8a_a4ed:*/ sec
 /*unknown_8a_a4ee:*/ lsr $4e38.w
 /*unknown_8a_a4f1:*/ sec
 /*unknown_8a_a4f2:*/ mvn $4e, $38
 /*unknown_8a_a4f5:*/ sec
-/*unknown_8a_a4f6:*/ bvc $38 ; $a530.w
+/*unknown_8a_a4f6:*/ bvc @unknown_8a_a530
 /*unknown_8a_a4f8:*/ lsr $4e38.w
 /*unknown_8a_a4fb:*/ sec
 /*unknown_8a_a4fc:*/ lsr $4e38.w
@@ -4849,10 +4849,10 @@
 /*unknown_8a_a503:*/ sec
 /*unknown_8a_a504:*/ lsr $4e38.w
 /*unknown_8a_a507:*/ sec
-/*unknown_8a_a508:*/ bvc $38 ; $a542.w
+/*unknown_8a_a508:*/ bvc @unknown_8a_a542
 /*unknown_8a_a50a:*/ lsr $4e38.w
 /*unknown_8a_a50d:*/ sec
-/*unknown_8a_a50e:*/ eor ($38), Y
+@unknown_8a_a50e: eor ($38), Y
 /*unknown_8a_a510:*/ lsr $4e38.w
 /*unknown_8a_a513:*/ sec
 /*unknown_8a_a514:*/ mvn $4e, $38
@@ -4869,7 +4869,7 @@
 /*unknown_8a_a52b:*/ sec
 /*unknown_8a_a52c:*/ lsr $4e38.w
 /*unknown_8a_a52f:*/ sec
-/*unknown_8a_a530:*/ bvc $38 ; $a56a.w
+@unknown_8a_a530: bvc $38 ; $a56a.w
 /*unknown_8a_a532:*/ lsr $4e38.w
 /*unknown_8a_a535:*/ sec
 /*unknown_8a_a536:*/ mvn $4e, $38
@@ -4878,9 +4878,9 @@
 /*unknown_8a_a53d:*/ sec
 /*unknown_8a_a53e:*/ lsr $4e38.w
 /*unknown_8a_a541:*/ sec
-/*unknown_8a_a542:*/ mvn $4e, $38
+@unknown_8a_a542: mvn $4e, $38
 /*unknown_8a_a545:*/ sec
-/*unknown_8a_a546:*/ bvc $38 ; $a580.w
+/*unknown_8a_a546:*/ bvc @unknown_8a_a580
 /*unknown_8a_a548:*/ lsr $5138.w
 /*unknown_8a_a54b:*/ sec
 /*unknown_8a_a54c:*/ lsr $4e38.w
@@ -4892,7 +4892,7 @@
 /*unknown_8a_a559:*/ sec
 /*unknown_8a_a55a:*/ lsr $4e38.w
 /*unknown_8a_a55d:*/ sec
-/*unknown_8a_a55e:*/ bvc $38 ; $a598.w
+/*unknown_8a_a55e:*/ bvc @unknown_8a_a598
 /*unknown_8a_a560:*/ lsr $4e38.w
 /*unknown_8a_a563:*/ sec
 /*unknown_8a_a564:*/ lsr $5038.w
@@ -4909,7 +4909,7 @@
 /*unknown_8a_a57b:*/ sec
 /*unknown_8a_a57c:*/ lsr $4e38.w
 /*unknown_8a_a57f:*/ sec
-/*unknown_8a_a580:*/ lsr $4e38.w
+@unknown_8a_a580: lsr $4e38.w
 /*unknown_8a_a583:*/ sec
 /*unknown_8a_a584:*/ lsr $4e38.w
 /*unknown_8a_a587:*/ sec
@@ -4921,7 +4921,7 @@
 /*unknown_8a_a593:*/ sec
 /*unknown_8a_a594:*/ lsr $5038.w
 /*unknown_8a_a597:*/ sec
-/*unknown_8a_a598:*/ lsr $4e38.w
+@unknown_8a_a598: lsr $4e38.w
 /*unknown_8a_a59b:*/ sec
 /*unknown_8a_a59c:*/ lsr $4e38.w
 /*unknown_8a_a59f:*/ sec
@@ -4931,7 +4931,7 @@
 /*unknown_8a_a5a7:*/ sec
 /*unknown_8a_a5a8:*/ mvn $4e, $38
 /*unknown_8a_a5ab:*/ sec
-/*unknown_8a_a5ac:*/ bvc $38 ; $a5e6.w
+/*unknown_8a_a5ac:*/ bvc @unknown_8a_a5e6
 /*unknown_8a_a5ae:*/ lsr $4e38.w
 /*unknown_8a_a5b1:*/ sec
 /*unknown_8a_a5b2:*/ lsr $4e38.w
@@ -4946,21 +4946,21 @@
 /*unknown_8a_a5c4:*/ bvc $38 ; $a5fe.w
 /*unknown_8a_a5c6:*/ lsr $4e38.w
 /*unknown_8a_a5c9:*/ sec
-/*unknown_8a_a5ca:*/ bvc $38 ; $a604.w
+/*unknown_8a_a5ca:*/ bvc @unknown_8a_a604
 /*unknown_8a_a5cc:*/ lsr $5438.w
 /*unknown_8a_a5cf:*/ sec
 /*unknown_8a_a5d0:*/ lsr $5038.w
 /*unknown_8a_a5d3:*/ sec
 /*unknown_8a_a5d4:*/ lsr $4e38.w
 /*unknown_8a_a5d7:*/ sec
-/*unknown_8a_a5d8:*/ bvc $38 ; $a612.w
+/*unknown_8a_a5d8:*/ bvc @unknown_8a_a612
 /*unknown_8a_a5da:*/ lsr $4e38.w
 /*unknown_8a_a5dd:*/ sec
 /*unknown_8a_a5de:*/ mvn $4e, $38
 /*unknown_8a_a5e1:*/ sec
 /*unknown_8a_a5e2:*/ lsr $5038.w
 /*unknown_8a_a5e5:*/ sec
-/*unknown_8a_a5e6:*/ lsr $4e38.w
+@unknown_8a_a5e6: lsr $4e38.w
 /*unknown_8a_a5e9:*/ sec
 /*unknown_8a_a5ea:*/ lsr $5438.w
 /*unknown_8a_a5ed:*/ sec
@@ -4975,14 +4975,14 @@
 /*unknown_8a_a5ff:*/ sec
 /*unknown_8a_a600:*/ mvn $4e, $38
 /*unknown_8a_a603:*/ sec
-/*unknown_8a_a604:*/ lsr $5438.w
+@unknown_8a_a604: lsr $5438.w
 /*unknown_8a_a607:*/ clc
 /*unknown_8a_a608:*/ eor ($38)
 /*unknown_8a_a60a:*/ lsr $5438.w
 /*unknown_8a_a60d:*/ sec
 /*unknown_8a_a60e:*/ lsr $4e38.w
 /*unknown_8a_a611:*/ sec
-/*unknown_8a_a612:*/ lsr $5438.w
+@unknown_8a_a612: lsr $5438.w
 /*unknown_8a_a615:*/ sec
 /*unknown_8a_a616:*/ lsr $4e38.w
 /*unknown_8a_a619:*/ sec
@@ -5001,7 +5001,7 @@
 /*unknown_8a_a633:*/ sec
 /*unknown_8a_a634:*/ lsr $4e38.w
 /*unknown_8a_a637:*/ sec
-/*unknown_8a_a638:*/ bvc $38 ; $a672.w
+/*unknown_8a_a638:*/ bvc @unknown_8a_a672
 /*unknown_8a_a63a:*/ lsr $5238.w
 /*unknown_8a_a63d:*/ sec
 /*unknown_8a_a63e:*/ lsr $5138.w
@@ -5010,7 +5010,7 @@
 /*unknown_8a_a645:*/ sec
 /*unknown_8a_a646:*/ lsr $4e38.w
 /*unknown_8a_a649:*/ sec
-/*unknown_8a_a64a:*/ bvc $38 ; $a684.w
+/*unknown_8a_a64a:*/ bvc @unknown_8a_a684
 /*unknown_8a_a64c:*/ lsr $5238.w
 /*unknown_8a_a64f:*/ clc
 /*unknown_8a_a650:*/ lsr $4e38.w
@@ -5030,7 +5030,7 @@
 /*unknown_8a_a66d:*/ sec
 /*unknown_8a_a66e:*/ lsr $4e38.w
 /*unknown_8a_a671:*/ sec
-/*unknown_8a_a672:*/ bvc $18 ; $a68c.w
+@unknown_8a_a672: bvc @unknown_8a_a68c
 /*unknown_8a_a674:*/ lsr $4e38.w
 /*unknown_8a_a677:*/ sec
 /*unknown_8a_a678:*/ lsr $4e38.w
@@ -5039,11 +5039,11 @@
 /*unknown_8a_a67f:*/ sec
 /*unknown_8a_a680:*/ lsr $4e38.w
 /*unknown_8a_a683:*/ sec
-/*unknown_8a_a684:*/ lsr $5438.w
+@unknown_8a_a684: lsr $5438.w
 /*unknown_8a_a687:*/ clc
 /*unknown_8a_a688:*/ lsr $4e38.w
 /*unknown_8a_a68b:*/ sec
-/*unknown_8a_a68c:*/ lsr $4e38.w
+@unknown_8a_a68c: lsr $4e38.w
 /*unknown_8a_a68f:*/ sec
 /*unknown_8a_a690:*/ lsr $5038.w
 /*unknown_8a_a693:*/ clc
@@ -5070,7 +5070,7 @@
 /*unknown_8a_a6bd:*/ sec
 /*unknown_8a_a6be:*/ lsr $4e38.w
 /*unknown_8a_a6c1:*/ sec
-/*unknown_8a_a6c2:*/ bvc $38 ; $a6fc.w
+/*unknown_8a_a6c2:*/ bvc @unknown_8a_a6fc
 /*unknown_8a_a6c4:*/ lsr $4e38.w
 /*unknown_8a_a6c7:*/ sec
 /*unknown_8a_a6c8:*/ bvc $38 ; $a702.w
@@ -5099,7 +5099,7 @@
 /*unknown_8a_a6f7:*/ sec
 /*unknown_8a_a6f8:*/ lsr $4e38.w
 /*unknown_8a_a6fb:*/ sec
-/*unknown_8a_a6fc:*/ lsr $4e38.w
+@unknown_8a_a6fc: lsr $4e38.w
 /*unknown_8a_a6ff:*/ sec
 /*unknown_8a_a700:*/ lsr $4e38.w
 /*unknown_8a_a703:*/ sec
@@ -5219,7 +5219,7 @@
 /*unknown_8a_a7e7:*/ sec
 /*unknown_8a_a7e8:*/ mvn $4e, $18
 /*unknown_8a_a7eb:*/ sec
-/*unknown_8a_a7ec:*/ bvc $18 ; $a806.w
+/*unknown_8a_a7ec:*/ bvc @unknown_8a_a806
 /*unknown_8a_a7ee:*/ lsr $4e38.w
 /*unknown_8a_a7f1:*/ sec
 /*unknown_8a_a7f2:*/ eor ($18, S), Y
@@ -5232,7 +5232,7 @@
 /*unknown_8a_a800:*/ eor ($18), Y
 /*unknown_8a_a802:*/ lsr $5138.w
 /*unknown_8a_a805:*/ clc
-/*unknown_8a_a806:*/ lsr $4e38.w
+@unknown_8a_a806: lsr $4e38.w
 /*unknown_8a_a809:*/ sec
 /*unknown_8a_a80a:*/ lsr $4e38.w
 /*unknown_8a_a80d:*/ sec
@@ -5346,7 +5346,7 @@
 /*unknown_8a_a8e5:*/ clc
 /*unknown_8a_a8e6:*/ lsr $4e18.w
 /*unknown_8a_a8e9:*/ clc
-/*unknown_8a_a8ea:*/ bvc $18 ; $a904.w
+/*unknown_8a_a8ea:*/ bvc @unknown_8a_a904
 /*unknown_8a_a8ec:*/ lsr $4e18.w
 /*unknown_8a_a8ef:*/ clc
 /*unknown_8a_a8f0:*/ lsr $4e18.w
@@ -5359,7 +5359,7 @@
 /*unknown_8a_a8fe:*/ lsr $4e18.w
 /*unknown_8a_a901:*/ clc
 /*unknown_8a_a902:*/ eor ($18), Y
-/*unknown_8a_a904:*/ lsr $4e18.w
+@unknown_8a_a904: lsr $4e18.w
 /*unknown_8a_a907:*/ clc
 /*unknown_8a_a908:*/ lsr $5018.w
 /*unknown_8a_a90b:*/ sec
@@ -11330,345 +11330,345 @@
 /*unknown_8a_d73d:*/ trb $4f
 /*unknown_8a_d73f:*/ trb $58
 /*unknown_8a_d741:*/ bpl $59 ; $d79c.w
-/*unknown_8a_d743:*/ bpl $5a ; $d79f.w
+/*unknown_8a_d743:*/ bpl @unknown_8a_d79f
 /*unknown_8a_d745:*/ bpl $5b ; $d7a2.w
-/*unknown_8a_d747:*/ bpl $5c ; $d7a5.w
+/*unknown_8a_d747:*/ bpl @unknown_8a_d7a5
 /*unknown_8a_d749:*/ bpl $5d ; $d7a8.w
-/*unknown_8a_d74b:*/ bpl $5e ; $d7ab.w
+/*unknown_8a_d74b:*/ bpl @unknown_8a_d7ab
 /*unknown_8a_d74d:*/ bpl $5f ; $d7ae.w
-/*unknown_8a_d74f:*/ bpl $58 ; $d7a9.w
+/*unknown_8a_d74f:*/ bpl @unknown_8a_d7a9
 /*unknown_8a_d751:*/ bpl $59 ; $d7ac.w
-/*unknown_8a_d753:*/ bpl $5a ; $d7af.w
+/*unknown_8a_d753:*/ bpl @unknown_8a_d7af
 /*unknown_8a_d755:*/ bpl $5b ; $d7b2.w
-/*unknown_8a_d757:*/ bpl $5c ; $d7b5.w
+/*unknown_8a_d757:*/ bpl @unknown_8a_d7b5
 /*unknown_8a_d759:*/ bpl $5d ; $d7b8.w
-/*unknown_8a_d75b:*/ bpl $5e ; $d7bb.w
+/*unknown_8a_d75b:*/ bpl @unknown_8a_d7bb
 /*unknown_8a_d75d:*/ bpl $5f ; $d7be.w
-/*unknown_8a_d75f:*/ bpl $58 ; $d7b9.w
+/*unknown_8a_d75f:*/ bpl @unknown_8a_d7b9
 /*unknown_8a_d761:*/ bpl $59 ; $d7bc.w
-/*unknown_8a_d763:*/ bpl $5a ; $d7bf.w
+/*unknown_8a_d763:*/ bpl @unknown_8a_d7bf
 /*unknown_8a_d765:*/ bpl $5b ; $d7c2.w
-/*unknown_8a_d767:*/ bpl $5c ; $d7c5.w
+/*unknown_8a_d767:*/ bpl @unknown_8a_d7c5
 /*unknown_8a_d769:*/ bpl $5d ; $d7c8.w
-/*unknown_8a_d76b:*/ bpl $5e ; $d7cb.w
+/*unknown_8a_d76b:*/ bpl @unknown_8a_d7cb
 /*unknown_8a_d76d:*/ bpl $5f ; $d7ce.w
-/*unknown_8a_d76f:*/ bpl $58 ; $d7c9.w
+/*unknown_8a_d76f:*/ bpl @unknown_8a_d7c9
 /*unknown_8a_d771:*/ bpl $59 ; $d7cc.w
-/*unknown_8a_d773:*/ bpl $5a ; $d7cf.w
+/*unknown_8a_d773:*/ bpl @unknown_8a_d7cf
 /*unknown_8a_d775:*/ bpl $5b ; $d7d2.w
-/*unknown_8a_d777:*/ bpl $5c ; $d7d5.w
+/*unknown_8a_d777:*/ bpl @unknown_8a_d7d5
 /*unknown_8a_d779:*/ bpl $5d ; $d7d8.w
-/*unknown_8a_d77b:*/ bpl $5e ; $d7db.w
+/*unknown_8a_d77b:*/ bpl @unknown_8a_d7db
 /*unknown_8a_d77d:*/ bpl $5f ; $d7de.w
-/*unknown_8a_d77f:*/ bpl $68 ; $d7e9.w
+/*unknown_8a_d77f:*/ bpl @unknown_8a_d7e9
 /*unknown_8a_d781:*/ bpl $69 ; $d7ec.w
-/*unknown_8a_d783:*/ bpl $6a ; $d7ef.w
+/*unknown_8a_d783:*/ bpl @unknown_8a_d7ef
 /*unknown_8a_d785:*/ bpl $6b ; $d7f2.w
-/*unknown_8a_d787:*/ bpl $6c ; $d7f5.w
+/*unknown_8a_d787:*/ bpl @unknown_8a_d7f5
 /*unknown_8a_d789:*/ bpl $6d ; $d7f8.w
-/*unknown_8a_d78b:*/ bpl $6e ; $d7fb.w
+/*unknown_8a_d78b:*/ bpl @unknown_8a_d7fb
 /*unknown_8a_d78d:*/ bpl $6f ; $d7fe.w
-/*unknown_8a_d78f:*/ bpl $68 ; $d7f9.w
+/*unknown_8a_d78f:*/ bpl @unknown_8a_d7f9
 /*unknown_8a_d791:*/ bpl $69 ; $d7fc.w
-/*unknown_8a_d793:*/ bpl $6a ; $d7ff.w
+/*unknown_8a_d793:*/ bpl @unknown_8a_d7ff
 /*unknown_8a_d795:*/ bpl $6b ; $d802.w
-/*unknown_8a_d797:*/ bpl $6c ; $d805.w
+/*unknown_8a_d797:*/ bpl @unknown_8a_d805
 /*unknown_8a_d799:*/ bpl $6d ; $d808.w
-/*unknown_8a_d79b:*/ bpl $6e ; $d80b.w
+/*unknown_8a_d79b:*/ bpl @unknown_8a_d80b
 /*unknown_8a_d79d:*/ bpl $6f ; $d80e.w
-/*unknown_8a_d79f:*/ bpl $68 ; $d809.w
+@unknown_8a_d79f: bpl @unknown_8a_d809
 /*unknown_8a_d7a1:*/ bpl $69 ; $d80c.w
-/*unknown_8a_d7a3:*/ bpl $6a ; $d80f.w
-/*unknown_8a_d7a5:*/ bpl $6b ; $d812.w
-/*unknown_8a_d7a7:*/ bpl $6c ; $d815.w
-/*unknown_8a_d7a9:*/ bpl $6d ; $d818.w
-/*unknown_8a_d7ab:*/ bpl $6e ; $d81b.w
+/*unknown_8a_d7a3:*/ bpl @unknown_8a_d80f
+@unknown_8a_d7a5: bpl $6b ; $d812.w
+/*unknown_8a_d7a7:*/ bpl @unknown_8a_d815
+@unknown_8a_d7a9: bpl $6d ; $d818.w
+@unknown_8a_d7ab: bpl @unknown_8a_d81b
 /*unknown_8a_d7ad:*/ bpl $6f ; $d81e.w
-/*unknown_8a_d7af:*/ bpl $68 ; $d819.w
+@unknown_8a_d7af: bpl @unknown_8a_d819
 /*unknown_8a_d7b1:*/ bpl $69 ; $d81c.w
-/*unknown_8a_d7b3:*/ bpl $6a ; $d81f.w
-/*unknown_8a_d7b5:*/ bpl $6b ; $d822.w
-/*unknown_8a_d7b7:*/ bpl $6c ; $d825.w
-/*unknown_8a_d7b9:*/ bpl $6d ; $d828.w
-/*unknown_8a_d7bb:*/ bpl $6e ; $d82b.w
+/*unknown_8a_d7b3:*/ bpl @unknown_8a_d81f
+@unknown_8a_d7b5: bpl $6b ; $d822.w
+/*unknown_8a_d7b7:*/ bpl @unknown_8a_d825
+@unknown_8a_d7b9: bpl $6d ; $d828.w
+@unknown_8a_d7bb: bpl @unknown_8a_d82b
 /*unknown_8a_d7bd:*/ bpl $6f ; $d82e.w
-/*unknown_8a_d7bf:*/ bpl $6e ; $d82f.w
+@unknown_8a_d7bf: bpl @unknown_8a_d82f
 /*unknown_8a_d7c1:*/ bpl $6f ; $d832.w
-/*unknown_8a_d7c3:*/ bpl $68 ; $d82d.w
-/*unknown_8a_d7c5:*/ bpl $69 ; $d830.w
-/*unknown_8a_d7c7:*/ bpl $6a ; $d833.w
-/*unknown_8a_d7c9:*/ bpl $6b ; $d836.w
-/*unknown_8a_d7cb:*/ bpl $6c ; $d839.w
+/*unknown_8a_d7c3:*/ bpl @unknown_8a_d82d
+@unknown_8a_d7c5: bpl $69 ; $d830.w
+/*unknown_8a_d7c7:*/ bpl @unknown_8a_d833
+@unknown_8a_d7c9: bpl $6b ; $d836.w
+@unknown_8a_d7cb: bpl @unknown_8a_d839
 /*unknown_8a_d7cd:*/ bpl $6d ; $d83c.w
-/*unknown_8a_d7cf:*/ bpl $6e ; $d83f.w
+@unknown_8a_d7cf: bpl @unknown_8a_d83f
 /*unknown_8a_d7d1:*/ bpl $6f ; $d842.w
-/*unknown_8a_d7d3:*/ bpl $68 ; $d83d.w
-/*unknown_8a_d7d5:*/ bpl $69 ; $d840.w
-/*unknown_8a_d7d7:*/ bpl $6a ; $d843.w
+/*unknown_8a_d7d3:*/ bpl @unknown_8a_d83d
+@unknown_8a_d7d5: bpl $69 ; $d840.w
+/*unknown_8a_d7d7:*/ bpl @unknown_8a_d843
 /*unknown_8a_d7d9:*/ bpl $6b ; $d846.w
-/*unknown_8a_d7db:*/ bpl $6c ; $d849.w
+@unknown_8a_d7db: bpl @unknown_8a_d849
 /*unknown_8a_d7dd:*/ bpl $6d ; $d84c.w
-/*unknown_8a_d7df:*/ bpl $6e ; $d84f.w
+/*unknown_8a_d7df:*/ bpl @unknown_8a_d84f
 /*unknown_8a_d7e1:*/ bpl $6f ; $d852.w
-/*unknown_8a_d7e3:*/ bpl $68 ; $d84d.w
+/*unknown_8a_d7e3:*/ bpl @unknown_8a_d84d
 /*unknown_8a_d7e5:*/ bpl $69 ; $d850.w
-/*unknown_8a_d7e7:*/ bpl $6a ; $d853.w
-/*unknown_8a_d7e9:*/ bpl $6b ; $d856.w
-/*unknown_8a_d7eb:*/ bpl $6c ; $d859.w
+/*unknown_8a_d7e7:*/ bpl @unknown_8a_d853
+@unknown_8a_d7e9: bpl $6b ; $d856.w
+/*unknown_8a_d7eb:*/ bpl @unknown_8a_d859
 /*unknown_8a_d7ed:*/ bpl $6d ; $d85c.w
-/*unknown_8a_d7ef:*/ bpl $6e ; $d85f.w
+@unknown_8a_d7ef: bpl @unknown_8a_d85f
 /*unknown_8a_d7f1:*/ bpl $6f ; $d862.w
-/*unknown_8a_d7f3:*/ bpl $68 ; $d85d.w
-/*unknown_8a_d7f5:*/ bpl $69 ; $d860.w
-/*unknown_8a_d7f7:*/ bpl $6a ; $d863.w
-/*unknown_8a_d7f9:*/ bpl $6b ; $d866.w
-/*unknown_8a_d7fb:*/ bpl $6c ; $d869.w
+/*unknown_8a_d7f3:*/ bpl @unknown_8a_d85d
+@unknown_8a_d7f5: bpl $69 ; $d860.w
+/*unknown_8a_d7f7:*/ bpl @unknown_8a_d863
+@unknown_8a_d7f9: bpl $6b ; $d866.w
+@unknown_8a_d7fb: bpl @unknown_8a_d869
 /*unknown_8a_d7fd:*/ bpl $6d ; $d86c.w
-/*unknown_8a_d7ff:*/ bpl $6e ; $d86f.w
+@unknown_8a_d7ff: bpl @unknown_8a_d86f
 /*unknown_8a_d801:*/ bpl $6f ; $d872.w
-/*unknown_8a_d803:*/ bpl $68 ; $d86d.w
-/*unknown_8a_d805:*/ bpl $69 ; $d870.w
-/*unknown_8a_d807:*/ bpl $6a ; $d873.w
-/*unknown_8a_d809:*/ bpl $6b ; $d876.w
-/*unknown_8a_d80b:*/ bpl $6c ; $d879.w
+/*unknown_8a_d803:*/ bpl @unknown_8a_d86d
+@unknown_8a_d805: bpl $69 ; $d870.w
+/*unknown_8a_d807:*/ bpl @unknown_8a_d873
+@unknown_8a_d809: bpl $6b ; $d876.w
+@unknown_8a_d80b: bpl @unknown_8a_d879
 /*unknown_8a_d80d:*/ bpl $6d ; $d87c.w
-/*unknown_8a_d80f:*/ bpl $6e ; $d87f.w
+@unknown_8a_d80f: bpl @unknown_8a_d87f
 /*unknown_8a_d811:*/ bpl $6f ; $d882.w
-/*unknown_8a_d813:*/ bpl $68 ; $d87d.w
-/*unknown_8a_d815:*/ bpl $69 ; $d880.w
-/*unknown_8a_d817:*/ bpl $6a ; $d883.w
-/*unknown_8a_d819:*/ bpl $6b ; $d886.w
-/*unknown_8a_d81b:*/ bpl $6c ; $d889.w
+/*unknown_8a_d813:*/ bpl @unknown_8a_d87d
+@unknown_8a_d815: bpl $69 ; $d880.w
+/*unknown_8a_d817:*/ bpl @unknown_8a_d883
+@unknown_8a_d819: bpl $6b ; $d886.w
+@unknown_8a_d81b: bpl @unknown_8a_d889
 /*unknown_8a_d81d:*/ bpl $6d ; $d88c.w
-/*unknown_8a_d81f:*/ bpl $6e ; $d88f.w
+@unknown_8a_d81f: bpl @unknown_8a_d88f
 /*unknown_8a_d821:*/ bpl $6f ; $d892.w
-/*unknown_8a_d823:*/ bpl $68 ; $d88d.w
-/*unknown_8a_d825:*/ bpl $69 ; $d890.w
-/*unknown_8a_d827:*/ bpl $6a ; $d893.w
+/*unknown_8a_d823:*/ bpl @unknown_8a_d88d
+@unknown_8a_d825: bpl $69 ; $d890.w
+/*unknown_8a_d827:*/ bpl @unknown_8a_d893
 /*unknown_8a_d829:*/ bpl $6b ; $d896.w
-/*unknown_8a_d82b:*/ bpl $6c ; $d899.w
-/*unknown_8a_d82d:*/ bpl $6d ; $d89c.w
-/*unknown_8a_d82f:*/ bpl $6e ; $d89f.w
+@unknown_8a_d82b: bpl @unknown_8a_d899
+@unknown_8a_d82d: bpl $6d ; $d89c.w
+@unknown_8a_d82f: bpl @unknown_8a_d89f
 /*unknown_8a_d831:*/ bpl $6f ; $d8a2.w
-/*unknown_8a_d833:*/ bpl $68 ; $d89d.w
+@unknown_8a_d833: bpl @unknown_8a_d89d
 /*unknown_8a_d835:*/ bpl $69 ; $d8a0.w
-/*unknown_8a_d837:*/ bpl $6a ; $d8a3.w
-/*unknown_8a_d839:*/ bpl $6b ; $d8a6.w
-/*unknown_8a_d83b:*/ bpl $6c ; $d8a9.w
-/*unknown_8a_d83d:*/ bpl $6d ; $d8ac.w
-/*unknown_8a_d83f:*/ bpl $6c ; $d8ad.w
+/*unknown_8a_d837:*/ bpl @unknown_8a_d8a3
+@unknown_8a_d839: bpl $6b ; $d8a6.w
+/*unknown_8a_d83b:*/ bpl @unknown_8a_d8a9
+@unknown_8a_d83d: bpl $6d ; $d8ac.w
+@unknown_8a_d83f: bpl @unknown_8a_d8ad
 /*unknown_8a_d841:*/ bpl $6d ; $d8b0.w
-/*unknown_8a_d843:*/ bpl $6e ; $d8b3.w
+@unknown_8a_d843: bpl @unknown_8a_d8b3
 /*unknown_8a_d845:*/ bpl $6f ; $d8b6.w
-/*unknown_8a_d847:*/ bpl $68 ; $d8b1.w
-/*unknown_8a_d849:*/ bpl $69 ; $d8b4.w
-/*unknown_8a_d84b:*/ bpl $6a ; $d8b7.w
-/*unknown_8a_d84d:*/ bpl $6b ; $d8ba.w
-/*unknown_8a_d84f:*/ bpl $6c ; $d8bd.w
+/*unknown_8a_d847:*/ bpl @unknown_8a_d8b1
+@unknown_8a_d849: bpl $69 ; $d8b4.w
+/*unknown_8a_d84b:*/ bpl @unknown_8a_d8b7
+@unknown_8a_d84d: bpl $6b ; $d8ba.w
+@unknown_8a_d84f: bpl @unknown_8a_d8bd
 /*unknown_8a_d851:*/ bpl $6d ; $d8c0.w
-/*unknown_8a_d853:*/ bpl $6e ; $d8c3.w
+@unknown_8a_d853: bpl @unknown_8a_d8c3
 /*unknown_8a_d855:*/ bpl $6f ; $d8c6.w
-/*unknown_8a_d857:*/ bpl $68 ; $d8c1.w
-/*unknown_8a_d859:*/ bpl $69 ; $d8c4.w
-/*unknown_8a_d85b:*/ bpl $6a ; $d8c7.w
-/*unknown_8a_d85d:*/ bpl $6b ; $d8ca.w
-/*unknown_8a_d85f:*/ bpl $6c ; $d8cd.w
+/*unknown_8a_d857:*/ bpl @unknown_8a_d8c1
+@unknown_8a_d859: bpl $69 ; $d8c4.w
+/*unknown_8a_d85b:*/ bpl @unknown_8a_d8c7
+@unknown_8a_d85d: bpl $6b ; $d8ca.w
+@unknown_8a_d85f: bpl @unknown_8a_d8cd
 /*unknown_8a_d861:*/ bpl $6d ; $d8d0.w
-/*unknown_8a_d863:*/ bpl $6e ; $d8d3.w
+@unknown_8a_d863: bpl @unknown_8a_d8d3
 /*unknown_8a_d865:*/ bpl $6f ; $d8d6.w
-/*unknown_8a_d867:*/ bpl $68 ; $d8d1.w
-/*unknown_8a_d869:*/ bpl $69 ; $d8d4.w
-/*unknown_8a_d86b:*/ bpl $6a ; $d8d7.w
-/*unknown_8a_d86d:*/ bpl $6b ; $d8da.w
-/*unknown_8a_d86f:*/ bpl $6c ; $d8dd.w
+/*unknown_8a_d867:*/ bpl @unknown_8a_d8d1
+@unknown_8a_d869: bpl $69 ; $d8d4.w
+/*unknown_8a_d86b:*/ bpl @unknown_8a_d8d7
+@unknown_8a_d86d: bpl $6b ; $d8da.w
+@unknown_8a_d86f: bpl @unknown_8a_d8dd
 /*unknown_8a_d871:*/ bpl $6d ; $d8e0.w
-/*unknown_8a_d873:*/ bpl $6e ; $d8e3.w
+@unknown_8a_d873: bpl @unknown_8a_d8e3
 /*unknown_8a_d875:*/ bpl $6f ; $d8e6.w
-/*unknown_8a_d877:*/ bpl $68 ; $d8e1.w
-/*unknown_8a_d879:*/ bpl $69 ; $d8e4.w
-/*unknown_8a_d87b:*/ bpl $6a ; $d8e7.w
-/*unknown_8a_d87d:*/ bpl $6b ; $d8ea.w
-/*unknown_8a_d87f:*/ bpl $68 ; $d8e9.w
+/*unknown_8a_d877:*/ bpl @unknown_8a_d8e1
+@unknown_8a_d879: bpl $69 ; $d8e4.w
+/*unknown_8a_d87b:*/ bpl @unknown_8a_d8e7
+@unknown_8a_d87d: bpl $6b ; $d8ea.w
+@unknown_8a_d87f: bpl @unknown_8a_d8e9
 /*unknown_8a_d881:*/ bpl $69 ; $d8ec.w
-/*unknown_8a_d883:*/ bpl $6a ; $d8ef.w
+@unknown_8a_d883: bpl @unknown_8a_d8ef
 /*unknown_8a_d885:*/ bpl $6b ; $d8f2.w
-/*unknown_8a_d887:*/ bpl $6c ; $d8f5.w
-/*unknown_8a_d889:*/ bpl $6d ; $d8f8.w
-/*unknown_8a_d88b:*/ bpl $6e ; $d8fb.w
-/*unknown_8a_d88d:*/ bpl $6f ; $d8fe.w
-/*unknown_8a_d88f:*/ bpl $68 ; $d8f9.w
+/*unknown_8a_d887:*/ bpl @unknown_8a_d8f5
+@unknown_8a_d889: bpl $6d ; $d8f8.w
+/*unknown_8a_d88b:*/ bpl @unknown_8a_d8fb
+@unknown_8a_d88d: bpl $6f ; $d8fe.w
+@unknown_8a_d88f: bpl @unknown_8a_d8f9
 /*unknown_8a_d891:*/ bpl $69 ; $d8fc.w
-/*unknown_8a_d893:*/ bpl $6a ; $d8ff.w
+@unknown_8a_d893: bpl @unknown_8a_d8ff
 /*unknown_8a_d895:*/ bpl $6b ; $d902.w
-/*unknown_8a_d897:*/ bpl $6c ; $d905.w
-/*unknown_8a_d899:*/ bpl $6d ; $d908.w
-/*unknown_8a_d89b:*/ bpl $6e ; $d90b.w
-/*unknown_8a_d89d:*/ bpl $6f ; $d90e.w
-/*unknown_8a_d89f:*/ bpl $68 ; $d909.w
+/*unknown_8a_d897:*/ bpl @unknown_8a_d905
+@unknown_8a_d899: bpl $6d ; $d908.w
+/*unknown_8a_d89b:*/ bpl @unknown_8a_d90b
+@unknown_8a_d89d: bpl $6f ; $d90e.w
+@unknown_8a_d89f: bpl @unknown_8a_d909
 /*unknown_8a_d8a1:*/ bpl $69 ; $d90c.w
-/*unknown_8a_d8a3:*/ bpl $6a ; $d90f.w
+@unknown_8a_d8a3: bpl @unknown_8a_d90f
 /*unknown_8a_d8a5:*/ bpl $6b ; $d912.w
-/*unknown_8a_d8a7:*/ bpl $6c ; $d915.w
-/*unknown_8a_d8a9:*/ bpl $6d ; $d918.w
-/*unknown_8a_d8ab:*/ bpl $6e ; $d91b.w
-/*unknown_8a_d8ad:*/ bpl $6f ; $d91e.w
-/*unknown_8a_d8af:*/ bpl $68 ; $d919.w
-/*unknown_8a_d8b1:*/ bpl $69 ; $d91c.w
-/*unknown_8a_d8b3:*/ bpl $6a ; $d91f.w
+/*unknown_8a_d8a7:*/ bpl @unknown_8a_d915
+@unknown_8a_d8a9: bpl $6d ; $d918.w
+/*unknown_8a_d8ab:*/ bpl @unknown_8a_d91b
+@unknown_8a_d8ad: bpl $6f ; $d91e.w
+/*unknown_8a_d8af:*/ bpl @unknown_8a_d919
+@unknown_8a_d8b1: bpl $69 ; $d91c.w
+@unknown_8a_d8b3: bpl @unknown_8a_d91f
 /*unknown_8a_d8b5:*/ bpl $6b ; $d922.w
-/*unknown_8a_d8b7:*/ bpl $6c ; $d925.w
+@unknown_8a_d8b7: bpl @unknown_8a_d925
 /*unknown_8a_d8b9:*/ bpl $6d ; $d928.w
-/*unknown_8a_d8bb:*/ bpl $6e ; $d92b.w
-/*unknown_8a_d8bd:*/ bpl $6f ; $d92e.w
-/*unknown_8a_d8bf:*/ bpl $6e ; $d92f.w
-/*unknown_8a_d8c1:*/ bpl $6f ; $d932.w
-/*unknown_8a_d8c3:*/ bpl $68 ; $d92d.w
+/*unknown_8a_d8bb:*/ bpl @unknown_8a_d92b
+@unknown_8a_d8bd: bpl $6f ; $d92e.w
+/*unknown_8a_d8bf:*/ bpl @unknown_8a_d92f
+@unknown_8a_d8c1: bpl $6f ; $d932.w
+@unknown_8a_d8c3: bpl @unknown_8a_d92d
 /*unknown_8a_d8c5:*/ bpl $69 ; $d930.w
-/*unknown_8a_d8c7:*/ bpl $6a ; $d933.w
+@unknown_8a_d8c7: bpl @unknown_8a_d933
 /*unknown_8a_d8c9:*/ bpl $6b ; $d936.w
-/*unknown_8a_d8cb:*/ bpl $6c ; $d939.w
-/*unknown_8a_d8cd:*/ bpl $6d ; $d93c.w
-/*unknown_8a_d8cf:*/ bpl $6e ; $d93f.w
-/*unknown_8a_d8d1:*/ bpl $6f ; $d942.w
-/*unknown_8a_d8d3:*/ bpl $68 ; $d93d.w
+/*unknown_8a_d8cb:*/ bpl @unknown_8a_d939
+@unknown_8a_d8cd: bpl $6d ; $d93c.w
+/*unknown_8a_d8cf:*/ bpl @unknown_8a_d93f
+@unknown_8a_d8d1: bpl $6f ; $d942.w
+@unknown_8a_d8d3: bpl @unknown_8a_d93d
 /*unknown_8a_d8d5:*/ bpl $69 ; $d940.w
-/*unknown_8a_d8d7:*/ bpl $6a ; $d943.w
+@unknown_8a_d8d7: bpl @unknown_8a_d943
 /*unknown_8a_d8d9:*/ bpl $6b ; $d946.w
-/*unknown_8a_d8db:*/ bpl $6c ; $d949.w
-/*unknown_8a_d8dd:*/ bpl $6d ; $d94c.w
-/*unknown_8a_d8df:*/ bpl $6e ; $d94f.w
-/*unknown_8a_d8e1:*/ bpl $6f ; $d952.w
-/*unknown_8a_d8e3:*/ bpl $68 ; $d94d.w
+/*unknown_8a_d8db:*/ bpl @unknown_8a_d949
+@unknown_8a_d8dd: bpl $6d ; $d94c.w
+/*unknown_8a_d8df:*/ bpl @unknown_8a_d94f
+@unknown_8a_d8e1: bpl $6f ; $d952.w
+@unknown_8a_d8e3: bpl @unknown_8a_d94d
 /*unknown_8a_d8e5:*/ bpl $69 ; $d950.w
-/*unknown_8a_d8e7:*/ bpl $6a ; $d953.w
-/*unknown_8a_d8e9:*/ bpl $6b ; $d956.w
-/*unknown_8a_d8eb:*/ bpl $6c ; $d959.w
+@unknown_8a_d8e7: bpl @unknown_8a_d953
+@unknown_8a_d8e9: bpl $6b ; $d956.w
+/*unknown_8a_d8eb:*/ bpl @unknown_8a_d959
 /*unknown_8a_d8ed:*/ bpl $6d ; $d95c.w
-/*unknown_8a_d8ef:*/ bpl $6e ; $d95f.w
+@unknown_8a_d8ef: bpl @unknown_8a_d95f
 /*unknown_8a_d8f1:*/ bpl $6f ; $d962.w
-/*unknown_8a_d8f3:*/ bpl $68 ; $d95d.w
-/*unknown_8a_d8f5:*/ bpl $69 ; $d960.w
-/*unknown_8a_d8f7:*/ bpl $6a ; $d963.w
-/*unknown_8a_d8f9:*/ bpl $6b ; $d966.w
-/*unknown_8a_d8fb:*/ bpl $6c ; $d969.w
+/*unknown_8a_d8f3:*/ bpl @unknown_8a_d95d
+@unknown_8a_d8f5: bpl $69 ; $d960.w
+/*unknown_8a_d8f7:*/ bpl @unknown_8a_d963
+@unknown_8a_d8f9: bpl $6b ; $d966.w
+@unknown_8a_d8fb: bpl @unknown_8a_d969
 /*unknown_8a_d8fd:*/ bpl $6d ; $d96c.w
-/*unknown_8a_d8ff:*/ bpl $6e ; $d96f.w
+@unknown_8a_d8ff: bpl @unknown_8a_d96f
 /*unknown_8a_d901:*/ bpl $6f ; $d972.w
-/*unknown_8a_d903:*/ bpl $68 ; $d96d.w
-/*unknown_8a_d905:*/ bpl $69 ; $d970.w
-/*unknown_8a_d907:*/ bpl $6a ; $d973.w
-/*unknown_8a_d909:*/ bpl $6b ; $d976.w
-/*unknown_8a_d90b:*/ bpl $6c ; $d979.w
+/*unknown_8a_d903:*/ bpl @unknown_8a_d96d
+@unknown_8a_d905: bpl $69 ; $d970.w
+/*unknown_8a_d907:*/ bpl @unknown_8a_d973
+@unknown_8a_d909: bpl $6b ; $d976.w
+@unknown_8a_d90b: bpl @unknown_8a_d979
 /*unknown_8a_d90d:*/ bpl $6d ; $d97c.w
-/*unknown_8a_d90f:*/ bpl $6e ; $d97f.w
+@unknown_8a_d90f: bpl @unknown_8a_d97f
 /*unknown_8a_d911:*/ bpl $6f ; $d982.w
-/*unknown_8a_d913:*/ bpl $68 ; $d97d.w
-/*unknown_8a_d915:*/ bpl $69 ; $d980.w
-/*unknown_8a_d917:*/ bpl $6a ; $d983.w
-/*unknown_8a_d919:*/ bpl $6b ; $d986.w
-/*unknown_8a_d91b:*/ bpl $6c ; $d989.w
+/*unknown_8a_d913:*/ bpl @unknown_8a_d97d
+@unknown_8a_d915: bpl $69 ; $d980.w
+/*unknown_8a_d917:*/ bpl @unknown_8a_d983
+@unknown_8a_d919: bpl $6b ; $d986.w
+@unknown_8a_d91b: bpl @unknown_8a_d989
 /*unknown_8a_d91d:*/ bpl $6d ; $d98c.w
-/*unknown_8a_d91f:*/ bpl $6e ; $d98f.w
+@unknown_8a_d91f: bpl @unknown_8a_d98f
 /*unknown_8a_d921:*/ bpl $6f ; $d992.w
-/*unknown_8a_d923:*/ bpl $68 ; $d98d.w
-/*unknown_8a_d925:*/ bpl $69 ; $d990.w
-/*unknown_8a_d927:*/ bpl $6a ; $d993.w
+/*unknown_8a_d923:*/ bpl @unknown_8a_d98d
+@unknown_8a_d925: bpl $69 ; $d990.w
+/*unknown_8a_d927:*/ bpl @unknown_8a_d993
 /*unknown_8a_d929:*/ bpl $6b ; $d996.w
-/*unknown_8a_d92b:*/ bpl $6c ; $d999.w
-/*unknown_8a_d92d:*/ bpl $6d ; $d99c.w
-/*unknown_8a_d92f:*/ bpl $6e ; $d99f.w
+@unknown_8a_d92b: bpl @unknown_8a_d999
+@unknown_8a_d92d: bpl $6d ; $d99c.w
+@unknown_8a_d92f: bpl @unknown_8a_d99f
 /*unknown_8a_d931:*/ bpl $6f ; $d9a2.w
-/*unknown_8a_d933:*/ bpl $68 ; $d99d.w
+@unknown_8a_d933: bpl @unknown_8a_d99d
 /*unknown_8a_d935:*/ bpl $69 ; $d9a0.w
-/*unknown_8a_d937:*/ bpl $6a ; $d9a3.w
-/*unknown_8a_d939:*/ bpl $6b ; $d9a6.w
-/*unknown_8a_d93b:*/ bpl $6c ; $d9a9.w
-/*unknown_8a_d93d:*/ bpl $6d ; $d9ac.w
-/*unknown_8a_d93f:*/ bpl $6c ; $d9ad.w
+/*unknown_8a_d937:*/ bpl @unknown_8a_d9a3
+@unknown_8a_d939: bpl $6b ; $d9a6.w
+/*unknown_8a_d93b:*/ bpl @unknown_8a_d9a9
+@unknown_8a_d93d: bpl $6d ; $d9ac.w
+@unknown_8a_d93f: bpl @unknown_8a_d9ad
 /*unknown_8a_d941:*/ bpl $6d ; $d9b0.w
-/*unknown_8a_d943:*/ bpl $6e ; $d9b3.w
+@unknown_8a_d943: bpl @unknown_8a_d9b3
 /*unknown_8a_d945:*/ bpl $6f ; $d9b6.w
-/*unknown_8a_d947:*/ bpl $68 ; $d9b1.w
-/*unknown_8a_d949:*/ bpl $69 ; $d9b4.w
-/*unknown_8a_d94b:*/ bpl $6a ; $d9b7.w
-/*unknown_8a_d94d:*/ bpl $6b ; $d9ba.w
-/*unknown_8a_d94f:*/ bpl $6c ; $d9bd.w
+/*unknown_8a_d947:*/ bpl @unknown_8a_d9b1
+@unknown_8a_d949: bpl $69 ; $d9b4.w
+/*unknown_8a_d94b:*/ bpl @unknown_8a_d9b7
+@unknown_8a_d94d: bpl $6b ; $d9ba.w
+@unknown_8a_d94f: bpl @unknown_8a_d9bd
 /*unknown_8a_d951:*/ bpl $6d ; $d9c0.w
-/*unknown_8a_d953:*/ bpl $6e ; $d9c3.w
+@unknown_8a_d953: bpl @unknown_8a_d9c3
 /*unknown_8a_d955:*/ bpl $6f ; $d9c6.w
-/*unknown_8a_d957:*/ bpl $68 ; $d9c1.w
-/*unknown_8a_d959:*/ bpl $69 ; $d9c4.w
-/*unknown_8a_d95b:*/ bpl $6a ; $d9c7.w
-/*unknown_8a_d95d:*/ bpl $6b ; $d9ca.w
-/*unknown_8a_d95f:*/ bpl $6c ; $d9cd.w
+/*unknown_8a_d957:*/ bpl @unknown_8a_d9c1
+@unknown_8a_d959: bpl $69 ; $d9c4.w
+/*unknown_8a_d95b:*/ bpl @unknown_8a_d9c7
+@unknown_8a_d95d: bpl $6b ; $d9ca.w
+@unknown_8a_d95f: bpl @unknown_8a_d9cd
 /*unknown_8a_d961:*/ bpl $6d ; $d9d0.w
-/*unknown_8a_d963:*/ bpl $6e ; $d9d3.w
+@unknown_8a_d963: bpl @unknown_8a_d9d3
 /*unknown_8a_d965:*/ bpl $6f ; $d9d6.w
-/*unknown_8a_d967:*/ bpl $68 ; $d9d1.w
-/*unknown_8a_d969:*/ bpl $69 ; $d9d4.w
-/*unknown_8a_d96b:*/ bpl $6a ; $d9d7.w
-/*unknown_8a_d96d:*/ bpl $6b ; $d9da.w
-/*unknown_8a_d96f:*/ bpl $6c ; $d9dd.w
+/*unknown_8a_d967:*/ bpl @unknown_8a_d9d1
+@unknown_8a_d969: bpl $69 ; $d9d4.w
+/*unknown_8a_d96b:*/ bpl @unknown_8a_d9d7
+@unknown_8a_d96d: bpl $6b ; $d9da.w
+@unknown_8a_d96f: bpl @unknown_8a_d9dd
 /*unknown_8a_d971:*/ bpl $6d ; $d9e0.w
-/*unknown_8a_d973:*/ bpl $6e ; $d9e3.w
+@unknown_8a_d973: bpl @unknown_8a_d9e3
 /*unknown_8a_d975:*/ bpl $6f ; $d9e6.w
-/*unknown_8a_d977:*/ bpl $68 ; $d9e1.w
-/*unknown_8a_d979:*/ bpl $69 ; $d9e4.w
-/*unknown_8a_d97b:*/ bpl $6a ; $d9e7.w
-/*unknown_8a_d97d:*/ bpl $6b ; $d9ea.w
-/*unknown_8a_d97f:*/ bpl $79 ; $d9fa.w
+/*unknown_8a_d977:*/ bpl @unknown_8a_d9e1
+@unknown_8a_d979: bpl $69 ; $d9e4.w
+/*unknown_8a_d97b:*/ bpl @unknown_8a_d9e7
+@unknown_8a_d97d: bpl $6b ; $d9ea.w
+@unknown_8a_d97f: bpl $79 ; $d9fa.w
 /*unknown_8a_d981:*/ trb $79
-/*unknown_8a_d983:*/ trb $79
+@unknown_8a_d983: trb $79
 /*unknown_8a_d985:*/ trb $79
 /*unknown_8a_d987:*/ trb $79
-/*unknown_8a_d989:*/ trb $79
+@unknown_8a_d989: trb $79
 /*unknown_8a_d98b:*/ trb $79
-/*unknown_8a_d98d:*/ trb $79
-/*unknown_8a_d98f:*/ trb $79
+@unknown_8a_d98d: trb $79
+@unknown_8a_d98f: trb $79
 /*unknown_8a_d991:*/ trb $79
-/*unknown_8a_d993:*/ trb $79
+@unknown_8a_d993: trb $79
 /*unknown_8a_d995:*/ trb $79
 /*unknown_8a_d997:*/ trb $79
-/*unknown_8a_d999:*/ trb $79
+@unknown_8a_d999: trb $79
 /*unknown_8a_d99b:*/ trb $79
-/*unknown_8a_d99d:*/ trb $79
-/*unknown_8a_d99f:*/ trb $79
+@unknown_8a_d99d: trb $79
+@unknown_8a_d99f: trb $79
 /*unknown_8a_d9a1:*/ trb $79
-/*unknown_8a_d9a3:*/ trb $79
+@unknown_8a_d9a3: trb $79
 /*unknown_8a_d9a5:*/ trb $79
 /*unknown_8a_d9a7:*/ trb $79
-/*unknown_8a_d9a9:*/ trb $79
+@unknown_8a_d9a9: trb $79
 /*unknown_8a_d9ab:*/ trb $79
-/*unknown_8a_d9ad:*/ trb $79
+@unknown_8a_d9ad: trb $79
 /*unknown_8a_d9af:*/ trb $79
-/*unknown_8a_d9b1:*/ trb $79
-/*unknown_8a_d9b3:*/ trb $79
+@unknown_8a_d9b1: trb $79
+@unknown_8a_d9b3: trb $79
 /*unknown_8a_d9b5:*/ trb $79
-/*unknown_8a_d9b7:*/ trb $79
+@unknown_8a_d9b7: trb $79
 /*unknown_8a_d9b9:*/ trb $79
 /*unknown_8a_d9bb:*/ trb $79
-/*unknown_8a_d9bd:*/ trb $79
+@unknown_8a_d9bd: trb $79
 /*unknown_8a_d9bf:*/ trb $79
-/*unknown_8a_d9c1:*/ trb $79
-/*unknown_8a_d9c3:*/ trb $79
+@unknown_8a_d9c1: trb $79
+@unknown_8a_d9c3: trb $79
 /*unknown_8a_d9c5:*/ trb $79
-/*unknown_8a_d9c7:*/ trb $79
+@unknown_8a_d9c7: trb $79
 /*unknown_8a_d9c9:*/ trb $79
 /*unknown_8a_d9cb:*/ trb $79
-/*unknown_8a_d9cd:*/ trb $79
+@unknown_8a_d9cd: trb $79
 /*unknown_8a_d9cf:*/ trb $79
-/*unknown_8a_d9d1:*/ trb $79
-/*unknown_8a_d9d3:*/ trb $79
+@unknown_8a_d9d1: trb $79
+@unknown_8a_d9d3: trb $79
 /*unknown_8a_d9d5:*/ trb $79
-/*unknown_8a_d9d7:*/ trb $79
+@unknown_8a_d9d7: trb $79
 /*unknown_8a_d9d9:*/ trb $79
 /*unknown_8a_d9db:*/ trb $79
-/*unknown_8a_d9dd:*/ trb $79
+@unknown_8a_d9dd: trb $79
 /*unknown_8a_d9df:*/ trb $79
-/*unknown_8a_d9e1:*/ trb $79
-/*unknown_8a_d9e3:*/ trb $79
+@unknown_8a_d9e1: trb $79
+@unknown_8a_d9e3: trb $79
 /*unknown_8a_d9e5:*/ trb $79
-/*unknown_8a_d9e7:*/ trb $79
+@unknown_8a_d9e7: trb $79
 /*unknown_8a_d9e9:*/ trb $79
 /*unknown_8a_d9eb:*/ trb $79
 /*unknown_8a_d9ed:*/ trb $79

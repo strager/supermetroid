@@ -66,7 +66,7 @@
 /*unknown_a7_8060:*/ brk $00
 /*unknown_a7_8062:*/ brk $23
 /*unknown_a7_8064:*/ bra $2d ; $8093.w
-/*unknown_a7_8066:*/ bra $7c ; $80e4.w
+/*unknown_a7_8066:*/ bra @unknown_a7_80e4
 /*unknown_a7_8068:*/ bra ($ea - $100) ; $8054.w
 /*unknown_a7_806a:*/ nop
 /*unknown_a7_806b:*/ lda $0000.w, Y
@@ -141,37 +141,37 @@
 /*unknown_a7_80e1:*/ ply
 /*unknown_a7_80e2:*/ plx
 /*unknown_a7_80e3:*/ tya
-/*unknown_a7_80e4:*/ clc
+@unknown_a7_80e4: clc
 /*unknown_a7_80e5:*/ adc #$0005.w
 /*unknown_a7_80e8:*/ tay
 /*unknown_a7_80e9:*/ rtl
 
 /*unknown_a7_80ea:*/ jmp [$0012]
-/*unknown_a7_80ed:*/ lda $0000.w, Y
+@unknown_a7_80ed: lda $0000.w, Y
 /*unknown_a7_80f0:*/ tay
 /*unknown_a7_80f1:*/ rtl
 
-/*unknown_a7_80f2:*/ sty $12
+@unknown_a7_80f2: sty $12
 /*unknown_a7_80f4:*/ dey
 /*unknown_a7_80f5:*/ lda $0000.w, Y
 /*unknown_a7_80f8:*/ xba
-/*unknown_a7_80f9:*/ bmi $05 ; $8100.w
+/*unknown_a7_80f9:*/ bmi @unknown_a7_8100
 /*unknown_a7_80fb:*/ and #$00ff.w
-/*unknown_a7_80fe:*/ bra $03 ; $8103.w
-/*unknown_a7_8100:*/ ora #$ff00.w
-/*unknown_a7_8103:*/ clc
+/*unknown_a7_80fe:*/ bra @unknown_a7_8103
+@unknown_a7_8100: ora #$ff00.w
+@unknown_a7_8103: clc
 /*unknown_a7_8104:*/ adc $12
 /*unknown_a7_8106:*/ tay
 /*unknown_a7_8107:*/ rtl
 
 /*unknown_a7_8108:*/ dec $0f90.w, X
-/*unknown_a7_810b:*/ bne ($e0 - $100) ; $80ed.w
+/*unknown_a7_810b:*/ bne @unknown_a7_80ed
 /*unknown_a7_810d:*/ iny
 /*unknown_a7_810e:*/ iny
 /*unknown_a7_810f:*/ rtl
 
 /*unknown_a7_8110:*/ dec $0f90.w, X
-/*unknown_a7_8113:*/ bne ($d8 - $100) ; $80ed.w
+/*unknown_a7_8113:*/ bne @unknown_a7_80ed
 /*unknown_a7_8115:*/ iny
 /*unknown_a7_8116:*/ iny
 /*unknown_a7_8117:*/ rtl
@@ -179,7 +179,7 @@
 /*unknown_a7_8118:*/ sep #$20
 /*unknown_a7_811a:*/ dec $0f90.w, X
 /*unknown_a7_811d:*/ rep #$20
-/*unknown_a7_811f:*/ bne ($d1 - $100) ; $80f2.w
+/*unknown_a7_811f:*/ bne @unknown_a7_80f2
 /*unknown_a7_8121:*/ iny
 /*unknown_a7_8122:*/ rtl
 
@@ -322,10 +322,10 @@
 /*unknown_a7_8243:*/ inc $00ff.w, X
 /*unknown_a7_8246:*/ bcc $01 ; $8249.w
 /*unknown_a7_8248:*/ brk $00
-/*unknown_a7_824a:*/ bra ($fe - $100) ; $824a.w
+@unknown_a7_824a: bra @unknown_a7_824a
 /*unknown_a7_824c:*/ sbc $018000, X
 /*unknown_a7_8250:*/ brk $00
-/*unknown_a7_8252:*/ bcc ($fe - $100) ; $8252.w
+@unknown_a7_8252: bcc @unknown_a7_8252
 /*unknown_a7_8254:*/ sbc $017000, X
 /*unknown_a7_8258:*/ brk $00
 /*unknown_a7_825a:*/ ldy #$fffe.w
@@ -347,9 +347,9 @@
 /*unknown_a7_827f:*/ ora ($00, X)
 /*unknown_a7_8281:*/ brk $f0
 /*unknown_a7_8283:*/ inc $00ff.w, X
-/*unknown_a7_8286:*/ bpl $02 ; $828a.w
+/*unknown_a7_8286:*/ bpl @unknown_a7_828a
 /*unknown_a7_8288:*/ brk $00
-/*unknown_a7_828a:*/ brk $fe
+@unknown_a7_828a: brk $fe
 /*unknown_a7_828c:*/ sbc $020000, X
 /*unknown_a7_8290:*/ brk $00
 /*unknown_a7_8292:*/ bpl ($fd - $100) ; $8291.w
@@ -360,25 +360,25 @@
 /*unknown_a7_829f:*/ cop $00
 /*unknown_a7_82a1:*/ brk $30
 /*unknown_a7_82a3:*/ sbc $00ff.w, X
-/*unknown_a7_82a6:*/ bne $02 ; $82aa.w
+/*unknown_a7_82a6:*/ bne @unknown_a7_82aa
 /*unknown_a7_82a8:*/ brk $00
-/*unknown_a7_82aa:*/ rti
+@unknown_a7_82aa: rti
 
 /*unknown_a7_82ab:*/ sbc $00ff.w, X
 /*unknown_a7_82ae:*/ cpy #$0002.w
 /*unknown_a7_82b1:*/ brk $50
 /*unknown_a7_82b3:*/ sbc $00ff.w, X
-/*unknown_a7_82b6:*/ bcs $02 ; $82ba.w
+/*unknown_a7_82b6:*/ bcs @unknown_a7_82ba
 /*unknown_a7_82b8:*/ brk $00
-/*unknown_a7_82ba:*/ rts
+@unknown_a7_82ba: rts
 
 /*unknown_a7_82bb:*/ sbc $00ff.w, X
 /*unknown_a7_82be:*/ ldy #$0002.w
 /*unknown_a7_82c1:*/ brk $70
 /*unknown_a7_82c3:*/ sbc $00ff.w, X
-/*unknown_a7_82c6:*/ bcc $02 ; $82ca.w
+/*unknown_a7_82c6:*/ bcc @unknown_a7_82ca
 /*unknown_a7_82c8:*/ brk $00
-/*unknown_a7_82ca:*/ bra ($fd - $100) ; $82c9.w
+@unknown_a7_82ca: bra ($fd - $100) ; $82c9.w
 /*unknown_a7_82cc:*/ sbc $028000, X
 /*unknown_a7_82d0:*/ brk $00
 /*unknown_a7_82d2:*/ bcc ($fd - $100) ; $82d1.w
@@ -389,16 +389,16 @@
 /*unknown_a7_82df:*/ cop $00
 /*unknown_a7_82e1:*/ brk $b0
 /*unknown_a7_82e3:*/ sbc $00ff.w, X
-/*unknown_a7_82e6:*/ bvc $02 ; $82ea.w
+/*unknown_a7_82e6:*/ bvc @unknown_a7_82ea
 /*unknown_a7_82e8:*/ brk $00
-/*unknown_a7_82ea:*/ cpy #$fffd.w
+@unknown_a7_82ea: cpy #$fffd.w
 /*unknown_a7_82ed:*/ brk $40
 /*unknown_a7_82ef:*/ cop $00
 /*unknown_a7_82f1:*/ brk $d0
 /*unknown_a7_82f3:*/ sbc $00ff.w, X
-/*unknown_a7_82f6:*/ bmi $02 ; $82fa.w
+/*unknown_a7_82f6:*/ bmi @unknown_a7_82fa
 /*unknown_a7_82f8:*/ brk $00
-/*unknown_a7_82fa:*/ cpx #$fffd.w
+@unknown_a7_82fa: cpx #$fffd.w
 /*unknown_a7_82fd:*/ brk $20
 /*unknown_a7_82ff:*/ cop $00
 /*unknown_a7_8301:*/ brk $f0
@@ -407,8 +407,8 @@
 /*unknown_a7_8308:*/ brk $00
 /*unknown_a7_830a:*/ brk $fd
 /*unknown_a7_830c:*/ sbc $030000, X
-/*unknown_a7_8310:*/ brk $00
-/*unknown_a7_8312:*/ bpl ($fc - $100) ; $8310.w
+@unknown_a7_8310: brk $00
+/*unknown_a7_8312:*/ bpl @unknown_a7_8310
 /*unknown_a7_8314:*/ sbc $03f000, X
 /*unknown_a7_8318:*/ brk $00
 /*unknown_a7_831a:*/ jsr $fffc.w
@@ -416,28 +416,28 @@
 /*unknown_a7_831f:*/ ora $00, S
 /*unknown_a7_8321:*/ brk $30
 /*unknown_a7_8323:*/ jsr ($00ff.w, X)
-/*unknown_a7_8326:*/ bne $03 ; $832b.w
+/*unknown_a7_8326:*/ bne @unknown_a7_832b
 /*unknown_a7_8328:*/ brk $00
 /*unknown_a7_832a:*/ rti
 
-/*unknown_a7_832b:*/ jsr ($00ff.w, X)
+@unknown_a7_832b: jsr ($00ff.w, X)
 /*unknown_a7_832e:*/ cpy #$0003.w
 /*unknown_a7_8331:*/ brk $50
 /*unknown_a7_8333:*/ jsr ($00ff.w, X)
-/*unknown_a7_8336:*/ bcs $03 ; $833b.w
+/*unknown_a7_8336:*/ bcs @unknown_a7_833b
 /*unknown_a7_8338:*/ brk $00
 /*unknown_a7_833a:*/ rts
 
-/*unknown_a7_833b:*/ jsr ($00ff.w, X)
+@unknown_a7_833b: jsr ($00ff.w, X)
 /*unknown_a7_833e:*/ ldy #$0003.w
 /*unknown_a7_8341:*/ brk $70
 /*unknown_a7_8343:*/ jsr ($00ff.w, X)
 /*unknown_a7_8346:*/ bcc $03 ; $834b.w
-/*unknown_a7_8348:*/ brk $00
-/*unknown_a7_834a:*/ bra ($fc - $100) ; $8348.w
+@unknown_a7_8348: brk $00
+/*unknown_a7_834a:*/ bra @unknown_a7_8348
 /*unknown_a7_834c:*/ sbc $038000, X
-/*unknown_a7_8350:*/ brk $00
-/*unknown_a7_8352:*/ bcc ($fc - $100) ; $8350.w
+@unknown_a7_8350: brk $00
+/*unknown_a7_8352:*/ bcc @unknown_a7_8350
 /*unknown_a7_8354:*/ sbc $037000, X
 /*unknown_a7_8358:*/ brk $00
 /*unknown_a7_835a:*/ ldy #$fffc.w
@@ -459,10 +459,10 @@
 /*unknown_a7_837f:*/ ora $00, S
 /*unknown_a7_8381:*/ brk $f0
 /*unknown_a7_8383:*/ jsr ($00ff.w, X)
-/*unknown_a7_8386:*/ bpl $04 ; $838c.w
+/*unknown_a7_8386:*/ bpl @unknown_a7_838c
 /*unknown_a7_8388:*/ brk $00
 /*unknown_a7_838a:*/ brk $fc
-/*unknown_a7_838c:*/ sbc $000000.l, X
+@unknown_a7_838c: sbc $000000.l, X
 /*unknown_a7_8390:*/ brk $00
 /*unknown_a7_8392:*/ brk $00
 /*unknown_a7_8394:*/ brk $00
@@ -538,7 +538,7 @@
 /*unknown_a7_8444:*/ plx
 /*unknown_a7_8445:*/ sbc $14b4ff, X
 /*unknown_a7_8449:*/ ora ($00, X)
-/*unknown_a7_844b:*/ jmp $feeb.w
+/*unknown_a7_844b:*/ jmp unknown_a7_feeb
 /*unknown_a7_844e:*/ sbc $012d8c, X
 /*unknown_a7_8452:*/ brk $74
 /*unknown_a7_8454:*/ cmp ($fe)
@@ -771,8 +771,8 @@
 /*unknown_a7_8668:*/ eor $0010.w, X
 /*unknown_a7_866b:*/ dec $a2, X
 /*unknown_a7_866d:*/ sbc $bc66ff
-/*unknown_a7_8671:*/ bpl $00 ; $8673.w
-/*unknown_a7_8673:*/ txs
+/*unknown_a7_8671:*/ bpl @unknown_a7_8673
+@unknown_a7_8673: txs
 /*unknown_a7_8674:*/ eor $ef, S
 /*unknown_a7_8676:*/ sbc $1113ab, X
 /*unknown_a7_867a:*/ brk $55
@@ -802,7 +802,7 @@
 /*unknown_a7_86ad:*/ ora $9f10.w
 /*unknown_a7_86b0:*/ phk
 /*unknown_a7_86b1:*/ and [$3f], Y
-/*unknown_a7_86b3:*/ bne $36 ; $86eb.w
+/*unknown_a7_86b3:*/ bne @unknown_a7_86eb
 /*unknown_a7_86b5:*/ adc #$082e.w
 /*unknown_a7_86b8:*/ rol $a6
 /*unknown_a7_86ba:*/ ora $1125.w, X
@@ -829,7 +829,7 @@
 /*unknown_a7_86e2:*/ and $4a52.w
 /*unknown_a7_86e5:*/ brk $00
 /*unknown_a7_86e7:*/ sbc $a5657f, X
-/*unknown_a7_86eb:*/ and $7fff81
+@unknown_a7_86eb: and $7fff81
 /*unknown_a7_86ef:*/ sbc $8c, S
 /*unknown_a7_86f1:*/ and $b63381
 /*unknown_a7_86f5:*/ tsb $00
@@ -862,8 +862,8 @@
 /*unknown_a7_8733:*/ sbc ($8d), Y
 /*unknown_a7_8735:*/ ora ($00, X)
 /*unknown_a7_8737:*/ ora $8e, S
-/*unknown_a7_8739:*/ bpl $00 ; $873b.w
-/*unknown_a7_873b:*/ ora $8e, X
+/*unknown_a7_8739:*/ bpl @unknown_a7_873b
+@unknown_a7_873b: ora $8e, X
 /*unknown_a7_873d:*/ rol $b6, X
 /*unknown_a7_873f:*/ phy
 /*unknown_a7_8740:*/ ldx $01, Y
@@ -1173,28 +1173,28 @@
 /*unknown_a7_89fa:*/ sta $ad0006
 /*unknown_a7_89fe:*/ sta $d70006
 /*unknown_a7_8a02:*/ sta $010006
-/*unknown_a7_8a06:*/ bcc $06 ; $8a0e.w
+/*unknown_a7_8a06:*/ bcc @unknown_a7_8a0e
 /*unknown_a7_8a08:*/ brk $2b
-/*unknown_a7_8a0a:*/ bcc $06 ; $8a12.w
+/*unknown_a7_8a0a:*/ bcc @unknown_a7_8a12
 /*unknown_a7_8a0c:*/ brk $55
-/*unknown_a7_8a0e:*/ bcc $06 ; $8a16.w
+@unknown_a7_8a0e: bcc @unknown_a7_8a16
 /*unknown_a7_8a10:*/ brk $7f
-/*unknown_a7_8a12:*/ bcc $06 ; $8a1a.w
+@unknown_a7_8a12: bcc @unknown_a7_8a1a
 /*unknown_a7_8a14:*/ brk $a9
-/*unknown_a7_8a16:*/ bcc $06 ; $8a1e.w
+@unknown_a7_8a16: bcc @unknown_a7_8a1e
 /*unknown_a7_8a18:*/ brk $d3
-/*unknown_a7_8a1a:*/ bcc $06 ; $8a22.w
+@unknown_a7_8a1a: bcc @unknown_a7_8a22
 /*unknown_a7_8a1c:*/ brk $7f
-/*unknown_a7_8a1e:*/ bcc $06 ; $8a26.w
+@unknown_a7_8a1e: bcc @unknown_a7_8a26
 /*unknown_a7_8a20:*/ brk $55
-/*unknown_a7_8a22:*/ bcc $06 ; $8a2a.w
+@unknown_a7_8a22: bcc @unknown_a7_8a2a
 /*unknown_a7_8a24:*/ brk $2b
-/*unknown_a7_8a26:*/ bcc $06 ; $8a2e.w
+@unknown_a7_8a26: bcc @unknown_a7_8a2e
 /*unknown_a7_8a28:*/ brk $01
-/*unknown_a7_8a2a:*/ bcc $06 ; $8a32.w
+@unknown_a7_8a2a: bcc @unknown_a7_8a32
 /*unknown_a7_8a2c:*/ brk $d7
-/*unknown_a7_8a2e:*/ sta $ad0006
-/*unknown_a7_8a32:*/ sta $830006
+@unknown_a7_8a2e: sta $ad0006
+@unknown_a7_8a32: sta $830006
 /*unknown_a7_8a36:*/ sta $590020
 /*unknown_a7_8a3a:*/ sta $ed8a8f
 /*unknown_a7_8a3e:*/ bra ($f3 - $100) ; $8a33.w
@@ -1204,40 +1204,40 @@
 /*unknown_a7_8a48:*/ sta $ad0008
 /*unknown_a7_8a4c:*/ sta $d70008
 /*unknown_a7_8a50:*/ sta $010008
-/*unknown_a7_8a54:*/ bcc $08 ; $8a5e.w
+/*unknown_a7_8a54:*/ bcc @unknown_a7_8a5e
 /*unknown_a7_8a56:*/ brk $2b
-/*unknown_a7_8a58:*/ bcc $08 ; $8a62.w
+/*unknown_a7_8a58:*/ bcc @unknown_a7_8a62
 /*unknown_a7_8a5a:*/ brk $55
-/*unknown_a7_8a5c:*/ bcc $08 ; $8a66.w
-/*unknown_a7_8a5e:*/ brk $7f
-/*unknown_a7_8a60:*/ bcc $08 ; $8a6a.w
-/*unknown_a7_8a62:*/ brk $a9
-/*unknown_a7_8a64:*/ bcc $08 ; $8a6e.w
-/*unknown_a7_8a66:*/ brk $d3
-/*unknown_a7_8a68:*/ bcc $08 ; $8a72.w
-/*unknown_a7_8a6a:*/ brk $7f
-/*unknown_a7_8a6c:*/ bcc $08 ; $8a76.w
-/*unknown_a7_8a6e:*/ brk $55
-/*unknown_a7_8a70:*/ bcc $08 ; $8a7a.w
-/*unknown_a7_8a72:*/ brk $2b
+/*unknown_a7_8a5c:*/ bcc @unknown_a7_8a66
+@unknown_a7_8a5e: brk $7f
+/*unknown_a7_8a60:*/ bcc @unknown_a7_8a6a
+@unknown_a7_8a62: brk $a9
+/*unknown_a7_8a64:*/ bcc @unknown_a7_8a6e
+@unknown_a7_8a66: brk $d3
+/*unknown_a7_8a68:*/ bcc @unknown_a7_8a72
+@unknown_a7_8a6a: brk $7f
+/*unknown_a7_8a6c:*/ bcc @unknown_a7_8a76
+@unknown_a7_8a6e: brk $55
+/*unknown_a7_8a70:*/ bcc @unknown_a7_8a7a
+@unknown_a7_8a72: brk $2b
 /*unknown_a7_8a74:*/ bcc $08 ; $8a7e.w
-/*unknown_a7_8a76:*/ brk $01
+@unknown_a7_8a76: brk $01
 /*unknown_a7_8a78:*/ bcc $08 ; $8a82.w
-/*unknown_a7_8a7a:*/ brk $d7
+@unknown_a7_8a7a: brk $d7
 /*unknown_a7_8a7c:*/ sta $ad0008
 /*unknown_a7_8a80:*/ sta $830008
 /*unknown_a7_8a84:*/ sta $590030
 /*unknown_a7_8a88:*/ sta $ed8a8f
-/*unknown_a7_8a8c:*/ bra $41 ; $8acf.w
+/*unknown_a7_8a8c:*/ bra @unknown_a7_8acf
 /*unknown_a7_8a8e:*/ txa
 /*unknown_a7_8a8f:*/ lda $0f8c.w
 /*unknown_a7_8a92:*/ cmp $7e7812
-/*unknown_a7_8a96:*/ bpl $0b ; $8aa3.w
+/*unknown_a7_8a96:*/ bpl @unknown_a7_8aa3
 /*unknown_a7_8a98:*/ lda $0fd2.w
 /*unknown_a7_8a9b:*/ cmp #$8a41.w
-/*unknown_a7_8a9e:*/ bpl $03 ; $8aa3.w
+/*unknown_a7_8a9e:*/ bpl @unknown_a7_8aa3
 /*unknown_a7_8aa0:*/ ldy #$8a41.w
-/*unknown_a7_8aa3:*/ rtl
+@unknown_a7_8aa3: rtl
 
 /*unknown_a7_8aa4:*/ asl $00
 /*unknown_a7_8aa6:*/ sbc $0690.w, X
@@ -1260,7 +1260,7 @@
 /*unknown_a7_8ac9:*/ brk $77
 /*unknown_a7_8acb:*/ sta ($06)
 /*unknown_a7_8acd:*/ brk $23
-/*unknown_a7_8acf:*/ sta ($06)
+@unknown_a7_8acf: sta ($06)
 /*unknown_a7_8ad1:*/ brk $f9
 /*unknown_a7_8ad3:*/ sta ($06), Y
 /*unknown_a7_8ad5:*/ brk $cf
@@ -2310,10 +2310,10 @@
 /*unknown_a7_948e:*/ ldy #$ad6b.w
 /*unknown_a7_9491:*/ tay
 /*unknown_a7_9492:*/ clc
-/*unknown_a7_9493:*/ beq $01 ; $9496.w
+/*unknown_a7_9493:*/ beq @unknown_a7_9496
 /*unknown_a7_9495:*/ rtl
 
-/*unknown_a7_9496:*/ jsr $94a4.w
+@unknown_a7_9496: jsr $94a4.w
 /*unknown_a7_9499:*/ lda #$b89b.w
 /*unknown_a7_949c:*/ sta $10a8.w
 /*unknown_a7_949f:*/ jsr $a0a497
@@ -2339,10 +2339,10 @@
 /*unknown_a7_94c6:*/ brk $00
 /*unknown_a7_94c8:*/ php
 /*unknown_a7_94c9:*/ rep #$21
-/*unknown_a7_94cb:*/ beq ($81 - $100) ; $944e.w
+@unknown_a7_94cb: beq ($81 - $100) ; $944e.w
 /*unknown_a7_94cd:*/ brk $b0
 /*unknown_a7_94cf:*/ and ($00, X)
-/*unknown_a7_94d1:*/ bra ($f8 - $100) ; $94cb.w
+/*unknown_a7_94d1:*/ bra @unknown_a7_94cb
 /*unknown_a7_94d3:*/ ldx #$f021.w
 /*unknown_a7_94d6:*/ sta ($f8, X)
 /*unknown_a7_94d8:*/ ldy #$0121.w
@@ -2434,14 +2434,14 @@
 /*unknown_a7_958f:*/ trb $fc31.w
 /*unknown_a7_9592:*/ ora ($f0, X)
 /*unknown_a7_9594:*/ ora $01f431
-/*unknown_a7_9598:*/ beq $0e ; $95a8.w
+/*unknown_a7_9598:*/ beq @unknown_a7_95a8
 /*unknown_a7_959a:*/ and ($e4), Y
 /*unknown_a7_959c:*/ ora ($e8, X)
 /*unknown_a7_959e:*/ ora $dc31.w
 /*unknown_a7_95a1:*/ ora ($f8, X)
 /*unknown_a7_95a3:*/ tsb $f431.w
 /*unknown_a7_95a6:*/ sta ($f8, X)
-/*unknown_a7_95a8:*/ asl A
+@unknown_a7_95a8: asl A
 /*unknown_a7_95a9:*/ and ($e4), Y
 /*unknown_a7_95ab:*/ sta ($f0, X)
 /*unknown_a7_95ad:*/ php
@@ -2465,34 +2465,34 @@
 /*unknown_a7_95db:*/ cmp $3120.w, X
 /*unknown_a7_95de:*/ php
 /*unknown_a7_95df:*/ brk $20
-/*unknown_a7_95e1:*/ bra $1c ; $95ff.w
+/*unknown_a7_95e1:*/ bra @unknown_a7_95ff
 /*unknown_a7_95e3:*/ phy
 /*unknown_a7_95e4:*/ and ($20), Y
 /*unknown_a7_95e6:*/ bra $14 ; $95fc.w
 /*unknown_a7_95e8:*/ lsr A
 /*unknown_a7_95e9:*/ and ($10), Y
-/*unknown_a7_95eb:*/ bra $1c ; $9609.w
+/*unknown_a7_95eb:*/ bra @unknown_a7_9609
 /*unknown_a7_95ed:*/ pha
 /*unknown_a7_95ee:*/ and ($f8), Y
 /*unknown_a7_95f0:*/ ora ($0c, X)
 /*unknown_a7_95f2:*/ jmp $1031.w
-/*unknown_a7_95f5:*/ bra $0c ; $9603.w
+/*unknown_a7_95f5:*/ bra @unknown_a7_9603
 /*unknown_a7_95f7:*/ lsr $31
 /*unknown_a7_95f9:*/ brk $80
 /*unknown_a7_95fb:*/ tsb $3144.w
 /*unknown_a7_95fe:*/ php
-/*unknown_a7_95ff:*/ bra ($fc - $100) ; $95fd.w
+@unknown_a7_95ff: bra ($fc - $100) ; $95fd.w
 /*unknown_a7_9601:*/ .db $42, $31
-/*unknown_a7_9603:*/ sed
-/*unknown_a7_9604:*/ sta ($fc, X)
+@unknown_a7_9603: sed
+@unknown_a7_9604: sta ($fc, X)
 /*unknown_a7_9606:*/ rti
 
 /*unknown_a7_9607:*/ and ($08), Y
-/*unknown_a7_9609:*/ brk $12
-/*unknown_a7_960b:*/ bra $28 ; $9635.w
+@unknown_a7_9609: brk $12
+/*unknown_a7_960b:*/ bra @unknown_a7_9635
 /*unknown_a7_960d:*/ pla
 /*unknown_a7_960e:*/ and ($0a), Y
-/*unknown_a7_9610:*/ bra $28 ; $963a.w
+/*unknown_a7_9610:*/ bra @unknown_a7_963a
 /*unknown_a7_9612:*/ adc [$31]
 /*unknown_a7_9614:*/ bpl ($80 - $100) ; $9596.w
 /*unknown_a7_9616:*/ clc
@@ -2503,7 +2503,7 @@
 /*unknown_a7_961f:*/ bra $08 ; $9629.w
 /*unknown_a7_9621:*/ adc $31
 /*unknown_a7_9623:*/ sed
-/*unknown_a7_9624:*/ sta ($08, X)
+@unknown_a7_9624: sta ($08, X)
 /*unknown_a7_9626:*/ adc $31, S
 /*unknown_a7_9628:*/ brk $80
 /*unknown_a7_962a:*/ sed
@@ -2514,9 +2514,9 @@
 
 /*unknown_a7_9631:*/ and ($08), Y
 /*unknown_a7_9633:*/ brk $f9
-/*unknown_a7_9635:*/ sta ($2c, X)
+@unknown_a7_9635: sta ($2c, X)
 /*unknown_a7_9637:*/ lda $f831.w
-/*unknown_a7_963a:*/ sta ($1c, X)
+@unknown_a7_963a: sta ($1c, X)
 /*unknown_a7_963c:*/ sta $f831.w
 /*unknown_a7_963f:*/ sta ($0c, X)
 /*unknown_a7_9641:*/ adc $f831.w
@@ -2526,13 +2526,13 @@
 /*unknown_a7_964b:*/ ldx $0031.w
 /*unknown_a7_964e:*/ bra $1c ; $966c.w
 /*unknown_a7_9650:*/ stx $0031.w
-/*unknown_a7_9653:*/ bra $0c ; $9661.w
+/*unknown_a7_9653:*/ bra @unknown_a7_9661
 /*unknown_a7_9655:*/ ror $0031.w
 /*unknown_a7_9658:*/ bra ($fc - $100) ; $9656.w
 /*unknown_a7_965a:*/ lsr $0831.w
 /*unknown_a7_965d:*/ brk $f0
 /*unknown_a7_965f:*/ sta ($2c, X)
-/*unknown_a7_9661:*/ lda $31
+@unknown_a7_9661: lda $31
 /*unknown_a7_9663:*/ inx
 /*unknown_a7_9664:*/ sta ($2c, X)
 /*unknown_a7_9666:*/ ldy $31
@@ -2541,42 +2541,42 @@
 /*unknown_a7_966b:*/ dec $e831.w
 /*unknown_a7_966e:*/ sta ($1c, X)
 /*unknown_a7_9670:*/ cpy $0031.w
-/*unknown_a7_9673:*/ bra $0c ; $9681.w
+/*unknown_a7_9673:*/ bra @unknown_a7_9681
 /*unknown_a7_9675:*/ ply
 /*unknown_a7_9676:*/ and ($f0), Y
 /*unknown_a7_9678:*/ sta ($0c, X)
 /*unknown_a7_967a:*/ dey
-/*unknown_a7_967b:*/ and ($00), Y
-/*unknown_a7_967d:*/ bra ($fc - $100) ; $967b.w
+@unknown_a7_967b: and ($00), Y
+/*unknown_a7_967d:*/ bra @unknown_a7_967b
 /*unknown_a7_967f:*/ stx $31
-/*unknown_a7_9681:*/ beq ($81 - $100) ; $9604.w
+@unknown_a7_9681: beq @unknown_a7_9604
 /*unknown_a7_9683:*/ jsr ($3184.w, X)
 /*unknown_a7_9686:*/ tsb $d800.w
-/*unknown_a7_9689:*/ ora ($f4, X)
+@unknown_a7_9689: ora ($f4, X)
 /*unknown_a7_968b:*/ cmp $31, S
 /*unknown_a7_968d:*/ clc
 /*unknown_a7_968e:*/ brk $f4
 /*unknown_a7_9690:*/ txs
 /*unknown_a7_9691:*/ and ($00), Y
-/*unknown_a7_9693:*/ bra ($f4 - $100) ; $9689.w
+/*unknown_a7_9693:*/ bra @unknown_a7_9689
 /*unknown_a7_9695:*/ iny
 /*unknown_a7_9696:*/ and ($f0), Y
 /*unknown_a7_9698:*/ sta ($f4, X)
 /*unknown_a7_969a:*/ dec $31
 /*unknown_a7_969c:*/ cpx #$f481.w
 /*unknown_a7_969f:*/ cpy $31
-/*unknown_a7_96a1:*/ bne ($81 - $100) ; $9624.w
+/*unknown_a7_96a1:*/ bne @unknown_a7_9624
 /*unknown_a7_96a3:*/ jsr ($31a7.w, X)
 /*unknown_a7_96a6:*/ jsr $fc80.w
 /*unknown_a7_96a9:*/ plb
 /*unknown_a7_96aa:*/ and ($20), Y
 /*unknown_a7_96ac:*/ bra ($f4 - $100) ; $96a2.w
 /*unknown_a7_96ae:*/ txy
-/*unknown_a7_96af:*/ and ($10), Y
-/*unknown_a7_96b1:*/ bra ($fc - $100) ; $96af.w
-/*unknown_a7_96b3:*/ phx
-/*unknown_a7_96b4:*/ and ($00), Y
-/*unknown_a7_96b6:*/ bra ($fc - $100) ; $96b4.w
+@unknown_a7_96af: and ($10), Y
+/*unknown_a7_96b1:*/ bra @unknown_a7_96af
+@unknown_a7_96b3: phx
+@unknown_a7_96b4: and ($00), Y
+/*unknown_a7_96b6:*/ bra @unknown_a7_96b4
 /*unknown_a7_96b8:*/ cld
 /*unknown_a7_96b9:*/ and ($f0), Y
 /*unknown_a7_96bb:*/ sta ($fc, X)
@@ -2592,8 +2592,8 @@
 /*unknown_a7_96d0:*/ cmp ($21)
 /*unknown_a7_96d2:*/ asl A
 /*unknown_a7_96d3:*/ brk $c8
-/*unknown_a7_96d5:*/ sta [$88], Y
-/*unknown_a7_96d7:*/ sta [$ff], Y
+@unknown_a7_96d5: sta [$88], Y
+@unknown_a7_96d7: sta [$ff], Y
 /*unknown_a7_96d9:*/ sbc $c8000a, X
 /*unknown_a7_96dd:*/ txs
 /*unknown_a7_96de:*/ bcc ($97 - $100) ; $9677.w
@@ -2604,7 +2604,7 @@
 /*unknown_a7_96e8:*/ clv
 /*unknown_a7_96e9:*/ sta [$94], Y
 /*unknown_a7_96eb:*/ lda $c80040
-/*unknown_a7_96ef:*/ ldy #$97a0.w
+@unknown_a7_96ef: ldy #$97a0.w
 /*unknown_a7_96f2:*/ cpy #$0a97.w
 /*unknown_a7_96f5:*/ brk $c8
 /*unknown_a7_96f7:*/ sta $9798.w, X
@@ -2617,14 +2617,14 @@
 /*unknown_a7_9704:*/ asl A
 /*unknown_a7_9705:*/ brk $c8
 /*unknown_a7_9707:*/ sta [$88], Y
-/*unknown_a7_9709:*/ sta [$ff], Y
-/*unknown_a7_970b:*/ sbc $14ffff, X
+@unknown_a7_9709: sta [$ff], Y
+@unknown_a7_970b: sbc $14ffff, X
 /*unknown_a7_970f:*/ brk $c8
 /*unknown_a7_9711:*/ sta [$88], Y
 /*unknown_a7_9713:*/ sta [$ff], Y
 /*unknown_a7_9715:*/ sbc $c80014, X
 /*unknown_a7_9719:*/ txs
-/*unknown_a7_971a:*/ bcc ($97 - $100) ; $96b3.w
+/*unknown_a7_971a:*/ bcc @unknown_a7_96b3
 /*unknown_a7_971c:*/ bcs ($97 - $100) ; $96b5.w
 /*unknown_a7_971e:*/ trb $00
 /*unknown_a7_9720:*/ iny
@@ -2640,8 +2640,8 @@
 /*unknown_a7_9737:*/ sta [$14], Y
 /*unknown_a7_9739:*/ brk $c8
 /*unknown_a7_973b:*/ txs
-/*unknown_a7_973c:*/ bcc ($97 - $100) ; $96d5.w
-/*unknown_a7_973e:*/ bcs ($97 - $100) ; $96d7.w
+/*unknown_a7_973c:*/ bcc @unknown_a7_96d5
+/*unknown_a7_973e:*/ bcs @unknown_a7_96d7
 /*unknown_a7_9740:*/ trb $00
 /*unknown_a7_9742:*/ iny
 /*unknown_a7_9743:*/ sta [$88], Y
@@ -2652,7 +2652,7 @@
 /*unknown_a7_974f:*/ sta [$ff], Y
 /*unknown_a7_9751:*/ sbc $c8000a, X
 /*unknown_a7_9755:*/ txs
-/*unknown_a7_9756:*/ bcc ($97 - $100) ; $96ef.w
+/*unknown_a7_9756:*/ bcc @unknown_a7_96ef
 /*unknown_a7_9758:*/ bcs ($97 - $100) ; $96f1.w
 /*unknown_a7_975a:*/ ora $00
 /*unknown_a7_975c:*/ iny
@@ -2664,8 +2664,8 @@
 /*unknown_a7_9769:*/ sta [$ff], Y
 /*unknown_a7_976b:*/ sbc $c80019, X
 /*unknown_a7_976f:*/ txs
-/*unknown_a7_9770:*/ bcc ($97 - $100) ; $9709.w
-/*unknown_a7_9772:*/ bcs ($97 - $100) ; $970b.w
+/*unknown_a7_9770:*/ bcc @unknown_a7_9709
+/*unknown_a7_9772:*/ bcs @unknown_a7_970b
 /*unknown_a7_9774:*/ ora $c800.w, Y
 /*unknown_a7_9777:*/ sta $9798.w, X
 /*unknown_a7_977a:*/ clv
@@ -2859,7 +2859,7 @@
 /*unknown_a7_9919:*/ bit $3c2c.w, X
 /*unknown_a7_991c:*/ and $2e3c.w
 /*unknown_a7_991f:*/ bit $3c2f.w, X
-/*unknown_a7_9922:*/ bmi $3c ; $9960.w
+/*unknown_a7_9922:*/ bmi @unknown_a7_9960
 /*unknown_a7_9924:*/ and ($3c), Y
 /*unknown_a7_9926:*/ and ($3c)
 /*unknown_a7_9928:*/ and ($3c, S), Y
@@ -2890,7 +2890,7 @@
 /*unknown_a7_9959:*/ ora $34, S
 /*unknown_a7_995b:*/ bit $3c35.w, X
 /*unknown_a7_995e:*/ rol $3c, X
-/*unknown_a7_9960:*/ and [$3c], Y
+@unknown_a7_9960: and [$3c], Y
 /*unknown_a7_9962:*/ sec
 /*unknown_a7_9963:*/ bit $3c39.w, X
 /*unknown_a7_9966:*/ dec A
@@ -3038,9 +3038,9 @@
 /*unknown_a7_9a91:*/ ora $38, S
 /*unknown_a7_9a93:*/ ora $69, S
 /*unknown_a7_9a95:*/ bit $3c6a.w, X
-/*unknown_a7_9a98:*/ bvc $3d ; $9ad7.w
-/*unknown_a7_9a9a:*/ bvc $3d ; $9ad9.w
-/*unknown_a7_9a9c:*/ bvc $3d ; $9adb.w
+/*unknown_a7_9a98:*/ bvc @unknown_a7_9ad7
+/*unknown_a7_9a9a:*/ bvc @unknown_a7_9ad9
+/*unknown_a7_9a9c:*/ bvc @unknown_a7_9adb
 /*unknown_a7_9a9e:*/ rtl
 
 /*unknown_a7_9a9f:*/ bit $3c6c.w, X
@@ -3070,9 +3070,9 @@
 /*unknown_a7_9ad1:*/ ora $38, S
 /*unknown_a7_9ad3:*/ ora $38, S
 /*unknown_a7_9ad5:*/ ora $38, S
-/*unknown_a7_9ad7:*/ ora $38, S
-/*unknown_a7_9ad9:*/ ora $38, S
-/*unknown_a7_9adb:*/ ora $38, S
+@unknown_a7_9ad7: ora $38, S
+@unknown_a7_9ad9: ora $38, S
+@unknown_a7_9adb: ora $38, S
 /*unknown_a7_9add:*/ ora $38, S
 /*unknown_a7_9adf:*/ ora $38, S
 /*unknown_a7_9ae1:*/ ora $38, S
@@ -3409,9 +3409,9 @@
 /*unknown_a7_9d91:*/ ora $38, S
 /*unknown_a7_9d93:*/ ora $69, S
 /*unknown_a7_9d95:*/ bit $3c6a.w, X
-/*unknown_a7_9d98:*/ bvc $3d ; $9dd7.w
-/*unknown_a7_9d9a:*/ bvc $3d ; $9dd9.w
-/*unknown_a7_9d9c:*/ bvc $3d ; $9ddb.w
+/*unknown_a7_9d98:*/ bvc @unknown_a7_9dd7
+/*unknown_a7_9d9a:*/ bvc @unknown_a7_9dd9
+/*unknown_a7_9d9c:*/ bvc @unknown_a7_9ddb
 /*unknown_a7_9d9e:*/ rtl
 
 /*unknown_a7_9d9f:*/ bit $3c6c.w, X
@@ -3441,9 +3441,9 @@
 /*unknown_a7_9dd1:*/ ora $38, S
 /*unknown_a7_9dd3:*/ ora $38, S
 /*unknown_a7_9dd5:*/ ora $38, S
-/*unknown_a7_9dd7:*/ ora $38, S
-/*unknown_a7_9dd9:*/ ora $38, S
-/*unknown_a7_9ddb:*/ ora $38, S
+@unknown_a7_9dd7: ora $38, S
+@unknown_a7_9dd9: ora $38, S
+@unknown_a7_9ddb: ora $38, S
 /*unknown_a7_9ddd:*/ ora $38, S
 /*unknown_a7_9ddf:*/ ora $38, S
 /*unknown_a7_9de1:*/ ora $38, S
@@ -3572,7 +3572,7 @@
 /*unknown_a7_9ed9:*/ bit $3ccc.w, X
 /*unknown_a7_9edc:*/ cmp $ce3c.w
 /*unknown_a7_9edf:*/ bit $3ccf.w, X
-/*unknown_a7_9ee2:*/ bne $3c ; $9f20.w
+/*unknown_a7_9ee2:*/ bne @unknown_a7_9f20
 /*unknown_a7_9ee4:*/ cmp ($3c), Y
 /*unknown_a7_9ee6:*/ cmp ($3c)
 /*unknown_a7_9ee8:*/ cmp ($3c, S), Y
@@ -3603,7 +3603,7 @@
 /*unknown_a7_9f1a:*/ cmp [$3c], Y
 /*unknown_a7_9f1c:*/ cld
 /*unknown_a7_9f1d:*/ bit $3cd9.w, X
-/*unknown_a7_9f20:*/ phx
+@unknown_a7_9f20: phx
 /*unknown_a7_9f21:*/ bit $3cdb.w, X
 /*unknown_a7_9f24:*/ jmp [$dd3c]
 /*unknown_a7_9f27:*/ bit $3cde.w, X
@@ -3779,9 +3779,9 @@
 /*unknown_a7_a091:*/ ora $38, S
 /*unknown_a7_a093:*/ ora $69, S
 /*unknown_a7_a095:*/ bit $3c6a.w, X
-/*unknown_a7_a098:*/ bvc $3d ; $a0d7.w
-/*unknown_a7_a09a:*/ bvc $3d ; $a0d9.w
-/*unknown_a7_a09c:*/ bvc $3d ; $a0db.w
+/*unknown_a7_a098:*/ bvc @unknown_a7_a0d7
+/*unknown_a7_a09a:*/ bvc @unknown_a7_a0d9
+/*unknown_a7_a09c:*/ bvc @unknown_a7_a0db
 /*unknown_a7_a09e:*/ rtl
 
 /*unknown_a7_a09f:*/ bit $3c6c.w, X
@@ -3811,9 +3811,9 @@
 /*unknown_a7_a0d1:*/ ora $38, S
 /*unknown_a7_a0d3:*/ ora $38, S
 /*unknown_a7_a0d5:*/ ora $38, S
-/*unknown_a7_a0d7:*/ ora $38, S
-/*unknown_a7_a0d9:*/ ora $38, S
-/*unknown_a7_a0db:*/ ora $38, S
+@unknown_a7_a0d7: ora $38, S
+@unknown_a7_a0d9: ora $38, S
+@unknown_a7_a0db: ora $38, S
 /*unknown_a7_a0dd:*/ ora $38, S
 /*unknown_a7_a0df:*/ ora $38, S
 /*unknown_a7_a0e1:*/ ora $38, S
@@ -4154,9 +4154,9 @@
 /*unknown_a7_a391:*/ ora $38, S
 /*unknown_a7_a393:*/ ora $69, S
 /*unknown_a7_a395:*/ bit $3c6a.w, X
-/*unknown_a7_a398:*/ bvc $3d ; $a3d7.w
-/*unknown_a7_a39a:*/ bvc $3d ; $a3d9.w
-/*unknown_a7_a39c:*/ bvc $3d ; $a3db.w
+/*unknown_a7_a398:*/ bvc @unknown_a7_a3d7
+/*unknown_a7_a39a:*/ bvc @unknown_a7_a3d9
+/*unknown_a7_a39c:*/ bvc @unknown_a7_a3db
 /*unknown_a7_a39e:*/ rtl
 
 /*unknown_a7_a39f:*/ bit $3c6c.w, X
@@ -4185,9 +4185,9 @@
 /*unknown_a7_a3cf:*/ ldy $f7
 /*unknown_a7_a3d1:*/ sta ($f7, S), Y
 /*unknown_a7_a3d3:*/ sbc $7cfff6, X
-/*unknown_a7_a3d7:*/ ldy $d1
-/*unknown_a7_a3d9:*/ sta ($02)
-/*unknown_a7_a3db:*/ brk $f9
+@unknown_a7_a3d7: ldy $d1
+@unknown_a7_a3d9: sta ($02)
+@unknown_a7_a3db: brk $f9
 /*unknown_a7_a3dd:*/ sbc $83fff8, X
 /*unknown_a7_a3e1:*/ ldy $eb
 /*unknown_a7_a3e3:*/ sta ($01)
@@ -4338,14 +4338,14 @@
 /*unknown_a7_a516:*/ trb $fc21.w
 /*unknown_a7_a519:*/ ora ($f0, X)
 /*unknown_a7_a51b:*/ ora $01f421
-/*unknown_a7_a51f:*/ beq $0e ; $a52f.w
+/*unknown_a7_a51f:*/ beq @unknown_a7_a52f
 /*unknown_a7_a521:*/ and ($e4, X)
 /*unknown_a7_a523:*/ ora ($e8, X)
 /*unknown_a7_a525:*/ ora $dc21.w
 /*unknown_a7_a528:*/ ora ($f8, X)
 /*unknown_a7_a52a:*/ tsb $f421.w
 /*unknown_a7_a52d:*/ sta ($f8, X)
-/*unknown_a7_a52f:*/ asl A
+@unknown_a7_a52f: asl A
 /*unknown_a7_a530:*/ and ($e4, X)
 /*unknown_a7_a532:*/ sta ($f0, X)
 /*unknown_a7_a534:*/ php
@@ -4378,37 +4378,37 @@
 /*unknown_a7_a574:*/ lda $53
 /*unknown_a7_a576:*/ sty $08, X
 /*unknown_a7_a578:*/ brk $20
-/*unknown_a7_a57a:*/ bra $1c ; $a598.w
+/*unknown_a7_a57a:*/ bra @unknown_a7_a598
 /*unknown_a7_a57c:*/ phy
 /*unknown_a7_a57d:*/ and ($20, X)
 /*unknown_a7_a57f:*/ bra $14 ; $a595.w
 /*unknown_a7_a581:*/ lsr A
 /*unknown_a7_a582:*/ and ($10, X)
-/*unknown_a7_a584:*/ bra $1c ; $a5a2.w
+@unknown_a7_a584: bra @unknown_a7_a5a2
 /*unknown_a7_a586:*/ pha
 /*unknown_a7_a587:*/ and ($f8, X)
 /*unknown_a7_a589:*/ ora ($0c, X)
 /*unknown_a7_a58b:*/ jmp $1021.w
-/*unknown_a7_a58e:*/ bra $0c ; $a59c.w
+/*unknown_a7_a58e:*/ bra @unknown_a7_a59c
 /*unknown_a7_a590:*/ lsr $21
 /*unknown_a7_a592:*/ brk $80
 /*unknown_a7_a594:*/ tsb $2144.w
 /*unknown_a7_a597:*/ php
-/*unknown_a7_a598:*/ bra ($fc - $100) ; $a596.w
+@unknown_a7_a598: bra ($fc - $100) ; $a596.w
 /*unknown_a7_a59a:*/ .db $42, $21
-/*unknown_a7_a59c:*/ sed
+@unknown_a7_a59c: sed
 /*unknown_a7_a59d:*/ sta ($fc, X)
 /*unknown_a7_a59f:*/ rti
 
 /*unknown_a7_a5a0:*/ and ($0c, X)
-/*unknown_a7_a5a2:*/ brk $d8
-/*unknown_a7_a5a4:*/ ora ($f4, X)
+@unknown_a7_a5a2: brk $d8
+@unknown_a7_a5a4: ora ($f4, X)
 /*unknown_a7_a5a6:*/ cmp $21, S
 /*unknown_a7_a5a8:*/ clc
 /*unknown_a7_a5a9:*/ brk $f4
 /*unknown_a7_a5ab:*/ txs
 /*unknown_a7_a5ac:*/ and ($00, X)
-/*unknown_a7_a5ae:*/ bra ($f4 - $100) ; $a5a4.w
+/*unknown_a7_a5ae:*/ bra @unknown_a7_a5a4
 /*unknown_a7_a5b0:*/ iny
 /*unknown_a7_a5b1:*/ and ($f0, X)
 /*unknown_a7_a5b3:*/ sta ($f4, X)
@@ -4422,11 +4422,11 @@
 /*unknown_a7_a5c5:*/ and ($20, X)
 /*unknown_a7_a5c7:*/ bra ($f4 - $100) ; $a5bd.w
 /*unknown_a7_a5c9:*/ txy
-/*unknown_a7_a5ca:*/ and ($10, X)
-/*unknown_a7_a5cc:*/ bra ($fc - $100) ; $a5ca.w
+@unknown_a7_a5ca: and ($10, X)
+/*unknown_a7_a5cc:*/ bra @unknown_a7_a5ca
 /*unknown_a7_a5ce:*/ phx
-/*unknown_a7_a5cf:*/ and ($00, X)
-/*unknown_a7_a5d1:*/ bra ($fc - $100) ; $a5cf.w
+@unknown_a7_a5cf: and ($00, X)
+/*unknown_a7_a5d1:*/ bra @unknown_a7_a5cf
 /*unknown_a7_a5d3:*/ cld
 /*unknown_a7_a5d4:*/ and ($f0, X)
 /*unknown_a7_a5d6:*/ sta ($fc, X)
@@ -4437,10 +4437,10 @@
 /*unknown_a7_a5e1:*/ brk $00
 /*unknown_a7_a5e3:*/ php
 /*unknown_a7_a5e4:*/ rep #$11
-/*unknown_a7_a5e6:*/ beq ($81 - $100) ; $a569.w
+@unknown_a7_a5e6: beq ($81 - $100) ; $a569.w
 /*unknown_a7_a5e8:*/ brk $b0
 /*unknown_a7_a5ea:*/ ora ($00), Y
-/*unknown_a7_a5ec:*/ bra ($f8 - $100) ; $a5e6.w
+/*unknown_a7_a5ec:*/ bra @unknown_a7_a5e6
 /*unknown_a7_a5ee:*/ ldx #$f011.w
 /*unknown_a7_a5f1:*/ sta ($f8, X)
 /*unknown_a7_a5f3:*/ ldy #$0011.w
@@ -4449,10 +4449,10 @@
 /*unknown_a7_a5fb:*/ brk $00
 /*unknown_a7_a5fd:*/ brk $08
 /*unknown_a7_a5ff:*/ rep #$11
-/*unknown_a7_a601:*/ beq ($81 - $100) ; $a584.w
+@unknown_a7_a601: beq @unknown_a7_a584
 /*unknown_a7_a603:*/ brk $b0
 /*unknown_a7_a605:*/ ora ($00), Y
-/*unknown_a7_a607:*/ bra ($f8 - $100) ; $a601.w
+/*unknown_a7_a607:*/ bra @unknown_a7_a601
 /*unknown_a7_a609:*/ ldx #$f011.w
 /*unknown_a7_a60c:*/ sta ($f8, X)
 /*unknown_a7_a60e:*/ ldy #$0111.w
@@ -4594,7 +4594,7 @@ unknown_a7_a716:
 /*unknown_a7_a92b:*/ bmi ($da - $100) ; $a907.w
 /*unknown_a7_a92d:*/ ldx $079f.w
 /*unknown_a7_a930:*/ lda $7ed828, X
-/*unknown_a7_a934:*/ bit #$01
+@unknown_a7_a934: bit #$01
 /*unknown_a7_a936:*/ brk $f0
 /*unknown_a7_a938:*/ ora $fa
 /*unknown_a7_a93a:*/ lda #$01
@@ -4622,9 +4622,9 @@ unknown_a7_a716:
 /*unknown_a7_a96d:*/ lda #$c325.w
 /*unknown_a7_a970:*/ sta $0601.w
 /*unknown_a7_a973:*/ jsr $a92c.w
-/*unknown_a7_a976:*/ bne $03 ; $a97b.w
-/*unknown_a7_a978:*/ jmp $a9dc.w
-/*unknown_a7_a97b:*/ ldx #$c0
+/*unknown_a7_a976:*/ bne @unknown_a7_a97b
+/*unknown_a7_a978:*/ jmp @unknown_a7_a9dc
+@unknown_a7_a97b: ldx #$c0
 /*unknown_a7_a97d:*/ brk $a0
 /*unknown_a7_a97f:*/ brk $00
 /*unknown_a7_a981:*/ lda $86c7.w, Y
@@ -4635,7 +4635,7 @@ unknown_a7_a716:
 /*unknown_a7_a98b:*/ iny
 /*unknown_a7_a98c:*/ cpy #$20
 /*unknown_a7_a98e:*/ brk $30
-/*unknown_a7_a990:*/ beq ($a2 - $100) ; $a934.w
+/*unknown_a7_a990:*/ beq @unknown_a7_a934
 /*unknown_a7_a992:*/ inc $a907.w, X
 /*unknown_a7_a995:*/ sec
 /*unknown_a7_a996:*/ ora $9f, S
@@ -4669,7 +4669,7 @@ unknown_a7_a716:
 /*unknown_a7_a9d8:*/ sta $0fa8.w
 /*unknown_a7_a9db:*/ rtl
 
-/*unknown_a7_a9dc:*/ sep #$20
+@unknown_a7_a9dc: sep #$20
 /*unknown_a7_a9de:*/ lda #$43
 /*unknown_a7_a9e0:*/ sta $59
 /*unknown_a7_a9e2:*/ rep #$20
@@ -4810,7 +4810,7 @@ unknown_a7_a716:
 /*unknown_a7_ab42:*/ rts
 
 /*unknown_a7_ab43:*/ jsr $a92c.w
-/*unknown_a7_ab46:*/ bne $1c ; $ab64.w
+/*unknown_a7_ab46:*/ bne @unknown_a7_ab64
 /*unknown_a7_ab48:*/ lda $0f96.w
 /*unknown_a7_ab4b:*/ sta $0fd6.w
 /*unknown_a7_ab4e:*/ lda #$ba2d.w
@@ -4822,11 +4822,11 @@ unknown_a7_a716:
 /*unknown_a7_ab60:*/ stz $0fea.w
 /*unknown_a7_ab63:*/ rtl
 
-/*unknown_a7_ab64:*/ jsr $a943.w
+@unknown_a7_ab64: jsr $a943.w
 /*unknown_a7_ab67:*/ rtl
 
 /*unknown_a7_ab68:*/ jsr $a92c.w
-/*unknown_a7_ab6b:*/ bne $2b ; $ab98.w
+/*unknown_a7_ab6b:*/ bne @unknown_a7_ab98
 /*unknown_a7_ab6d:*/ lda $0f96.w
 /*unknown_a7_ab70:*/ sta $1016.w
 /*unknown_a7_ab73:*/ lda #$7fff.w
@@ -4843,11 +4843,11 @@ unknown_a7_a716:
 /*unknown_a7_ab94:*/ sta $102c.w
 /*unknown_a7_ab97:*/ rtl
 
-/*unknown_a7_ab98:*/ jsr $a943.w
+@unknown_a7_ab98: jsr $a943.w
 /*unknown_a7_ab9b:*/ rtl
 
 /*unknown_a7_ab9c:*/ jsr $a92c.w
-/*unknown_a7_ab9f:*/ bne $25 ; $abc6.w
+/*unknown_a7_ab9f:*/ bne @unknown_a7_abc6
 /*unknown_a7_aba1:*/ lda $0f96.w
 /*unknown_a7_aba4:*/ sta $1056.w
 /*unknown_a7_aba7:*/ lda #$7fff.w
@@ -4862,11 +4862,11 @@ unknown_a7_a716:
 /*unknown_a7_abc2:*/ sta $106c.w
 /*unknown_a7_abc5:*/ rtl
 
-/*unknown_a7_abc6:*/ jsr $a943.w
+@unknown_a7_abc6: jsr $a943.w
 /*unknown_a7_abc9:*/ rtl
 
 /*unknown_a7_abca:*/ jsr $a92c.w
-/*unknown_a7_abcd:*/ bne $25 ; $abf4.w
+/*unknown_a7_abcd:*/ bne @unknown_a7_abf4
 /*unknown_a7_abcf:*/ lda $0f96.w
 /*unknown_a7_abd2:*/ sta $1096.w
 /*unknown_a7_abd5:*/ lda #$7fff.w
@@ -4881,11 +4881,11 @@ unknown_a7_a716:
 /*unknown_a7_abf0:*/ sta $10ac.w
 /*unknown_a7_abf3:*/ rtl
 
-/*unknown_a7_abf4:*/ jsr $a943.w
+@unknown_a7_abf4: jsr $a943.w
 /*unknown_a7_abf7:*/ rtl
 
 /*unknown_a7_abf8:*/ jsr $a92c.w
-/*unknown_a7_abfb:*/ bne $20 ; $ac1d.w
+/*unknown_a7_abfb:*/ bne @unknown_a7_ac1d
 /*unknown_a7_abfd:*/ lda $0f96.w
 /*unknown_a7_ac00:*/ sta $10d6.w
 /*unknown_a7_ac03:*/ lda #$86e7.w
@@ -4898,7 +4898,7 @@ unknown_a7_a716:
 /*unknown_a7_ac18:*/ sta $7e7940
 /*unknown_a7_ac1c:*/ rtl
 
-/*unknown_a7_ac1d:*/ jsr $a943.w
+@unknown_a7_ac1d: jsr $a943.w
 /*unknown_a7_ac20:*/ rtl
 
 /*unknown_a7_ac21:*/ jsr $afaa.w
@@ -4920,9 +4920,9 @@ unknown_a7_a716:
 /*unknown_a7_ac4a:*/ jmp ($0fa8)
 /*unknown_a7_ac4d:*/ lda $05b6.w
 /*unknown_a7_ac50:*/ and #$0007.w
-/*unknown_a7_ac53:*/ bne $03 ; $ac58.w
+/*unknown_a7_ac53:*/ bne @unknown_a7_ac58
 /*unknown_a7_ac55:*/ jsr $c995.w
-/*unknown_a7_ac58:*/ ldy #$01
+@unknown_a7_ac58: ldy #$01
 /*unknown_a7_ac5a:*/ brk $ad
 /*unknown_a7_ac5c:*/ ror $890f.w, X
 /*unknown_a7_ac5f:*/ cop $00
@@ -4935,7 +4935,7 @@ unknown_a7_a716:
 /*unknown_a7_ac71:*/ dec $0f7e.w
 /*unknown_a7_ac74:*/ lda $0f7e.w
 /*unknown_a7_ac77:*/ and #$0003.w
-/*unknown_a7_ac7a:*/ bne $28 ; $aca4.w
+/*unknown_a7_ac7a:*/ bne @unknown_a7_aca4
 /*unknown_a7_ac7c:*/ ldx $0fb2.w
 /*unknown_a7_ac7f:*/ cpx #$12
 /*unknown_a7_ac81:*/ brk $10
@@ -4948,16 +4948,16 @@ unknown_a7_a716:
 /*unknown_a7_ac94:*/ lda $acc5.w, X
 /*unknown_a7_ac97:*/ sta $12
 /*unknown_a7_ac99:*/ jmp ($0012)
-/*unknown_a7_ac9c:*/ ldx $0fb2.w
+@unknown_a7_ac9c: ldx $0fb2.w
 /*unknown_a7_ac9f:*/ inx
 /*unknown_a7_aca0:*/ inx
 /*unknown_a7_aca1:*/ stx $0fb2.w
-/*unknown_a7_aca4:*/ lda $0f7e.w
+@unknown_a7_aca4: lda $0f7e.w
 /*unknown_a7_aca7:*/ cmp #$0128.w
-/*unknown_a7_acaa:*/ bpl $06 ; $acb2.w
+/*unknown_a7_acaa:*/ bpl @unknown_a7_acb2
 /*unknown_a7_acac:*/ lda #$ad3a.w
 /*unknown_a7_acaf:*/ sta $0fa8.w
-/*unknown_a7_acb2:*/ rtl
+@unknown_a7_acb2: rtl
 
 /*unknown_a7_acb3:*/ pla
 /*unknown_a7_acb4:*/ brk $d8
@@ -4979,7 +4979,7 @@ unknown_a7_a716:
 /*unknown_a7_acd9:*/ sta $84, S
 /*unknown_a7_acdb:*/ cop $12
 /*unknown_a7_acdd:*/ lda $b7, S
-/*unknown_a7_acdf:*/ jmp $ac9c.w
+/*unknown_a7_acdf:*/ jmp @unknown_a7_ac9c
 /*unknown_a7_ace2:*/ jsr $8483d7
 /*unknown_a7_ace6:*/ ora $12, S
 /*unknown_a7_ace8:*/ plb
@@ -5002,7 +5002,7 @@ unknown_a7_a716:
 /*unknown_a7_ad0c:*/ stz $22ac.w
 /*unknown_a7_ad0f:*/ cmp [$83], Y
 /*unknown_a7_ad11:*/ sty $0a
-/*unknown_a7_ad13:*/ ora ($b3)
+@unknown_a7_ad13: ora ($b3)
 /*unknown_a7_ad15:*/ lda [$4c], Y
 /*unknown_a7_ad17:*/ stz $22ac.w
 /*unknown_a7_ad1a:*/ cmp [$83], Y
@@ -5032,7 +5032,7 @@ unknown_a7_a716:
 /*unknown_a7_ad51:*/ ora $fbff29
 /*unknown_a7_ad55:*/ sta $0fc6.w
 /*unknown_a7_ad58:*/ lda #$61
-/*unknown_a7_ad5a:*/ lda $a88d.w
+@unknown_a7_ad5a: lda $a88d.w
 /*unknown_a7_ad5d:*/ ora $c8744c
 /*unknown_a7_ad61:*/ lda #$8e
 /*unknown_a7_ad63:*/ lda $a88d.w
@@ -5048,7 +5048,7 @@ unknown_a7_a716:
 /*unknown_a7_ad7c:*/ sta $1092.w
 /*unknown_a7_ad7f:*/ lda #$6c
 /*unknown_a7_ad81:*/ sty $0e8d.w
-/*unknown_a7_ad84:*/ bpl ($8d - $100) ; $ad13.w
+/*unknown_a7_ad84:*/ bpl @unknown_a7_ad13
 /*unknown_a7_ad86:*/ lsr $8d10.w
 /*unknown_a7_ad89:*/ stx $4c10.w
 /*unknown_a7_ad8c:*/ ldx $c8, Y
@@ -5056,7 +5056,7 @@ unknown_a7_a716:
 /*unknown_a7_ad90:*/ ldx $a88d.w
 /*unknown_a7_ad93:*/ ora $0fb09c
 /*unknown_a7_ad97:*/ stz $0fb2.w
-/*unknown_a7_ad9a:*/ ldx #$c0
+@unknown_a7_ad9a: ldx #$c0
 /*unknown_a7_ad9c:*/ brk $a0
 /*unknown_a7_ad9e:*/ brk $00
 /*unknown_a7_ada0:*/ lda $86c7.w, Y
@@ -5067,7 +5067,7 @@ unknown_a7_a716:
 /*unknown_a7_adaa:*/ iny
 /*unknown_a7_adab:*/ cpy #$20
 /*unknown_a7_adad:*/ brk $30
-/*unknown_a7_adaf:*/ beq ($a9 - $100) ; $ad5a.w
+/*unknown_a7_adaf:*/ beq @unknown_a7_ad5a
 /*unknown_a7_adb1:*/ brk $00
 /*unknown_a7_adb3:*/ sta $7ec400
 /*unknown_a7_adb7:*/ ldx $0330.w
@@ -5094,10 +5094,10 @@ unknown_a7_a716:
 
 /*unknown_a7_ade1:*/ lda #$aec4.w
 /*unknown_a7_ade4:*/ sta $0fa8.w
-/*unknown_a7_ade7:*/ bra $06 ; $adef.w
+/*unknown_a7_ade7:*/ bra @unknown_a7_adef
 /*unknown_a7_ade9:*/ lda #$aea4.w
 /*unknown_a7_adec:*/ sta $0fa8.w
-/*unknown_a7_adef:*/ lda $0f7e.w
+@unknown_a7_adef: lda $0f7e.w
 /*unknown_a7_adf2:*/ sec
 /*unknown_a7_adf3:*/ sbc #$0014.w
 /*unknown_a7_adf6:*/ sta $0ffe.w
@@ -5111,9 +5111,9 @@ unknown_a7_a716:
 /*unknown_a7_ae0a:*/ sta $107e.w
 /*unknown_a7_ae0d:*/ lda $05e5.w
 /*unknown_a7_ae10:*/ and #$0007.w
-/*unknown_a7_ae13:*/ bne $03 ; $ae18.w
+/*unknown_a7_ae13:*/ bne @unknown_a7_ae18
 /*unknown_a7_ae15:*/ lda #$0002.w
-/*unknown_a7_ae18:*/ asl A
+@unknown_a7_ae18: asl A
 /*unknown_a7_ae19:*/ asl A
 /*unknown_a7_ae1a:*/ asl A
 /*unknown_a7_ae1b:*/ asl A
@@ -5124,10 +5124,10 @@ unknown_a7_a716:
 
 /*unknown_a7_ae23:*/ rep #$30
 /*unknown_a7_ae25:*/ jsr $82d96c
-/*unknown_a7_ae29:*/ bcs $01 ; $ae2c.w
+/*unknown_a7_ae29:*/ bcs @unknown_a7_ae2c
 /*unknown_a7_ae2b:*/ rtl
 
-/*unknown_a7_ae2c:*/ jsr $ade1.w
+@unknown_a7_ae2c: jsr $ade1.w
 /*unknown_a7_ae2f:*/ ldx #$0080.w
 /*unknown_a7_ae32:*/ lda $a916.w
 /*unknown_a7_ae35:*/ jsr $ae90.w
@@ -5170,46 +5170,46 @@ unknown_a7_a716:
 /*unknown_a7_aea3:*/ rts
 
 /*unknown_a7_aea4:*/ lda $7e7806
-/*unknown_a7_aea8:*/ beq $19 ; $aec3.w
+/*unknown_a7_aea8:*/ beq @unknown_a7_aec3
 /*unknown_a7_aeaa:*/ dec A
 /*unknown_a7_aeab:*/ sta $7e7806
-/*unknown_a7_aeaf:*/ bne $12 ; $aec3.w
+/*unknown_a7_aeaf:*/ bne @unknown_a7_aec3
 /*unknown_a7_aeb1:*/ lda #$bbea.w
 /*unknown_a7_aeb4:*/ sta $0fa8.w
 /*unknown_a7_aeb7:*/ lda #$96da.w
 /*unknown_a7_aeba:*/ sta $0faa.w
 /*unknown_a7_aebd:*/ lda $96d2.w
 /*unknown_a7_aec0:*/ sta $0fac.w
-/*unknown_a7_aec3:*/ rtl
+@unknown_a7_aec3: rtl
 
 /*unknown_a7_aec4:*/ lda $7e7806
-/*unknown_a7_aec8:*/ beq $19 ; $aee3.w
+/*unknown_a7_aec8:*/ beq @unknown_a7_aee3
 /*unknown_a7_aeca:*/ dec A
 /*unknown_a7_aecb:*/ sta $7e7806
-/*unknown_a7_aecf:*/ bne $12 ; $aee3.w
+/*unknown_a7_aecf:*/ bne @unknown_a7_aee3
 /*unknown_a7_aed1:*/ lda #$aee4.w
 /*unknown_a7_aed4:*/ sta $0fa8.w
 /*unknown_a7_aed7:*/ lda #$96da.w
 /*unknown_a7_aeda:*/ sta $0faa.w
 /*unknown_a7_aedd:*/ lda $96d2.w
 /*unknown_a7_aee0:*/ sta $0fac.w
-/*unknown_a7_aee3:*/ rtl
+@unknown_a7_aee3: rtl
 
 /*unknown_a7_aee4:*/ jsr $af32.w
 /*unknown_a7_aee7:*/ cmp #$ffff.w
-/*unknown_a7_aeea:*/ bne $3c ; $af28.w
+/*unknown_a7_aeea:*/ bne @unknown_a7_af28
 /*unknown_a7_aeec:*/ lda #$aea4.w
 /*unknown_a7_aeef:*/ sta $0fa8.w
 /*unknown_a7_aef2:*/ lda #$005a.w
 /*unknown_a7_aef5:*/ sta $0fac.w
 /*unknown_a7_aef8:*/ lda $7e780a
 /*unknown_a7_aefc:*/ bit #$0004.w
-/*unknown_a7_aeff:*/ beq $28 ; $af29.w
+/*unknown_a7_aeff:*/ beq @unknown_a7_af29
 /*unknown_a7_af01:*/ sec
 /*unknown_a7_af02:*/ sbc #$0100.w
 /*unknown_a7_af05:*/ sta $7e780a
 /*unknown_a7_af09:*/ and #$ff00.w
-/*unknown_a7_af0c:*/ beq $1b ; $af29.w
+/*unknown_a7_af0c:*/ beq @unknown_a7_af29
 /*unknown_a7_af0e:*/ lda #$b92d.w
 /*unknown_a7_af11:*/ sta $0fa8.w
 /*unknown_a7_af14:*/ lda #$0040.w
@@ -5218,22 +5218,22 @@ unknown_a7_a716:
 /*unknown_a7_af1d:*/ sta $7e7800
 /*unknown_a7_af21:*/ lda #$0002.w
 /*unknown_a7_af24:*/ sta $7e7802
-/*unknown_a7_af28:*/ rtl
+@unknown_a7_af28: rtl
 
-/*unknown_a7_af29:*/ lda #$0000.w
+@unknown_a7_af29: lda #$0000.w
 /*unknown_a7_af2c:*/ sta $7e780a
-/*unknown_a7_af30:*/ bra ($f6 - $100) ; $af28.w
+/*unknown_a7_af30:*/ bra @unknown_a7_af28
 /*unknown_a7_af32:*/ lda $0fac.w
-/*unknown_a7_af35:*/ beq $05 ; $af3c.w
+/*unknown_a7_af35:*/ beq @unknown_a7_af3c
 /*unknown_a7_af37:*/ dec $0fac.w
-/*unknown_a7_af3a:*/ beq $01 ; $af3d.w
-/*unknown_a7_af3c:*/ rts
+/*unknown_a7_af3a:*/ beq @unknown_a7_af3d
+@unknown_a7_af3c: rts
 
-/*unknown_a7_af3d:*/ ldx $0faa.w
+@unknown_a7_af3d: ldx $0faa.w
 /*unknown_a7_af40:*/ lda $0000.w, X
 /*unknown_a7_af43:*/ cmp #$ffff.w
-/*unknown_a7_af46:*/ beq $3a ; $af82.w
-/*unknown_a7_af48:*/ bmi $39 ; $af83.w
+/*unknown_a7_af46:*/ beq @unknown_a7_af82
+/*unknown_a7_af48:*/ bmi @unknown_a7_af83
 /*unknown_a7_af4a:*/ sta $0fac.w
 /*unknown_a7_af4d:*/ txa
 /*unknown_a7_af4e:*/ clc
@@ -5264,43 +5264,43 @@ unknown_a7_a716:
 /*unknown_a7_af7b:*/ stx $0330.w
 /*unknown_a7_af7e:*/ plx
 /*unknown_a7_af7f:*/ lda #$0001.w
-/*unknown_a7_af82:*/ rts
+@unknown_a7_af82: rts
 
-/*unknown_a7_af83:*/ sta $12
+@unknown_a7_af83: sta $12
 /*unknown_a7_af85:*/ jmp ($0012)
-/*unknown_a7_af88:*/ lda $0faa.w
+@unknown_a7_af88: lda $0faa.w
 /*unknown_a7_af8b:*/ clc
 /*unknown_a7_af8c:*/ adc #$0002.w
 /*unknown_a7_af8f:*/ sta $0faa.w
-/*unknown_a7_af92:*/ bra ($a9 - $100) ; $af3d.w
+/*unknown_a7_af92:*/ bra @unknown_a7_af3d
 /*unknown_a7_af94:*/ phx
 /*unknown_a7_af95:*/ lda #$002d.w
 /*unknown_a7_af98:*/ jsr $8090cb
 /*unknown_a7_af9c:*/ plx
-/*unknown_a7_af9d:*/ bra ($e9 - $100) ; $af88.w
+/*unknown_a7_af9d:*/ bra @unknown_a7_af88
 /*unknown_a7_af9f:*/ phx
 /*unknown_a7_afa0:*/ lda #$002e.w
 /*unknown_a7_afa3:*/ jsr $8090a3
 /*unknown_a7_afa7:*/ plx
-/*unknown_a7_afa8:*/ bra ($de - $100) ; $af88.w
+/*unknown_a7_afa8:*/ bra @unknown_a7_af88
 /*unknown_a7_afaa:*/ rep #$30
 /*unknown_a7_afac:*/ phx
 /*unknown_a7_afad:*/ lda $0fa8.w
 /*unknown_a7_afb0:*/ cmp #$c537.w
-/*unknown_a7_afb3:*/ bmi $02 ; $afb7.w
+/*unknown_a7_afb3:*/ bmi @unknown_a7_afb7
 /*unknown_a7_afb5:*/ plx
 /*unknown_a7_afb6:*/ rts
 
-/*unknown_a7_afb7:*/ lda $0faa.w
+@unknown_a7_afb7: lda $0faa.w
 /*unknown_a7_afba:*/ sec
 /*unknown_a7_afbb:*/ sbc #$0008.w
 /*unknown_a7_afbe:*/ tax
 /*unknown_a7_afbf:*/ lda $0006.w, X
 /*unknown_a7_afc2:*/ cmp #$ffff.w
-/*unknown_a7_afc5:*/ bne $06 ; $afcd.w
+/*unknown_a7_afc5:*/ bne @unknown_a7_afcd
 /*unknown_a7_afc7:*/ ldy #$0000.w
 /*unknown_a7_afca:*/ jmp $b050.w
-/*unknown_a7_afcd:*/ tax
+@unknown_a7_afcd: tax
 /*unknown_a7_afce:*/ lda #$0001.w
 /*unknown_a7_afd1:*/ sta $0fb0.w
 /*unknown_a7_afd4:*/ ldy #$0000.w
@@ -5317,34 +5317,34 @@ unknown_a7_a716:
 /*unknown_a7_afed:*/ adc $0f7e.w
 /*unknown_a7_aff0:*/ sta $12
 /*unknown_a7_aff2:*/ lda $0cce.w
-/*unknown_a7_aff5:*/ beq $59 ; $b050.w
+/*unknown_a7_aff5:*/ beq @unknown_a7_b050
 /*unknown_a7_aff7:*/ asl A
 /*unknown_a7_aff8:*/ tax
-/*unknown_a7_aff9:*/ lda $0b78.w, X
+@unknown_a7_aff9: lda $0b78.w, X
 /*unknown_a7_affc:*/ sec
 /*unknown_a7_affd:*/ sbc $0bc8.w, X
 /*unknown_a7_b000:*/ dec A
 /*unknown_a7_b001:*/ cmp $12
-/*unknown_a7_b003:*/ bpl $47 ; $b04c.w
+/*unknown_a7_b003:*/ bpl @unknown_a7_b04c
 /*unknown_a7_b005:*/ lda $0b78.w, X
 /*unknown_a7_b008:*/ clc
 /*unknown_a7_b009:*/ adc $0bc8.w, X
 /*unknown_a7_b00c:*/ cmp $14
-/*unknown_a7_b00e:*/ bmi $3c ; $b04c.w
+/*unknown_a7_b00e:*/ bmi @unknown_a7_b04c
 /*unknown_a7_b010:*/ lda $0b64.w, X
 /*unknown_a7_b013:*/ clc
 /*unknown_a7_b014:*/ adc $0bb4.w, X
 /*unknown_a7_b017:*/ cmp $16
-/*unknown_a7_b019:*/ bmi $31 ; $b04c.w
+/*unknown_a7_b019:*/ bmi @unknown_a7_b04c
 /*unknown_a7_b01b:*/ lda $0c18.w, X
 /*unknown_a7_b01e:*/ bit #$0f00.w
-/*unknown_a7_b021:*/ bne $10 ; $b033.w
+/*unknown_a7_b021:*/ bne @unknown_a7_b033
 /*unknown_a7_b023:*/ bit #$0010.w
-/*unknown_a7_b026:*/ beq $24 ; $b04c.w
+/*unknown_a7_b026:*/ beq @unknown_a7_b04c
 /*unknown_a7_b028:*/ lda $7e780a
 /*unknown_a7_b02c:*/ ora #$0001.w
 /*unknown_a7_b02f:*/ sta $7e780a
-/*unknown_a7_b033:*/ phx
+@unknown_a7_b033: phx
 /*unknown_a7_b034:*/ txa
 /*unknown_a7_b035:*/ lsr A
 /*unknown_a7_b036:*/ sta $18a6.w
@@ -5356,31 +5356,31 @@ unknown_a7_a716:
 /*unknown_a7_b043:*/ ora #$0010.w
 /*unknown_a7_b046:*/ sta $0c04.w, X
 /*unknown_a7_b049:*/ ldy #$0001.w
-/*unknown_a7_b04c:*/ dex
+@unknown_a7_b04c: dex
 /*unknown_a7_b04d:*/ dex
-/*unknown_a7_b04e:*/ bpl ($a9 - $100) ; $aff9.w
-/*unknown_a7_b050:*/ plx
+/*unknown_a7_b04e:*/ bpl @unknown_a7_aff9
+@unknown_a7_b050: plx
 /*unknown_a7_b051:*/ cpy #$0000.w
-/*unknown_a7_b054:*/ bne $01 ; $b057.w
+/*unknown_a7_b054:*/ bne @unknown_a7_b057
 /*unknown_a7_b056:*/ rts
 
-/*unknown_a7_b057:*/ lda #$0006.w
+@unknown_a7_b057: lda #$0006.w
 /*unknown_a7_b05a:*/ sta $7e782a
 /*unknown_a7_b05e:*/ lda #$0002.w
 /*unknown_a7_b061:*/ sta $7e782c
 /*unknown_a7_b065:*/ lda $7e780a
 /*unknown_a7_b069:*/ bit #$0002.w
-/*unknown_a7_b06c:*/ beq $07 ; $b075.w
+/*unknown_a7_b06c:*/ beq @unknown_a7_b075
 /*unknown_a7_b06e:*/ ora #$0004.w
 /*unknown_a7_b071:*/ sta $7e780a
-/*unknown_a7_b075:*/ lda $0f8c.w
+@unknown_a7_b075: lda $0f8c.w
 /*unknown_a7_b078:*/ cmp #$0001.w
-/*unknown_a7_b07b:*/ bmi $01 ; $b07e.w
+/*unknown_a7_b07b:*/ bmi @unknown_a7_b07e
 /*unknown_a7_b07d:*/ rts
 
-/*unknown_a7_b07e:*/ lda $0fa8.w
+@unknown_a7_b07e: lda $0fa8.w
 /*unknown_a7_b081:*/ cmp #$c360.w
-/*unknown_a7_b084:*/ bpl $44 ; $b0ca.w
+/*unknown_a7_b084:*/ bpl @unknown_a7_b0ca
 /*unknown_a7_b086:*/ lda #$c360.w
 /*unknown_a7_b089:*/ sta $0fa8.w
 /*unknown_a7_b08c:*/ lda #$0000.w
@@ -5392,7 +5392,7 @@ unknown_a7_a716:
 /*unknown_a7_b09f:*/ sta $12
 /*unknown_a7_b0a1:*/ jsr $aac6.w
 /*unknown_a7_b0a4:*/ ldx #$0000.w
-/*unknown_a7_b0a7:*/ lda $0f86.w, X
+@unknown_a7_b0a7: lda $0f86.w, X
 /*unknown_a7_b0aa:*/ ora #$0400.w
 /*unknown_a7_b0ad:*/ sta $0f86.w, X
 /*unknown_a7_b0b0:*/ txa
@@ -5400,14 +5400,14 @@ unknown_a7_a716:
 /*unknown_a7_b0b2:*/ adc #$0040.w
 /*unknown_a7_b0b5:*/ tax
 /*unknown_a7_b0b6:*/ cpx #$0180.w
-/*unknown_a7_b0b9:*/ bmi ($ec - $100) ; $b0a7.w
+/*unknown_a7_b0b9:*/ bmi @unknown_a7_b0a7
 /*unknown_a7_b0bb:*/ lda $0faa.w
 /*unknown_a7_b0be:*/ cmp #$970e.w
-/*unknown_a7_b0c1:*/ bpl $07 ; $b0ca.w
+/*unknown_a7_b0c1:*/ bpl @unknown_a7_b0ca
 /*unknown_a7_b0c3:*/ clc
 /*unknown_a7_b0c4:*/ adc #$003c.w
 /*unknown_a7_b0c7:*/ sta $0faa.w
-/*unknown_a7_b0ca:*/ rts
+@unknown_a7_b0ca: rts
 
 /*unknown_a7_b0cb:*/ lda $0b64.w, X
 /*unknown_a7_b0ce:*/ sta $12
@@ -5416,9 +5416,9 @@ unknown_a7_a716:
 /*unknown_a7_b0d5:*/ lda $0c18.w, X
 /*unknown_a7_b0d8:*/ ldy #$001d.w
 /*unknown_a7_b0db:*/ bit #$0200.w
-/*unknown_a7_b0de:*/ bne $03 ; $b0e3.w
+/*unknown_a7_b0de:*/ bne @unknown_a7_b0e3
 /*unknown_a7_b0e0:*/ ldy #$0006.w
-/*unknown_a7_b0e3:*/ tya
+@unknown_a7_b0e3: tya
 /*unknown_a7_b0e4:*/ ldy #$e509.w
 /*unknown_a7_b0e7:*/ jsr $868097
 /*unknown_a7_b0eb:*/ lda #$003d.w
@@ -5427,7 +5427,7 @@ unknown_a7_a716:
 
 /*unknown_a7_b0f3:*/ lda $0fa8.w
 /*unknown_a7_b0f6:*/ cmp #$c360.w
-/*unknown_a7_b0f9:*/ bpl $64 ; $b15f.w
+/*unknown_a7_b0f9:*/ bpl @unknown_a7_b15f
 /*unknown_a7_b0fb:*/ lda $0af6.w
 /*unknown_a7_b0fe:*/ clc
 /*unknown_a7_b0ff:*/ adc $0afe.w
@@ -5436,62 +5436,62 @@ unknown_a7_a716:
 /*unknown_a7_b107:*/ sec
 /*unknown_a7_b108:*/ sbc $0f7e.w
 /*unknown_a7_b10b:*/ ldx #$0000.w
-/*unknown_a7_b10e:*/ cmp $b161.w, X
-/*unknown_a7_b111:*/ bpl $0b ; $b11e.w
+@unknown_a7_b10e: cmp $b161.w, X
+/*unknown_a7_b111:*/ bpl @unknown_a7_b11e
 /*unknown_a7_b113:*/ cmp $b165.w, X
-/*unknown_a7_b116:*/ bpl $06 ; $b11e.w
+/*unknown_a7_b116:*/ bpl @unknown_a7_b11e
 /*unknown_a7_b118:*/ inx
 /*unknown_a7_b119:*/ inx
 /*unknown_a7_b11a:*/ inx
 /*unknown_a7_b11b:*/ inx
-/*unknown_a7_b11c:*/ bra ($f0 - $100) ; $b10e.w
-/*unknown_a7_b11e:*/ lda $b163.w, X
+/*unknown_a7_b11c:*/ bra @unknown_a7_b10e
+@unknown_a7_b11e: lda $b163.w, X
 /*unknown_a7_b121:*/ clc
 /*unknown_a7_b122:*/ adc $0f7a.w
 /*unknown_a7_b125:*/ sec
 /*unknown_a7_b126:*/ sbc $12
-/*unknown_a7_b128:*/ bpl $36 ; $b160.w
+/*unknown_a7_b128:*/ bpl @unknown_a7_b160
 /*unknown_a7_b12a:*/ lda $0af6.w
 /*unknown_a7_b12d:*/ cmp #$0028.w
-/*unknown_a7_b130:*/ bmi $0a ; $b13c.w
+/*unknown_a7_b130:*/ bmi @unknown_a7_b13c
 /*unknown_a7_b132:*/ sec
 /*unknown_a7_b133:*/ sbc #$0008.w
 /*unknown_a7_b136:*/ sta $0af6.w
 /*unknown_a7_b139:*/ sta $0b10.w
-/*unknown_a7_b13c:*/ lda $0afa.w
+@unknown_a7_b13c: lda $0afa.w
 /*unknown_a7_b13f:*/ sec
 /*unknown_a7_b140:*/ sbc #$0008.w
 /*unknown_a7_b143:*/ cmp $7e7808
-/*unknown_a7_b147:*/ bpl $04 ; $b14d.w
+/*unknown_a7_b147:*/ bpl @unknown_a7_b14d
 /*unknown_a7_b149:*/ lda $7e7808
-/*unknown_a7_b14d:*/ sta $0afa.w
+@unknown_a7_b14d: sta $0afa.w
 /*unknown_a7_b150:*/ sta $0b14.w
 /*unknown_a7_b153:*/ jsr $94a4.w
 /*unknown_a7_b156:*/ lda $18a8.w
-/*unknown_a7_b159:*/ bne $05 ; $b160.w
+/*unknown_a7_b159:*/ bne @unknown_a7_b160
 /*unknown_a7_b15b:*/ jsr $a0a477
-/*unknown_a7_b15f:*/ rts
+@unknown_a7_b15f: rts
 
-/*unknown_a7_b160:*/ rts
+@unknown_a7_b160: rts
 
 /*unknown_a7_b161:*/ sbc $ffd003, X
-/*unknown_a7_b165:*/ bpl $00 ; $b167.w
-/*unknown_a7_b167:*/ bne ($ff - $100) ; $b168.w
+/*unknown_a7_b165:*/ bpl @unknown_a7_b167
+@unknown_a7_b167: bne ($ff - $100) ; $b168.w
 /*unknown_a7_b169:*/ brk $00
 /*unknown_a7_b16b:*/ cpx #$e0ff.w
 /*unknown_a7_b16e:*/ sbc $d0ffe8, X
 /*unknown_a7_b172:*/ sbc $b0fff8, X
 /*unknown_a7_b176:*/ sbc $900000, X
 /*unknown_a7_b17a:*/ sbc $000008.l, X
-/*unknown_a7_b17e:*/ bra $08 ; $b188.w
+/*unknown_a7_b17e:*/ bra @unknown_a7_b188
 /*unknown_a7_b180:*/ brk $da
 /*unknown_a7_b182:*/ lda $0fa8.w
 /*unknown_a7_b185:*/ cmp #$c537.w
-/*unknown_a7_b188:*/ bmi $02 ; $b18c.w
+@unknown_a7_b188: bmi @unknown_a7_b18c
 /*unknown_a7_b18a:*/ plx
 /*unknown_a7_b18b:*/ rts
 
-/*unknown_a7_b18c:*/ stz $0fb0.w
+@unknown_a7_b18c: stz $0fb0.w
 /*unknown_a7_b18f:*/ lda $7e780a
 /*unknown_a7_b193:*/ and #$fffe.w
 /*unknown_a7_b196:*/ sta $7e780a
@@ -5515,56 +5515,56 @@ unknown_a7_a716:
 /*unknown_a7_b1be:*/ adc $0f7e.w
 /*unknown_a7_b1c1:*/ sta $12
 /*unknown_a7_b1c3:*/ lda $0cce.w
-/*unknown_a7_b1c6:*/ beq $49 ; $b211.w
+/*unknown_a7_b1c6:*/ beq @unknown_a7_b211
 /*unknown_a7_b1c8:*/ asl A
 /*unknown_a7_b1c9:*/ tax
-/*unknown_a7_b1ca:*/ lda $0b78.w, X
+@unknown_a7_b1ca: lda $0b78.w, X
 /*unknown_a7_b1cd:*/ sec
 /*unknown_a7_b1ce:*/ sbc $0bc8.w, X
 /*unknown_a7_b1d1:*/ dec A
 /*unknown_a7_b1d2:*/ cmp $12
-/*unknown_a7_b1d4:*/ bpl $62 ; $b238.w
+/*unknown_a7_b1d4:*/ bpl @unknown_a7_b238
 /*unknown_a7_b1d6:*/ lda $0b78.w, X
 /*unknown_a7_b1d9:*/ clc
 /*unknown_a7_b1da:*/ adc $0bc8.w, X
 /*unknown_a7_b1dd:*/ cmp $14
-/*unknown_a7_b1df:*/ bmi $2c ; $b20d.w
+/*unknown_a7_b1df:*/ bmi @unknown_a7_b20d
 /*unknown_a7_b1e1:*/ lda $0b64.w, X
 /*unknown_a7_b1e4:*/ clc
 /*unknown_a7_b1e5:*/ adc $0bb4.w, X
 /*unknown_a7_b1e8:*/ cmp $16
-/*unknown_a7_b1ea:*/ bmi $21 ; $b20d.w
-/*unknown_a7_b1ec:*/ jsr $b0cb.w
+/*unknown_a7_b1ea:*/ bmi @unknown_a7_b20d
+@unknown_a7_b1ec: jsr $b0cb.w
 /*unknown_a7_b1ef:*/ lda $0c04.w, X
 /*unknown_a7_b1f2:*/ ora #$0010.w
 /*unknown_a7_b1f5:*/ sta $0c04.w, X
 /*unknown_a7_b1f8:*/ lda $0c18.w, X
 /*unknown_a7_b1fb:*/ bit #$0010.w
-/*unknown_a7_b1fe:*/ beq $0b ; $b20b.w
+/*unknown_a7_b1fe:*/ beq @unknown_a7_b20b
 /*unknown_a7_b200:*/ lda $7e780a
 /*unknown_a7_b204:*/ ora #$0001.w
 /*unknown_a7_b207:*/ sta $7e780a
-/*unknown_a7_b20b:*/ inc $30
-/*unknown_a7_b20d:*/ dex
+@unknown_a7_b20b: inc $30
+@unknown_a7_b20d: dex
 /*unknown_a7_b20e:*/ dex
-/*unknown_a7_b20f:*/ bpl ($b9 - $100) ; $b1ca.w
-/*unknown_a7_b211:*/ plx
+/*unknown_a7_b20f:*/ bpl @unknown_a7_b1ca
+@unknown_a7_b211: plx
 /*unknown_a7_b212:*/ ldy $30
 /*unknown_a7_b214:*/ cpy #$0000.w
-/*unknown_a7_b217:*/ beq $1e ; $b237.w
+/*unknown_a7_b217:*/ beq @unknown_a7_b237
 /*unknown_a7_b219:*/ lda $0fa8.w
 /*unknown_a7_b21c:*/ cmp #$aea4.w
-/*unknown_a7_b21f:*/ bne $16 ; $b237.w
+/*unknown_a7_b21f:*/ bne @unknown_a7_b237
 /*unknown_a7_b221:*/ lda #$b6bf.w
 /*unknown_a7_b224:*/ sta $0fa8.w
 /*unknown_a7_b227:*/ lda $7e780a
 /*unknown_a7_b22b:*/ bit #$0001.w
-/*unknown_a7_b22e:*/ beq $07 ; $b237.w
+/*unknown_a7_b22e:*/ beq @unknown_a7_b237
 /*unknown_a7_b230:*/ ora #$0302.w
 /*unknown_a7_b233:*/ sta $7e780a
-/*unknown_a7_b237:*/ rts
+@unknown_a7_b237: rts
 
-/*unknown_a7_b238:*/ lda $0b64.w, X
+@unknown_a7_b238: lda $0b64.w, X
 /*unknown_a7_b23b:*/ clc
 /*unknown_a7_b23c:*/ adc $0bb4.w, X
 /*unknown_a7_b23f:*/ sta $12
@@ -5572,22 +5572,22 @@ unknown_a7_a716:
 /*unknown_a7_b244:*/ sec
 /*unknown_a7_b245:*/ sbc $0f7e.w
 /*unknown_a7_b248:*/ ldy #$0000.w
-/*unknown_a7_b24b:*/ cmp $b161.w, Y
-/*unknown_a7_b24e:*/ bpl $0b ; $b25b.w
+@unknown_a7_b24b: cmp $b161.w, Y
+/*unknown_a7_b24e:*/ bpl @unknown_a7_b25b
 /*unknown_a7_b250:*/ cmp $b165.w, Y
-/*unknown_a7_b253:*/ bpl $06 ; $b25b.w
+/*unknown_a7_b253:*/ bpl @unknown_a7_b25b
 /*unknown_a7_b255:*/ iny
 /*unknown_a7_b256:*/ iny
 /*unknown_a7_b257:*/ iny
 /*unknown_a7_b258:*/ iny
-/*unknown_a7_b259:*/ bra ($f0 - $100) ; $b24b.w
-/*unknown_a7_b25b:*/ lda $b163.w, Y
+/*unknown_a7_b259:*/ bra @unknown_a7_b24b
+@unknown_a7_b25b: lda $b163.w, Y
 /*unknown_a7_b25e:*/ clc
 /*unknown_a7_b25f:*/ adc $0f7a.w
 /*unknown_a7_b262:*/ sec
 /*unknown_a7_b263:*/ sbc $12
-/*unknown_a7_b265:*/ bpl ($a6 - $100) ; $b20d.w
-/*unknown_a7_b267:*/ bra ($83 - $100) ; $b1ec.w
+/*unknown_a7_b265:*/ bpl @unknown_a7_b20d
+/*unknown_a7_b267:*/ bra @unknown_a7_b1ec
 /*unknown_a7_b269:*/ phx
 /*unknown_a7_b26a:*/ phy
 /*unknown_a7_b26b:*/ txy
@@ -5598,46 +5598,46 @@ unknown_a7_a716:
 /*unknown_a7_b278:*/ sta $12
 /*unknown_a7_b27a:*/ lda $0c18.w, Y
 /*unknown_a7_b27d:*/ bit #$0018.w
-/*unknown_a7_b280:*/ beq $06 ; $b288.w
+/*unknown_a7_b280:*/ beq @unknown_a7_b288
 /*unknown_a7_b282:*/ lda #$0010.w
 /*unknown_a7_b285:*/ sta $0fa0.w
-/*unknown_a7_b288:*/ ldx $0f78.w
+@unknown_a7_b288: ldx $0f78.w
 /*unknown_a7_b28b:*/ lda $a0003c, X
-/*unknown_a7_b28f:*/ bne $03 ; $b294.w
+/*unknown_a7_b28f:*/ bne @unknown_a7_b294
 /*unknown_a7_b291:*/ lda #$ec1c.w
-/*unknown_a7_b294:*/ sta $14
+@unknown_a7_b294: sta $14
 /*unknown_a7_b296:*/ lda $12
 /*unknown_a7_b298:*/ bit #$0f00.w
-/*unknown_a7_b29b:*/ bne $0d ; $b2aa.w
+/*unknown_a7_b29b:*/ bne @unknown_a7_b2aa
 /*unknown_a7_b29d:*/ and #$00ff.w
 /*unknown_a7_b2a0:*/ clc
 /*unknown_a7_b2a1:*/ adc $14
 /*unknown_a7_b2a3:*/ tax
 /*unknown_a7_b2a4:*/ lda $b40000, X
-/*unknown_a7_b2a8:*/ bra $30 ; $b2da.w
-/*unknown_a7_b2aa:*/ and #$0f00.w
+/*unknown_a7_b2a8:*/ bra @unknown_a7_b2da
+@unknown_a7_b2aa: and #$0f00.w
 /*unknown_a7_b2ad:*/ cmp #$0100.w
-/*unknown_a7_b2b0:*/ beq $05 ; $b2b7.w
+/*unknown_a7_b2b0:*/ beq @unknown_a7_b2b7
 /*unknown_a7_b2b2:*/ cmp #$0200.w
-/*unknown_a7_b2b5:*/ bne $0b ; $b2c2.w
-/*unknown_a7_b2b7:*/ xba
+/*unknown_a7_b2b5:*/ bne @unknown_a7_b2c2
+@unknown_a7_b2b7: xba
 /*unknown_a7_b2b8:*/ clc
 /*unknown_a7_b2b9:*/ adc $14
 /*unknown_a7_b2bb:*/ tax
 /*unknown_a7_b2bc:*/ lda $b4000b, X
-/*unknown_a7_b2c0:*/ bra $18 ; $b2da.w
-/*unknown_a7_b2c2:*/ cmp #$0300.w
-/*unknown_a7_b2c5:*/ bne $08 ; $b2cf.w
+/*unknown_a7_b2c0:*/ bra @unknown_a7_b2da
+@unknown_a7_b2c2: cmp #$0300.w
+/*unknown_a7_b2c5:*/ bne @unknown_a7_b2cf
 /*unknown_a7_b2c7:*/ ldx $14
 /*unknown_a7_b2c9:*/ lda $b4000e, X
-/*unknown_a7_b2cd:*/ bra $0b ; $b2da.w
-/*unknown_a7_b2cf:*/ cmp #$0500.w
-/*unknown_a7_b2d2:*/ bne $60 ; $b334.w
+/*unknown_a7_b2cd:*/ bra @unknown_a7_b2da
+@unknown_a7_b2cf: cmp #$0500.w
+/*unknown_a7_b2d2:*/ bne @unknown_a7_b334
 /*unknown_a7_b2d4:*/ ldx $14
 /*unknown_a7_b2d6:*/ lda $b4000f, X
-/*unknown_a7_b2da:*/ and #$00ff.w
+@unknown_a7_b2da: and #$00ff.w
 /*unknown_a7_b2dd:*/ sta $0e32.w
-/*unknown_a7_b2e0:*/ beq $52 ; $b334.w
+/*unknown_a7_b2e0:*/ beq @unknown_a7_b334
 /*unknown_a7_b2e2:*/ lda $187a.w
 /*unknown_a7_b2e5:*/ lsr A
 /*unknown_a7_b2e6:*/ sta $4202.w
@@ -5651,7 +5651,7 @@ unknown_a7_a716:
 /*unknown_a7_b2f5:*/ nop
 /*unknown_a7_b2f6:*/ rep #$20
 /*unknown_a7_b2f8:*/ lda $4216.w
-/*unknown_a7_b2fb:*/ beq $37 ; $b334.w
+/*unknown_a7_b2fb:*/ beq @unknown_a7_b334
 /*unknown_a7_b2fd:*/ sta $187a.w
 /*unknown_a7_b300:*/ lda $0f8c.w
 /*unknown_a7_b303:*/ sec
@@ -5661,19 +5661,19 @@ unknown_a7_a716:
 /*unknown_a7_b30b:*/ sbc $187a.w
 /*unknown_a7_b30e:*/ sta $0f8c.w
 /*unknown_a7_b311:*/ lda $0fb0.w
-/*unknown_a7_b314:*/ beq $13 ; $b329.w
+/*unknown_a7_b314:*/ beq @unknown_a7_b329
 /*unknown_a7_b316:*/ lda $0f8c.w
 /*unknown_a7_b319:*/ sec
 /*unknown_a7_b31a:*/ sbc $187a.w
 /*unknown_a7_b31d:*/ sec
 /*unknown_a7_b31e:*/ sbc $187a.w
-/*unknown_a7_b321:*/ bpl $03 ; $b326.w
+/*unknown_a7_b321:*/ bpl @unknown_a7_b326
 /*unknown_a7_b323:*/ lda #$0000.w
-/*unknown_a7_b326:*/ sta $0f8c.w
-/*unknown_a7_b329:*/ ldx $0f78.w
+@unknown_a7_b326: sta $0f8c.w
+@unknown_a7_b329: ldx $0f78.w
 /*unknown_a7_b32c:*/ lda $a0000e, X
 /*unknown_a7_b330:*/ jsr $8090cb
-/*unknown_a7_b334:*/ ply
+@unknown_a7_b334: ply
 /*unknown_a7_b335:*/ plx
 /*unknown_a7_b336:*/ rts
 
@@ -5681,54 +5681,54 @@ unknown_a7_a716:
 /*unknown_a7_b338:*/ phy
 /*unknown_a7_b339:*/ lda $0f8c.w
 /*unknown_a7_b33c:*/ cmp #$0001.w
-/*unknown_a7_b33f:*/ bpl $06 ; $b347.w
+/*unknown_a7_b33f:*/ bpl @unknown_a7_b347
 /*unknown_a7_b341:*/ sta $7e782a
-/*unknown_a7_b345:*/ bra $21 ; $b368.w
-/*unknown_a7_b347:*/ lda $7e782a
-/*unknown_a7_b34b:*/ beq $21 ; $b36e.w
+/*unknown_a7_b345:*/ bra @unknown_a7_b368
+@unknown_a7_b347: lda $7e782a
+/*unknown_a7_b34b:*/ beq @unknown_a7_b36e
 /*unknown_a7_b34d:*/ lda $7e782c
 /*unknown_a7_b351:*/ dec A
 /*unknown_a7_b352:*/ sta $7e782c
-/*unknown_a7_b356:*/ bne $16 ; $b36e.w
+/*unknown_a7_b356:*/ bne @unknown_a7_b36e
 /*unknown_a7_b358:*/ lda #$0002.w
 /*unknown_a7_b35b:*/ sta $7e782c
 /*unknown_a7_b35f:*/ lda $7e782a
 /*unknown_a7_b363:*/ dec A
 /*unknown_a7_b364:*/ sta $7e782a
-/*unknown_a7_b368:*/ jsr $b371.w
+@unknown_a7_b368: jsr $b371.w
 /*unknown_a7_b36b:*/ jsr $b394.w
-/*unknown_a7_b36e:*/ ply
+@unknown_a7_b36e: ply
 /*unknown_a7_b36f:*/ plx
 /*unknown_a7_b370:*/ rts
 
 /*unknown_a7_b371:*/ ldy #$0000.w
 /*unknown_a7_b374:*/ lda $7e782a
 /*unknown_a7_b378:*/ bit #$0001.w
-/*unknown_a7_b37b:*/ bne $03 ; $b380.w
+/*unknown_a7_b37b:*/ bne @unknown_a7_b380
 /*unknown_a7_b37d:*/ ldy #$0020.w
-/*unknown_a7_b380:*/ ldx #$0000.w
-/*unknown_a7_b383:*/ lda $b513.w, Y
+@unknown_a7_b380: ldx #$0000.w
+@unknown_a7_b383: lda $b513.w, Y
 /*unknown_a7_b386:*/ sta $7ec1e0, X
 /*unknown_a7_b38a:*/ inx
 /*unknown_a7_b38b:*/ inx
 /*unknown_a7_b38c:*/ iny
 /*unknown_a7_b38d:*/ iny
 /*unknown_a7_b38e:*/ cpx #$0020.w
-/*unknown_a7_b391:*/ bmi ($f0 - $100) ; $b383.w
+/*unknown_a7_b391:*/ bmi @unknown_a7_b383
 /*unknown_a7_b393:*/ rts
 
 /*unknown_a7_b394:*/ ldy #$0000.w
 /*unknown_a7_b397:*/ lda $7e782a
 /*unknown_a7_b39b:*/ bit #$0001.w
-/*unknown_a7_b39e:*/ bne $18 ; $b3b8.w
+/*unknown_a7_b39e:*/ bne @unknown_a7_b3b8
 /*unknown_a7_b3a0:*/ ldx #$000e.w
 /*unknown_a7_b3a3:*/ lda $0f8c.w
-/*unknown_a7_b3a6:*/ cmp $7e780c, X
-/*unknown_a7_b3aa:*/ bpl $04 ; $b3b0.w
+@unknown_a7_b3a6: cmp $7e780c, X
+/*unknown_a7_b3aa:*/ bpl @unknown_a7_b3b0
 /*unknown_a7_b3ac:*/ dex
 /*unknown_a7_b3ad:*/ dex
-/*unknown_a7_b3ae:*/ bne ($f6 - $100) ; $b3a6.w
-/*unknown_a7_b3b0:*/ inx
+/*unknown_a7_b3ae:*/ bne @unknown_a7_b3a6
+@unknown_a7_b3b0: inx
 /*unknown_a7_b3b1:*/ inx
 /*unknown_a7_b3b2:*/ txa
 /*unknown_a7_b3b3:*/ asl A
@@ -5736,8 +5736,8 @@ unknown_a7_a716:
 /*unknown_a7_b3b5:*/ asl A
 /*unknown_a7_b3b6:*/ asl A
 /*unknown_a7_b3b7:*/ tay
-/*unknown_a7_b3b8:*/ ldx #$0000.w
-/*unknown_a7_b3bb:*/ lda $b3d3.w, Y
+@unknown_a7_b3b8: ldx #$0000.w
+@unknown_a7_b3bb: lda $b3d3.w, Y
 /*unknown_a7_b3be:*/ sta $7ec0e0, X
 /*unknown_a7_b3c2:*/ lda $b513.w, Y
 /*unknown_a7_b3c5:*/ sta $7ec1e0, X
@@ -5746,7 +5746,7 @@ unknown_a7_a716:
 /*unknown_a7_b3cb:*/ inx
 /*unknown_a7_b3cc:*/ inx
 /*unknown_a7_b3cd:*/ cpx #$0020.w
-/*unknown_a7_b3d0:*/ bmi ($e9 - $100) ; $b3bb.w
+/*unknown_a7_b3d0:*/ bmi @unknown_a7_b3bb
 /*unknown_a7_b3d2:*/ rts
 
 /*unknown_a7_b3d3:*/ sbc $7fff7f, X
@@ -5763,12 +5763,12 @@ unknown_a7_a716:
 /*unknown_a7_b3f9:*/ ora $7a10.w
 /*unknown_a7_b3fc:*/ ora ($17)
 /*unknown_a7_b3fe:*/ asl $0dd3.w
-/*unknown_a7_b401:*/ bvs $09 ; $b40c.w
+/*unknown_a7_b401:*/ bvs @unknown_a7_b40c
 /*unknown_a7_b403:*/ and $ca09.w
 /*unknown_a7_b406:*/ tsb $86
 /*unknown_a7_b408:*/ tsb $23
 /*unknown_a7_b40a:*/ brk $43
-/*unknown_a7_b40c:*/ tsb $52
+@unknown_a7_b40c: tsb $52
 /*unknown_a7_b40e:*/ rol $4ad5.w, X
 /*unknown_a7_b411:*/ brk $00
 /*unknown_a7_b413:*/ brk $38
@@ -5869,7 +5869,7 @@ unknown_a7_a716:
 /*unknown_a7_b4d9:*/ ora $9f10.w
 /*unknown_a7_b4dc:*/ phk
 /*unknown_a7_b4dd:*/ and [$3f], Y
-/*unknown_a7_b4df:*/ bne $36 ; $b517.w
+/*unknown_a7_b4df:*/ bne @unknown_a7_b517
 /*unknown_a7_b4e1:*/ adc #$082e.w
 /*unknown_a7_b4e4:*/ rol $a6
 /*unknown_a7_b4e6:*/ ora $1125.w, X
@@ -5885,16 +5885,16 @@ unknown_a7_a716:
 /*unknown_a7_b4fb:*/ ply
 /*unknown_a7_b4fc:*/ ora ($17)
 /*unknown_a7_b4fe:*/ asl $0dd3.w
-/*unknown_a7_b501:*/ bvs $09 ; $b50c.w
+/*unknown_a7_b501:*/ bvs @unknown_a7_b50c
 /*unknown_a7_b503:*/ and $ca09.w
 /*unknown_a7_b506:*/ tsb $86
 /*unknown_a7_b508:*/ tsb $23
 /*unknown_a7_b50a:*/ brk $43
-/*unknown_a7_b50c:*/ tsb $52
+@unknown_a7_b50c: tsb $52
 /*unknown_a7_b50e:*/ rol $4ad5.w, X
 /*unknown_a7_b511:*/ brk $00
 /*unknown_a7_b513:*/ sbc $7fff7f, X
-/*unknown_a7_b517:*/ sbc $7fff7f, X
+@unknown_a7_b517: sbc $7fff7f, X
 /*unknown_a7_b51b:*/ sbc $7fff7f, X
 /*unknown_a7_b51f:*/ sbc $7fff7f, X
 /*unknown_a7_b523:*/ sbc $7fff7f, X
@@ -5907,12 +5907,12 @@ unknown_a7_a716:
 /*unknown_a7_b539:*/ ora $7a10.w
 /*unknown_a7_b53c:*/ ora ($17)
 /*unknown_a7_b53e:*/ asl $0dd3.w
-/*unknown_a7_b541:*/ bvs $09 ; $b54c.w
+/*unknown_a7_b541:*/ bvs @unknown_a7_b54c
 /*unknown_a7_b543:*/ and $ca09.w
 /*unknown_a7_b546:*/ tsb $86
 /*unknown_a7_b548:*/ tsb $23
 /*unknown_a7_b54a:*/ brk $43
-/*unknown_a7_b54c:*/ tsb $52
+@unknown_a7_b54c: tsb $52
 /*unknown_a7_b54e:*/ rol $4ad5.w, X
 /*unknown_a7_b551:*/ brk $00
 /*unknown_a7_b553:*/ brk $38
@@ -6013,7 +6013,7 @@ unknown_a7_a716:
 /*unknown_a7_b619:*/ ora $9f10.w
 /*unknown_a7_b61c:*/ phk
 /*unknown_a7_b61d:*/ and [$3f], Y
-/*unknown_a7_b61f:*/ bne $36 ; $b657.w
+/*unknown_a7_b61f:*/ bne @unknown_a7_b657
 /*unknown_a7_b621:*/ adc #$082e.w
 /*unknown_a7_b624:*/ rol $a6
 /*unknown_a7_b626:*/ ora $1125.w, X
@@ -6043,7 +6043,7 @@ unknown_a7_a716:
 /*unknown_a7_b64f:*/ phy
 /*unknown_a7_b650:*/ lda #$0076.w
 /*unknown_a7_b653:*/ jsr $8090cb
-/*unknown_a7_b657:*/ ply
+@unknown_a7_b657: ply
 /*unknown_a7_b658:*/ plx
 /*unknown_a7_b659:*/ rtl
 
@@ -6077,28 +6077,28 @@ unknown_a7_a716:
 /*unknown_a7_b684:*/ phy
 /*unknown_a7_b685:*/ lda $0f7a.w
 /*unknown_a7_b688:*/ cmp #$0140.w
-/*unknown_a7_b68b:*/ bmi $0b ; $b698.w
+/*unknown_a7_b68b:*/ bmi @unknown_a7_b698
 /*unknown_a7_b68d:*/ lda $7e781e
 /*unknown_a7_b691:*/ dec A
 /*unknown_a7_b692:*/ sta $7e781e
-/*unknown_a7_b696:*/ bne $10 ; $b6a8.w
-/*unknown_a7_b698:*/ ldx #$0000.w
+/*unknown_a7_b696:*/ bne @unknown_a7_b6a8
+@unknown_a7_b698: ldx #$0000.w
 /*unknown_a7_b69b:*/ stz $12
 /*unknown_a7_b69d:*/ lda $a922.w
 /*unknown_a7_b6a0:*/ sta $14
 /*unknown_a7_b6a2:*/ jsr $a0c6ab
-/*unknown_a7_b6a6:*/ bcs $03 ; $b6ab.w
-/*unknown_a7_b6a8:*/ ply
+/*unknown_a7_b6a6:*/ bcs @unknown_a7_b6ab
+@unknown_a7_b6a8: ply
 /*unknown_a7_b6a9:*/ plx
 /*unknown_a7_b6aa:*/ rtl
 
-/*unknown_a7_b6ab:*/ lda #$0000.w
+@unknown_a7_b6ab: lda #$0000.w
 /*unknown_a7_b6ae:*/ sta $183e.w
 /*unknown_a7_b6b1:*/ lda #$0007.w
 /*unknown_a7_b6b4:*/ sta $1840.w
 /*unknown_a7_b6b7:*/ lda $0f7a.w
 /*unknown_a7_b6ba:*/ sta $10ba.w
-/*unknown_a7_b6bd:*/ bra ($e9 - $100) ; $b6a8.w
+/*unknown_a7_b6bd:*/ bra @unknown_a7_b6a8
 /*unknown_a7_b6bf:*/ lda #$aee4.w
 /*unknown_a7_b6c2:*/ sta $0fa8.w
 /*unknown_a7_b6c5:*/ lda #$b6d7.w
@@ -6111,29 +6111,29 @@ unknown_a7_a716:
 /*unknown_a7_b6d8:*/ phy
 /*unknown_a7_b6d9:*/ jsr $af32.w
 /*unknown_a7_b6dc:*/ cmp #$ffff.w
-/*unknown_a7_b6df:*/ bne $06 ; $b6e7.w
+/*unknown_a7_b6df:*/ bne @unknown_a7_b6e7
 /*unknown_a7_b6e1:*/ lda #$0100.w
 /*unknown_a7_b6e4:*/ lda $0fac.w
-/*unknown_a7_b6e7:*/ ldx #$00e2.w
+@unknown_a7_b6e7: ldx #$00e2.w
 /*unknown_a7_b6ea:*/ ldy #$0000.w
-/*unknown_a7_b6ed:*/ lda $7ec000, X
+@unknown_a7_b6ed: lda $7ec000, X
 /*unknown_a7_b6f1:*/ and #$001f.w
 /*unknown_a7_b6f4:*/ clc
 /*unknown_a7_b6f5:*/ adc #$0001.w
 /*unknown_a7_b6f8:*/ cmp #$001f.w
-/*unknown_a7_b6fb:*/ bmi $04 ; $b701.w
+/*unknown_a7_b6fb:*/ bmi @unknown_a7_b701
 /*unknown_a7_b6fd:*/ iny
 /*unknown_a7_b6fe:*/ lda #$001f.w
-/*unknown_a7_b701:*/ sta $12
+@unknown_a7_b701: sta $12
 /*unknown_a7_b703:*/ lda $7ec000, X
 /*unknown_a7_b707:*/ and #$03e0.w
 /*unknown_a7_b70a:*/ clc
 /*unknown_a7_b70b:*/ adc #$0020.w
 /*unknown_a7_b70e:*/ cmp #$03e0.w
-/*unknown_a7_b711:*/ bmi $04 ; $b717.w
+/*unknown_a7_b711:*/ bmi @unknown_a7_b717
 /*unknown_a7_b713:*/ iny
 /*unknown_a7_b714:*/ lda #$03e0.w
-/*unknown_a7_b717:*/ sta $14
+@unknown_a7_b717: sta $14
 /*unknown_a7_b719:*/ lda $7ec000, X
 /*unknown_a7_b71d:*/ and #$fc00.w
 /*unknown_a7_b720:*/ ora $12
@@ -6142,12 +6142,12 @@ unknown_a7_a716:
 /*unknown_a7_b728:*/ inx
 /*unknown_a7_b729:*/ inx
 /*unknown_a7_b72a:*/ cpx #$00e8.w
-/*unknown_a7_b72d:*/ bmi ($be - $100) ; $b6ed.w
+/*unknown_a7_b72d:*/ bmi @unknown_a7_b6ed
 /*unknown_a7_b72f:*/ cpy #$0006.w
-/*unknown_a7_b732:*/ bmi $06 ; $b73a.w
+/*unknown_a7_b732:*/ bmi @unknown_a7_b73a
 /*unknown_a7_b734:*/ lda #$b73d.w
 /*unknown_a7_b737:*/ sta $0fa8.w
-/*unknown_a7_b73a:*/ ply
+@unknown_a7_b73a: ply
 /*unknown_a7_b73b:*/ plx
 /*unknown_a7_b73c:*/ rtl
 
@@ -6155,12 +6155,12 @@ unknown_a7_a716:
 /*unknown_a7_b73e:*/ phy
 /*unknown_a7_b73f:*/ ldx #$000e.w
 /*unknown_a7_b742:*/ lda $0f8c.w
-/*unknown_a7_b745:*/ cmp $7e780c, X
-/*unknown_a7_b749:*/ bpl $04 ; $b74f.w
+@unknown_a7_b745: cmp $7e780c, X
+/*unknown_a7_b749:*/ bpl @unknown_a7_b74f
 /*unknown_a7_b74b:*/ dex
 /*unknown_a7_b74c:*/ dex
-/*unknown_a7_b74d:*/ bne ($f6 - $100) ; $b745.w
-/*unknown_a7_b74f:*/ inx
+/*unknown_a7_b74d:*/ bne @unknown_a7_b745
+@unknown_a7_b74f: inx
 /*unknown_a7_b750:*/ inx
 /*unknown_a7_b751:*/ txa
 /*unknown_a7_b752:*/ asl A
@@ -6170,44 +6170,44 @@ unknown_a7_a716:
 /*unknown_a7_b756:*/ tay
 /*unknown_a7_b757:*/ ldx #$00e2.w
 /*unknown_a7_b75a:*/ stz $14
-/*unknown_a7_b75c:*/ lda $7ec000, X
+@unknown_a7_b75c: lda $7ec000, X
 /*unknown_a7_b760:*/ and #$001f.w
 /*unknown_a7_b763:*/ sta $12
 /*unknown_a7_b765:*/ lda $b3d5.w, Y
 /*unknown_a7_b768:*/ and #$001f.w
 /*unknown_a7_b76b:*/ cmp $12
-/*unknown_a7_b76d:*/ beq $0b ; $b77a.w
+/*unknown_a7_b76d:*/ beq @unknown_a7_b77a
 /*unknown_a7_b76f:*/ inc $14
 /*unknown_a7_b771:*/ lda $7ec000, X
 /*unknown_a7_b775:*/ dec A
 /*unknown_a7_b776:*/ sta $7ec000, X
-/*unknown_a7_b77a:*/ lda $7ec000, X
+@unknown_a7_b77a: lda $7ec000, X
 /*unknown_a7_b77e:*/ and #$03e0.w
 /*unknown_a7_b781:*/ sta $12
 /*unknown_a7_b783:*/ lda $b3d5.w, Y
 /*unknown_a7_b786:*/ and #$03e0.w
 /*unknown_a7_b789:*/ cmp $12
-/*unknown_a7_b78b:*/ beq $0e ; $b79b.w
+/*unknown_a7_b78b:*/ beq @unknown_a7_b79b
 /*unknown_a7_b78d:*/ inc $14
 /*unknown_a7_b78f:*/ lda $7ec000, X
 /*unknown_a7_b793:*/ sec
 /*unknown_a7_b794:*/ sbc #$0020.w
 /*unknown_a7_b797:*/ sta $7ec000, X
-/*unknown_a7_b79b:*/ inx
+@unknown_a7_b79b: inx
 /*unknown_a7_b79c:*/ inx
 /*unknown_a7_b79d:*/ iny
 /*unknown_a7_b79e:*/ iny
 /*unknown_a7_b79f:*/ cpx #$00e8.w
-/*unknown_a7_b7a2:*/ bmi ($b8 - $100) ; $b75c.w
+/*unknown_a7_b7a2:*/ bmi @unknown_a7_b75c
 /*unknown_a7_b7a4:*/ lda $14
-/*unknown_a7_b7a6:*/ bne $12 ; $b7ba.w
+/*unknown_a7_b7a6:*/ bne @unknown_a7_b7ba
 /*unknown_a7_b7a8:*/ lda #$aee4.w
 /*unknown_a7_b7ab:*/ sta $0fa8.w
 /*unknown_a7_b7ae:*/ lda #$96da.w
 /*unknown_a7_b7b1:*/ sta $0faa.w
 /*unknown_a7_b7b4:*/ lda $96d2.w
 /*unknown_a7_b7b7:*/ sta $0fac.w
-/*unknown_a7_b7ba:*/ ply
+@unknown_a7_b7ba: ply
 /*unknown_a7_b7bb:*/ plx
 /*unknown_a7_b7bc:*/ rtl
 
@@ -6223,35 +6223,35 @@ unknown_a7_a716:
 /*unknown_a7_b7d1:*/ lda $0fc6.w
 /*unknown_a7_b7d4:*/ ora #$0100.w
 /*unknown_a7_b7d7:*/ cpy $0915.w
-/*unknown_a7_b7da:*/ bmi $07 ; $b7e3.w
+/*unknown_a7_b7da:*/ bmi @unknown_a7_b7e3
 /*unknown_a7_b7dc:*/ cpy $12
-/*unknown_a7_b7de:*/ bpl $03 ; $b7e3.w
+/*unknown_a7_b7de:*/ bpl @unknown_a7_b7e3
 /*unknown_a7_b7e0:*/ and #$feff.w
-/*unknown_a7_b7e3:*/ sta $0fc6.w
+@unknown_a7_b7e3: sta $0fc6.w
 /*unknown_a7_b7e6:*/ lda $0f7a.w
 /*unknown_a7_b7e9:*/ clc
 /*unknown_a7_b7ea:*/ adc #$0000.w
 /*unknown_a7_b7ed:*/ sta $0fba.w
 /*unknown_a7_b7f0:*/ lda $7e780a
 /*unknown_a7_b7f4:*/ bit #$ff00.w
-/*unknown_a7_b7f7:*/ beq $07 ; $b800.w
+/*unknown_a7_b7f7:*/ beq @unknown_a7_b800
 /*unknown_a7_b7f9:*/ lda $0fd4.w
 /*unknown_a7_b7fc:*/ inc A
 /*unknown_a7_b7fd:*/ sta $0fd4.w
-/*unknown_a7_b800:*/ rtl
+@unknown_a7_b800: rtl
 
 /*unknown_a7_b801:*/ ldx #$0080.w
 /*unknown_a7_b804:*/ lda #$7fff.w
 /*unknown_a7_b807:*/ sta $0f94.w, X
-/*unknown_a7_b80a:*/ jmp $b822.w
+/*unknown_a7_b80a:*/ jmp @unknown_a7_b822
 /*unknown_a7_b80d:*/ ldx #$00c0.w
 /*unknown_a7_b810:*/ lda #$7fff.w
 /*unknown_a7_b813:*/ sta $0f94.w, X
-/*unknown_a7_b816:*/ jmp $b822.w
+/*unknown_a7_b816:*/ jmp @unknown_a7_b822
 /*unknown_a7_b819:*/ ldx #$0100.w
 /*unknown_a7_b81c:*/ lda #$7fff.w
 /*unknown_a7_b81f:*/ sta $0f94.w, X
-/*unknown_a7_b822:*/ jsr $b96a.w
+@unknown_a7_b822: jsr $b96a.w
 /*unknown_a7_b825:*/ lda $0915.w
 /*unknown_a7_b828:*/ clc
 /*unknown_a7_b829:*/ adc #$00e0.w
@@ -6274,19 +6274,19 @@ unknown_a7_a716:
 /*unknown_a7_b850:*/ adc #$0001.w
 /*unknown_a7_b853:*/ sta $0faa.w, X
 /*unknown_a7_b856:*/ cmp #$0020.w
-/*unknown_a7_b859:*/ bmi $0c ; $b867.w
+/*unknown_a7_b859:*/ bmi @unknown_a7_b867
 /*unknown_a7_b85b:*/ lda #$b868.w
 /*unknown_a7_b85e:*/ sta $0fa8.w, X
 /*unknown_a7_b861:*/ lda #$001e.w
 /*unknown_a7_b864:*/ sta $0fb2.w, X
-/*unknown_a7_b867:*/ rtl
+@unknown_a7_b867: rtl
 
 /*unknown_a7_b868:*/ ldy #$0000.w
 /*unknown_a7_b86b:*/ lda $0fb2.w, X
 /*unknown_a7_b86e:*/ bit #$0001.w
-/*unknown_a7_b871:*/ beq $03 ; $b876.w
+/*unknown_a7_b871:*/ beq @unknown_a7_b876
 /*unknown_a7_b873:*/ ldy #$0e00.w
-/*unknown_a7_b876:*/ tya
+@unknown_a7_b876: tya
 /*unknown_a7_b877:*/ sta $0f96.w, X
 /*unknown_a7_b87a:*/ lda $0f7a.w
 /*unknown_a7_b87d:*/ clc
@@ -6295,12 +6295,12 @@ unknown_a7_a716:
 /*unknown_a7_b882:*/ sbc $0faa.w, X
 /*unknown_a7_b885:*/ sta $0f7a.w, X
 /*unknown_a7_b888:*/ dec $0fb2.w, X
-/*unknown_a7_b88b:*/ bne $0d ; $b89a.w
+/*unknown_a7_b88b:*/ bne @unknown_a7_b89a
 /*unknown_a7_b88d:*/ lda #$b89b.w
 /*unknown_a7_b890:*/ sta $0fa8.w, X
 /*unknown_a7_b893:*/ lda #$001f.w
 /*unknown_a7_b896:*/ jsr $80914d
-/*unknown_a7_b89a:*/ rtl
+@unknown_a7_b89a: rtl
 
 /*unknown_a7_b89b:*/ lda $0f7c.w, X
 /*unknown_a7_b89e:*/ sec
@@ -6310,14 +6310,14 @@ unknown_a7_a716:
 /*unknown_a7_b8a8:*/ sbc $a928.w
 /*unknown_a7_b8ab:*/ sta $0f7a.w, X
 /*unknown_a7_b8ae:*/ cmp #$0038.w
-/*unknown_a7_b8b1:*/ bpl $0b ; $b8be.w
+/*unknown_a7_b8b1:*/ bpl @unknown_a7_b8be
 /*unknown_a7_b8b3:*/ pha
 /*unknown_a7_b8b4:*/ lda $0f86.w, X
 /*unknown_a7_b8b7:*/ ora #$0400.w
 /*unknown_a7_b8ba:*/ sta $0f86.w, X
 /*unknown_a7_b8bd:*/ pla
-/*unknown_a7_b8be:*/ cmp #$0020.w
-/*unknown_a7_b8c1:*/ bpl $1f ; $b8e2.w
+@unknown_a7_b8be: cmp #$0020.w
+/*unknown_a7_b8c1:*/ bpl @unknown_a7_b8e2
 /*unknown_a7_b8c3:*/ lda $0f86.w, X
 /*unknown_a7_b8c6:*/ ora #$0100.w
 /*unknown_a7_b8c9:*/ sta $0f86.w, X
@@ -6328,9 +6328,9 @@ unknown_a7_a716:
 /*unknown_a7_b8d8:*/ lda #$b832.w
 /*unknown_a7_b8db:*/ sta $7e7800, X
 /*unknown_a7_b8df:*/ stz $0faa.w, X
-/*unknown_a7_b8e2:*/ jsr $a0abe7
+@unknown_a7_b8e2: jsr $a0abe7
 /*unknown_a7_b8e6:*/ and #$ffff.w
-/*unknown_a7_b8e9:*/ beq $1b ; $b906.w
+/*unknown_a7_b8e9:*/ beq @unknown_a7_b906
 /*unknown_a7_b8eb:*/ lda $0b56.w
 /*unknown_a7_b8ee:*/ sec
 /*unknown_a7_b8ef:*/ sbc $a926.w
@@ -6338,58 +6338,58 @@ unknown_a7_a716:
 /*unknown_a7_b8f5:*/ lda $0b58.w
 /*unknown_a7_b8f8:*/ sbc $a928.w
 /*unknown_a7_b8fb:*/ cmp #$fff0.w
-/*unknown_a7_b8fe:*/ bpl $03 ; $b903.w
+/*unknown_a7_b8fe:*/ bpl @unknown_a7_b903
 /*unknown_a7_b900:*/ lda #$fff0.w
-/*unknown_a7_b903:*/ sta $0b58.w
-/*unknown_a7_b906:*/ rtl
+@unknown_a7_b903: sta $0b58.w
+@unknown_a7_b906: rtl
 
 /*unknown_a7_b907:*/ lda $0ffa.w
 /*unknown_a7_b90a:*/ cmp #$0100.w
-/*unknown_a7_b90d:*/ bmi $13 ; $b922.w
+/*unknown_a7_b90d:*/ bmi @unknown_a7_b922
 /*unknown_a7_b90f:*/ lda $7e7800, X
 /*unknown_a7_b913:*/ sta $0fa8.w, X
 /*unknown_a7_b916:*/ lda $0f86.w, X
 /*unknown_a7_b919:*/ and #$feff.w
 /*unknown_a7_b91c:*/ and #$fbff.w
 /*unknown_a7_b91f:*/ sta $0f86.w, X
-/*unknown_a7_b922:*/ rtl
+@unknown_a7_b922: rtl
 
 /*unknown_a7_b923:*/ lda $0f7a.w
 /*unknown_a7_b926:*/ sec
 /*unknown_a7_b927:*/ sbc $0f82.w, X
 /*unknown_a7_b92a:*/ sta $0f7a.w, X
-/*unknown_a7_b92d:*/ lda $0fb2.w, X
-/*unknown_a7_b930:*/ beq $0c ; $b93e.w
+@unknown_a7_b92d: lda $0fb2.w, X
+/*unknown_a7_b930:*/ beq @unknown_a7_b93e
 /*unknown_a7_b932:*/ dec $0fb2.w, X
-/*unknown_a7_b935:*/ bne $07 ; $b93e.w
+/*unknown_a7_b935:*/ bne @unknown_a7_b93e
 /*unknown_a7_b937:*/ lda $7e7800, X
 /*unknown_a7_b93b:*/ sta $0fa8.w, X
-/*unknown_a7_b93e:*/ rtl
+@unknown_a7_b93e: rtl
 
 /*unknown_a7_b93f:*/ ldx $0e54.w
 /*unknown_a7_b942:*/ lda $0fb2.w, X
-/*unknown_a7_b945:*/ beq $18 ; $b95f.w
+/*unknown_a7_b945:*/ beq @unknown_a7_b95f
 /*unknown_a7_b947:*/ dec $0fb2.w, X
-/*unknown_a7_b94a:*/ bne $13 ; $b95f.w
+/*unknown_a7_b94a:*/ bne @unknown_a7_b95f
 /*unknown_a7_b94c:*/ lda $7e7800, X
 /*unknown_a7_b950:*/ sta $0fa8.w, X
 /*unknown_a7_b953:*/ lda #$8887.w
 /*unknown_a7_b956:*/ sta $0f92.w, X
 /*unknown_a7_b959:*/ lda #$0001.w
 /*unknown_a7_b95c:*/ sta $0f94.w, X
-/*unknown_a7_b95f:*/ rtl
+@unknown_a7_b95f: rtl
 
 /*unknown_a7_b960:*/ jsr $c005.w
-/*unknown_a7_b963:*/ bra ($c8 - $100) ; $b92d.w
+/*unknown_a7_b963:*/ bra @unknown_a7_b92d
 /*unknown_a7_b965:*/ jsr $af32.w
-/*unknown_a7_b968:*/ bra ($c3 - $100) ; $b92d.w
+/*unknown_a7_b968:*/ bra @unknown_a7_b92d
 /*unknown_a7_b96a:*/ lda $0f86.w, X
 /*unknown_a7_b96d:*/ bit #$0400.w
-/*unknown_a7_b970:*/ beq $01 ; $b973.w
+/*unknown_a7_b970:*/ beq @unknown_a7_b973
 /*unknown_a7_b972:*/ rts
 
-/*unknown_a7_b973:*/ lda $18a8.w
-/*unknown_a7_b976:*/ bne $7d ; $b9f5.w
+@unknown_a7_b973: lda $18a8.w
+/*unknown_a7_b976:*/ bne @unknown_a7_b9f5
 /*unknown_a7_b978:*/ lda $0f7a.w, X
 /*unknown_a7_b97b:*/ clc
 /*unknown_a7_b97c:*/ adc $92b7.w
@@ -6400,12 +6400,12 @@ unknown_a7_a716:
 /*unknown_a7_b988:*/ clc
 /*unknown_a7_b989:*/ adc $0afe.w
 /*unknown_a7_b98c:*/ cmp $12
-/*unknown_a7_b98e:*/ bmi $65 ; $b9f5.w
+/*unknown_a7_b98e:*/ bmi @unknown_a7_b9f5
 /*unknown_a7_b990:*/ lda $0af6.w
 /*unknown_a7_b993:*/ sec
 /*unknown_a7_b994:*/ sbc $0afe.w
 /*unknown_a7_b997:*/ cmp $12
-/*unknown_a7_b999:*/ bpl $5a ; $b9f5.w
+/*unknown_a7_b999:*/ bpl @unknown_a7_b9f5
 /*unknown_a7_b99b:*/ lda $0f7e.w, X
 /*unknown_a7_b99e:*/ clc
 /*unknown_a7_b99f:*/ adc $92b9.w
@@ -6416,7 +6416,7 @@ unknown_a7_a716:
 /*unknown_a7_b9ab:*/ clc
 /*unknown_a7_b9ac:*/ adc $0b00.w
 /*unknown_a7_b9af:*/ cmp $16
-/*unknown_a7_b9b1:*/ bmi $42 ; $b9f5.w
+/*unknown_a7_b9b1:*/ bmi @unknown_a7_b9f5
 /*unknown_a7_b9b3:*/ lda $0f7e.w, X
 /*unknown_a7_b9b6:*/ clc
 /*unknown_a7_b9b7:*/ adc $92bd.w
@@ -6427,7 +6427,7 @@ unknown_a7_a716:
 /*unknown_a7_b9c3:*/ sec
 /*unknown_a7_b9c4:*/ sbc $0b00.w
 /*unknown_a7_b9c7:*/ cmp $18
-/*unknown_a7_b9c9:*/ bpl $2a ; $b9f5.w
+/*unknown_a7_b9c9:*/ bpl @unknown_a7_b9f5
 /*unknown_a7_b9cb:*/ lda $0afe.w
 /*unknown_a7_b9ce:*/ clc
 /*unknown_a7_b9cf:*/ adc #$0010.w
@@ -6435,9 +6435,9 @@ unknown_a7_a716:
 /*unknown_a7_b9d5:*/ clc
 /*unknown_a7_b9d6:*/ adc $0b58.w
 /*unknown_a7_b9d9:*/ cmp #$0010.w
-/*unknown_a7_b9dc:*/ bmi $03 ; $b9e1.w
+/*unknown_a7_b9dc:*/ bmi @unknown_a7_b9e1
 /*unknown_a7_b9de:*/ lda #$0010.w
-/*unknown_a7_b9e1:*/ sta $0b58.w
+@unknown_a7_b9e1: sta $0b58.w
 /*unknown_a7_b9e4:*/ phx
 /*unknown_a7_b9e5:*/ php
 /*unknown_a7_b9e6:*/ jsr $a0a477
@@ -6446,7 +6446,7 @@ unknown_a7_a716:
 /*unknown_a7_b9ec:*/ lda $0f86.w, X
 /*unknown_a7_b9ef:*/ ora #$0400.w
 /*unknown_a7_b9f2:*/ sta $0f86.w, X
-/*unknown_a7_b9f5:*/ rts
+@unknown_a7_b9f5: rts
 
 /*unknown_a7_b9f6:*/ lda $0f7a.w
 /*unknown_a7_b9f9:*/ sta $10ba.w
@@ -6461,13 +6461,13 @@ unknown_a7_a716:
 /*unknown_a7_ba0c:*/ lda $10c6.w
 /*unknown_a7_ba0f:*/ and #$feff.w
 /*unknown_a7_ba12:*/ cpy $0915.w
-/*unknown_a7_ba15:*/ bpl $05 ; $ba1c.w
+/*unknown_a7_ba15:*/ bpl @unknown_a7_ba1c
 /*unknown_a7_ba17:*/ ora #$0100.w
-/*unknown_a7_ba1a:*/ bra $08 ; $ba24.w
-/*unknown_a7_ba1c:*/ cpx $0915.w
-/*unknown_a7_ba1f:*/ bmi $03 ; $ba24.w
+/*unknown_a7_ba1a:*/ bra @unknown_a7_ba24
+@unknown_a7_ba1c: cpx $0915.w
+/*unknown_a7_ba1f:*/ bmi @unknown_a7_ba24
 /*unknown_a7_ba21:*/ ora #$0100.w
-/*unknown_a7_ba24:*/ sta $10c6.w
+@unknown_a7_ba24: sta $10c6.w
 /*unknown_a7_ba27:*/ ldx $0e54.w
 /*unknown_a7_ba2a:*/ jmp ($10e8)
 /*unknown_a7_ba2d:*/ rtl
@@ -6475,41 +6475,41 @@ unknown_a7_a716:
 /*unknown_a7_ba2e:*/ lda $7e7940
 /*unknown_a7_ba32:*/ dec A
 /*unknown_a7_ba33:*/ sta $7e7940
-/*unknown_a7_ba37:*/ bne $43 ; $ba7c.w
+/*unknown_a7_ba37:*/ bne @unknown_a7_ba7c
 /*unknown_a7_ba39:*/ ldx #$0000.w
-/*unknown_a7_ba3c:*/ lda $0f7a.w
+@unknown_a7_ba3c: lda $0f7a.w
 /*unknown_a7_ba3f:*/ cmp $ba7d.w, X
-/*unknown_a7_ba42:*/ beq $0c ; $ba50.w
+/*unknown_a7_ba42:*/ beq @unknown_a7_ba50
 /*unknown_a7_ba44:*/ inx
 /*unknown_a7_ba45:*/ inx
 /*unknown_a7_ba46:*/ inx
 /*unknown_a7_ba47:*/ inx
 /*unknown_a7_ba48:*/ cpx #$0018.w
-/*unknown_a7_ba4b:*/ bmi ($ef - $100) ; $ba3c.w
+/*unknown_a7_ba4b:*/ bmi @unknown_a7_ba3c
 /*unknown_a7_ba4d:*/ ldx #$0004.w
-/*unknown_a7_ba50:*/ lda $05e5.w
+@unknown_a7_ba50: lda $05e5.w
 /*unknown_a7_ba53:*/ and #$001c.w
 /*unknown_a7_ba56:*/ cmp #$0010.w
-/*unknown_a7_ba59:*/ bmi $03 ; $ba5e.w
+/*unknown_a7_ba59:*/ bmi @unknown_a7_ba5e
 /*unknown_a7_ba5b:*/ lda #$0010.w
-/*unknown_a7_ba5e:*/ clc
+@unknown_a7_ba5e: clc
 /*unknown_a7_ba5f:*/ adc $ba7f.w, X
 /*unknown_a7_ba62:*/ tax
 /*unknown_a7_ba63:*/ lda $0002.w, X
 /*unknown_a7_ba66:*/ tay
 /*unknown_a7_ba67:*/ lda $0000.w, X
 /*unknown_a7_ba6a:*/ cmp $0f7a.w
-/*unknown_a7_ba6d:*/ bpl $07 ; $ba76.w
+/*unknown_a7_ba6d:*/ bpl @unknown_a7_ba76
 /*unknown_a7_ba6f:*/ lda $0000.w, X
 /*unknown_a7_ba72:*/ jsr $bb29.w
 /*unknown_a7_ba75:*/ rtl
 
-/*unknown_a7_ba76:*/ lda $0000.w, X
+@unknown_a7_ba76: lda $0000.w, X
 /*unknown_a7_ba79:*/ jsr $bb0d.w
-/*unknown_a7_ba7c:*/ rtl
+@unknown_a7_ba7c: rtl
 
-/*unknown_a7_ba7d:*/ beq $00 ; $ba7f.w
-/*unknown_a7_ba7f:*/ sta $ba, X
+/*unknown_a7_ba7d:*/ beq @unknown_a7_ba7f
+@unknown_a7_ba7f: sta $ba, X
 /*unknown_a7_ba81:*/ rts
 
 /*unknown_a7_ba82:*/ ora ($a9, X)
@@ -6608,28 +6608,28 @@ unknown_a7_a716:
 
 /*unknown_a7_bb45:*/ lda $7e781e
 /*unknown_a7_bb49:*/ cmp $0f7a.w
-/*unknown_a7_bb4c:*/ beq $05 ; $bb53.w
-/*unknown_a7_bb4e:*/ bpl $1d ; $bb6d.w
+/*unknown_a7_bb4c:*/ beq @unknown_a7_bb53
+/*unknown_a7_bb4e:*/ bpl @unknown_a7_bb6d
 /*unknown_a7_bb50:*/ sta $0f7a.w
-/*unknown_a7_bb53:*/ lda $10d2.w
+@unknown_a7_bb53: lda $10d2.w
 /*unknown_a7_bb56:*/ cmp #$8939.w
-/*unknown_a7_bb59:*/ bmi $12 ; $bb6d.w
+/*unknown_a7_bb59:*/ bmi @unknown_a7_bb6d
 /*unknown_a7_bb5b:*/ lda #$ba2e.w
 /*unknown_a7_bb5e:*/ sta $10e8.w
 /*unknown_a7_bb61:*/ lda #$0001.w
 /*unknown_a7_bb64:*/ sta $10d4.w
 /*unknown_a7_bb67:*/ lda #$86ed.w
 /*unknown_a7_bb6a:*/ sta $10d2.w
-/*unknown_a7_bb6d:*/ rtl
+@unknown_a7_bb6d: rtl
 
 /*unknown_a7_bb6e:*/ lda $7e781e
 /*unknown_a7_bb72:*/ cmp $0f7a.w
-/*unknown_a7_bb75:*/ beq $05 ; $bb7c.w
-/*unknown_a7_bb77:*/ bpl $2a ; $bba3.w
+/*unknown_a7_bb75:*/ beq @unknown_a7_bb7c
+/*unknown_a7_bb77:*/ bpl @unknown_a7_bba3
 /*unknown_a7_bb79:*/ sta $0f7a.w
-/*unknown_a7_bb7c:*/ lda $10d2.w
+@unknown_a7_bb7c: lda $10d2.w
 /*unknown_a7_bb7f:*/ cmp #$8939.w
-/*unknown_a7_bb82:*/ bmi $1f ; $bba3.w
+/*unknown_a7_bb82:*/ bmi @unknown_a7_bba3
 /*unknown_a7_bb84:*/ lda #$b92d.w
 /*unknown_a7_bb87:*/ sta $10e8.w
 /*unknown_a7_bb8a:*/ lda #$00b4.w
@@ -6640,7 +6640,7 @@ unknown_a7_a716:
 /*unknown_a7_bb9a:*/ sta $10d4.w
 /*unknown_a7_bb9d:*/ lda #$86ed.w
 /*unknown_a7_bba0:*/ sta $10d2.w
-/*unknown_a7_bba3:*/ rtl
+@unknown_a7_bba3: rtl
 
 /*unknown_a7_bba4:*/ lda #$0160.w
 /*unknown_a7_bba7:*/ ldy #$00b4.w
@@ -6649,22 +6649,22 @@ unknown_a7_a716:
 
 /*unknown_a7_bbae:*/ lda $7e781e
 /*unknown_a7_bbb2:*/ cmp $0f7a.w
-/*unknown_a7_bbb5:*/ bmi $1e ; $bbd5.w
+/*unknown_a7_bbb5:*/ bmi @unknown_a7_bbd5
 /*unknown_a7_bbb7:*/ sta $0f7a.w
 /*unknown_a7_bbba:*/ lda $10d2.w
 /*unknown_a7_bbbd:*/ cmp #$87bb.w
-/*unknown_a7_bbc0:*/ bne $12 ; $bbd4.w
+/*unknown_a7_bbc0:*/ bne @unknown_a7_bbd4
 /*unknown_a7_bbc2:*/ lda #$ba2e.w
 /*unknown_a7_bbc5:*/ sta $10e8.w
 /*unknown_a7_bbc8:*/ lda #$0001.w
 /*unknown_a7_bbcb:*/ sta $10d4.w
 /*unknown_a7_bbce:*/ lda #$86ed.w
 /*unknown_a7_bbd1:*/ sta $10d2.w
-/*unknown_a7_bbd4:*/ rtl
+@unknown_a7_bbd4: rtl
 
-/*unknown_a7_bbd5:*/ lda $10d2.w
+@unknown_a7_bbd5: lda $10d2.w
 /*unknown_a7_bbd8:*/ cmp #$87bb.w
-/*unknown_a7_bbdb:*/ bne ($f7 - $100) ; $bbd4.w
+/*unknown_a7_bbdb:*/ bne @unknown_a7_bbd4
 /*unknown_a7_bbdd:*/ lda #$86f3.w
 /*unknown_a7_bbe0:*/ sta $10d2.w
 /*unknown_a7_bbe3:*/ lda #$0001.w
@@ -6673,17 +6673,17 @@ unknown_a7_a716:
 
 /*unknown_a7_bbea:*/ jsr $af32.w
 /*unknown_a7_bbed:*/ cmp #$ffff.w
-/*unknown_a7_bbf0:*/ beq $31 ; $bc23.w
+/*unknown_a7_bbf0:*/ beq @unknown_a7_bc23
 /*unknown_a7_bbf2:*/ lda $0faa.w
 /*unknown_a7_bbf5:*/ sec
 /*unknown_a7_bbf6:*/ sbc #$0008.w
 /*unknown_a7_bbf9:*/ tax
 /*unknown_a7_bbfa:*/ lda $0002.w, X
 /*unknown_a7_bbfd:*/ cmp #$a0c8.w
-/*unknown_a7_bc00:*/ bne $20 ; $bc22.w
+/*unknown_a7_bc00:*/ bne @unknown_a7_bc22
 /*unknown_a7_bc02:*/ lda $0fac.w
 /*unknown_a7_bc05:*/ and #$000f.w
-/*unknown_a7_bc08:*/ bne $18 ; $bc22.w
+/*unknown_a7_bc08:*/ bne @unknown_a7_bc22
 /*unknown_a7_bc0a:*/ ldy #$9c45.w
 /*unknown_a7_bc0d:*/ lda $05e5.w
 /*unknown_a7_bc10:*/ and #$000e.w
@@ -6692,20 +6692,20 @@ unknown_a7_a716:
 /*unknown_a7_bc17:*/ jsr $868027
 /*unknown_a7_bc1b:*/ lda #$001e.w
 /*unknown_a7_bc1e:*/ jsr $80914d
-/*unknown_a7_bc22:*/ rtl
+@unknown_a7_bc22: rtl
 
-/*unknown_a7_bc23:*/ jsr $ade9.w
+@unknown_a7_bc23: jsr $ade9.w
 /*unknown_a7_bc26:*/ lda #$005a.w
 /*unknown_a7_bc29:*/ sta $0fac.w
 /*unknown_a7_bc2c:*/ lda $7e780a
 /*unknown_a7_bc30:*/ bit #$0004.w
-/*unknown_a7_bc33:*/ beq $28 ; $bc5d.w
+/*unknown_a7_bc33:*/ beq @unknown_a7_bc5d
 /*unknown_a7_bc35:*/ sec
 /*unknown_a7_bc36:*/ sbc #$0100.w
 /*unknown_a7_bc39:*/ sta $7e780a
 /*unknown_a7_bc3d:*/ and #$ff00.w
-/*unknown_a7_bc40:*/ beq $1b ; $bc5d.w
-/*unknown_a7_bc42:*/ lda #$b92d.w
+/*unknown_a7_bc40:*/ beq @unknown_a7_bc5d
+@unknown_a7_bc42: lda #$b92d.w
 /*unknown_a7_bc45:*/ sta $0fa8.w
 /*unknown_a7_bc48:*/ lda #$0040.w
 /*unknown_a7_bc4b:*/ sta $0fb2.w
@@ -6715,44 +6715,44 @@ unknown_a7_a716:
 /*unknown_a7_bc58:*/ sta $7e7802
 /*unknown_a7_bc5c:*/ rtl
 
-/*unknown_a7_bc5d:*/ lda #$0000.w
+@unknown_a7_bc5d: lda #$0000.w
 /*unknown_a7_bc60:*/ sta $7e780a
 /*unknown_a7_bc64:*/ rtl
 
 /*unknown_a7_bc65:*/ brk $fc
 /*unknown_a7_bc67:*/ rti
 
-/*unknown_a7_bc68:*/ jsr ($fb40.w, X)
-/*unknown_a7_bc6b:*/ bra ($fb - $100) ; $bc68.w
+@unknown_a7_bc68: jsr ($fb40.w, X)
+/*unknown_a7_bc6b:*/ bra @unknown_a7_bc68
 /*unknown_a7_bc6d:*/ rti
 
-/*unknown_a7_bc6e:*/ xce
+@unknown_a7_bc6e: xce
 /*unknown_a7_bc6f:*/ brk $fc
-/*unknown_a7_bc71:*/ bra ($fb - $100) ; $bc6e.w
+/*unknown_a7_bc71:*/ bra @unknown_a7_bc6e
 /*unknown_a7_bc73:*/ rti
 
 /*unknown_a7_bc74:*/ jsr ($d2ad.w, X)
-/*unknown_a7_bc77:*/ bpl ($c9 - $100) ; $bc42.w
+/*unknown_a7_bc77:*/ bpl @unknown_a7_bc42
 /*unknown_a7_bc79:*/ sta $88
-/*unknown_a7_bc7b:*/ bmi $2a ; $bca7.w
+/*unknown_a7_bc7b:*/ bmi @unknown_a7_bca7
 /*unknown_a7_bc7d:*/ lda $18a8.w
-/*unknown_a7_bc80:*/ beq $26 ; $bca8.w
+/*unknown_a7_bc80:*/ beq @unknown_a7_bca8
 /*unknown_a7_bc82:*/ lda #$bb45.w
 /*unknown_a7_bc85:*/ sta $10e8.w
 /*unknown_a7_bc88:*/ lda $0911.w
 /*unknown_a7_bc8b:*/ clc
 /*unknown_a7_bc8c:*/ adc #$0120.w
 /*unknown_a7_bc8f:*/ cmp #$0120.w
-/*unknown_a7_bc92:*/ bmi $03 ; $bc97.w
+/*unknown_a7_bc92:*/ bmi @unknown_a7_bc97
 /*unknown_a7_bc94:*/ lda #$0120.w
-/*unknown_a7_bc97:*/ sta $7e781e
+@unknown_a7_bc97: sta $7e781e
 /*unknown_a7_bc9b:*/ lda #$0001.w
 /*unknown_a7_bc9e:*/ sta $10d4.w
 /*unknown_a7_bca1:*/ lda #$8887.w
 /*unknown_a7_bca4:*/ sta $10d2.w
-/*unknown_a7_bca7:*/ rtl
+@unknown_a7_bca7: rtl
 
-/*unknown_a7_bca8:*/ lda #$0001.w
+@unknown_a7_bca8: lda #$0001.w
 /*unknown_a7_bcab:*/ sta $10d4.w
 /*unknown_a7_bcae:*/ lda #$87bd.w
 /*unknown_a7_bcb1:*/ sta $10d2.w
@@ -6785,7 +6785,7 @@ unknown_a7_a716:
 /*unknown_a7_bcee:*/ rtl
 
 /*unknown_a7_bcef:*/ ldx $0e54.w
-/*unknown_a7_bcf2:*/ lda $0f96.w
+@unknown_a7_bcf2: lda $0f96.w
 /*unknown_a7_bcf5:*/ sta $0f96.w, X
 /*unknown_a7_bcf8:*/ lda #$0028.w
 /*unknown_a7_bcfb:*/ sta $0faa.w, X
@@ -6807,13 +6807,13 @@ unknown_a7_a716:
 /*unknown_a7_bd2c:*/ rtl
 
 /*unknown_a7_bd2d:*/ ldx $0e54.w
-/*unknown_a7_bd30:*/ bra ($c0 - $100) ; $bcf2.w
+/*unknown_a7_bd30:*/ bra @unknown_a7_bcf2
 /*unknown_a7_bd32:*/ rep #$30
 /*unknown_a7_bd34:*/ lda $0f8c.w
 /*unknown_a7_bd37:*/ cmp #$0001.w
-/*unknown_a7_bd3a:*/ bmi $03 ; $bd3f.w
+/*unknown_a7_bd3a:*/ bmi @unknown_a7_bd3f
 /*unknown_a7_bd3c:*/ jmp ($1128)
-/*unknown_a7_bd3f:*/ lda $1106.w
+@unknown_a7_bd3f: lda $1106.w
 /*unknown_a7_bd42:*/ ora #$0300.w
 /*unknown_a7_bd45:*/ sta $1106.w
 /*unknown_a7_bd48:*/ rtl
@@ -6821,9 +6821,9 @@ unknown_a7_a716:
 /*unknown_a7_bd49:*/ rep #$30
 /*unknown_a7_bd4b:*/ lda $0f8c.w
 /*unknown_a7_bd4e:*/ cmp #$0001.w
-/*unknown_a7_bd51:*/ bmi $03 ; $bd56.w
+/*unknown_a7_bd51:*/ bmi @unknown_a7_bd56
 /*unknown_a7_bd53:*/ jmp ($1168)
-/*unknown_a7_bd56:*/ lda $1146.w
+@unknown_a7_bd56: lda $1146.w
 /*unknown_a7_bd59:*/ ora #$0300.w
 /*unknown_a7_bd5c:*/ sta $1146.w
 /*unknown_a7_bd5f:*/ rtl
@@ -6834,14 +6834,14 @@ unknown_a7_a716:
 /*unknown_a7_bd67:*/ lda $1130.w
 /*unknown_a7_bd6a:*/ ldx $0e54.w
 /*unknown_a7_bd6d:*/ cpx #$0180.w
-/*unknown_a7_bd70:*/ bne $03 ; $bd75.w
+/*unknown_a7_bd70:*/ bne @unknown_a7_bd75
 /*unknown_a7_bd72:*/ lda $1170.w
-/*unknown_a7_bd75:*/ cmp #$0000.w
-/*unknown_a7_bd78:*/ bpl $05 ; $bd7f.w
+@unknown_a7_bd75: cmp #$0000.w
+/*unknown_a7_bd78:*/ bpl @unknown_a7_bd7f
 /*unknown_a7_bd7a:*/ lda $be3e.w, Y
-/*unknown_a7_bd7d:*/ bra $03 ; $bd82.w
-/*unknown_a7_bd7f:*/ lda $be46.w, Y
-/*unknown_a7_bd82:*/ tay
+/*unknown_a7_bd7d:*/ bra @unknown_a7_bd82
+@unknown_a7_bd7f: lda $be46.w, Y
+@unknown_a7_bd82: tay
 /*unknown_a7_bd83:*/ lda $0000.w, Y
 /*unknown_a7_bd86:*/ sta $0faa.w, X
 /*unknown_a7_bd89:*/ lda $0002.w, Y
@@ -6864,8 +6864,8 @@ unknown_a7_a716:
 /*unknown_a7_bdbc:*/ sta $0fa8.w, X
 /*unknown_a7_bdbf:*/ lda $05e5.w
 /*unknown_a7_bdc2:*/ bit #$0001.w
-/*unknown_a7_bdc5:*/ bne $23 ; $bdea.w
-/*unknown_a7_bdc7:*/ lda #$0000.w
+/*unknown_a7_bdc5:*/ bne @unknown_a7_bdea
+@unknown_a7_bdc7: lda #$0000.w
 /*unknown_a7_bdca:*/ sta $7e780e, X
 /*unknown_a7_bdce:*/ lda $0f7a.w
 /*unknown_a7_bdd1:*/ sec
@@ -6880,12 +6880,12 @@ unknown_a7_a716:
 /*unknown_a7_bde6:*/ sta $0f7e.w, X
 /*unknown_a7_bde9:*/ rtl
 
-/*unknown_a7_bdea:*/ lda $7e798e
+@unknown_a7_bdea: lda $7e798e
 /*unknown_a7_bdee:*/ cpx #$01c0.w
-/*unknown_a7_bdf1:*/ beq $04 ; $bdf7.w
+/*unknown_a7_bdf1:*/ beq @unknown_a7_bdf7
 /*unknown_a7_bdf3:*/ lda $7e79ce
-/*unknown_a7_bdf7:*/ cmp #$0001.w
-/*unknown_a7_bdfa:*/ beq ($cb - $100) ; $bdc7.w
+@unknown_a7_bdf7: cmp #$0001.w
+/*unknown_a7_bdfa:*/ beq @unknown_a7_bdc7
 /*unknown_a7_bdfc:*/ lda #$0001.w
 /*unknown_a7_bdff:*/ sta $7e780e, X
 /*unknown_a7_be03:*/ lda #$0032.w
@@ -6941,7 +6941,7 @@ unknown_a7_a716:
 /*unknown_a7_be97:*/ trb $22
 /*unknown_a7_be99:*/ plb
 /*unknown_a7_be9a:*/ dec $a0
-/*unknown_a7_be9c:*/ bcc $16 ; $beb4.w
+/*unknown_a7_be9c:*/ bcc @unknown_a7_beb4
 /*unknown_a7_be9e:*/ lda $0faa.w, X
 /*unknown_a7_bea1:*/ eor #$ffff.w
 /*unknown_a7_bea4:*/ inc A
@@ -6950,19 +6950,19 @@ unknown_a7_a716:
 /*unknown_a7_beab:*/ eor #$ffff.w
 /*unknown_a7_beae:*/ inc A
 /*unknown_a7_beaf:*/ sta $0fac.w, X
-/*unknown_a7_beb2:*/ bra $42 ; $bef6.w
-/*unknown_a7_beb4:*/ ldy #$0000.w
-/*unknown_a7_beb7:*/ lda $0f7e.w
+/*unknown_a7_beb2:*/ bra @unknown_a7_bef6
+@unknown_a7_beb4: ldy #$0000.w
+@unknown_a7_beb7: lda $0f7e.w
 /*unknown_a7_beba:*/ clc
 /*unknown_a7_bebb:*/ adc $bf1f.w, Y
 /*unknown_a7_bebe:*/ cmp $0f7e.w, X
-/*unknown_a7_bec1:*/ bmi $06 ; $bec9.w
+/*unknown_a7_bec1:*/ bmi @unknown_a7_bec9
 /*unknown_a7_bec3:*/ iny
 /*unknown_a7_bec4:*/ iny
 /*unknown_a7_bec5:*/ iny
 /*unknown_a7_bec6:*/ iny
-/*unknown_a7_bec7:*/ bra ($ee - $100) ; $beb7.w
-/*unknown_a7_bec9:*/ lda $0f7a.w
+/*unknown_a7_bec7:*/ bra @unknown_a7_beb7
+@unknown_a7_bec9: lda $0f7a.w
 /*unknown_a7_becc:*/ clc
 /*unknown_a7_becd:*/ adc $bf1d.w, Y
 /*unknown_a7_bed0:*/ sta $12
@@ -6970,9 +6970,9 @@ unknown_a7_a716:
 /*unknown_a7_bed5:*/ clc
 /*unknown_a7_bed6:*/ adc $0f82.w, X
 /*unknown_a7_bed9:*/ cmp $12
-/*unknown_a7_bedb:*/ bmi $19 ; $bef6.w
+/*unknown_a7_bedb:*/ bmi @unknown_a7_bef6
 /*unknown_a7_bedd:*/ lda $0fac.w, X
-/*unknown_a7_bee0:*/ bmi $14 ; $bef6.w
+/*unknown_a7_bee0:*/ bmi @unknown_a7_bef6
 /*unknown_a7_bee2:*/ lda $0faa.w, X
 /*unknown_a7_bee5:*/ eor #$ffff.w
 /*unknown_a7_bee8:*/ inc A
@@ -6981,12 +6981,12 @@ unknown_a7_a716:
 /*unknown_a7_beef:*/ eor #$ffff.w
 /*unknown_a7_bef2:*/ inc A
 /*unknown_a7_bef3:*/ sta $0fac.w, X
-/*unknown_a7_bef6:*/ lda $0fae.w, X
+@unknown_a7_bef6: lda $0fae.w, X
 /*unknown_a7_bef9:*/ sta $12
 /*unknown_a7_befb:*/ lda $0fb0.w, X
 /*unknown_a7_befe:*/ sta $14
 /*unknown_a7_bf00:*/ jsr $a0c786
-/*unknown_a7_bf04:*/ bcc $16 ; $bf1c.w
+/*unknown_a7_bf04:*/ bcc @unknown_a7_bf1c
 /*unknown_a7_bf06:*/ lda $0fae.w, X
 /*unknown_a7_bf09:*/ eor #$ffff.w
 /*unknown_a7_bf0c:*/ inc A
@@ -6995,7 +6995,7 @@ unknown_a7_a716:
 /*unknown_a7_bf13:*/ eor #$ffff.w
 /*unknown_a7_bf16:*/ adc #$0000.w
 /*unknown_a7_bf19:*/ sta $0fb0.w, X
-/*unknown_a7_bf1c:*/ rtl
+@unknown_a7_bf1c: rtl
 
 /*unknown_a7_bf1d:*/ cpy #$10ff.w
 /*unknown_a7_bf20:*/ brk $d8
@@ -7005,7 +7005,7 @@ unknown_a7_a716:
 /*unknown_a7_bf2c:*/ sbc $c00520, X
 /*unknown_a7_bf30:*/ lda $0fd2.w
 /*unknown_a7_bf33:*/ cmp #$8a37.w
-/*unknown_a7_bf36:*/ bmi $24 ; $bf5c.w
+/*unknown_a7_bf36:*/ bmi @unknown_a7_bf5c
 /*unknown_a7_bf38:*/ lda #$8af0.w
 /*unknown_a7_bf3b:*/ sta $0fd2.w
 /*unknown_a7_bf3e:*/ lda #$0001.w
@@ -7018,27 +7018,27 @@ unknown_a7_a716:
 /*unknown_a7_bf53:*/ sta $10e8.w
 /*unknown_a7_bf56:*/ lda #$0000.w
 /*unknown_a7_bf59:*/ sta $10f2.w
-/*unknown_a7_bf5c:*/ rtl
+@unknown_a7_bf5c: rtl
 
 /*unknown_a7_bf5d:*/ jsr $c005.w
 /*unknown_a7_bf60:*/ lda $0f7a.w
 /*unknown_a7_bf63:*/ cmp #$005c.w
-/*unknown_a7_bf66:*/ bpl $06 ; $bf6e.w
+/*unknown_a7_bf66:*/ bpl @unknown_a7_bf6e
 /*unknown_a7_bf68:*/ lda #$005c.w
 /*unknown_a7_bf6b:*/ sta $0f7a.w
-/*unknown_a7_bf6e:*/ lda $10d2.w
+@unknown_a7_bf6e: lda $10d2.w
 /*unknown_a7_bf71:*/ cmp #$8885.w
-/*unknown_a7_bf74:*/ bne $34 ; $bfaa.w
+/*unknown_a7_bf74:*/ bne @unknown_a7_bfaa
 /*unknown_a7_bf76:*/ lda $0f7a.w
 /*unknown_a7_bf79:*/ cmp #$005c.w
-/*unknown_a7_bf7c:*/ beq $0d ; $bf8b.w
+/*unknown_a7_bf7c:*/ beq @unknown_a7_bf8b
 /*unknown_a7_bf7e:*/ lda #$0001.w
 /*unknown_a7_bf81:*/ sta $10d4.w
 /*unknown_a7_bf84:*/ lda #$87bd.w
 /*unknown_a7_bf87:*/ sta $10d2.w
 /*unknown_a7_bf8a:*/ rtl
 
-/*unknown_a7_bf8b:*/ lda #$bfab.w
+@unknown_a7_bf8b: lda #$bfab.w
 /*unknown_a7_bf8e:*/ sta $7e7940
 /*unknown_a7_bf92:*/ lda #$b93f.w
 /*unknown_a7_bf95:*/ sta $10e8.w
@@ -7048,27 +7048,27 @@ unknown_a7_a716:
 /*unknown_a7_bfa1:*/ sta $10d4.w
 /*unknown_a7_bfa4:*/ lda #$86ed.w
 /*unknown_a7_bfa7:*/ sta $10d2.w
-/*unknown_a7_bfaa:*/ rtl
+@unknown_a7_bfaa: rtl
 
 /*unknown_a7_bfab:*/ jsr $c005.w
 /*unknown_a7_bfae:*/ lda $0f7a.w
 /*unknown_a7_bfb1:*/ cmp #$00b0.w
-/*unknown_a7_bfb4:*/ bmi $06 ; $bfbc.w
+/*unknown_a7_bfb4:*/ bmi @unknown_a7_bfbc
 /*unknown_a7_bfb6:*/ lda #$00b0.w
 /*unknown_a7_bfb9:*/ sta $0f7a.w
-/*unknown_a7_bfbc:*/ lda $10d2.w
+@unknown_a7_bfbc: lda $10d2.w
 /*unknown_a7_bfbf:*/ cmp #$8939.w
-/*unknown_a7_bfc2:*/ bmi $40 ; $c004.w
+/*unknown_a7_bfc2:*/ bmi @unknown_a7_c004
 /*unknown_a7_bfc4:*/ lda $0f7a.w
 /*unknown_a7_bfc7:*/ cmp #$00b0.w
-/*unknown_a7_bfca:*/ beq $0d ; $bfd9.w
+/*unknown_a7_bfca:*/ beq @unknown_a7_bfd9
 /*unknown_a7_bfcc:*/ lda #$8887.w
 /*unknown_a7_bfcf:*/ sta $0f92.w, X
 /*unknown_a7_bfd2:*/ lda #$0001.w
 /*unknown_a7_bfd5:*/ sta $0f94.w, X
 /*unknown_a7_bfd8:*/ rtl
 
-/*unknown_a7_bfd9:*/ lda #$89f3.w
+@unknown_a7_bfd9: lda #$89f3.w
 /*unknown_a7_bfdc:*/ sta $0fd2.w
 /*unknown_a7_bfdf:*/ lda #$0001.w
 /*unknown_a7_bfe2:*/ sta $0fd4.w
@@ -7082,14 +7082,14 @@ unknown_a7_a716:
 /*unknown_a7_bffa:*/ sta $10f2.w
 /*unknown_a7_bffd:*/ lda #$bf2d.w
 /*unknown_a7_c000:*/ sta $7e7940
-/*unknown_a7_c004:*/ rtl
+@unknown_a7_c004: rtl
 
 /*unknown_a7_c005:*/ lda $0f8c.w
 /*unknown_a7_c008:*/ cmp $7e7818
-/*unknown_a7_c00c:*/ bmi $01 ; $c00f.w
+/*unknown_a7_c00c:*/ bmi @unknown_a7_c00f
 /*unknown_a7_c00e:*/ rts
 
-/*unknown_a7_c00f:*/ lda #$b965.w
+@unknown_a7_c00f: lda #$b965.w
 /*unknown_a7_c012:*/ sta $0fa8.w
 /*unknown_a7_c015:*/ lda #$00b4.w
 /*unknown_a7_c018:*/ sta $0fb2.w
@@ -7100,15 +7100,15 @@ unknown_a7_a716:
 /*unknown_a7_c026:*/ lda $0002.w, X
 /*unknown_a7_c029:*/ ldy #$0032.w
 /*unknown_a7_c02c:*/ cmp #$97c8.w
-/*unknown_a7_c02f:*/ beq $13 ; $c044.w
+/*unknown_a7_c02f:*/ beq @unknown_a7_c044
 /*unknown_a7_c031:*/ ldy #$002a.w
 /*unknown_a7_c034:*/ cmp #$9ac8.w
-/*unknown_a7_c037:*/ beq $0b ; $c044.w
+/*unknown_a7_c037:*/ beq @unknown_a7_c044
 /*unknown_a7_c039:*/ ldy #$0022.w
 /*unknown_a7_c03c:*/ cmp #$9dc8.w
-/*unknown_a7_c03f:*/ beq $03 ; $c044.w
+/*unknown_a7_c03f:*/ beq @unknown_a7_c044
 /*unknown_a7_c041:*/ ldy #$001a.w
-/*unknown_a7_c044:*/ tya
+@unknown_a7_c044: tya
 /*unknown_a7_c045:*/ clc
 /*unknown_a7_c046:*/ adc #$96da.w
 /*unknown_a7_c049:*/ sta $0faa.w
@@ -7353,7 +7353,7 @@ das: .dw $800
 
 /*unknown_a7_c246:*/ lda #$02
 /*unknown_a7_c248:*/ sta $420b.w
-/*unknown_a7_c24b:*/ jmp $c278.w
+/*unknown_a7_c24b:*/ jmp @unknown_a7_c278
 /*unknown_a7_c24e:*/ php
 /*unknown_a7_c24f:*/ sep #$20
 /*unknown_a7_c251:*/ jsr $80836f
@@ -7376,7 +7376,7 @@ das: .dw $400
 
 /*unknown_a7_c273:*/ lda #$02
 /*unknown_a7_c275:*/ sta $420b.w
-/*unknown_a7_c278:*/ lda #$00
+@unknown_a7_c278: lda #$00
 /*unknown_a7_c27a:*/ sta $2116.w
 /*unknown_a7_c27d:*/ lda $59
 /*unknown_a7_c27f:*/ and #$fc
@@ -7426,16 +7426,16 @@ das: .dw $400
 /*unknown_a7_c2ce:*/ plb
 /*unknown_a7_c2cf:*/ lda $0f7e.w
 /*unknown_a7_c2d2:*/ cmp $c5e7.w
-/*unknown_a7_c2d5:*/ bmi $47 ; $c31e.w
+/*unknown_a7_c2d5:*/ bmi @unknown_a7_c31e
 /*unknown_a7_c2d7:*/ ldy #$0000.w
 /*unknown_a7_c2da:*/ ldx $0330.w
-/*unknown_a7_c2dd:*/ rep #$30
+@unknown_a7_c2dd: rep #$30
 /*unknown_a7_c2df:*/ lda $c5e7.w, Y
 /*unknown_a7_c2e2:*/ cmp #$ffff.w
-/*unknown_a7_c2e5:*/ beq $37 ; $c31e.w
+/*unknown_a7_c2e5:*/ beq @unknown_a7_c31e
 /*unknown_a7_c2e7:*/ lda $0f7e.w
 /*unknown_a7_c2ea:*/ cmp $c5e7.w, Y
-/*unknown_a7_c2ed:*/ bmi $2f ; $c31e.w
+/*unknown_a7_c2ed:*/ bmi @unknown_a7_c31e
 /*unknown_a7_c2ef:*/ lda #$0040.w
 /*unknown_a7_c2f2:*/ sta $d0, X
 /*unknown_a7_c2f4:*/ lda #$2fc0.w
@@ -7457,8 +7457,8 @@ das: .dw $400
 /*unknown_a7_c317:*/ clc
 /*unknown_a7_c318:*/ adc #$0006.w
 /*unknown_a7_c31b:*/ tay
-/*unknown_a7_c31c:*/ bra ($bf - $100) ; $c2dd.w
-/*unknown_a7_c31e:*/ plb
+/*unknown_a7_c31c:*/ bra @unknown_a7_c2dd
+@unknown_a7_c31e: plb
 /*unknown_a7_c31f:*/ jsr $80836f
 /*unknown_a7_c323:*/ plp
 /*unknown_a7_c324:*/ rtl
@@ -7490,22 +7490,22 @@ das: .dw $400
 /*unknown_a7_c35f:*/ rtl
 
 /*unknown_a7_c360:*/ lda $7e782a
-/*unknown_a7_c364:*/ beq $01 ; $c367.w
+/*unknown_a7_c364:*/ beq @unknown_a7_c367
 /*unknown_a7_c366:*/ rtl
 
-/*unknown_a7_c367:*/ ldx #$00c0.w
+@unknown_a7_c367: ldx #$00c0.w
 /*unknown_a7_c36a:*/ lda #$0000.w
-/*unknown_a7_c36d:*/ sta $7ec200, X
+@unknown_a7_c36d: sta $7ec200, X
 /*unknown_a7_c371:*/ inx
 /*unknown_a7_c372:*/ inx
 /*unknown_a7_c373:*/ cpx #$00e0.w
-/*unknown_a7_c376:*/ bmi ($f5 - $100) ; $c36d.w
+/*unknown_a7_c376:*/ bmi @unknown_a7_c36d
 /*unknown_a7_c378:*/ ldx #$001e.w
-/*unknown_a7_c37b:*/ lda $b4f3.w, X
+@unknown_a7_c37b: lda $b4f3.w, X
 /*unknown_a7_c37e:*/ sta $7ec0e0, X
 /*unknown_a7_c382:*/ dex
 /*unknown_a7_c383:*/ dex
-/*unknown_a7_c384:*/ bpl ($f5 - $100) ; $c37b.w
+/*unknown_a7_c384:*/ bpl @unknown_a7_c37b
 /*unknown_a7_c386:*/ lda #$8af0.w
 /*unknown_a7_c389:*/ sta $0fd2.w
 /*unknown_a7_c38c:*/ lda #$0001.w
@@ -7546,7 +7546,7 @@ das: .dw $400
 /*unknown_a7_c3f6:*/ lda $206bb7, X
 /*unknown_a7_c3fa:*/ and ($af)
 /*unknown_a7_c3fc:*/ jsr $82d96c
-/*unknown_a7_c400:*/ bcc $54 ; $c456.w
+/*unknown_a7_c400:*/ bcc @unknown_a7_c456
 /*unknown_a7_c402:*/ lda #$c4a4.w
 /*unknown_a7_c405:*/ sta $0fa8.w
 /*unknown_a7_c408:*/ lda #$0001.w
@@ -7555,14 +7555,14 @@ das: .dw $400
 /*unknown_a7_c413:*/ jsr $b337.w
 /*unknown_a7_c416:*/ ldx #$0000.w
 /*unknown_a7_c419:*/ lda #$0000.w
-/*unknown_a7_c41c:*/ sta $7e4000, X
+@unknown_a7_c41c: sta $7e4000, X
 /*unknown_a7_c420:*/ sta $7e4002, X
 /*unknown_a7_c424:*/ inx
 /*unknown_a7_c425:*/ inx
 /*unknown_a7_c426:*/ inx
 /*unknown_a7_c427:*/ inx
 /*unknown_a7_c428:*/ cpx #$0200.w
-/*unknown_a7_c42b:*/ bmi ($ef - $100) ; $c41c.w
+/*unknown_a7_c42b:*/ bmi @unknown_a7_c41c
 /*unknown_a7_c42d:*/ ldx $0330.w
 /*unknown_a7_c430:*/ lda #$0200.w
 /*unknown_a7_c433:*/ sta $d0, X
@@ -7582,20 +7582,20 @@ das: .dw $400
 /*unknown_a7_c44f:*/ clc
 /*unknown_a7_c450:*/ adc #$0007.w
 /*unknown_a7_c453:*/ sta $0330.w
-/*unknown_a7_c456:*/ rtl
+@unknown_a7_c456: rtl
 
 /*unknown_a7_c457:*/ lda $0fac.w
-/*unknown_a7_c45a:*/ beq $47 ; $c4a3.w
+/*unknown_a7_c45a:*/ beq @unknown_a7_c4a3
 /*unknown_a7_c45c:*/ dec $0fac.w
-/*unknown_a7_c45f:*/ bne $42 ; $c4a3.w
+/*unknown_a7_c45f:*/ bne @unknown_a7_c4a3
 /*unknown_a7_c461:*/ ldx $0faa.w
 /*unknown_a7_c464:*/ lda $0000.w, X
-/*unknown_a7_c467:*/ bpl $07 ; $c470.w
+/*unknown_a7_c467:*/ bpl @unknown_a7_c470
 /*unknown_a7_c469:*/ lda #$0000.w
 /*unknown_a7_c46c:*/ sta $0fac.w
 /*unknown_a7_c46f:*/ rts
 
-/*unknown_a7_c470:*/ sta $0fac.w
+@unknown_a7_c470: sta $0fac.w
 /*unknown_a7_c473:*/ txa
 /*unknown_a7_c474:*/ clc
 /*unknown_a7_c475:*/ adc #$0008.w
@@ -7622,7 +7622,7 @@ das: .dw $400
 /*unknown_a7_c49e:*/ inx
 /*unknown_a7_c49f:*/ inx
 /*unknown_a7_c4a0:*/ stx $0330.w
-/*unknown_a7_c4a3:*/ rts
+@unknown_a7_c4a3: rts
 
 /*unknown_a7_c4a4:*/ jsr $af32.w
 /*unknown_a7_c4a7:*/ lda #$c4c8.w
@@ -7635,7 +7635,7 @@ das: .dw $400
 /*unknown_a7_c4bc:*/ sta $1032.w
 /*unknown_a7_c4bf:*/ sta $1072.w
 /*unknown_a7_c4c2:*/ sta $10b2.w
-/*unknown_a7_c4c5:*/ jmp $c874.w
+/*unknown_a7_c4c5:*/ jmp @unknown_a7_c874
 /*unknown_a7_c4c8:*/ jsr $af32.w
 /*unknown_a7_c4cb:*/ sep #$20
 /*unknown_a7_c4cd:*/ lda #$a7
@@ -7664,16 +7664,16 @@ das: .dw $400
 /*unknown_a7_c511:*/ sta $10d4.w
 /*unknown_a7_c514:*/ lda #$ba2d.w
 /*unknown_a7_c517:*/ sta $10e8.w
-/*unknown_a7_c51a:*/ jmp $c8b6.w
+/*unknown_a7_c51a:*/ jmp @unknown_a7_c8b6
 /*unknown_a7_c51d:*/ lda $7e9000
 /*unknown_a7_c521:*/ dec A
 /*unknown_a7_c522:*/ sta $7e9000
-/*unknown_a7_c526:*/ bne $0e ; $c536.w
+/*unknown_a7_c526:*/ bne @unknown_a7_c536
 /*unknown_a7_c528:*/ lda #$001e.w
 /*unknown_a7_c52b:*/ jsr $80914d
 /*unknown_a7_c52f:*/ lda #$001e.w
 /*unknown_a7_c532:*/ sta $7e9000
-/*unknown_a7_c536:*/ rts
+@unknown_a7_c536: rts
 
 /*unknown_a7_c537:*/ jsr $af32.w
 /*unknown_a7_c53a:*/ jsr $c51d.w
@@ -7681,7 +7681,7 @@ das: .dw $400
 /*unknown_a7_c540:*/ inc $0f7e.w
 /*unknown_a7_c543:*/ lda $0f7e.w
 /*unknown_a7_c546:*/ cmp #$0260.w
-/*unknown_a7_c549:*/ bmi $53 ; $c59e.w
+/*unknown_a7_c549:*/ bmi @unknown_a7_c59e
 /*unknown_a7_c54b:*/ lda $0f86.w
 /*unknown_a7_c54e:*/ and #$fbff.w
 /*unknown_a7_c551:*/ sta $0f86.w
@@ -7708,21 +7708,21 @@ das: .dw $400
 /*unknown_a7_c591:*/ sta $0fa8.w
 /*unknown_a7_c594:*/ stz $0941.w
 /*unknown_a7_c597:*/ jsr $a0ba71
-/*unknown_a7_c59b:*/ jmp $ad9a.w
-/*unknown_a7_c59e:*/ rtl
+/*unknown_a7_c59b:*/ jmp @unknown_a7_ad9a
+@unknown_a7_c59e: rtl
 
 /*unknown_a7_c59f:*/ ldy #$0000.w
-/*unknown_a7_c5a2:*/ lda $c5e7.w, Y
-/*unknown_a7_c5a5:*/ bmi $3f ; $c5e6.w
+@unknown_a7_c5a2: lda $c5e7.w, Y
+/*unknown_a7_c5a5:*/ bmi @unknown_a7_c5e6
 /*unknown_a7_c5a7:*/ cmp $0f7e.w
-/*unknown_a7_c5aa:*/ beq $08 ; $c5b4.w
+/*unknown_a7_c5aa:*/ beq @unknown_a7_c5b4
 /*unknown_a7_c5ac:*/ tya
 /*unknown_a7_c5ad:*/ clc
 /*unknown_a7_c5ae:*/ adc #$0006.w
 /*unknown_a7_c5b1:*/ tay
-/*unknown_a7_c5b2:*/ bra ($ee - $100) ; $c5a2.w
-/*unknown_a7_c5b4:*/ lda $c5e9.w, Y
-/*unknown_a7_c5b7:*/ bmi $29 ; $c5e2.w
+/*unknown_a7_c5b2:*/ bra @unknown_a7_c5a2
+@unknown_a7_c5b4: lda $c5e9.w, Y
+/*unknown_a7_c5b7:*/ bmi @unknown_a7_c5e2
 /*unknown_a7_c5b9:*/ ldx $0330.w
 /*unknown_a7_c5bc:*/ lda #$0040.w
 /*unknown_a7_c5bf:*/ sta $d0, X
@@ -7742,9 +7742,9 @@ das: .dw $400
 /*unknown_a7_c5db:*/ clc
 /*unknown_a7_c5dc:*/ adc #$0007.w
 /*unknown_a7_c5df:*/ sta $0330.w
-/*unknown_a7_c5e2:*/ tyx
+@unknown_a7_c5e2: tyx
 /*unknown_a7_c5e3:*/ jsr ($c5eb.w, X)
-/*unknown_a7_c5e6:*/ rts
+@unknown_a7_c5e6: rts
 
 /*unknown_a7_c5e7:*/ bmi $01 ; $c5ea.w
 /*unknown_a7_c5e9:*/ ldy #$9108.w
@@ -7886,10 +7886,10 @@ das: .dw $400
 /*unknown_a7_c71b:*/ rep #$20
 /*unknown_a7_c71d:*/ ldx #$07fe.w
 /*unknown_a7_c720:*/ lda #$0338.w
-/*unknown_a7_c723:*/ sta $7e2000, X
+@unknown_a7_c723: sta $7e2000, X
 /*unknown_a7_c727:*/ dex
 /*unknown_a7_c728:*/ dex
-/*unknown_a7_c729:*/ bpl ($f8 - $100) ; $c723.w
+/*unknown_a7_c729:*/ bpl @unknown_a7_c723
 /*unknown_a7_c72b:*/ ldx $0330.w
 /*unknown_a7_c72e:*/ lda #$0400.w
 /*unknown_a7_c731:*/ sta $d0, X
@@ -7995,36 +7995,36 @@ das: .dw $400
 /*unknown_a7_c814:*/ rtl
 
 /*unknown_a7_c815:*/ jsr $82d96c
-/*unknown_a7_c819:*/ bcc $20 ; $c83b.w
+/*unknown_a7_c819:*/ bcc @unknown_a7_c83b
 /*unknown_a7_c81b:*/ lda #$0003.w
 /*unknown_a7_c81e:*/ jsr $808fc1
 /*unknown_a7_c822:*/ ldx $079f.w
 /*unknown_a7_c825:*/ lda $7ed828, X
 /*unknown_a7_c829:*/ bit #$0001.w
-/*unknown_a7_c82c:*/ bne $0e ; $c83c.w
+/*unknown_a7_c82c:*/ bne @unknown_a7_c83c
 /*unknown_a7_c82e:*/ ora #$0001.w
 /*unknown_a7_c831:*/ sta $7ed828, X
 /*unknown_a7_c835:*/ lda #$c843.w
 /*unknown_a7_c838:*/ sta $0fa8.w
-/*unknown_a7_c83b:*/ rtl
+@unknown_a7_c83b: rtl
 
-/*unknown_a7_c83c:*/ lda #$c851.w
+@unknown_a7_c83c: lda #$c851.w
 /*unknown_a7_c83f:*/ sta $0fa8.w
 /*unknown_a7_c842:*/ rtl
 
 /*unknown_a7_c843:*/ jsr $a92c.w
-/*unknown_a7_c846:*/ beq $05 ; $c84d.w
+/*unknown_a7_c846:*/ beq @unknown_a7_c84d
 /*unknown_a7_c848:*/ lda $0911.w
-/*unknown_a7_c84b:*/ beq $03 ; $c850.w
-/*unknown_a7_c84d:*/ jsr $a943.w
-/*unknown_a7_c850:*/ rtl
+/*unknown_a7_c84b:*/ beq @unknown_a7_c850
+@unknown_a7_c84d: jsr $a943.w
+@unknown_a7_c850: rtl
 
 /*unknown_a7_c851:*/ jsr $a92c.w
-/*unknown_a7_c854:*/ beq $05 ; $c85b.w
+/*unknown_a7_c854:*/ beq @unknown_a7_c85b
 /*unknown_a7_c856:*/ lda $0911.w
-/*unknown_a7_c859:*/ beq $03 ; $c85e.w
-/*unknown_a7_c85b:*/ jsr $a943.w
-/*unknown_a7_c85e:*/ lda #$ffff.w
+/*unknown_a7_c859:*/ beq @unknown_a7_c85e
+@unknown_a7_c85b: jsr $a943.w
+@unknown_a7_c85e: lda #$ffff.w
 /*unknown_a7_c861:*/ sta $08ff.w
 /*unknown_a7_c864:*/ rtl
 
@@ -8033,7 +8033,7 @@ das: .dw $400
 /*unknown_a7_c86b:*/ jsr $c9ee.w
 /*unknown_a7_c86e:*/ lda #$c89a.w
 /*unknown_a7_c871:*/ sta $0fa8.w
-/*unknown_a7_c874:*/ ldx $0330.w
+@unknown_a7_c874: ldx $0330.w
 /*unknown_a7_c877:*/ lda #$0800.w
 /*unknown_a7_c87a:*/ sta $d0, X
 /*unknown_a7_c87c:*/ lda #$2000.w
@@ -8061,7 +8061,7 @@ das: .dw $400
 /*unknown_a7_c8ac:*/ sta $1840.w
 /*unknown_a7_c8af:*/ lda #$0005.w
 /*unknown_a7_c8b2:*/ jsr $808fc1
-/*unknown_a7_c8b6:*/ ldx $0330.w
+@unknown_a7_c8b6: ldx $0330.w
 /*unknown_a7_c8b9:*/ lda #$0800.w
 /*unknown_a7_c8bc:*/ sta $d0, X
 /*unknown_a7_c8be:*/ lda #$2800.w
@@ -8086,45 +8086,45 @@ das: .dw $400
 /*unknown_a7_c8e3:*/ lda $0fb2.w
 /*unknown_a7_c8e6:*/ dec A
 /*unknown_a7_c8e7:*/ sta $0fb2.w
-/*unknown_a7_c8ea:*/ bne $0d ; $c8f9.w
+/*unknown_a7_c8ea:*/ bne @unknown_a7_c8f9
 /*unknown_a7_c8ec:*/ lda #$c902.w
 /*unknown_a7_c8ef:*/ sta $0fa8.w
 /*unknown_a7_c8f2:*/ lda #$0060.w
 /*unknown_a7_c8f5:*/ sta $0fb2.w
 /*unknown_a7_c8f8:*/ rtl
 
-/*unknown_a7_c8f9:*/ and #$000f.w
-/*unknown_a7_c8fc:*/ bne $03 ; $c901.w
+@unknown_a7_c8f9: and #$000f.w
+/*unknown_a7_c8fc:*/ bne @unknown_a7_c901
 /*unknown_a7_c8fe:*/ jsr $c995.w
-/*unknown_a7_c901:*/ rtl
+@unknown_a7_c901: rtl
 
 /*unknown_a7_c902:*/ jsr $c9ee.w
 /*unknown_a7_c905:*/ lda $0fb2.w
 /*unknown_a7_c908:*/ dec A
 /*unknown_a7_c909:*/ sta $0fb2.w
-/*unknown_a7_c90c:*/ bne $0d ; $c91b.w
+/*unknown_a7_c90c:*/ bne @unknown_a7_c91b
 /*unknown_a7_c90e:*/ lda #$c924.w
 /*unknown_a7_c911:*/ sta $0fa8.w
 /*unknown_a7_c914:*/ lda #$0120.w
 /*unknown_a7_c917:*/ sta $0fb2.w
 /*unknown_a7_c91a:*/ rtl
 
-/*unknown_a7_c91b:*/ and #$0007.w
-/*unknown_a7_c91e:*/ bne $03 ; $c923.w
+@unknown_a7_c91b: and #$0007.w
+/*unknown_a7_c91e:*/ bne @unknown_a7_c923
 /*unknown_a7_c920:*/ jsr $c995.w
-/*unknown_a7_c923:*/ rtl
+@unknown_a7_c923: rtl
 
 /*unknown_a7_c924:*/ jsr $c9ee.w
 /*unknown_a7_c927:*/ lda $1840.w
 /*unknown_a7_c92a:*/ bit #$0005.w
-/*unknown_a7_c92d:*/ bne $03 ; $c932.w
+/*unknown_a7_c92d:*/ bne @unknown_a7_c932
 /*unknown_a7_c92f:*/ jsr $c995.w
-/*unknown_a7_c932:*/ ldy #$0001.w
+@unknown_a7_c932: ldy #$0001.w
 /*unknown_a7_c935:*/ lda $0f7e.w
 /*unknown_a7_c938:*/ bit #$0002.w
-/*unknown_a7_c93b:*/ bne $03 ; $c940.w
+/*unknown_a7_c93b:*/ bne @unknown_a7_c940
 /*unknown_a7_c93d:*/ ldy #$ffff.w
-/*unknown_a7_c940:*/ sty $12
+@unknown_a7_c940: sty $12
 /*unknown_a7_c942:*/ lda $0f7a.w
 /*unknown_a7_c945:*/ clc
 /*unknown_a7_c946:*/ adc $12
@@ -8138,7 +8138,7 @@ das: .dw $400
 /*unknown_a7_c95b:*/ sta $0f7e.w
 /*unknown_a7_c95e:*/ lda $0f7e.w
 /*unknown_a7_c961:*/ cmp #$01c9.w
-/*unknown_a7_c964:*/ bpl $2e ; $c994.w
+/*unknown_a7_c964:*/ bpl @unknown_a7_c994
 /*unknown_a7_c966:*/ lda #$00b0.w
 /*unknown_a7_c969:*/ sta $0f7a.w
 /*unknown_a7_c96c:*/ lda #$b960.w
@@ -8154,7 +8154,7 @@ das: .dw $400
 /*unknown_a7_c98b:*/ sta $0fd2.w
 /*unknown_a7_c98e:*/ lda #$0001.w
 /*unknown_a7_c991:*/ sta $0fd4.w
-/*unknown_a7_c994:*/ rtl
+@unknown_a7_c994: rtl
 
 /*unknown_a7_c995:*/ lda $05b5.w
 /*unknown_a7_c998:*/ bit #$0002.w
@@ -8163,11 +8163,11 @@ das: .dw $400
 /*unknown_a7_c9a1:*/ tax
 /*unknown_a7_c9a2:*/ lda $05e5.w
 /*unknown_a7_c9a5:*/ bit #$0002.w
-/*unknown_a7_c9a8:*/ bne $05 ; $c9af.w
+/*unknown_a7_c9a8:*/ bne @unknown_a7_c9af
 /*unknown_a7_c9aa:*/ txa
 /*unknown_a7_c9ab:*/ eor #$ffff.w
 /*unknown_a7_c9ae:*/ tax
-/*unknown_a7_c9af:*/ txa
+@unknown_a7_c9af: txa
 /*unknown_a7_c9b0:*/ clc
 /*unknown_a7_c9b1:*/ adc $0f7a.w
 /*unknown_a7_c9b4:*/ sta $12
@@ -8186,9 +8186,9 @@ das: .dw $400
 /*unknown_a7_c9d2:*/ ldy #$9c61.w
 /*unknown_a7_c9d5:*/ lda $05e5.w
 /*unknown_a7_c9d8:*/ bit #$0010.w
-/*unknown_a7_c9db:*/ beq $03 ; $c9e0.w
+/*unknown_a7_c9db:*/ beq @unknown_a7_c9e0
 /*unknown_a7_c9dd:*/ ldy #$9c6f.w
-/*unknown_a7_c9e0:*/ ldx $0e54.w
+@unknown_a7_c9e0: ldx $0e54.w
 /*unknown_a7_c9e3:*/ lda $05e5.w
 /*unknown_a7_c9e6:*/ and #$03f0.w
 /*unknown_a7_c9e9:*/ jsr $868027
@@ -8197,11 +8197,11 @@ das: .dw $400
 /*unknown_a7_c9ee:*/ lda $0af6.w
 /*unknown_a7_c9f1:*/ sec
 /*unknown_a7_c9f2:*/ sbc #$0100.w
-/*unknown_a7_c9f5:*/ bmi $09 ; $ca00.w
+/*unknown_a7_c9f5:*/ bmi @unknown_a7_ca00
 /*unknown_a7_c9f7:*/ lda #$0100.w
 /*unknown_a7_c9fa:*/ sta $0af6.w
 /*unknown_a7_c9fd:*/ sta $0b10.w
-/*unknown_a7_ca00:*/ rts
+@unknown_a7_ca00: rts
 
 /*unknown_a7_ca01:*/ brk $38
 /*unknown_a7_ca03:*/ sbc $7ec07f, X
@@ -8365,8 +8365,8 @@ das: .dw $400
 /*unknown_a7_cb61:*/ tsb $1c00.w
 /*unknown_a7_cb64:*/ rol A
 /*unknown_a7_cb65:*/ eor [$19], Y
-/*unknown_a7_cb67:*/ bvs $00 ; $cb69.w
-/*unknown_a7_cb69:*/ rol $9900.w
+/*unknown_a7_cb67:*/ bvs @unknown_a7_cb69
+@unknown_a7_cb69: rol $9900.w
 /*unknown_a7_cb6c:*/ and ($36, X)
 /*unknown_a7_cb6e:*/ ora ($d3), Y
 /*unknown_a7_cb70:*/ php
@@ -8390,7 +8390,7 @@ das: .dw $400
 /*unknown_a7_cb98:*/ ora ($d0), Y
 /*unknown_a7_cb9a:*/ tsb $1d
 /*unknown_a7_cb9c:*/ bit $17
-/*unknown_a7_cb9e:*/ bpl $11 ; $cbb1.w
+/*unknown_a7_cb9e:*/ bpl @unknown_a7_cbb1
 /*unknown_a7_cba0:*/ brk $08
 /*unknown_a7_cba2:*/ brk $7c
 /*unknown_a7_cba4:*/ and ($b5)
@@ -8399,7 +8399,7 @@ das: .dw $400
 /*unknown_a7_cbaa:*/ brk $f7
 /*unknown_a7_cbac:*/ and #$1574.w
 /*unknown_a7_cbaf:*/ bpl $0d ; $cbbe.w
-/*unknown_a7_cbb1:*/ ldx $df00.w
+@unknown_a7_cbb1: ldx $df00.w
 /*unknown_a7_cbb4:*/ phy
 /*unknown_a7_cbb5:*/ sbc [$25], Y
 /*unknown_a7_cbb7:*/ and ($11), Y
@@ -8415,7 +8415,7 @@ das: .dw $400
 /*unknown_a7_cbcc:*/ rol $1993.w
 /*unknown_a7_cbcf:*/ ora $00cc0d.l
 /*unknown_a7_cbd3:*/ ora $2a1763, X
-/*unknown_a7_cbd7:*/ bvc $11 ; $cbea.w
+/*unknown_a7_cbd7:*/ bvc @unknown_a7_cbea
 /*unknown_a7_cbd9:*/ sbc $1d04.w
 /*unknown_a7_cbdc:*/ bit $1016.w
 /*unknown_a7_cbdf:*/ asl $0400.w
@@ -8423,7 +8423,7 @@ das: .dw $400
 /*unknown_a7_cbe4:*/ dec A
 /*unknown_a7_cbe5:*/ sbc ($25, S), Y
 /*unknown_a7_cbe7:*/ lda #$4600.w
-/*unknown_a7_cbea:*/ brk $56
+@unknown_a7_cbea: brk $56
 /*unknown_a7_cbec:*/ and ($b2)
 /*unknown_a7_cbee:*/ ora $0d2d.w, X
 /*unknown_a7_cbf1:*/ xba
@@ -8454,7 +8454,7 @@ das: .dw $400
 /*unknown_a7_cc26:*/ rol $00c6.w
 /*unknown_a7_cc29:*/ adc $00, S
 /*unknown_a7_cc2b:*/ lda $3a, X
-/*unknown_a7_cc2d:*/ bpl $22 ; $cc51.w
+/*unknown_a7_cc2d:*/ bpl @unknown_a7_cc51
 /*unknown_a7_cc2f:*/ rtl
 
 /*unknown_a7_cc30:*/ ora ($08), Y
@@ -8471,7 +8471,7 @@ das: .dw $400
 /*unknown_a7_cc49:*/ sbc [$de]
 /*unknown_a7_cc4b:*/ and $000181.l
 /*unknown_a7_cc4f:*/ sbc ($de), Y
-/*unknown_a7_cc51:*/ and $000a81.l
+@unknown_a7_cc51: and $000a81.l
 /*unknown_a7_cc55:*/ ora $df
 /*unknown_a7_cc57:*/ asl A
 /*unknown_a7_cc58:*/ brk $0f
@@ -8485,14 +8485,14 @@ das: .dw $400
 /*unknown_a7_cc70:*/ cmp $190001, X
 /*unknown_a7_cc74:*/ cmp $ed808a, X
 /*unknown_a7_cc78:*/ dec $812f.w
-/*unknown_a7_cc7b:*/ ora ($00, X)
+@unknown_a7_cc7b: ora ($00, X)
 /*unknown_a7_cc7d:*/ xce
 /*unknown_a7_cc7e:*/ dec $812f.w, X
 /*unknown_a7_cc81:*/ ora ($00, X)
 /*unknown_a7_cc83:*/ ora $0adf.w, Y
 /*unknown_a7_cc86:*/ brk $0f
 /*unknown_a7_cc88:*/ cmp $76808a, X
-/*unknown_a7_cc8c:*/ bne ($ed - $100) ; $cc7b.w
+/*unknown_a7_cc8c:*/ bne @unknown_a7_cc7b
 /*unknown_a7_cc8e:*/ bra $7b ; $cd0b.w
 /*unknown_a7_cc90:*/ cpy $0001.w
 /*unknown_a7_cc93:*/ ora $0adf.w, Y
@@ -8590,22 +8590,22 @@ das: .dw $400
 /*unknown_a7_cd72:*/ brk $00
 /*unknown_a7_cd74:*/ asl $00
 /*unknown_a7_cd76:*/ brk $00
-/*unknown_a7_cd78:*/ bpl $00 ; $cd7a.w
-/*unknown_a7_cd7a:*/ brk $02
+/*unknown_a7_cd78:*/ bpl @unknown_a7_cd7a
+@unknown_a7_cd7a: brk $02
 /*unknown_a7_cd7c:*/ brk $07
 /*unknown_a7_cd7e:*/ brk $00
 /*unknown_a7_cd80:*/ brk $00
 /*unknown_a7_cd82:*/ asl $00
 /*unknown_a7_cd84:*/ brk $00
-/*unknown_a7_cd86:*/ bpl $00 ; $cd88.w
-/*unknown_a7_cd88:*/ brk $fe
+/*unknown_a7_cd86:*/ bpl @unknown_a7_cd88
+@unknown_a7_cd88: brk $fe
 /*unknown_a7_cd8a:*/ sbc $00fff9.l, X
 /*unknown_a7_cd8e:*/ brk $00
-/*unknown_a7_cd90:*/ bra $00 ; $cd92.w
-/*unknown_a7_cd92:*/ brk $0b
+/*unknown_a7_cd90:*/ bra @unknown_a7_cd92
+@unknown_a7_cd92: brk $0b
 /*unknown_a7_cd94:*/ brk $00
-/*unknown_a7_cd96:*/ bra $00 ; $cd98.w
-/*unknown_a7_cd98:*/ brk $f5
+/*unknown_a7_cd96:*/ bra @unknown_a7_cd98
+@unknown_a7_cd98: brk $f5
 /*unknown_a7_cd9a:*/ sbc $000040.l, X
 /*unknown_a7_cd9e:*/ tsb $0100.w
 /*unknown_a7_cda1:*/ brk $f0
@@ -8616,8 +8616,8 @@ das: .dw $400
 /*unknown_a7_cda9:*/ asl $08
 /*unknown_a7_cdab:*/ asl $08
 /*unknown_a7_cdad:*/ ora ($00, X)
-/*unknown_a7_cdaf:*/ bra $00 ; $cdb1.w
-/*unknown_a7_cdb1:*/ rts
+/*unknown_a7_cdaf:*/ bra @unknown_a7_cdb1
+@unknown_a7_cdb1: rts
 
 /*unknown_a7_cdb2:*/ brk $00
 /*unknown_a7_cdb4:*/ brk $47
@@ -8660,16 +8660,16 @@ das: .dw $400
 /*unknown_a7_cdff:*/ bpl ($f8 - $100) ; $cdf9.w
 /*unknown_a7_ce01:*/ ldx #$07fe.w
 /*unknown_a7_ce04:*/ lda #$0000.w
-/*unknown_a7_ce07:*/ sta $7e9000, X
+@unknown_a7_ce07: sta $7e9000, X
 /*unknown_a7_ce0b:*/ dex
 /*unknown_a7_ce0c:*/ dex
-/*unknown_a7_ce0d:*/ bpl ($f8 - $100) ; $ce07.w
+/*unknown_a7_ce0d:*/ bpl @unknown_a7_ce07
 /*unknown_a7_ce0f:*/ ldx #$001e.w
 /*unknown_a7_ce12:*/ lda #$0000.w
-/*unknown_a7_ce15:*/ sta $7ec2e0, X
+@unknown_a7_ce15: sta $7ec2e0, X
 /*unknown_a7_ce19:*/ dex
 /*unknown_a7_ce1a:*/ dex
-/*unknown_a7_ce1b:*/ bpl ($f8 - $100) ; $ce15.w
+/*unknown_a7_ce1b:*/ bpl @unknown_a7_ce15
 /*unknown_a7_ce1d:*/ lda #$0360.w
 /*unknown_a7_ce20:*/ sta $00179a.l
 /*unknown_a7_ce24:*/ jsr $90a7e2
@@ -8726,7 +8726,7 @@ das: .dw $400
 /*unknown_a7_cead:*/ lda ($ce), Y
 /*unknown_a7_ceaf:*/ jmp ($0fb2.w, X)
 /*unknown_a7_ceb2:*/ txa
-/*unknown_a7_ceb3:*/ bne $37 ; $ceec.w
+/*unknown_a7_ceb3:*/ bne @unknown_a7_ceec
 /*unknown_a7_ceb5:*/ lda $0f7a.w, X
 /*unknown_a7_ceb8:*/ sta $0fba.w, X
 /*unknown_a7_cebb:*/ sta $0ffa.w, X
@@ -8736,7 +8736,7 @@ das: .dw $400
 /*unknown_a7_cec7:*/ sta $0ffe.w, X
 /*unknown_a7_ceca:*/ sta $103e.w, X
 /*unknown_a7_cecd:*/ lda $0ff4.w
-/*unknown_a7_ced0:*/ bne $1a ; $ceec.w
+/*unknown_a7_ced0:*/ bne @unknown_a7_ceec
 /*unknown_a7_ced2:*/ lda $0911.w
 /*unknown_a7_ced5:*/ sec
 /*unknown_a7_ced6:*/ sbc $0f7a.w, X
@@ -8749,7 +8749,7 @@ das: .dw $400
 /*unknown_a7_cee6:*/ sec
 /*unknown_a7_cee7:*/ sbc #$ffd8.w
 /*unknown_a7_ceea:*/ sta $b7
-/*unknown_a7_ceec:*/ rtl
+@unknown_a7_ceec: rtl
 
 /*unknown_a7_ceed:*/ lda $7e9032
 /*unknown_a7_cef1:*/ asl A
@@ -8759,26 +8759,26 @@ das: .dw $400
 /*unknown_a7_cefa:*/ lda $7e9032
 /*unknown_a7_cefe:*/ inc A
 /*unknown_a7_ceff:*/ cmp #$0003.w
-/*unknown_a7_cf02:*/ bmi $03 ; $cf07.w
+/*unknown_a7_cf02:*/ bmi @unknown_a7_cf07
 /*unknown_a7_cf04:*/ lda #$0000.w
-/*unknown_a7_cf07:*/ sta $7e9032
+@unknown_a7_cf07: sta $7e9032
 /*unknown_a7_cf0b:*/ rts
 
 /*unknown_a7_cf0c:*/ txa
-/*unknown_a7_cf0d:*/ bne $17 ; $cf26.w
+/*unknown_a7_cf0d:*/ bne @unknown_a7_cf26
 /*unknown_a7_cf0f:*/ lda $8f
 /*unknown_a7_cf11:*/ bit #$4000.w
-/*unknown_a7_cf14:*/ beq $10 ; $cf26.w
+/*unknown_a7_cf14:*/ beq @unknown_a7_cf26
 /*unknown_a7_cf16:*/ lda $9030.w, X
-/*unknown_a7_cf19:*/ bne $08 ; $cf23.w
+/*unknown_a7_cf19:*/ bne @unknown_a7_cf23
 /*unknown_a7_cf1b:*/ lda #$0001.w
 /*unknown_a7_cf1e:*/ sta $9030.w, X
-/*unknown_a7_cf21:*/ bra $03 ; $cf26.w
-/*unknown_a7_cf23:*/ stz $9030.w, X
-/*unknown_a7_cf26:*/ rts
+/*unknown_a7_cf21:*/ bra @unknown_a7_cf26
+@unknown_a7_cf23: stz $9030.w, X
+@unknown_a7_cf26: rts
 
 /*unknown_a7_cf27:*/ lda $1070.w
-/*unknown_a7_cf2a:*/ bne $20 ; $cf4c.w
+/*unknown_a7_cf2a:*/ bne @unknown_a7_cf4c
 /*unknown_a7_cf2c:*/ lda $14
 /*unknown_a7_cf2e:*/ and #$ff00.w
 /*unknown_a7_cf31:*/ xba
@@ -8790,20 +8790,20 @@ das: .dw $400
 /*unknown_a7_cf3d:*/ and #$ff00.w
 /*unknown_a7_cf40:*/ xba
 /*unknown_a7_cf41:*/ cmp $16
-/*unknown_a7_cf43:*/ bmi $17 ; $cf5c.w
+/*unknown_a7_cf43:*/ bmi @unknown_a7_cf5c
 /*unknown_a7_cf45:*/ lda $14
 /*unknown_a7_cf47:*/ sta $106e.w
-/*unknown_a7_cf4a:*/ bra $10 ; $cf5c.w
-/*unknown_a7_cf4c:*/ lda $106e.w
+/*unknown_a7_cf4a:*/ bra @unknown_a7_cf5c
+@unknown_a7_cf4c: lda $106e.w
 /*unknown_a7_cf4f:*/ sec
 /*unknown_a7_cf50:*/ sbc $12
 /*unknown_a7_cf52:*/ sta $106e.w
-/*unknown_a7_cf55:*/ bcs $05 ; $cf5c.w
+/*unknown_a7_cf55:*/ bcs @unknown_a7_cf5c
 /*unknown_a7_cf57:*/ stz $106e.w
 /*unknown_a7_cf5a:*/ sec
 /*unknown_a7_cf5b:*/ rts
 
-/*unknown_a7_cf5c:*/ clc
+@unknown_a7_cf5c: clc
 /*unknown_a7_cf5d:*/ rts
 
 /*unknown_a7_cf5e:*/ lda #$0000.w
@@ -8814,14 +8814,14 @@ das: .dw $400
 /*unknown_a7_cf6f:*/ rts
 
 /*unknown_a7_cf70:*/ ldy #$0007.w
-/*unknown_a7_cf73:*/ phy
+@unknown_a7_cf73: phy
 /*unknown_a7_cf74:*/ tya
 /*unknown_a7_cf75:*/ ora #$0600.w
 /*unknown_a7_cf78:*/ ldy #$9c29.w
 /*unknown_a7_cf7b:*/ jsr $868027
 /*unknown_a7_cf7f:*/ ply
 /*unknown_a7_cf80:*/ dey
-/*unknown_a7_cf81:*/ bpl ($f0 - $100) ; $cf73.w
+/*unknown_a7_cf81:*/ bpl @unknown_a7_cf73
 /*unknown_a7_cf83:*/ lda #$0028.w
 /*unknown_a7_cf86:*/ jsr $80914d
 /*unknown_a7_cf8a:*/ rts
@@ -8834,7 +8834,7 @@ das: .dw $400
 /*unknown_a7_cf96:*/ sta $12
 /*unknown_a7_cf98:*/ lda #$0010.w
 /*unknown_a7_cf9b:*/ sta $14
-/*unknown_a7_cf9d:*/ tya
+@unknown_a7_cf9d: tya
 /*unknown_a7_cf9e:*/ ora #$0400.w
 /*unknown_a7_cfa1:*/ ora $14
 /*unknown_a7_cfa3:*/ phy
@@ -8843,14 +8843,14 @@ das: .dw $400
 /*unknown_a7_cfab:*/ ply
 /*unknown_a7_cfac:*/ iny
 /*unknown_a7_cfad:*/ cpy #$0009.w
-/*unknown_a7_cfb0:*/ bmi $03 ; $cfb5.w
+/*unknown_a7_cfb0:*/ bmi @unknown_a7_cfb5
 /*unknown_a7_cfb2:*/ ldy #$0000.w
-/*unknown_a7_cfb5:*/ lda $14
+@unknown_a7_cfb5: lda $14
 /*unknown_a7_cfb7:*/ clc
 /*unknown_a7_cfb8:*/ adc #$0010.w
 /*unknown_a7_cfbb:*/ sta $14
 /*unknown_a7_cfbd:*/ dec $12
-/*unknown_a7_cfbf:*/ bpl ($dc - $100) ; $cf9d.w
+/*unknown_a7_cfbf:*/ bpl @unknown_a7_cf9d
 /*unknown_a7_cfc1:*/ rts
 
 /*unknown_a7_cfc2:*/ ora $07
@@ -8858,10 +8858,10 @@ das: .dw $400
 /*unknown_a7_cfc6:*/ ora $03
 /*unknown_a7_cfc8:*/ ora ($03, X)
 /*unknown_a7_cfca:*/ dec $106a.w, X
-/*unknown_a7_cfcd:*/ beq $02 ; $cfd1.w
-/*unknown_a7_cfcf:*/ bpl $6d ; $d03e.w
-/*unknown_a7_cfd1:*/ lda $106c.w, X
-/*unknown_a7_cfd4:*/ bpl $26 ; $cffc.w
+/*unknown_a7_cfcd:*/ beq @unknown_a7_cfd1
+/*unknown_a7_cfcf:*/ bpl @unknown_a7_d03e
+@unknown_a7_cfd1: lda $106c.w, X
+/*unknown_a7_cfd4:*/ bpl @unknown_a7_cffc
 /*unknown_a7_cfd6:*/ jsr $808111
 /*unknown_a7_cfda:*/ and #$0003.w
 /*unknown_a7_cfdd:*/ sta $1068.w, X
@@ -8879,11 +8879,11 @@ das: .dw $400
 /*unknown_a7_cff3:*/ tay
 /*unknown_a7_cff4:*/ lda $0002.w, Y
 /*unknown_a7_cff7:*/ sta $106a.w, X
-/*unknown_a7_cffa:*/ bra $42 ; $d03e.w
-/*unknown_a7_cffc:*/ dec $106c.w, X
-/*unknown_a7_cfff:*/ beq $02 ; $d003.w
-/*unknown_a7_d001:*/ bpl $17 ; $d01a.w
-/*unknown_a7_d003:*/ lda #$ffff.w
+/*unknown_a7_cffa:*/ bra @unknown_a7_d03e
+@unknown_a7_cffc: dec $106c.w, X
+/*unknown_a7_cfff:*/ beq @unknown_a7_d003
+/*unknown_a7_d001:*/ bpl @unknown_a7_d01a
+@unknown_a7_d003: lda #$ffff.w
 /*unknown_a7_d006:*/ sta $106c.w, X
 /*unknown_a7_d009:*/ lda $1068.w, X
 /*unknown_a7_d00c:*/ asl A
@@ -8892,8 +8892,8 @@ das: .dw $400
 /*unknown_a7_d011:*/ tay
 /*unknown_a7_d012:*/ lda $0002.w, Y
 /*unknown_a7_d015:*/ sta $106a.w, X
-/*unknown_a7_d018:*/ bra $18 ; $d032.w
-/*unknown_a7_d01a:*/ lda $106c.w, X
+/*unknown_a7_d018:*/ bra @unknown_a7_d032
+@unknown_a7_d01a: lda $106c.w, X
 /*unknown_a7_d01d:*/ asl A
 /*unknown_a7_d01e:*/ sta $12
 /*unknown_a7_d020:*/ lda $1068.w, X
@@ -8905,11 +8905,11 @@ das: .dw $400
 /*unknown_a7_d02b:*/ tay
 /*unknown_a7_d02c:*/ lda $0002.w, Y
 /*unknown_a7_d02f:*/ sta $106a.w, X
-/*unknown_a7_d032:*/ lda #$0001.w
+@unknown_a7_d032: lda #$0001.w
 /*unknown_a7_d035:*/ sta $1054.w, X
 /*unknown_a7_d038:*/ lda #$cceb.w
 /*unknown_a7_d03b:*/ sta $1052.w, X
-/*unknown_a7_d03e:*/ rts
+@unknown_a7_d03e: rts
 
 /*unknown_a7_d03f:*/ stz $1028.w
 /*unknown_a7_d042:*/ lda #$0001.w
@@ -8942,47 +8942,47 @@ das: .dw $400
 /*unknown_a7_d088:*/ sta $0fe8.w
 /*unknown_a7_d08b:*/ lda $05b6.w
 /*unknown_a7_d08e:*/ bit #$0001.w
-/*unknown_a7_d091:*/ bne $25 ; $d0b8.w
+/*unknown_a7_d091:*/ bne @unknown_a7_d0b8
 /*unknown_a7_d093:*/ lda $0fec.w
-/*unknown_a7_d096:*/ beq $0f ; $d0a7.w
+/*unknown_a7_d096:*/ beq @unknown_a7_d0a7
 /*unknown_a7_d098:*/ lda $0fa8.w
 /*unknown_a7_d09b:*/ inc A
 /*unknown_a7_d09c:*/ sta $0fa8.w
 /*unknown_a7_d09f:*/ cmp #$0216.w
-/*unknown_a7_d0a2:*/ bmi $03 ; $d0a7.w
+/*unknown_a7_d0a2:*/ bmi @unknown_a7_d0a7
 /*unknown_a7_d0a4:*/ stz $0fa8.w
-/*unknown_a7_d0a7:*/ lda #$0001.w
+@unknown_a7_d0a7: lda #$0001.w
 /*unknown_a7_d0aa:*/ sta $0fac.w
 /*unknown_a7_d0ad:*/ stz $0faa.w
 /*unknown_a7_d0b0:*/ stz $0fae.w
 /*unknown_a7_d0b3:*/ stz $0fec.w
-/*unknown_a7_d0b6:*/ bra $23 ; $d0db.w
-/*unknown_a7_d0b8:*/ lda $0fec.w
-/*unknown_a7_d0bb:*/ bne $0f ; $d0cc.w
+/*unknown_a7_d0b6:*/ bra @unknown_a7_d0db
+@unknown_a7_d0b8: lda $0fec.w
+/*unknown_a7_d0bb:*/ bne @unknown_a7_d0cc
 /*unknown_a7_d0bd:*/ lda $0fa8.w
 /*unknown_a7_d0c0:*/ dec A
 /*unknown_a7_d0c1:*/ sta $0fa8.w
-/*unknown_a7_d0c4:*/ bpl $06 ; $d0cc.w
+/*unknown_a7_d0c4:*/ bpl @unknown_a7_d0cc
 /*unknown_a7_d0c6:*/ lda #$0215.w
 /*unknown_a7_d0c9:*/ sta $0fa8.w
-/*unknown_a7_d0cc:*/ stz $0fac.w
+@unknown_a7_d0cc: stz $0fac.w
 /*unknown_a7_d0cf:*/ stz $0faa.w
 /*unknown_a7_d0d2:*/ stz $0fae.w
 /*unknown_a7_d0d5:*/ lda #$0001.w
 /*unknown_a7_d0d8:*/ sta $0fec.w
-/*unknown_a7_d0db:*/ lda $0fb6.w
-/*unknown_a7_d0de:*/ bne $07 ; $d0e7.w
+@unknown_a7_d0db: lda $0fb6.w
+/*unknown_a7_d0de:*/ bne @unknown_a7_d0e7
 /*unknown_a7_d0e0:*/ lda #$d5e7.w
 /*unknown_a7_d0e3:*/ sta $0fb2.w
 /*unknown_a7_d0e6:*/ rts
 
-/*unknown_a7_d0e7:*/ stz $0ff2.w
+@unknown_a7_d0e7: stz $0ff2.w
 /*unknown_a7_d0ea:*/ lda #$d82a.w
 /*unknown_a7_d0ed:*/ sta $0fb2.w
 /*unknown_a7_d0f0:*/ rts
 
 /*unknown_a7_d0f1:*/ lda $0fec.w
-/*unknown_a7_d0f4:*/ bne $0f ; $d105.w
+/*unknown_a7_d0f4:*/ bne @unknown_a7_d105
 /*unknown_a7_d0f6:*/ jsr $d114.w
 /*unknown_a7_d0f9:*/ ldy #$e3d2.w
 /*unknown_a7_d0fc:*/ lda #$0216.w
@@ -8990,7 +8990,7 @@ das: .dw $400
 /*unknown_a7_d101:*/ jsr $d215.w
 /*unknown_a7_d104:*/ rts
 
-/*unknown_a7_d105:*/ jsr $d193.w
+@unknown_a7_d105: jsr $d193.w
 /*unknown_a7_d108:*/ ldy #$e3d2.w
 /*unknown_a7_d10b:*/ lda #$0215.w
 /*unknown_a7_d10e:*/ sta $14
@@ -8998,11 +8998,11 @@ das: .dw $400
 /*unknown_a7_d113:*/ rts
 
 /*unknown_a7_d114:*/ lda $0fae.w
-/*unknown_a7_d117:*/ beq $07 ; $d120.w
+/*unknown_a7_d117:*/ beq @unknown_a7_d120
 /*unknown_a7_d119:*/ bit #$0001.w
-/*unknown_a7_d11c:*/ bne $28 ; $d146.w
-/*unknown_a7_d11e:*/ bra $4b ; $d16b.w
-/*unknown_a7_d120:*/ lda $0faa.w
+/*unknown_a7_d11c:*/ bne @unknown_a7_d146
+/*unknown_a7_d11e:*/ bra @unknown_a7_d16b
+@unknown_a7_d120: lda $0faa.w
 /*unknown_a7_d123:*/ clc
 /*unknown_a7_d124:*/ adc $cd73.w
 /*unknown_a7_d127:*/ sta $0faa.w
@@ -9010,15 +9010,15 @@ das: .dw $400
 /*unknown_a7_d12d:*/ adc $cd75.w
 /*unknown_a7_d130:*/ sta $0fac.w
 /*unknown_a7_d133:*/ cmp $cd7b.w
-/*unknown_a7_d136:*/ bmi $0d ; $d145.w
+/*unknown_a7_d136:*/ bmi @unknown_a7_d145
 /*unknown_a7_d138:*/ lda $cd7b.w
 /*unknown_a7_d13b:*/ dec A
 /*unknown_a7_d13c:*/ sta $0fac.w
 /*unknown_a7_d13f:*/ stz $0faa.w
 /*unknown_a7_d142:*/ inc $0fae.w
-/*unknown_a7_d145:*/ rts
+@unknown_a7_d145: rts
 
-/*unknown_a7_d146:*/ lda $0faa.w
+@unknown_a7_d146: lda $0faa.w
 /*unknown_a7_d149:*/ clc
 /*unknown_a7_d14a:*/ adc $cd77.w
 /*unknown_a7_d14d:*/ sta $0faa.w
@@ -9026,14 +9026,14 @@ das: .dw $400
 /*unknown_a7_d153:*/ adc $cd79.w
 /*unknown_a7_d156:*/ sta $0fac.w
 /*unknown_a7_d159:*/ cmp $cd7d.w
-/*unknown_a7_d15c:*/ bmi $0c ; $d16a.w
+/*unknown_a7_d15c:*/ bmi @unknown_a7_d16a
 /*unknown_a7_d15e:*/ lda $cd7d.w
 /*unknown_a7_d161:*/ sta $0fac.w
 /*unknown_a7_d164:*/ stz $0faa.w
 /*unknown_a7_d167:*/ inc $0fae.w
-/*unknown_a7_d16a:*/ rts
+@unknown_a7_d16a: rts
 
-/*unknown_a7_d16b:*/ lda $0faa.w
+@unknown_a7_d16b: lda $0faa.w
 /*unknown_a7_d16e:*/ sec
 /*unknown_a7_d16f:*/ sbc $cd77.w
 /*unknown_a7_d172:*/ sta $0faa.w
@@ -9041,21 +9041,21 @@ das: .dw $400
 /*unknown_a7_d178:*/ sbc $cd79.w
 /*unknown_a7_d17b:*/ sta $0fac.w
 /*unknown_a7_d17e:*/ cmp $cd7f.w
-/*unknown_a7_d181:*/ beq $02 ; $d185.w
-/*unknown_a7_d183:*/ bpl $0d ; $d192.w
-/*unknown_a7_d185:*/ lda $cd7f.w
+/*unknown_a7_d181:*/ beq @unknown_a7_d185
+/*unknown_a7_d183:*/ bpl @unknown_a7_d192
+@unknown_a7_d185: lda $cd7f.w
 /*unknown_a7_d188:*/ inc A
 /*unknown_a7_d189:*/ sta $0fac.w
 /*unknown_a7_d18c:*/ stz $0faa.w
 /*unknown_a7_d18f:*/ stz $0fae.w
-/*unknown_a7_d192:*/ rts
+@unknown_a7_d192: rts
 
 /*unknown_a7_d193:*/ lda $0fae.w
-/*unknown_a7_d196:*/ beq $07 ; $d19f.w
+/*unknown_a7_d196:*/ beq @unknown_a7_d19f
 /*unknown_a7_d198:*/ bit #$0001.w
-/*unknown_a7_d19b:*/ bne $2b ; $d1c8.w
-/*unknown_a7_d19d:*/ bra $51 ; $d1f0.w
-/*unknown_a7_d19f:*/ lda $0faa.w
+/*unknown_a7_d19b:*/ bne @unknown_a7_d1c8
+/*unknown_a7_d19d:*/ bra @unknown_a7_d1f0
+@unknown_a7_d19f: lda $0faa.w
 /*unknown_a7_d1a2:*/ sec
 /*unknown_a7_d1a3:*/ sbc $cd81.w
 /*unknown_a7_d1a6:*/ sta $0faa.w
@@ -9063,17 +9063,17 @@ das: .dw $400
 /*unknown_a7_d1ac:*/ sbc $cd83.w
 /*unknown_a7_d1af:*/ sta $0fac.w
 /*unknown_a7_d1b2:*/ cmp $cd89.w
-/*unknown_a7_d1b5:*/ beq $02 ; $d1b9.w
-/*unknown_a7_d1b7:*/ bpl $0e ; $d1c7.w
-/*unknown_a7_d1b9:*/ lda $cd89.w
+/*unknown_a7_d1b5:*/ beq @unknown_a7_d1b9
+/*unknown_a7_d1b7:*/ bpl @unknown_a7_d1c7
+@unknown_a7_d1b9: lda $cd89.w
 /*unknown_a7_d1bc:*/ inc A
 /*unknown_a7_d1bd:*/ inc A
 /*unknown_a7_d1be:*/ sta $0fac.w
 /*unknown_a7_d1c1:*/ stz $0faa.w
 /*unknown_a7_d1c4:*/ inc $0fae.w
-/*unknown_a7_d1c7:*/ rts
+@unknown_a7_d1c7: rts
 
-/*unknown_a7_d1c8:*/ lda $0faa.w
+@unknown_a7_d1c8: lda $0faa.w
 /*unknown_a7_d1cb:*/ sec
 /*unknown_a7_d1cc:*/ sbc $cd85.w
 /*unknown_a7_d1cf:*/ sta $0faa.w
@@ -9081,16 +9081,16 @@ das: .dw $400
 /*unknown_a7_d1d5:*/ sbc $cd87.w
 /*unknown_a7_d1d8:*/ sta $0fac.w
 /*unknown_a7_d1db:*/ cmp $cd8b.w
-/*unknown_a7_d1de:*/ beq $02 ; $d1e2.w
-/*unknown_a7_d1e0:*/ bpl $0d ; $d1ef.w
-/*unknown_a7_d1e2:*/ lda $cd8b.w
+/*unknown_a7_d1de:*/ beq @unknown_a7_d1e2
+/*unknown_a7_d1e0:*/ bpl @unknown_a7_d1ef
+@unknown_a7_d1e2: lda $cd8b.w
 /*unknown_a7_d1e5:*/ inc A
 /*unknown_a7_d1e6:*/ sta $0fac.w
 /*unknown_a7_d1e9:*/ stz $0faa.w
 /*unknown_a7_d1ec:*/ inc $0fae.w
-/*unknown_a7_d1ef:*/ rts
+@unknown_a7_d1ef: rts
 
-/*unknown_a7_d1f0:*/ lda $0faa.w
+@unknown_a7_d1f0: lda $0faa.w
 /*unknown_a7_d1f3:*/ clc
 /*unknown_a7_d1f4:*/ adc $cd85.w
 /*unknown_a7_d1f7:*/ sta $0faa.w
@@ -9098,19 +9098,19 @@ das: .dw $400
 /*unknown_a7_d1fd:*/ adc $cd87.w
 /*unknown_a7_d200:*/ sta $0fac.w
 /*unknown_a7_d203:*/ cmp $cd8d.w
-/*unknown_a7_d206:*/ bmi $0c ; $d214.w
+/*unknown_a7_d206:*/ bmi @unknown_a7_d214
 /*unknown_a7_d208:*/ lda $cd8d.w
 /*unknown_a7_d20b:*/ sta $0fac.w
 /*unknown_a7_d20e:*/ stz $0faa.w
 /*unknown_a7_d211:*/ stz $0fae.w
-/*unknown_a7_d214:*/ rts
+@unknown_a7_d214: rts
 
 /*unknown_a7_d215:*/ lda $0fac.w
 /*unknown_a7_d218:*/ sta $16
-/*unknown_a7_d21a:*/ bne $01 ; $d21d.w
+/*unknown_a7_d21a:*/ bne @unknown_a7_d21d
 /*unknown_a7_d21c:*/ rts
 
-/*unknown_a7_d21d:*/ phy
+@unknown_a7_d21d: phy
 /*unknown_a7_d21e:*/ lda $0fa8.w
 /*unknown_a7_d221:*/ asl A
 /*unknown_a7_d222:*/ sta $12
@@ -9121,9 +9121,9 @@ das: .dw $400
 /*unknown_a7_d229:*/ lda $0000.w, Y
 /*unknown_a7_d22c:*/ and #$00ff.w
 /*unknown_a7_d22f:*/ bit #$0080.w
-/*unknown_a7_d232:*/ beq $03 ; $d237.w
+/*unknown_a7_d232:*/ beq @unknown_a7_d237
 /*unknown_a7_d234:*/ ora #$ff00.w
-/*unknown_a7_d237:*/ sta $12
+@unknown_a7_d237: sta $12
 /*unknown_a7_d239:*/ lda $0f7a.w
 /*unknown_a7_d23c:*/ clc
 /*unknown_a7_d23d:*/ adc $12
@@ -9131,9 +9131,9 @@ das: .dw $400
 /*unknown_a7_d242:*/ lda $0001.w, Y
 /*unknown_a7_d245:*/ and #$00ff.w
 /*unknown_a7_d248:*/ bit #$0080.w
-/*unknown_a7_d24b:*/ beq $03 ; $d250.w
+/*unknown_a7_d24b:*/ beq @unknown_a7_d250
 /*unknown_a7_d24d:*/ ora #$ff00.w
-/*unknown_a7_d250:*/ sta $12
+@unknown_a7_d250: sta $12
 /*unknown_a7_d252:*/ lda $0f7e.w
 /*unknown_a7_d255:*/ clc
 /*unknown_a7_d256:*/ adc $12
@@ -9142,22 +9142,22 @@ das: .dw $400
 /*unknown_a7_d25e:*/ inc A
 /*unknown_a7_d25f:*/ sta $0fa8.w
 /*unknown_a7_d262:*/ cmp $14
-/*unknown_a7_d264:*/ bmi $03 ; $d269.w
+/*unknown_a7_d264:*/ bmi @unknown_a7_d269
 /*unknown_a7_d266:*/ stz $0fa8.w
-/*unknown_a7_d269:*/ ply
+@unknown_a7_d269: ply
 /*unknown_a7_d26a:*/ dec $16
-/*unknown_a7_d26c:*/ beq $02 ; $d270.w
-/*unknown_a7_d26e:*/ bra ($ad - $100) ; $d21d.w
-/*unknown_a7_d270:*/ rts
+/*unknown_a7_d26c:*/ beq @unknown_a7_d270
+/*unknown_a7_d26e:*/ bra @unknown_a7_d21d
+@unknown_a7_d270: rts
 
 /*unknown_a7_d271:*/ lda $0fac.w
 /*unknown_a7_d274:*/ eor #$ffff.w
 /*unknown_a7_d277:*/ inc A
 /*unknown_a7_d278:*/ sta $16
-/*unknown_a7_d27a:*/ bne $01 ; $d27d.w
+/*unknown_a7_d27a:*/ bne @unknown_a7_d27d
 /*unknown_a7_d27c:*/ rts
 
-/*unknown_a7_d27d:*/ phy
+@unknown_a7_d27d: phy
 /*unknown_a7_d27e:*/ lda $0fa8.w
 /*unknown_a7_d281:*/ asl A
 /*unknown_a7_d282:*/ sta $12
@@ -9168,9 +9168,9 @@ das: .dw $400
 /*unknown_a7_d289:*/ lda $0000.w, Y
 /*unknown_a7_d28c:*/ and #$00ff.w
 /*unknown_a7_d28f:*/ bit #$0080.w
-/*unknown_a7_d292:*/ beq $03 ; $d297.w
+/*unknown_a7_d292:*/ beq @unknown_a7_d297
 /*unknown_a7_d294:*/ ora #$ff00.w
-/*unknown_a7_d297:*/ sta $12
+@unknown_a7_d297: sta $12
 /*unknown_a7_d299:*/ lda $0f7a.w
 /*unknown_a7_d29c:*/ sec
 /*unknown_a7_d29d:*/ sbc $12
@@ -9178,9 +9178,9 @@ das: .dw $400
 /*unknown_a7_d2a2:*/ lda $0001.w, Y
 /*unknown_a7_d2a5:*/ and #$00ff.w
 /*unknown_a7_d2a8:*/ bit #$0080.w
-/*unknown_a7_d2ab:*/ beq $03 ; $d2b0.w
+/*unknown_a7_d2ab:*/ beq @unknown_a7_d2b0
 /*unknown_a7_d2ad:*/ ora #$ff00.w
-/*unknown_a7_d2b0:*/ sta $12
+@unknown_a7_d2b0: sta $12
 /*unknown_a7_d2b2:*/ lda $0f7e.w
 /*unknown_a7_d2b5:*/ sec
 /*unknown_a7_d2b6:*/ sbc $12
@@ -9188,50 +9188,50 @@ das: .dw $400
 /*unknown_a7_d2bb:*/ lda $0fa8.w
 /*unknown_a7_d2be:*/ dec A
 /*unknown_a7_d2bf:*/ sta $0fa8.w
-/*unknown_a7_d2c2:*/ bpl $05 ; $d2c9.w
+/*unknown_a7_d2c2:*/ bpl @unknown_a7_d2c9
 /*unknown_a7_d2c4:*/ lda $14
 /*unknown_a7_d2c6:*/ sta $0fa8.w
-/*unknown_a7_d2c9:*/ ply
+@unknown_a7_d2c9: ply
 /*unknown_a7_d2ca:*/ dec $16
-/*unknown_a7_d2cc:*/ beq $02 ; $d2d0.w
-/*unknown_a7_d2ce:*/ bra ($ad - $100) ; $d27d.w
-/*unknown_a7_d2d0:*/ rts
+/*unknown_a7_d2cc:*/ beq @unknown_a7_d2d0
+/*unknown_a7_d2ce:*/ bra @unknown_a7_d27d
+@unknown_a7_d2d0: rts
 
 /*unknown_a7_d2d1:*/ lda $1030.w
-/*unknown_a7_d2d4:*/ bmi $17 ; $d2ed.w
+/*unknown_a7_d2d4:*/ bmi @unknown_a7_d2ed
 /*unknown_a7_d2d6:*/ clc
 /*unknown_a7_d2d7:*/ adc #$0002.w
 /*unknown_a7_d2da:*/ sta $1030.w
 /*unknown_a7_d2dd:*/ cmp #$0100.w
-/*unknown_a7_d2e0:*/ bmi $1f ; $d301.w
+/*unknown_a7_d2e0:*/ bmi @unknown_a7_d301
 /*unknown_a7_d2e2:*/ ora #$8000.w
 /*unknown_a7_d2e5:*/ sta $1030.w
 /*unknown_a7_d2e8:*/ and #$7fff.w
-/*unknown_a7_d2eb:*/ bra $14 ; $d301.w
-/*unknown_a7_d2ed:*/ sec
+/*unknown_a7_d2eb:*/ bra @unknown_a7_d301
+@unknown_a7_d2ed: sec
 /*unknown_a7_d2ee:*/ sbc #$0002.w
 /*unknown_a7_d2f1:*/ sta $1030.w
 /*unknown_a7_d2f4:*/ and #$7fff.w
-/*unknown_a7_d2f7:*/ beq $02 ; $d2fb.w
-/*unknown_a7_d2f9:*/ bpl $06 ; $d301.w
-/*unknown_a7_d2fb:*/ lda #$0000.w
+/*unknown_a7_d2f7:*/ beq @unknown_a7_d2fb
+/*unknown_a7_d2f9:*/ bpl @unknown_a7_d301
+@unknown_a7_d2fb: lda #$0000.w
 /*unknown_a7_d2fe:*/ sta $1030.w
-/*unknown_a7_d301:*/ cmp $0f7a.w
-/*unknown_a7_d304:*/ bmi $11 ; $d317.w
+@unknown_a7_d301: cmp $0f7a.w
+/*unknown_a7_d304:*/ bmi @unknown_a7_d317
 /*unknown_a7_d306:*/ lda $102c.w
 /*unknown_a7_d309:*/ cmp #$0800.w
-/*unknown_a7_d30c:*/ bpl $18 ; $d326.w
+/*unknown_a7_d30c:*/ bpl @unknown_a7_d326
 /*unknown_a7_d30e:*/ clc
 /*unknown_a7_d30f:*/ adc #$0020.w
 /*unknown_a7_d312:*/ sta $102c.w
-/*unknown_a7_d315:*/ bra $0f ; $d326.w
-/*unknown_a7_d317:*/ lda $102c.w
+/*unknown_a7_d315:*/ bra @unknown_a7_d326
+@unknown_a7_d317: lda $102c.w
 /*unknown_a7_d31a:*/ cmp #$f801.w
-/*unknown_a7_d31d:*/ bmi $07 ; $d326.w
+/*unknown_a7_d31d:*/ bmi @unknown_a7_d326
 /*unknown_a7_d31f:*/ sec
 /*unknown_a7_d320:*/ sbc #$0020.w
 /*unknown_a7_d323:*/ sta $102c.w
-/*unknown_a7_d326:*/ lda $102c.w
+@unknown_a7_d326: lda $102c.w
 /*unknown_a7_d329:*/ xba
 /*unknown_a7_d32a:*/ pha
 /*unknown_a7_d32b:*/ and #$ff00.w
@@ -9239,9 +9239,9 @@ das: .dw $400
 /*unknown_a7_d330:*/ pla
 /*unknown_a7_d331:*/ and #$00ff.w
 /*unknown_a7_d334:*/ bit #$0080.w
-/*unknown_a7_d337:*/ beq $03 ; $d33c.w
+/*unknown_a7_d337:*/ beq @unknown_a7_d33c
 /*unknown_a7_d339:*/ ora #$ff00.w
-/*unknown_a7_d33c:*/ sta $12
+@unknown_a7_d33c: sta $12
 /*unknown_a7_d33e:*/ lda $0f7c.w
 /*unknown_a7_d341:*/ clc
 /*unknown_a7_d342:*/ adc $14
@@ -9250,38 +9250,38 @@ das: .dw $400
 /*unknown_a7_d34a:*/ adc $12
 /*unknown_a7_d34c:*/ sta $0f7a.w
 /*unknown_a7_d34f:*/ cmp #$ffc0.w
-/*unknown_a7_d352:*/ bpl $08 ; $d35c.w
+/*unknown_a7_d352:*/ bpl @unknown_a7_d35c
 /*unknown_a7_d354:*/ lda #$ffc0.w
 /*unknown_a7_d357:*/ sta $0f7a.w
-/*unknown_a7_d35a:*/ bra $0b ; $d367.w
-/*unknown_a7_d35c:*/ cmp #$01c0.w
-/*unknown_a7_d35f:*/ bmi $06 ; $d367.w
+/*unknown_a7_d35a:*/ bra @unknown_a7_d367
+@unknown_a7_d35c: cmp #$01c0.w
+/*unknown_a7_d35f:*/ bmi @unknown_a7_d367
 /*unknown_a7_d361:*/ lda #$01c0.w
 /*unknown_a7_d364:*/ sta $0f7a.w
-/*unknown_a7_d367:*/ lda $0fb2.w, X
+@unknown_a7_d367: lda $0fb2.w, X
 /*unknown_a7_d36a:*/ cmp #$d92e.w
-/*unknown_a7_d36d:*/ bne $05 ; $d374.w
+/*unknown_a7_d36d:*/ bne @unknown_a7_d374
 /*unknown_a7_d36f:*/ lda #$0070.w
-/*unknown_a7_d372:*/ bra $07 ; $d37b.w
-/*unknown_a7_d374:*/ lda $0afa.w
+/*unknown_a7_d372:*/ bra @unknown_a7_d37b
+@unknown_a7_d374: lda $0afa.w
 /*unknown_a7_d377:*/ sec
 /*unknown_a7_d378:*/ sbc #$0030.w
-/*unknown_a7_d37b:*/ cmp $0f7e.w
-/*unknown_a7_d37e:*/ bmi $11 ; $d391.w
+@unknown_a7_d37b: cmp $0f7e.w
+/*unknown_a7_d37e:*/ bmi @unknown_a7_d391
 /*unknown_a7_d380:*/ lda $102e.w
 /*unknown_a7_d383:*/ cmp #$0600.w
-/*unknown_a7_d386:*/ bpl $18 ; $d3a0.w
+/*unknown_a7_d386:*/ bpl @unknown_a7_d3a0
 /*unknown_a7_d388:*/ clc
 /*unknown_a7_d389:*/ adc #$0040.w
 /*unknown_a7_d38c:*/ sta $102e.w
-/*unknown_a7_d38f:*/ bra $0f ; $d3a0.w
-/*unknown_a7_d391:*/ lda $102e.w
+/*unknown_a7_d38f:*/ bra @unknown_a7_d3a0
+@unknown_a7_d391: lda $102e.w
 /*unknown_a7_d394:*/ cmp #$fa01.w
-/*unknown_a7_d397:*/ bmi $07 ; $d3a0.w
+/*unknown_a7_d397:*/ bmi @unknown_a7_d3a0
 /*unknown_a7_d399:*/ sec
 /*unknown_a7_d39a:*/ sbc #$0040.w
 /*unknown_a7_d39d:*/ sta $102e.w
-/*unknown_a7_d3a0:*/ lda $102e.w
+@unknown_a7_d3a0: lda $102e.w
 /*unknown_a7_d3a3:*/ xba
 /*unknown_a7_d3a4:*/ pha
 /*unknown_a7_d3a5:*/ and #$ff00.w
@@ -9289,9 +9289,9 @@ das: .dw $400
 /*unknown_a7_d3aa:*/ pla
 /*unknown_a7_d3ab:*/ and #$00ff.w
 /*unknown_a7_d3ae:*/ bit #$0080.w
-/*unknown_a7_d3b1:*/ beq $03 ; $d3b6.w
+/*unknown_a7_d3b1:*/ beq @unknown_a7_d3b6
 /*unknown_a7_d3b3:*/ ora #$ff00.w
-/*unknown_a7_d3b6:*/ sta $12
+@unknown_a7_d3b6: sta $12
 /*unknown_a7_d3b8:*/ lda $0f80.w
 /*unknown_a7_d3bb:*/ clc
 /*unknown_a7_d3bc:*/ adc $14
@@ -9300,16 +9300,16 @@ das: .dw $400
 /*unknown_a7_d3c4:*/ adc $12
 /*unknown_a7_d3c6:*/ sta $0f7e.w
 /*unknown_a7_d3c9:*/ cmp #$0040.w
-/*unknown_a7_d3cc:*/ bpl $07 ; $d3d5.w
+/*unknown_a7_d3cc:*/ bpl @unknown_a7_d3d5
 /*unknown_a7_d3ce:*/ lda #$0040.w
 /*unknown_a7_d3d1:*/ sta $0f7e.w
 /*unknown_a7_d3d4:*/ rts
 
-/*unknown_a7_d3d5:*/ cmp #$00d8.w
-/*unknown_a7_d3d8:*/ bmi $06 ; $d3e0.w
+@unknown_a7_d3d5: cmp #$00d8.w
+/*unknown_a7_d3d8:*/ bmi @unknown_a7_d3e0
 /*unknown_a7_d3da:*/ lda #$00d8.w
 /*unknown_a7_d3dd:*/ sta $0f7e.w
-/*unknown_a7_d3e0:*/ rts
+@unknown_a7_d3e0: rts
 
 /*unknown_a7_d3e1:*/ lda #$0400.w
 /*unknown_a7_d3e4:*/ sta $102c.w
@@ -9341,23 +9341,23 @@ das: .dw $400
 /*unknown_a7_d421:*/ phx
 /*unknown_a7_d422:*/ lda $0fb2.w, X
 /*unknown_a7_d425:*/ cmp #$d678.w
-/*unknown_a7_d428:*/ beq $0d ; $d437.w
+/*unknown_a7_d428:*/ beq @unknown_a7_d437
 /*unknown_a7_d42a:*/ cmp #$d6b9.w
-/*unknown_a7_d42d:*/ beq $08 ; $d437.w
+/*unknown_a7_d42d:*/ beq @unknown_a7_d437
 /*unknown_a7_d42f:*/ lda #$d948.w
 /*unknown_a7_d432:*/ sta $0fb2.w, X
-/*unknown_a7_d435:*/ bra $06 ; $d43d.w
-/*unknown_a7_d437:*/ lda #$d92e.w
+/*unknown_a7_d435:*/ bra @unknown_a7_d43d
+@unknown_a7_d437: lda #$d92e.w
 /*unknown_a7_d43a:*/ sta $0fb2.w, X
-/*unknown_a7_d43d:*/ stz $0fec.w
+@unknown_a7_d43d: stz $0fec.w
 /*unknown_a7_d440:*/ stz $0ff2.w
 /*unknown_a7_d443:*/ jsr $d3fa.w
 /*unknown_a7_d446:*/ ldx #$01fe.w
 /*unknown_a7_d449:*/ lda $b5
-/*unknown_a7_d44b:*/ sta $7e9100, X
+@unknown_a7_d44b: sta $7e9100, X
 /*unknown_a7_d44f:*/ dex
 /*unknown_a7_d450:*/ dex
-/*unknown_a7_d451:*/ bpl ($f8 - $100) ; $d44b.w
+/*unknown_a7_d451:*/ bpl @unknown_a7_d44b
 /*unknown_a7_d453:*/ lda $1988.w
 /*unknown_a7_d456:*/ ora #$4000.w
 /*unknown_a7_d459:*/ sta $1988.w
@@ -9370,40 +9370,40 @@ das: .dw $400
 /*unknown_a7_d465:*/ sta $12
 /*unknown_a7_d467:*/ lda $05b6.w
 /*unknown_a7_d46a:*/ bit #$0001.w
-/*unknown_a7_d46d:*/ bne $15 ; $d484.w
+/*unknown_a7_d46d:*/ bne @unknown_a7_d484
 /*unknown_a7_d46f:*/ lda $0ff2.w
-/*unknown_a7_d472:*/ bne $10 ; $d484.w
+/*unknown_a7_d472:*/ bne @unknown_a7_d484
 /*unknown_a7_d474:*/ lda $12
 /*unknown_a7_d476:*/ sta $0fee.w
 /*unknown_a7_d479:*/ jsr $db9a.w
-/*unknown_a7_d47c:*/ bcc $06 ; $d484.w
+/*unknown_a7_d47c:*/ bcc @unknown_a7_d484
 /*unknown_a7_d47e:*/ lda #$0001.w
 /*unknown_a7_d481:*/ sta $0ff2.w
-/*unknown_a7_d484:*/ plx
+@unknown_a7_d484: plx
 /*unknown_a7_d485:*/ rts
 
 /*unknown_a7_d486:*/ phx
 /*unknown_a7_d487:*/ sta $12
 /*unknown_a7_d489:*/ lda $05b6.w
 /*unknown_a7_d48c:*/ bit #$0001.w
-/*unknown_a7_d48f:*/ bne $15 ; $d4a6.w
+/*unknown_a7_d48f:*/ bne @unknown_a7_d4a6
 /*unknown_a7_d491:*/ lda $0ff2.w
-/*unknown_a7_d494:*/ bne $10 ; $d4a6.w
+/*unknown_a7_d494:*/ bne @unknown_a7_d4a6
 /*unknown_a7_d496:*/ lda $12
 /*unknown_a7_d498:*/ sta $0fee.w
 /*unknown_a7_d49b:*/ jsr $dbd5.w
-/*unknown_a7_d49e:*/ bcc $06 ; $d4a6.w
+/*unknown_a7_d49e:*/ bcc @unknown_a7_d4a6
 /*unknown_a7_d4a0:*/ lda #$0001.w
 /*unknown_a7_d4a3:*/ sta $0ff2.w
-/*unknown_a7_d4a6:*/ plx
+@unknown_a7_d4a6: plx
 /*unknown_a7_d4a7:*/ rts
 
 /*unknown_a7_d4a8:*/ rts
 
 /*unknown_a7_d4a9:*/ dec $0fb0.w, X
-/*unknown_a7_d4ac:*/ beq $02 ; $d4b0.w
-/*unknown_a7_d4ae:*/ bpl $3d ; $d4ed.w
-/*unknown_a7_d4b0:*/ lda $0fa8.w
+/*unknown_a7_d4ac:*/ beq @unknown_a7_d4b0
+/*unknown_a7_d4ae:*/ bpl @unknown_a7_d4ed
+@unknown_a7_d4b0: lda $0fa8.w
 /*unknown_a7_d4b3:*/ ldy #$9c37.w
 /*unknown_a7_d4b6:*/ jsr $868027
 /*unknown_a7_d4ba:*/ lda #$001d.w
@@ -9414,7 +9414,7 @@ das: .dw $400
 /*unknown_a7_d4ca:*/ inc A
 /*unknown_a7_d4cb:*/ sta $0fa8.w
 /*unknown_a7_d4ce:*/ cmp #$0008.w
-/*unknown_a7_d4d1:*/ bmi $1a ; $d4ed.w
+/*unknown_a7_d4d1:*/ bmi @unknown_a7_d4ed
 /*unknown_a7_d4d3:*/ stz $0fa8.w
 /*unknown_a7_d4d6:*/ stz $102a.w, X
 /*unknown_a7_d4d9:*/ lda #$d4ee.w
@@ -9424,23 +9424,23 @@ das: .dw $400
 /*unknown_a7_d4e5:*/ jsr $8483d7
 /*unknown_a7_d4e9:*/ brk $06
 /*unknown_a7_d4eb:*/ sta ($b7, X)
-/*unknown_a7_d4ed:*/ rts
+@unknown_a7_d4ed: rts
 
 /*unknown_a7_d4ee:*/ dec $0fb0.w, X
-/*unknown_a7_d4f1:*/ beq $02 ; $d4f5.w
-/*unknown_a7_d4f3:*/ bpl $12 ; $d507.w
-/*unknown_a7_d4f5:*/ lda #$00f0.w
+/*unknown_a7_d4f1:*/ beq @unknown_a7_d4f5
+/*unknown_a7_d4f3:*/ bpl @unknown_a7_d507
+@unknown_a7_d4f5: lda #$00f0.w
 /*unknown_a7_d4f8:*/ sta $0fb0.w, X
 /*unknown_a7_d4fb:*/ lda #$0001.w
 /*unknown_a7_d4fe:*/ sta $0faa.w, X
 /*unknown_a7_d501:*/ lda #$d508.w
 /*unknown_a7_d504:*/ sta $0fb2.w, X
-/*unknown_a7_d507:*/ rts
+@unknown_a7_d507: rts
 
 /*unknown_a7_d508:*/ dec $0fb0.w, X
-/*unknown_a7_d50b:*/ beq $02 ; $d50f.w
-/*unknown_a7_d50d:*/ bpl $3a ; $d549.w
-/*unknown_a7_d50f:*/ stz $0faa.w, X
+/*unknown_a7_d50b:*/ beq @unknown_a7_d50f
+/*unknown_a7_d50d:*/ bpl @unknown_a7_d549
+@unknown_a7_d50f: stz $0faa.w, X
 /*unknown_a7_d512:*/ lda $1988.w
 /*unknown_a7_d515:*/ ora #$4000.w
 /*unknown_a7_d518:*/ sta $1988.w
@@ -9459,7 +9459,7 @@ das: .dw $400
 /*unknown_a7_d53f:*/ stz $0ff2.w
 /*unknown_a7_d542:*/ lda #$0005.w
 /*unknown_a7_d545:*/ jsr $808fc1
-/*unknown_a7_d549:*/ rts
+@unknown_a7_d549: rts
 
 /*unknown_a7_d54a:*/ lda #$000c.w
 /*unknown_a7_d54d:*/ jsr $d486.w
@@ -9468,35 +9468,35 @@ das: .dw $400
 /*unknown_a7_d555:*/ lda $cd9d.w
 /*unknown_a7_d558:*/ sta $14
 /*unknown_a7_d55a:*/ jsr $cf27.w
-/*unknown_a7_d55d:*/ bcs $0f ; $d56e.w
+/*unknown_a7_d55d:*/ bcs @unknown_a7_d56e
 /*unknown_a7_d55f:*/ dec $0fb0.w, X
-/*unknown_a7_d562:*/ beq $02 ; $d566.w
-/*unknown_a7_d564:*/ bpl $1a ; $d580.w
-/*unknown_a7_d566:*/ lda #$0001.w
+/*unknown_a7_d562:*/ beq @unknown_a7_d566
+/*unknown_a7_d564:*/ bpl @unknown_a7_d580
+@unknown_a7_d566: lda #$0001.w
 /*unknown_a7_d569:*/ sta $1070.w
-/*unknown_a7_d56c:*/ bra $12 ; $d580.w
-/*unknown_a7_d56e:*/ lda #$d596.w
+/*unknown_a7_d56c:*/ bra @unknown_a7_d580
+@unknown_a7_d56e: lda #$d596.w
 /*unknown_a7_d571:*/ sta $0fb2.w, X
 /*unknown_a7_d574:*/ lda #$0001.w
 /*unknown_a7_d577:*/ sta $1074.w
 /*unknown_a7_d57a:*/ lda #$001e.w
 /*unknown_a7_d57d:*/ sta $0fb0.w, X
-/*unknown_a7_d580:*/ rts
+@unknown_a7_d580: rts
 
 /*unknown_a7_d581:*/ ldx #$01fe.w
 /*unknown_a7_d584:*/ lda #$0000.w
-/*unknown_a7_d587:*/ sta $7e9100, X
+@unknown_a7_d587: sta $7e9100, X
 /*unknown_a7_d58b:*/ dex
 /*unknown_a7_d58c:*/ dex
-/*unknown_a7_d58d:*/ bpl ($f8 - $100) ; $d587.w
+/*unknown_a7_d58d:*/ bpl @unknown_a7_d587
 /*unknown_a7_d58f:*/ lda #$d596.w
 /*unknown_a7_d592:*/ sta $0fb2.w, X
 /*unknown_a7_d595:*/ rts
 
 /*unknown_a7_d596:*/ dec $0fb0.w, X
-/*unknown_a7_d599:*/ beq $02 ; $d59d.w
-/*unknown_a7_d59b:*/ bpl $49 ; $d5e6.w
-/*unknown_a7_d59d:*/ stz $0ff4.w
+/*unknown_a7_d599:*/ beq @unknown_a7_d59d
+/*unknown_a7_d59b:*/ bpl @unknown_a7_d5e6
+@unknown_a7_d59d: stz $0ff4.w
 /*unknown_a7_d5a0:*/ lda #$d5e7.w
 /*unknown_a7_d5a3:*/ sta $0fb2.w, X
 /*unknown_a7_d5a6:*/ lda $05b6.w
@@ -9508,7 +9508,7 @@ das: .dw $400
 /*unknown_a7_d5b2:*/ sta $0fe8.w
 /*unknown_a7_d5b5:*/ jsr $808111
 /*unknown_a7_d5b9:*/ bit #$0001.w
-/*unknown_a7_d5bc:*/ bne $13 ; $d5d1.w
+/*unknown_a7_d5bc:*/ bne @unknown_a7_d5d1
 /*unknown_a7_d5be:*/ lda #$0001.w
 /*unknown_a7_d5c1:*/ sta $0fac.w
 /*unknown_a7_d5c4:*/ stz $0faa.w
@@ -9517,21 +9517,21 @@ das: .dw $400
 /*unknown_a7_d5cd:*/ stz $0fa8.w
 /*unknown_a7_d5d0:*/ rts
 
-/*unknown_a7_d5d1:*/ stz $0fac.w
+@unknown_a7_d5d1: stz $0fac.w
 /*unknown_a7_d5d4:*/ stz $0faa.w
 /*unknown_a7_d5d7:*/ stz $0fae.w
 /*unknown_a7_d5da:*/ lda #$0001.w
 /*unknown_a7_d5dd:*/ sta $0fec.w
 /*unknown_a7_d5e0:*/ lda #$0215.w
 /*unknown_a7_d5e3:*/ sta $0fa8.w
-/*unknown_a7_d5e6:*/ rts
+@unknown_a7_d5e6: rts
 
 /*unknown_a7_d5e7:*/ jsr $d0f1.w
 /*unknown_a7_d5ea:*/ jsr $cfca.w
 /*unknown_a7_d5ed:*/ dec $0fe8.w
-/*unknown_a7_d5f0:*/ beq $02 ; $d5f4.w
-/*unknown_a7_d5f2:*/ bpl $18 ; $d60c.w
-/*unknown_a7_d5f4:*/ lda #$d4a8.w
+/*unknown_a7_d5f0:*/ beq @unknown_a7_d5f4
+/*unknown_a7_d5f2:*/ bpl @unknown_a7_d60c
+@unknown_a7_d5f4: lda #$d4a8.w
 /*unknown_a7_d5f7:*/ sta $0fb2.w, X
 /*unknown_a7_d5fa:*/ lda #$0001.w
 /*unknown_a7_d5fd:*/ sta $0fd4.w
@@ -9539,21 +9539,21 @@ das: .dw $400
 /*unknown_a7_d603:*/ sta $0fd2.w
 /*unknown_a7_d606:*/ stz $0fb6.w
 /*unknown_a7_d609:*/ jsr $cf70.w
-/*unknown_a7_d60c:*/ rts
+@unknown_a7_d60c: rts
 
 /*unknown_a7_d60d:*/ dec $0fb0.w, X
-/*unknown_a7_d610:*/ beq $02 ; $d614.w
-/*unknown_a7_d612:*/ bpl $44 ; $d658.w
-/*unknown_a7_d614:*/ stz $102a.w, X
+/*unknown_a7_d610:*/ beq @unknown_a7_d614
+/*unknown_a7_d612:*/ bpl @unknown_a7_d658
+@unknown_a7_d614: stz $102a.w, X
 /*unknown_a7_d617:*/ lda $1028.w
-/*unknown_a7_d61a:*/ beq $11 ; $d62d.w
+/*unknown_a7_d61a:*/ beq @unknown_a7_d62d
 /*unknown_a7_d61c:*/ stz $1028.w
 /*unknown_a7_d61f:*/ lda #$003c.w
 /*unknown_a7_d622:*/ sta $0fb0.w, X
 /*unknown_a7_d625:*/ lda #$d65c.w
 /*unknown_a7_d628:*/ sta $0fb2.w, X
-/*unknown_a7_d62b:*/ bra $2b ; $d658.w
-/*unknown_a7_d62d:*/ lda #$d4a8.w
+/*unknown_a7_d62b:*/ bra @unknown_a7_d658
+@unknown_a7_d62d: lda #$d4a8.w
 /*unknown_a7_d630:*/ sta $0fb2.w, X
 /*unknown_a7_d633:*/ lda #$0001.w
 /*unknown_a7_d636:*/ sta $0f94.w
@@ -9569,7 +9569,7 @@ das: .dw $400
 /*unknown_a7_d654:*/ sta $0fb6.w
 /*unknown_a7_d657:*/ rts
 
-/*unknown_a7_d658:*/ jsr $d3fa.w
+@unknown_a7_d658: jsr $d3fa.w
 /*unknown_a7_d65b:*/ rts
 
 /*unknown_a7_d65c:*/ jsr $d3fa.w
@@ -9586,9 +9586,9 @@ das: .dw $400
 /*unknown_a7_d678:*/ jsr $d3fa.w
 /*unknown_a7_d67b:*/ jsr $d2d1.w
 /*unknown_a7_d67e:*/ dec $0fb0.w, X
-/*unknown_a7_d681:*/ beq $02 ; $d685.w
-/*unknown_a7_d683:*/ bpl $33 ; $d6b8.w
-/*unknown_a7_d685:*/ lda #$d6b9.w
+/*unknown_a7_d681:*/ beq @unknown_a7_d685
+/*unknown_a7_d683:*/ bpl @unknown_a7_d6b8
+@unknown_a7_d685: lda #$d6b9.w
 /*unknown_a7_d688:*/ sta $0fb2.w, X
 /*unknown_a7_d68b:*/ lda $1988.w
 /*unknown_a7_d68e:*/ ora #$4000.w
@@ -9605,43 +9605,43 @@ das: .dw $400
 /*unknown_a7_d6af:*/ sta $0f86.w
 /*unknown_a7_d6b2:*/ stz $0ff2.w
 /*unknown_a7_d6b5:*/ stz $102a.w, X
-/*unknown_a7_d6b8:*/ rts
+@unknown_a7_d6b8: rts
 
 /*unknown_a7_d6b9:*/ jsr $d2d1.w
 /*unknown_a7_d6bc:*/ lda #$000c.w
 /*unknown_a7_d6bf:*/ jsr $d464.w
 /*unknown_a7_d6c2:*/ lda $0ff2.w
-/*unknown_a7_d6c5:*/ beq $0c ; $d6d3.w
+/*unknown_a7_d6c5:*/ beq @unknown_a7_d6d3
 /*unknown_a7_d6c7:*/ lda #$d6d4.w
 /*unknown_a7_d6ca:*/ sta $0fb2.w, X
 /*unknown_a7_d6cd:*/ lda #$0078.w
 /*unknown_a7_d6d0:*/ sta $0fb0.w, X
-/*unknown_a7_d6d3:*/ rts
+@unknown_a7_d6d3: rts
 
 /*unknown_a7_d6d4:*/ dec $0fb0.w, X
-/*unknown_a7_d6d7:*/ beq $02 ; $d6db.w
-/*unknown_a7_d6d9:*/ bpl $06 ; $d6e1.w
-/*unknown_a7_d6db:*/ lda #$d6e2.w
+/*unknown_a7_d6d7:*/ beq @unknown_a7_d6db
+/*unknown_a7_d6d9:*/ bpl @unknown_a7_d6e1
+@unknown_a7_d6db: lda #$d6e2.w
 /*unknown_a7_d6de:*/ sta $0fb2.w, X
-/*unknown_a7_d6e1:*/ rts
+@unknown_a7_d6e1: rts
 
 /*unknown_a7_d6e2:*/ jsr $808111
 /*unknown_a7_d6e6:*/ bit #$0001.w
-/*unknown_a7_d6e9:*/ beq $14 ; $d6ff.w
+/*unknown_a7_d6e9:*/ beq @unknown_a7_d6ff
 /*unknown_a7_d6eb:*/ lda #$0088.w
 /*unknown_a7_d6ee:*/ sta $0fa8.w
 /*unknown_a7_d6f1:*/ lda #$00d0.w
 /*unknown_a7_d6f4:*/ sta $0f7a.w
 /*unknown_a7_d6f7:*/ lda #$0060.w
 /*unknown_a7_d6fa:*/ sta $0f7e.w
-/*unknown_a7_d6fd:*/ bra $12 ; $d711.w
-/*unknown_a7_d6ff:*/ lda #$018f.w
+/*unknown_a7_d6fd:*/ bra @unknown_a7_d711
+@unknown_a7_d6ff: lda #$018f.w
 /*unknown_a7_d702:*/ sta $0fa8.w
 /*unknown_a7_d705:*/ lda #$0030.w
 /*unknown_a7_d708:*/ sta $0f7a.w
 /*unknown_a7_d70b:*/ lda #$0060.w
 /*unknown_a7_d70e:*/ sta $0f7e.w
-/*unknown_a7_d711:*/ stz $0fec.w
+@unknown_a7_d711: stz $0fec.w
 /*unknown_a7_d714:*/ lda #$0001.w
 /*unknown_a7_d717:*/ sta $0fac.w
 /*unknown_a7_d71a:*/ stz $0faa.w
@@ -9655,10 +9655,10 @@ das: .dw $400
 /*unknown_a7_d72d:*/ lda #$000c.w
 /*unknown_a7_d730:*/ jsr $d486.w
 /*unknown_a7_d733:*/ lda $0ff2.w
-/*unknown_a7_d736:*/ beq $06 ; $d73e.w
+/*unknown_a7_d736:*/ beq @unknown_a7_d73e
 /*unknown_a7_d738:*/ lda #$d5e7.w
 /*unknown_a7_d73b:*/ sta $0fb2.w
-/*unknown_a7_d73e:*/ rts
+@unknown_a7_d73e: rts
 
 /*unknown_a7_d73f:*/ stz $0ff2.w
 /*unknown_a7_d742:*/ lda $1988.w
@@ -9678,7 +9678,7 @@ das: .dw $400
 /*unknown_a7_d767:*/ lda #$0001.w
 /*unknown_a7_d76a:*/ jsr $d486.w
 /*unknown_a7_d76d:*/ lda $0ff2.w
-/*unknown_a7_d770:*/ beq $15 ; $d787.w
+/*unknown_a7_d770:*/ beq @unknown_a7_d787
 /*unknown_a7_d772:*/ lda $0f86.w
 /*unknown_a7_d775:*/ and #$fbff.w
 /*unknown_a7_d778:*/ sta $0f86.w
@@ -9686,21 +9686,21 @@ das: .dw $400
 /*unknown_a7_d77e:*/ sta $0fb2.w, X
 /*unknown_a7_d781:*/ lda #$005a.w
 /*unknown_a7_d784:*/ sta $0fb0.w
-/*unknown_a7_d787:*/ rts
+@unknown_a7_d787: rts
 
 /*unknown_a7_d788:*/ dec $0fb0.w, X
-/*unknown_a7_d78b:*/ beq $02 ; $d78f.w
-/*unknown_a7_d78d:*/ bpl $45 ; $d7d4.w
-/*unknown_a7_d78f:*/ stz $102a.w, X
+/*unknown_a7_d78b:*/ beq @unknown_a7_d78f
+/*unknown_a7_d78d:*/ bpl @unknown_a7_d7d4
+@unknown_a7_d78f: stz $102a.w, X
 /*unknown_a7_d792:*/ lda $1028.w
-/*unknown_a7_d795:*/ beq $0d ; $d7a4.w
+/*unknown_a7_d795:*/ beq @unknown_a7_d7a4
 /*unknown_a7_d797:*/ stz $1028.w
 /*unknown_a7_d79a:*/ lda #$0001.w
 /*unknown_a7_d79d:*/ sta $0fb6.w
 /*unknown_a7_d7a0:*/ jsr $d3e1.w
 /*unknown_a7_d7a3:*/ rts
 
-/*unknown_a7_d7a4:*/ lda #$d7d5.w
+@unknown_a7_d7a4: lda #$d7d5.w
 /*unknown_a7_d7a7:*/ sta $0fb2.w, X
 /*unknown_a7_d7aa:*/ stz $0ff2.w
 /*unknown_a7_d7ad:*/ lda #$0001.w
@@ -9716,15 +9716,15 @@ das: .dw $400
 /*unknown_a7_d7cb:*/ lda $1988.w
 /*unknown_a7_d7ce:*/ ora #$4000.w
 /*unknown_a7_d7d1:*/ sta $1988.w
-/*unknown_a7_d7d4:*/ rts
+@unknown_a7_d7d4: rts
 
 /*unknown_a7_d7d5:*/ lda #$000c.w
 /*unknown_a7_d7d8:*/ jsr $d464.w
 /*unknown_a7_d7db:*/ lda $0ff2.w
-/*unknown_a7_d7de:*/ bne $01 ; $d7e1.w
+/*unknown_a7_d7de:*/ bne @unknown_a7_d7e1
 /*unknown_a7_d7e0:*/ rts
 
-/*unknown_a7_d7e1:*/ lda #$d7f7.w
+@unknown_a7_d7e1: lda #$d7f7.w
 /*unknown_a7_d7e4:*/ sta $0fb2.w, X
 /*unknown_a7_d7e7:*/ jsr $808111
 /*unknown_a7_d7eb:*/ and #$0007.w
@@ -9735,9 +9735,9 @@ das: .dw $400
 /*unknown_a7_d7f6:*/ rts
 
 /*unknown_a7_d7f7:*/ dec $0fb0.w, X
-/*unknown_a7_d7fa:*/ beq $02 ; $d7fe.w
-/*unknown_a7_d7fc:*/ bpl $2b ; $d829.w
-/*unknown_a7_d7fe:*/ jsr $808111
+/*unknown_a7_d7fa:*/ beq @unknown_a7_d7fe
+/*unknown_a7_d7fc:*/ bpl @unknown_a7_d829
+@unknown_a7_d7fe: jsr $808111
 /*unknown_a7_d802:*/ and #$0007.w
 /*unknown_a7_d805:*/ pha
 /*unknown_a7_d806:*/ asl A
@@ -9755,80 +9755,80 @@ das: .dw $400
 /*unknown_a7_d822:*/ sta $0fb2.w, X
 /*unknown_a7_d825:*/ pla
 /*unknown_a7_d826:*/ jsr $cf8b.w
-/*unknown_a7_d829:*/ rts
+@unknown_a7_d829: rts
 
 /*unknown_a7_d82a:*/ lda #$000c.w
 /*unknown_a7_d82d:*/ jsr $d464.w
 /*unknown_a7_d830:*/ jsr $d0f1.w
 /*unknown_a7_d833:*/ jsr $cfca.w
 /*unknown_a7_d836:*/ dec $0fe8.w
-/*unknown_a7_d839:*/ beq $02 ; $d83d.w
-/*unknown_a7_d83b:*/ bpl $1e ; $d85b.w
-/*unknown_a7_d83d:*/ stz $1028.w
+/*unknown_a7_d839:*/ beq @unknown_a7_d83d
+/*unknown_a7_d83b:*/ bpl @unknown_a7_d85b
+@unknown_a7_d83d: stz $1028.w
 /*unknown_a7_d840:*/ lda #$d73f.w
 /*unknown_a7_d843:*/ sta $0fb2.w, X
 /*unknown_a7_d846:*/ lda $0f7a.w
 /*unknown_a7_d849:*/ cmp #$0080.w
-/*unknown_a7_d84c:*/ bmi $07 ; $d855.w
+/*unknown_a7_d84c:*/ bmi @unknown_a7_d855
 /*unknown_a7_d84e:*/ lda #$0002.w
 /*unknown_a7_d851:*/ jsr $cf8b.w
 /*unknown_a7_d854:*/ rts
 
-/*unknown_a7_d855:*/ lda #$0000.w
+@unknown_a7_d855: lda #$0000.w
 /*unknown_a7_d858:*/ jsr $cf8b.w
-/*unknown_a7_d85b:*/ rts
+@unknown_a7_d85b: rts
 
 /*unknown_a7_d85c:*/ lda #$000c.w
 /*unknown_a7_d85f:*/ jsr $d464.w
 /*unknown_a7_d862:*/ lda $0ff2.w
-/*unknown_a7_d865:*/ beq $0c ; $d873.w
+/*unknown_a7_d865:*/ beq @unknown_a7_d873
 /*unknown_a7_d867:*/ lda #$d874.w
 /*unknown_a7_d86a:*/ sta $0fb2.w, X
 /*unknown_a7_d86d:*/ lda #$0078.w
 /*unknown_a7_d870:*/ sta $0fb0.w, X
-/*unknown_a7_d873:*/ rts
+@unknown_a7_d873: rts
 
 /*unknown_a7_d874:*/ dec $0fb0.w, X
-/*unknown_a7_d877:*/ beq $02 ; $d87b.w
-/*unknown_a7_d879:*/ bpl $15 ; $d890.w
-/*unknown_a7_d87b:*/ lda #$d891.w
+/*unknown_a7_d877:*/ beq @unknown_a7_d87b
+/*unknown_a7_d879:*/ bpl @unknown_a7_d890
+@unknown_a7_d87b: lda #$d891.w
 /*unknown_a7_d87e:*/ sta $0fb2.w, X
 /*unknown_a7_d881:*/ lda #$0080.w
 /*unknown_a7_d884:*/ sta $0f7a.w
 /*unknown_a7_d887:*/ lda #$0020.w
 /*unknown_a7_d88a:*/ sta $0f7e.w
 /*unknown_a7_d88d:*/ stz $0ff2.w
-/*unknown_a7_d890:*/ rts
+@unknown_a7_d890: rts
 
 /*unknown_a7_d891:*/ lda #$000c.w
 /*unknown_a7_d894:*/ jsr $d486.w
 /*unknown_a7_d897:*/ lda $0ff2.w
-/*unknown_a7_d89a:*/ beq $0f ; $d8ab.w
+/*unknown_a7_d89a:*/ beq @unknown_a7_d8ab
 /*unknown_a7_d89c:*/ lda #$d8ac.w
 /*unknown_a7_d89f:*/ sta $0fb2.w
 /*unknown_a7_d8a2:*/ lda #$0004.w
 /*unknown_a7_d8a5:*/ sta $0fb0.w, X
 /*unknown_a7_d8a8:*/ stz $0ff2.w
-/*unknown_a7_d8ab:*/ rts
+@unknown_a7_d8ab: rts
 
 /*unknown_a7_d8ac:*/ dec $0fb0.w, X
-/*unknown_a7_d8af:*/ beq $02 ; $d8b3.w
-/*unknown_a7_d8b1:*/ bpl $62 ; $d915.w
-/*unknown_a7_d8b3:*/ lda $0ff2.w
+/*unknown_a7_d8af:*/ beq @unknown_a7_d8b3
+/*unknown_a7_d8b1:*/ bpl @unknown_a7_d915
+@unknown_a7_d8b3: lda $0ff2.w
 /*unknown_a7_d8b6:*/ bit #$0001.w
-/*unknown_a7_d8b9:*/ bne $15 ; $d8d0.w
+/*unknown_a7_d8b9:*/ bne @unknown_a7_d8d0
 /*unknown_a7_d8bb:*/ ldy #$0006.w
-/*unknown_a7_d8be:*/ phy
+@unknown_a7_d8be: phy
 /*unknown_a7_d8bf:*/ tya
 /*unknown_a7_d8c0:*/ ora #$0200.w
 /*unknown_a7_d8c3:*/ ldy #$9c29.w
 /*unknown_a7_d8c6:*/ jsr $868027
 /*unknown_a7_d8ca:*/ ply
 /*unknown_a7_d8cb:*/ dey
-/*unknown_a7_d8cc:*/ bpl ($f0 - $100) ; $d8be.w
-/*unknown_a7_d8ce:*/ bra $16 ; $d8e6.w
-/*unknown_a7_d8d0:*/ ldy #$000f.w
-/*unknown_a7_d8d3:*/ phy
+/*unknown_a7_d8cc:*/ bpl @unknown_a7_d8be
+/*unknown_a7_d8ce:*/ bra @unknown_a7_d8e6
+@unknown_a7_d8d0: ldy #$000f.w
+@unknown_a7_d8d3: phy
 /*unknown_a7_d8d4:*/ tya
 /*unknown_a7_d8d5:*/ ora #$0200.w
 /*unknown_a7_d8d8:*/ ldy #$9c29.w
@@ -9836,90 +9836,90 @@ das: .dw $400
 /*unknown_a7_d8df:*/ ply
 /*unknown_a7_d8e0:*/ dey
 /*unknown_a7_d8e1:*/ cpy #$0008.w
-/*unknown_a7_d8e4:*/ bpl ($ed - $100) ; $d8d3.w
-/*unknown_a7_d8e6:*/ lda #$0029.w
+/*unknown_a7_d8e4:*/ bpl @unknown_a7_d8d3
+@unknown_a7_d8e6: lda #$0029.w
 /*unknown_a7_d8e9:*/ jsr $80914d
 /*unknown_a7_d8ed:*/ lda $0ff2.w
 /*unknown_a7_d8f0:*/ inc A
 /*unknown_a7_d8f1:*/ sta $0ff2.w
 /*unknown_a7_d8f4:*/ cmp #$0008.w
-/*unknown_a7_d8f7:*/ bpl $07 ; $d900.w
+/*unknown_a7_d8f7:*/ bpl @unknown_a7_d900
 /*unknown_a7_d8f9:*/ lda #$0080.w
 /*unknown_a7_d8fc:*/ sta $0fb0.w, X
 /*unknown_a7_d8ff:*/ rts
 
-/*unknown_a7_d900:*/ lda #$0001.w
+@unknown_a7_d900: lda #$0001.w
 /*unknown_a7_d903:*/ sta $0fd4.w
 /*unknown_a7_d906:*/ lda #$cc91.w
 /*unknown_a7_d909:*/ sta $0fd2.w
 /*unknown_a7_d90c:*/ stz $0ff2.w
 /*unknown_a7_d90f:*/ lda #$d916.w
 /*unknown_a7_d912:*/ sta $0fb2.w, X
-/*unknown_a7_d915:*/ rts
+@unknown_a7_d915: rts
 
 /*unknown_a7_d916:*/ lda #$000c.w
 /*unknown_a7_d919:*/ jsr $d464.w
 /*unknown_a7_d91c:*/ lda $0ff2.w
-/*unknown_a7_d91f:*/ beq $0c ; $d92d.w
+/*unknown_a7_d91f:*/ beq @unknown_a7_d92d
 /*unknown_a7_d921:*/ lda #$d6d4.w
 /*unknown_a7_d924:*/ sta $0fb2.w, X
 /*unknown_a7_d927:*/ lda #$0078.w
 /*unknown_a7_d92a:*/ sta $0fb0.w, X
-/*unknown_a7_d92d:*/ rts
+@unknown_a7_d92d: rts
 
 /*unknown_a7_d92e:*/ jsr $d3fa.w
 /*unknown_a7_d931:*/ jsr $d2d1.w
 /*unknown_a7_d934:*/ lda $0f7a.w
 /*unknown_a7_d937:*/ cmp #$0060.w
-/*unknown_a7_d93a:*/ bmi $0b ; $d947.w
+/*unknown_a7_d93a:*/ bmi @unknown_a7_d947
 /*unknown_a7_d93c:*/ cmp #$00a0.w
-/*unknown_a7_d93f:*/ bpl $06 ; $d947.w
+/*unknown_a7_d93f:*/ bpl @unknown_a7_d947
 /*unknown_a7_d941:*/ lda #$d948.w
 /*unknown_a7_d944:*/ sta $0fb2.w, X
-/*unknown_a7_d947:*/ rts
+@unknown_a7_d947: rts
 
 /*unknown_a7_d948:*/ nop
 /*unknown_a7_d949:*/ lda $0fec.w
 /*unknown_a7_d94c:*/ bit #$0001.w
-/*unknown_a7_d94f:*/ bne $0d ; $d95e.w
+/*unknown_a7_d94f:*/ bne @unknown_a7_d95e
 /*unknown_a7_d951:*/ lda #$000c.w
 /*unknown_a7_d954:*/ jsr $d464.w
 /*unknown_a7_d957:*/ lda $0ff2.w
-/*unknown_a7_d95a:*/ bne $0d ; $d969.w
-/*unknown_a7_d95c:*/ bra $2c ; $d98a.w
-/*unknown_a7_d95e:*/ lda #$000c.w
+/*unknown_a7_d95a:*/ bne @unknown_a7_d969
+/*unknown_a7_d95c:*/ bra @unknown_a7_d98a
+@unknown_a7_d95e: lda #$000c.w
 /*unknown_a7_d961:*/ jsr $d486.w
 /*unknown_a7_d964:*/ lda $0ff2.w
-/*unknown_a7_d967:*/ beq $21 ; $d98a.w
-/*unknown_a7_d969:*/ stz $0ff2.w
+/*unknown_a7_d967:*/ beq @unknown_a7_d98a
+@unknown_a7_d969: stz $0ff2.w
 /*unknown_a7_d96c:*/ lda $0fec.w
 /*unknown_a7_d96f:*/ inc A
 /*unknown_a7_d970:*/ sta $0fec.w
 /*unknown_a7_d973:*/ cmp #$000a.w
-/*unknown_a7_d976:*/ bmi $12 ; $d98a.w
+/*unknown_a7_d976:*/ bmi @unknown_a7_d98a
 /*unknown_a7_d978:*/ lda #$d98b.w
 /*unknown_a7_d97b:*/ sta $0fb2.w, X
 /*unknown_a7_d97e:*/ lda #$000f.w
 /*unknown_a7_d981:*/ sta $0fb0.w, X
 /*unknown_a7_d984:*/ stz $1032.w
 /*unknown_a7_d987:*/ stz $0fa8.w
-/*unknown_a7_d98a:*/ rts
+@unknown_a7_d98a: rts
 
 /*unknown_a7_d98b:*/ dec $0fb0.w, X
-/*unknown_a7_d98e:*/ beq $03 ; $d993.w
-/*unknown_a7_d990:*/ bmi $01 ; $d993.w
+/*unknown_a7_d98e:*/ beq @unknown_a7_d993
+/*unknown_a7_d990:*/ bmi @unknown_a7_d993
 /*unknown_a7_d992:*/ rts
 
-/*unknown_a7_d993:*/ lda $1032.w
+@unknown_a7_d993: lda $1032.w
 /*unknown_a7_d996:*/ asl A
 /*unknown_a7_d997:*/ asl A
 /*unknown_a7_d998:*/ tay
 /*unknown_a7_d999:*/ lda $da1d.w, Y
 /*unknown_a7_d99c:*/ and #$00ff.w
 /*unknown_a7_d99f:*/ bit #$0080.w
-/*unknown_a7_d9a2:*/ beq $03 ; $d9a7.w
+/*unknown_a7_d9a2:*/ beq @unknown_a7_d9a7
 /*unknown_a7_d9a4:*/ ora #$ff00.w
-/*unknown_a7_d9a7:*/ sta $12
+@unknown_a7_d9a7: sta $12
 /*unknown_a7_d9a9:*/ lda $0f7a.w
 /*unknown_a7_d9ac:*/ clc
 /*unknown_a7_d9ad:*/ adc $12
@@ -9927,9 +9927,9 @@ das: .dw $400
 /*unknown_a7_d9b1:*/ lda $da1e.w, Y
 /*unknown_a7_d9b4:*/ and #$00ff.w
 /*unknown_a7_d9b7:*/ bit #$0080.w
-/*unknown_a7_d9ba:*/ beq $03 ; $d9bf.w
+/*unknown_a7_d9ba:*/ beq @unknown_a7_d9bf
 /*unknown_a7_d9bc:*/ ora #$ff00.w
-/*unknown_a7_d9bf:*/ sta $14
+@unknown_a7_d9bf: sta $14
 /*unknown_a7_d9c1:*/ lda $0f7e.w
 /*unknown_a7_d9c4:*/ clc
 /*unknown_a7_d9c5:*/ adc $14
@@ -9942,13 +9942,13 @@ das: .dw $400
 /*unknown_a7_d9d4:*/ jsr $868097
 /*unknown_a7_d9d8:*/ pla
 /*unknown_a7_d9d9:*/ cmp #$001d.w
-/*unknown_a7_d9dc:*/ bne $09 ; $d9e7.w
+/*unknown_a7_d9dc:*/ bne @unknown_a7_d9e7
 /*unknown_a7_d9de:*/ lda #$0024.w
 /*unknown_a7_d9e1:*/ jsr $8090cb
-/*unknown_a7_d9e5:*/ bra $07 ; $d9ee.w
-/*unknown_a7_d9e7:*/ lda #$002b.w
+/*unknown_a7_d9e5:*/ bra @unknown_a7_d9ee
+@unknown_a7_d9e7: lda #$002b.w
 /*unknown_a7_d9ea:*/ jsr $8090cb
-/*unknown_a7_d9ee:*/ ply
+@unknown_a7_d9ee: ply
 /*unknown_a7_d9ef:*/ lda $da20.w, Y
 /*unknown_a7_d9f2:*/ and #$00ff.w
 /*unknown_a7_d9f5:*/ sta $0fb0.w, X
@@ -9956,23 +9956,23 @@ das: .dw $400
 /*unknown_a7_d9fb:*/ inc A
 /*unknown_a7_d9fc:*/ sta $1032.w
 /*unknown_a7_d9ff:*/ cmp #$000d.w
-/*unknown_a7_da02:*/ bmi $18 ; $da1c.w
+/*unknown_a7_da02:*/ bmi @unknown_a7_da1c
 /*unknown_a7_da04:*/ lda #$0005.w
 /*unknown_a7_da07:*/ sta $1032.w
-/*unknown_a7_da0a:*/ lda $0fa8.w
+@unknown_a7_da0a: lda $0fa8.w
 /*unknown_a7_da0d:*/ inc A
 /*unknown_a7_da0e:*/ sta $0fa8.w
 /*unknown_a7_da11:*/ cmp #$0003.w
-/*unknown_a7_da14:*/ bmi $06 ; $da1c.w
+/*unknown_a7_da14:*/ bmi @unknown_a7_da1c
 /*unknown_a7_da16:*/ lda #$da51.w
 /*unknown_a7_da19:*/ sta $0fb2.w, X
-/*unknown_a7_da1c:*/ rts
+@unknown_a7_da1c: rts
 
 /*unknown_a7_da1d:*/ brk $00
 /*unknown_a7_da1f:*/ ora $2010.w, X
 /*unknown_a7_da22:*/ cpx #$101d.w
 /*unknown_a7_da25:*/ cpx #$1d20.w
-/*unknown_a7_da28:*/ bpl ($e0 - $100) ; $da0a.w
+/*unknown_a7_da28:*/ bpl @unknown_a7_da0a
 /*unknown_a7_da2a:*/ cpx #$101d.w
 /*unknown_a7_da2d:*/ jsr $1d20.w
 /*unknown_a7_da30:*/ jsr $f8e0.w
@@ -10018,32 +10018,32 @@ das: .dw $400
 /*unknown_a7_da90:*/ jsr $cf27.w
 /*unknown_a7_da93:*/ lda $0fec.w
 /*unknown_a7_da96:*/ cmp #$ffff.w
-/*unknown_a7_da99:*/ beq $2a ; $dac5.w
+/*unknown_a7_da99:*/ beq @unknown_a7_dac5
 /*unknown_a7_da9b:*/ lda $05b6.w
 /*unknown_a7_da9e:*/ bit #$000f.w
-/*unknown_a7_daa1:*/ bne $33 ; $dad6.w
+/*unknown_a7_daa1:*/ bne @unknown_a7_dad6
 /*unknown_a7_daa3:*/ sep #$20
 /*unknown_a7_daa5:*/ lda $0fec.w
 /*unknown_a7_daa8:*/ cmp #$f2
-/*unknown_a7_daaa:*/ beq $0c ; $dab8.w
+/*unknown_a7_daaa:*/ beq @unknown_a7_dab8
 /*unknown_a7_daac:*/ clc
 /*unknown_a7_daad:*/ adc #$10
 /*unknown_a7_daaf:*/ sta $0fec.w
 /*unknown_a7_dab2:*/ sta $57
 /*unknown_a7_dab4:*/ rep #$20
-/*unknown_a7_dab6:*/ bra $1e ; $dad6.w
-/*unknown_a7_dab8:*/ rep #$20
+/*unknown_a7_dab6:*/ bra @unknown_a7_dad6
+@unknown_a7_dab8: rep #$20
 /*unknown_a7_daba:*/ lda #$ffff.w
 /*unknown_a7_dabd:*/ sta $0fec.w
 /*unknown_a7_dac0:*/ stz $0ff2.w
-/*unknown_a7_dac3:*/ bra $11 ; $dad6.w
-/*unknown_a7_dac5:*/ lda #$000c.w
+/*unknown_a7_dac3:*/ bra @unknown_a7_dad6
+@unknown_a7_dac5: lda #$000c.w
 /*unknown_a7_dac8:*/ jsr $d464.w
 /*unknown_a7_dacb:*/ lda $0ff2.w
-/*unknown_a7_dace:*/ beq $06 ; $dad6.w
+/*unknown_a7_dace:*/ beq @unknown_a7_dad6
 /*unknown_a7_dad0:*/ lda #$dad7.w
 /*unknown_a7_dad3:*/ sta $0fb2.w, X
-/*unknown_a7_dad6:*/ rts
+@unknown_a7_dad6: rts
 
 /*unknown_a7_dad7:*/ sep #$20
 /*unknown_a7_dad9:*/ stz $57
@@ -10065,10 +10065,10 @@ das: .dw $400
 /*unknown_a7_db07:*/ sta $0f7e.w
 /*unknown_a7_db0a:*/ ldx #$03fe.w
 /*unknown_a7_db0d:*/ lda #$0338.w
-/*unknown_a7_db10:*/ sta $7e2000, X
+@unknown_a7_db10: sta $7e2000, X
 /*unknown_a7_db14:*/ dex
 /*unknown_a7_db15:*/ dex
-/*unknown_a7_db16:*/ bpl ($f8 - $100) ; $db10.w
+/*unknown_a7_db16:*/ bpl @unknown_a7_db10
 /*unknown_a7_db18:*/ ldx $0330.w
 /*unknown_a7_db1b:*/ lda #$0400.w
 /*unknown_a7_db1e:*/ sta $d0, X
@@ -10092,18 +10092,18 @@ das: .dw $400
 
 /*unknown_a7_db3d:*/ phx
 /*unknown_a7_db3e:*/ lda $0fb0.w, X
-/*unknown_a7_db41:*/ beq $05 ; $db48.w
+/*unknown_a7_db41:*/ beq @unknown_a7_db48
 /*unknown_a7_db43:*/ dec $0fb0.w, X
 /*unknown_a7_db46:*/ plx
 /*unknown_a7_db47:*/ rts
 
-/*unknown_a7_db48:*/ lda $05b6.w
+@unknown_a7_db48: lda $05b6.w
 /*unknown_a7_db4b:*/ bit #$0003.w
-/*unknown_a7_db4e:*/ bne $48 ; $db98.w
+/*unknown_a7_db4e:*/ bne @unknown_a7_db98
 /*unknown_a7_db50:*/ lda #$000c.w
 /*unknown_a7_db53:*/ sta $0fee.w
 /*unknown_a7_db56:*/ jsr $dc5a.w
-/*unknown_a7_db59:*/ bcc $3d ; $db98.w
+/*unknown_a7_db59:*/ bcc @unknown_a7_db98
 /*unknown_a7_db5b:*/ sep #$20
 /*unknown_a7_db5d:*/ lda $69
 /*unknown_a7_db5f:*/ ora #$02
@@ -10126,21 +10126,21 @@ das: .dw $400
 /*unknown_a7_db90:*/ lda [$a9], Y
 /*unknown_a7_db92:*/ ora $00, S
 /*unknown_a7_db94:*/ jsr $808fc1
-/*unknown_a7_db98:*/ plx
+@unknown_a7_db98: plx
 /*unknown_a7_db99:*/ rts
 
 /*unknown_a7_db9a:*/ rep #$30
 /*unknown_a7_db9c:*/ lda $0fee.w
 /*unknown_a7_db9f:*/ inc A
 /*unknown_a7_dba0:*/ cmp $0ff0.w
-/*unknown_a7_dba3:*/ bcs $08 ; $dbad.w
+/*unknown_a7_dba3:*/ bcs @unknown_a7_dbad
 /*unknown_a7_dba5:*/ lda #$0000.w
 /*unknown_a7_dba8:*/ sta $0ff0.w
 /*unknown_a7_dbab:*/ sec
 /*unknown_a7_dbac:*/ rts
 
-/*unknown_a7_dbad:*/ ldx #$0000.w
-/*unknown_a7_dbb0:*/ phx
+@unknown_a7_dbad: ldx #$0000.w
+@unknown_a7_dbb0: phx
 /*unknown_a7_dbb1:*/ lda $ca41.w, X
 /*unknown_a7_dbb4:*/ tay
 /*unknown_a7_dbb5:*/ lda $7ec0e0, X
@@ -10152,7 +10152,7 @@ das: .dw $400
 /*unknown_a7_dbc5:*/ inx
 /*unknown_a7_dbc6:*/ inx
 /*unknown_a7_dbc7:*/ cpx #$0020.w
-/*unknown_a7_dbca:*/ bcc ($e4 - $100) ; $dbb0.w
+/*unknown_a7_dbca:*/ bcc @unknown_a7_dbb0
 /*unknown_a7_dbcc:*/ lda $0ff0.w
 /*unknown_a7_dbcf:*/ inc A
 /*unknown_a7_dbd0:*/ sta $0ff0.w
@@ -10163,14 +10163,14 @@ das: .dw $400
 /*unknown_a7_dbd7:*/ lda $0fee.w
 /*unknown_a7_dbda:*/ inc A
 /*unknown_a7_dbdb:*/ cmp $0ff0.w
-/*unknown_a7_dbde:*/ bcs $08 ; $dbe8.w
+/*unknown_a7_dbde:*/ bcs @unknown_a7_dbe8
 /*unknown_a7_dbe0:*/ lda #$0000.w
 /*unknown_a7_dbe3:*/ sta $0ff0.w
 /*unknown_a7_dbe6:*/ sec
 /*unknown_a7_dbe7:*/ rts
 
-/*unknown_a7_dbe8:*/ ldx #$0000.w
-/*unknown_a7_dbeb:*/ phx
+@unknown_a7_dbe8: ldx #$0000.w
+@unknown_a7_dbeb: phx
 /*unknown_a7_dbec:*/ jsr $dc0f.w
 /*unknown_a7_dbef:*/ lda $7ec0e0, X
 /*unknown_a7_dbf3:*/ tax
@@ -10181,7 +10181,7 @@ das: .dw $400
 /*unknown_a7_dbff:*/ inx
 /*unknown_a7_dc00:*/ inx
 /*unknown_a7_dc01:*/ cpx #$0020.w
-/*unknown_a7_dc04:*/ bcc ($e5 - $100) ; $dbeb.w
+/*unknown_a7_dc04:*/ bcc @unknown_a7_dbeb
 /*unknown_a7_dc06:*/ lda $0ff0.w
 /*unknown_a7_dc09:*/ inc A
 /*unknown_a7_dc0a:*/ sta $0ff0.w
@@ -10197,9 +10197,9 @@ das: .dw $400
 /*unknown_a7_dc1a:*/ sta $12
 /*unknown_a7_dc1c:*/ sta $14
 /*unknown_a7_dc1e:*/ stz $16
-/*unknown_a7_dc20:*/ lda $14
+@unknown_a7_dc20: lda $14
 /*unknown_a7_dc22:*/ cmp $0f8c.w, X
-/*unknown_a7_dc25:*/ bpl $11 ; $dc38.w
+/*unknown_a7_dc25:*/ bpl @unknown_a7_dc38
 /*unknown_a7_dc27:*/ lda $14
 /*unknown_a7_dc29:*/ clc
 /*unknown_a7_dc2a:*/ adc $12
@@ -10208,8 +10208,8 @@ das: .dw $400
 /*unknown_a7_dc30:*/ inc A
 /*unknown_a7_dc31:*/ sta $16
 /*unknown_a7_dc33:*/ cmp #$0007.w
-/*unknown_a7_dc36:*/ bmi ($e8 - $100) ; $dc20.w
-/*unknown_a7_dc38:*/ lda $16
+/*unknown_a7_dc36:*/ bmi @unknown_a7_dc20
+@unknown_a7_dc38: lda $16
 /*unknown_a7_dc3a:*/ asl A
 /*unknown_a7_dc3b:*/ tay
 /*unknown_a7_dc3c:*/ lda $dc4a.w, Y
@@ -10233,14 +10233,14 @@ das: .dw $400
 /*unknown_a7_dc5c:*/ lda $0fee.w
 /*unknown_a7_dc5f:*/ inc A
 /*unknown_a7_dc60:*/ cmp $0ff0.w
-/*unknown_a7_dc63:*/ bcs $08 ; $dc6d.w
+/*unknown_a7_dc63:*/ bcs @unknown_a7_dc6d
 /*unknown_a7_dc65:*/ lda #$0000.w
 /*unknown_a7_dc68:*/ sta $0ff0.w
 /*unknown_a7_dc6b:*/ sec
 /*unknown_a7_dc6c:*/ rts
 
-/*unknown_a7_dc6d:*/ ldx #$0000.w
-/*unknown_a7_dc70:*/ phx
+@unknown_a7_dc6d: ldx #$0000.w
+@unknown_a7_dc70: phx
 /*unknown_a7_dc71:*/ lda $ca61.w, X
 /*unknown_a7_dc74:*/ tay
 /*unknown_a7_dc75:*/ lda $7ec000, X
@@ -10252,7 +10252,7 @@ das: .dw $400
 /*unknown_a7_dc85:*/ inx
 /*unknown_a7_dc86:*/ inx
 /*unknown_a7_dc87:*/ cpx #$00e0.w
-/*unknown_a7_dc8a:*/ bcc ($e4 - $100) ; $dc70.w
+/*unknown_a7_dc8a:*/ bcc @unknown_a7_dc70
 /*unknown_a7_dc8c:*/ lda $0ff0.w
 /*unknown_a7_dc8f:*/ inc A
 /*unknown_a7_dc90:*/ sta $0ff0.w
@@ -10321,27 +10321,27 @@ das: .dw $400
 /*unknown_a7_dcf0:*/ rts
 
 /*unknown_a7_dcf1:*/ cmp #$0000.w
-/*unknown_a7_dcf4:*/ bne $02 ; $dcf8.w
+/*unknown_a7_dcf4:*/ bne @unknown_a7_dcf8
 /*unknown_a7_dcf6:*/ txa
 /*unknown_a7_dcf7:*/ rts
 
-/*unknown_a7_dcf8:*/ dec A
+@unknown_a7_dcf8: dec A
 /*unknown_a7_dcf9:*/ cmp $0fee.w
-/*unknown_a7_dcfc:*/ bne $02 ; $dd00.w
+/*unknown_a7_dcfc:*/ bne @unknown_a7_dd00
 /*unknown_a7_dcfe:*/ tya
 /*unknown_a7_dcff:*/ rts
 
-/*unknown_a7_dd00:*/ phx
+@unknown_a7_dd00: phx
 /*unknown_a7_dd01:*/ inc A
 /*unknown_a7_dd02:*/ sta $14
 /*unknown_a7_dd04:*/ tya
 /*unknown_a7_dd05:*/ sec
 /*unknown_a7_dd06:*/ sbc $01, S
 /*unknown_a7_dd08:*/ sta $12
-/*unknown_a7_dd0a:*/ bpl $04 ; $dd10.w
+/*unknown_a7_dd0a:*/ bpl @unknown_a7_dd10
 /*unknown_a7_dd0c:*/ eor #$ffff.w
 /*unknown_a7_dd0f:*/ inc A
-/*unknown_a7_dd10:*/ sep #$21
+@unknown_a7_dd10: sep #$21
 /*unknown_a7_dd12:*/ stz $4204.w
 /*unknown_a7_dd15:*/ sta $4205.w
 /*unknown_a7_dd18:*/ lda $0fee.w
@@ -10356,10 +10356,10 @@ das: .dw $400
 /*unknown_a7_dd27:*/ nop
 /*unknown_a7_dd28:*/ lda $4214.w
 /*unknown_a7_dd2b:*/ bit $12
-/*unknown_a7_dd2d:*/ bpl $04 ; $dd33.w
+/*unknown_a7_dd2d:*/ bpl @unknown_a7_dd33
 /*unknown_a7_dd2f:*/ eor #$ffff.w
 /*unknown_a7_dd32:*/ inc A
-/*unknown_a7_dd33:*/ sta $12
+@unknown_a7_dd33: sta $12
 /*unknown_a7_dd35:*/ pla
 /*unknown_a7_dd36:*/ xba
 /*unknown_a7_dd37:*/ clc
@@ -10372,37 +10372,37 @@ das: .dw $400
 /*unknown_a7_dd40:*/ rep #$30
 /*unknown_a7_dd42:*/ lda $0f9c.w
 /*unknown_a7_dd45:*/ cmp #$0008.w
-/*unknown_a7_dd48:*/ beq $10 ; $dd5a.w
+/*unknown_a7_dd48:*/ beq @unknown_a7_dd5a
 /*unknown_a7_dd4a:*/ lda $0fa4.w
 /*unknown_a7_dd4d:*/ bit #$0002.w
-/*unknown_a7_dd50:*/ bne $22 ; $dd74.w
+/*unknown_a7_dd50:*/ bne @unknown_a7_dd74
 /*unknown_a7_dd52:*/ lda $1036.w
 /*unknown_a7_dd55:*/ bit #$ff00.w
-/*unknown_a7_dd58:*/ beq $39 ; $dd93.w
-/*unknown_a7_dd5a:*/ ldx #$001e.w
-/*unknown_a7_dd5d:*/ jsr $dc0f.w
+/*unknown_a7_dd58:*/ beq @unknown_a7_dd93
+@unknown_a7_dd5a: ldx #$001e.w
+@unknown_a7_dd5d: jsr $dc0f.w
 /*unknown_a7_dd60:*/ tya
 /*unknown_a7_dd61:*/ sta $7ec0e0, X
 /*unknown_a7_dd65:*/ dex
 /*unknown_a7_dd66:*/ dex
-/*unknown_a7_dd67:*/ bpl ($f4 - $100) ; $dd5d.w
+/*unknown_a7_dd67:*/ bpl @unknown_a7_dd5d
 /*unknown_a7_dd69:*/ lda $1036.w
 /*unknown_a7_dd6c:*/ and #$00ff.w
 /*unknown_a7_dd6f:*/ sta $1036.w
-/*unknown_a7_dd72:*/ bra $1f ; $dd93.w
-/*unknown_a7_dd74:*/ lda $1036.w
+/*unknown_a7_dd72:*/ bra @unknown_a7_dd93
+@unknown_a7_dd74: lda $1036.w
 /*unknown_a7_dd77:*/ bit #$ff00.w
-/*unknown_a7_dd7a:*/ bne $17 ; $dd93.w
+/*unknown_a7_dd7a:*/ bne @unknown_a7_dd93
 /*unknown_a7_dd7c:*/ ldx #$001e.w
-/*unknown_a7_dd7f:*/ lda #$7fff.w
+@unknown_a7_dd7f: lda #$7fff.w
 /*unknown_a7_dd82:*/ sta $7ec0e0, X
 /*unknown_a7_dd86:*/ dex
 /*unknown_a7_dd87:*/ dex
-/*unknown_a7_dd88:*/ bpl ($f5 - $100) ; $dd7f.w
+/*unknown_a7_dd88:*/ bpl @unknown_a7_dd7f
 /*unknown_a7_dd8a:*/ lda $1036.w
 /*unknown_a7_dd8d:*/ ora #$0100.w
 /*unknown_a7_dd90:*/ sta $1036.w
-/*unknown_a7_dd93:*/ plp
+@unknown_a7_dd93: plp
 /*unknown_a7_dd94:*/ rtl
 
 /*unknown_a7_dd95:*/ jsr $a0a497
@@ -10413,18 +10413,18 @@ das: .dw $400
 /*unknown_a7_dd9b:*/ phb
 /*unknown_a7_dd9c:*/ lda $0fb2.w
 /*unknown_a7_dd9f:*/ cmp #$d948.w
-/*unknown_a7_dda2:*/ bmi $02 ; $dda6.w
+/*unknown_a7_dda2:*/ bmi @unknown_a7_dda6
 /*unknown_a7_dda4:*/ plb
 /*unknown_a7_dda5:*/ rtl
 
-/*unknown_a7_dda6:*/ ldx $0e54.w
+@unknown_a7_dda6: ldx $0e54.w
 /*unknown_a7_dda9:*/ lda $0f8c.w, X
 /*unknown_a7_ddac:*/ pha
 /*unknown_a7_ddad:*/ jsr $a0a6a7
 /*unknown_a7_ddb1:*/ pla
 /*unknown_a7_ddb2:*/ sta $12
 /*unknown_a7_ddb4:*/ lda $0f8c.w, X
-/*unknown_a7_ddb7:*/ bne $1b ; $ddd4.w
+/*unknown_a7_ddb7:*/ bne @unknown_a7_ddd4
 /*unknown_a7_ddb9:*/ lda #$0073.w
 /*unknown_a7_ddbc:*/ jsr $8090cb
 /*unknown_a7_ddc0:*/ lda #$0001.w
@@ -10433,65 +10433,65 @@ das: .dw $400
 /*unknown_a7_ddc9:*/ ora #$0400.w
 /*unknown_a7_ddcc:*/ sta $0f86.w
 /*unknown_a7_ddcf:*/ jsr $d421.w
-/*unknown_a7_ddd2:*/ plb
+@unknown_a7_ddd2: plb
 /*unknown_a7_ddd3:*/ rtl
 
-/*unknown_a7_ddd4:*/ lda $0f8a.w, X
+@unknown_a7_ddd4: lda $0f8a.w, X
 /*unknown_a7_ddd7:*/ bit #$0002.w
-/*unknown_a7_ddda:*/ beq ($f6 - $100) ; $ddd2.w
+/*unknown_a7_ddda:*/ beq @unknown_a7_ddd2
 /*unknown_a7_dddc:*/ lda #$0073.w
 /*unknown_a7_dddf:*/ jsr $8090cb
 /*unknown_a7_dde3:*/ lda $0fb2.w, X
 /*unknown_a7_dde6:*/ cmp #$d60d.w
-/*unknown_a7_dde9:*/ beq $43 ; $de2e.w
+/*unknown_a7_dde9:*/ beq @unknown_a7_de2e
 /*unknown_a7_ddeb:*/ cmp #$d788.w
-/*unknown_a7_ddee:*/ beq $3e ; $de2e.w
+/*unknown_a7_ddee:*/ beq @unknown_a7_de2e
 /*unknown_a7_ddf0:*/ cmp #$d678.w
-/*unknown_a7_ddf3:*/ beq $03 ; $ddf8.w
+/*unknown_a7_ddf3:*/ beq @unknown_a7_ddf8
 /*unknown_a7_ddf5:*/ jmp $de92.w
-/*unknown_a7_ddf8:*/ lda $12
+@unknown_a7_ddf8: lda $12
 /*unknown_a7_ddfa:*/ sec
 /*unknown_a7_ddfb:*/ sbc $0f8c.w, X
 /*unknown_a7_ddfe:*/ sta $12
 /*unknown_a7_de00:*/ cmp #$012c.w
-/*unknown_a7_de03:*/ bmi $13 ; $de18.w
+/*unknown_a7_de03:*/ bmi @unknown_a7_de18
 /*unknown_a7_de05:*/ lda $18a6.w
 /*unknown_a7_de08:*/ asl A
 /*unknown_a7_de09:*/ tay
 /*unknown_a7_de0a:*/ lda $0c18.w, Y
 /*unknown_a7_de0d:*/ and #$0f00.w
 /*unknown_a7_de10:*/ cmp #$0200.w
-/*unknown_a7_de13:*/ bne $03 ; $de18.w
-/*unknown_a7_de15:*/ jmp $ded5.w
-/*unknown_a7_de18:*/ lda $102a.w, X
+/*unknown_a7_de13:*/ bne @unknown_a7_de18
+/*unknown_a7_de15:*/ jmp @unknown_a7_ded5
+@unknown_a7_de18: lda $102a.w, X
 /*unknown_a7_de1b:*/ clc
 /*unknown_a7_de1c:*/ adc $12
 /*unknown_a7_de1e:*/ sta $102a.w, X
 /*unknown_a7_de21:*/ cmp #$012c.w
-/*unknown_a7_de24:*/ bmi $6c ; $de92.w
+/*unknown_a7_de24:*/ bmi @unknown_a7_de92
 /*unknown_a7_de26:*/ lda #$0001.w
 /*unknown_a7_de29:*/ sta $0fb0.w, X
-/*unknown_a7_de2c:*/ bra $64 ; $de92.w
-/*unknown_a7_de2e:*/ lda $12
+/*unknown_a7_de2c:*/ bra @unknown_a7_de92
+@unknown_a7_de2e: lda $12
 /*unknown_a7_de30:*/ sec
 /*unknown_a7_de31:*/ sbc $0f8c.w, X
 /*unknown_a7_de34:*/ sta $12
 /*unknown_a7_de36:*/ cmp #$012c.w
-/*unknown_a7_de39:*/ bmi $13 ; $de4e.w
+/*unknown_a7_de39:*/ bmi @unknown_a7_de4e
 /*unknown_a7_de3b:*/ lda $18a6.w
 /*unknown_a7_de3e:*/ asl A
 /*unknown_a7_de3f:*/ tay
 /*unknown_a7_de40:*/ lda $0c18.w, Y
 /*unknown_a7_de43:*/ and #$0f00.w
 /*unknown_a7_de46:*/ cmp #$0200.w
-/*unknown_a7_de49:*/ bne $03 ; $de4e.w
-/*unknown_a7_de4b:*/ jmp $ded5.w
-/*unknown_a7_de4e:*/ lda $102a.w, X
+/*unknown_a7_de49:*/ bne @unknown_a7_de4e
+/*unknown_a7_de4b:*/ jmp @unknown_a7_ded5
+@unknown_a7_de4e: lda $102a.w, X
 /*unknown_a7_de51:*/ clc
 /*unknown_a7_de52:*/ adc $12
 /*unknown_a7_de54:*/ sta $102a.w, X
 /*unknown_a7_de57:*/ cmp #$012c.w
-/*unknown_a7_de5a:*/ bpl $3e ; $de9a.w
+/*unknown_a7_de5a:*/ bpl @unknown_a7_de9a
 /*unknown_a7_de5c:*/ jsr $808111
 /*unknown_a7_de60:*/ and #$0007.w
 /*unknown_a7_de63:*/ tay
@@ -10503,25 +10503,25 @@ das: .dw $400
 /*unknown_a7_de71:*/ lda #$0001.w
 /*unknown_a7_de74:*/ sta $1036.w
 /*unknown_a7_de77:*/ lda $1028.w
-/*unknown_a7_de7a:*/ bne $14 ; $de90.w
+/*unknown_a7_de7a:*/ bne @unknown_a7_de90
 /*unknown_a7_de7c:*/ lda #$0001.w
 /*unknown_a7_de7f:*/ sta $1028.w
 /*unknown_a7_de82:*/ lda $0fb0.w, X
 /*unknown_a7_de85:*/ cmp #$0010.w
-/*unknown_a7_de88:*/ bmi $06 ; $de90.w
+/*unknown_a7_de88:*/ bmi @unknown_a7_de90
 /*unknown_a7_de8a:*/ lda #$0010.w
 /*unknown_a7_de8d:*/ sta $0fb0.w, X
-/*unknown_a7_de90:*/ plb
+@unknown_a7_de90: plb
 /*unknown_a7_de91:*/ rtl
 
-/*unknown_a7_de92:*/ lda #$0002.w
+@unknown_a7_de92: lda #$0002.w
 /*unknown_a7_de95:*/ sta $1036.w
 /*unknown_a7_de98:*/ plb
 /*unknown_a7_de99:*/ rtl
 
-/*unknown_a7_de9a:*/ lda #$d6b9.w
+@unknown_a7_de9a: lda #$d6b9.w
 /*unknown_a7_de9d:*/ sta $0fb2.w, X
-/*unknown_a7_dea0:*/ stz $0fb0.w, X
+@unknown_a7_dea0: stz $0fb0.w, X
 /*unknown_a7_dea3:*/ stz $1028.w
 /*unknown_a7_dea6:*/ stz $102a.w, X
 /*unknown_a7_dea9:*/ lda $1988.w
@@ -10538,10 +10538,10 @@ das: .dw $400
 /*unknown_a7_deca:*/ ora #$0400.w
 /*unknown_a7_decd:*/ sta $0f86.w
 /*unknown_a7_ded0:*/ stz $0ff2.w
-/*unknown_a7_ded3:*/ bra ($bd - $100) ; $de92.w
-/*unknown_a7_ded5:*/ lda #$d85c.w
+/*unknown_a7_ded3:*/ bra @unknown_a7_de92
+@unknown_a7_ded5: lda #$d85c.w
 /*unknown_a7_ded8:*/ sta $0fb2.w, X
-/*unknown_a7_dedb:*/ bra ($c3 - $100) ; $dea0.w
+/*unknown_a7_dedb:*/ bra @unknown_a7_dea0
 /*unknown_a7_dedd:*/ ora ($00, X)
 /*unknown_a7_dedf:*/ brk $00
 /*unknown_a7_dee1:*/ brk $00
@@ -10776,7 +10776,7 @@ das: .dw $400
 /*unknown_a7_e0d8:*/ rti
 
 /*unknown_a7_e0d9:*/ adc $2338.w, X
-/*unknown_a7_e0dc:*/ bra $20 ; $e0fe.w
+/*unknown_a7_e0dc:*/ bra @unknown_a7_e0fe
 /*unknown_a7_e0de:*/ asl A
 /*unknown_a7_e0df:*/ brk $38
 /*unknown_a7_e0e1:*/ and $50, S
@@ -10793,7 +10793,7 @@ das: .dw $400
 /*unknown_a7_e0f8:*/ sei
 /*unknown_a7_e0f9:*/ and $3d60.w, X
 /*unknown_a7_e0fc:*/ adc ($3d, X)
-/*unknown_a7_e0fe:*/ per $633d ; $443e.w
+@unknown_a7_e0fe: per $633d ; $443e.w
 /*unknown_a7_e101:*/ and $7d63.w, X
 /*unknown_a7_e104:*/ per $617d ; $4284.w
 /*unknown_a7_e107:*/ adc $7d60.w, X
@@ -11027,7 +11027,7 @@ das: .dw $400
 /*unknown_a7_e33c:*/ sbc $fffeff, X
 /*unknown_a7_e340:*/ tsb $23
 /*unknown_a7_e342:*/ ora ($00, X)
-/*unknown_a7_e344:*/ bra $3d ; $e383.w
+/*unknown_a7_e344:*/ bra @unknown_a7_e383
 /*unknown_a7_e346:*/ mvp $01, $23
 /*unknown_a7_e349:*/ brk $82
 /*unknown_a7_e34b:*/ and $ffff.w, X
@@ -11052,7 +11052,7 @@ das: .dw $400
 /*unknown_a7_e37a:*/ brl $ff7d ; $e2fa.w
 /*unknown_a7_e37d:*/ sbc $06fffe, X
 /*unknown_a7_e381:*/ and $04, S
-/*unknown_a7_e383:*/ brk $59
+@unknown_a7_e383: brk $59
 /*unknown_a7_e385:*/ and $3d5a.w, X
 /*unknown_a7_e388:*/ phy
 /*unknown_a7_e389:*/ adc $7d59.w, X
@@ -11518,7 +11518,7 @@ das: .dw $400
 /*unknown_a7_e80d:*/ dec A
 /*unknown_a7_e80e:*/ cmp #$31
 /*unknown_a7_e810:*/ sbc $42f757, X
-/*unknown_a7_e814:*/ bpl $26 ; $e83c.w
+/*unknown_a7_e814:*/ bpl @unknown_a7_e83c
 /*unknown_a7_e816:*/ sty $ff15.w
 /*unknown_a7_e819:*/ ora $79, S
 /*unknown_a7_e81b:*/ cop $29
@@ -11526,19 +11526,19 @@ das: .dw $400
 /*unknown_a7_e81f:*/ brk $ff
 /*unknown_a7_e821:*/ sbc $01812f
 /*unknown_a7_e825:*/ brk $24
-/*unknown_a7_e827:*/ beq $05 ; $e82e.w
+/*unknown_a7_e827:*/ beq @unknown_a7_e82e
 /*unknown_a7_e829:*/ brk $ed
 /*unknown_a7_e82b:*/ inc $0005.w
-/*unknown_a7_e82e:*/ inc $05ee.w, X
+@unknown_a7_e82e: inc $05ee.w, X
 /*unknown_a7_e831:*/ brk $0a
 /*unknown_a7_e833:*/ sbc $fe0005
 /*unknown_a7_e837:*/ inc $80ed.w
 /*unknown_a7_e83a:*/ plp
 /*unknown_a7_e83b:*/ inx
-/*unknown_a7_e83c:*/ php
+@unknown_a7_e83c: php
 /*unknown_a7_e83d:*/ brk $5a
 /*unknown_a7_e83f:*/ sbc $160003
-/*unknown_a7_e843:*/ sbc $270003
+@unknown_a7_e843: sbc $270003
 /*unknown_a7_e847:*/ sbc $380003
 /*unknown_a7_e84b:*/ sbc $490003
 /*unknown_a7_e84f:*/ sbc $4080ed
@@ -11579,10 +11579,10 @@ das: .dw $400
 /*unknown_a7_e89d:*/ brk $c3
 /*unknown_a7_e89f:*/ beq $03 ; $e8a4.w
 /*unknown_a7_e8a1:*/ brk $d4
-/*unknown_a7_e8a3:*/ beq $03 ; $e8a8.w
+@unknown_a7_e8a3: beq $03 ; $e8a8.w
 /*unknown_a7_e8a5:*/ brk $e5
 /*unknown_a7_e8a7:*/ beq ($ed - $100) ; $e896.w
-/*unknown_a7_e8a9:*/ bra ($98 - $100) ; $e843.w
+/*unknown_a7_e8a9:*/ bra @unknown_a7_e843
 /*unknown_a7_e8ab:*/ inx
 /*unknown_a7_e8ac:*/ ora ($00, X)
 /*unknown_a7_e8ae:*/ ora [$f1]
@@ -11602,7 +11602,7 @@ das: .dw $400
 /*unknown_a7_e8cd:*/ sta ($08, X)
 /*unknown_a7_e8cf:*/ brk $07
 /*unknown_a7_e8d1:*/ sbc ($ed), Y
-/*unknown_a7_e8d3:*/ bra ($ce - $100) ; $e8a3.w
+/*unknown_a7_e8d3:*/ bra @unknown_a7_e8a3
 /*unknown_a7_e8d5:*/ inx
 /*unknown_a7_e8d6:*/ and $81, S
 /*unknown_a7_e8d8:*/ tsb $00
@@ -11659,12 +11659,12 @@ das: .dw $400
 /*unknown_a7_e94c:*/ sbc #$00
 /*unknown_a7_e94e:*/ ora ($9d, X)
 /*unknown_a7_e950:*/ ldx $0f, Y
-/*unknown_a7_e952:*/ bra $03 ; $e957.w
+/*unknown_a7_e952:*/ bra @unknown_a7_e957
 /*unknown_a7_e954:*/ jmp ($0fb2.w, X)
-/*unknown_a7_e957:*/ rtl
+@unknown_a7_e957: rtl
 
 /*unknown_a7_e958:*/ lda $1840.w
-/*unknown_a7_e95b:*/ beq $16 ; $e973.w
+/*unknown_a7_e95b:*/ beq @unknown_a7_e973
 /*unknown_a7_e95d:*/ lda $0fb6.w, X
 /*unknown_a7_e960:*/ and #$ff
 /*unknown_a7_e962:*/ brk $09
@@ -11675,7 +11675,7 @@ das: .dw $400
 /*unknown_a7_e96d:*/ adc #$80
 /*unknown_a7_e96f:*/ brk $9d
 /*unknown_a7_e971:*/ sty $0f, X
-/*unknown_a7_e973:*/ rts
+@unknown_a7_e973: rts
 
 /*unknown_a7_e974:*/ lda $0fac.w, X
 /*unknown_a7_e977:*/ sta $14
@@ -11704,16 +11704,16 @@ das: .dw $400
 /*unknown_a7_e9ae:*/ rts
 
 /*unknown_a7_e9af:*/ lda $0797.w
-/*unknown_a7_e9b2:*/ beq $01 ; $e9b5.w
+/*unknown_a7_e9b2:*/ beq @unknown_a7_e9b5
 /*unknown_a7_e9b4:*/ rtl
 
-/*unknown_a7_e9b5:*/ lda $0fb0.w, X
-/*unknown_a7_e9b8:*/ bpl $2c ; $e9e6.w
+@unknown_a7_e9b5: lda $0fb0.w, X
+/*unknown_a7_e9b8:*/ bpl @unknown_a7_e9e6
 /*unknown_a7_e9ba:*/ lda #$80
 /*unknown_a7_e9bc:*/ brk $22
 /*unknown_a7_e9be:*/ sbc $a0ae.w
 /*unknown_a7_e9c1:*/ tay
-/*unknown_a7_e9c2:*/ beq $3b ; $e9ff.w
+/*unknown_a7_e9c2:*/ beq @unknown_a7_e9ff
 /*unknown_a7_e9c4:*/ lda $0fb6.w, X
 /*unknown_a7_e9c7:*/ bit #$03
 /*unknown_a7_e9c9:*/ brk $d0
@@ -11731,10 +11731,10 @@ das: .dw $400
 /*unknown_a7_e9e3:*/ bcs $0f ; $e9f4.w
 /*unknown_a7_e9e5:*/ rtl
 
-/*unknown_a7_e9e6:*/ dec $0fb0.w, X
-/*unknown_a7_e9e9:*/ beq $02 ; $e9ed.w
-/*unknown_a7_e9eb:*/ bpl $12 ; $e9ff.w
-/*unknown_a7_e9ed:*/ lda #$54
+@unknown_a7_e9e6: dec $0fb0.w, X
+/*unknown_a7_e9e9:*/ beq @unknown_a7_e9ed
+/*unknown_a7_e9eb:*/ bpl @unknown_a7_e9ff
+@unknown_a7_e9ed: lda #$54
 /*unknown_a7_e9ef:*/ inx
 /*unknown_a7_e9f0:*/ sta $0f92.w, X
 /*unknown_a7_e9f3:*/ lda #$00
@@ -11743,12 +11743,12 @@ das: .dw $400
 /*unknown_a7_e9f9:*/ lda #$0b
 /*unknown_a7_e9fb:*/ brk $9d
 /*unknown_a7_e9fd:*/ bcs $0f ; $ea0e.w
-/*unknown_a7_e9ff:*/ rtl
+@unknown_a7_e9ff: rtl
 
 /*unknown_a7_ea00:*/ dec $0fb0.w, X
-/*unknown_a7_ea03:*/ beq $02 ; $ea07.w
-/*unknown_a7_ea05:*/ bpl $2f ; $ea36.w
-/*unknown_a7_ea07:*/ lda $e900.w
+/*unknown_a7_ea03:*/ beq @unknown_a7_ea07
+/*unknown_a7_ea05:*/ bpl @unknown_a7_ea36
+@unknown_a7_ea07: lda $e900.w
 /*unknown_a7_ea0a:*/ sta $0fa8.w, X
 /*unknown_a7_ea0d:*/ lda $e902.w
 /*unknown_a7_ea10:*/ sta $0faa.w, X
@@ -11768,14 +11768,14 @@ das: .dw $400
 /*unknown_a7_ea2e:*/ ora [$a9]
 /*unknown_a7_ea30:*/ and ($00, S), Y
 /*unknown_a7_ea32:*/ jsr $8090cb
-/*unknown_a7_ea36:*/ rtl
+@unknown_a7_ea36: rtl
 
 /*unknown_a7_ea37:*/ jsr $e983.w
-/*unknown_a7_ea3a:*/ bcs $01 ; $ea3d.w
+/*unknown_a7_ea3a:*/ bcs @unknown_a7_ea3d
 /*unknown_a7_ea3c:*/ rtl
 
-/*unknown_a7_ea3d:*/ lda $0fa8.w, X
-/*unknown_a7_ea40:*/ bpl $13 ; $ea55.w
+@unknown_a7_ea3d: lda $0fa8.w, X
+/*unknown_a7_ea40:*/ bpl @unknown_a7_ea55
 /*unknown_a7_ea42:*/ stz $0fa8.w, X
 /*unknown_a7_ea45:*/ stz $0faa.w, X
 /*unknown_a7_ea48:*/ lda #$03
@@ -11786,15 +11786,15 @@ das: .dw $400
 /*unknown_a7_ea51:*/ sta $0f92.w, X
 /*unknown_a7_ea54:*/ rtl
 
-/*unknown_a7_ea55:*/ lda #$40
+@unknown_a7_ea55: lda #$40
 /*unknown_a7_ea57:*/ brk $22
 /*unknown_a7_ea59:*/ sbc $a0ae.w
 /*unknown_a7_ea5c:*/ tay
-/*unknown_a7_ea5d:*/ beq $3d ; $ea9c.w
+/*unknown_a7_ea5d:*/ beq @unknown_a7_ea9c
 /*unknown_a7_ea5f:*/ lda $e910.w
 /*unknown_a7_ea62:*/ jsr $a0af0b
 /*unknown_a7_ea66:*/ tay
-/*unknown_a7_ea67:*/ beq $33 ; $ea9c.w
+/*unknown_a7_ea67:*/ beq @unknown_a7_ea9c
 /*unknown_a7_ea69:*/ jsr $a0ae29
 /*unknown_a7_ea6d:*/ cmp #$05
 /*unknown_a7_ea6f:*/ brk $10
@@ -11803,16 +11803,16 @@ das: .dw $400
 /*unknown_a7_ea74:*/ inx
 /*unknown_a7_ea75:*/ sta $0f92.w, X
 /*unknown_a7_ea78:*/ stz $0fb4.w, X
-/*unknown_a7_ea7b:*/ bra $0c ; $ea89.w
+/*unknown_a7_ea7b:*/ bra @unknown_a7_ea89
 /*unknown_a7_ea7d:*/ lda #$76
 /*unknown_a7_ea7f:*/ inx
 /*unknown_a7_ea80:*/ sta $0f92.w, X
 /*unknown_a7_ea83:*/ lda #$01
 /*unknown_a7_ea85:*/ brk $9d
 /*unknown_a7_ea87:*/ ldy $0f, X
-/*unknown_a7_ea89:*/ lda #$20
+@unknown_a7_ea89: lda #$20
 /*unknown_a7_ea8b:*/ brk $9d
-/*unknown_a7_ea8d:*/ bcs $0f ; $ea9e.w
+/*unknown_a7_ea8d:*/ bcs @unknown_a7_ea9e
 /*unknown_a7_ea8f:*/ lda #$01
 /*unknown_a7_ea91:*/ brk $9d
 /*unknown_a7_ea93:*/ sty $0f, X
@@ -11821,9 +11821,9 @@ das: .dw $400
 /*unknown_a7_ea98:*/ sta $0fb2.w, X
 /*unknown_a7_ea9b:*/ rtl
 
-/*unknown_a7_ea9c:*/ lda #$0b
-/*unknown_a7_ea9e:*/ brk $9d
-/*unknown_a7_eaa0:*/ bcs $0f ; $eab1.w
+@unknown_a7_ea9c: lda #$0b
+@unknown_a7_ea9e: brk $9d
+/*unknown_a7_eaa0:*/ bcs @unknown_a7_eab1
 /*unknown_a7_eaa2:*/ lda #$00
 /*unknown_a7_eaa4:*/ nop
 /*unknown_a7_eaa5:*/ sta $0fb2.w, X
@@ -11832,13 +11832,13 @@ das: .dw $400
 /*unknown_a7_eaac:*/ sty $0f, X
 /*unknown_a7_eaae:*/ lda #$54
 /*unknown_a7_eab0:*/ inx
-/*unknown_a7_eab1:*/ sta $0f92.w, X
+@unknown_a7_eab1: sta $0f92.w, X
 /*unknown_a7_eab4:*/ rtl
 
 /*unknown_a7_eab5:*/ dec $0fb0.w, X
-/*unknown_a7_eab8:*/ beq $02 ; $eabc.w
-/*unknown_a7_eaba:*/ bpl $45 ; $eb01.w
-/*unknown_a7_eabc:*/ lda $0f92.w, X
+/*unknown_a7_eab8:*/ beq @unknown_a7_eabc
+/*unknown_a7_eaba:*/ bpl @unknown_a7_eb01
+@unknown_a7_eabc: lda $0f92.w, X
 /*unknown_a7_eabf:*/ inc A
 /*unknown_a7_eac0:*/ inc A
 /*unknown_a7_eac1:*/ sta $0f92.w, X
@@ -11846,7 +11846,7 @@ das: .dw $400
 /*unknown_a7_eac6:*/ brk $9d
 /*unknown_a7_eac8:*/ sty $0f, X
 /*unknown_a7_eaca:*/ lda $0fb4.w, X
-/*unknown_a7_eacd:*/ beq $14 ; $eae3.w
+/*unknown_a7_eacd:*/ beq @unknown_a7_eae3
 /*unknown_a7_eacf:*/ lda $e908.w
 /*unknown_a7_ead2:*/ sta $0fac.w, X
 /*unknown_a7_ead5:*/ lda $e90a.w
@@ -11854,22 +11854,22 @@ das: .dw $400
 /*unknown_a7_eadb:*/ lda #$2c
 /*unknown_a7_eadd:*/ xba
 /*unknown_a7_eade:*/ sta $0fb2.w, X
-/*unknown_a7_eae1:*/ bra $12 ; $eaf5.w
-/*unknown_a7_eae3:*/ lda $e90c.w
+/*unknown_a7_eae1:*/ bra @unknown_a7_eaf5
+@unknown_a7_eae3: lda $e90c.w
 /*unknown_a7_eae6:*/ sta $0fac.w, X
 /*unknown_a7_eae9:*/ lda $e90e.w
 /*unknown_a7_eaec:*/ sta $0fae.w, X
 /*unknown_a7_eaef:*/ lda #$02
 /*unknown_a7_eaf1:*/ xba
 /*unknown_a7_eaf2:*/ sta $0fb2.w, X
-/*unknown_a7_eaf5:*/ lda $e900.w
+@unknown_a7_eaf5: lda $e900.w
 /*unknown_a7_eaf8:*/ sta $0fa8.w, X
 /*unknown_a7_eafb:*/ lda $e902.w
 /*unknown_a7_eafe:*/ sta $0faa.w, X
-/*unknown_a7_eb01:*/ rtl
+@unknown_a7_eb01: rtl
 
 /*unknown_a7_eb02:*/ jsr $e974.w
-/*unknown_a7_eb05:*/ bcc $24 ; $eb2b.w
+/*unknown_a7_eb05:*/ bcc @unknown_a7_eb2b
 /*unknown_a7_eb07:*/ lda $e908.w
 /*unknown_a7_eb0a:*/ sta $0fac.w, X
 /*unknown_a7_eb0d:*/ lda $e90a.w
@@ -11886,7 +11886,7 @@ das: .dw $400
 /*unknown_a7_eb25:*/ lda #$01
 /*unknown_a7_eb27:*/ brk $9d
 /*unknown_a7_eb29:*/ ldy $0f, X
-/*unknown_a7_eb2b:*/ rtl
+@unknown_a7_eb2b: rtl
 
 /*unknown_a7_eb2c:*/ lda #$20
 /*unknown_a7_eb2e:*/ brk $85
@@ -11909,21 +11909,21 @@ das: .dw $400
 
 /*unknown_a7_eb50:*/ jsr $e958.w
 /*unknown_a7_eb53:*/ jsr $e974.w
-/*unknown_a7_eb56:*/ bcc $3e ; $eb96.w
+/*unknown_a7_eb56:*/ bcc @unknown_a7_eb96
 /*unknown_a7_eb58:*/ lda $0fb4.w, X
-/*unknown_a7_eb5b:*/ bne $0e ; $eb6b.w
+/*unknown_a7_eb5b:*/ bne @unknown_a7_eb6b
 /*unknown_a7_eb5d:*/ lda #$c8
 /*unknown_a7_eb5f:*/ inx
 /*unknown_a7_eb60:*/ sta $0f92.w, X
 /*unknown_a7_eb63:*/ lda #$01
 /*unknown_a7_eb65:*/ brk $9d
 /*unknown_a7_eb67:*/ ldy $0f, X
-/*unknown_a7_eb69:*/ bra $09 ; $eb74.w
-/*unknown_a7_eb6b:*/ lda #$70
+/*unknown_a7_eb69:*/ bra @unknown_a7_eb74
+@unknown_a7_eb6b: lda #$70
 /*unknown_a7_eb6d:*/ inx
 /*unknown_a7_eb6e:*/ sta $0f92.w, X
 /*unknown_a7_eb71:*/ stz $0fb4.w, X
-/*unknown_a7_eb74:*/ lda #$01
+@unknown_a7_eb74: lda #$01
 /*unknown_a7_eb76:*/ brk $9d
 /*unknown_a7_eb78:*/ sty $0f, X
 /*unknown_a7_eb7a:*/ lda #$cd
@@ -11931,46 +11931,46 @@ das: .dw $400
 /*unknown_a7_eb7d:*/ sta $0fb2.w, X
 /*unknown_a7_eb80:*/ lda #$08
 /*unknown_a7_eb82:*/ brk $9d
-/*unknown_a7_eb84:*/ bcs $0f ; $eb95.w
+/*unknown_a7_eb84:*/ bcs @unknown_a7_eb95
 /*unknown_a7_eb86:*/ lda $0af6.w
 /*unknown_a7_eb89:*/ cmp #$00
 /*unknown_a7_eb8b:*/ ora ($30, X)
 /*unknown_a7_eb8d:*/ ora [$a9]
 /*unknown_a7_eb8f:*/ and ($00)
 /*unknown_a7_eb91:*/ jsr $8090cb
-/*unknown_a7_eb95:*/ rtl
+@unknown_a7_eb95: rtl
 
-/*unknown_a7_eb96:*/ jsr $e983.w
-/*unknown_a7_eb99:*/ bcc $31 ; $ebcc.w
+@unknown_a7_eb96: jsr $e983.w
+/*unknown_a7_eb99:*/ bcc @unknown_a7_ebcc
 /*unknown_a7_eb9b:*/ lda $0fb4.w, X
-/*unknown_a7_eb9e:*/ bne $08 ; $eba8.w
+/*unknown_a7_eb9e:*/ bne @unknown_a7_eba8
 /*unknown_a7_eba0:*/ lda #$ac
 /*unknown_a7_eba2:*/ inx
 /*unknown_a7_eba3:*/ sta $0f92.w, X
-/*unknown_a7_eba6:*/ bra $06 ; $ebae.w
-/*unknown_a7_eba8:*/ lda #$54
+/*unknown_a7_eba6:*/ bra @unknown_a7_ebae
+@unknown_a7_eba8: lda #$54
 /*unknown_a7_ebaa:*/ inx
 /*unknown_a7_ebab:*/ sta $0f92.w, X
-/*unknown_a7_ebae:*/ lda #$01
+@unknown_a7_ebae: lda #$01
 /*unknown_a7_ebb0:*/ brk $9d
 /*unknown_a7_ebb2:*/ sty $0f, X
 /*unknown_a7_ebb4:*/ lda #$0b
 /*unknown_a7_ebb6:*/ brk $9d
-/*unknown_a7_ebb8:*/ bcs $0f ; $ebc9.w
+/*unknown_a7_ebb8:*/ bcs @unknown_a7_ebc9
 /*unknown_a7_ebba:*/ lda #$1b
 /*unknown_a7_ebbc:*/ cpx $b29d.w
 /*unknown_a7_ebbf:*/ ora $e900ad
 /*unknown_a7_ebc3:*/ sta $0fa8.w, X
 /*unknown_a7_ebc6:*/ lda $e902.w
-/*unknown_a7_ebc9:*/ sta $0faa.w, X
-/*unknown_a7_ebcc:*/ rtl
+@unknown_a7_ebc9: sta $0faa.w, X
+@unknown_a7_ebcc: rtl
 
 /*unknown_a7_ebcd:*/ jsr $e958.w
 /*unknown_a7_ebd0:*/ dec $0fb0.w, X
-/*unknown_a7_ebd3:*/ beq $02 ; $ebd7.w
-/*unknown_a7_ebd5:*/ bpl $43 ; $ec1a.w
-/*unknown_a7_ebd7:*/ lda $0fb4.w, X
-/*unknown_a7_ebda:*/ beq $14 ; $ebf0.w
+/*unknown_a7_ebd3:*/ beq @unknown_a7_ebd7
+/*unknown_a7_ebd5:*/ bpl @unknown_a7_ec1a
+@unknown_a7_ebd7: lda $0fb4.w, X
+/*unknown_a7_ebda:*/ beq @unknown_a7_ebf0
 /*unknown_a7_ebdc:*/ lda #$94
 /*unknown_a7_ebde:*/ inx
 /*unknown_a7_ebdf:*/ sta $0f92.w, X
@@ -11978,15 +11978,15 @@ das: .dw $400
 /*unknown_a7_ebe5:*/ sta $0fac.w, X
 /*unknown_a7_ebe8:*/ lda $e90a.w
 /*unknown_a7_ebeb:*/ sta $0fae.w, X
-/*unknown_a7_ebee:*/ bra $12 ; $ec02.w
-/*unknown_a7_ebf0:*/ lda #$3c
+/*unknown_a7_ebee:*/ bra @unknown_a7_ec02
+@unknown_a7_ebf0: lda #$3c
 /*unknown_a7_ebf2:*/ inx
 /*unknown_a7_ebf3:*/ sta $0f92.w, X
 /*unknown_a7_ebf6:*/ lda $e90c.w
 /*unknown_a7_ebf9:*/ sta $0fac.w, X
 /*unknown_a7_ebfc:*/ lda $e90e.w
 /*unknown_a7_ebff:*/ sta $0fae.w, X
-/*unknown_a7_ec02:*/ lda #$01
+@unknown_a7_ec02: lda #$01
 /*unknown_a7_ec04:*/ brk $9d
 /*unknown_a7_ec06:*/ sty $0f, X
 /*unknown_a7_ec08:*/ lda #$50
@@ -11996,12 +11996,12 @@ das: .dw $400
 /*unknown_a7_ec11:*/ sta $0fa8.w, X
 /*unknown_a7_ec14:*/ lda $e902.w
 /*unknown_a7_ec17:*/ sta $0faa.w, X
-/*unknown_a7_ec1a:*/ rtl
+@unknown_a7_ec1a: rtl
 
 /*unknown_a7_ec1b:*/ dec $0fb0.w, X
-/*unknown_a7_ec1e:*/ beq $02 ; $ec22.w
-/*unknown_a7_ec20:*/ bpl $1e ; $ec40.w
-/*unknown_a7_ec22:*/ lda $e900.w
+/*unknown_a7_ec1e:*/ beq @unknown_a7_ec22
+/*unknown_a7_ec20:*/ bpl @unknown_a7_ec40
+@unknown_a7_ec22: lda $e900.w
 /*unknown_a7_ec25:*/ sta $0fa8.w, X
 /*unknown_a7_ec28:*/ lda $e902.w
 /*unknown_a7_ec2b:*/ sta $0faa.w, X
@@ -12014,7 +12014,7 @@ das: .dw $400
 /*unknown_a7_ec3a:*/ lda #$01
 /*unknown_a7_ec3c:*/ brk $9d
 /*unknown_a7_ec3e:*/ sty $0f, X
-/*unknown_a7_ec40:*/ rtl
+@unknown_a7_ec40: rtl
 
 /*unknown_a7_ec41:*/ eor [$ec]
 /*unknown_a7_ec43:*/ adc ($ec, X)
@@ -12062,14 +12062,14 @@ das: .dw $400
 /*unknown_a7_eca1:*/ clc
 /*unknown_a7_eca2:*/ lda #$0b
 /*unknown_a7_eca4:*/ brk $9d
-/*unknown_a7_eca6:*/ bcs $0f ; $ecb7.w
+/*unknown_a7_eca6:*/ bcs @unknown_a7_ecb7
 /*unknown_a7_eca8:*/ lda #$c7
 /*unknown_a7_ecaa:*/ sbc $b29d.w
 /*unknown_a7_ecad:*/ ora $0001a9.l
 /*unknown_a7_ecb1:*/ sta $0f94.w, X
 /*unknown_a7_ecb4:*/ lda #$54
 /*unknown_a7_ecb6:*/ inx
-/*unknown_a7_ecb7:*/ sta $0f92.w, X
+@unknown_a7_ecb7: sta $0f92.w, X
 /*unknown_a7_ecba:*/ rtl
 
 /*unknown_a7_ecbb:*/ jsr $e974.w
@@ -12079,14 +12079,14 @@ das: .dw $400
 /*unknown_a7_ecc5:*/ clc
 /*unknown_a7_ecc6:*/ lda #$0b
 /*unknown_a7_ecc8:*/ brk $9d
-/*unknown_a7_ecca:*/ bcs $0f ; $ecdb.w
+/*unknown_a7_ecca:*/ bcs @unknown_a7_ecdb
 /*unknown_a7_eccc:*/ lda #$c7
 /*unknown_a7_ecce:*/ sbc $b29d.w
 /*unknown_a7_ecd1:*/ ora $0001a9.l
 /*unknown_a7_ecd5:*/ sta $0f94.w, X
 /*unknown_a7_ecd8:*/ lda #$54
 /*unknown_a7_ecda:*/ inx
-/*unknown_a7_ecdb:*/ sta $0f92.w, X
+@unknown_a7_ecdb: sta $0f92.w, X
 /*unknown_a7_ecde:*/ rtl
 
 /*unknown_a7_ecdf:*/ jsr $e974.w
@@ -12124,7 +12124,7 @@ das: .dw $400
 /*unknown_a7_ed2c:*/ sbc #$bd
 /*unknown_a7_ed2e:*/ ply
 /*unknown_a7_ed2f:*/ ora $0348c9
-/*unknown_a7_ed33:*/ bmi $1e ; $ed53.w
+/*unknown_a7_ed33:*/ bmi @unknown_a7_ed53
 /*unknown_a7_ed35:*/ lda #$01
 /*unknown_a7_ed37:*/ brk $9d
 /*unknown_a7_ed39:*/ sty $0f, X
@@ -12137,7 +12137,7 @@ das: .dw $400
 /*unknown_a7_ed4a:*/ sta $0fa8.w, X
 /*unknown_a7_ed4d:*/ lda $e906.w
 /*unknown_a7_ed50:*/ sta $0faa.w, X
-/*unknown_a7_ed53:*/ rtl
+@unknown_a7_ed53: rtl
 
 /*unknown_a7_ed54:*/ jsr $e974.w
 /*unknown_a7_ed57:*/ jsr $e983.w
@@ -12156,11 +12156,11 @@ das: .dw $400
 /*unknown_a7_ed73:*/ ora $58206b
 /*unknown_a7_ed77:*/ sbc #$20
 /*unknown_a7_ed79:*/ sta $e9, S
-/*unknown_a7_ed7b:*/ bcs $01 ; $ed7e.w
+/*unknown_a7_ed7b:*/ bcs @unknown_a7_ed7e
 /*unknown_a7_ed7d:*/ rtl
 
-/*unknown_a7_ed7e:*/ lda $0fa8.w, X
-/*unknown_a7_ed81:*/ bpl $13 ; $ed96.w
+@unknown_a7_ed7e: lda $0fa8.w, X
+/*unknown_a7_ed81:*/ bpl @unknown_a7_ed96
 /*unknown_a7_ed83:*/ stz $0fa8.w, X
 /*unknown_a7_ed86:*/ stz $0faa.w, X
 /*unknown_a7_ed89:*/ lda #$03
@@ -12171,9 +12171,9 @@ das: .dw $400
 /*unknown_a7_ed92:*/ sta $0f92.w, X
 /*unknown_a7_ed95:*/ rtl
 
-/*unknown_a7_ed96:*/ lda #$0b
+@unknown_a7_ed96: lda #$0b
 /*unknown_a7_ed98:*/ brk $9d
-/*unknown_a7_ed9a:*/ bcs $0f ; $edab.w
+/*unknown_a7_ed9a:*/ bcs @unknown_a7_edab
 /*unknown_a7_ed9c:*/ lda #$01
 /*unknown_a7_ed9e:*/ brk $9d
 /*unknown_a7_eda0:*/ sty $0f, X
@@ -12181,30 +12181,30 @@ das: .dw $400
 /*unknown_a7_eda4:*/ inx
 /*unknown_a7_eda5:*/ sta $0f92.w, X
 /*unknown_a7_eda8:*/ lda $0fb6.w, X
-/*unknown_a7_edab:*/ bit #$02
+@unknown_a7_edab: bit #$02
 /*unknown_a7_edad:*/ brk $d0
 /*unknown_a7_edaf:*/ php
-/*unknown_a7_edb0:*/ lda #$c7
+@unknown_a7_edb0: lda #$c7
 /*unknown_a7_edb2:*/ sbc $b29d.w
 /*unknown_a7_edb5:*/ ora $bd0e80
 /*unknown_a7_edb9:*/ ply
 /*unknown_a7_edba:*/ ora $0340c9
-/*unknown_a7_edbe:*/ bpl ($f0 - $100) ; $edb0.w
+/*unknown_a7_edbe:*/ bpl @unknown_a7_edb0
 /*unknown_a7_edc0:*/ lda #$3e
 /*unknown_a7_edc2:*/ inc $b29d.w
 /*unknown_a7_edc5:*/ ora $58206b
 /*unknown_a7_edc9:*/ sbc #$de
 /*unknown_a7_edcb:*/ bcs $0f ; $eddc.w
-/*unknown_a7_edcd:*/ beq $02 ; $edd1.w
-/*unknown_a7_edcf:*/ bpl $6c ; $ee3d.w
-/*unknown_a7_edd1:*/ lda $0fb4.w, X
+/*unknown_a7_edcd:*/ beq @unknown_a7_edd1
+/*unknown_a7_edcf:*/ bpl @unknown_a7_ee3d
+@unknown_a7_edd1: lda $0fb4.w, X
 /*unknown_a7_edd4:*/ clc
 /*unknown_a7_edd5:*/ adc #$00
 /*unknown_a7_edd7:*/ ora ($9d, X)
 /*unknown_a7_edd9:*/ ldy $0f, X
 /*unknown_a7_eddb:*/ and #$00
 /*unknown_a7_eddd:*/ sbc $0400c9, X
-/*unknown_a7_ede1:*/ bmi $2b ; $ee0e.w
+/*unknown_a7_ede1:*/ bmi @unknown_a7_ee0e
 /*unknown_a7_ede3:*/ lda $0fb4.w, X
 /*unknown_a7_ede6:*/ and #$ff
 /*unknown_a7_ede8:*/ brk $9d
@@ -12221,14 +12221,14 @@ das: .dw $400
 /*unknown_a7_ee03:*/ sta $0fac.w, X
 /*unknown_a7_ee06:*/ lda $e90a.w
 /*unknown_a7_ee09:*/ sta $0fae.w, X
-/*unknown_a7_ee0c:*/ bra $0e ; $ee1c.w
-/*unknown_a7_ee0e:*/ lda #$75
+/*unknown_a7_ee0c:*/ bra @unknown_a7_ee1c
+@unknown_a7_ee0e: lda #$75
 /*unknown_a7_ee10:*/ sbc $b29d.w
 /*unknown_a7_ee13:*/ ora $0f92bd
 /*unknown_a7_ee17:*/ inc A
 /*unknown_a7_ee18:*/ inc A
 /*unknown_a7_ee19:*/ sta $0f92.w, X
-/*unknown_a7_ee1c:*/ lda $e900.w
+@unknown_a7_ee1c: lda $e900.w
 /*unknown_a7_ee1f:*/ sta $0fa8.w, X
 /*unknown_a7_ee22:*/ lda $e902.w
 /*unknown_a7_ee25:*/ sta $0faa.w, X
@@ -12241,13 +12241,13 @@ das: .dw $400
 /*unknown_a7_ee35:*/ ora [$a9]
 /*unknown_a7_ee37:*/ and ($00, S), Y
 /*unknown_a7_ee39:*/ jsr $8090cb
-/*unknown_a7_ee3d:*/ rtl
+@unknown_a7_ee3d: rtl
 
 /*unknown_a7_ee3e:*/ jsr $e958.w
 /*unknown_a7_ee41:*/ dec $0fb0.w, X
-/*unknown_a7_ee44:*/ beq $02 ; $ee48.w
-/*unknown_a7_ee46:*/ bpl $51 ; $ee99.w
-/*unknown_a7_ee48:*/ lda #$40
+/*unknown_a7_ee44:*/ beq @unknown_a7_ee48
+/*unknown_a7_ee46:*/ bpl @unknown_a7_ee99
+@unknown_a7_ee48: lda #$40
 /*unknown_a7_ee4a:*/ brk $22
 /*unknown_a7_ee4c:*/ sbc $a0ae.w
 /*unknown_a7_ee4f:*/ tay
@@ -12281,7 +12281,7 @@ das: .dw $400
 /*unknown_a7_ee93:*/ lda #$01
 /*unknown_a7_ee95:*/ brk $9d
 /*unknown_a7_ee97:*/ sty $0f, X
-/*unknown_a7_ee99:*/ rtl
+@unknown_a7_ee99: rtl
 
 /*unknown_a7_ee9a:*/ jsr $e974.w
 /*unknown_a7_ee9d:*/ lda $0f7a.w, X
@@ -12299,7 +12299,7 @@ das: .dw $400
 
 /*unknown_a7_eeb8:*/ jsr $e974.w
 /*unknown_a7_eebb:*/ jsr $e983.w
-/*unknown_a7_eebe:*/ bcc $2a ; $eeea.w
+/*unknown_a7_eebe:*/ bcc @unknown_a7_eeea
 /*unknown_a7_eec0:*/ lda $e90c.w
 /*unknown_a7_eec3:*/ sta $0fac.w, X
 /*unknown_a7_eec6:*/ lda $e90e.w
@@ -12317,7 +12317,7 @@ das: .dw $400
 /*unknown_a7_eee4:*/ lda #$28
 /*unknown_a7_eee6:*/ inx
 /*unknown_a7_eee7:*/ sta $0f92.w, X
-/*unknown_a7_eeea:*/ rtl
+@unknown_a7_eeea: rtl
 
 /*unknown_a7_eeeb:*/ rtl
 
@@ -12333,8 +12333,8 @@ das: .dw $400
 /*unknown_a7_eefc:*/ cop $33
 /*unknown_a7_eefe:*/ cop $00
 /*unknown_a7_ef00:*/ sbc $c3, X
-/*unknown_a7_ef02:*/ beq $00 ; $ef04.w
-/*unknown_a7_ef04:*/ and ($fa, S), Y
+/*unknown_a7_ef02:*/ beq @unknown_a7_ef04
+@unknown_a7_ef04: and ($fa, S), Y
 /*unknown_a7_ef06:*/ cmp $f8, S
 /*unknown_a7_ef08:*/ tsb $33
 /*unknown_a7_ef0a:*/ cop $00
@@ -12738,8 +12738,8 @@ das: .dw $400
 /*unknown_a7_f25e:*/ ora $1f, X
 /*unknown_a7_f260:*/ jmp ($6018.w, X)
 /*unknown_a7_f263:*/ asl A
-/*unknown_a7_f264:*/ bmi $00 ; $f266.w
-/*unknown_a7_f266:*/ sec
+/*unknown_a7_f264:*/ bmi @unknown_a7_f266
+@unknown_a7_f266: sec
 /*unknown_a7_f267:*/ eor [$53], Y
 /*unknown_a7_f269:*/ eor $e242.w
 /*unknown_a7_f26c:*/ trb $60
@@ -12748,7 +12748,7 @@ das: .dw $400
 /*unknown_a7_f273:*/ ror $25
 /*unknown_a7_f275:*/ bit $1d
 /*unknown_a7_f277:*/ sbc $56f763, X
-/*unknown_a7_f27b:*/ bpl $3a ; $f2b7.w
+/*unknown_a7_f27b:*/ bpl @unknown_a7_f2b7
 /*unknown_a7_f27d:*/ sty $1f29.w
 /*unknown_a7_f280:*/ jmp ($6818.w, X)
 /*unknown_a7_f283:*/ asl A
@@ -12756,12 +12756,12 @@ das: .dw $400
 /*unknown_a7_f287:*/ eor [$6b], Y
 /*unknown_a7_f289:*/ eor $e25a.w
 /*unknown_a7_f28c:*/ bit $2c60.w
-/*unknown_a7_f28f:*/ bcs $66 ; $f2f7.w
+/*unknown_a7_f28f:*/ bcs @unknown_a7_f2f7
 /*unknown_a7_f291:*/ phd
 /*unknown_a7_f292:*/ lsr $3d66.w
 /*unknown_a7_f295:*/ bit $35
 /*unknown_a7_f297:*/ sbc $6af773, X
-/*unknown_a7_f29b:*/ bpl $52 ; $f2ef.w
+/*unknown_a7_f29b:*/ bpl @unknown_a7_f2ef
 /*unknown_a7_f29d:*/ sty $1f41.w
 /*unknown_a7_f2a0:*/ jmp ($7418.w, X)
 /*unknown_a7_f2a3:*/ asl A
@@ -12777,13 +12777,13 @@ das: .dw $400
 /*unknown_a7_f2b1:*/ phd
 /*unknown_a7_f2b2:*/ per $5166 ; $441b.w
 /*unknown_a7_f2b5:*/ bit $49
-/*unknown_a7_f2b7:*/ sbc $7ef77f, X
-/*unknown_a7_f2bb:*/ bpl $66 ; $f323.w
+@unknown_a7_f2b7: sbc $7ef77f, X
+/*unknown_a7_f2bb:*/ bpl @unknown_a7_f323
 /*unknown_a7_f2bd:*/ sty $1f55.w
 /*unknown_a7_f2c0:*/ jmp ($7c18.w, X)
 /*unknown_a7_f2c3:*/ asl A
-/*unknown_a7_f2c4:*/ bvs $00 ; $f2c6.w
-/*unknown_a7_f2c6:*/ sec
+/*unknown_a7_f2c4:*/ bvs @unknown_a7_f2c6
+@unknown_a7_f2c6: sec
 /*unknown_a7_f2c7:*/ eor [$3f], Y
 /*unknown_a7_f2c9:*/ eor $e22e.w
 /*unknown_a7_f2cc:*/ brk $60
@@ -12798,17 +12798,17 @@ das: .dw $400
 /*unknown_a7_f2de:*/ ora $1f, X
 /*unknown_a7_f2e0:*/ jmp ($6018.w, X)
 /*unknown_a7_f2e3:*/ asl A
-/*unknown_a7_f2e4:*/ bmi $00 ; $f2e6.w
-/*unknown_a7_f2e6:*/ sec
+/*unknown_a7_f2e4:*/ bmi @unknown_a7_f2e6
+@unknown_a7_f2e6: sec
 /*unknown_a7_f2e7:*/ sei
 /*unknown_a7_f2e8:*/ phk
 /*unknown_a7_f2e9:*/ bcc $3e ; $f329.w
 /*unknown_a7_f2eb:*/ adc [$19]
 /*unknown_a7_f2ed:*/ asl $19
-/*unknown_a7_f2ef:*/ sbc ($46, S), Y
+@unknown_a7_f2ef: sbc ($46, S), Y
 /*unknown_a7_f2f1:*/ adc $25eb32
 /*unknown_a7_f2f5:*/ lda #$1d
-/*unknown_a7_f2f7:*/ sbc $4f185f, X
+@unknown_a7_f2f7: sbc $4f185f, X
 /*unknown_a7_f2fb:*/ adc ($36, S), Y
 /*unknown_a7_f2fd:*/ sbc $7cdf29
 /*unknown_a7_f301:*/ cmp $ce64.w, Y
@@ -12826,7 +12826,7 @@ das: .dw $400
 /*unknown_a7_f31b:*/ dec $46, X
 /*unknown_a7_f31d:*/ adc ($3e, S), Y
 /*unknown_a7_f31f:*/ sta $699a7d, X
-/*unknown_a7_f323:*/ sta ($4d)
+@unknown_a7_f323: sta ($4d)
 /*unknown_a7_f325:*/ brk $38
 /*unknown_a7_f327:*/ tyx
 /*unknown_a7_f328:*/ adc $37, S
@@ -12855,7 +12855,7 @@ das: .dw $400
 /*unknown_a7_f358:*/ plx
 /*unknown_a7_f359:*/ ora $00
 /*unknown_a7_f35b:*/ lda $edfa.w, Y
-/*unknown_a7_f35e:*/ bra $45 ; $f3a5.w
+/*unknown_a7_f35e:*/ bra @unknown_a7_f3a5
 /*unknown_a7_f360:*/ sbc ($03, S), Y
 /*unknown_a7_f362:*/ brk $c4
 /*unknown_a7_f364:*/ sbc $0003.w, Y
@@ -12883,7 +12883,7 @@ das: .dw $400
 /*unknown_a7_f390:*/ plx
 /*unknown_a7_f391:*/ ora ($00, X)
 /*unknown_a7_f393:*/ lda $edfa.w, Y
-/*unknown_a7_f396:*/ bra $7d ; $f415.w
+/*unknown_a7_f396:*/ bra @unknown_a7_f415
 /*unknown_a7_f398:*/ sbc ($30, S), Y
 /*unknown_a7_f39a:*/ brk $50
 /*unknown_a7_f39c:*/ xce
@@ -12892,7 +12892,7 @@ das: .dw $400
 /*unknown_a7_f3a0:*/ xce
 /*unknown_a7_f3a1:*/ ora [$00]
 /*unknown_a7_f3a3:*/ asl $fc, X
-/*unknown_a7_f3a5:*/ ora [$00]
+@unknown_a7_f3a5: ora [$00]
 /*unknown_a7_f3a7:*/ eor $fc
 /*unknown_a7_f3a9:*/ ora [$00]
 /*unknown_a7_f3ab:*/ stz $fc, X
@@ -12918,9 +12918,9 @@ das: .dw $400
 /*unknown_a7_f3d0:*/ xce
 /*unknown_a7_f3d1:*/ php
 /*unknown_a7_f3d2:*/ brk $b3
-/*unknown_a7_f3d4:*/ xce
+@unknown_a7_f3d4: xce
 /*unknown_a7_f3d5:*/ tsb $00
-/*unknown_a7_f3d7:*/ bvc ($fb - $100) ; $f3d4.w
+/*unknown_a7_f3d7:*/ bvc @unknown_a7_f3d4
 /*unknown_a7_f3d9:*/ tsb $00
 /*unknown_a7_f3db:*/ adc $0004fb.l, X
 /*unknown_a7_f3df:*/ lda ($fb, S), Y
@@ -12934,9 +12934,9 @@ das: .dw $400
 /*unknown_a7_f3f0:*/ sbc ($01, S), Y
 /*unknown_a7_f3f2:*/ brk $f2
 /*unknown_a7_f3f4:*/ plx
-/*unknown_a7_f3f5:*/ and $000a81.l
+@unknown_a7_f3f5: and $000a81.l
 /*unknown_a7_f3f9:*/ trb $edfb.w
-/*unknown_a7_f3fc:*/ bra ($f7 - $100) ; $f3f5.w
+/*unknown_a7_f3fc:*/ bra @unknown_a7_f3f5
 /*unknown_a7_f3fe:*/ sbc ($05, S), Y
 /*unknown_a7_f400:*/ brk $8a
 /*unknown_a7_f402:*/ plx
@@ -12948,7 +12948,7 @@ das: .dw $400
 /*unknown_a7_f40f:*/ ora $00
 /*unknown_a7_f411:*/ ora ($fd, X)
 /*unknown_a7_f413:*/ ora $00
-/*unknown_a7_f415:*/ dec A
+@unknown_a7_f415: dec A
 /*unknown_a7_f416:*/ sbc $0005.w, X
 /*unknown_a7_f419:*/ adc #$fd
 /*unknown_a7_f41b:*/ ora $00
@@ -13051,7 +13051,7 @@ das: .dw $400
 /*unknown_a7_f4f3:*/ sty $0f, X
 /*unknown_a7_f4f5:*/ stz $0f90.w, X
 /*unknown_a7_f4f8:*/ lda $0fb4.w, X
-/*unknown_a7_f4fb:*/ bmi $17 ; $f514.w
+/*unknown_a7_f4fb:*/ bmi @unknown_a7_f514
 /*unknown_a7_f4fd:*/ beq $08 ; $f507.w
 /*unknown_a7_f4ff:*/ lda #$5b
 /*unknown_a7_f501:*/ pea $929d.w
@@ -13061,9 +13061,9 @@ das: .dw $400
 /*unknown_a7_f50d:*/ lda #$70
 /*unknown_a7_f50f:*/ sbc $9d, X
 /*unknown_a7_f511:*/ lda ($0f)
-/*unknown_a7_f513:*/ rtl
+@unknown_a7_f513: rtl
 
-/*unknown_a7_f514:*/ bit #$01
+@unknown_a7_f514: bit #$01
 /*unknown_a7_f516:*/ brk $f0
 /*unknown_a7_f518:*/ php
 /*unknown_a7_f519:*/ lda #$b9
@@ -13076,7 +13076,7 @@ das: .dw $400
 /*unknown_a7_f52c:*/ ora $54ae6b
 /*unknown_a7_f530:*/ asl $b27c.w
 /*unknown_a7_f533:*/ ora $c2086b
-/*unknown_a7_f537:*/ bmi ($da - $100) ; $f513.w
+/*unknown_a7_f537:*/ bmi @unknown_a7_f513
 /*unknown_a7_f539:*/ lda #$00
 /*unknown_a7_f53b:*/ ror $0185.w, X
 /*unknown_a7_f53e:*/ lda $0f96.w, X
@@ -13088,14 +13088,14 @@ das: .dw $400
 /*unknown_a7_f548:*/ sta $00
 /*unknown_a7_f54a:*/ tyx
 /*unknown_a7_f54b:*/ ldy #$0000.w
-/*unknown_a7_f54e:*/ lda $0000.w, X
+@unknown_a7_f54e: lda $0000.w, X
 /*unknown_a7_f551:*/ sta [$00], Y
 /*unknown_a7_f553:*/ inx
 /*unknown_a7_f554:*/ inx
 /*unknown_a7_f555:*/ iny
 /*unknown_a7_f556:*/ iny
 /*unknown_a7_f557:*/ cpy #$0020.w
-/*unknown_a7_f55a:*/ bmi ($f2 - $100) ; $f54e.w
+/*unknown_a7_f55a:*/ bmi @unknown_a7_f54e
 /*unknown_a7_f55c:*/ plx
 /*unknown_a7_f55d:*/ plp
 /*unknown_a7_f55e:*/ rts
@@ -13140,29 +13140,29 @@ das: .dw $400
 /*unknown_a7_f5b4:*/ lda #$1d
 /*unknown_a7_f5b6:*/ brk $22
 /*unknown_a7_f5b8:*/ lda $90, S
-/*unknown_a7_f5ba:*/ bra $6b ; $f627.w
+/*unknown_a7_f5ba:*/ bra @unknown_a7_f627
 /*unknown_a7_f5bc:*/ dec $0fa8.w, X
-/*unknown_a7_f5bf:*/ bne $2b ; $f5ec.w
+/*unknown_a7_f5bf:*/ bne @unknown_a7_f5ec
 /*unknown_a7_f5c1:*/ lda $0fb4.w, X
-/*unknown_a7_f5c4:*/ beq $0e ; $f5d4.w
+/*unknown_a7_f5c4:*/ beq @unknown_a7_f5d4
 /*unknown_a7_f5c6:*/ lda #$07
 /*unknown_a7_f5c8:*/ pea $929d.w
 /*unknown_a7_f5cb:*/ ora $f65ea9
 /*unknown_a7_f5cf:*/ sta $0fb2.w, X
-/*unknown_a7_f5d2:*/ bra $0c ; $f5e0.w
-/*unknown_a7_f5d4:*/ lda #$45
+/*unknown_a7_f5d2:*/ bra @unknown_a7_f5e0
+@unknown_a7_f5d4: lda #$45
 /*unknown_a7_f5d6:*/ sbc ($9d, S), Y
 /*unknown_a7_f5d8:*/ sta ($0f)
 /*unknown_a7_f5da:*/ lda #$ed
 /*unknown_a7_f5dc:*/ sbc $9d, X
 /*unknown_a7_f5de:*/ lda ($0f)
-/*unknown_a7_f5e0:*/ lda #$01
+@unknown_a7_f5e0: lda #$01
 /*unknown_a7_f5e2:*/ brk $9d
 /*unknown_a7_f5e4:*/ sty $0f, X
 /*unknown_a7_f5e6:*/ lda #$01
 /*unknown_a7_f5e8:*/ brk $9d
 /*unknown_a7_f5ea:*/ bcs $0f ; $f5fb.w
-/*unknown_a7_f5ec:*/ rtl
+@unknown_a7_f5ec: rtl
 
 /*unknown_a7_f5ed:*/ jsr $f6d5.w
 /*unknown_a7_f5f0:*/ lda $14
@@ -13175,29 +13175,29 @@ das: .dw $400
 /*unknown_a7_f602:*/ trb $22
 /*unknown_a7_f604:*/ plb
 /*unknown_a7_f605:*/ dec $a0
-/*unknown_a7_f607:*/ bcs $06 ; $f60f.w
+/*unknown_a7_f607:*/ bcs @unknown_a7_f60f
 /*unknown_a7_f609:*/ jsr $a0c8ad
-/*unknown_a7_f60d:*/ bra $2b ; $f63a.w
-/*unknown_a7_f60f:*/ lda #$07
+/*unknown_a7_f60d:*/ bra @unknown_a7_f63a
+@unknown_a7_f60f: lda #$07
 /*unknown_a7_f611:*/ pea $929d.w
 /*unknown_a7_f614:*/ ora $f65ea9
 /*unknown_a7_f618:*/ sta $0fb2.w, X
 /*unknown_a7_f61b:*/ lda #$01
 /*unknown_a7_f61d:*/ brk $9d
-/*unknown_a7_f61f:*/ bcs $0f ; $f630.w
-/*unknown_a7_f621:*/ lda #$01
+/*unknown_a7_f61f:*/ bcs @unknown_a7_f630
+@unknown_a7_f621: lda #$01
 /*unknown_a7_f623:*/ brk $9d
 /*unknown_a7_f625:*/ ldy $0f, X
-/*unknown_a7_f627:*/ lda #$01
+@unknown_a7_f627: lda #$01
 /*unknown_a7_f629:*/ brk $9d
 /*unknown_a7_f62b:*/ sty $0f, X
 /*unknown_a7_f62d:*/ stz $0fa8.w, X
-/*unknown_a7_f630:*/ stz $0faa.w, X
+@unknown_a7_f630: stz $0faa.w, X
 /*unknown_a7_f633:*/ ldy #$f225.w
 /*unknown_a7_f636:*/ jsr $f535.w
 /*unknown_a7_f639:*/ rtl
 
-/*unknown_a7_f63a:*/ lda $0f7a.w, X
+@unknown_a7_f63a: lda $0f7a.w, X
 /*unknown_a7_f63d:*/ cmp #$60
 /*unknown_a7_f63f:*/ brk $30
 /*unknown_a7_f641:*/ cmp $ad6b.w
@@ -13210,34 +13210,34 @@ das: .dw $400
 /*unknown_a7_f652:*/ ora $f570a9
 /*unknown_a7_f656:*/ sta $0fb2.w, X
 /*unknown_a7_f659:*/ stz $0fb0.w, X
-/*unknown_a7_f65c:*/ bra ($c3 - $100) ; $f621.w
+/*unknown_a7_f65c:*/ bra @unknown_a7_f621
 /*unknown_a7_f65e:*/ jsr $f6d5.w
 /*unknown_a7_f661:*/ jsr $a0c6ab
-/*unknown_a7_f665:*/ bcs $06 ; $f66d.w
+/*unknown_a7_f665:*/ bcs @unknown_a7_f66d
 /*unknown_a7_f667:*/ jsr $a0c8ad
-/*unknown_a7_f66b:*/ bra $2c ; $f699.w
-/*unknown_a7_f66d:*/ lda #$0071.w
+/*unknown_a7_f66b:*/ bra @unknown_a7_f699
+@unknown_a7_f66d: lda #$0071.w
 /*unknown_a7_f670:*/ jsr $8090a3
 /*unknown_a7_f674:*/ lda #$f345.w
 /*unknown_a7_f677:*/ sta $0f92.w, X
 /*unknown_a7_f67a:*/ lda #$f5ed.w
 /*unknown_a7_f67d:*/ sta $0fb2.w, X
-/*unknown_a7_f680:*/ stz $0fb4.w, X
+@unknown_a7_f680: stz $0fb4.w, X
 /*unknown_a7_f683:*/ stz $0fa8.w, X
 /*unknown_a7_f686:*/ ldy #$f225.w
 /*unknown_a7_f689:*/ jsr $f535.w
-/*unknown_a7_f68c:*/ stz $0fb0.w, X
+@unknown_a7_f68c: stz $0fb0.w, X
 /*unknown_a7_f68f:*/ stz $0faa.w, X
 /*unknown_a7_f692:*/ lda #$0001.w
 /*unknown_a7_f695:*/ sta $0f94.w, X
 /*unknown_a7_f698:*/ rtl
 
-/*unknown_a7_f699:*/ lda $0f7a.w, X
+@unknown_a7_f699: lda $0f7a.w, X
 /*unknown_a7_f69c:*/ cmp #$0480.w
-/*unknown_a7_f69f:*/ bpl $01 ; $f6a2.w
+/*unknown_a7_f69f:*/ bpl @unknown_a7_f6a2
 /*unknown_a7_f6a1:*/ rtl
 
-/*unknown_a7_f6a2:*/ lda #$f4b3.w
+@unknown_a7_f6a2: lda #$f4b3.w
 /*unknown_a7_f6a5:*/ sta $0f92.w, X
 /*unknown_a7_f6a8:*/ lda #$f78f.w
 /*unknown_a7_f6ab:*/ sta $0fb2.w, X
@@ -13249,27 +13249,27 @@ das: .dw $400
 /*unknown_a7_f6bb:*/ sta $0f7e.w, X
 /*unknown_a7_f6be:*/ lda #$003d.w
 /*unknown_a7_f6c1:*/ jsr $8090cb
-/*unknown_a7_f6c5:*/ bra ($c5 - $100) ; $f68c.w
+/*unknown_a7_f6c5:*/ bra @unknown_a7_f68c
 /*unknown_a7_f6c7:*/ lda #$f399.w
 /*unknown_a7_f6ca:*/ sta $0f92.w, X
 /*unknown_a7_f6cd:*/ lda #$f570.w
 /*unknown_a7_f6d0:*/ sta $0fb2.w, X
-/*unknown_a7_f6d3:*/ bra ($ab - $100) ; $f680.w
+/*unknown_a7_f6d3:*/ bra @unknown_a7_f680
 /*unknown_a7_f6d5:*/ lda $0fa8.w, X
 /*unknown_a7_f6d8:*/ cmp $f4d5.w
-/*unknown_a7_f6db:*/ bmi $42 ; $f71f.w
+/*unknown_a7_f6db:*/ bmi @unknown_a7_f71f
 /*unknown_a7_f6dd:*/ lda $0fb0.w, X
 /*unknown_a7_f6e0:*/ cmp #$0001.w
-/*unknown_a7_f6e3:*/ bne $07 ; $f6ec.w
+/*unknown_a7_f6e3:*/ bne @unknown_a7_f6ec
 /*unknown_a7_f6e5:*/ lda #$0039.w
 /*unknown_a7_f6e8:*/ jsr $8090cb
-/*unknown_a7_f6ec:*/ lda $0fb0.w, X
+@unknown_a7_f6ec: lda $0fb0.w, X
 /*unknown_a7_f6ef:*/ dec A
 /*unknown_a7_f6f0:*/ sta $0fb0.w, X
 /*unknown_a7_f6f3:*/ and #$00ff.w
-/*unknown_a7_f6f6:*/ beq $02 ; $f6fa.w
-/*unknown_a7_f6f8:*/ bpl $25 ; $f71f.w
-/*unknown_a7_f6fa:*/ lda $0fb0.w, X
+/*unknown_a7_f6f6:*/ beq @unknown_a7_f6fa
+/*unknown_a7_f6f8:*/ bpl @unknown_a7_f71f
+@unknown_a7_f6fa: lda $0fb0.w, X
 /*unknown_a7_f6fd:*/ xba
 /*unknown_a7_f6fe:*/ and #$00ff.w
 /*unknown_a7_f701:*/ asl A
@@ -13282,27 +13282,27 @@ das: .dw $400
 /*unknown_a7_f70e:*/ adc #$0110.w
 /*unknown_a7_f711:*/ sta $0fb0.w, X
 /*unknown_a7_f714:*/ cmp #$0410.w
-/*unknown_a7_f717:*/ bmi $06 ; $f71f.w
+/*unknown_a7_f717:*/ bmi @unknown_a7_f71f
 /*unknown_a7_f719:*/ lda #$0310.w
 /*unknown_a7_f71c:*/ sta $0fb0.w, X
-/*unknown_a7_f71f:*/ lda #$0001.w
+@unknown_a7_f71f: lda #$0001.w
 /*unknown_a7_f722:*/ sta $14
 /*unknown_a7_f724:*/ stz $12
 /*unknown_a7_f726:*/ jsr $a0c786
 /*unknown_a7_f72a:*/ lda $0fa8.w, X
 /*unknown_a7_f72d:*/ cmp $f4d5.w
-/*unknown_a7_f730:*/ bmi $1a ; $f74c.w
+/*unknown_a7_f730:*/ bmi @unknown_a7_f74c
 /*unknown_a7_f732:*/ lda $0faa.w, X
 /*unknown_a7_f735:*/ cmp $f4d7.w
-/*unknown_a7_f738:*/ bmi $12 ; $f74c.w
+/*unknown_a7_f738:*/ bmi @unknown_a7_f74c
 /*unknown_a7_f73a:*/ lda $f4d5.w
 /*unknown_a7_f73d:*/ sta $0fa8.w, X
 /*unknown_a7_f740:*/ sta $14
 /*unknown_a7_f742:*/ lda $f4d7.w
 /*unknown_a7_f745:*/ sta $0faa.w, X
 /*unknown_a7_f748:*/ sta $12
-/*unknown_a7_f74a:*/ bra $3a ; $f786.w
-/*unknown_a7_f74c:*/ lda $0faa.w, X
+/*unknown_a7_f74a:*/ bra @unknown_a7_f786
+@unknown_a7_f74c: lda $0faa.w, X
 /*unknown_a7_f74f:*/ clc
 /*unknown_a7_f750:*/ adc $f4db.w
 /*unknown_a7_f753:*/ sta $0faa.w, X
@@ -13312,22 +13312,22 @@ das: .dw $400
 /*unknown_a7_f75e:*/ sta $0fa8.w, X
 /*unknown_a7_f761:*/ sta $14
 /*unknown_a7_f763:*/ cmp #$0004.w
-/*unknown_a7_f766:*/ bne $12 ; $f77a.w
+/*unknown_a7_f766:*/ bne @unknown_a7_f77a
 /*unknown_a7_f768:*/ lda $12
 /*unknown_a7_f76a:*/ cmp #$0000.w
-/*unknown_a7_f76d:*/ bne $17 ; $f786.w
-/*unknown_a7_f76f:*/ lda $0f92.w, X
+/*unknown_a7_f76d:*/ bne @unknown_a7_f786
+@unknown_a7_f76f: lda $0f92.w, X
 /*unknown_a7_f772:*/ clc
 /*unknown_a7_f773:*/ adc #$001c.w
 /*unknown_a7_f776:*/ sta $0f92.w, X
 /*unknown_a7_f779:*/ rts
 
-/*unknown_a7_f77a:*/ cmp #$0008.w
-/*unknown_a7_f77d:*/ bne $07 ; $f786.w
+@unknown_a7_f77a: cmp #$0008.w
+/*unknown_a7_f77d:*/ bne @unknown_a7_f786
 /*unknown_a7_f77f:*/ lda $12
 /*unknown_a7_f781:*/ cmp #$0000.w
-/*unknown_a7_f784:*/ beq ($e9 - $100) ; $f76f.w
-/*unknown_a7_f786:*/ rts
+/*unknown_a7_f784:*/ beq @unknown_a7_f76f
+@unknown_a7_f786: rts
 
 /*unknown_a7_f787:*/ eor $f2
 /*unknown_a7_f789:*/ adc $f2
@@ -13335,7 +13335,7 @@ das: .dw $400
 /*unknown_a7_f78d:*/ lda $f2
 /*unknown_a7_f78f:*/ jsr $f90a.w
 /*unknown_a7_f792:*/ dec $0fa8.w, X
-/*unknown_a7_f795:*/ bne $6e ; $f805.w
+/*unknown_a7_f795:*/ bne @unknown_a7_f805
 /*unknown_a7_f797:*/ lda $0f92.w, X
 /*unknown_a7_f79a:*/ inc A
 /*unknown_a7_f79b:*/ inc A
@@ -13358,24 +13358,24 @@ das: .dw $400
 /*unknown_a7_f7ca:*/ lda #$003b.w
 /*unknown_a7_f7cd:*/ jsr $8090cb
 /*unknown_a7_f7d1:*/ lda $0fb4.w, X
-/*unknown_a7_f7d4:*/ beq $11 ; $f7e7.w
+/*unknown_a7_f7d4:*/ beq @unknown_a7_f7e7
 /*unknown_a7_f7d6:*/ lda #$f4b9.w
 /*unknown_a7_f7d9:*/ sta $0fd2.w, X
 /*unknown_a7_f7dc:*/ sta $1012.w, X
 /*unknown_a7_f7df:*/ sta $1052.w, X
 /*unknown_a7_f7e2:*/ sta $1092.w, X
-/*unknown_a7_f7e5:*/ bra $0f ; $f7f6.w
-/*unknown_a7_f7e7:*/ lda #$f3f7.w
+/*unknown_a7_f7e5:*/ bra @unknown_a7_f7f6
+@unknown_a7_f7e7: lda #$f3f7.w
 /*unknown_a7_f7ea:*/ sta $0fd2.w, X
 /*unknown_a7_f7ed:*/ sta $1012.w, X
 /*unknown_a7_f7f0:*/ sta $1052.w, X
 /*unknown_a7_f7f3:*/ sta $1092.w, X
-/*unknown_a7_f7f6:*/ lda #$0001.w
+@unknown_a7_f7f6: lda #$0001.w
 /*unknown_a7_f7f9:*/ sta $0fd4.w, X
 /*unknown_a7_f7fc:*/ sta $1014.w, X
 /*unknown_a7_f7ff:*/ sta $1054.w, X
 /*unknown_a7_f802:*/ sta $1094.w, X
-/*unknown_a7_f805:*/ rtl
+@unknown_a7_f805: rtl
 
 /*unknown_a7_f806:*/ jsr $f90a.w
 /*unknown_a7_f809:*/ jsr $f89a.w
@@ -13396,31 +13396,31 @@ das: .dw $400
 /*unknown_a7_f833:*/ sta $0fa8.w, X
 /*unknown_a7_f836:*/ sta $14
 /*unknown_a7_f838:*/ cmp #$000f.w
-/*unknown_a7_f83b:*/ bmi $05 ; $f842.w
+/*unknown_a7_f83b:*/ bmi @unknown_a7_f842
 /*unknown_a7_f83d:*/ lda #$000f.w
 /*unknown_a7_f840:*/ sta $14
-/*unknown_a7_f842:*/ lda $14
+@unknown_a7_f842: lda $14
 /*unknown_a7_f844:*/ eor #$ffff.w
 /*unknown_a7_f847:*/ sta $14
 /*unknown_a7_f849:*/ lda $12
 /*unknown_a7_f84b:*/ eor #$ffff.w
 /*unknown_a7_f84e:*/ inc A
 /*unknown_a7_f84f:*/ sta $12
-/*unknown_a7_f851:*/ bne $02 ; $f855.w
+/*unknown_a7_f851:*/ bne @unknown_a7_f855
 /*unknown_a7_f853:*/ inc $14
-/*unknown_a7_f855:*/ jsr $a0c786
-/*unknown_a7_f859:*/ bcc $3e ; $f899.w
+@unknown_a7_f855: jsr $a0c786
+/*unknown_a7_f859:*/ bcc @unknown_a7_f899
 /*unknown_a7_f85b:*/ lda $0fb4.w, X
-/*unknown_a7_f85e:*/ bne $0e ; $f86e.w
+/*unknown_a7_f85e:*/ bne @unknown_a7_f86e
 /*unknown_a7_f860:*/ lda #$f4c1.w
 /*unknown_a7_f863:*/ sta $0f92.w, X
 /*unknown_a7_f866:*/ lda #$0001.w
 /*unknown_a7_f869:*/ sta $0fb4.w, X
-/*unknown_a7_f86c:*/ bra $09 ; $f877.w
-/*unknown_a7_f86e:*/ lda #$f3ff.w
+/*unknown_a7_f86c:*/ bra @unknown_a7_f877
+@unknown_a7_f86e: lda #$f3ff.w
 /*unknown_a7_f871:*/ sta $0f92.w, X
 /*unknown_a7_f874:*/ stz $0fb4.w, X
-/*unknown_a7_f877:*/ lda #$f935.w
+@unknown_a7_f877: lda #$f935.w
 /*unknown_a7_f87a:*/ sta $0fb2.w, X
 /*unknown_a7_f87d:*/ lda #$0001.w
 /*unknown_a7_f880:*/ sta $0f94.w, X
@@ -13431,18 +13431,18 @@ das: .dw $400
 /*unknown_a7_f88f:*/ jsr $f535.w
 /*unknown_a7_f892:*/ lda #$003c.w
 /*unknown_a7_f895:*/ jsr $8090cb
-/*unknown_a7_f899:*/ rtl
+@unknown_a7_f899: rtl
 
 /*unknown_a7_f89a:*/ lda $0fe8.w, X
-/*unknown_a7_f89d:*/ beq $05 ; $f8a4.w
+/*unknown_a7_f89d:*/ beq @unknown_a7_f8a4
 /*unknown_a7_f89f:*/ dec A
 /*unknown_a7_f8a0:*/ sta $0fe8.w, X
 /*unknown_a7_f8a3:*/ rts
 
-/*unknown_a7_f8a4:*/ lda $f4d1.w
+@unknown_a7_f8a4: lda $f4d1.w
 /*unknown_a7_f8a7:*/ sta $0fe8.w, X
 /*unknown_a7_f8aa:*/ lda $0fee.w, X
-/*unknown_a7_f8ad:*/ bne $13 ; $f8c2.w
+/*unknown_a7_f8ad:*/ bne @unknown_a7_f8c2
 /*unknown_a7_f8af:*/ lda $0f7a.w, X
 /*unknown_a7_f8b2:*/ sta $0fba.w, X
 /*unknown_a7_f8b5:*/ lda $0f7e.w, X
@@ -13451,8 +13451,8 @@ das: .dw $400
 /*unknown_a7_f8be:*/ sta $0fee.w, X
 /*unknown_a7_f8c1:*/ rts
 
-/*unknown_a7_f8c2:*/ lda $102e.w, X
-/*unknown_a7_f8c5:*/ bne $13 ; $f8da.w
+@unknown_a7_f8c2: lda $102e.w, X
+/*unknown_a7_f8c5:*/ bne @unknown_a7_f8da
 /*unknown_a7_f8c7:*/ lda $0f7a.w, X
 /*unknown_a7_f8ca:*/ sta $0ffa.w, X
 /*unknown_a7_f8cd:*/ lda $0f7e.w, X
@@ -13461,8 +13461,8 @@ das: .dw $400
 /*unknown_a7_f8d6:*/ sta $102e.w, X
 /*unknown_a7_f8d9:*/ rts
 
-/*unknown_a7_f8da:*/ lda $106e.w, X
-/*unknown_a7_f8dd:*/ bne $13 ; $f8f2.w
+@unknown_a7_f8da: lda $106e.w, X
+/*unknown_a7_f8dd:*/ bne @unknown_a7_f8f2
 /*unknown_a7_f8df:*/ lda $0f7a.w, X
 /*unknown_a7_f8e2:*/ sta $103a.w, X
 /*unknown_a7_f8e5:*/ lda $0f7e.w, X
@@ -13471,15 +13471,15 @@ das: .dw $400
 /*unknown_a7_f8ee:*/ sta $106e.w, X
 /*unknown_a7_f8f1:*/ rts
 
-/*unknown_a7_f8f2:*/ lda $10ae.w, X
-/*unknown_a7_f8f5:*/ bne $12 ; $f909.w
+@unknown_a7_f8f2: lda $10ae.w, X
+/*unknown_a7_f8f5:*/ bne @unknown_a7_f909
 /*unknown_a7_f8f7:*/ lda $0f7a.w, X
 /*unknown_a7_f8fa:*/ sta $107a.w, X
 /*unknown_a7_f8fd:*/ lda $0f7e.w, X
 /*unknown_a7_f900:*/ sta $107e.w, X
 /*unknown_a7_f903:*/ lda $f4d3.w
 /*unknown_a7_f906:*/ sta $10ae.w, X
-/*unknown_a7_f909:*/ rts
+@unknown_a7_f909: rts
 
 /*unknown_a7_f90a:*/ lda $0fb0.w, X
 /*unknown_a7_f90d:*/ xba
@@ -13494,9 +13494,9 @@ das: .dw $400
 /*unknown_a7_f91e:*/ adc #$0100.w
 /*unknown_a7_f921:*/ sta $0fb0.w, X
 /*unknown_a7_f924:*/ cmp #$0400.w
-/*unknown_a7_f927:*/ bmi $03 ; $f92c.w
+/*unknown_a7_f927:*/ bmi @unknown_a7_f92c
 /*unknown_a7_f929:*/ stz $0fb0.w, X
-/*unknown_a7_f92c:*/ rts
+@unknown_a7_f92c: rts
 
 /*unknown_a7_f92d:*/ cmp $f2
 /*unknown_a7_f92f:*/ sbc $f2
@@ -13512,51 +13512,51 @@ das: .dw $400
 /*unknown_a7_f949:*/ sta $0fa8.w, X
 /*unknown_a7_f94c:*/ sta $14
 /*unknown_a7_f94e:*/ cmp #$000a.w
-/*unknown_a7_f951:*/ bmi $07 ; $f95a.w
+/*unknown_a7_f951:*/ bmi @unknown_a7_f95a
 /*unknown_a7_f953:*/ lda #$000a.w
 /*unknown_a7_f956:*/ sta $14
 /*unknown_a7_f958:*/ stz $12
-/*unknown_a7_f95a:*/ jsr $a0c786
-/*unknown_a7_f95e:*/ bcc $2b ; $f98b.w
+@unknown_a7_f95a: jsr $a0c786
+/*unknown_a7_f95e:*/ bcc @unknown_a7_f98b
 /*unknown_a7_f960:*/ lda $0fb4.w, X
-/*unknown_a7_f963:*/ beq $0e ; $f973.w
+/*unknown_a7_f963:*/ beq @unknown_a7_f973
 /*unknown_a7_f965:*/ lda #$f407.w
 /*unknown_a7_f968:*/ sta $0f92.w, X
 /*unknown_a7_f96b:*/ lda #$f65e.w
 /*unknown_a7_f96e:*/ sta $0fb2.w, X
-/*unknown_a7_f971:*/ bra $0c ; $f97f.w
-/*unknown_a7_f973:*/ lda #$f345.w
+/*unknown_a7_f971:*/ bra @unknown_a7_f97f
+@unknown_a7_f973: lda #$f345.w
 /*unknown_a7_f976:*/ sta $0f92.w, X
 /*unknown_a7_f979:*/ lda #$f5ed.w
 /*unknown_a7_f97c:*/ sta $0fb2.w, X
-/*unknown_a7_f97f:*/ lda #$0001.w
+@unknown_a7_f97f: lda #$0001.w
 /*unknown_a7_f982:*/ sta $0f94.w, X
 /*unknown_a7_f985:*/ stz $0fa8.w, X
 /*unknown_a7_f988:*/ stz $0faa.w, X
-/*unknown_a7_f98b:*/ rtl
+@unknown_a7_f98b: rtl
 
 /*unknown_a7_f98c:*/ lda $0fae.w, X
-/*unknown_a7_f98f:*/ beq $1c ; $f9ad.w
+/*unknown_a7_f98f:*/ beq @unknown_a7_f9ad
 /*unknown_a7_f991:*/ dec A
 /*unknown_a7_f992:*/ sta $0fae.w, X
 /*unknown_a7_f995:*/ txa
 /*unknown_a7_f996:*/ bit #$0040.w
-/*unknown_a7_f999:*/ beq $0a ; $f9a5.w
+/*unknown_a7_f999:*/ beq @unknown_a7_f9a5
 /*unknown_a7_f99b:*/ lda $05b6.w
 /*unknown_a7_f99e:*/ bit #$0001.w
-/*unknown_a7_f9a1:*/ bne $15 ; $f9b8.w
-/*unknown_a7_f9a3:*/ bra $08 ; $f9ad.w
-/*unknown_a7_f9a5:*/ lda $05b6.w
+/*unknown_a7_f9a1:*/ bne @unknown_a7_f9b8
+/*unknown_a7_f9a3:*/ bra @unknown_a7_f9ad
+@unknown_a7_f9a5: lda $05b6.w
 /*unknown_a7_f9a8:*/ bit #$0001.w
-/*unknown_a7_f9ab:*/ beq $0b ; $f9b8.w
-/*unknown_a7_f9ad:*/ lda $0f86.w, X
+/*unknown_a7_f9ab:*/ beq @unknown_a7_f9b8
+@unknown_a7_f9ad: lda $0f86.w, X
 /*unknown_a7_f9b0:*/ ora #$0100.w
 /*unknown_a7_f9b3:*/ sta $0f86.w, X
-/*unknown_a7_f9b6:*/ bra $09 ; $f9c1.w
-/*unknown_a7_f9b8:*/ lda $0f86.w, X
+/*unknown_a7_f9b6:*/ bra @unknown_a7_f9c1
+@unknown_a7_f9b8: lda $0f86.w, X
 /*unknown_a7_f9bb:*/ and #$feff.w
 /*unknown_a7_f9be:*/ sta $0f86.w, X
-/*unknown_a7_f9c1:*/ rtl
+@unknown_a7_f9c1: rtl
 
 /*unknown_a7_f9c2:*/ rtl
 
@@ -13609,7 +13609,7 @@ das: .dw $400
 /*unknown_a7_fa22:*/ phd
 /*unknown_a7_fa23:*/ brk $ee
 /*unknown_a7_fa25:*/ ora ($f1, X)
-/*unknown_a7_fa27:*/ bpl $33 ; $fa5c.w
+/*unknown_a7_fa27:*/ bpl @unknown_a7_fa5c
 /*unknown_a7_fa29:*/ inc $c3, X
 /*unknown_a7_fa2b:*/ sbc #$3301.w
 /*unknown_a7_fa2e:*/ nop
@@ -13634,7 +13634,7 @@ das: .dw $400
 /*unknown_a7_fa57:*/ cmp $06, S
 /*unknown_a7_fa59:*/ clc
 /*unknown_a7_fa5a:*/ and ($09, S), Y
-/*unknown_a7_fa5c:*/ brk $f0
+@unknown_a7_fa5c: brk $f0
 /*unknown_a7_fa5e:*/ ora ($f2, X)
 /*unknown_a7_fa60:*/ bpl $33 ; $fa95.w
 /*unknown_a7_fa62:*/ sed
@@ -13681,7 +13681,7 @@ das: .dw $400
 /*unknown_a7_fab9:*/ phd
 /*unknown_a7_faba:*/ brk $ee
 /*unknown_a7_fabc:*/ ora ($f1, X)
-/*unknown_a7_fabe:*/ bpl $33 ; $faf3.w
+/*unknown_a7_fabe:*/ bpl @unknown_a7_faf3
 /*unknown_a7_fac0:*/ inc $c3, X
 /*unknown_a7_fac2:*/ sbc #$3301.w
 /*unknown_a7_fac5:*/ cop $00
@@ -13707,11 +13707,11 @@ das: .dw $400
 /*unknown_a7_faee:*/ cmp $fe, S
 /*unknown_a7_faf0:*/ sec
 /*unknown_a7_faf1:*/ and ($08, S), Y
-/*unknown_a7_faf3:*/ brk $f6
+@unknown_a7_faf3: brk $f6
 /*unknown_a7_faf5:*/ ora ($fd, X)
 /*unknown_a7_faf7:*/ ora $33
 /*unknown_a7_faf9:*/ sbc $fd01.w
-/*unknown_a7_fafc:*/ bpl $33 ; $fb31.w
+/*unknown_a7_fafc:*/ bpl @unknown_a7_fb31
 /*unknown_a7_fafe:*/ sbc $c3, X
 /*unknown_a7_fb00:*/ sbc $01, X
 /*unknown_a7_fb02:*/ and ($f3, S), Y
@@ -13733,8 +13733,8 @@ das: .dw $400
 /*unknown_a7_fb29:*/ ora ($fd, X)
 /*unknown_a7_fb2b:*/ ora $01f333, X
 /*unknown_a7_fb2f:*/ sbc $0f, X
-/*unknown_a7_fb31:*/ and ($fb, S), Y
-/*unknown_a7_fb33:*/ cmp $f9, S
+@unknown_a7_fb31: and ($fb, S), Y
+@unknown_a7_fb33: cmp $f9, S
 /*unknown_a7_fb35:*/ bit $fe33.w, X
 /*unknown_a7_fb38:*/ ora ($df, X)
 /*unknown_a7_fb3a:*/ eor ($f3, X)
@@ -13754,7 +13754,7 @@ das: .dw $400
 /*unknown_a7_fb58:*/ cmp $eb, S
 /*unknown_a7_fb5a:*/ ora ($33, X)
 /*unknown_a7_fb5c:*/ sbc ($01, S), Y
-/*unknown_a7_fb5e:*/ bpl $51 ; $fbb1.w
+/*unknown_a7_fb5e:*/ bpl @unknown_a7_fbb1
 /*unknown_a7_fb60:*/ and ($03, S), Y
 /*unknown_a7_fb62:*/ brk $f8
 /*unknown_a7_fb64:*/ asl $fb33.w, X
@@ -13765,7 +13765,7 @@ das: .dw $400
 /*unknown_a7_fb72:*/ jsr ($330f.w, X)
 /*unknown_a7_fb75:*/ xce
 /*unknown_a7_fb76:*/ cmp $08, S
-/*unknown_a7_fb78:*/ jmp $fb33.w
+/*unknown_a7_fb78:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fb7b:*/ cmp $00, S
 /*unknown_a7_fb7d:*/ bit $0a33.w, X
 /*unknown_a7_fb80:*/ brk $f9
@@ -13774,12 +13774,12 @@ das: .dw $400
 
 /*unknown_a7_fb85:*/ and ($f0, S), Y
 /*unknown_a7_fb87:*/ ora ($f3, X)
-/*unknown_a7_fb89:*/ bpl $33 ; $fbbe.w
+/*unknown_a7_fb89:*/ bpl @unknown_a7_fbbe
 /*unknown_a7_fb8b:*/ sed
 /*unknown_a7_fb8c:*/ cmp $eb, S
 /*unknown_a7_fb8e:*/ ora ($33, X)
 /*unknown_a7_fb90:*/ sbc ($01, S), Y
-/*unknown_a7_fb92:*/ bpl $51 ; $fbe5.w
+/*unknown_a7_fb92:*/ bpl @unknown_a7_fbe5
 /*unknown_a7_fb94:*/ and ($03, S), Y
 /*unknown_a7_fb96:*/ brk $f8
 /*unknown_a7_fb98:*/ asl $fb33.w, X
@@ -13790,19 +13790,19 @@ das: .dw $400
 /*unknown_a7_fba6:*/ jsr ($330f.w, X)
 /*unknown_a7_fba9:*/ xce
 /*unknown_a7_fbaa:*/ cmp $08, S
-/*unknown_a7_fbac:*/ jmp $fb33.w
+/*unknown_a7_fbac:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fbaf:*/ cmp $00, S
-/*unknown_a7_fbb1:*/ bit $0a33.w, X
+@unknown_a7_fbb1: bit $0a33.w, X
 /*unknown_a7_fbb4:*/ brk $f9
 /*unknown_a7_fbb6:*/ ora ($f3, X)
 /*unknown_a7_fbb8:*/ ora $33
 /*unknown_a7_fbba:*/ beq $01 ; $fbbd.w
 /*unknown_a7_fbbc:*/ sbc ($10, S), Y
-/*unknown_a7_fbbe:*/ and ($f8, S), Y
+@unknown_a7_fbbe: and ($f8, S), Y
 /*unknown_a7_fbc0:*/ cmp $eb, S
 /*unknown_a7_fbc2:*/ ora ($33, X)
 /*unknown_a7_fbc4:*/ sbc ($01, S), Y
-/*unknown_a7_fbc6:*/ bpl $51 ; $fc19.w
+/*unknown_a7_fbc6:*/ bpl @unknown_a7_fc19
 /*unknown_a7_fbc8:*/ and ($03, S), Y
 /*unknown_a7_fbca:*/ brk $f8
 /*unknown_a7_fbcc:*/ asl $fb33.w, X
@@ -13813,9 +13813,9 @@ das: .dw $400
 /*unknown_a7_fbda:*/ jsr ($330f.w, X)
 /*unknown_a7_fbdd:*/ xce
 /*unknown_a7_fbde:*/ cmp $08, S
-/*unknown_a7_fbe0:*/ jmp $fb33.w
+/*unknown_a7_fbe0:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fbe3:*/ cmp $00, S
-/*unknown_a7_fbe5:*/ bit $0933.w, X
+@unknown_a7_fbe5: bit $0933.w, X
 /*unknown_a7_fbe8:*/ brk $e5
 /*unknown_a7_fbea:*/ ora ($09, X)
 /*unknown_a7_fbec:*/ rol A
@@ -13835,11 +13835,11 @@ das: .dw $400
 /*unknown_a7_fc0a:*/ eor ($33), Y
 /*unknown_a7_fc0c:*/ xce
 /*unknown_a7_fc0d:*/ cmp $08, S
-/*unknown_a7_fc0f:*/ jmp $fb33.w
+/*unknown_a7_fc0f:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fc12:*/ cmp $00, S
 /*unknown_a7_fc14:*/ bit $0933.w, X
 /*unknown_a7_fc17:*/ brk $03
-/*unknown_a7_fc19:*/ brk $f8
+@unknown_a7_fc19: brk $f8
 /*unknown_a7_fc1b:*/ and $01fb33
 /*unknown_a7_fc1f:*/ sed
 /*unknown_a7_fc20:*/ rol $eb33.w
@@ -13857,7 +13857,7 @@ das: .dw $400
 /*unknown_a7_fc39:*/ eor ($33), Y
 /*unknown_a7_fc3b:*/ xce
 /*unknown_a7_fc3c:*/ cmp $08, S
-/*unknown_a7_fc3e:*/ jmp $fb33.w
+/*unknown_a7_fc3e:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fc41:*/ cmp $00, S
 /*unknown_a7_fc43:*/ bit $0933.w, X
 /*unknown_a7_fc46:*/ brk $03
@@ -13879,7 +13879,7 @@ das: .dw $400
 /*unknown_a7_fc68:*/ eor ($33), Y
 /*unknown_a7_fc6a:*/ xce
 /*unknown_a7_fc6b:*/ cmp $08, S
-/*unknown_a7_fc6d:*/ jmp $fb33.w
+/*unknown_a7_fc6d:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fc70:*/ cmp $00, S
 /*unknown_a7_fc72:*/ bit $0933.w, X
 /*unknown_a7_fc75:*/ brk $03
@@ -13901,12 +13901,12 @@ das: .dw $400
 /*unknown_a7_fc97:*/ eor ($33), Y
 /*unknown_a7_fc99:*/ xce
 /*unknown_a7_fc9a:*/ cmp $08, S
-/*unknown_a7_fc9c:*/ jmp $fb33.w
+/*unknown_a7_fc9c:*/ jmp @unknown_a7_fb33
 /*unknown_a7_fc9f:*/ cmp $00, S
 /*unknown_a7_fca1:*/ bit $0933.w, X
 /*unknown_a7_fca4:*/ brk $08
 /*unknown_a7_fca6:*/ brk $f2
-/*unknown_a7_fca8:*/ bpl $73 ; $fd1d.w
+/*unknown_a7_fca8:*/ bpl @unknown_a7_fd1d
 /*unknown_a7_fcaa:*/ sed
 /*unknown_a7_fcab:*/ cmp $ea, S
 /*unknown_a7_fcad:*/ ora ($73, X)
@@ -13926,7 +13926,7 @@ das: .dw $400
 /*unknown_a7_fccf:*/ sbc $097303, X
 /*unknown_a7_fcd3:*/ brk $09
 /*unknown_a7_fcd5:*/ brk $f3
-/*unknown_a7_fcd7:*/ bpl $73 ; $fd4c.w
+/*unknown_a7_fcd7:*/ bpl @unknown_a7_fd4c
 /*unknown_a7_fcd9:*/ sbc $ebc3.w, Y
 /*unknown_a7_fcdc:*/ ora ($73, X)
 /*unknown_a7_fcde:*/ inc $01, X
@@ -13948,7 +13948,7 @@ das: .dw $400
 /*unknown_a7_fd00:*/ adc ($0b, S), Y
 /*unknown_a7_fd02:*/ brk $0a
 /*unknown_a7_fd04:*/ brk $f1
-/*unknown_a7_fd06:*/ bpl $73 ; $fd7b.w
+/*unknown_a7_fd06:*/ bpl @unknown_a7_fd7b
 /*unknown_a7_fd08:*/ plx
 /*unknown_a7_fd09:*/ cmp $e9, S
 /*unknown_a7_fd0b:*/ ora ($73, X)
@@ -13958,7 +13958,7 @@ das: .dw $400
 /*unknown_a7_fd15:*/ asl $fe73.w, X
 /*unknown_a7_fd18:*/ ora ($f6, X)
 /*unknown_a7_fd1a:*/ asl $0673.w
-/*unknown_a7_fd1d:*/ brk $fa
+@unknown_a7_fd1d: brk $fa
 /*unknown_a7_fd1f:*/ ora $c3f673
 /*unknown_a7_fd23:*/ inc $7309.w, X
 /*unknown_a7_fd26:*/ inc $fec3.w, X
@@ -13975,14 +13975,14 @@ das: .dw $400
 /*unknown_a7_fd39:*/ adc ($09, S), Y
 /*unknown_a7_fd3b:*/ brk $08
 /*unknown_a7_fd3d:*/ brk $f2
-/*unknown_a7_fd3f:*/ bpl $73 ; $fdb4.w
+/*unknown_a7_fd3f:*/ bpl @unknown_a7_fdb4
 /*unknown_a7_fd41:*/ sed
 /*unknown_a7_fd42:*/ cmp $ea, S
 /*unknown_a7_fd44:*/ ora ($73, X)
 /*unknown_a7_fd46:*/ inc $01, X
 /*unknown_a7_fd48:*/ sbc [$5f], Y
 /*unknown_a7_fd4a:*/ adc ($fe, S), Y
-/*unknown_a7_fd4c:*/ ora ($f7, X)
+@unknown_a7_fd4c: ora ($f7, X)
 /*unknown_a7_fd4e:*/ lsr $0673.w, X
 /*unknown_a7_fd51:*/ brk $0f
 /*unknown_a7_fd53:*/ eor ($73)
@@ -14001,9 +14001,9 @@ das: .dw $400
 /*unknown_a7_fd70:*/ sbc $ebc3.w, Y
 /*unknown_a7_fd73:*/ ora ($73, X)
 /*unknown_a7_fd75:*/ tsb $00
-/*unknown_a7_fd77:*/ bpl $52 ; $fdcb.w
+/*unknown_a7_fd77:*/ bpl @unknown_a7_fdcb
 /*unknown_a7_fd79:*/ adc ($06, S), Y
-/*unknown_a7_fd7b:*/ brk $04
+@unknown_a7_fd7b: brk $04
 /*unknown_a7_fd7d:*/ ora $000673.l, X
 /*unknown_a7_fd81:*/ jsr ($730f.w, X)
 /*unknown_a7_fd84:*/ inc $01, X
@@ -14018,7 +14018,7 @@ das: .dw $400
 /*unknown_a7_fd97:*/ adc ($0b, S), Y
 /*unknown_a7_fd99:*/ brk $0a
 /*unknown_a7_fd9b:*/ brk $f1
-/*unknown_a7_fd9d:*/ bpl $73 ; $fe12.w
+/*unknown_a7_fd9d:*/ bpl @unknown_a7_fe12
 /*unknown_a7_fd9f:*/ plx
 /*unknown_a7_fda0:*/ cmp $e9, S
 /*unknown_a7_fda2:*/ ora ($73, X)
@@ -14030,7 +14030,7 @@ das: .dw $400
 /*unknown_a7_fdaf:*/ brk $0e
 /*unknown_a7_fdb1:*/ phy
 /*unknown_a7_fdb2:*/ adc ($06, S), Y
-/*unknown_a7_fdb4:*/ brk $fa
+@unknown_a7_fdb4: brk $fa
 /*unknown_a7_fdb6:*/ ora $c3f673
 /*unknown_a7_fdba:*/ inc $7339.w, X
 /*unknown_a7_fdbd:*/ inc $06c3.w, X
@@ -14041,7 +14041,7 @@ das: .dw $400
 /*unknown_a7_fdc6:*/ adc ($ee, S), Y
 /*unknown_a7_fdc8:*/ ora ($0e, X)
 /*unknown_a7_fdca:*/ tcd
-/*unknown_a7_fdcb:*/ adc ($fe, S), Y
+@unknown_a7_fdcb: adc ($fe, S), Y
 /*unknown_a7_fdcd:*/ cmp $fe, S
 /*unknown_a7_fdcf:*/ sec
 /*unknown_a7_fdd0:*/ adc ($08, S), Y
@@ -14074,7 +14074,7 @@ das: .dw $400
 /*unknown_a7_fe0a:*/ ora $000573.l, X
 /*unknown_a7_fe0e:*/ sbc $0f, X
 /*unknown_a7_fe10:*/ adc ($f5, S), Y
-/*unknown_a7_fe12:*/ cmp $f9, S
+@unknown_a7_fe12: cmp $f9, S
 /*unknown_a7_fe14:*/ bit $fa73.w, X
 /*unknown_a7_fe17:*/ ora ($df, X)
 /*unknown_a7_fe19:*/ eor ($b3, X)
@@ -14089,12 +14089,12 @@ das: .dw $400
 /*unknown_a7_fe2d:*/ and $73
 /*unknown_a7_fe2f:*/ ora #$0800.w
 /*unknown_a7_fe32:*/ brk $f3
-/*unknown_a7_fe34:*/ bpl $73 ; $fea9.w
+/*unknown_a7_fe34:*/ bpl @unknown_a7_fea9
 /*unknown_a7_fe36:*/ sed
 /*unknown_a7_fe37:*/ cmp $eb, S
 /*unknown_a7_fe39:*/ ora ($73, X)
 /*unknown_a7_fe3b:*/ ora $00
-/*unknown_a7_fe3d:*/ bpl $51 ; $fe90.w
+/*unknown_a7_fe3d:*/ bpl @unknown_a7_fe90
 /*unknown_a7_fe3f:*/ adc ($f5, S), Y
 /*unknown_a7_fe41:*/ ora ($f8, X)
 /*unknown_a7_fe43:*/ asl $fd73.w, X
@@ -14114,12 +14114,12 @@ das: .dw $400
 
 /*unknown_a7_fe64:*/ adc ($08, S), Y
 /*unknown_a7_fe66:*/ brk $f3
-/*unknown_a7_fe68:*/ bpl $73 ; $fedd.w
+/*unknown_a7_fe68:*/ bpl @unknown_a7_fedd
 /*unknown_a7_fe6a:*/ sed
 /*unknown_a7_fe6b:*/ cmp $eb, S
 /*unknown_a7_fe6d:*/ ora ($73, X)
 /*unknown_a7_fe6f:*/ ora $00
-/*unknown_a7_fe71:*/ bpl $51 ; $fec4.w
+/*unknown_a7_fe71:*/ bpl @unknown_a7_fec4
 /*unknown_a7_fe73:*/ adc ($f5, S), Y
 /*unknown_a7_fe75:*/ ora ($f8, X)
 /*unknown_a7_fe77:*/ asl $fd73.w, X
@@ -14132,7 +14132,7 @@ das: .dw $400
 /*unknown_a7_fe8a:*/ php
 /*unknown_a7_fe8b:*/ jmp $f573.w
 /*unknown_a7_fe8e:*/ cmp $00, S
-/*unknown_a7_fe90:*/ bit $0a73.w, X
+@unknown_a7_fe90: bit $0a73.w, X
 /*unknown_a7_fe93:*/ brk $ff
 /*unknown_a7_fe95:*/ ora ($f3, X)
 /*unknown_a7_fe97:*/ ora $73
@@ -14143,9 +14143,9 @@ das: .dw $400
 /*unknown_a7_fe9f:*/ cmp $eb, S
 /*unknown_a7_fea1:*/ ora ($73, X)
 /*unknown_a7_fea3:*/ ora $00
-/*unknown_a7_fea5:*/ bpl $51 ; $fef8.w
+/*unknown_a7_fea5:*/ bpl unknown_a7_fef8
 /*unknown_a7_fea7:*/ adc ($f5, S), Y
-/*unknown_a7_fea9:*/ ora ($f8, X)
+@unknown_a7_fea9: ora ($f8, X)
 /*unknown_a7_feab:*/ asl $fd73.w, X
 /*unknown_a7_feae:*/ ora ($f8, X)
 /*unknown_a7_feb0:*/ asl $0573.w
@@ -14156,7 +14156,7 @@ das: .dw $400
 /*unknown_a7_febe:*/ php
 /*unknown_a7_febf:*/ jmp $f573.w
 /*unknown_a7_fec2:*/ cmp $00, S
-/*unknown_a7_fec4:*/ bit $0973.w, X
+@unknown_a7_fec4: bit $0973.w, X
 /*unknown_a7_fec7:*/ brk $13
 /*unknown_a7_fec9:*/ brk $09
 /*unknown_a7_fecb:*/ rol A
@@ -14167,20 +14167,20 @@ das: .dw $400
 /*unknown_a7_fed5:*/ and $01fd73
 /*unknown_a7_fed9:*/ sed
 /*unknown_a7_feda:*/ rol $0573.w
-/*unknown_a7_fedd:*/ brk $08
+@unknown_a7_fedd: brk $08
 /*unknown_a7_fedf:*/ eor $73
 /*unknown_a7_fee1:*/ ora $00
 /*unknown_a7_fee3:*/ brk $35
 /*unknown_a7_fee5:*/ adc ($05, S), Y
 /*unknown_a7_fee7:*/ brk $10
 /*unknown_a7_fee9:*/ eor ($73), Y
-/*unknown_a7_feeb:*/ sbc $c3, X
+unknown_a7_feeb: sbc $c3, X
 /*unknown_a7_feed:*/ php
 /*unknown_a7_feee:*/ jmp $f573.w
 /*unknown_a7_fef1:*/ cmp $00, S
 /*unknown_a7_fef3:*/ bit $0973.w, X
 /*unknown_a7_fef6:*/ brk $f5
-/*unknown_a7_fef8:*/ ora ($f8, X)
+unknown_a7_fef8: ora ($f8, X)
 /*unknown_a7_fefa:*/ and $01fd73
 /*unknown_a7_fefe:*/ sed
 /*unknown_a7_feff:*/ rol $0d73.w
