@@ -188,7 +188,7 @@ unknown_80_8107:
   ldy #$8000.w
   rts
 
-/*unknown_80_8111:*/ sep #$20
+unknown_80_8111: sep #$20
 /*unknown_80_8113:*/ lda $05e5.w
 /*unknown_80_8116:*/ sta $4202.w
 /*unknown_80_8119:*/ lda #$05
@@ -474,7 +474,7 @@ unknown_80_82b9:
 /*unknown_80_8336:*/ plx
 /*unknown_80_8337:*/ rtl
 
-/*unknown_80_8338:*/ php
+unknown_80_8338: php
 /*unknown_80_8339:*/ phb
 /*unknown_80_833a:*/ phk
 /*unknown_80_833b:*/ plb
