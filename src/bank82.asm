@@ -5907,8 +5907,8 @@ unknown_82_b068: php
 unknown_82_b0d2:
   php
   rep #$30
-  lda $0755.w
-  sta $12
+  lda var_unknown_0755.w
+  sta0 var_unknown_12
   lda var_unknown_8f
   bit #IO_JOY_LEFT
   beq @unknown_82_b0fe
@@ -5918,8 +5918,8 @@ unknown_82_b0d2:
   jsr unknown_82_b43f
   cmp #$0000.w
   bne @unknown_82_b14e
-  lda $12
-  sta $0755.w
+  lda var_unknown_12
+  sta var_unknown_0755.w
 @unknown_82_b0f6:
   ldx #$0000.w
   jsr unknown_82_b456
@@ -5929,14 +5929,14 @@ unknown_82_b0d2:
   bne @unknown_82_b133
   bit #IO_JOY_DOWN
   beq @unknown_82_b14e
-  lda $0755.w
+  lda var_unknown_0755.w
   and #$ff00.w
   cmp #$0500.w
   beq @unknown_82_b12b
-  lda $0755.w
+  lda var_unknown_0755.w
   clc
   adc #$0100.w
-  sta $0755.w
+  sta var_unknown_0755.w
   xba
   and #$00ff.w
   asl A
@@ -5949,13 +5949,13 @@ unknown_82_b0d2:
   jsr unknown_82_b511
   bra @unknown_82_b14e
 @unknown_82_b133:
-  lda $0755.w
+  lda var_unknown_0755.w
   and #$ff00.w
   beq @unknown_82_b14e
-  lda $0755.w
+  lda var_unknown_0755.w
   sec
   sbc #$0100.w
-  sta $0755.w
+  sta var_unknown_0755.w
   xba
   and #$00ff.w
   asl A
