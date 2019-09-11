@@ -5368,23 +5368,27 @@ das: .dw $800
 /*unknown_82_ac4d:*/ plp
 /*unknown_82_ac4e:*/ rtl
 
-unknown_82_ac4f: php
-/*unknown_82_ac50:*/ rep #$30
-/*unknown_82_ac52:*/ lda $0755.w
-/*unknown_82_ac55:*/ and #$00ff.w
-/*unknown_82_ac58:*/ asl A
-/*unknown_82_ac59:*/ tax
-/*unknown_82_ac5a:*/ jsr ($ac68.w, X)
-/*unknown_82_ac5d:*/ jsr unknown_82_b267
-/*unknown_82_ac60:*/ jsr unknown_82_b2a2
-/*unknown_82_ac63:*/ jsr unknown_82_b1e0
-/*unknown_82_ac66:*/ plp
-/*unknown_82_ac67:*/ rts
+unknown_82_ac4f:
+  php
+  rep #$30
+  lda var_unknown_0755.w
+  and #$00ff.w
+  asl A
+  tax
+  jsr (unknown_82_ac68.w, X)
+  jsr unknown_82_b267
+  jsr unknown_82_b2a2
+  jsr unknown_82_b1e0
+  plp
+  rts
 
-/*unknown_82_ac68:*/ bvs ($ac - $100) ; $ac16.w
-/*unknown_82_ac6a:*/ ldx $c2af.w, Y
-/*unknown_82_ac6d:*/ bcs $50 ; $acbf.w
-/*unknown_82_ac6f:*/ lda ($08), Y
+unknown_82_ac68:
+  .dw unknown_82_ac70
+  .dw unknown_82_afbe
+  .dw unknown_82_b0c2
+  .dw unknown_82_b150
+
+unknown_82_ac70: php
 /*unknown_82_ac71:*/ rep #$30
 /*unknown_82_ac73:*/ lda $0755.w
 /*unknown_82_ac76:*/ xba
@@ -5776,7 +5780,7 @@ unknown_82_af4f:
   plp
   rts
 
-/*unknown_82_afbe:*/ php
+unknown_82_afbe: php
 /*unknown_82_afbf:*/ rep #$30
 /*unknown_82_afc1:*/ jsr $afdb.w
 /*unknown_82_afc4:*/ lda $09a6.w
@@ -5895,7 +5899,7 @@ unknown_82_b068: php
 @unknown_82_b0c0: plp
 /*unknown_82_b0c1:*/ rts
 
-/*unknown_82_b0c2:*/ php
+unknown_82_b0c2: php
 /*unknown_82_b0c3:*/ rep #$30
 /*unknown_82_b0c5:*/ jsr $b0d2.w
 /*unknown_82_b0c8:*/ lda #$0012.w
@@ -5965,7 +5969,7 @@ unknown_82_b0d2:
   plp
   rts
 
-/*unknown_82_b150:*/ php
+unknown_82_b150: php
 /*unknown_82_b151:*/ rep #$30
 /*unknown_82_b153:*/ jsr $b160.w
 /*unknown_82_b156:*/ lda #$0012.w
