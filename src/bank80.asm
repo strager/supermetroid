@@ -2244,7 +2244,8 @@ unknown_80_9049: phx
 /*unknown_80_9148:*/ xba
 /*unknown_80_9149:*/ lda #$01
 /*unknown_80_914b:*/ bra $08 ; $9155.w
-/*unknown_80_914d:*/ phx
+
+unknown_80_914d: phx
 /*unknown_80_914e:*/ phy
 /*unknown_80_914f:*/ php
 /*unknown_80_9150:*/ sep #$30
