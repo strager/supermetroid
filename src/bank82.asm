@@ -1052,32 +1052,34 @@ unknown_82_8679: php
 /*unknown_82_893a:*/ rep #$20
 /*unknown_82_893c:*/ rts
 
-unknown_82_893d: phk
-/*unknown_82_893e:*/ plb
-/*unknown_82_893f:*/ rep #$20
-/*unknown_82_8941:*/ stz var_game_state.w ; game_state_unknown_00
-/*unknown_82_8944:*/ stz var_unknown_0df4.w
-/*unknown_82_8947:*/ cli
-@unknown_82_8948: php
-/*unknown_82_8949:*/ rep #$30
-/*unknown_82_894b:*/ jsl unknown_88_84b9
-/*unknown_82_894f:*/ jsl unknown_80_8111
-/*unknown_82_8953:*/ jsl unknown_80_8b1a
-/*unknown_82_8957:*/ stz var_unknown_0590.w
-/*unknown_82_895a:*/ stz var_unknown_071d.w
-/*unknown_82_895d:*/ stz var_unknown_071f.w
-/*unknown_82_8960:*/ stz var_unknown_0721.w
-/*unknown_82_8963:*/ lda var_game_state.w
-/*unknown_82_8966:*/ and #$00ff.w
-/*unknown_82_8969:*/ asl A
-/*unknown_82_896a:*/ tax
-/*unknown_82_896b:*/ jsr (@unknown_82_8981, X)
-/*unknown_82_896e:*/ jsl unknown_82_89ef
-/*unknown_82_8972:*/ jsl unknown_80_896e
-/*unknown_82_8976:*/ jsl unknown_82_8ab0
-/*unknown_82_897a:*/ jsl unknown_80_8338
-/*unknown_82_897e:*/ plp
-/*unknown_82_897f:*/ bra @unknown_82_8948
+unknown_82_893d:
+  phk
+  plb
+  rep #$20
+  stz var_game_state.w ; game_state_unknown_00
+  stz var_unknown_0df4.w
+  cli
+@unknown_82_8948:
+  php
+  rep #$30
+  jsl unknown_88_84b9
+  jsl unknown_80_8111
+  jsl unknown_80_8b1a
+  stz var_unknown_0590.w
+  stz var_unknown_071d.w
+  stz var_unknown_071f.w
+  stz var_unknown_0721.w
+  lda var_game_state.w
+  and #$00ff.w
+  asl A
+  tax
+  jsr (@unknown_82_8981, X)
+  jsl unknown_82_89ef
+  jsl unknown_80_896e
+  jsl unknown_82_8ab0
+  jsl unknown_80_8338
+  plp
+  bra @unknown_82_8948
 
 @unknown_82_8981:
   .dw unknown_82_8ae4 ; game_state_unknown_00
