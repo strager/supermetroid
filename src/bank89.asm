@@ -104,7 +104,7 @@
 /*unknown_89_80ef:*/ ply
 /*unknown_89_80f0:*/ stx $0e88.w
 /*unknown_89_80f3:*/ php
-/*unknown_89_80f4:*/ asl $fe10.w, X
+unknown_89_80f4: asl $fe10.w, X
 /*unknown_89_80f7:*/ rti
 
 /*unknown_89_80f8:*/ inc $f880.w, X
@@ -870,7 +870,7 @@
 /*unknown_89_8761:*/ php
 /*unknown_89_8762:*/ jsr ($fa08.w, X)
 /*unknown_89_8765:*/ bpl ($f8 - $100) ; $875f.w
-/*unknown_89_8767:*/ jsr $80f4.w
+/*unknown_89_8767:*/ jsr unknown_89_80f4
 /*unknown_89_876a:*/ iny
 /*unknown_89_876b:*/ brk $20
 /*unknown_89_876d:*/ brk $00
