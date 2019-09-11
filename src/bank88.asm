@@ -619,6 +619,7 @@ unknown_88_81fe: rep #$30
 /*unknown_88_84b7:*/ clc
 /*unknown_88_84b8:*/ rtl
 
+; TODO: "Handles Background" -- Kejardon
 unknown_88_84b9: php
 /*unknown_88_84ba:*/ phb
 /*unknown_88_84bb:*/ rep #$30

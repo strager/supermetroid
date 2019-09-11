@@ -1052,36 +1052,39 @@ unknown_82_8679: php
 /*unknown_82_893a:*/ rep #$20
 /*unknown_82_893c:*/ rts
 
-unknown_82_893d:
+; The main game engine loop.
+main:
   phk
   plb
   rep #$20
   stz var_game_state.w ; game_state_unknown_00
   stz var_unknown_0df4.w
   cli
-@unknown_82_8948:
+@loop:
   php
   rep #$30
   jsl unknown_88_84b9
-  jsl unknown_80_8111
+  jsl rng_advance
   jsl unknown_80_8b1a
   stz var_unknown_0590.w
   stz var_unknown_071d.w
   stz var_unknown_071f.w
-  stz var_unknown_0721.w
+  stz var_unknown_0721.w ; TODO: "Clearing stuff for vram" -- Kejardon
   lda var_game_state.w
   and #$00ff.w
   asl A
   tax
-  jsr (@unknown_82_8981, X)
+  jsr (@game_state_routines, X)
   jsl unknown_82_89ef
   jsl unknown_80_896e
   jsl unknown_82_8ab0
   jsl unknown_80_8338
   plp
-  bra @unknown_82_8948
+  bra @loop
 
-@unknown_82_8981:
+  ; Routines to handle each game state. Each entry in this table is indexed by
+  ; the game state.
+@game_state_routines:
   .dw unknown_82_8ae4 ; game_state_unknown_00
   .dw unknown_82_8b08 ; game_state_title_screen
   .dw unknown_82_eb9f ; game_state_unknown_02
@@ -1140,6 +1143,7 @@ unknown_82_89e5: jsr $8193fb
 unknown_82_89ea: jsr $819e3e
 /*unknown_82_89ee:*/ rts
 
+; TODO: "Sound effects" -- Kejardon
 unknown_82_89ef: php
 /*unknown_82_89f0:*/ sep #$30
 /*unknown_82_89f2:*/ lda $0686.w
@@ -1238,6 +1242,7 @@ unknown_82_89ef: php
 /*unknown_82_8aae:*/ plp
 /*unknown_82_8aaf:*/ rtl
 
+; TODO: "A lot of debug stuff, and put $8B into $0DFE" -- Kejardon
 unknown_82_8ab0: php
 /*unknown_82_8ab1:*/ rep #$30
 /*unknown_82_8ab3:*/ lda $05c5.w

@@ -188,7 +188,7 @@ unknown_80_8107:
   ldy #$8000.w
   rts
 
-unknown_80_8111: sep #$20
+rng_advance: sep #$20
 /*unknown_80_8113:*/ lda $05e5.w
 /*unknown_80_8116:*/ sta $4202.w
 /*unknown_80_8119:*/ lda #$05
@@ -474,6 +474,7 @@ unknown_80_82b9:
 /*unknown_80_8336:*/ plx
 /*unknown_80_8337:*/ rtl
 
+; TODO: "Wait until an IRQ's STZ $05B4" -- Kejardon
 unknown_80_8338: php
 /*unknown_80_8339:*/ phb
 /*unknown_80_833a:*/ phk
@@ -822,7 +823,7 @@ unknown_80_8482:
   jsl unknown_80_8261
   stz $05f5.w
   stz $0686.w
-  jml unknown_82_893d
+  jml main
 
   .db $00
 
@@ -1325,6 +1326,7 @@ unknown_80_8911:
 @unknown_80_896c: plp
 /*unknown_80_896d:*/ rtl
 
+; TODO: "Clear OAM (sprites to Y = F0)" -- Kejardon
 unknown_80_896e:
   php
   rep #$30
@@ -1479,6 +1481,7 @@ unknown_80_896e:
 /*unknown_80_8b18:*/ plp
 /*unknown_80_8b19:*/ rtl
 
+; TODO: "Clear OAM high x bits and sizes" -- Kejardon
 unknown_80_8b1a:
   php
   rep #$30
