@@ -5947,200 +5947,47 @@ unknown_a0_b3c3: brk $ff
 /*unknown_a0_b434:*/ sbc $dbffd5, X
 /*unknown_a0_b438:*/ sbc $e7ffe1, X
 /*unknown_a0_b43c:*/ sbc $f4ffee, X
-/*unknown_a0_b440:*/ sbc $00fffa.l, X
-/*unknown_a0_b444:*/ brk $06
-/*unknown_a0_b446:*/ brk $0c
-/*unknown_a0_b448:*/ brk $12
-/*unknown_a0_b44a:*/ brk $19
-/*unknown_a0_b44c:*/ brk $1f
-/*unknown_a0_b44e:*/ brk $25
-/*unknown_a0_b450:*/ brk $2b
-/*unknown_a0_b452:*/ brk $31
-/*unknown_a0_b454:*/ brk $38
-/*unknown_a0_b456:*/ brk $3e
-/*unknown_a0_b458:*/ brk $44
-/*unknown_a0_b45a:*/ brk $4a
-/*unknown_a0_b45c:*/ brk $50
-/*unknown_a0_b45e:*/ brk $56
-/*unknown_a0_b460:*/ brk $5c
-/*unknown_a0_b462:*/ brk $61
-/*unknown_a0_b464:*/ brk $67
-/*unknown_a0_b466:*/ brk $6d
-/*unknown_a0_b468:*/ brk $73
-/*unknown_a0_b46a:*/ brk $78
-/*unknown_a0_b46c:*/ brk $7e
-/*unknown_a0_b46e:*/ brk $83
-/*unknown_a0_b470:*/ brk $88
-/*unknown_a0_b472:*/ brk $8e
-/*unknown_a0_b474:*/ brk $93
-/*unknown_a0_b476:*/ brk $98
-/*unknown_a0_b478:*/ brk $9d
-/*unknown_a0_b47a:*/ brk $a2
-/*unknown_a0_b47c:*/ brk $a7
-/*unknown_a0_b47e:*/ brk $ab
-/*unknown_a0_b480:*/ brk $b0
-/*unknown_a0_b482:*/ brk $b5
-/*unknown_a0_b484:*/ brk $b9
-/*unknown_a0_b486:*/ brk $bd
-/*unknown_a0_b488:*/ brk $c1
-/*unknown_a0_b48a:*/ brk $c5
-/*unknown_a0_b48c:*/ brk $c9
-/*unknown_a0_b48e:*/ brk $cd
-/*unknown_a0_b490:*/ brk $d1
-/*unknown_a0_b492:*/ brk $d4
-/*unknown_a0_b494:*/ brk $d8
-/*unknown_a0_b496:*/ brk $db
-/*unknown_a0_b498:*/ brk $de
-/*unknown_a0_b49a:*/ brk $e1
-/*unknown_a0_b49c:*/ brk $e4
-/*unknown_a0_b49e:*/ brk $e7
-/*unknown_a0_b4a0:*/ brk $ea
-/*unknown_a0_b4a2:*/ brk $ec
-/*unknown_a0_b4a4:*/ brk $ee
-/*unknown_a0_b4a6:*/ brk $f1
-/*unknown_a0_b4a8:*/ brk $f3
-/*unknown_a0_b4aa:*/ brk $f4
-/*unknown_a0_b4ac:*/ brk $f6
-/*unknown_a0_b4ae:*/ brk $f8
-/*unknown_a0_b4b0:*/ brk $f9
-/*unknown_a0_b4b2:*/ brk $fb
-/*unknown_a0_b4b4:*/ brk $fc
-/*unknown_a0_b4b6:*/ brk $fd
-/*unknown_a0_b4b8:*/ brk $fe
-/*unknown_a0_b4ba:*/ brk $fe
-/*unknown_a0_b4bc:*/ brk $ff
-/*unknown_a0_b4be:*/ brk $ff
-/*unknown_a0_b4c0:*/ brk $ff
-/*unknown_a0_b4c2:*/ brk $00
-/*unknown_a0_b4c4:*/ ora ($ff, X)
-/*unknown_a0_b4c6:*/ brk $ff
-/*unknown_a0_b4c8:*/ brk $ff
-/*unknown_a0_b4ca:*/ brk $fe
-/*unknown_a0_b4cc:*/ brk $fe
-/*unknown_a0_b4ce:*/ brk $fd
-/*unknown_a0_b4d0:*/ brk $fc
-/*unknown_a0_b4d2:*/ brk $fb
-/*unknown_a0_b4d4:*/ brk $f9
-/*unknown_a0_b4d6:*/ brk $f8
-/*unknown_a0_b4d8:*/ brk $f6
-/*unknown_a0_b4da:*/ brk $f4
-/*unknown_a0_b4dc:*/ brk $f3
-/*unknown_a0_b4de:*/ brk $f1
-/*unknown_a0_b4e0:*/ brk $ee
-/*unknown_a0_b4e2:*/ brk $ec
-/*unknown_a0_b4e4:*/ brk $ea
-/*unknown_a0_b4e6:*/ brk $e7
-/*unknown_a0_b4e8:*/ brk $e4
-/*unknown_a0_b4ea:*/ brk $e1
-/*unknown_a0_b4ec:*/ brk $de
-/*unknown_a0_b4ee:*/ brk $db
-/*unknown_a0_b4f0:*/ brk $d8
-/*unknown_a0_b4f2:*/ brk $d4
-/*unknown_a0_b4f4:*/ brk $d1
-/*unknown_a0_b4f6:*/ brk $cd
-/*unknown_a0_b4f8:*/ brk $c9
-/*unknown_a0_b4fa:*/ brk $c5
-/*unknown_a0_b4fc:*/ brk $c1
-/*unknown_a0_b4fe:*/ brk $bd
-/*unknown_a0_b500:*/ brk $b9
-/*unknown_a0_b502:*/ brk $b5
-/*unknown_a0_b504:*/ brk $b0
-/*unknown_a0_b506:*/ brk $ab
-/*unknown_a0_b508:*/ brk $a7
-/*unknown_a0_b50a:*/ brk $a2
-/*unknown_a0_b50c:*/ brk $9d
-/*unknown_a0_b50e:*/ brk $98
-/*unknown_a0_b510:*/ brk $93
-/*unknown_a0_b512:*/ brk $8e
-/*unknown_a0_b514:*/ brk $88
-/*unknown_a0_b516:*/ brk $83
-/*unknown_a0_b518:*/ brk $7e
-/*unknown_a0_b51a:*/ brk $78
-/*unknown_a0_b51c:*/ brk $73
-/*unknown_a0_b51e:*/ brk $6d
-/*unknown_a0_b520:*/ brk $67
-/*unknown_a0_b522:*/ brk $61
-/*unknown_a0_b524:*/ brk $5c
-/*unknown_a0_b526:*/ brk $56
-/*unknown_a0_b528:*/ brk $50
-/*unknown_a0_b52a:*/ brk $4a
-/*unknown_a0_b52c:*/ brk $44
-/*unknown_a0_b52e:*/ brk $3e
-/*unknown_a0_b530:*/ brk $38
-/*unknown_a0_b532:*/ brk $31
-/*unknown_a0_b534:*/ brk $2b
-/*unknown_a0_b536:*/ brk $25
-/*unknown_a0_b538:*/ brk $1f
-/*unknown_a0_b53a:*/ brk $19
-/*unknown_a0_b53c:*/ brk $12
-/*unknown_a0_b53e:*/ brk $0c
-/*unknown_a0_b540:*/ brk $06
-/*unknown_a0_b542:*/ brk $00
-/*unknown_a0_b544:*/ brk $fa
-/*unknown_a0_b546:*/ sbc $eefff4, X
-/*unknown_a0_b54a:*/ sbc $e1ffe7, X
-/*unknown_a0_b54e:*/ sbc $d5ffdb, X
-/*unknown_a0_b552:*/ sbc $c8ffcf, X
-/*unknown_a0_b556:*/ sbc $bcffc2, X
-/*unknown_a0_b55a:*/ sbc $b0ffb6, X
-/*unknown_a0_b55e:*/ sbc $a4ffaa, X
-/*unknown_a0_b562:*/ sbc $99ff9f, X
-/*unknown_a0_b566:*/ sbc $8dff93, X
-/*unknown_a0_b56a:*/ sbc $82ff88, X
-/*unknown_a0_b56e:*/ sbc $78ff7d, X
-/*unknown_a0_b572:*/ sbc $6dff72, X
-/*unknown_a0_b576:*/ sbc $63ff68, X
-/*unknown_a0_b57a:*/ sbc $59ff5e, X
-/*unknown_a0_b57e:*/ sbc $50ff55, X
-/*unknown_a0_b582:*/ sbc $47ff4b, X
-/*unknown_a0_b586:*/ sbc $3fff43, X
-/*unknown_a0_b58a:*/ sbc $37ff3b, X
-/*unknown_a0_b58e:*/ sbc $2fff33, X
-/*unknown_a0_b592:*/ sbc $28ff2c, X
-/*unknown_a0_b596:*/ sbc $22ff25, X
-/*unknown_a0_b59a:*/ sbc $1cff1f, X
-/*unknown_a0_b59e:*/ sbc $16ff19, X
-/*unknown_a0_b5a2:*/ sbc $12ff14, X
-/*unknown_a0_b5a6:*/ sbc $0dff0f, X
-/*unknown_a0_b5aa:*/ sbc $0aff0c, X
-/*unknown_a0_b5ae:*/ sbc $07ff08, X
-/*unknown_a0_b5b2:*/ sbc $04ff05, X
-/*unknown_a0_b5b6:*/ sbc $02ff03, X
-/*unknown_a0_b5ba:*/ sbc $01ff02, X
-/*unknown_a0_b5be:*/ sbc $01ff01, X
-/*unknown_a0_b5c2:*/ sbc $01ff00, X
-/*unknown_a0_b5c6:*/ sbc $01ff01, X
-/*unknown_a0_b5ca:*/ sbc $02ff02, X
-/*unknown_a0_b5ce:*/ sbc $04ff03, X
-/*unknown_a0_b5d2:*/ sbc $07ff05, X
-/*unknown_a0_b5d6:*/ sbc $0aff08, X
-/*unknown_a0_b5da:*/ sbc $0dff0c, X
-/*unknown_a0_b5de:*/ sbc $12ff0f, X
-/*unknown_a0_b5e2:*/ sbc $16ff14, X
-/*unknown_a0_b5e6:*/ sbc $1cff19, X
-/*unknown_a0_b5ea:*/ sbc $22ff1f, X
-/*unknown_a0_b5ee:*/ sbc $28ff25, X
-/*unknown_a0_b5f2:*/ sbc $2fff2c, X
-/*unknown_a0_b5f6:*/ sbc $37ff33, X
-/*unknown_a0_b5fa:*/ sbc $3fff3b, X
-/*unknown_a0_b5fe:*/ sbc $47ff43, X
-/*unknown_a0_b602:*/ sbc $50ff4b, X
-/*unknown_a0_b606:*/ sbc $59ff55, X
-/*unknown_a0_b60a:*/ sbc $63ff5e, X
-/*unknown_a0_b60e:*/ sbc $6dff68, X
-/*unknown_a0_b612:*/ sbc $78ff72, X
-/*unknown_a0_b616:*/ sbc $82ff7d, X
-/*unknown_a0_b61a:*/ sbc $8dff88, X
-/*unknown_a0_b61e:*/ sbc $99ff93, X
-/*unknown_a0_b622:*/ sbc $a4ff9f, X
-/*unknown_a0_b626:*/ sbc $b0ffaa, X
-/*unknown_a0_b62a:*/ sbc $bcffb6, X
-/*unknown_a0_b62e:*/ sbc $c8ffc2, X
-/*unknown_a0_b632:*/ sbc $d5ffcf, X
-/*unknown_a0_b636:*/ sbc $e1ffdb, X
-/*unknown_a0_b63a:*/ sbc $eeffe7, X
-/*unknown_a0_b63e:*/ sbc $fafff4, X
-/*unknown_a0_b642:*/ sbc $f4da8b, X
+/*unknown_a0_b440:*/ .db $ff, $fa, $ff
+
+unknown_a0_b443:
+  .dw $0000, $0006, $000c, $0012, $0019, $001f, $0025, $002b
+  .dw $0031, $0038, $003e, $0044, $004a, $0050, $0056, $005c
+  .dw $0061, $0067, $006d, $0073, $0078, $007e, $0083, $0088
+  .dw $008e, $0093, $0098, $009d, $00a2, $00a7, $00ab, $00b0
+  .dw $00b5, $00b9, $00bd, $00c1, $00c5, $00c9, $00cd, $00d1
+  .dw $00d4, $00d8, $00db, $00de, $00e1, $00e4, $00e7, $00ea
+  .dw $00ec, $00ee, $00f1, $00f3, $00f4, $00f6, $00f8, $00f9
+  .dw $00fb, $00fc, $00fd, $00fe, $00fe, $00ff, $00ff, $00ff
+  .dw $0100, $00ff, $00ff, $00ff, $00fe, $00fe, $00fd, $00fc
+  .dw $00fb, $00f9, $00f8, $00f6, $00f4, $00f3, $00f1, $00ee
+  .dw $00ec, $00ea, $00e7, $00e4, $00e1, $00de, $00db, $00d8
+  .dw $00d4, $00d1, $00cd, $00c9, $00c5, $00c1, $00bd, $00b9
+  .dw $00b5, $00b0, $00ab, $00a7, $00a2, $009d, $0098, $0093
+  .dw $008e, $0088, $0083, $007e, $0078, $0073, $006d, $0067
+  .dw $0061, $005c, $0056, $0050, $004a, $0044, $003e, $0038
+  .dw $0031, $002b, $0025, $001f, $0019, $0012, $000c, $0006
+  .dw $0000, $fffa, $fff4, $ffee, $ffe7, $ffe1, $ffdb, $ffd5
+  .dw $ffcf, $ffc8, $ffc2, $ffbc, $ffb6, $ffb0, $ffaa, $ffa4
+  .dw $ff9f, $ff99, $ff93, $ff8d, $ff88, $ff82, $ff7d, $ff78
+  .dw $ff72, $ff6d, $ff68, $ff63, $ff5e, $ff59, $ff55, $ff50
+  .dw $ff4b, $ff47, $ff43, $ff3f, $ff3b, $ff37, $ff33, $ff2f
+  .dw $ff2c, $ff28, $ff25, $ff22, $ff1f, $ff1c, $ff19, $ff16
+  .dw $ff14, $ff12, $ff0f, $ff0d, $ff0c, $ff0a, $ff08, $ff07
+  .dw $ff05, $ff04, $ff03, $ff02, $ff02, $ff01, $ff01, $ff01
+  .dw $ff00, $ff01, $ff01, $ff01, $ff02, $ff02, $ff03, $ff04
+  .dw $ff05, $ff07, $ff08, $ff0a, $ff0c, $ff0d, $ff0f, $ff12
+  .dw $ff14, $ff16, $ff19, $ff1c, $ff1f, $ff22, $ff25, $ff28
+  .dw $ff2c, $ff2f, $ff33, $ff37, $ff3b, $ff3f, $ff43, $ff47
+  .dw $ff4b, $ff50, $ff55, $ff59, $ff5e, $ff63, $ff68, $ff6d
+  .dw $ff72, $ff78, $ff7d, $ff82, $ff88, $ff8d, $ff93, $ff99
+  .dw $ff9f, $ffa4, $ffaa, $ffb0, $ffb6, $ffbc, $ffc2, $ffc8
+  .dw $ffcf, $ffd5, $ffdb, $ffe1, $ffe7, $ffee, $fff4, $fffa
+.define unknown_a0_b443@size $200
+.export unknown_a0_b443@size
+.define unknown_a0_b443@mask unknown_a0_b443@size - 2
+.export unknown_a0_b443@mask
+
+/*unknown_a0_b643:*/ .db $8b, $da, $f4
 /*unknown_a0_b646:*/ brk $a0
 /*unknown_a0_b648:*/ plb
 /*unknown_a0_b649:*/ plb

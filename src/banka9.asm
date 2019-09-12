@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/io.asm"
 
 .bank ($a9 - $80) slot $0
 .org $0
@@ -7624,26 +7625,26 @@ unknown_a9_c447: sta $7e8002
 
 ; TODO: "A = (sin($12) * A) / 256. X is preserved" -- Kejardon
 unknown_a9_c460: tay
-/*unknown_a9_c461:*/ lda $12
+/*unknown_a9_c461:*/ lda var_unknown_12
 /*unknown_a9_c463:*/ bra @unknown_a9_c46c
 ; TODO: "A = (cos($12) * A) / 256. X is preserved" -- Kejardon
 @unknown_a9_c465: tay
-/*unknown_a9_c466:*/ lda $12
+/*unknown_a9_c466:*/ lda var_unknown_12
 /*unknown_a9_c468:*/ clc
-/*unknown_a9_c469:*/ adc #$0040.w
+/*unknown_a9_c469:*/ adc #unknown_a0_b443@size / 8
 @unknown_a9_c46c: phx
 /*unknown_a9_c46d:*/ asl A
-/*unknown_a9_c46e:*/ and #$01fe.w
+/*unknown_a9_c46e:*/ and #unknown_a0_b443@mask
 /*unknown_a9_c471:*/ tax
-/*unknown_a9_c472:*/ lda $a0b443, X
+/*unknown_a9_c472:*/ lda unknown_a0_b443.l, X
 /*unknown_a9_c476:*/ sep #$20
-/*unknown_a9_c478:*/ sta $00211b.l
+/*unknown_a9_c478:*/ sta IO_M7A.l
 /*unknown_a9_c47c:*/ xba
-/*unknown_a9_c47d:*/ sta $00211b.l
+/*unknown_a9_c47d:*/ sta IO_M7A.l
 /*unknown_a9_c481:*/ tya
-/*unknown_a9_c482:*/ sta $00211c.l
+/*unknown_a9_c482:*/ sta IO_M7B.l
 /*unknown_a9_c486:*/ rep #$20
-/*unknown_a9_c488:*/ lda $002135.l
+/*unknown_a9_c488:*/ lda IO_MPYM.l
 /*unknown_a9_c48c:*/ plx
 /*unknown_a9_c48d:*/ rtl
 

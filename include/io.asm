@@ -184,6 +184,12 @@
 .define IO_SETINI_224_LINES $00.b
 .define IO_SETINI_PROGRESSIVE_SCAN $00.b
 
+; PPU: signed multiply result (24-bit)
+.define IO_MPY $2134.w
+.define IO_MPYL IO_MPY + 0
+.define IO_MPYM IO_MPY + 1
+.define IO_MPYH IO_MPY + 2
+
 ; PPU: PPU1 status and PPU1 version number
 .define IO_STAT77 $213e.w
 
