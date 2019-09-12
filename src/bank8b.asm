@@ -579,8 +579,8 @@ unknown_8b_8532: php
 /*unknown_8b_8533:*/ rep #$30
 /*unknown_8b_8535:*/ lda $198d.w
 /*unknown_8b_8538:*/ clc
-/*unknown_8b_8539:*/ adc #$0040.w
-/*unknown_8b_853c:*/ and #$00ff.w
+/*unknown_8b_8539:*/ adc #sine_table@count / 4
+/*unknown_8b_853c:*/ and #sine_table@mask >> 1
 /*unknown_8b_853f:*/ asl A
 /*unknown_8b_8540:*/ tax
 /*unknown_8b_8541:*/ lda sine_table.l, X
@@ -596,7 +596,7 @@ unknown_8b_8532: php
 /*unknown_8b_8558:*/ sta $78
 /*unknown_8b_855a:*/ sta $7e
 /*unknown_8b_855c:*/ lda $198d.w
-/*unknown_8b_855f:*/ and #$00ff.w
+/*unknown_8b_855f:*/ and #sine_table@mask >> 1
 /*unknown_8b_8562:*/ asl A
 /*unknown_8b_8563:*/ tax
 /*unknown_8b_8564:*/ lda sine_table.l, X

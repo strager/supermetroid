@@ -4986,9 +4986,9 @@
 @unknown_a6_ac28: sta $26
 /*unknown_a6_ac2a:*/ lda $12
 /*unknown_a6_ac2c:*/ clc
-/*unknown_a6_ac2d:*/ adc #$0040.w
+/*unknown_a6_ac2d:*/ adc #sine_table@count / 4
 @unknown_a6_ac30: asl A
-/*unknown_a6_ac31:*/ and #$01fe.w
+/*unknown_a6_ac31:*/ and #sine_table@mask
 /*unknown_a6_ac34:*/ tax
 /*unknown_a6_ac35:*/ lda sine_table.l, X
 /*unknown_a6_ac39:*/ beq @unknown_a6_ac57

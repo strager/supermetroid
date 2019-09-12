@@ -10897,7 +10897,7 @@
 @unknown_aa_d956: phx
 /*unknown_aa_d957:*/ phy
 /*unknown_aa_d958:*/ txy
-/*unknown_aa_d959:*/ and #$00ff.w
+/*unknown_aa_d959:*/ and #sine_table@mask >> 1
 /*unknown_aa_d95c:*/ asl A
 /*unknown_aa_d95d:*/ tax
 /*unknown_aa_d95e:*/ stz $12

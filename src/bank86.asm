@@ -10666,8 +10666,8 @@ unknown_86_d1e4: phx
 /*unknown_86_d83c:*/ rts
 
 /*unknown_86_d83d:*/ lda $1ab7.w, X
-/*unknown_86_d840:*/ and #$01fe.w
-/*unknown_86_d843:*/ ora #$0080.w
+/*unknown_86_d840:*/ and #sine_table@mask
+/*unknown_86_d843:*/ ora #sine_table@size / 4
 /*unknown_86_d846:*/ tax
 /*unknown_86_d847:*/ stz $12
 /*unknown_86_d849:*/ stz $14
@@ -10710,8 +10710,8 @@ unknown_86_d1e4: phx
 /*unknown_86_d89e:*/ rts
 
 /*unknown_86_d89f:*/ lda $1ab7.w, X
-/*unknown_86_d8a2:*/ and #$01fe.w
-/*unknown_86_d8a5:*/ ora #$0080.w
+/*unknown_86_d8a2:*/ and #sine_table@mask
+/*unknown_86_d8a5:*/ ora #sine_table@size / 4
 /*unknown_86_d8a8:*/ tax
 /*unknown_86_d8a9:*/ stz $12
 /*unknown_86_d8ab:*/ stz $14

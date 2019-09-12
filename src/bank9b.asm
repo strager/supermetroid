@@ -9049,7 +9049,7 @@
 /*unknown_9b_ca72:*/ tay
 /*unknown_9b_ca73:*/ lda $0cfa.w
 /*unknown_9b_ca76:*/ xba
-/*unknown_9b_ca77:*/ and #$00ff.w
+/*unknown_9b_ca77:*/ and #sine_table@mask >> 1
 /*unknown_9b_ca7a:*/ asl A
 /*unknown_9b_ca7b:*/ tax
 /*unknown_9b_ca7c:*/ lda sine_table.l, X
@@ -9092,10 +9092,10 @@
 /*unknown_9b_cad2:*/ sta $12
 /*unknown_9b_cad4:*/ lda $0cfa.w
 /*unknown_9b_cad7:*/ xba
-/*unknown_9b_cad8:*/ and #$00ff.w
+/*unknown_9b_cad8:*/ and #sine_table@mask >> 1
 /*unknown_9b_cadb:*/ sec
 /*unknown_9b_cadc:*/ sbc $12
-/*unknown_9b_cade:*/ and #$00ff.w
+/*unknown_9b_cade:*/ and #sine_table@mask >> 1
 /*unknown_9b_cae1:*/ asl A
 /*unknown_9b_cae2:*/ tax
 /*unknown_9b_cae3:*/ lda sine_table.l, X
@@ -9113,7 +9113,7 @@
 /*unknown_9b_caff:*/ tay
 /*unknown_9b_cb00:*/ lda $0cfa.w
 /*unknown_9b_cb03:*/ xba
-/*unknown_9b_cb04:*/ and #$00ff.w
+/*unknown_9b_cb04:*/ and #sine_table@mask >> 1
 /*unknown_9b_cb07:*/ asl A
 /*unknown_9b_cb08:*/ tax
 /*unknown_9b_cb09:*/ lda sine_table.l, X
@@ -9156,10 +9156,10 @@
 /*unknown_9b_cb5f:*/ sta $12
 /*unknown_9b_cb61:*/ lda $0cfa.w
 /*unknown_9b_cb64:*/ xba
-/*unknown_9b_cb65:*/ and #$00ff.w
+/*unknown_9b_cb65:*/ and #sine_table@mask >> 1
 /*unknown_9b_cb68:*/ sec
 /*unknown_9b_cb69:*/ sbc $12
-/*unknown_9b_cb6b:*/ and #$00ff.w
+/*unknown_9b_cb6b:*/ and #sine_table@mask >> 1
 /*unknown_9b_cb6e:*/ asl A
 /*unknown_9b_cb6f:*/ tax
 /*unknown_9b_cb70:*/ lda sine_table.l, X
