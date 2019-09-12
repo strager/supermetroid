@@ -4282,7 +4282,7 @@ unknown_80_a12b: php
 /*unknown_80_a2f5:*/ plp
 /*unknown_80_a2f6:*/ rtl
 
-/*unknown_80_a2f7:*/ 
+/*unknown_80_a2f7:*/
   .db $4e
   .db $18
 

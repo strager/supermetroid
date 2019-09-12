@@ -11219,7 +11219,7 @@ check_player_health_and_advance_game_time:
   clc
   adc #1
   sta var_game_time_minutes.w
-  cmp #game_time_minutes_per_hour 
+  cmp #game_time_minutes_per_hour
   bmi @done_advancing_game_time
 @@advance_game_time_hours:
   stz var_game_time_minutes.w
