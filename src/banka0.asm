@@ -1013,6 +1013,7 @@ unknown_a0_8687: phb
 /*unknown_a0_8849:*/ ora $00, S
 /*unknown_a0_884b:*/ ora $00, S
 
+; TODO: "Something for sprites and sounds" -- Kejardon
 unknown_a0_884d: phb
 /*unknown_a0_884e:*/ pea $a000.w
 /*unknown_a0_8851:*/ plb
@@ -1714,6 +1715,7 @@ unknown_a0_884d: phb
 /*unknown_a0_8eb4:*/ plx
 /*unknown_a0_8eb5:*/ rts
 
+; TODO: "Determine which enemies to process." -- Kejardon
 unknown_a0_8eb6: phb
 /*unknown_a0_8eb7:*/ pea $a000.w
 /*unknown_a0_8eba:*/ plb
@@ -1835,6 +1837,7 @@ unknown_a0_8eb6: phb
 /*unknown_a0_8fd2:*/ plb
 /*unknown_a0_8fd3:*/ rtl
 
+; TODO: "Enemy routines (but can still be killed by power bombs)" -- Kejardon
 unknown_a0_8fd4: phb
 /*unknown_a0_8fd5:*/ pea $a000.w
 /*unknown_a0_8fd8:*/ plb
@@ -1993,6 +1996,7 @@ unknown_a0_8fd4: phb
 /*unknown_a0_9167:*/ plb
 /*unknown_a0_9168:*/ rtl
 
+; TODO: "Handles Samus getting hurt?" -- Kejardon
 unknown_a0_9169: lda $18a8.w
 /*unknown_a0_916c:*/ beq @unknown_a0_9171
 /*unknown_a0_916e:*/ dec $18a8.w
@@ -2605,6 +2609,7 @@ unknown_a0_9169: lda $18a8.w
 /*unknown_a0_9724:*/ ply
 /*unknown_a0_9725:*/ rts
 
+; TODO: "Something for the graphic update table." -- Kejardon
 unknown_a0_9726: lda $0e1e.w
 /*unknown_a0_9729:*/ beq @unknown_a0_9754
 /*unknown_a0_972b:*/ lda $0a78.w
@@ -2652,6 +2657,7 @@ unknown_a0_9726: lda $0e1e.w
 
 /*unknown_a0_9784:*/ rtl
 
+; TODO: "Bomb Jump routine. o_O" -- Kejardon
 unknown_a0_9785: phb
 /*unknown_a0_9786:*/ pea $a000.w
 /*unknown_a0_9789:*/ plb
@@ -2768,6 +2774,8 @@ unknown_a0_9785: phb
 @unknown_a0_9892: plb
 /*unknown_a0_9893:*/ rtl
 
+; TODO: "Enemy/Room projectiles/objects collisions with Samus. Only does default
+; routine, no customizable options." -- Kejardon
 unknown_a0_9894: php
 /*unknown_a0_9895:*/ phb
 /*unknown_a0_9896:*/ pea $a000.w
@@ -2861,6 +2869,8 @@ unknown_a0_9894: php
 @unknown_a0_9968: sty $0a54.w
 /*unknown_a0_996b:*/ rts
 
+; TODO: "Enemy/Room projectiles/objects collisions with Samus's projectiles."
+; -- Kejardon
 unknown_a0_996c: php
 /*unknown_a0_996d:*/ phb
 /*unknown_a0_996e:*/ pea $a000.w

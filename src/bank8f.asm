@@ -12977,6 +12977,7 @@
 /*unknown_8f_e8bb:*/ plp
 /*unknown_8f_e8bc:*/ rtl
 
+; TODO: "Handles background graphics" -- Kejardon
 unknown_8f_e8bd: ldx $07df.w
 /*unknown_8f_e8c0:*/ beq @unknown_8f_e8cc
 /*unknown_8f_e8c2:*/ phb

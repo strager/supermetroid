@@ -9107,6 +9107,7 @@
 
 /*unknown_8d_c526:*/ rts
 
+; TODO: "Special background lighting. Very rarely used." -- Kejardon
 unknown_8d_c527: php
 /*unknown_8d_c528:*/ phb
 /*unknown_8d_c529:*/ phk

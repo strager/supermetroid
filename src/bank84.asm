@@ -732,6 +732,7 @@ unknown_84_82d6: phx
 
 /*unknown_84_85b3:*/ rts
 
+; TODO: "Handles PLMs" -- Kejardon
 unknown_84_85b4: php
 /*unknown_84_85b5:*/ phb
 /*unknown_84_85b6:*/ phk

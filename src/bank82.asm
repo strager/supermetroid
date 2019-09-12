@@ -11153,6 +11153,7 @@ unknown_82_db0c: rep #$30
 /*unknown_82_db66:*/ bne @unknown_82_db44
 /*unknown_82_db68:*/ rts
 
+; TODO: "Handles game time. And kills Samus (!)." -- Kejardon
 unknown_82_db69:
   php
   rep #$30

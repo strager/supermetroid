@@ -2504,6 +2504,7 @@ unknown_90_9440: php
 /*unknown_90_94e8:*/ stz $0b2e.w
 @unknown_90_94eb: rts
 
+; TODO: "Room Scrolling" -- Kejardon
 unknown_90_94ec: php
 /*unknown_90_94ed:*/ phb
 /*unknown_90_94ee:*/ phk
@@ -11912,6 +11913,7 @@ unknown_90_e61b: php
 /*unknown_90_e68e:*/ tsb $00
 /*unknown_90_e690:*/ tsb $04
 
+; TODO: "handles controller input for game physics." -- Kejardon
 unknown_90_e692:
   jmp ($0a42)
 
@@ -11980,6 +11982,7 @@ unknown_90_e692:
 /*unknown_90_e720:*/ plp
 /*unknown_90_e721:*/ rtl
 
+; TODO: "Handles Samus's movements and pausing?" -- Kejardon
 unknown_90_e722:
   jmp ($0a44)
 
