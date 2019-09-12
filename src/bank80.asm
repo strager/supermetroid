@@ -5904,9 +5904,9 @@ unknown_80_af89: ldx $0925.w
 @unknown_80_b0fd: plp
 /*unknown_80_b0fe:*/ rtl
 
-; TODO: "Decompression routine. 3 bytes after JSL are the target address, and
-; $47 contains a 3 byte source address. Source may overflow bank, target may
-; NOT." -- Kejardon
+; Inputs:
+; * [var_decompress_input_address]
+; * PC (see below)
 ;
 ; Call this procedure with the following sequence:
 ;
@@ -5939,8 +5939,11 @@ decompress_to:
   iny
   lda [var_decompress_output_address_temp], Y ; Address: RA + 2
   sta0 var_decompress_output_address + 1
-; TODO: "Decompression routine. Target address in $4C (3 bytes), source address
-; in $47 (3 bytes)." -- Kejardon
+  ; Fall through.
+
+; Inputs:
+; * [var_decompress_input_address]
+; * [var_decompress_output_address]
 decompress:
   php
   phb
