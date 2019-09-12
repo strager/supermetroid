@@ -732,7 +732,7 @@ unknown_84_82d6: phx
 
 /*unknown_84_85b3:*/ rts
 
-/*unknown_84_85b4:*/ php
+unknown_84_85b4: php
 /*unknown_84_85b5:*/ phb
 /*unknown_84_85b6:*/ phk
 /*unknown_84_85b7:*/ plb

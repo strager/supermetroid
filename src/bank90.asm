@@ -2504,7 +2504,7 @@ unknown_90_9440: php
 /*unknown_90_94e8:*/ stz $0b2e.w
 @unknown_90_94eb: rts
 
-/*unknown_90_94ec:*/ php
+unknown_90_94ec: php
 /*unknown_90_94ed:*/ phb
 /*unknown_90_94ee:*/ phk
 /*unknown_90_94ef:*/ plb
@@ -11911,7 +11911,10 @@ unknown_90_e61b: php
 /*unknown_90_e68c:*/ tsb $04
 /*unknown_90_e68e:*/ tsb $00
 /*unknown_90_e690:*/ tsb $04
-/*unknown_90_e692:*/ jmp ($0a42)
+
+unknown_90_e692:
+  jmp ($0a42)
+
 /*unknown_90_e695:*/ php
 /*unknown_90_e696:*/ phb
 /*unknown_90_e697:*/ phk
@@ -11977,7 +11980,9 @@ unknown_90_e61b: php
 /*unknown_90_e720:*/ plp
 /*unknown_90_e721:*/ rtl
 
-/*unknown_90_e722:*/ jmp ($0a44)
+unknown_90_e722:
+  jmp ($0a44)
+
 /*unknown_90_e725:*/ php
 /*unknown_90_e726:*/ phb
 /*unknown_90_e727:*/ phk

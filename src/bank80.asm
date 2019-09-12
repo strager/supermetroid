@@ -3406,7 +3406,7 @@ das: .dw unknown_80_988b@size
 /*unknown_80_9b42:*/ plp
 /*unknown_80_9b43:*/ rtl
 
-/*unknown_80_9b44:*/ php
+unknown_80_9b44: php
 /*unknown_80_9b45:*/ phb
 /*unknown_80_9b46:*/ phk
 /*unknown_80_9b47:*/ plb
@@ -4340,14 +4340,15 @@ unknown_80_a37b: lda $0911.w
 /*unknown_80_a39d:*/ sta $b7
 /*unknown_80_a39f:*/ rts
 
-/*unknown_80_a3a0:*/ php
+unknown_80_a3a0: php
 /*unknown_80_a3a1:*/ phb
 /*unknown_80_a3a2:*/ phk
 /*unknown_80_a3a3:*/ plb
 /*unknown_80_a3a4:*/ rep #$30
 /*unknown_80_a3a6:*/ jsr unknown_80_a37b
 /*unknown_80_a3a9:*/ bra @unknown_80_a3df
-/*unknown_80_a3ab:*/ lda $0a78.w
+
+@unknown_80_a3ab: lda $0a78.w
 /*unknown_80_a3ae:*/ beq @unknown_80_a3b1
 /*unknown_80_a3b0:*/ rtl
 
@@ -5026,7 +5027,7 @@ unknown_80_a4bb: lda $b1
 /*unknown_80_a9aa:*/ plp
 /*unknown_80_a9ab:*/ rtl
 
-/*unknown_80_a9ac:*/ lda $91
+unknown_80_a9ac: lda $91
 /*unknown_80_a9ae:*/ and #$0040.w
 /*unknown_80_a9b1:*/ beq @unknown_80_a9b6
 /*unknown_80_a9b3:*/ inc $05d3.w

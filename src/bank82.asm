@@ -1317,41 +1317,46 @@ unknown_82_8b20: php
 unknown_82_8b3f: jsr $91d4da
 /*unknown_82_8b43:*/ rts
 
-unknown_82_8b44: php
-/*unknown_82_8b45:*/ rep #$30
-/*unknown_82_8b47:*/ jsr $a08eb6
-/*unknown_82_8b4b:*/ jsr $b49809
-/*unknown_82_8b4f:*/ and #$ffff.w
-/*unknown_82_8b52:*/ bne @unknown_82_8ba0
-/*unknown_82_8b54:*/ jsr $8dc527
-/*unknown_82_8b58:*/ jsr $90e692
-/*unknown_82_8b5c:*/ lda $0e12.w
-/*unknown_82_8b5f:*/ bne @unknown_82_8b65
-/*unknown_82_8b61:*/ jsr $a09785
-@unknown_82_8b65: jsr $a08fd4
-/*unknown_82_8b69:*/ jsr $90e722
-/*unknown_82_8b6d:*/ jsr $868104
-/*unknown_82_8b71:*/ jsr $8485b4
-/*unknown_82_8b75:*/ jsr $878064
-/*unknown_82_8b79:*/ lda $0e12.w
-/*unknown_82_8b7c:*/ bne @unknown_82_8b8a
-/*unknown_82_8b7e:*/ jsr $a09894
-/*unknown_82_8b82:*/ jsr $a0996c
-/*unknown_82_8b86:*/ jsr $a0a306
-@unknown_82_8b8a: jsr $9094ec
-/*unknown_82_8b8e:*/ lda $808006
-/*unknown_82_8b92:*/ beq @unknown_82_8b98
-/*unknown_82_8b94:*/ jsr $80a9ac
-@unknown_82_8b98: jsr $a0884d
-/*unknown_82_8b9c:*/ jsr $a09726
-@unknown_82_8ba0: jsr $809b44
-/*unknown_82_8ba4:*/ jsr $80a3ab
-/*unknown_82_8ba8:*/ jsr $8fe8bd
-/*unknown_82_8bac:*/ jsr unknown_82_db69
-/*unknown_82_8baf:*/ jsr $a08687
-/*unknown_82_8bb3:*/ jsr $a09169
-/*unknown_82_8bb7:*/ plp
-/*unknown_82_8bb8:*/ rts
+unknown_82_8b44:
+  php
+  rep #$30
+  jsl unknown_a0_8eb6
+  jsl unknown_b4_9809
+  and #$ffff.w
+  bne @unknown_82_8ba0
+  jsl unknown_8d_c527
+  jsl unknown_90_e692
+  lda var_unknown_0e12.w
+  bne @unknown_82_8b65
+  jsl unknown_a0_9785
+@unknown_82_8b65:
+  jsl unknown_a0_8fd4
+  jsl unknown_90_e722
+  jsl unknown_86_8104
+  jsl unknown_84_85b4
+  jsl unknown_87_8064
+  lda var_unknown_0e12.w
+  bne @unknown_82_8b8a
+  jsl unknown_a0_9894
+  jsl unknown_a0_996c
+  jsl unknown_a0_a306
+@unknown_82_8b8a:
+  jsl unknown_90_94ec
+  lda unknown_80_8006.l
+  beq @unknown_82_8b98
+  jsl unknown_80_a9ac
+@unknown_82_8b98:
+  jsl unknown_a0_884d
+  jsl unknown_a0_9726
+@unknown_82_8ba0:
+  jsl unknown_80_9b44
+  jsl unknown_80_a3a0@unknown_80_a3ab
+  jsl unknown_8f_e8bd
+  jsr unknown_82_db69
+  jsl unknown_a0_8687
+  jsl unknown_a0_9169
+  plp
+  rts
 
 unknown_82_8bb9: php
 /*unknown_82_8bba:*/ rep #$30

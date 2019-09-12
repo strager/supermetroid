@@ -778,7 +778,12 @@
 /*unknown_a0_867f:*/ sbc $1174.w, Y
 /*unknown_a0_8682:*/ brk $07
 /*unknown_a0_8684:*/ phb
-/*unknown_a0_8685:*/ inc $8bff.w
+
+unknown_a0_8685:
+  .db $ee
+  .db $ff
+
+unknown_a0_8687: phb
 /*unknown_a0_8688:*/ pea $a000.w
 /*unknown_a0_868b:*/ plb
 /*unknown_a0_868c:*/ plb
@@ -1007,7 +1012,8 @@
 /*unknown_a0_8847:*/ brk $00
 /*unknown_a0_8849:*/ ora $00, S
 /*unknown_a0_884b:*/ ora $00, S
-/*unknown_a0_884d:*/ phb
+
+unknown_a0_884d: phb
 /*unknown_a0_884e:*/ pea $a000.w
 /*unknown_a0_8851:*/ plb
 /*unknown_a0_8852:*/ plb
@@ -1708,7 +1714,7 @@
 /*unknown_a0_8eb4:*/ plx
 /*unknown_a0_8eb5:*/ rts
 
-/*unknown_a0_8eb6:*/ phb
+unknown_a0_8eb6: phb
 /*unknown_a0_8eb7:*/ pea $a000.w
 /*unknown_a0_8eba:*/ plb
 /*unknown_a0_8ebb:*/ plb
@@ -1829,7 +1835,7 @@
 /*unknown_a0_8fd2:*/ plb
 /*unknown_a0_8fd3:*/ rtl
 
-/*unknown_a0_8fd4:*/ phb
+unknown_a0_8fd4: phb
 /*unknown_a0_8fd5:*/ pea $a000.w
 /*unknown_a0_8fd8:*/ plb
 /*unknown_a0_8fd9:*/ plb
@@ -1987,7 +1993,7 @@
 /*unknown_a0_9167:*/ plb
 /*unknown_a0_9168:*/ rtl
 
-/*unknown_a0_9169:*/ lda $18a8.w
+unknown_a0_9169: lda $18a8.w
 /*unknown_a0_916c:*/ beq @unknown_a0_9171
 /*unknown_a0_916e:*/ dec $18a8.w
 @unknown_a0_9171: lda $18aa.w
@@ -2599,7 +2605,7 @@
 /*unknown_a0_9724:*/ ply
 /*unknown_a0_9725:*/ rts
 
-/*unknown_a0_9726:*/ lda $0e1e.w
+unknown_a0_9726: lda $0e1e.w
 /*unknown_a0_9729:*/ beq @unknown_a0_9754
 /*unknown_a0_972b:*/ lda $0a78.w
 /*unknown_a0_972e:*/ ora $185e.w
@@ -2646,7 +2652,7 @@
 
 /*unknown_a0_9784:*/ rtl
 
-/*unknown_a0_9785:*/ phb
+unknown_a0_9785: phb
 /*unknown_a0_9786:*/ pea $a000.w
 /*unknown_a0_9789:*/ plb
 /*unknown_a0_978a:*/ plb
@@ -2762,7 +2768,7 @@
 @unknown_a0_9892: plb
 /*unknown_a0_9893:*/ rtl
 
-/*unknown_a0_9894:*/ php
+unknown_a0_9894: php
 /*unknown_a0_9895:*/ phb
 /*unknown_a0_9896:*/ pea $a000.w
 /*unknown_a0_9899:*/ plb
@@ -2855,7 +2861,7 @@
 @unknown_a0_9968: sty $0a54.w
 /*unknown_a0_996b:*/ rts
 
-/*unknown_a0_996c:*/ php
+unknown_a0_996c: php
 /*unknown_a0_996d:*/ phb
 /*unknown_a0_996e:*/ pea $a000.w
 /*unknown_a0_9971:*/ plb
@@ -3897,7 +3903,8 @@
 /*unknown_a0_a2fc:*/ lda $a00032, X
 /*unknown_a0_a300:*/ sta $1784.w
 /*unknown_a0_a303:*/ jmp [$1784]
-/*unknown_a0_a306:*/ phb
+
+unknown_a0_a306: phb
 /*unknown_a0_a307:*/ lda #$0005.w
 /*unknown_a0_a30a:*/ sta $7ef378
 /*unknown_a0_a30e:*/ lda $0ceb.w

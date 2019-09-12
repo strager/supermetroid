@@ -2085,7 +2085,7 @@
 /*unknown_b4_9805:*/ lda #$0000.w
 /*unknown_b4_9808:*/ rts
 
-/*unknown_b4_9809:*/ phb
+unknown_b4_9809: phb
 /*unknown_b4_980a:*/ sep #$20
 /*unknown_b4_980c:*/ lda #$b4
 /*unknown_b4_980e:*/ pha

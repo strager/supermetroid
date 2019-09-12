@@ -142,7 +142,7 @@
 /*unknown_86_8102:*/ clc
 /*unknown_86_8103:*/ rtl
 
-/*unknown_86_8104:*/ php
+unknown_86_8104: php
 /*unknown_86_8105:*/ phb
 /*unknown_86_8106:*/ phk
 /*unknown_86_8107:*/ plb

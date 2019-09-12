@@ -195,6 +195,10 @@ var_unknown_0a78: dw ; $7e0a78
 var_unknown_0df4: dw ; $7e0df4
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0e12) export
+var_unknown_0e12: dw ; $7e0e12
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3a8e) export
 var_unknown_3a8e: dsw $8 ; $7e3a8e
 .ende
