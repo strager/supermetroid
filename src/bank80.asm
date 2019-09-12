@@ -3,7 +3,7 @@
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/unknown_80_91a9.asm"
-.include "include/unknown_80_b0ff.asm"
+.include "include/decompress_to.asm"
 
 .bank ($80 - $80) slot $0
 .org $0
@@ -5910,18 +5910,18 @@ unknown_80_af89: ldx $0925.w
 ;
 ; Call this procedure with the following sequence:
 ;
-;   jsl unknown_80_b0ff
-; .dstruct instanceof unknown_80_b0ff@parameters values
+;   jsl decompress_to
+; .dstruct instanceof decompress_to@parameters values
 ; output_address: .dl $7f5000
 ; .ENDST
 ; @resume:
 ;
-; unknown_80_b0ff returns execution at @resume (i.e. after the
-; unknown_80_b0ff@parameters data).
+; decompress_to returns execution at @resume (i.e. after the
+; decompress_to@parameters data).
 ;
-; See the definition of unknown_80_b0ff@parameters for details on what each
+; See the definition of decompress_to@parameters for details on what each
 ; parameter means.
-unknown_80_b0ff:
+decompress_to:
   ; Below, read 'SS' as the value of S on procedure entry.
   ; Below, read 'RA' as the 24-bit address of the last byte of the jsr
   ; instruction (i.e. the return address).
@@ -5931,7 +5931,7 @@ unknown_80_b0ff:
   lda $01, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
   sta0 var_decompress_output_address_temp
   clc
-  adc #unknown_80_b0ff@parameters@size
+  adc #decompress_to@parameters@size
   sta $01, S ; Return to the instruction after @parameters.
   ldy #$0001.w
   lda [var_decompress_output_address_temp], Y ; Address: RA + 1

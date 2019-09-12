@@ -2,7 +2,7 @@
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/unknown_80_91a9.asm"
-.include "include/unknown_80_b0ff.asm"
+.include "include/decompress_to.asm"
 
 .bank ($82 - $80) slot $0
 .org $0
@@ -12169,8 +12169,8 @@ unknown_82_e29e: php
 /*unknown_82_e416:*/ sta $48
 /*unknown_82_e418:*/ lda #$8000.w
 /*unknown_82_e41b:*/ sta $47
-/*unknown_82_e41d:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e41d:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7e7000
 .ENDST
 
@@ -12178,8 +12178,8 @@ output_address: .dl $7e7000
   sta $48
   lda $07c3.w
   sta $47
-/*unknown_82_e42e:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e42e:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7e2000
 .ENDST
 
@@ -12187,8 +12187,8 @@ output_address: .dl $7e2000
   sta $48
   lda $07c6.w
   sta $47
-/*unknown_82_e43f:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e43f:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ec200
 .ENDST
 
@@ -12611,8 +12611,8 @@ unknown_82_e5eb: lda $0003.w, Y
 /*unknown_82_e7c2:*/ sta $48
 /*unknown_82_e7c4:*/ ldy $07c6.w
 /*unknown_82_e7c7:*/ sty $47
-/*unknown_82_e7c9:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e7c9:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ec200
 .ENDST
 
@@ -12636,8 +12636,8 @@ output_address: .dl $7ec200
 /*unknown_82_e7ed:*/ sta $48
 /*unknown_82_e7ef:*/ lda $07bd.w
 /*unknown_82_e7f2:*/ sta $47
-/*unknown_82_e7f4:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e7f4:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7f0000
 .ENDST
 
@@ -12680,8 +12680,8 @@ output_address: .dl $7f0000
 /*unknown_82_e83e:*/ sta $48
 /*unknown_82_e840:*/ lda #$a09d.w
 /*unknown_82_e843:*/ sta $47
-/*unknown_82_e845:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e845:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ea000
 .ENDST
 
@@ -12689,8 +12689,8 @@ output_address: .dl $7ea000
   sta $48
   lda $07c0.w
   sta $47
-/*unknown_82_e856:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e856:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ea800
 .ENDST
 
@@ -12699,8 +12699,8 @@ output_address: .dl $7ea800
   sta $48
   lda $07c0.w
   sta $47
-/*unknown_82_e869:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_e869:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ea000
 .ENDST
 
@@ -12976,8 +12976,8 @@ unknown_82_e9f9: lda $0003.w, Y
 /*unknown_82_ea95:*/ sta $48
 /*unknown_82_ea97:*/ lda $07bd.w
 /*unknown_82_ea9a:*/ sta $47
-/*unknown_82_ea9c:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_ea9c:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7f0000
 .ENDST
 
@@ -13023,8 +13023,8 @@ output_address: .dl $7f0000
 /*unknown_82_eaee:*/ sta $48
 /*unknown_82_eaf0:*/ lda #$a09d.w
 /*unknown_82_eaf3:*/ sta $47
-/*unknown_82_eaf5:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_eaf5:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ea000
 .ENDST
 
@@ -13032,8 +13032,8 @@ output_address: .dl $7ea000
   sta $48
   lda $07c0.w
   sta $47
-/*unknown_82_eb06:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_eb06:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ea800
 .ENDST
 
@@ -13042,8 +13042,8 @@ output_address: .dl $7ea800
   sta $48
   lda $07c0.w
   sta $47
-/*unknown_82_eb19:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_eb19:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7ea000
 .ENDST
 
@@ -13214,8 +13214,8 @@ das: .dw unknown_8e_dc00@size
 /*unknown_82_ec69:*/ sta $48
 /*unknown_82_ec6b:*/ lda #$8df4.w
 /*unknown_82_ec6e:*/ sta $47
-/*unknown_82_ec70:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_ec70:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7fc000
 .ENDST
 
@@ -13223,8 +13223,8 @@ output_address: .dl $7fc000
   sta $48
   lda #$8fcd.w
   sta $47
-/*unknown_82_ec81:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_ec81:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7fc800
 .ENDST
 
@@ -13232,8 +13232,8 @@ output_address: .dl $7fc800
   sta $48
   lda #$91c4.w
   sta $47
-/*unknown_82_ec92:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_ec92:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7fd000
 .ENDST
 
@@ -13241,8 +13241,8 @@ output_address: .dl $7fd000
   sta $48
   lda #$938d.w
   sta $47
-/*unknown_82_eca3:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_eca3:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7fd800
 .ENDST
 
@@ -13250,8 +13250,8 @@ output_address: .dl $7fd800
   sta $48
   lda #$953a.w
   sta $47
-/*unknown_82_ecb4:*/ jsl unknown_80_b0ff
-.dstruct instanceof unknown_80_b0ff@parameters values
+/*unknown_82_ecb4:*/ jsl decompress_to
+.dstruct instanceof decompress_to@parameters values
 output_address: .dl $7fe000
 .ENDST
 
