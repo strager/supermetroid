@@ -33,6 +33,12 @@ var_unknown_2d: db ; $7e002d
 var_unknown_2e: dw ; $7e002e
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $47) export
+var_decompress_input_address: dl ; $7e0047
+var_unknown_4a: dw ; $7e004a
+var_decompress_output_address: dl ; $7e004c
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $51) export
 var_unknown_51: db ; $7e0051
 var_unknown_52: db ; $7e0052
