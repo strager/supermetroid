@@ -8073,30 +8073,35 @@ unknown_86_c239: jsr unknown_86_c3e9
 /*unknown_86_c26b:*/ rts
 
 ; TODO: "Calculates A * sin ($12 * 360/256), result in A." -- Kejardon
-unknown_86_c26c: sta var_unknown_26
-/*unknown_86_c26e:*/ lda var_unknown_12
-/*unknown_86_c270:*/ bra @unknown_86_c27a
+unknown_86_c26c:
+  sta var_unknown_26
+  lda var_unknown_12
+  bra @unknown_86_c27a
 ; TODO: "Calculates A * cos ($12 * 360/256), result in A." -- Kejardon
-@unknown_86_c272: sta var_unknown_26
-/*unknown_86_c274:*/ lda var_unknown_12
-/*unknown_86_c276:*/ clc
-/*unknown_86_c277:*/ adc #sine_table@count / 4
-@unknown_86_c27a: asl A
-/*unknown_86_c27b:*/ and #sine_table@mask
-/*unknown_86_c27e:*/ tax
-/*unknown_86_c27f:*/ lda sine_table.l, X
-/*unknown_86_c283:*/ sta var_unknown_2e
-/*unknown_86_c285:*/ bpl @unknown_86_c28b
-/*unknown_86_c287:*/ eor #$ffff.w
-/*unknown_86_c28a:*/ inc A
-@unknown_86_c28b: sta var_unknown_28
-/*unknown_86_c28d:*/ jsr unknown_86_c29b
-/*unknown_86_c290:*/ lda var_unknown_2b
-/*unknown_86_c292:*/ bit var_unknown_2e
-/*unknown_86_c294:*/ bpl @unknown_86_c29a
-/*unknown_86_c296:*/ eor #$ffff.w
-/*unknown_86_c299:*/ inc A
-@unknown_86_c29a: rtl
+@unknown_86_c272:
+  sta var_unknown_26
+  lda var_unknown_12
+  clc
+  adc #sine_table@count / 4
+@unknown_86_c27a:
+  asl A
+  and #sine_table@mask
+  tax
+  lda sine_table.l, X
+  sta var_unknown_2e
+  bpl @unknown_86_c28b
+  eor #$ffff.w
+  inc A
+@unknown_86_c28b:
+  sta var_unknown_28
+  jsr unknown_86_c29b
+  lda var_unknown_2b
+  bit var_unknown_2e
+  bpl @unknown_86_c29a
+  eor #$ffff.w
+  inc A
+@unknown_86_c29a:
+  rtl
 
 ; TODO: "Multiply $26 (2 bytes) by $28 (2 bytes), result in $2A (4 bytes). When
 ; leaving, A = $2B (2 bytes), Y = $2D." -- Kejardon
