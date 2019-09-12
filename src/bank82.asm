@@ -12171,7 +12171,7 @@ unknown_82_e29e: php
 /*unknown_82_e41b:*/ sta $47
 /*unknown_82_e41d:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7e7000
+output_address: .dl $7e7000
 .ENDST
 
   lda $07c4.w
@@ -12180,7 +12180,7 @@ unknown: .dl $7e7000
   sta $47
 /*unknown_82_e42e:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7e2000
+output_address: .dl $7e2000
 .ENDST
 
   lda $07c7.w
@@ -12189,7 +12189,7 @@ unknown: .dl $7e2000
   sta $47
 /*unknown_82_e43f:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ec200
+output_address: .dl $7ec200
 .ENDST
 
   jsr $e039
@@ -12613,7 +12613,7 @@ unknown_82_e5eb: lda $0003.w, Y
 /*unknown_82_e7c7:*/ sty $47
 /*unknown_82_e7c9:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ec200
+output_address: .dl $7ec200
 .ENDST
 
   plb
@@ -12638,7 +12638,7 @@ unknown: .dl $7ec200
 /*unknown_82_e7f2:*/ sta $47
 /*unknown_82_e7f4:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7f0000
+output_address: .dl $7f0000
 .ENDST
 
   phb
@@ -12682,7 +12682,7 @@ unknown: .dl $7f0000
 /*unknown_82_e843:*/ sta $47
 /*unknown_82_e845:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ea000
+output_address: .dl $7ea000
 .ENDST
 
   lda $07c1.w
@@ -12691,7 +12691,7 @@ unknown: .dl $7ea000
   sta $47
 /*unknown_82_e856:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ea800
+output_address: .dl $7ea800
 .ENDST
 
   bra $11
@@ -12701,7 +12701,7 @@ unknown: .dl $7ea800
   sta $47
 /*unknown_82_e869:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ea000
+output_address: .dl $7ea000
 .ENDST
 
   ldx $07bb
@@ -12978,7 +12978,7 @@ unknown_82_e9f9: lda $0003.w, Y
 /*unknown_82_ea9a:*/ sta $47
 /*unknown_82_ea9c:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7f0000
+output_address: .dl $7f0000
 .ENDST
 
   phb
@@ -13025,7 +13025,7 @@ unknown: .dl $7f0000
 /*unknown_82_eaf3:*/ sta $47
 /*unknown_82_eaf5:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ea000
+output_address: .dl $7ea000
 .ENDST
 
   lda $07c1.w
@@ -13034,7 +13034,7 @@ unknown: .dl $7ea000
   sta $47
 /*unknown_82_eb06:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ea800
+output_address: .dl $7ea800
 .ENDST
 
   bra $11
@@ -13044,7 +13044,7 @@ unknown: .dl $7ea800
   sta $47
 /*unknown_82_eb19:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7ea000
+output_address: .dl $7ea000
 .ENDST
 
   ldx $07bb
@@ -13216,7 +13216,7 @@ das: .dw unknown_8e_dc00@size
 /*unknown_82_ec6e:*/ sta $47
 /*unknown_82_ec70:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7fc000
+output_address: .dl $7fc000
 .ENDST
 
   lda #$9700.w
@@ -13225,7 +13225,7 @@ unknown: .dl $7fc000
   sta $47
 /*unknown_82_ec81:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7fc800
+output_address: .dl $7fc800
 .ENDST
 
   lda #$9700.w
@@ -13234,7 +13234,7 @@ unknown: .dl $7fc800
   sta $47
 /*unknown_82_ec92:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7fd000
+output_address: .dl $7fd000
 .ENDST
 
   lda #$9700.w
@@ -13243,7 +13243,7 @@ unknown: .dl $7fd000
   sta $47
 /*unknown_82_eca3:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7fd800
+output_address: .dl $7fd800
 .ENDST
 
   lda #$9700.w
@@ -13252,7 +13252,7 @@ unknown: .dl $7fd800
   sta $47
 /*unknown_82_ecb4:*/ jsl unknown_80_b0ff
 .dstruct instanceof unknown_80_b0ff@parameters values
-unknown: .dl $7fe000
+output_address: .dl $7fe000
 .ENDST
 
   ldx #$07fe

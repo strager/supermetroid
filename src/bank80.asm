@@ -5912,7 +5912,7 @@ unknown_80_af89: ldx $0925.w
 ;
 ;   jsl unknown_80_b0ff
 ; .dstruct instanceof unknown_80_b0ff@parameters values
-; unknown: .dl $7f5000
+; output_address: .dl $7f5000
 ; .ENDST
 ; @resume:
 ;
