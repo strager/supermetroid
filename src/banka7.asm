@@ -4773,7 +4773,7 @@ unknown_a7_a716:
 /*unknown_a7_aadc:*/ sta $00004c.l
 /*unknown_a7_aae0:*/ lda #$40
 /*unknown_a7_aae2:*/ sta $00004d.l
-/*unknown_a7_aae6:*/ jsl unknown_80_b119
+/*unknown_a7_aae6:*/ jsl decompress
 /*unknown_a7_aaea:*/ lda #$3e
 /*unknown_a7_aaec:*/ sta $000047.l
 /*unknown_a7_aaf0:*/ lda #$fe
@@ -4784,7 +4784,7 @@ unknown_a7_a716:
 /*unknown_a7_aafe:*/ sta $00004c.l
 /*unknown_a7_ab02:*/ lda #$20
 /*unknown_a7_ab04:*/ sta $00004d.l
-/*unknown_a7_ab08:*/ jsl unknown_80_b119
+/*unknown_a7_ab08:*/ jsl decompress
 /*unknown_a7_ab0c:*/ rep #$20
 /*unknown_a7_ab0e:*/ lda #$0000.w
 /*unknown_a7_ab11:*/ sta $7e782a

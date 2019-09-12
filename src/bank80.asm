@@ -5941,7 +5941,7 @@ decompress_to:
   sta0 var_decompress_output_address + 1
 ; TODO: "Decompression routine. Target address in $4C (3 bytes), source address
 ; in $47 (3 bytes)." -- Kejardon
-unknown_80_b119:
+decompress:
   php
   phb
   sep #$20

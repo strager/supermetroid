@@ -12432,7 +12432,7 @@ unknown_82_e5eb: lda $0003.w, Y
 /*unknown_82_e624:*/ sta $4d
 /*unknown_82_e626:*/ lda $0003.w, Y
 /*unknown_82_e629:*/ sta $4c
-/*unknown_82_e62b:*/ jsl unknown_80_b119
+/*unknown_82_e62b:*/ jsl decompress
 /*unknown_82_e62f:*/ pla
 /*unknown_82_e630:*/ clc
 /*unknown_82_e631:*/ adc #$0005.w
@@ -12926,7 +12926,7 @@ unknown_82_e9f9: lda $0003.w, Y
 /*unknown_82_ea3b:*/ sta $4d
 /*unknown_82_ea3d:*/ lda $0003.w, Y
 /*unknown_82_ea40:*/ sta $4c
-/*unknown_82_ea42:*/ jsl unknown_80_b119
+/*unknown_82_ea42:*/ jsl decompress
 /*unknown_82_ea46:*/ pla
 /*unknown_82_ea47:*/ clc
 /*unknown_82_ea48:*/ adc #$0005.w
