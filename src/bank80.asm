@@ -5927,208 +5927,237 @@ unknown_80_b0ff:
   ; instruction (i.e. the return address).
   ; On procedure entry, [SS] = RA
   lda $02, S ; Address: SS + 2, pointing to the bank of RA.
-/*unknown_80_b101:*/ sta0 var_decompress_output_address_temp + 1
-/*unknown_80_b103:*/ lda $01, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
-/*unknown_80_b105:*/ sta0 var_decompress_output_address_temp
-/*unknown_80_b107:*/ clc
-/*unknown_80_b108:*/ adc #unknown_80_b0ff@parameters@size
-/*unknown_80_b10b:*/ sta $01, S ; Return to the instruction after @parameters.
-/*unknown_80_b10d:*/ ldy #$0001.w
-/*unknown_80_b110:*/ lda [var_decompress_output_address_temp], Y ; Address: RA + 1
-/*unknown_80_b112:*/ sta0 var_decompress_output_address
-/*unknown_80_b114:*/ iny
-/*unknown_80_b115:*/ lda [var_decompress_output_address_temp], Y ; Address: RA + 2
-/*unknown_80_b117:*/ sta0 var_decompress_output_address + 1
+  sta0 var_decompress_output_address_temp + 1
+  lda $01, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
+  sta0 var_decompress_output_address_temp
+  clc
+  adc #unknown_80_b0ff@parameters@size
+  sta $01, S ; Return to the instruction after @parameters.
+  ldy #$0001.w
+  lda [var_decompress_output_address_temp], Y ; Address: RA + 1
+  sta0 var_decompress_output_address
+  iny
+  lda [var_decompress_output_address_temp], Y ; Address: RA + 2
+  sta0 var_decompress_output_address + 1
 ; TODO: "Decompression routine. Target address in $4C (3 bytes), source address
 ; in $47 (3 bytes)." -- Kejardon
-@unknown_80_b119: php
-/*unknown_80_b11a:*/ phb
-/*unknown_80_b11b:*/ sep #$20
-/*unknown_80_b11d:*/ rep #$10
-/*unknown_80_b11f:*/ lda0 var_decompress_input_address + 2
-/*unknown_80_b121:*/ pha
-/*unknown_80_b122:*/ plb
-/*unknown_80_b123:*/ stz var_unknown_50
-/*unknown_80_b125:*/ ldy #$0000.w
-@unknown_80_b128: phx
-/*unknown_80_b129:*/ ldx var_decompress_input_address
-/*unknown_80_b12b:*/ lda $0000.w, X
-/*unknown_80_b12e:*/ inx
-/*unknown_80_b12f:*/ bne @unknown_80_b134
-/*unknown_80_b131:*/ jsr unknown_80_b266
-@unknown_80_b134: stx var_decompress_input_address
-/*unknown_80_b136:*/ plx
-/*unknown_80_b137:*/ sta var_unknown_4a
-/*unknown_80_b139:*/ cmp #$ff
-/*unknown_80_b13b:*/ bne @unknown_80_b140
-/*unknown_80_b13d:*/ plb
-/*unknown_80_b13e:*/ plp
-/*unknown_80_b13f:*/ rtl
+@unknown_80_b119:
+  php
+  phb
+  sep #$20
+  rep #$10
+  lda0 var_decompress_input_address + 2
+  pha
+  plb
+  stz var_unknown_50
+  ldy #$0000.w
+@unknown_80_b128:
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b134
+  jsr unknown_80_b266
+@unknown_80_b134:
+  stx var_decompress_input_address
+  plx
+  sta var_unknown_4a
+  cmp #$ff
+  bne @unknown_80_b140
+  plb
+  plp
+  rtl
+@unknown_80_b140:
+  and #$e0
+  cmp #$e0
+  bne @unknown_80_b164
+  lda var_unknown_4a
+  asl A
+  asl A
+  asl A
+  and #$e0
+  pha
+  lda var_unknown_4a
+  and #$03
+  xba
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b15f
+  jsr unknown_80_b266
+@unknown_80_b15f:
+  stx var_decompress_input_address
+  plx
+  bra @unknown_80_b16c
+@unknown_80_b164:
+  pha
+  lda #$00
+  xba
+  lda var_unknown_4a
+  and #$1f
+@unknown_80_b16c:
+  tax
+  inx
+  pla
+  cmp #$00
+  bpl @unknown_80_b176
+  jmp @unknown_80_b1ff
+@unknown_80_b176:
+  cmp #$20
+  beq @unknown_80_b199
+  cmp #$40
+  beq @unknown_80_b1b1
+  cmp #$60
+  beq @unknown_80_b1e6
+@unknown_80_b182:
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b18e
+  jsr unknown_80_b266
+@unknown_80_b18e:
+  stx var_decompress_input_address
+  plx
+  sta [var_decompress_output_address], Y
+  iny
+  dex
+  bne @unknown_80_b182
+  beq @unknown_80_b128
+@unknown_80_b199:
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b1a5
+  jsr unknown_80_b266
+@unknown_80_b1a5:
+  stx var_decompress_input_address
+  plx
+@unknown_80_b1a8:
+  sta [var_decompress_output_address], Y
+  iny
+  dex
+  bne @unknown_80_b1a8
+  jmp @unknown_80_b128
+@unknown_80_b1b1:
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b1bd
+  jsr unknown_80_b266
+@unknown_80_b1bd:
+  stx var_decompress_input_address
+  plx
+  sta var_unknown_4a
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b1ce
+  jsr unknown_80_b266
+@unknown_80_b1ce:
+  stx var_decompress_input_address
+  plx
+  sta var_unknown_4b
+@unknown_80_b1d3:
+  lda var_unknown_4a
+  sta [var_decompress_output_address], Y
+  iny
+  dex
+  beq @unknown_80_b1e3
+  lda var_unknown_4b
+  sta [var_decompress_output_address], Y
+  iny
+  dex
+  bne @unknown_80_b1d3
+@unknown_80_b1e3:
+  jmp @unknown_80_b128
+@unknown_80_b1e6:
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b1f2
+  jsr unknown_80_b266
+@unknown_80_b1f2:
+  stx var_decompress_input_address
+  plx
+@unknown_80_b1f5:
+  sta [var_decompress_output_address], Y
+  inc A
+  iny
+  dex
+  bne @unknown_80_b1f5
+  jmp @unknown_80_b128
+@unknown_80_b1ff:
+  cmp #$c0
+  bcs @unknown_80_b245
+  and #$20
+  sta var_unknown_4f
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b213
+  jsr unknown_80_b266
+@unknown_80_b213:
+  stx var_decompress_input_address
+  plx
+  sta var_unknown_4a
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b224
+  jsr unknown_80_b266
+@unknown_80_b224:
+  stx var_decompress_input_address
+  plx
+  sta var_unknown_4b
+@unknown_80_b229:
+  sep #$20
+@unknown_80_b22b:
+  phx
+  phy
+  ldy var_unknown_4a
+  lda [var_decompress_output_address], Y
+  iny
+  sty var_unknown_4a
+  ply
+  ldx var_unknown_4f
+  beq @unknown_80_b23b
+  eor #$ff
+@unknown_80_b23b:
+  sta [var_decompress_output_address], Y
+  iny
+  plx
+  dex
+  bne @unknown_80_b22b
+  jmp @unknown_80_b128
+@unknown_80_b245:
+  and #$20
+  sta var_unknown_4f
+  phx
+  ldx var_decompress_input_address
+  lda $0000.w, X
+  inx
+  bne @unknown_80_b255
+  jsr unknown_80_b266
+@unknown_80_b255:
+  stx var_decompress_input_address
+  plx
+  sta var_unknown_4a
+  stz var_unknown_4b
+  rep #$20
+  tya
+  sec
+  sbc var_unknown_4a
+  sta var_unknown_4a
+  bra @unknown_80_b229
 
-@unknown_80_b140: and #$e0
-/*unknown_80_b142:*/ cmp #$e0
-/*unknown_80_b144:*/ bne @unknown_80_b164
-/*unknown_80_b146:*/ lda var_unknown_4a
-/*unknown_80_b148:*/ asl A
-/*unknown_80_b149:*/ asl A
-/*unknown_80_b14a:*/ asl A
-/*unknown_80_b14b:*/ and #$e0
-/*unknown_80_b14d:*/ pha
-/*unknown_80_b14e:*/ lda var_unknown_4a
-/*unknown_80_b150:*/ and #$03
-/*unknown_80_b152:*/ xba
-/*unknown_80_b153:*/ phx
-/*unknown_80_b154:*/ ldx var_decompress_input_address
-/*unknown_80_b156:*/ lda $0000.w, X
-/*unknown_80_b159:*/ inx
-/*unknown_80_b15a:*/ bne @unknown_80_b15f
-/*unknown_80_b15c:*/ jsr unknown_80_b266
-@unknown_80_b15f: stx var_decompress_input_address
-/*unknown_80_b161:*/ plx
-/*unknown_80_b162:*/ bra @unknown_80_b16c
-@unknown_80_b164: pha
-/*unknown_80_b165:*/ lda #$00
-/*unknown_80_b167:*/ xba
-/*unknown_80_b168:*/ lda var_unknown_4a
-/*unknown_80_b16a:*/ and #$1f
-@unknown_80_b16c: tax
-/*unknown_80_b16d:*/ inx
-/*unknown_80_b16e:*/ pla
-/*unknown_80_b16f:*/ cmp #$00
-/*unknown_80_b171:*/ bpl @unknown_80_b176
-/*unknown_80_b173:*/ jmp @unknown_80_b1ff
-@unknown_80_b176: cmp #$20
-/*unknown_80_b178:*/ beq @unknown_80_b199
-/*unknown_80_b17a:*/ cmp #$40
-/*unknown_80_b17c:*/ beq @unknown_80_b1b1
-/*unknown_80_b17e:*/ cmp #$60
-/*unknown_80_b180:*/ beq @unknown_80_b1e6
-@unknown_80_b182: phx
-/*unknown_80_b183:*/ ldx var_decompress_input_address
-/*unknown_80_b185:*/ lda $0000.w, X
-/*unknown_80_b188:*/ inx
-/*unknown_80_b189:*/ bne @unknown_80_b18e
-/*unknown_80_b18b:*/ jsr unknown_80_b266
-@unknown_80_b18e: stx var_decompress_input_address
-/*unknown_80_b190:*/ plx
-/*unknown_80_b191:*/ sta [var_decompress_output_address], Y
-/*unknown_80_b193:*/ iny
-/*unknown_80_b194:*/ dex
-/*unknown_80_b195:*/ bne @unknown_80_b182
-/*unknown_80_b197:*/ beq @unknown_80_b128
-@unknown_80_b199: phx
-/*unknown_80_b19a:*/ ldx var_decompress_input_address
-/*unknown_80_b19c:*/ lda $0000.w, X
-/*unknown_80_b19f:*/ inx
-/*unknown_80_b1a0:*/ bne @unknown_80_b1a5
-/*unknown_80_b1a2:*/ jsr unknown_80_b266
-@unknown_80_b1a5: stx var_decompress_input_address
-/*unknown_80_b1a7:*/ plx
-@unknown_80_b1a8: sta [var_decompress_output_address], Y
-/*unknown_80_b1aa:*/ iny
-/*unknown_80_b1ab:*/ dex
-/*unknown_80_b1ac:*/ bne @unknown_80_b1a8
-/*unknown_80_b1ae:*/ jmp @unknown_80_b128
-@unknown_80_b1b1: phx
-/*unknown_80_b1b2:*/ ldx var_decompress_input_address
-/*unknown_80_b1b4:*/ lda $0000.w, X
-/*unknown_80_b1b7:*/ inx
-/*unknown_80_b1b8:*/ bne @unknown_80_b1bd
-/*unknown_80_b1ba:*/ jsr unknown_80_b266
-@unknown_80_b1bd: stx var_decompress_input_address
-/*unknown_80_b1bf:*/ plx
-/*unknown_80_b1c0:*/ sta var_unknown_4a
-/*unknown_80_b1c2:*/ phx
-/*unknown_80_b1c3:*/ ldx var_decompress_input_address
-/*unknown_80_b1c5:*/ lda $0000.w, X
-/*unknown_80_b1c8:*/ inx
-/*unknown_80_b1c9:*/ bne @unknown_80_b1ce
-/*unknown_80_b1cb:*/ jsr unknown_80_b266
-@unknown_80_b1ce: stx var_decompress_input_address
-/*unknown_80_b1d0:*/ plx
-/*unknown_80_b1d1:*/ sta var_unknown_4b
-@unknown_80_b1d3: lda var_unknown_4a
-/*unknown_80_b1d5:*/ sta [var_decompress_output_address], Y
-/*unknown_80_b1d7:*/ iny
-/*unknown_80_b1d8:*/ dex
-/*unknown_80_b1d9:*/ beq @unknown_80_b1e3
-/*unknown_80_b1db:*/ lda var_unknown_4b
-/*unknown_80_b1dd:*/ sta [var_decompress_output_address], Y
-/*unknown_80_b1df:*/ iny
-/*unknown_80_b1e0:*/ dex
-/*unknown_80_b1e1:*/ bne @unknown_80_b1d3
-@unknown_80_b1e3: jmp @unknown_80_b128
-@unknown_80_b1e6: phx
-/*unknown_80_b1e7:*/ ldx var_decompress_input_address
-/*unknown_80_b1e9:*/ lda $0000.w, X
-/*unknown_80_b1ec:*/ inx
-/*unknown_80_b1ed:*/ bne @unknown_80_b1f2
-/*unknown_80_b1ef:*/ jsr unknown_80_b266
-@unknown_80_b1f2: stx var_decompress_input_address
-/*unknown_80_b1f4:*/ plx
-@unknown_80_b1f5: sta [var_decompress_output_address], Y
-/*unknown_80_b1f7:*/ inc A
-/*unknown_80_b1f8:*/ iny
-/*unknown_80_b1f9:*/ dex
-/*unknown_80_b1fa:*/ bne @unknown_80_b1f5
-/*unknown_80_b1fc:*/ jmp @unknown_80_b128
-@unknown_80_b1ff: cmp #$c0
-/*unknown_80_b201:*/ bcs @unknown_80_b245
-/*unknown_80_b203:*/ and #$20
-/*unknown_80_b205:*/ sta var_unknown_4f
-/*unknown_80_b207:*/ phx
-/*unknown_80_b208:*/ ldx var_decompress_input_address
-/*unknown_80_b20a:*/ lda $0000.w, X
-/*unknown_80_b20d:*/ inx
-/*unknown_80_b20e:*/ bne @unknown_80_b213
-/*unknown_80_b210:*/ jsr unknown_80_b266
-@unknown_80_b213: stx var_decompress_input_address
-/*unknown_80_b215:*/ plx
-/*unknown_80_b216:*/ sta var_unknown_4a
-/*unknown_80_b218:*/ phx
-/*unknown_80_b219:*/ ldx var_decompress_input_address
-/*unknown_80_b21b:*/ lda $0000.w, X
-/*unknown_80_b21e:*/ inx
-/*unknown_80_b21f:*/ bne @unknown_80_b224
-/*unknown_80_b221:*/ jsr unknown_80_b266
-@unknown_80_b224: stx var_decompress_input_address
-/*unknown_80_b226:*/ plx
-/*unknown_80_b227:*/ sta var_unknown_4b
-@unknown_80_b229: sep #$20
-@unknown_80_b22b: phx
-/*unknown_80_b22c:*/ phy
-/*unknown_80_b22d:*/ ldy var_unknown_4a
-/*unknown_80_b22f:*/ lda [var_decompress_output_address], Y
-/*unknown_80_b231:*/ iny
-/*unknown_80_b232:*/ sty var_unknown_4a
-/*unknown_80_b234:*/ ply
-/*unknown_80_b235:*/ ldx var_unknown_4f
-/*unknown_80_b237:*/ beq @unknown_80_b23b
-/*unknown_80_b239:*/ eor #$ff
-@unknown_80_b23b: sta [var_decompress_output_address], Y
-/*unknown_80_b23d:*/ iny
-/*unknown_80_b23e:*/ plx
-/*unknown_80_b23f:*/ dex
-/*unknown_80_b240:*/ bne @unknown_80_b22b
-/*unknown_80_b242:*/ jmp @unknown_80_b128
-@unknown_80_b245: and #$20
-/*unknown_80_b247:*/ sta var_unknown_4f
-/*unknown_80_b249:*/ phx
-/*unknown_80_b24a:*/ ldx var_decompress_input_address
-/*unknown_80_b24c:*/ lda $0000.w, X
-/*unknown_80_b24f:*/ inx
-/*unknown_80_b250:*/ bne @unknown_80_b255
-/*unknown_80_b252:*/ jsr unknown_80_b266
-@unknown_80_b255: stx var_decompress_input_address
-/*unknown_80_b257:*/ plx
-/*unknown_80_b258:*/ sta var_unknown_4a
-/*unknown_80_b25a:*/ stz var_unknown_4b
-/*unknown_80_b25c:*/ rep #$20
-/*unknown_80_b25e:*/ tya
-/*unknown_80_b25f:*/ sec
-/*unknown_80_b260:*/ sbc var_unknown_4a
-/*unknown_80_b262:*/ sta var_unknown_4a
-/*unknown_80_b264:*/ bra @unknown_80_b229
 unknown_80_b266: ldx #$8000.w
 /*unknown_80_b269:*/ pha
 /*unknown_80_b26a:*/ phb
