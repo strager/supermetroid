@@ -5950,6 +5950,7 @@ unknown_a0_b3c3: brk $ff
 /*unknown_a0_b440:*/ .db $ff, $fa, $ff
 
 .define sine_table@count $100
+.export sine_table@count
 sine_table:
   .dwsin 0, sine_table@count - 1, 360 / sine_table@count, $0100, 0
 .define sine_table@size sine_table@count * 2

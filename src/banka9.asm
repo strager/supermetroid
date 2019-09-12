@@ -7633,7 +7633,7 @@ unknown_a9_c460:
   tay
   lda var_unknown_12
   clc
-  adc #sine_table@size / 8
+  adc #sine_table@count / 4
 @unknown_a9_c46c:
   phx
   asl A
