@@ -5949,13 +5949,13 @@ unknown_a0_b3c3: brk $ff
 /*unknown_a0_b43c:*/ sbc $f4ffee, X
 /*unknown_a0_b440:*/ .db $ff, $fa, $ff
 
-.define unknown_a0_b443@count $100
-unknown_a0_b443:
-  .dwsin 0, unknown_a0_b443@count - 1, 360 / unknown_a0_b443@count, $0100, 0
-.define unknown_a0_b443@size unknown_a0_b443@count * 2
-.export unknown_a0_b443@size
-.define unknown_a0_b443@mask unknown_a0_b443@size - 2
-.export unknown_a0_b443@mask
+.define sine_table@count $100
+sine_table:
+  .dwsin 0, sine_table@count - 1, 360 / sine_table@count, $0100, 0
+.define sine_table@size sine_table@count * 2
+.export sine_table@size
+.define sine_table@mask sine_table@size - 2
+.export sine_table@mask
 
 /*unknown_a0_b643:*/ .db $8b, $da, $f4
 /*unknown_a0_b646:*/ brk $a0

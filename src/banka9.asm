@@ -7633,13 +7633,13 @@ unknown_a9_c460:
   tay
   lda var_unknown_12
   clc
-  adc #unknown_a0_b443@size / 8
+  adc #sine_table@size / 8
 @unknown_a9_c46c:
   phx
   asl A
-  and #unknown_a0_b443@mask
+  and #sine_table@mask
   tax
-  lda unknown_a0_b443.l, X
+  lda sine_table.l, X
   sep #$20
   sta IO_M7A.l
   xba
