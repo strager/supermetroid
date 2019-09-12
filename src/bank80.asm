@@ -5927,25 +5927,25 @@ unknown_80_b0ff:
   ; instruction (i.e. the return address).
   ; On procedure entry, [SS] = RA
   lda $02, S ; Address: SS + 2, pointing to the bank of RA.
-/*unknown_80_b101:*/ sta $45
+/*unknown_80_b101:*/ sta0 var_decompress_output_address_temp + 1
 /*unknown_80_b103:*/ lda $01, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
-/*unknown_80_b105:*/ sta $44
+/*unknown_80_b105:*/ sta0 var_decompress_output_address_temp
 /*unknown_80_b107:*/ clc
 /*unknown_80_b108:*/ adc #unknown_80_b0ff@parameters@size
 /*unknown_80_b10b:*/ sta $01, S ; Return to the instruction after @parameters.
 /*unknown_80_b10d:*/ ldy #$0001.w
-/*unknown_80_b110:*/ lda [$44], Y
-/*unknown_80_b112:*/ sta var_decompress_output_address
+/*unknown_80_b110:*/ lda [var_decompress_output_address_temp], Y ; Address: RA + 1
+/*unknown_80_b112:*/ sta0 var_decompress_output_address
 /*unknown_80_b114:*/ iny
-/*unknown_80_b115:*/ lda [$44], Y
-/*unknown_80_b117:*/ sta $4d
+/*unknown_80_b115:*/ lda [var_decompress_output_address_temp], Y ; Address: RA + 2
+/*unknown_80_b117:*/ sta0 var_decompress_output_address + 1
 ; TODO: "Decompression routine. Target address in $4C (3 bytes), source address
 ; in $47 (3 bytes)." -- Kejardon
 @unknown_80_b119: php
 /*unknown_80_b11a:*/ phb
 /*unknown_80_b11b:*/ sep #$20
 /*unknown_80_b11d:*/ rep #$10
-/*unknown_80_b11f:*/ lda $49
+/*unknown_80_b11f:*/ lda0 var_decompress_input_address + 2
 /*unknown_80_b121:*/ pha
 /*unknown_80_b122:*/ plb
 /*unknown_80_b123:*/ stz $50
