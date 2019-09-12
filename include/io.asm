@@ -262,6 +262,8 @@
 
 ; CPU: unsigned division remainder and multiply product (16 bits)
 .define IO_RDMPY $4216.w
+.define IO_RDMPYL IO_RDMPY + 0
+.define IO_RDMPYH IO_RDMPY + 1
 
 ; CPU: Joypad 1 (16 bits)
 .define IO_JOY1 $4218.w
