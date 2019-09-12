@@ -5949,40 +5949,10 @@ unknown_a0_b3c3: brk $ff
 /*unknown_a0_b43c:*/ sbc $f4ffee, X
 /*unknown_a0_b440:*/ .db $ff, $fa, $ff
 
+.define unknown_a0_b443@count $100
 unknown_a0_b443:
-  .dw $0000, $0006, $000c, $0012, $0019, $001f, $0025, $002b
-  .dw $0031, $0038, $003e, $0044, $004a, $0050, $0056, $005c
-  .dw $0061, $0067, $006d, $0073, $0078, $007e, $0083, $0088
-  .dw $008e, $0093, $0098, $009d, $00a2, $00a7, $00ab, $00b0
-  .dw $00b5, $00b9, $00bd, $00c1, $00c5, $00c9, $00cd, $00d1
-  .dw $00d4, $00d8, $00db, $00de, $00e1, $00e4, $00e7, $00ea
-  .dw $00ec, $00ee, $00f1, $00f3, $00f4, $00f6, $00f8, $00f9
-  .dw $00fb, $00fc, $00fd, $00fe, $00fe, $00ff, $00ff, $00ff
-  .dw $0100, $00ff, $00ff, $00ff, $00fe, $00fe, $00fd, $00fc
-  .dw $00fb, $00f9, $00f8, $00f6, $00f4, $00f3, $00f1, $00ee
-  .dw $00ec, $00ea, $00e7, $00e4, $00e1, $00de, $00db, $00d8
-  .dw $00d4, $00d1, $00cd, $00c9, $00c5, $00c1, $00bd, $00b9
-  .dw $00b5, $00b0, $00ab, $00a7, $00a2, $009d, $0098, $0093
-  .dw $008e, $0088, $0083, $007e, $0078, $0073, $006d, $0067
-  .dw $0061, $005c, $0056, $0050, $004a, $0044, $003e, $0038
-  .dw $0031, $002b, $0025, $001f, $0019, $0012, $000c, $0006
-  .dw $0000, $fffa, $fff4, $ffee, $ffe7, $ffe1, $ffdb, $ffd5
-  .dw $ffcf, $ffc8, $ffc2, $ffbc, $ffb6, $ffb0, $ffaa, $ffa4
-  .dw $ff9f, $ff99, $ff93, $ff8d, $ff88, $ff82, $ff7d, $ff78
-  .dw $ff72, $ff6d, $ff68, $ff63, $ff5e, $ff59, $ff55, $ff50
-  .dw $ff4b, $ff47, $ff43, $ff3f, $ff3b, $ff37, $ff33, $ff2f
-  .dw $ff2c, $ff28, $ff25, $ff22, $ff1f, $ff1c, $ff19, $ff16
-  .dw $ff14, $ff12, $ff0f, $ff0d, $ff0c, $ff0a, $ff08, $ff07
-  .dw $ff05, $ff04, $ff03, $ff02, $ff02, $ff01, $ff01, $ff01
-  .dw $ff00, $ff01, $ff01, $ff01, $ff02, $ff02, $ff03, $ff04
-  .dw $ff05, $ff07, $ff08, $ff0a, $ff0c, $ff0d, $ff0f, $ff12
-  .dw $ff14, $ff16, $ff19, $ff1c, $ff1f, $ff22, $ff25, $ff28
-  .dw $ff2c, $ff2f, $ff33, $ff37, $ff3b, $ff3f, $ff43, $ff47
-  .dw $ff4b, $ff50, $ff55, $ff59, $ff5e, $ff63, $ff68, $ff6d
-  .dw $ff72, $ff78, $ff7d, $ff82, $ff88, $ff8d, $ff93, $ff99
-  .dw $ff9f, $ffa4, $ffaa, $ffb0, $ffb6, $ffbc, $ffc2, $ffc8
-  .dw $ffcf, $ffd5, $ffdb, $ffe1, $ffe7, $ffee, $fff4, $fffa
-.define unknown_a0_b443@size $200
+  .dwsin 0, unknown_a0_b443@count - 1, 360 / unknown_a0_b443@count, $0100, 0
+.define unknown_a0_b443@size unknown_a0_b443@count * 2
 .export unknown_a0_b443@size
 .define unknown_a0_b443@mask unknown_a0_b443@size - 2
 .export unknown_a0_b443@mask
