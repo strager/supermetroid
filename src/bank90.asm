@@ -9093,7 +9093,7 @@ unknown_90_c663: php
 /*unknown_90_cc89:*/ rts
 
 unknown_90_cc8a: sep #$20
-/*unknown_90_cc8c:*/ lda $a0b443, X
+/*unknown_90_cc8c:*/ lda sine_table.l, X
 /*unknown_90_cc90:*/ sta $4202.w
 /*unknown_90_cc93:*/ lda $18
 /*unknown_90_cc95:*/ sta $4203.w

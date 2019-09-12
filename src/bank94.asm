@@ -5334,7 +5334,7 @@ unknown_94_a569: rep #$20
 unknown_94_a957: ldx $0d82.w
 /*unknown_94_a95a:*/ lda $0cf4.w
 /*unknown_94_a95d:*/ bmi @unknown_94_a999
-/*unknown_94_a95f:*/ lda $a0b443, X
+/*unknown_94_a95f:*/ lda sine_table.l, X
 /*unknown_94_a963:*/ bmi @unknown_94_a970
 /*unknown_94_a965:*/ lda $0d08.w
 /*unknown_94_a968:*/ and #$fff0.w
@@ -5358,7 +5358,7 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_a99b:*/ lda $0d84.w
 /*unknown_94_a99e:*/ sta $4202.w
 /*unknown_94_a9a1:*/ rep #$20
-/*unknown_94_a9a3:*/ lda $a0b443, X
+/*unknown_94_a9a3:*/ lda sine_table.l, X
 /*unknown_94_a9a7:*/ bmi @unknown_94_a9cd
 /*unknown_94_a9a9:*/ cmp #$0100.w
 /*unknown_94_a9ac:*/ bne @unknown_94_a9b7
@@ -6061,7 +6061,7 @@ unknown_94_abe6: lda #$0006.w
 /*unknown_94_af47:*/ lda $07a5.w
 /*unknown_94_af4a:*/ sta $4203.w
 /*unknown_94_af4d:*/ rep #$21
-/*unknown_94_af4f:*/ lda $a0b443, X
+/*unknown_94_af4f:*/ lda sine_table.l, X
 /*unknown_94_af53:*/ adc $0d94.w
 /*unknown_94_af56:*/ sta $0d94.w
 /*unknown_94_af59:*/ and #$ff00.w
@@ -6128,7 +6128,7 @@ unknown_94_abe6: lda #$0006.w
 /*unknown_94_afd4:*/ tax
 /*unknown_94_afd5:*/ stz $1a
 /*unknown_94_afd7:*/ stz $1c
-/*unknown_94_afd9:*/ lda $a0b443, X
+/*unknown_94_afd9:*/ lda sine_table.l, X
 /*unknown_94_afdd:*/ asl A
 /*unknown_94_afde:*/ asl A
 /*unknown_94_afdf:*/ asl A

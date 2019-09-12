@@ -4990,7 +4990,7 @@
 @unknown_a6_ac30: asl A
 /*unknown_a6_ac31:*/ and #$01fe.w
 /*unknown_a6_ac34:*/ tax
-/*unknown_a6_ac35:*/ lda $a0b443, X
+/*unknown_a6_ac35:*/ lda sine_table.l, X
 /*unknown_a6_ac39:*/ beq @unknown_a6_ac57
 /*unknown_a6_ac3b:*/ sta $16
 /*unknown_a6_ac3d:*/ bpl @unknown_a6_ac43

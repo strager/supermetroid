@@ -393,7 +393,7 @@ unknown_86_8125: jsr ($1a03.w, X)
 /*unknown_86_82bd:*/ ldy $1991.w
 /*unknown_86_82c0:*/ sta $1aff.w, Y
 /*unknown_86_82c3:*/ tax
-/*unknown_86_82c4:*/ lda $a0b443, X
+/*unknown_86_82c4:*/ lda sine_table.l, X
 /*unknown_86_82c8:*/ sta $1ab7.w, Y
 /*unknown_86_82cb:*/ lda $a0b3c3, X
 /*unknown_86_82cf:*/ sta $1adb.w, Y
@@ -2131,7 +2131,7 @@ unknown_86_8d5c: phy
 /*unknown_86_9092:*/ asl A
 /*unknown_86_9093:*/ tax
 /*unknown_86_9094:*/ clc
-/*unknown_86_9095:*/ lda $a0b443, X
+/*unknown_86_9095:*/ lda sine_table.l, X
 /*unknown_86_9099:*/ sta $12
 /*unknown_86_909b:*/ asl A
 /*unknown_86_909c:*/ asl A
@@ -3431,7 +3431,7 @@ unknown_86_9ba2: php
 /*unknown_86_9bf2:*/ rts
 
 unknown_86_9bf3: sep #$20
-/*unknown_86_9bf5:*/ lda $a0b443, X
+/*unknown_86_9bf5:*/ lda sine_table.l, X
 /*unknown_86_9bf9:*/ sta $4202.w
 /*unknown_86_9bfc:*/ lda $18
 /*unknown_86_9bfe:*/ sta $4203.w
@@ -4596,7 +4596,7 @@ unknown_86_9bf3: sep #$20
 /*unknown_86_a61d:*/ adc $12
 /*unknown_86_a61f:*/ asl A
 @unknown_86_a620: tax
-/*unknown_86_a621:*/ lda $a0b443, X
+/*unknown_86_a621:*/ lda sine_table.l, X
 /*unknown_86_a625:*/ sta $1ab7.w, Y
 /*unknown_86_a628:*/ lda $a0b3c3, X
 /*unknown_86_a62c:*/ sta $1adb.w, Y
@@ -5325,7 +5325,7 @@ unknown_86_abae: lda $0000.w, X
 /*unknown_86_ac34:*/ adc $12
 /*unknown_86_ac36:*/ asl A
 /*unknown_86_ac37:*/ tax
-/*unknown_86_ac38:*/ lda $a0b443, X
+/*unknown_86_ac38:*/ lda sine_table.l, X
 /*unknown_86_ac3c:*/ asl A
 /*unknown_86_ac3d:*/ sta $1ab7.w, Y
 /*unknown_86_ac40:*/ lda $a0b3c3, X
@@ -6059,7 +6059,7 @@ unknown_86_abae: lda $0000.w, X
 /*unknown_86_b27b:*/ txy
 /*unknown_86_b27c:*/ asl A
 /*unknown_86_b27d:*/ tax
-/*unknown_86_b27e:*/ lda $a0b443, X
+/*unknown_86_b27e:*/ lda sine_table.l, X
 /*unknown_86_b282:*/ asl A
 /*unknown_86_b283:*/ asl A
 /*unknown_86_b284:*/ sta $1ab7.w, Y
@@ -6167,7 +6167,7 @@ unknown_86_abae: lda $0000.w, X
 /*unknown_86_b35c:*/ clc
 /*unknown_86_b35d:*/ adc #$80
 /*unknown_86_b35f:*/ brk $aa
-/*unknown_86_b361:*/ lda $a0b443, X
+/*unknown_86_b361:*/ lda sine_table.l, X
 /*unknown_86_b365:*/ asl A
 /*unknown_86_b366:*/ asl A
 /*unknown_86_b367:*/ asl A
@@ -6594,7 +6594,7 @@ unknown_86_abae: lda $0000.w, X
 /*unknown_86_b6c3:*/ txy
 /*unknown_86_b6c4:*/ lda $1aff.w, X
 /*unknown_86_b6c7:*/ tax
-/*unknown_86_b6c8:*/ lda $a0b443, X
+/*unknown_86_b6c8:*/ lda sine_table.l, X
 /*unknown_86_b6cc:*/ lsr A
 /*unknown_86_b6cd:*/ lsr A
 /*unknown_86_b6ce:*/ lsr A
@@ -7488,7 +7488,7 @@ unknown_86_bd2a: lda $1a4b.w, X
 /*unknown_86_bdb4:*/ and #$ff
 /*unknown_86_bdb6:*/ brk $0a
 /*unknown_86_bdb8:*/ tax
-/*unknown_86_bdb9:*/ lda $a0b443, X
+/*unknown_86_bdb9:*/ lda sine_table.l, X
 /*unknown_86_bdbd:*/ sta $1ab7.w, Y
 /*unknown_86_bdc0:*/ lda $a0b3c3, X
 /*unknown_86_bdc4:*/ sta $1adb.w, Y
@@ -9431,7 +9431,7 @@ unknown_86_c5c2: clc
 /*unknown_86_cdca:*/ and #$01fe.w
 /*unknown_86_cdcd:*/ sta $1aff.w, Y
 /*unknown_86_cdd0:*/ tax
-/*unknown_86_cdd1:*/ lda $a0b443, X
+/*unknown_86_cdd1:*/ lda sine_table.l, X
 /*unknown_86_cdd5:*/ sta $1ab7.w, Y
 /*unknown_86_cdd8:*/ lda $a0b3c3, X
 /*unknown_86_cddc:*/ asl A
@@ -10672,7 +10672,7 @@ unknown_86_d1e4: phx
 /*unknown_86_d847:*/ stz $12
 /*unknown_86_d849:*/ stz $14
 /*unknown_86_d84b:*/ clc
-/*unknown_86_d84c:*/ lda $a0b443, X
+/*unknown_86_d84c:*/ lda sine_table.l, X
 /*unknown_86_d850:*/ and #$fffe.w
 /*unknown_86_d853:*/ bpl @unknown_86_d85b
 /*unknown_86_d855:*/ dec $14
@@ -10716,7 +10716,7 @@ unknown_86_d1e4: phx
 /*unknown_86_d8a9:*/ stz $12
 /*unknown_86_d8ab:*/ stz $14
 /*unknown_86_d8ad:*/ clc
-/*unknown_86_d8ae:*/ lda $a0b443, X
+/*unknown_86_d8ae:*/ lda sine_table.l, X
 /*unknown_86_d8b2:*/ and #$fffe.w
 /*unknown_86_d8b5:*/ bpl @unknown_86_d8bd
 /*unknown_86_d8b7:*/ dec $14

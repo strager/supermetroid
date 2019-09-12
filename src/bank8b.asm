@@ -583,7 +583,7 @@ unknown_8b_8532: php
 /*unknown_8b_853c:*/ and #$00ff.w
 /*unknown_8b_853f:*/ asl A
 /*unknown_8b_8540:*/ tax
-/*unknown_8b_8541:*/ lda $a0b443, X
+/*unknown_8b_8541:*/ lda sine_table.l, X
 /*unknown_8b_8545:*/ sta $26
 /*unknown_8b_8547:*/ lda $198f.w
 /*unknown_8b_854a:*/ sta $28
@@ -599,7 +599,7 @@ unknown_8b_8532: php
 /*unknown_8b_855f:*/ and #$00ff.w
 /*unknown_8b_8562:*/ asl A
 /*unknown_8b_8563:*/ tax
-/*unknown_8b_8564:*/ lda $a0b443, X
+/*unknown_8b_8564:*/ lda sine_table.l, X
 /*unknown_8b_8568:*/ sta $26
 /*unknown_8b_856a:*/ lda $198f.w
 /*unknown_8b_856d:*/ sta $28
@@ -1780,7 +1780,7 @@ unknown_8b_8e2d: lda $1a57.w
 /*unknown_8b_8ea2:*/ rts
 
 unknown_8b_8ea3: sep #$20
-/*unknown_8b_8ea5:*/ lda $a0b443, X
+/*unknown_8b_8ea5:*/ lda sine_table.l, X
 /*unknown_8b_8ea9:*/ sta $4202.w
 /*unknown_8b_8eac:*/ lda $18
 /*unknown_8b_8eae:*/ sta $4203.w

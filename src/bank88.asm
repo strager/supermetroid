@@ -11142,7 +11142,7 @@ unknown_88_e2f9: sep #$20
 /*unknown_88_e5c0:*/ ldx #$0000.w
 @unknown_88_e5c3: phx
 /*unknown_88_e5c4:*/ ldx $14
-/*unknown_88_e5c6:*/ lda $a0b443, X
+/*unknown_88_e5c6:*/ lda sine_table.l, X
 /*unknown_88_e5ca:*/ bpl @unknown_88_e5cf
 /*unknown_88_e5cc:*/ jmp @unknown_88_e656
 @unknown_88_e5cf: sta $12
@@ -11994,7 +11994,7 @@ unknown_88_e987: php
 /*unknown_88_ecf3:*/ ldx #$0000.w
 @unknown_88_ecf6: phx
 /*unknown_88_ecf7:*/ ldx $14
-/*unknown_88_ecf9:*/ lda $a0b443, X
+/*unknown_88_ecf9:*/ lda sine_table.l, X
 /*unknown_88_ecfd:*/ bpl @unknown_88_ed02
 /*unknown_88_ecff:*/ jmp @unknown_88_ed89
 @unknown_88_ed02: sta $12

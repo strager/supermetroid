@@ -10902,7 +10902,7 @@
 /*unknown_aa_d95d:*/ tax
 /*unknown_aa_d95e:*/ stz $12
 /*unknown_aa_d960:*/ stz $14
-/*unknown_aa_d962:*/ lda $a0b443, X
+/*unknown_aa_d962:*/ lda sine_table.l, X
 /*unknown_aa_d966:*/ bpl @unknown_aa_d96a
 /*unknown_aa_d968:*/ dec $14
 @unknown_aa_d96a: sta $13

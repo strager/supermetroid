@@ -9052,7 +9052,7 @@
 /*unknown_9b_ca77:*/ and #$00ff.w
 /*unknown_9b_ca7a:*/ asl A
 /*unknown_9b_ca7b:*/ tax
-/*unknown_9b_ca7c:*/ lda $a0b443, X
+/*unknown_9b_ca7c:*/ lda sine_table.l, X
 /*unknown_9b_ca80:*/ bmi @unknown_9b_ca9c
 /*unknown_9b_ca82:*/ phy
 /*unknown_9b_ca83:*/ jsr $8082d6
@@ -9098,7 +9098,7 @@
 /*unknown_9b_cade:*/ and #$00ff.w
 /*unknown_9b_cae1:*/ asl A
 /*unknown_9b_cae2:*/ tax
-/*unknown_9b_cae3:*/ lda $a0b443, X
+/*unknown_9b_cae3:*/ lda sine_table.l, X
 /*unknown_9b_cae7:*/ bpl @unknown_9b_caed
 /*unknown_9b_cae9:*/ eor #$ffff.w
 /*unknown_9b_caec:*/ inc A
@@ -9116,7 +9116,7 @@
 /*unknown_9b_cb04:*/ and #$00ff.w
 /*unknown_9b_cb07:*/ asl A
 /*unknown_9b_cb08:*/ tax
-/*unknown_9b_cb09:*/ lda $a0b443, X
+/*unknown_9b_cb09:*/ lda sine_table.l, X
 /*unknown_9b_cb0d:*/ bpl @unknown_9b_cb2d
 /*unknown_9b_cb0f:*/ eor #$ffff.w
 /*unknown_9b_cb12:*/ inc A
@@ -9162,7 +9162,7 @@
 /*unknown_9b_cb6b:*/ and #$00ff.w
 /*unknown_9b_cb6e:*/ asl A
 /*unknown_9b_cb6f:*/ tax
-/*unknown_9b_cb70:*/ lda $a0b443, X
+/*unknown_9b_cb70:*/ lda sine_table.l, X
 /*unknown_9b_cb74:*/ bpl @unknown_9b_cb7a
 /*unknown_9b_cb76:*/ eor #$ffff.w
 /*unknown_9b_cb79:*/ inc A

@@ -5886,7 +5886,7 @@ unknown_80_af89: ldx $0925.w
 /*unknown_80_b0d5:*/ and #$00ff.w
 /*unknown_80_b0d8:*/ asl A
 /*unknown_80_b0d9:*/ tax
-/*unknown_80_b0da:*/ lda $a0b443, X
+/*unknown_80_b0da:*/ lda sine_table.l, X
 /*unknown_80_b0de:*/ sta $7a
 /*unknown_80_b0e0:*/ eor #$ffff.w
 /*unknown_80_b0e3:*/ inc A
@@ -5897,7 +5897,7 @@ unknown_80_af89: ldx $0925.w
 /*unknown_80_b0ed:*/ and #$00ff.w
 /*unknown_80_b0f0:*/ asl A
 /*unknown_80_b0f1:*/ tax
-/*unknown_80_b0f2:*/ lda $a0b443, X
+/*unknown_80_b0f2:*/ lda sine_table.l, X
 /*unknown_80_b0f6:*/ sta $78
 /*unknown_80_b0f8:*/ sta $7e
 /*unknown_80_b0fa:*/ inc $0785.w
