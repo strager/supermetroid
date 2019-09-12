@@ -51,7 +51,16 @@ var_unknown_0590: dw ; $7e0590
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05b4) export
-var_unknown_05b4: dw ; $7e05b4
+; If zero:
+; * The game engine is processing and hasn't prepared the next frame to be
+;   rendered.
+; * NMI will not update I/O.
+;
+; If non-zero:
+; * The game engine has prepared a frame to be rendered.
+; * NMI will update I/O.
+var_engine_frame_is_ready: dw ; $7e05b4
+
 var_unknown_05b6: dw ; $7e05b6
 .ende
 

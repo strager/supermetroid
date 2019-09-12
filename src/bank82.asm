@@ -1078,7 +1078,7 @@ main:
   jsl unknown_82_89ef
   jsl unknown_80_896e
   jsl unknown_82_8ab0
-  jsl unknown_80_8338
+  jsl render_and_synchronize
   plp
   bra @loop
 

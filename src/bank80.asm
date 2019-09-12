@@ -474,19 +474,22 @@ unknown_80_82b9:
 /*unknown_80_8336:*/ plx
 /*unknown_80_8337:*/ rtl
 
-; TODO: "Wait until an IRQ's STZ $05B4" -- Kejardon
-unknown_80_8338: php
-/*unknown_80_8339:*/ phb
-/*unknown_80_833a:*/ phk
-/*unknown_80_833b:*/ plb
-/*unknown_80_833c:*/ sep #$30
-/*unknown_80_833e:*/ lda #$01
-/*unknown_80_8340:*/ sta var_unknown_05b4.w
-@unknown_80_8343: lda var_unknown_05b4.w
-/*unknown_80_8346:*/ bne @unknown_80_8343
-/*unknown_80_8348:*/ plb
-/*unknown_80_8349:*/ plp
-/*unknown_80_834a:*/ rtl
+; On the next call to interrupt_nmi, update I/O. Wait for that next call to
+; finish.
+render_and_synchronize:
+  php
+  phb
+  phk
+  plb
+  sep #$30
+  lda #$01
+  sta var_engine_frame_is_ready.w
+@wait_for_frame_to_render:
+  lda var_engine_frame_is_ready.w
+  bne @wait_for_frame_to_render
+  plb
+  plp
+  rtl
 
 unknown_80_834b:
   php
@@ -2780,8 +2783,9 @@ interrupt_nmi:
   tcd
   sep #$10
   ldx $4210.w
-  ldx var_unknown_05b4.w
-  beq @unknown_80_9602
+  ldx var_engine_frame_is_ready.w
+  beq @frame_is_not_ready
+@frame_is_ready:
   jsr unknown_80_933a
   jsr unknown_80_9376
   jsr unknown_80_9416
@@ -2814,8 +2818,9 @@ interrupt_nmi:
   ldx $85
   stx $420c.w
   jsl unknown_80_9459
+  ; Signal to the game engine that we've finished rendering.
   ldx #$00
-  stx var_unknown_05b4.w
+  stx var_engine_frame_is_ready.w
   stx $05ba.w
   ldx $05b5.w
   inx
@@ -2830,7 +2835,7 @@ interrupt_nmi:
   pld
   plb
   rti
-@unknown_80_9602:
+@frame_is_not_ready:
   ldx $05ba.w
   inx
   stx $05ba.w
@@ -3028,8 +3033,8 @@ unknown_80_9616:
 @unknown_80_97b1: lda #$0010.w
 @unknown_80_97b4: ldy #$0000.w
 /*unknown_80_97b7:*/ ldx #$0098.w
-/*unknown_80_97ba:*/ stz var_unknown_05b4.w
-/*unknown_80_97bd:*/ inc var_unknown_05b4.w
+/*unknown_80_97ba:*/ stz var_engine_frame_is_ready.w
+/*unknown_80_97bd:*/ inc var_engine_frame_is_ready.w
 /*unknown_80_97c0:*/ rts
 
 /*unknown_80_97c1:*/ sep #$20
@@ -3073,8 +3078,8 @@ unknown_80_9616:
 @unknown_80_981a: lda #$0016.w
 @unknown_80_981d: ldy #$0000.w
 /*unknown_80_9820:*/ ldx #$0098.w
-/*unknown_80_9823:*/ stz var_unknown_05b4.w
-/*unknown_80_9826:*/ inc var_unknown_05b4.w
+/*unknown_80_9823:*/ stz var_engine_frame_is_ready.w
+/*unknown_80_9826:*/ inc var_engine_frame_is_ready.w
 /*unknown_80_9829:*/ rts
 
 /*unknown_80_982a:*/ php
