@@ -65,8 +65,12 @@ var_unknown_05b6: dw ; $7e05b6
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05e5) export
-var_unknown_05e5: db ; $7e05e5
-var_unknown_05e6: db ; $7e05e6
+.union
+var_random_state: dw ; $7e05e5
+.nextu
+var_random_state_l: db ; $7e05e5
+var_random_state_h: db ; $7e05e6
+.endu
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071d) export

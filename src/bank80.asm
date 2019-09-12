@@ -190,7 +190,9 @@ unknown_80_8107:
 
 rng_advance:
   sep #$20
-  lda var_unknown_05e5.w
+
+  ; tmp_1 := [var_random_state_l] * 5
+  lda var_random_state_l.w
   sta IO_WRMPYA
   lda #$05
   sta IO_WRMPYB
@@ -199,20 +201,27 @@ rng_advance:
   lda IO_RDMPY
   pha
   sep #$20
-  lda var_unknown_05e6.w
+
+  ; tmp_2 := [var_random_state_h] * 5
+  lda var_random_state_h.w
   sta IO_WRMPYA
   lda #$05
   sta IO_WRMPYB
-  xba
+  xba ; TODO(strager): What's the purpose of this?
   nop
-  lda IO_RDMPY
+  lda IO_RDMPY ; TODO(strager): Is this an 8-bit load?
+
+  ; tmp_3 := tmp_1 + tmp_2 + 1
   sec
   adc $02, S
   sta $02, S
+
+  ; [var_random_state] := tmp_3 + $11 + carry
   rep #$20
   pla
   adc #$0011.w
-  sta var_unknown_05e5.w
+  sta var_random_state.w
+
   rtl
 
 /*unknown_80_8146:*/ php
