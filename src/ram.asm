@@ -11,25 +11,19 @@ var_unknown_1a: dw ; $7e001a
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $26) export
 .union
-var_unknown_26: dw ; $7e0026
+var_multiply_16_input_1: dw ; $7e0026
 .nextu
-var_unknown_26_l: db ; $7e0026
-var_unknown_26_h: db ; $7e0026
+var_multiply_16_input_1_l: db ; $7e0026
+var_multiply_16_input_1_h: db ; $7e0026
 .endu
 .union
-var_unknown_28: dw ; $7e0028
+var_multiply_16_input_2: dw ; $7e0028
 .nextu
-var_unknown_28_l: db ; $7e0028
-var_unknown_28_h: db ; $7e0029
+var_multiply_16_input_2_l: db ; $7e0028
+var_multiply_16_input_2_h: db ; $7e0029
 .endu
-var_unknown_2a: db ; $7e002a
-.union
-var_unknown_2b: dw ; $7e002b
-.nextu
-var_unknown_2b_l: db ; $7e002b
-var_unknown_2b_h: db ; $7e002c
-.endu
-var_unknown_2d: db ; $7e002d
+var_multiply_16_output: ds 4 ; $7e002a
+
 var_unknown_2e: dw ; $7e002e
 .ende
 

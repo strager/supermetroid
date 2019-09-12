@@ -1,3 +1,4 @@
+.include "include/asm.asm"
 .include "include/common.asm"
 .include "include/io.asm"
 
@@ -8075,12 +8076,12 @@ unknown_86_c239: jsr unknown_86_c3e9
 
 ; TODO: "Calculates A * sin ($12 * 360/256), result in A." -- Kejardon
 unknown_86_c26c:
-  sta var_unknown_26
+  sta var_multiply_16_input_1
   lda var_unknown_12
   bra @unknown_86_c27a
 ; TODO: "Calculates A * cos ($12 * 360/256), result in A." -- Kejardon
 @unknown_86_c272:
-  sta var_unknown_26
+  sta var_multiply_16_input_1
   lda var_unknown_12
   clc
   adc #sine_table@count / 4
@@ -8094,9 +8095,9 @@ unknown_86_c26c:
   eor #$ffff.w
   inc A
 @unknown_86_c28b:
-  sta var_unknown_28
-  jsr unknown_86_c29b
-  lda var_unknown_2b
+  sta var_multiply_16_input_2
+  jsr multiply_16
+  lda0 var_multiply_16_output + 1
   bit var_unknown_2e
   bpl @unknown_86_c29a
   eor #$ffff.w
@@ -8104,51 +8105,88 @@ unknown_86_c26c:
 @unknown_86_c29a:
   rtl
 
-; TODO: "Multiply $26 (2 bytes) by $28 (2 bytes), result in $2A (4 bytes). When
-; leaving, A = $2B (2 bytes), Y = $2D." -- Kejardon
-unknown_86_c29b:
+; Multiply two 16-bit integers, calculating a 32-bit result.
+;
+; TODO: Is multiplication signed or unsigned?
+;
+; Inputs:
+; * [var_multiply_16_input_1]
+; * [var_multiply_16_input_2]
+;
+; Outputs:
+; * [var_multiply_16_output]: [var_multiply_16_input_1] * [var_multiply_16_input_2]
+; * A: (([var_multiply_16_input_1] * [var_multiply_16_input_2]) >> 8) & $ffff
+; * Y: [var_multiply_16_input_1] * [var_multiply_16_input_2]) >> 24
+multiply_16:
   rep #$20
   sep #$10
-  ldx var_unknown_26_l
+
+  ; result := i1_l * i2_l           ; @step_1
+  ;         + ((i1_h * i2_h) << 16) ; @step_2
+  ;         + ((i1_h * i2_l) << 8)  ; @step_3
+  ;         + ((i1_l * i2_h) << 8)  ; @step_4
+
+@step_1:
+  ; [var_multiply_16_output[0..15]] := [var_multiply_16_input_1_l] * [var_multiply_16_input_2_l]
+  ldx var_multiply_16_input_1_l
   stx IO_WRMPYA
-  ldx var_unknown_28_l
+  ldx var_multiply_16_input_2_l
   stx IO_WRMPYB
   xba
   nop
   lda IO_RDMPYL
-  sta var_unknown_2a
-  ldx var_unknown_26_h
+  sta var_multiply_16_output
+
+@step_2:
+  ; [var_multiply_16_output[16..23]] := ([var_multiply_16_input_1_h] * [var_multiply_16_input_2_h]) & $ff
+  ; Y := ([var_multiply_16_input_1_h] * [var_multiply_16_input_2_h]) >> 8
+  ldx var_multiply_16_input_1_h
   stx IO_WRMPYA
-  ldx var_unknown_28_h
+  ldx var_multiply_16_input_2_h
   stx IO_WRMPYB
   xba
   nop
   ldx IO_RDMPYL
-  stx var_unknown_2b_h
+  stx0 var_multiply_16_output + 2
   ldy IO_RDMPYH
-  ldx var_unknown_26_h
+
+@step_3:
+  ; [var_multiply_16_output[8..23]] := [var_multiply_16_output[8..23]]
+  ;   + ([var_multiply_16_input_1_h] * [var_multiply_16_input_2_l]) & $ff
+  ; NOTE: [var_multiply_16_output[8..23]] was modified in @step_1 and @step_2.
+  ldx var_multiply_16_input_1_h
   stx IO_WRMPYA
-  ldx var_unknown_28
+  ldx var_multiply_16_input_2_l
   stx IO_WRMPYB
-  lda var_unknown_2b
+  lda0 var_multiply_16_output + 1
   clc
   adc IO_RDMPY
-  sta var_unknown_2b
-  bcc @unknown_86_c2d9
+  sta0 var_multiply_16_output + 1
+
+  ; Carry into Y (the top 8 bits of the result).
+  bcc @no_carry_1
   iny
-@unknown_86_c2d9:
-  ldx var_unknown_26_l
+@no_carry_1:
+
+@step_4:
+  ; [var_multiply_16_output[8..23]] := [var_multiply_16_output[8..23]]
+  ;   + ([var_multiply_16_input_1_l] * [var_multiply_16_input_2_h]) & $ff
+  ; NOTE: [var_multiply_16_output[8..23]] was modified in @step_3.
+  ldx var_multiply_16_input_1_l
   stx IO_WRMPYA
-  ldx var_unknown_28_h
+  ldx var_multiply_16_input_2_h
   stx IO_WRMPYB
-  lda var_unknown_2b
+  lda0 var_multiply_16_output + 1
   clc
   adc IO_RDMPY
-  sta var_unknown_2b
-  bcc @unknown_86_c2ee
+  sta0 var_multiply_16_output + 1
+
+  ; Carry into Y (the top 8 bits of the result).
+  bcc @no_carry_2
   iny
-@unknown_86_c2ee:
-  sty var_unknown_2d
+@no_carry_2:
+
+  sty0 var_multiply_16_output + 3
   rep #$10
   rts
 
