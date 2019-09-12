@@ -7624,29 +7624,32 @@ unknown_a9_c447: sta $7e8002
 /*unknown_a9_c45f:*/ rtl
 
 ; TODO: "A = (sin($12) * A) / 256. X is preserved" -- Kejardon
-unknown_a9_c460: tay
-/*unknown_a9_c461:*/ lda var_unknown_12
-/*unknown_a9_c463:*/ bra @unknown_a9_c46c
+unknown_a9_c460:
+  tay
+  lda var_unknown_12
+  bra @unknown_a9_c46c
 ; TODO: "A = (cos($12) * A) / 256. X is preserved" -- Kejardon
-@unknown_a9_c465: tay
-/*unknown_a9_c466:*/ lda var_unknown_12
-/*unknown_a9_c468:*/ clc
-/*unknown_a9_c469:*/ adc #unknown_a0_b443@size / 8
-@unknown_a9_c46c: phx
-/*unknown_a9_c46d:*/ asl A
-/*unknown_a9_c46e:*/ and #unknown_a0_b443@mask
-/*unknown_a9_c471:*/ tax
-/*unknown_a9_c472:*/ lda unknown_a0_b443.l, X
-/*unknown_a9_c476:*/ sep #$20
-/*unknown_a9_c478:*/ sta IO_M7A.l
-/*unknown_a9_c47c:*/ xba
-/*unknown_a9_c47d:*/ sta IO_M7A.l
-/*unknown_a9_c481:*/ tya
-/*unknown_a9_c482:*/ sta IO_M7B.l
-/*unknown_a9_c486:*/ rep #$20
-/*unknown_a9_c488:*/ lda IO_MPYM.l
-/*unknown_a9_c48c:*/ plx
-/*unknown_a9_c48d:*/ rtl
+@unknown_a9_c465:
+  tay
+  lda var_unknown_12
+  clc
+  adc #unknown_a0_b443@size / 8
+@unknown_a9_c46c:
+  phx
+  asl A
+  and #unknown_a0_b443@mask
+  tax
+  lda unknown_a0_b443.l, X
+  sep #$20
+  sta IO_M7A.l
+  xba
+  sta IO_M7A.l
+  tya
+  sta IO_M7B.l
+  rep #$20
+  lda IO_MPYM.l
+  plx
+  rtl
 
 /*unknown_a9_c48e:*/ sep #$20
 /*unknown_a9_c490:*/ clc
