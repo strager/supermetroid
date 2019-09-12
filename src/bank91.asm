@@ -10930,7 +10930,11 @@ unknown_91_d0a6: asl A
 /*unknown_91_d6f5:*/ plp
 /*unknown_91_d6f6:*/ rtl
 
-/*unknown_91_d6f7:*/ php
+; TODO: "Almost always branches at start. JSR $D743, if CLC, JSR $D72D,X (X =
+; 2*0ACC). If that is CLC (or if D743 is SEC) then LDA $D724,X (X=$0A74) and JSR
+; $DD5B. JSR $D8A5 then return. Following options are for 0ACC's options."
+; -- Kejardon
+unknown_91_d6f7: php
 /*unknown_91_d6f8:*/ phb
 /*unknown_91_d6f9:*/ phk
 /*unknown_91_d6fa:*/ plb
@@ -10972,7 +10976,12 @@ unknown_91_d0a6: asl A
 /*unknown_91_d73b:*/ sta ($db, S), Y
 /*unknown_91_d73d:*/ ldy $dc, X
 /*unknown_91_d73f:*/ and $dd31d8, X
-/*unknown_91_d743:*/ lda $0b18.w
+
+; TODO: "Sets Samus's pallete depending on Charge beam release, grapple, or
+; charge amount/pseudo-screw attack. SEC if returning to normal pallete?(yellow
+; charge release ends, or hyper flash ends). If in certain rooms (an FX3
+; condition? 1982 = 28 or 2A), may cycle visor colors." -- Kejardon
+unknown_91_d743: lda $0b18.w
 /*unknown_91_d746:*/ bne @unknown_91_d794
 /*unknown_91_d748:*/ lda $0d32.w
 /*unknown_91_d74b:*/ cmp #$c4f0.w
@@ -11696,6 +11705,7 @@ unknown_91_dc82: phb
 /*unknown_91_dd59:*/ plp
 /*unknown_91_dd5a:*/ rtl
 
+; TODO: "Loads 9B:0000,X to 9B:001F,X into Samus's pallete" -- Kejardon
 unknown_91_dd5b: php
 /*unknown_91_dd5c:*/ rep #$30
 /*unknown_91_dd5e:*/ phb
@@ -11780,7 +11790,9 @@ unknown_91_ddd7: php
 /*unknown_91_de51:*/ plp
 /*unknown_91_de52:*/ rts
 
-/*unknown_91_de53:*/ php
+; TODO: "is cleanup for speed counter/blue suit/speedechoes because Samus was
+; stopped for some reason." -- Kejardon
+unknown_91_de53: php
 /*unknown_91_de54:*/ phb
 /*unknown_91_de55:*/ phk
 /*unknown_91_de56:*/ plb
@@ -11823,7 +11835,9 @@ unknown_91_ddd7: php
 /*unknown_91_deb8:*/ plp
 /*unknown_91_deb9:*/ rtl
 
-/*unknown_91_deba:*/ php
+; TODO: "Reset pallete with 91:DD5B depending on suit. Grav: X = 9800. Var: X =
+; 9520. Norm: X = 9400" -- Kejardon
+unknown_91_deba: php
 /*unknown_91_debb:*/ phb
 /*unknown_91_debc:*/ phk
 /*unknown_91_debd:*/ plb
@@ -11898,7 +11912,11 @@ unknown_91_ddd7: php
 /*unknown_91_df4f:*/ plp
 /*unknown_91_df50:*/ rtl
 
-/*unknown_91_df51:*/ php
+; TODO: "Deal damage (A) to Samus. Does NOT do any damage if damage = 300
+; (#$12C) or if time is paused by x-ray / reserve tanks, ignores suits. NOTE: If
+; damage is negative, game will stop (JML $808573) (change $91DF65 to 00 to skip
+; 300-damage check)" -- Kejardon
+unknown_91_df51: php
 /*unknown_91_df52:*/ phb
 /*unknown_91_df53:*/ phk
 /*unknown_91_df54:*/ plb
@@ -13150,6 +13168,9 @@ unknown_91_e719: lda $0a20.w
 /*unknown_91_eada:*/ sta $0a2e.w
 /*unknown_91_eadd:*/ rts
 
+; TODO: "Check to see if Samus walked/ran into something. If so, change to the
+; appropriate pose; 91:EB74,X, X = 2*(aiming direction). Also checks if Samus is
+; trying to walk/run into something." -- Kejardon
 unknown_91_eade: lda $0dce.w
 /*unknown_91_eae1:*/ beq @unknown_91_eaee
 /*unknown_91_eae3:*/ lda $0a1f.w
@@ -13377,7 +13398,9 @@ unknown_91_eade: lda $0dce.w
 
 /*unknown_91_ecd9:*/ rts
 
-/*unknown_91_ecda:*/ lda $0a1c.w
+; TODO: "Run during start of transitions. Corrects Samus's height so
+; crouching/morphing ends on ground instead of in the air." -- Kejardon
+unknown_91_ecda: lda $0a1c.w
 /*unknown_91_ecdd:*/ cmp #$00db.w
 /*unknown_91_ece0:*/ bpl @unknown_91_ed23
 /*unknown_91_ece2:*/ sec
@@ -14172,7 +14195,11 @@ unknown_91_f36e: stz $0b20.w
 /*unknown_91_f400:*/ jsr unknown_91_f36e
 /*unknown_91_f403:*/ rts
 
-/*unknown_91_f404:*/ php
+; TODO: "If 0A1C isn't new, CLC and RTL. If it is, JSR $FDAE (check pose size),
+; JSL 91:F433(check pose changes), JSL 91:FBBB(check movement type changes), JSL
+; 91:FB08(handle animation frame), STZ $0A9A. If 0A1C changed, SEC, else CLC."
+; -- Kejardon
+unknown_91_f404: php
 /*unknown_91_f405:*/ phb
 /*unknown_91_f406:*/ phk
 /*unknown_91_f407:*/ plb
@@ -14199,7 +14226,9 @@ unknown_91_f36e: stz $0b20.w
 /*unknown_91_f431:*/ sec
 /*unknown_91_f432:*/ rtl
 
-/*unknown_91_f433:*/ php
+; TODO: "Set $0A1E depending on $0A1C, JSR $F468, and if Samus was previously
+; screw attacking, JSL $91:DEBA to reset pallete." -- Kejardon
+unknown_91_f433: php
 /*unknown_91_f434:*/ phb
 /*unknown_91_f435:*/ phk
 /*unknown_91_f436:*/ plb
@@ -14226,6 +14255,9 @@ unknown_91_f36e: stz $0b20.w
 /*unknown_91_f466:*/ plp
 /*unknown_91_f467:*/ rtl
 
+; TODO: "First go to F4A2,X (X = 0A1F*2), then set 0A1E depending on 0A1C. If
+; it's E (turning on ground), refresh X and goto F4A2,X again, and refresh 0A1E
+; (TODO, check routines)" -- Kejardon
 unknown_91_f468: php
 /*unknown_91_f469:*/ rep #$30
 /*unknown_91_f46b:*/ lda $0a1f.w
@@ -15070,7 +15102,8 @@ unknown_91_f468: php
 /*unknown_91_fbb9:*/ plp
 /*unknown_91_fbba:*/ rtl
 
-/*unknown_91_fbbb:*/ php
+; TODO: "Goes to FBCF,X, X = 0A1F*2." -- Kejardon
+unknown_91_fbbb: php
 /*unknown_91_fbbc:*/ phb
 /*unknown_91_fbbd:*/ phk
 /*unknown_91_fbbe:*/ plb
@@ -15280,6 +15313,9 @@ unknown_91_f468: php
 @unknown_91_fdac: plp
 /*unknown_91_fdad:*/ rtl
 
+; TODO: "Nothing if 0A1C = 0 or 9B. If new vertical radius is bigger than old
+; radius, check for collisions and adjust Samus's height as appropriate. If
+; impossible to fit (both sides hit something), revert to oldstance" -- Kejardon
 unknown_91_fdae: php
 /*unknown_91_fdaf:*/ rep #$30
 /*unknown_91_fdb1:*/ lda $0a1c.w

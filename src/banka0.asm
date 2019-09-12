@@ -783,6 +783,9 @@ unknown_a0_8685:
   .db $ee
   .db $ff
 
+; TODO: "Handle room shaking. 183E contains shake type, looks up displacement in
+; table at A0:872D (2 byte values in pixels: BG1 X, BG1 Y, BG2 X, BG2 Y)"
+; -- Kejardon
 unknown_a0_8687: phb
 /*unknown_a0_8688:*/ pea $a000.w
 /*unknown_a0_868b:*/ plb
@@ -2272,7 +2275,9 @@ unknown_a0_9169: lda $18a8.w
 /*unknown_a0_941e:*/ plb
 /*unknown_a0_941f:*/ plb
 /*unknown_a0_9420:*/ jmp [$1784]
-/*unknown_a0_9423:*/ phx
+
+; TODO: "Draws enemies, 1 at a time" -- Kejardon
+unknown_a0_9423: phx
 /*unknown_a0_9424:*/ phy
 /*unknown_a0_9425:*/ ldx $0e54.w
 /*unknown_a0_9428:*/ lda $0f9a.w, X
@@ -2631,7 +2636,10 @@ unknown_a0_9726: lda $0e1e.w
 @unknown_a0_9754: stz $0e1e.w
 /*unknown_a0_9757:*/ rtl
 
-/*unknown_a0_9758:*/ php
+; TODO: "Interaction with Samus, depends on $0F88,X's 2 bit. If
+; set:(projectiles: JSR $9B7F, bombs: JSR $9D23, Samus: JSR $9A5A) Not
+; set:(projectiles: JSR $A143, bombs: JSR $A236, Samus: JSR $A07A)" -- Kejardon
+unknown_a0_9758: php
 /*unknown_a0_9759:*/ phb
 /*unknown_a0_975a:*/ pea $a000.w
 /*unknown_a0_975d:*/ plb
@@ -2972,7 +2980,11 @@ unknown_a0_996c: php
 /*unknown_a0_9a55:*/ jsr $809049
 /*unknown_a0_9a59:*/ rts
 
-/*unknown_a0_9a5a:*/ phb
+; TODO: "Check for collision with Samus. If they collide, JSL to that hitbox's
+; 0Ath byte (Samus collision code). This routine disables Samus's invincibility
+; if she is using blue suit or screw attack; if there are no enemies she'll get
+; invincibility time with them." -- Kejardon
+unknown_a0_9a5a: phb
 /*unknown_a0_9a5b:*/ ldx $0e54.w
 /*unknown_a0_9a5e:*/ lda $0fa6.w, X
 /*unknown_a0_9a61:*/ sta $1786.w
@@ -3095,7 +3107,10 @@ unknown_a0_996c: php
 @unknown_a0_9b7d: plb
 /*unknown_a0_9b7e:*/ rts
 
-/*unknown_a0_9b7f:*/ phb
+; TODO: "Check for collisions of all of the enemy's sprites/hitboxes in $0F8E
+; with all projectiles. If there's a collision, JSL $A09D17 then RTS."
+; -- Kejardon
+unknown_a0_9b7f: phb
 /*unknown_a0_9b80:*/ ldx $0e54.w
 /*unknown_a0_9b83:*/ lda $0fa6.w, X
 /*unknown_a0_9b86:*/ sta $1786.w
@@ -3264,7 +3279,10 @@ unknown_a0_996c: php
 @unknown_a0_9d15: plb
 /*unknown_a0_9d16:*/ rts
 
-/*unknown_a0_9d17:*/ ldx $1878.w
+; TODO: "Small routine, just JML to code for enemy/projectile detection. Address
+; used is at (($0F8E,X),(8*n1)),(C*n2). n1 = sprite number, n2 = hitbox number "
+; -- Kejardon
+unknown_a0_9d17: ldx $1878.w
 /*unknown_a0_9d1a:*/ lda $000a.w, X
 /*unknown_a0_9d1d:*/ sta $1784.w
 /*unknown_a0_9d20:*/ jmp [$1784]
@@ -3722,7 +3740,10 @@ unknown_a0_996c: php
 /*unknown_a0_a13a:*/ lda $0fa6.w, Y
 /*unknown_a0_a13d:*/ sta $1786.w
 /*unknown_a0_a140:*/ jmp [$1784]
-/*unknown_a0_a143:*/ phb
+
+; TODO: "Check for collisions of main hitbox with all projectiles. If there's a
+; collision, JSL $A0A226 then RTS." -- Kejardon
+unknown_a0_a143: phb
 /*unknown_a0_a144:*/ ldx $0e54.w
 /*unknown_a0_a147:*/ lda $0fa6.w, X
 /*unknown_a0_a14a:*/ sta $1786.w
@@ -3819,7 +3840,9 @@ unknown_a0_996c: php
 @unknown_a0_a224: plb
 /*unknown_a0_a225:*/ rts
 
-/*unknown_a0_a226:*/ ldy $0e54.w
+; TODO: "Small routine, just JML to code for enemy/projectile detection. Address
+; used is projectile pointer in enemy rom ($0F78 + 32)" -- Kejardon
+unknown_a0_a226: ldy $0e54.w
 /*unknown_a0_a229:*/ ldx $0f78.w, Y
 /*unknown_a0_a22c:*/ lda $a00032, X
 /*unknown_a0_a230:*/ sta $1784.w
@@ -3989,7 +4012,9 @@ unknown_a0_a306: phb
 /*unknown_a0_a3aa:*/ plb
 /*unknown_a0_a3ab:*/ plb
 /*unknown_a0_a3ac:*/ jmp [$1784]
-/*unknown_a0_a3af:*/ php
+
+; TODO: "Death animation" -- Kejardon
+unknown_a0_a3af: php
 /*unknown_a0_a3b0:*/ phb
 /*unknown_a0_a3b1:*/ pea $a000.w
 /*unknown_a0_a3b4:*/ plb
@@ -4069,7 +4094,9 @@ unknown_a0_a306: phb
 /*unknown_a0_a45c:*/ plp
 /*unknown_a0_a45d:*/ rtl
 
-/*unknown_a0_a45e:*/ sta $12
+; TODO: "Divide damage (A) by 4 for Gravity, or 2 for Varia. Nothing if neither
+; suit. Result in A and $12" -- Kejardon
+unknown_a0_a45e: sta $12
 /*unknown_a0_a460:*/ lda $09a2.w
 /*unknown_a0_a463:*/ bit #$0020.w
 /*unknown_a0_a466:*/ bne @unknown_a0_a470
@@ -4265,7 +4292,10 @@ unknown_a0_a306: phb
 @unknown_a0_a639: sta $0f8c.w, X
 @unknown_a0_a63c: rts
 
-/*unknown_a0_a63d:*/ stz $0e2e.w
+; TODO: "A common hit routine, I think. JSR $A6DE, display the 'hit' graphic if
+; applicable. If enemy is at 0 health, set 7E:7002,X to the projectile type
+; ($0C18,Y, AND #$0F00), and play the death animation (JSL $A0A3AF)" -- Kejardon
+unknown_a0_a63d: stz $0e2e.w
 /*unknown_a0_a640:*/ ldx $0e54.w
 /*unknown_a0_a643:*/ jsr $a6de.w
 /*unknown_a0_a646:*/ ldx $0e54.w
@@ -4332,7 +4362,8 @@ unknown_a0_a306: phb
 @unknown_a0_a6da: ldx $0e54.w
 /*unknown_a0_a6dd:*/ rtl
 
-/*unknown_a0_a6de:*/ phb
+; TODO: "Handles beam damage, freezing, and sound." -- Kejardon
+unknown_a0_a6de: phb
 /*unknown_a0_a6df:*/ lda $18a6.w
 /*unknown_a0_a6e2:*/ asl A
 /*unknown_a0_a6e3:*/ tax
@@ -4555,7 +4586,10 @@ unknown_a0_a306: phb
 /*unknown_a0_a8ee:*/ plx
 /*unknown_a0_a8ef:*/ rtl
 
-/*unknown_a0_a8f0:*/ php
+; TODO: "checks for collisions with (active) enemies, and puts something in A
+; depending on the collisions. 0000 means no collisions, FFFF means yes
+; collision(s). Sets 7E:182C,X and 7E:1834,X, 7E:184A - 7E:185B" -- Kejardon
+unknown_a0_a8f0: php
 /*unknown_a0_a8f1:*/ phb
 /*unknown_a0_a8f2:*/ pea $a000.w
 /*unknown_a0_a8f5:*/ plb
@@ -5139,7 +5173,9 @@ unknown_a0_a306: phb
 /*unknown_a0_ade3:*/ lda #$0001.w
 /*unknown_a0_ade6:*/ rtl
 
-/*unknown_a0_ade7:*/ phx
+; TODO: "Determines if enemies with normal sprites are off screen. I guess. 1 at
+; a time" -- Kejardon
+unknown_a0_ade7: phx
 /*unknown_a0_ade8:*/ ldx $0e54.w
 /*unknown_a0_adeb:*/ lda $0f7a.w, X
 /*unknown_a0_adee:*/ clc
@@ -5470,7 +5506,8 @@ unknown_a0_a306: phb
 /*unknown_a0_b064:*/ rep #$20
 /*unknown_a0_b066:*/ rtl
 
-/*unknown_a0_b067:*/ sta $0e32.w
+; TODO: "Get the absolute value of A (also into $0E32)" -- Kejardon
+unknown_a0_b067: sta $0e32.w
 /*unknown_a0_b06a:*/ and #$8000.w
 /*unknown_a0_b06d:*/ beq @unknown_a0_b079
 /*unknown_a0_b06f:*/ lda $0e32.w
@@ -5511,7 +5548,8 @@ unknown_a0_a306: phb
 @unknown_a0_b0ae: lda #$0001.w
 /*unknown_a0_b0b1:*/ rtl
 
-/*unknown_a0_b0b2:*/ clc
+; TODO: "Cosine multiplication. (cos (A * 128/pi) * 0E32) --> 0E36.0E39" -- Kejardon
+unknown_a0_b0b2: clc
 /*unknown_a0_b0b3:*/ adc #$0040.w
 /*unknown_a0_b0b6:*/ and #$00ff.w
 /*unknown_a0_b0b9:*/ sta $0e34.w
@@ -5524,7 +5562,9 @@ unknown_a0_a306: phb
 /*unknown_a0_b0c4:*/ plx
 /*unknown_a0_b0c5:*/ rtl
 
-/*unknown_a0_b0c6:*/ clc
+; TODO: "Called by Wavers. Sine multiplication, (-sin (A * 128/pi) * 0E32) -->
+; 0E36.0E39" -- Kejardon
+unknown_a0_b0c6: clc
 /*unknown_a0_b0c7:*/ adc #$0080.w
 /*unknown_a0_b0ca:*/ and #$00ff.w
 /*unknown_a0_b0cd:*/ sta $0e34.w
@@ -5867,7 +5907,10 @@ unknown_a0_a306: phb
 /*unknown_a0_b3bc:*/ sbc ($96, S), Y
 /*unknown_a0_b3be:*/ inc $b9, X
 /*unknown_a0_b3c0:*/ sbc $fcdc.w, Y
-/*unknown_a0_b3c3:*/ brk $ff
+;
+; TODO: "Not a routine. Table of -cos values (2 bytes each, values from FF00 to
+; 0100. Angle (index/2) from 0 to 13F)" -- Kejardon
+unknown_a0_b3c3: brk $ff
 /*unknown_a0_b3c5:*/ ora ($ff, X)
 /*unknown_a0_b3c7:*/ ora ($ff, X)
 /*unknown_a0_b3c9:*/ ora ($ff, X)
@@ -6181,7 +6224,8 @@ unknown_a0_a306: phb
 @unknown_a0_b6fd: plx
 /*unknown_a0_b6fe:*/ rtl
 
-/*unknown_a0_b6ff:*/ phx
+; TODO: "16bit ($26) * 16bit ($28) = 32bit ($2A)" -- Kejardon
+unknown_a0_b6ff: phx
 /*unknown_a0_b700:*/ phy
 /*unknown_a0_b701:*/ php
 /*unknown_a0_b702:*/ rep #$20
@@ -6733,7 +6777,10 @@ unknown_a0_a306: phb
 /*unknown_a0_bb6e:*/ plx
 /*unknown_a0_bb6f:*/ rtl
 
-/*unknown_a0_bb70:*/ lda $04, S
+; TODO: "Call after pushing a X then Y pixel position onto the stack (2 bytes
+; each). 0DC4 is set with block #, and stack is also cleaned up (do not try to
+; pull Y and X position from stack)" -- Kejardon
+unknown_a0_bb70: lda $04, S
 /*unknown_a0_bb72:*/ lsr A
 /*unknown_a0_bb73:*/ lsr A
 /*unknown_a0_bb74:*/ lsr A
@@ -7448,7 +7495,7 @@ unknown_a0_a306: phb
 /*unknown_a0_c05d:*/ sec
 /*unknown_a0_c05e:*/ sbc $1a93.w, X
 /*unknown_a0_c061:*/ sta $14
-/*unknown_a0_c063:*/ jmp @unknown_a0_c0b1
+/*unknown_a0_c063:*/ jmp unknown_a0_c0b1
 /*unknown_a0_c066:*/ php
 /*unknown_a0_c067:*/ rep #$30
 /*unknown_a0_c069:*/ lda $0af6.w
@@ -7459,7 +7506,7 @@ unknown_a0_a306: phb
 /*unknown_a0_c075:*/ sec
 /*unknown_a0_c076:*/ sbc $0f7e.w, X
 /*unknown_a0_c079:*/ sta $14
-/*unknown_a0_c07b:*/ jmp @unknown_a0_c0b1
+/*unknown_a0_c07b:*/ jmp unknown_a0_c0b1
 /*unknown_a0_c07e:*/ php
 /*unknown_a0_c07f:*/ rep #$30
 /*unknown_a0_c081:*/ lda $0f7a.w, Y
@@ -7470,7 +7517,7 @@ unknown_a0_a306: phb
 /*unknown_a0_c08d:*/ sec
 /*unknown_a0_c08e:*/ sbc $0f7e.w, X
 /*unknown_a0_c091:*/ sta $14
-/*unknown_a0_c093:*/ jmp @unknown_a0_c0b1
+/*unknown_a0_c093:*/ jmp unknown_a0_c0b1
 /*unknown_a0_c096:*/ php
 /*unknown_a0_c097:*/ rep #$30
 /*unknown_a0_c099:*/ lda $0f7a.w, X
@@ -7481,10 +7528,13 @@ unknown_a0_a306: phb
 /*unknown_a0_c0a5:*/ sec
 /*unknown_a0_c0a6:*/ sbc $0f7e.w, Y
 /*unknown_a0_c0a9:*/ sta $14
-/*unknown_a0_c0ab:*/ jmp @unknown_a0_c0b1
-/*unknown_a0_c0ae:*/ php
+/*unknown_a0_c0ab:*/ jmp unknown_a0_c0b1
+
+; TODO: "Rough angle calculation given X (in $12) and Y (in $14). Angle 0 = up
+; (-Y), 40 = right (X), 80 = down (Y), C0 = left (-X)" -- Kejardon
+unknown_a0_c0ae: php
 /*unknown_a0_c0af:*/ rep #$30
-@unknown_a0_c0b1: phx
+unknown_a0_c0b1: phx
 /*unknown_a0_c0b2:*/ ldx #$0000.w
 /*unknown_a0_c0b5:*/ lda $12
 /*unknown_a0_c0b7:*/ bpl @unknown_a0_c0c0
@@ -7719,7 +7769,8 @@ unknown_a0_a306: phb
 /*unknown_a0_c267:*/ inc $12
 @unknown_a0_c269: rtl
 
-/*unknown_a0_c26a:*/ phb
+; TODO: "Enemy instruction AI loop (uses $0F92)" -- Kejardon
+unknown_a0_c26a: phb
 /*unknown_a0_c26b:*/ ldx $0e54.w
 /*unknown_a0_c26e:*/ lda $0f8a.w, X
 /*unknown_a0_c271:*/ and #$0004.w
@@ -8258,11 +8309,12 @@ unknown_a0_a306: phb
 
 /*unknown_a0_c69d:*/ lda #$4000.w
 /*unknown_a0_c6a0:*/ sta $20
-/*unknown_a0_c6a2:*/ bra @unknown_a0_c6ad
+/*unknown_a0_c6a2:*/ bra unknown_a0_c6ab@unknown_a0_c6ad
 /*unknown_a0_c6a4:*/ lda #$8000.w
 /*unknown_a0_c6a7:*/ sta $20
-/*unknown_a0_c6a9:*/ bra @unknown_a0_c6ad
-/*unknown_a0_c6ab:*/ stz $20
+/*unknown_a0_c6a9:*/ bra unknown_a0_c6ab@unknown_a0_c6ad
+; TODO: "Common horizontal movement routine, moves by $14.$12. TODO" -- Kejardon
+unknown_a0_c6ab: stz $20
 @unknown_a0_c6ad: lda $12
 /*unknown_a0_c6af:*/ ora $14
 /*unknown_a0_c6b1:*/ bne @unknown_a0_c6b5
@@ -8376,11 +8428,12 @@ unknown_a0_a306: phb
 
 /*unknown_a0_c778:*/ lda #$4000.w
 /*unknown_a0_c77b:*/ sta $20
-/*unknown_a0_c77d:*/ bra @unknown_a0_c788
+/*unknown_a0_c77d:*/ bra unknown_a0_c786@unknown_a0_c788
 /*unknown_a0_c77f:*/ lda #$8000.w
 /*unknown_a0_c782:*/ sta $20
-/*unknown_a0_c784:*/ bra @unknown_a0_c788
-/*unknown_a0_c786:*/ stz $20
+/*unknown_a0_c784:*/ bra unknown_a0_c786@unknown_a0_c788
+; TODO: "Common vertical movement routine, moves by $14.$12. TODO" -- Kejardon
+unknown_a0_c786: stz $20
 @unknown_a0_c788: lda $12
 /*unknown_a0_c78a:*/ ora $14
 /*unknown_a0_c78c:*/ bne @unknown_a0_c790

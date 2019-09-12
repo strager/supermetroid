@@ -667,6 +667,7 @@ unknown_90_84e3: php
 /*unknown_90_85e0:*/ plp
 /*unknown_90_85e1:*/ rts
 
+; TODO: "Draws Samus" -- Kejardon
 unknown_90_85e2: php
 /*unknown_90_85e3:*/ phb
 /*unknown_90_85e4:*/ sep #$20
@@ -904,6 +905,7 @@ unknown_90_85e2: php
 /*unknown_90_87bb:*/ clc
 /*unknown_90_87bc:*/ rts
 
+; TODO: "Draw Samus's echoes" -- Kejardon
 unknown_90_87bd: php
 /*unknown_90_87be:*/ rep #$30
 /*unknown_90_87c0:*/ lda $0aae.w
@@ -1233,6 +1235,7 @@ unknown_90_88ba: php
 /*unknown_90_8a4a:*/ plp
 /*unknown_90_8a4b:*/ rtl
 
+; TODO: "Atmospheric effects (water splash, air bubbles, footsteps)" -- Kejardon
 unknown_90_8a4c: php
 /*unknown_90_8a4d:*/ rep #$30
 /*unknown_90_8a4f:*/ ldy #$0006.w
@@ -1761,6 +1764,8 @@ unknown_90_8c1f: lda $093f.w
 /*unknown_90_8e60:*/ sta $0ad2.w
 /*unknown_90_8e63:*/ rts
 
+; TODO: "Simple JSR list: 973E, 9BD1, 9A7E, 8EA9. Effectively, calculates
+; horizontal momentum, speed, and new position and any collisions" -- Kejardon
 unknown_90_8e64: php
 /*unknown_90_8e65:*/ rep #$30
 /*unknown_90_8e67:*/ jsr unknown_90_973e
@@ -1793,6 +1798,8 @@ unknown_90_8e64: php
 @unknown_90_8ea7: plp
 /*unknown_90_8ea8:*/ rts
 
+; TODO: "Check Samus's direction and go to E4AD or E464, then 9350 or 93B1
+; depending on net movement." -- Kejardon
 unknown_90_8ea9: lda $0b4a.w
 /*unknown_90_8eac:*/ beq @unknown_90_8ec0
 /*unknown_90_8eae:*/ cmp #$0002.w
@@ -2184,6 +2191,8 @@ unknown_90_919f: php
 @unknown_90_923d: plp
 /*unknown_90_923e:*/ rts
 
+; TODO: "Calculate values for initial $12 and $14 (Y movement distance, don't
+; currently understand calculations), and goto 93EC or 9440" -- Kejardon
 unknown_90_923f: php
 /*unknown_90_9240:*/ rep #$30
 /*unknown_90_9242:*/ lda $0b5c.w
@@ -2318,11 +2327,14 @@ unknown_90_92e9: rts
 @unknown_90_9346: plp
 /*unknown_90_9347:*/ rts
 
+; TODO: "Clear $12 and $14 and goto 90:8EA9" -- Kejardon
 unknown_90_9348: stz $12
 /*unknown_90_934a:*/ stz $14
 /*unknown_90_934c:*/ jsr unknown_90_8ea9
 /*unknown_90_934f:*/ rts
 
+; TODO: "moves Samus left $12.$14 pixels with all the checks; this --> A0:A8F0,
+; 94:971E, E5CE, 9842, 94:87F4" -- Kejardon
 unknown_90_9350: php
 /*unknown_90_9351:*/ rep #$30
 /*unknown_90_9353:*/ lda $12
@@ -2367,6 +2379,8 @@ unknown_90_9350: php
 /*unknown_90_93af:*/ plp
 /*unknown_90_93b0:*/ rts
 
+; TODO: "moves Samus right $12.$14 pixels with all the checks; this --> A0:A8F0,
+; 94:971E, E5CE, 9826, 94:87F4" -- Kejardon
 unknown_90_93b1: php
 /*unknown_90_93b2:*/ rep #$30
 /*unknown_90_93b4:*/ jsr $a0a8f0
@@ -2393,6 +2407,8 @@ unknown_90_93b1: php
 /*unknown_90_93ea:*/ plp
 /*unknown_90_93eb:*/ rts
 
+; TODO: "moves Samus up $12.$14 pixels with all the checks; this --> A0:A8F0,
+; 94:9763, E606, 988D" -- Kejardon
 unknown_90_93ec: php
 /*unknown_90_93ed:*/ rep #$30
 /*unknown_90_93ef:*/ lda #$0002.w
@@ -2433,6 +2449,8 @@ unknown_90_93ec: php
 /*unknown_90_943e:*/ plp
 /*unknown_90_943f:*/ rts
 
+; TODO: "moves Samus down $12.$14 pixels with all the checks; this --> A0:A8F0,
+; 94:9763, E61B, 9871" -- Kejardon
 unknown_90_9440: php
 /*unknown_90_9441:*/ rep #$30
 /*unknown_90_9443:*/ lda #$0003.w
@@ -2505,6 +2523,9 @@ unknown_90_9440: php
 @unknown_90_94eb: rts
 
 ; TODO: "Room Scrolling" -- Kejardon
+; TODO: "Main scrolling routine? Has $0CF8 scrolling (JSL $80A528 and JSL
+; $80A731), and then normal scrolling. Also JSRs to $07E9 if it's not 0000. Sets
+; previous frame's position($0B10 - $0B17)" -- Kejardon
 unknown_90_94ec: php
 /*unknown_90_94ed:*/ phb
 /*unknown_90_94ee:*/ phk
@@ -2584,6 +2605,9 @@ unknown_90_94ec: php
 /*unknown_90_959e:*/ plp
 /*unknown_90_959f:*/ rts
 
+; TODO: "Handles horizontal scrolling. If Samus didn't move, JSL $80A528 and do
+; nothing else. Calculates ideal position, adjusts by how much Samus moved, and
+; JSL $80A641 if scrolling right, JSL $80A6BB if scrolling left." -- Kejardon
 unknown_90_95a0: php
 /*unknown_90_95a1:*/ rep #$30
 /*unknown_90_95a3:*/ lda $0b10.w
@@ -2700,7 +2724,9 @@ unknown_90_95a0: php
 @unknown_90_96be: plp
 /*unknown_90_96bf:*/ rts
 
-/*unknown_90_96c0:*/ php
+; TODO: "Calculates the horizontal distance Samus has moved last frame, + 1
+; pixel. Results in $0DA2.$0DA4." -- Kejardon
+unknown_90_96c0: php
 /*unknown_90_96c1:*/ rep #$30
 /*unknown_90_96c3:*/ lda $0af6.w
 /*unknown_90_96c6:*/ cmp $0b10.w
@@ -2728,6 +2754,8 @@ unknown_90_95a0: php
 @unknown_90_96fd: plp
 /*unknown_90_96fe:*/ rts
 
+; TODO: "Calculates the vertical distance Samus has moved last frame, + 1 pixel.
+; Results in $0DA6.$0DA8." -- Kejardon
 unknown_90_96ff: php
 /*unknown_90_9700:*/ rep #$30
 /*unknown_90_9702:*/ lda $0afa.w
@@ -2756,6 +2784,10 @@ unknown_90_96ff: php
 @unknown_90_973c: plp
 /*unknown_90_973d:*/ rts
 
+; TODO: "Checks if Samus is being affected by water, or if she isn't
+; walking/running on ground, if so, set her speed to 0 if her running byte isn't
+; set ($0B3C). Otherwise, increase and cap her speed as appropriate."
+; -- Kejardon
 unknown_90_973e: php
 /*unknown_90_973f:*/ rep #$30
 /*unknown_90_9741:*/ lda $09a2.w
@@ -2845,6 +2877,8 @@ unknown_90_973e: php
 @unknown_90_9824: plp
 /*unknown_90_9825:*/ rts
 
+; TODO: "Move Samus $12.$14 pixels right and put $12 and $14 into $0DAE and
+; $0DB0" -- Kejardon
 unknown_90_9826: lda $0af8.w
 /*unknown_90_9829:*/ clc
 /*unknown_90_982a:*/ adc $14
@@ -2858,6 +2892,8 @@ unknown_90_9826: lda $0af8.w
 /*unknown_90_983e:*/ sta $0dae.w
 /*unknown_90_9841:*/ rts
 
+; TODO: "Move Samus $12.$14 pixels left and put -$12 and -$14 into $0DAA and
+; $0DAC" -- Kejardon
 unknown_90_9842: lda $0af8.w
 /*unknown_90_9845:*/ sec
 /*unknown_90_9846:*/ sbc $14
@@ -2880,6 +2916,8 @@ unknown_90_9842: lda $0af8.w
 /*unknown_90_986d:*/ sta $0daa.w
 /*unknown_90_9870:*/ rts
 
+; TODO: "Move Samus $12.$14 pixels down and put $12 and $14 into $0DB6 and
+; $0DB8" -- Kejardon
 unknown_90_9871: lda $0afc.w
 /*unknown_90_9874:*/ clc
 /*unknown_90_9875:*/ adc $14
@@ -2893,6 +2931,8 @@ unknown_90_9871: lda $0afc.w
 /*unknown_90_9889:*/ sta $0db6.w
 /*unknown_90_988c:*/ rts
 
+; TODO: "Move Samus $12.$14 pixels up and put -$12 and -$14 into $0DB2 and
+; $0DB4" -- Kejardon
 unknown_90_988d: lda $0afc.w
 /*unknown_90_9890:*/ sec
 /*unknown_90_9891:*/ sbc $14
@@ -2915,7 +2955,11 @@ unknown_90_988d: lda $0afc.w
 /*unknown_90_98b8:*/ sta $0db2.w
 /*unknown_90_98bb:*/ rts
 
-/*unknown_90_98bc:*/ php
+; TODO: "Load Samus's vertical speeds(+2 for water, +4 for lava): Highjump:
+; 9EBF.9EB9, normal: 9ECB.9EC5. Also adds Samus's horizontal speed / 2, IF Samus
+; has speed boots. Sets Samus moving up, clears 0A9E and 0AA0, unknown uses."
+; -- Kejardon
+unknown_90_98bc: php
 /*unknown_90_98bd:*/ phb
 /*unknown_90_98be:*/ phk
 /*unknown_90_98bf:*/ plb
@@ -3107,6 +3151,8 @@ unknown_90_988d: lda $0afc.w
 /*unknown_90_9a7c:*/ plp
 /*unknown_90_9a7d:*/ rts
 
+; TODO: "Modifies momentum according to $0B4A (add or subtract) and X (entry
+; start). X is usually a start pointer indexed by $0A1F *#$0C" -- Kejardon
 unknown_90_9a7e: php
 /*unknown_90_9a7f:*/ rep #$30
 /*unknown_90_9a81:*/ lda $0b4a.w
@@ -3257,6 +3303,9 @@ unknown_90_9b1f: php
 /*unknown_90_9bcf:*/ sec
 /*unknown_90_9bd0:*/ rts
 
+; TODO: "Set $0A6C to #$A08D if affected by FX3, or #$A1DD if affected by FX3
+; and FX3 fills the room. Also, X = ($0A1F * #$0C) + $0A6C when leaving."
+; -- Kejardon
 unknown_90_9bd1: php
 /*unknown_90_9bd2:*/ rep #$30
 /*unknown_90_9bd4:*/ lda $09a2.w
@@ -4706,7 +4755,12 @@ unknown_90_a077: brk $c0
 /*unknown_90_a7e0:*/ plp
 /*unknown_90_a7e1:*/ rts
 
-/*unknown_90_a7e2:*/ php
+; TODO: "Disable and clear automap. Check a list for boss number ($179C). If one
+; isn't found, cleanup and RTS, else use the argument for a list of entries for
+; $12 and $18, then JSR to 90:A8A6 after each entry, until a negative entry
+; (such as FFFF). Entry format: bytes 1 and 3 ignored, bytes 2 and 4 = X/Y
+; offset from topleft corner of room." -- Kejardon
+unknown_90_a7e2: php
 /*unknown_90_a7e3:*/ phb
 /*unknown_90_a7e4:*/ rep #$30
 /*unknown_90_a7e6:*/ phk
@@ -5459,7 +5513,8 @@ unknown_90_acfc: and #$0fff.w
 @unknown_90_adb5: plp
 /*unknown_90_adb6:*/ rtl
 
-/*unknown_90_adb7:*/ php
+; TODO: "Clean up (aka delete) projectile/bomb. Index in X." -- Kejardon
+unknown_90_adb7: php
 /*unknown_90_adb8:*/ rep #$30
 /*unknown_90_adba:*/ stz $0b64.w, X
 /*unknown_90_adbd:*/ stz $0b78.w, X
@@ -5490,7 +5545,8 @@ unknown_90_acfc: and #$0fff.w
 @unknown_90_ae04: plp
 /*unknown_90_ae05:*/ rtl
 
-/*unknown_90_ae06:*/ php
+; TODO: "Kill projectile. 0C18 index in X." -- Kejardon
+unknown_90_ae06: php
 /*unknown_90_ae07:*/ phb
 /*unknown_90_ae08:*/ phk
 /*unknown_90_ae09:*/ plb
@@ -8331,6 +8387,7 @@ unknown_90_c5eb: lda $0aaa.w
 @unknown_90_c661: plp
 /*unknown_90_c662:*/ rts
 
+; TODO: "Draw arm cannon 'open' sprite." -- Kejardon
 unknown_90_c663: php
 /*unknown_90_c664:*/ rep #$30
 /*unknown_90_c666:*/ lda $0aa8.w
@@ -9469,7 +9526,8 @@ unknown_90_cc8a: sep #$20
 /*unknown_90_d0a6:*/ jsr $80912f
 @unknown_90_d0aa: rts
 
-/*unknown_90_d0ab:*/ lda #$0002.w
+; TODO: "Used by 0A58. Vertical Super Jump routine." -- Kejardon
+unknown_90_d0ab: lda #$0002.w
 /*unknown_90_d0ae:*/ sta $0a6e.w
 /*unknown_90_d0b1:*/ lda #$0008.w
 /*unknown_90_d0b4:*/ sta $0a48.w
@@ -9486,7 +9544,8 @@ unknown_90_cc8a: sep #$20
 /*unknown_90_d0d3:*/ stz $09c2.w
 @unknown_90_d0d6: rts
 
-/*unknown_90_d0d7:*/ lda #$0002.w
+; TODO: "Used by 0A58. Diagonal Super Jump routine." -- Kejardon
+unknown_90_d0d7: lda #$0002.w
 /*unknown_90_d0da:*/ sta $0a6e.w
 /*unknown_90_d0dd:*/ lda #$0008.w
 /*unknown_90_d0e0:*/ sta $0a48.w
@@ -9504,7 +9563,8 @@ unknown_90_cc8a: sep #$20
 /*unknown_90_d102:*/ stz $09c2.w
 @unknown_90_d105: rts
 
-/*unknown_90_d106:*/ lda #$0002.w
+; TODO: "Used by 0A58. Horizontal Super Jump routine." -- Kejardon
+unknown_90_d106: lda #$0002.w
 /*unknown_90_d109:*/ sta $0a6e.w
 /*unknown_90_d10c:*/ lda #$0008.w
 /*unknown_90_d10f:*/ sta $0a48.w
@@ -9521,6 +9581,10 @@ unknown_90_cc8a: sep #$20
 /*unknown_90_d12e:*/ stz $09c2.w
 @unknown_90_d131: rts
 
+; TODO: "Super jump horizontal movement: Set $0A68 to #$000F, add acceleration
+; to speed (cap at F.00 pixels), then standard enemy detection/movement
+; (E4AD/E464, A0:A8F0, 94:971E, 94:87F4). Also caps scrolling to F pixels"
+; -- Kejardon
 unknown_90_d132: lda #$000f.w
 /*unknown_90_d135:*/ sta $0a68.w
 /*unknown_90_d138:*/ lda $0b44.w
@@ -9606,6 +9670,11 @@ unknown_90_d132: lda #$000f.w
 /*unknown_90_d1fb:*/ sta $0b10.w
 @unknown_90_d1fe: rts
 
+; TODO: "Super jump vertical movement: Set $0A68 to #$000F, add rate of
+; acceleration (0B32) to acceleration (0DEC), add acceleration to vertical
+; speed, set movement and cap it at at E.XX pixels, add external movement and
+; cap total movement at F.XX pixels. Finally gets to normal movement stuff:
+; A0:A8F0 and 94:9763, then cap scrolling to E pixels." -- Kejardon
 unknown_90_d1ff: lda #$000f.w
 /*unknown_90_d202:*/ sta $0a68.w
 /*unknown_90_d205:*/ lda $0dee.w
@@ -9686,6 +9755,7 @@ unknown_90_d1ff: lda #$000f.w
 /*unknown_90_d2b6:*/ sta $0b14.w
 @unknown_90_d2b9: rts
 
+; TODO: "Check whether or not to end Super Jump, and do so." -- Kejardon
 unknown_90_d2ba: lda $09c2.w
 /*unknown_90_d2bd:*/ cmp #$001e.w
 /*unknown_90_d2c0:*/ bmi @unknown_90_d2c9
@@ -11381,7 +11451,9 @@ unknown_90_e07d: lda #$a337.w
 @unknown_90_e237: jsr $8f86.w
 /*unknown_90_e23a:*/ rts
 
-/*unknown_90_e23b:*/ php
+; TODO: "Set Samus into the grabbed by Draygon pose. A = 0 means left, A = 1
+; means right" -- Kejardon
+unknown_90_e23b: php
 /*unknown_90_e23c:*/ phb
 /*unknown_90_e23d:*/ phk
 /*unknown_90_e23e:*/ plb
@@ -11618,7 +11690,9 @@ unknown_90_e2de: lda $0a1e.w
 /*unknown_90_e460:*/ sta $0a96.w
 @unknown_90_e463: rts
 
-/*unknown_90_e464:*/ php
+; TODO: "subtracts Samus's horizontal speed from $12.$14 (moving left). Also
+; calls E4E6." -- Kejardon
+unknown_90_e464: php
 /*unknown_90_e465:*/ rep #$30
 /*unknown_90_e467:*/ jsr unknown_90_e4e6
 /*unknown_90_e46a:*/ stz $0b02.w
@@ -11659,6 +11733,8 @@ unknown_90_e2de: lda $0a1e.w
 /*unknown_90_e4ab:*/ plp
 /*unknown_90_e4ac:*/ rts
 
+; TODO: "adds Samus's horizontal speed to $12.$14 (moving right). Also calls
+; E4E6." -- Kejardon
 unknown_90_e4ad: php
 /*unknown_90_e4ae:*/ rep #$30
 /*unknown_90_e4b0:*/ jsr unknown_90_e4e6
@@ -11692,6 +11768,8 @@ unknown_90_e4ad: php
 /*unknown_90_e4e4:*/ plp
 /*unknown_90_e4e5:*/ rts
 
+; TODO: "Convulated routine to divide Samus's horizontal movement by 2^($0A66)."
+; -- Kejardon
 unknown_90_e4e6: lda $0a66.w
 /*unknown_90_e4e9:*/ cmp #$0005.w
 /*unknown_90_e4ec:*/ bmi @unknown_90_e4f1
@@ -11822,6 +11900,8 @@ unknown_90_e4e6: lda $0a66.w
 /*unknown_90_e5ca:*/ sta $0dbe.w
 /*unknown_90_e5cd:*/ rts
 
+; TODO: "If Samus collided with something, stop her horizontally and clean up
+; speed(91:DE53). Else just clear 0DC6 and 0DCE." -- Kejardon
 unknown_90_e5ce: php
 /*unknown_90_e5cf:*/ rep #$30
 /*unknown_90_e5d1:*/ lda $0dd0.w
@@ -11845,6 +11925,8 @@ unknown_90_e5ce: php
 @unknown_90_e604: plp
 /*unknown_90_e605:*/ rts
 
+; TODO: "Set $0DC6 to 4 if $0DD0 is set, else clear $0DC6. Unknown use"
+; -- Kejardon
 unknown_90_e606: php
 /*unknown_90_e607:*/ rep #$30
 /*unknown_90_e609:*/ lda $0dd0.w
@@ -11856,6 +11938,7 @@ unknown_90_e606: php
 @unknown_90_e619: plp
 /*unknown_90_e61a:*/ rts
 
+; TODO: "Sets $0DC6 depending on $0DD0 and $0A1F. Unknown use" -- Kejardon
 unknown_90_e61b: php
 /*unknown_90_e61c:*/ rep #$30
 /*unknown_90_e61e:*/ lda $0dd0.w
@@ -12588,7 +12671,9 @@ unknown_90_ec22: php
 /*unknown_90_ec3c:*/ plp
 /*unknown_90_ec3d:*/ rts
 
-/*unknown_90_ec3e:*/ php
+; TODO: "Just calculates Samus's lower boundary and puts it into $12"
+; -- Kejardon
+unknown_90_ec3e: php
 /*unknown_90_ec3f:*/ rep #$30
 /*unknown_90_ec41:*/ lda $0a1c.w
 /*unknown_90_ec44:*/ asl A
@@ -12604,7 +12689,9 @@ unknown_90_ec22: php
 /*unknown_90_ec56:*/ plp
 /*unknown_90_ec57:*/ rtl
 
-/*unknown_90_ec58:*/ php
+; TODO: "This calculates Samus's lower and upper boundaries, then puts them in
+; $12 and $14." -- Kejardon
+unknown_90_ec58: php
 /*unknown_90_ec59:*/ rep #$30
 /*unknown_90_ec5b:*/ lda $0a1c.w
 /*unknown_90_ec5e:*/ asl A
@@ -12760,6 +12847,9 @@ unknown_90_ed26: lda $0a1f.w
 /*unknown_90_ed84:*/ sta $09d0.w
 /*unknown_90_ed87:*/ rts
 
+; TODO: "Footstep graphics. Water splashing in Maridia and Crateria, dust if
+; speedrunning. Only works on certain frames, assumed to be walking/running."
+; -- Kejardon
 unknown_90_ed88: lda $079f.w
 /*unknown_90_ed8b:*/ asl A
 /*unknown_90_ed8c:*/ tax
@@ -12903,6 +12993,7 @@ unknown_90_ed88: lda $079f.w
 /*unknown_90_eee3:*/ sta $0ad6.w
 @unknown_90_eee6: rts
 
+; TODO: "Echoes for Blue Suit - updates echo position to Samus's." -- Kejardon
 unknown_90_eee7: lda $0b3e.w
 /*unknown_90_eeea:*/ and #$ff00.w
 /*unknown_90_eeed:*/ cmp #$0400.w
@@ -13068,6 +13159,50 @@ unknown_90_eee7: lda $0b3e.w
 /*unknown_90_f080:*/ sta $0a58.w
 @unknown_90_f083: rts
 
+; TODO: "Very general use routines, depending on A. Can range from 0 to 1F.
+;   00:F109 Put #$E713 into $0A42, #$E8DC into $0A44
+;   01:F117 Put #$E695 into $0A42, #$E725 into $0A44
+;   02:F125 Set Samus to standing (facing current direction). JSL to $91F433 and
+;           $91FB08, then go to 00
+;   03:F152 Check GrappleFire pointer. If not #$C4FC, just set it to #$C8C5.
+;           Else if spin jumping or wall jumping, set to standing (facing
+;           current direction), JSL $91F433 and $91FB08, JSR $F0EE, SEC and RTS
+;   04:F19B Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA.
+;   05:F38E
+;   06:F1AA Put #$E713 into $0A42, #$E8DC into $0A44, play a sound if charge is
+;           under F, goto 04
+;   07:F1C8 JSL $91E3F6, #$E8EC into $0A44, #$A337 into $0A58, #$EC14 into
+;           $0A5C, #$E913 into $0A60
+;   08:F1E9 #$E8CD into $0A42, #$E8DC into $0A44, Samus facing forward, JSL
+;           $91F433, $91FB08, $91DEBA. #$EB52 into $0A5C, update $0A20 - $0A27, JSL
+;   $868027 with Y = #$A387 then Y = #$A39D, JSL 82E118.
+;   09:F23C JSL $8DC4E9, Y = #$E1F4 (no suits), #$E1F8 (varia), or #$E1FC
+;           (grav). Samus facing forward. JSL $91DEBA, $91F433. Set Samus's
+;           animation to frame 2, delay 3
+;   0A:F28D #$E90E into $0A5C, CLC and RTS. Short.
+;   0B:F295 #$EB52 into $0A5C, goto 01
+;   0C:F29E JSL $91E633, if $0A44 is #$E8D6, #$E695 into $0A42 and #$E725 into
+;           $0A44. Run when unpausing.
+;   0D:F2B8 If GrappleFire pointer is #$C4F0, A = 0. Else A = 1.
+;   0E:F2CA
+;   0F:F2D8
+;   10:F2E0
+;   11:F2F8
+;   12:F320
+;   13:F328
+;   14:F331
+;   15:F310
+;   16:F3C9
+;   17:F3DD
+;   18:F3C0
+;   19:F3FB
+;   1A:F409
+;   1B:F411
+;   1C:F41E
+;   1D:F471
+;   1E:F4A2
+;   1F:F4D0"
+; -- Kejardon
 unknown_90_f084: php
 /*unknown_90_f085:*/ phb
 /*unknown_90_f086:*/ phk
@@ -13121,6 +13256,8 @@ unknown_90_f084: php
 /*unknown_90_f0e6:*/ asl $71f4.w, X
 /*unknown_90_f0e9:*/ pea $f4a2.w
 /*unknown_90_f0ec:*/ bne ($f4 - $100) ; $f0e2.w
+
+; TODO: "Update $0A20 through $0A27" -- Kejardon
 unknown_90_f0ee: lda $0a20.w
 /*unknown_90_f0f1:*/ sta $0a24.w
 /*unknown_90_f0f4:*/ lda $0a22.w
@@ -13622,6 +13759,8 @@ unknown_90_f52f: rts
 /*unknown_90_f571:*/ jsr $91e4ad
 @unknown_90_f575: rts
 
+; TODO: "Checks to play sounds: Continue charge sound, end(?) blue suit sound,
+; end spin jump, and game over if escaping Zebes and 0A5A = E114?" -- Kejardon
 unknown_90_f576: php
 /*unknown_90_f577:*/ rep #$30
 /*unknown_90_f579:*/ lda $0dc0.w

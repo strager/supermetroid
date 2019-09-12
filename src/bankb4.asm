@@ -6546,7 +6546,49 @@ das: .dw unknown_ab_ea00@size
 /*unknown_b4_bc1f:*/ cpy #$e030.w
 /*unknown_b4_bc22:*/ ora ($e0, X)
 /*unknown_b4_bc24:*/ cmp $30, S
-/*unknown_b4_bc26:*/ phx
+; TODO: "creates enemy-related sprites like dud shots and hits (no sound).
+; $12/$14 is X/Y, $16 is type. $18 is probably pallete or something... Used by
+; Draygon for Evirs
+;   0000 = Charge beam shine
+;   0001 = 3 charge beam spots
+;   0002 = 3 different charge beam spots, plus yellow shine (?)
+;   0003 = Normal explosion
+;   0004 = Bomb explosion
+;   0005 = crumbling lights? Don't recognize it at all
+;   0006 = Dud enemy explosion
+;   0007 = Power bomb (lol)
+;   0008 = Elevator light (larger than elevator)
+;   0009 = Smoke (might be the stuff during exploding Ceres/Zebes)
+;   000A = Small smoke (no idea where it's used)
+;   000B = Water splash (footsteps in certain areas)
+;   000C = Yellow smoke (I recognize it, but I don't remember where it's from)
+;   000D = Small energy
+;   000E = Large energy
+;   000F = Bomb
+;   0010 = Small energy (?), slow animation
+;   0011 = Very similar to screw attack/speed run debris
+;   0012 = Large smoke, fast animation (no idea where it's used)
+;   0013 = Large smoke, fast animation + something in the center at the end of the animation
+;   0014 = Large smoke, fast animation + something larger in the center
+;   0015 = Large smoke, normal animation (used by Draygon at least)
+;   0016 = Looks like miscolored plasma beam...
+;   0017 = Fast miscolored plasma beam
+;   0018 = Air bubbles, used by Samus and Draygon
+;   0019 = Save station lights
+;   001A = Slow closing gate
+;   001B = Fast opening gate
+;   001C = Elevator (doesn't go away)
+;   001D = Large explosion
+;   001E+ = Glitchy stuff (tested 1E, 1F, 20, 24, 31, 35, 36, 38, 40)
+;   0032 = Looks like crackling electricity, doesn't go away. Supposedly used by something.. metroids?
+;   0033 = More crackling electricity (might not be used)
+;   0034 = Glitchy. Rapidly flashing stuff, shape suggests it's supposed to be a Metroid shell. Supposedly used, probably by Metroids
+;   0037 = Freeze hit (used)
+;   003B = Evirs that assist Draygon (facing left)
+;   003C = Evirs that assist Draygon (facing right)
+;   003D = Big air bubbles, used by Draygon"
+; -- Kejardon
+unknown_b4_bc26: phx
 /*unknown_b4_bc27:*/ phy
 /*unknown_b4_bc28:*/ php
 /*unknown_b4_bc29:*/ phb

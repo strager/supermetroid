@@ -12101,7 +12101,9 @@
 /*unknown_a3_e8a2:*/ sty $0f, X
 /*unknown_a3_e8a4:*/ rtl
 
-/*unknown_a3_e8a5:*/ lda $0f7a.w, X
+; TODO: "Used by geemers... adjusts horizontal speed according to current slope
+; being traversed." -- Kejardon
+unknown_a3_e8a5: lda $0f7a.w, X
 /*unknown_a3_e8a8:*/ pha
 /*unknown_a3_e8a9:*/ lda $0f7e.w, X
 /*unknown_a3_e8ac:*/ bit $0faa.w, X

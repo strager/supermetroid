@@ -6063,7 +6063,7 @@
 /*unknown_a6_b588:*/ tay
 /*unknown_a6_b589:*/ ora $0020a9.l
 /*unknown_a6_b58d:*/ sta $7e7800
-/*unknown_a6_b591:*/ jmp @unknown_a6_d955
+/*unknown_a6_b591:*/ jmp unknown_a6_d955
 /*unknown_a6_b594:*/ stz $12
 /*unknown_a6_b596:*/ lda #$00
 /*unknown_a6_b598:*/ bra ($85 - $100) ; $b51f.w
@@ -6118,7 +6118,7 @@
 /*unknown_a6_b601:*/ tay
 /*unknown_a6_b602:*/ ora $0080a9.l
 /*unknown_a6_b606:*/ sta $0fb2.w
-/*unknown_a6_b609:*/ jmp @unknown_a6_d955
+/*unknown_a6_b609:*/ jmp unknown_a6_d955
 @unknown_a6_b60c: rts
 
 /*unknown_a6_b60d:*/ cpy #$00
@@ -6141,7 +6141,7 @@
 /*unknown_a6_b62f:*/ tay
 /*unknown_a6_b630:*/ ora $0080a9.l
 /*unknown_a6_b634:*/ sta $0fb2.w
-/*unknown_a6_b637:*/ jmp @unknown_a6_d955
+/*unknown_a6_b637:*/ jmp unknown_a6_d955
 @unknown_a6_b63a: rts
 
 /*unknown_a6_b63b:*/ rti
@@ -6410,7 +6410,7 @@
 /*unknown_a6_b880:*/ clc
 /*unknown_a6_b881:*/ adc $0f7e.w
 /*unknown_a6_b884:*/ sta $14
-/*unknown_a6_b886:*/ jmp @unknown_a6_df29
+/*unknown_a6_b886:*/ jmp unknown_a6_df29
 @unknown_a6_b889: lda $0fac.w
 /*unknown_a6_b88c:*/ bmi $04 ; $b892.w
 /*unknown_a6_b88e:*/ eor #$ff
@@ -6864,7 +6864,7 @@
 /*unknown_a6_bc7a:*/ ror $223a.w, X
 /*unknown_a6_bc7d:*/ sty $f0
 /*unknown_a6_bc7f:*/ bcc $38 ; $bcb9.w
-/*unknown_a6_bc81:*/ jmp @unknown_a6_da8b
+/*unknown_a6_bc81:*/ jmp unknown_a6_da8b
 /*unknown_a6_bc84:*/ lda #$01
 @unknown_a6_bc86: brk $8f
 /*unknown_a6_bc88:*/ tsb $20
@@ -6885,7 +6885,7 @@
 /*unknown_a6_bcaa:*/ ror $221a.w, X
 /*unknown_a6_bcad:*/ sty $f0
 /*unknown_a6_bcaf:*/ bcc $18 ; $bcc9.w
-/*unknown_a6_bcb1:*/ jmp @unknown_a6_da8b
+/*unknown_a6_bcb1:*/ jmp unknown_a6_da8b
 /*unknown_a6_bcb4:*/ lda $7e7802
 /*unknown_a6_bcb8:*/ bmi @unknown_a6_bcf0
 /*unknown_a6_bcba:*/ beq @unknown_a6_bcd4
@@ -7179,7 +7179,7 @@
 /*unknown_a6_bf26:*/ lda $7e8808
 /*unknown_a6_bf2a:*/ sta $14
 /*unknown_a6_bf2c:*/ stz $16
-/*unknown_a6_bf2e:*/ jmp @unknown_a6_dc13
+/*unknown_a6_bf2e:*/ jmp unknown_a6_dc13
 /*unknown_a6_bf31:*/ sbc ($bf)
 /*unknown_a6_bf33:*/ eor $0abf.w, Y
 /*unknown_a6_bf36:*/ brk $fd
@@ -8422,7 +8422,7 @@
 /*unknown_a6_cb14:*/ ora $18a8.w
 /*unknown_a6_cb17:*/ ora $7e7836
 /*unknown_a6_cb1b:*/ bne @unknown_a6_cb20
-/*unknown_a6_cb1d:*/ jmp @unknown_a6_dfd9
+/*unknown_a6_cb1d:*/ jmp unknown_a6_dfd9
 @unknown_a6_cb20: rts
 
 /*unknown_a6_cb21:*/ jsr $c0cb.w
@@ -9497,7 +9497,9 @@
 /*unknown_a6_d4f7:*/ plx
 /*unknown_a6_d4f8:*/ rts
 
-/*unknown_a6_d4f9:*/ tya
+; TODO: "checks for collisions with blocks at pixel X/Y. All non-air blocks are
+; considered fully solid, SEC if hit, CLC if air." -- Kejardon
+unknown_a6_d4f9: tya
 /*unknown_a6_d4fa:*/ lsr A
 /*unknown_a6_d4fb:*/ lsr A
 /*unknown_a6_d4fc:*/ lsr A
@@ -10020,7 +10022,7 @@
 /*unknown_a6_d951:*/ sta $1840.w
 @unknown_a6_d954: rts
 
-@unknown_a6_d955: lda $7e7820
+unknown_a6_d955: lda $7e7820
 /*unknown_a6_d959:*/ beq @unknown_a6_d968
 /*unknown_a6_d95b:*/ dec A
 /*unknown_a6_d95c:*/ beq @unknown_a6_d97c
@@ -10151,9 +10153,9 @@
 /*unknown_a6_da76:*/ txs
 /*unknown_a6_da77:*/ trb $00
 /*unknown_a6_da79:*/ brk $b8
-@unknown_a6_da7b: brk $b9
+unknown_a6_da7b: brk $b9
 /*unknown_a6_da7d:*/ trb $00
-@unknown_a6_da7f: rti
+unknown_a6_da7f: rti
 
 /*unknown_a6_da80:*/ clv
 /*unknown_a6_da81:*/ rti
@@ -10162,7 +10164,7 @@
 /*unknown_a6_da85:*/ brk $b8
 /*unknown_a6_da87:*/ brk $b9
 /*unknown_a6_da89:*/ adc ($da), Y
-@unknown_a6_da8b: ldx #$d0
+unknown_a6_da8b: ldx #$d0
 /*unknown_a6_da8d:*/ phx
 @unknown_a6_da8e: bcc @unknown_a6_da93
 /*unknown_a6_da90:*/ ldx #$d4
@@ -10191,8 +10193,8 @@
 /*unknown_a6_dacc:*/ sta $00d0.w, Y
 /*unknown_a6_dacf:*/ rts
 
-/*unknown_a6_dad0:*/ bra @unknown_a6_da7b
-/*unknown_a6_dad2:*/ bra @unknown_a6_da7f
+/*unknown_a6_dad0:*/ bra unknown_a6_da7b
+/*unknown_a6_dad2:*/ bra unknown_a6_da7f
 /*unknown_a6_dad4:*/ bra @unknown_a6_da8e
 /*unknown_a6_dad6:*/ bra ($b9 - $100) ; $da91.w
 /*unknown_a6_dad8:*/ lda $7e7820
@@ -10211,7 +10213,7 @@
 /*unknown_a6_daf7:*/ sta $12
 /*unknown_a6_daf9:*/ lda $0f7e.w
 /*unknown_a6_dafc:*/ sta $14
-/*unknown_a6_dafe:*/ jmp @unknown_a6_dc13
+/*unknown_a6_dafe:*/ jmp unknown_a6_dc13
 @unknown_a6_db01: rts
 
 /*unknown_a6_db02:*/ lsr A
@@ -10290,7 +10292,7 @@
 /*unknown_a6_dbbf:*/ ldy #$dc90.w
 /*unknown_a6_dbc2:*/ lda $7e7818
 /*unknown_a6_dbc6:*/ sta $16
-/*unknown_a6_dbc8:*/ jmp @unknown_a6_dc13
+/*unknown_a6_dbc8:*/ jmp unknown_a6_dc13
 /*unknown_a6_dbcb:*/ sta $00
 /*unknown_a6_dbcd:*/ inc A
 /*unknown_a6_dbce:*/ inc A
@@ -10334,7 +10336,7 @@
 /*unknown_a6_dc0f:*/ ldy $0002.w, X
 /*unknown_a6_dc12:*/ rts
 
-@unknown_a6_dc13: lda $0000.w, Y
+unknown_a6_dc13: lda $0000.w, Y
 /*unknown_a6_dc16:*/ iny
 /*unknown_a6_dc17:*/ iny
 /*unknown_a6_dc18:*/ sta $18
@@ -10717,7 +10719,7 @@
 @unknown_a6_df25: sta $0c04.w, Y
 /*unknown_a6_df28:*/ rts
 
-@unknown_a6_df29: lda $0af6.w
+unknown_a6_df29: lda $0af6.w
 /*unknown_a6_df2c:*/ sec
 /*unknown_a6_df2d:*/ sbc $12
 /*unknown_a6_df2f:*/ bpl @unknown_a6_df35
@@ -10796,7 +10798,7 @@
 /*unknown_a6_dfd5:*/ sta $0fa8.w
 @unknown_a6_dfd8: rtl
 
-@unknown_a6_dfd9: lda #$000e.w
+unknown_a6_dfd9: lda #$000e.w
 /*unknown_a6_dfdc:*/ sta $16
 /*unknown_a6_dfde:*/ sta $18
 /*unknown_a6_dfe0:*/ lda $7e20a4

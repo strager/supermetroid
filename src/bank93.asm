@@ -110,7 +110,8 @@
 /*unknown_93_80cd:*/ plp
 /*unknown_93_80ce:*/ rtl
 
-/*unknown_93_80cf:*/ php
+; TODO: "Part of kill projectile - Plays sound and sets up graphic" -- Kejardon
+unknown_93_80cf: php
 /*unknown_93_80d0:*/ phb
 /*unknown_93_80d1:*/ phk
 /*unknown_93_80d2:*/ plb

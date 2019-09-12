@@ -640,7 +640,7 @@ unknown_94_846a: phb
 /*unknown_94_84d4:*/ plp
 /*unknown_94_84d5:*/ rtl
 
-@unknown_94_84d6: lda $1e77.w
+unknown_94_84d6: lda $1e77.w
 /*unknown_94_84d9:*/ bit #$0080.w
 /*unknown_94_84dc:*/ bne @unknown_94_84e6
 /*unknown_94_84de:*/ lda $0b2c.w
@@ -912,7 +912,8 @@ unknown_94_846a: phb
 /*unknown_94_86fa:*/ rts
 
 @unknown_94_86fb: jmp $8f49.w
-@unknown_94_86fe: lda $0b02.w
+
+unknown_94_86fe: lda $0b02.w
 /*unknown_94_8701:*/ lsr A
 /*unknown_94_8702:*/ bcc @unknown_94_8707
 /*unknown_94_8704:*/ jmp @unknown_94_8780
@@ -1037,7 +1038,9 @@ unknown_94_846a: phb
 @unknown_94_87f2: clc
 /*unknown_94_87f3:*/ rts
 
-/*unknown_94_87f4:*/ phb
+; TODO: "Detects and handles horizontal slope collissions for slopes with a BTS
+; AND #$001F greater than 4" -- Kejardon
+unknown_94_87f4: phb
 /*unknown_94_87f5:*/ phk
 /*unknown_94_87f6:*/ plb
 /*unknown_94_87f7:*/ lda $0a46.w
@@ -2046,7 +2049,7 @@ unknown_94_846a: phb
 /*unknown_94_8fca:*/ lda $7f6402, X
 /*unknown_94_8fce:*/ and #$00ff.w
 /*unknown_94_8fd1:*/ sta $1e77.w
-/*unknown_94_8fd4:*/ jmp @unknown_94_84d6
+/*unknown_94_8fd4:*/ jmp unknown_94_84d6
 @unknown_94_8fd7: jmp $8d2b.w
 /*unknown_94_8fda:*/ ldx $0dc4.w
 /*unknown_94_8fdd:*/ lda $7f6402, X
@@ -2055,7 +2058,7 @@ unknown_94_846a: phb
 /*unknown_94_8fe7:*/ bcc @unknown_94_8ff3
 /*unknown_94_8fe9:*/ lda $7f6402, X
 /*unknown_94_8fed:*/ sta $1e77.w
-/*unknown_94_8ff0:*/ jmp @unknown_94_86fe
+/*unknown_94_8ff0:*/ jmp unknown_94_86fe
 @unknown_94_8ff3: jmp $8dbd.w
 /*unknown_94_8ff6:*/ sta ($8e, X)
 /*unknown_94_8ff8:*/ sta ($8e, X)
@@ -2629,6 +2632,8 @@ unknown_94_846a: phb
 @unknown_94_9493: clc
 /*unknown_94_9494:*/ rts
 
+; TODO: "Calculate how many blocks tall Samus is covering, and put it in $1A and
+; $1C" -- Kejardon
 unknown_94_9495: lda $0afa.w
 /*unknown_94_9498:*/ sec
 @unknown_94_9499: sbc $0b00.w
@@ -2648,6 +2653,8 @@ unknown_94_9495: lda $0afa.w
 /*unknown_94_94b2:*/ sta $1c
 /*unknown_94_94b4:*/ rts
 
+; TODO: "Calculate how many blocks wide Samus is covering, and put it in $1A and
+; $1C" -- Kejardon
 unknown_94_94b5: lda $0af6.w
 /*unknown_94_94b8:*/ sec
 /*unknown_94_94b9:*/ sbc $0afe.w
@@ -2702,7 +2709,9 @@ unknown_94_94b5: lda $0af6.w
 /*unknown_94_952a:*/ plx
 /*unknown_94_952b:*/ rts
 
-/*unknown_94_952c:*/ phx
+; TODO: "Vertical block collision reaction(94F5) for Samus. Address of block
+; must be in A when called. TODO... deserves its own document" -- Kejardon
+unknown_94_952c: phx
 /*unknown_94_952d:*/ txa
 /*unknown_94_952e:*/ lsr A
 /*unknown_94_952f:*/ sta $0dc4.w
@@ -2717,6 +2726,8 @@ unknown_94_94b5: lda $0af6.w
 /*unknown_94_9541:*/ plx
 /*unknown_94_9542:*/ rts
 
+; TODO: "Check Samus for collision with blocks, assuming current horizontal
+; speed is $12.$14" -- Kejardon
 unknown_94_9543: jsr unknown_94_9495
 /*unknown_94_9546:*/ lda $0afa.w
 /*unknown_94_9549:*/ sec
@@ -2769,6 +2780,9 @@ unknown_94_9543: jsr unknown_94_9495
 @unknown_94_959c: sec
 /*unknown_94_959d:*/ rts
 
+; TODO: "JSR $94B5, then calculate if Samus is moving up or down, then the
+; block(s) she is in contact with in that direction, then JSR $952C with the
+; block in A and address in $0DC4. Left to Right checking." -- Kejardon
 unknown_94_959e: jsr unknown_94_94b5
 /*unknown_94_95a1:*/ lda $0afc.w
 /*unknown_94_95a4:*/ clc
@@ -2819,7 +2833,10 @@ unknown_94_959e: jsr unknown_94_94b5
 @unknown_94_95f3: sec
 /*unknown_94_95f4:*/ rts
 
-/*unknown_94_95f5:*/ jsr unknown_94_94b5
+; TODO: "JSR $94B5, then calculate if Samus is moving up or down, then the
+; block(s) she is in contact with in that direction, then JSR $952C with the
+; block in A and address in $0DC4. Right to Left checking." -- Kejardon
+unknown_94_95f5: jsr unknown_94_94b5
 /*unknown_94_95f8:*/ stz $1a
 /*unknown_94_95fa:*/ lda $0afc.w
 /*unknown_94_95fd:*/ clc
@@ -2985,7 +3002,10 @@ unknown_94_9653: lda $12
 /*unknown_94_971a:*/ stz $0dd0.w
 /*unknown_94_971d:*/ rtl
 
-/*unknown_94_971e:*/ php
+; TODO: "is collision detection and movement of Samus's X position all in one. I
+; think. Lotta subroutines: this --> 9543 --> (9495, 9515 --> 94D5,X)"
+; -- Kejardon
+unknown_94_971e: php
 /*unknown_94_971f:*/ phb
 /*unknown_94_9720:*/ phk
 /*unknown_94_9721:*/ plb
@@ -3022,7 +3042,10 @@ unknown_94_9653: lda $12
 /*unknown_94_975f:*/ stz $0dd0.w
 /*unknown_94_9762:*/ rtl
 
-/*unknown_94_9763:*/ php
+; TODO: "is collision detection and offset of Samus's Y position all in one. I
+; think. Lotta subroutines: this --> (959E, 95F5) --> (94B5, 952C --> 94F5,X)"
+; -- Kejardon
+unknown_94_9763: php
 /*unknown_94_9764:*/ phb
 /*unknown_94_9765:*/ rep #$30
 /*unknown_94_9767:*/ phk
@@ -3599,6 +3622,8 @@ unknown_94_9653: lda $12
 @unknown_94_9c1b: plb
 /*unknown_94_9c1c:*/ rtl
 
+; TODO: "calculates the block at (1A + 1E) pixels X, and (1C + 20) pixels Y.
+; Result in 0DC4" -- Kejardon
 unknown_94_9c1d: php
 /*unknown_94_9c1e:*/ rep #$30
 /*unknown_94_9c20:*/ lda $1a
@@ -4666,7 +4691,8 @@ unknown_94_a219: lda $0b64.w, X
 /*unknown_94_a46d:*/ clc
 /*unknown_94_a46e:*/ rtl
 
-/*unknown_94_a46f:*/ phb
+; TODO: "Projectiles' block collision detection" -- Kejardon
+unknown_94_a46f: phb
 /*unknown_94_a470:*/ phx
 /*unknown_94_a471:*/ phk
 /*unknown_94_a472:*/ plb
