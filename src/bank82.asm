@@ -179,29 +179,30 @@ unknown_82_819b: php
 /*unknown_82_81a2:*/ plp
 /*unknown_82_81a3:*/ rts
 
-unknown_82_81a4: php
-/*unknown_82_81a5:*/ sep #$30
-/*unknown_82_81a7:*/ lda #$01
-/*unknown_82_81a9:*/ sta $4200.w
-/*unknown_82_81ac:*/ sta $84
-/*unknown_82_81ae:*/ stz $4201.w
-/*unknown_82_81b1:*/ stz $4202.w
-/*unknown_82_81b4:*/ stz $4203.w
-/*unknown_82_81b7:*/ stz $4204.w
-/*unknown_82_81ba:*/ stz $4205.w
-/*unknown_82_81bd:*/ stz $4206.w
-/*unknown_82_81c0:*/ stz $4207.w
-/*unknown_82_81c3:*/ stz $4208.w
-/*unknown_82_81c6:*/ stz $4209.w
-/*unknown_82_81c9:*/ stz $420a.w
-/*unknown_82_81cc:*/ stz $420b.w
-/*unknown_82_81cf:*/ stz $420c.w
-/*unknown_82_81d2:*/ stz $85
-/*unknown_82_81d4:*/ lda #$01
-/*unknown_82_81d6:*/ sta $420d.w
-/*unknown_82_81d9:*/ sta $86
-/*unknown_82_81db:*/ plp
-/*unknown_82_81dc:*/ rts
+unknown_82_81a4:
+  php
+  sep #$30
+  lda #IO_NMITIMEN_ENABLE_JOYPAD
+  sta IO_NMITIMEN
+  sta0 var_unknown_84
+  stz IO_WRIO
+  stz IO_WRMPYA
+  stz IO_WRMPYB
+  stz IO_WRDIVL
+  stz IO_WRDIVH
+  stz IO_WRDIVB
+  stz IO_HTIMEL
+  stz IO_HTIMEH
+  stz IO_VTIMEL
+  stz IO_VTIMEH
+  stz IO_MDMAEN
+  stz IO_HDMAEN
+  stz var_unknown_85
+  lda #IO_MEMSEL_FASTROM
+  sta IO_MEMSEL
+  sta0 var_unknown_86
+  plp
+  rts
 
 unknown_82_81dd: php
 /*unknown_82_81de:*/ sep #$30

@@ -219,15 +219,21 @@
 
 ; CPU: set unsigned 16-bit dividend (16 bits)
 .define IO_WRDIV $4204.w
+.define IO_WRDIVL IO_WRDIV + 0
+.define IO_WRDIVH IO_WRDIV + 1
 
 ; CPU: set unsigned 8-bit divisor and start division
 .define IO_WRDIVB $4206.w
 
 ; CPU: H-count timer setting (16 bits)
 .define IO_HTIME $4207.w
+.define IO_HTIMEL IO_HTIME + 0
+.define IO_HTIMEH IO_HTIME + 1
 
 ; CPU: V-count timer setting (16 bits)
 .define IO_VTIME $4209.w
+.define IO_VTIMEL IO_VTIME + 0
+.define IO_VTIMEH IO_VTIME + 1
 
 ; CPU: select general purpose DMA channels and start transfer
 .define IO_MDMAEN $420b.w
