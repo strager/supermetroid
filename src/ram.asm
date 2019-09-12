@@ -64,6 +64,11 @@ var_engine_frame_is_ready: dw ; $7e05b4
 var_unknown_05b6: dw ; $7e05b6
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $05e5) export
+var_unknown_05e5: db ; $7e05e5
+var_unknown_05e6: db ; $7e05e6
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071d) export
 var_unknown_071d: dw ; $7e071d
 var_unknown_071f: dw ; $7e071f

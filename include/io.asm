@@ -248,6 +248,9 @@
 .define IO_HVBJOY $4212.w
 .define IO_HVBJOY_JOYPAD_BUSY $01.b
 
+; CPU: unsigned division remainder and multiply product (16 bits)
+.define IO_RDMPY $4216.w
+
 ; CPU: Joypad 1 (16 bits)
 .define IO_JOY1 $4218.w
 .define IO_JOY_R 1.w << 4 ; $0010.w

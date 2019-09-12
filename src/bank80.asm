@@ -189,29 +189,29 @@ unknown_80_8107:
   rts
 
 rng_advance: sep #$20
-/*unknown_80_8113:*/ lda $05e5.w
-/*unknown_80_8116:*/ sta $4202.w
+/*unknown_80_8113:*/ lda var_unknown_05e5.w
+/*unknown_80_8116:*/ sta IO_WRMPYA
 /*unknown_80_8119:*/ lda #$05
-/*unknown_80_811b:*/ sta $4203.w
+/*unknown_80_811b:*/ sta IO_WRMPYB
 /*unknown_80_811e:*/ nop
 /*unknown_80_811f:*/ rep #$20
-/*unknown_80_8121:*/ lda $4216.w
+/*unknown_80_8121:*/ lda IO_RDMPY
 /*unknown_80_8124:*/ pha
 /*unknown_80_8125:*/ sep #$20
-/*unknown_80_8127:*/ lda $05e6.w
-/*unknown_80_812a:*/ sta $4202.w
+/*unknown_80_8127:*/ lda var_unknown_05e6.w
+/*unknown_80_812a:*/ sta IO_WRMPYA
 /*unknown_80_812d:*/ lda #$05
-/*unknown_80_812f:*/ sta $4203.w
+/*unknown_80_812f:*/ sta IO_WRMPYB
 /*unknown_80_8132:*/ xba
 /*unknown_80_8133:*/ nop
-/*unknown_80_8134:*/ lda $4216.w
+/*unknown_80_8134:*/ lda IO_RDMPY
 /*unknown_80_8137:*/ sec
 /*unknown_80_8138:*/ adc $02, S
 /*unknown_80_813a:*/ sta $02, S
 /*unknown_80_813c:*/ rep #$20
 /*unknown_80_813e:*/ pla
 /*unknown_80_813f:*/ adc #$0011.w
-/*unknown_80_8142:*/ sta $05e5.w
+/*unknown_80_8142:*/ sta var_unknown_05e5.w
 /*unknown_80_8145:*/ rtl
 
 /*unknown_80_8146:*/ php
