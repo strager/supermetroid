@@ -9,6 +9,48 @@ var_unknown_18: dw ; $7e0018
 var_unknown_1a: dw ; $7e001a
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $51) export
+var_unknown_51: db ; $7e0051
+var_unknown_52: db ; $7e0052
+var_unknown_53: db ; $7e0053
+var_unknown_54: db ; $7e0054
+var_unknown_55: db ; $7e0055
+var_unknown_56: db ; $7e0056
+var_unknown_57: db ; $7e0057
+var_unknown_58: db ; $7e0058
+var_unknown_59: db ; $7e0059
+var_unknown_5a: db ; $7e005a
+var_unknown_5b: db ; $7e005b
+var_unknown_5c: db ; $7e005c
+var_unknown_5d: db ; $7e005d
+var_unknown_5e: db ; $7e005e
+var_unknown_5f: db ; $7e005f
+var_unknown_60: db ; $7e0060
+var_unknown_61: db ; $7e0061
+var_unknown_62: db ; $7e0062
+var_unknown_63: db ; $7e0063
+var_unknown_64: db ; $7e0064
+var_unknown_65: db ; $7e0065
+var_unknown_66: db ; $7e0066
+var_unknown_67: db ; $7e0067
+var_unknown_68: db ; $7e0068
+var_unknown_69: db ; $7e0069
+var_unknown_6a: db ; $7e006a
+var_unknown_6b: db ; $7e006b
+var_unknown_6c: db ; $7e006c
+var_unknown_6d: db ; $7e006d
+var_unknown_6e: db ; $7e006e
+var_unknown_6f: db ; $7e006f
+var_unknown_70: db ; $7e0070
+var_unknown_71: db ; $7e0071
+var_unknown_72: db ; $7e0072
+var_unknown_73: db ; $7e0073
+var_unknown_74: db ; $7e0074
+var_unknown_75: db ; $7e0075
+var_unknown_76: db ; $7e0076
+var_unknown_77: db ; $7e0077
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $84) export
 var_unknown_84: db ; $7e0084
 var_unknown_85: db ; $7e0085
