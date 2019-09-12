@@ -314,7 +314,11 @@
 /*unknown_84_828b:*/ jsr $809021
 @unknown_84_828f: rtl
 
-/*unknown_84_8290:*/ lda $1c87.w, X
+; TODO: "calculates the X and Y coord of a PLM from it's absolute location
+; (1C87,X). Results stored in $1C29(X) and $1C2B(Y). NOTE: This must be called
+; LONG (JSL). Do not attempt to use this as a PLM instruction, even though it's
+; in the same bank as PLMs." -- Kejardon
+unknown_84_8290: lda $1c87.w, X
 /*unknown_84_8293:*/ lsr A
 /*unknown_84_8294:*/ sta $4204.w
 /*unknown_84_8297:*/ sep #$20
@@ -485,7 +489,13 @@ unknown_84_82d6: phx
 /*unknown_84_83d5:*/ plp
 /*unknown_84_83d6:*/ rtl
 
-/*unknown_84_83d7:*/ phb
+; TODO: "Creates PLMs. The routine that calls it must have after it the X and Y
+; coordinate of the PLM and the address of the PLM header, in that order, after
+; the JSL to 84:83D7. The PLM will be set up completely and run once. Then the
+; code will resume, after those four bytes. If there are already too many PLMs
+; and the game fails to make a new one, it just resumes code past those four
+; bytes." -- Kejardon
+unknown_84_83d7: phb
 /*unknown_84_83d8:*/ phy
 /*unknown_84_83d9:*/ phx
 /*unknown_84_83da:*/ phk
@@ -623,7 +633,10 @@ unknown_84_82d6: phx
 
 /*unknown_84_84e6:*/ rts
 
-/*unknown_84_84e7:*/ phb
+; TODO: "Creates PLMs. Before running, nth block is stored at $0DC4 (Block Samus
+; is in contact with?) (Multiplied by two to get absolute address), A contains
+; the PLM header. (TODO!)" -- Kejardon
+unknown_84_84e7: phb
 /*unknown_84_84e8:*/ phy
 /*unknown_84_84e9:*/ phx
 /*unknown_84_84ea:*/ phk

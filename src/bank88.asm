@@ -552,7 +552,11 @@ unknown_88_81fe: rep #$30
 /*unknown_88_842d:*/ adc #$0004.w
 /*unknown_88_8430:*/ sta $03, S
 /*unknown_88_8432:*/ jmp $8477.w
-/*unknown_88_8435:*/ php
+
+; TODO: "Set up a DMA entry. Arguments are stored after the JSL that calls this:
+; values for 4300/4301 (2 bytes total), 2 byte pointer to plm-esque instruction
+; list" -- Kejardon
+unknown_88_8435: php
 /*unknown_88_8436:*/ phb
 /*unknown_88_8437:*/ sep #$20
 /*unknown_88_8439:*/ lda $05, S

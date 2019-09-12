@@ -58,7 +58,11 @@
 /*unknown_85_8079:*/ brk $0e
 /*unknown_85_807b:*/ brk $0e
 /*unknown_85_807d:*/ brk $0e
-/*unknown_85_807f:*/ brk $08
+/*unknown_85_807f:*/ .db $00
+
+; TODO: "draws and handles message boxes. NOTHING else runs while this is
+; running, aside from the IRQ stuff." -- Kejardon
+unknown_85_8080: php
 /*unknown_85_8081:*/ phb
 /*unknown_85_8082:*/ phx
 /*unknown_85_8083:*/ phy

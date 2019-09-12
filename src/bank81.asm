@@ -967,11 +967,20 @@ unknown_81_834b: phb
 /*unknown_81_8796:*/ tsb $058e.w
 /*unknown_81_8799:*/ brk $30
 /*unknown_81_879b:*/ stx $0005.w
-/*unknown_81_879e:*/ cpy #$b9da.w
-/*unknown_81_87a1:*/ brk $00
-/*unknown_81_87a3:*/ bne @unknown_81_87aa
-/*unknown_81_87a5:*/ plx
-/*unknown_81_87a6:*/ rtl
+/*unknown_81_879e:*/ .db $c0
+
+; TODO: "Main sprite drawing routine. Sprite map starts at (Databank):YYYY. $14
+; holds X center, $12 holds Y center, $16 holds pallete number * 200. Sprite
+; maps start with 2 bytes for # of tiles, each tile is 5 bytes: First 2 bytes
+; xxxx xxxx S??? pppX  (9-bit signed X offset, pallete that is almost never
+; used, Size bit), then Y offset (1 byte), and last 2 bytes are remaining OAM
+; (flips, priority, pallete that's not used, tile #)" -- Kejardon
+unknown_81_879f:
+  phx
+  lda $0000.w, Y
+  bne @unknown_81_87aa
+  plx
+  rtl
 
 @unknown_81_87a7: jmp $884e.w
 @unknown_81_87aa: sta $18

@@ -29,7 +29,9 @@
 /*unknown_86_8025:*/ plp
 /*unknown_86_8026:*/ rtl
 
-/*unknown_86_8027:*/ php
+; TODO: "spawns enemy specific projectiles (0F96/0F98 copied to projectile)."
+; -- Kejardon
+unknown_86_8027: php
 /*unknown_86_8028:*/ phb
 /*unknown_86_8029:*/ phx
 /*unknown_86_802a:*/ phy
@@ -87,7 +89,9 @@
 /*unknown_86_8095:*/ clc
 /*unknown_86_8096:*/ rtl
 
-/*unknown_86_8097:*/ php
+; TODO: "spawns enemy/room projectiles (0 used for pallete and sprite index).
+; Used by some enemies, also gate PLMs." -- Kejardon
+unknown_86_8097: php
 /*unknown_86_8098:*/ phb
 /*unknown_86_8099:*/ phx
 /*unknown_86_809a:*/ phy
@@ -143,6 +147,7 @@
 /*unknown_86_8103:*/ rtl
 
 ; TODO: "Handles enemy/room projectiles/objects" -- Kejardon
+; TODO: "is the main enemy/room projectile engine. Called every game frame." -- Kejardon
 unknown_86_8104: php
 /*unknown_86_8105:*/ phb
 /*unknown_86_8106:*/ phk
@@ -162,6 +167,8 @@ unknown_86_8104: php
 /*unknown_86_8123:*/ plp
 /*unknown_86_8124:*/ rtl
 
+; TODO: "handles enemy/room projectile processing for current projectile this
+; frame." -- Kejardon
 unknown_86_8125: jsr ($1a03.w, X)
 /*unknown_86_8128:*/ ldx $1991.w
 /*unknown_86_812b:*/ dec $1b8f.w, X
@@ -515,7 +522,8 @@ unknown_86_8125: jsr ($1a03.w, X)
 /*unknown_86_83b0:*/ plb
 /*unknown_86_83b1:*/ rtl
 
-/*unknown_86_83b2:*/ phb
+; TODO: "Check to draw all enemy/room projectiles" -- Kejardon
+unknown_86_83b2: phb
 /*unknown_86_83b3:*/ rep #$30
 /*unknown_86_83b5:*/ pea $8d00.w
 /*unknown_86_83b8:*/ plb
@@ -534,6 +542,7 @@ unknown_86_8125: jsr ($1a03.w, X)
 /*unknown_86_83d4:*/ plb
 /*unknown_86_83d5:*/ rtl
 
+; TODO: "Found a projectile to draw, draw it" -- Kejardon
 unknown_86_83d6: ldy $1b6b.w, X
 /*unknown_86_83d9:*/ lda $19bb.w, X
 /*unknown_86_83dc:*/ and #$00ff.w
@@ -8063,10 +8072,12 @@ unknown_86_c239: jsr unknown_86_c3e9
 @unknown_86_c26a: sec
 /*unknown_86_c26b:*/ rts
 
-/*unknown_86_c26c:*/ sta $26
+; TODO: "Calculates A * sin ($12 * 360/256), result in A." -- Kejardon
+unknown_86_c26c: sta $26
 /*unknown_86_c26e:*/ lda $12
 /*unknown_86_c270:*/ bra @unknown_86_c27a
-/*unknown_86_c272:*/ sta $26
+; TODO: "Calculates A * cos ($12 * 360/256), result in A." -- Kejardon
+@unknown_86_c272: sta $26
 /*unknown_86_c274:*/ lda $12
 /*unknown_86_c276:*/ clc
 /*unknown_86_c277:*/ adc #$0040.w
@@ -8087,6 +8098,8 @@ unknown_86_c239: jsr unknown_86_c3e9
 /*unknown_86_c299:*/ inc A
 @unknown_86_c29a: rtl
 
+; TODO: "Multiply $26 (2 bytes) by $28 (2 bytes), result in $2A (4 bytes). When
+; leaving, A = $2B (2 bytes), Y = $2D." -- Kejardon
 unknown_86_c29b: rep #$20
 /*unknown_86_c29d:*/ sep #$10
 /*unknown_86_c29f:*/ ldx $26
@@ -13590,6 +13603,7 @@ unknown_86_ec18: lda $1a4b.w, X
 /*unknown_86_f101:*/ jsr $8090c1
 /*unknown_86_f105:*/ rts
 
+; TODO: "Random drop routine?" -- Kejardon
 unknown_86_f106: phx
 /*unknown_86_f107:*/ phy
 /*unknown_86_f108:*/ phb

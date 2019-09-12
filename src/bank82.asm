@@ -1834,6 +1834,8 @@ das: .dw unknown_b6_e800@size
 /*unknown_82_8f6e:*/ plp
 /*unknown_82_8f6f:*/ rtl
 
+; TODO: "Writes the number next to your reserve amount in the pause screen"
+; -- Kejardon
 unknown_82_8f70: php
 /*unknown_82_8f71:*/ rep #$30
 /*unknown_82_8f73:*/ lda $09d4.w
@@ -4040,6 +4042,9 @@ unknown_82_a0f7: rep #$30
 /*unknown_82_a127:*/ sta $074f.w
 /*unknown_82_a12a:*/ rts
 
+; TODO: "Sets the equipment screen up (reserve tank tiles, clears uncollected
+; items, greys unequipped items, oranges equipped items). Runs when the game is
+; paused" -- Kejardon
 unknown_82_a12b: rep #$30
 /*unknown_82_a12d:*/ lda $09d4.w
 /*unknown_82_a130:*/ beq @unknown_82_a16a
@@ -10947,6 +10952,8 @@ unknown_82_c04c: .db $00
 /*unknown_82_da00:*/ clc
 /*unknown_82_da01:*/ rtl
 
+; TODO: "Gradual color change routine for all colors, based on C402 and C400."
+; -- Kejardon
 unknown_82_da02: rep #$30
 /*unknown_82_da04:*/ lda $7ec402
 /*unknown_82_da08:*/ inc A
@@ -10982,6 +10989,8 @@ unknown_82_da02: rep #$30
 /*unknown_82_da48:*/ clc
 /*unknown_82_da49:*/ rts
 
+; TODO: "Gradual color change routine. Y is new color (C200,x), X is original
+; color (C000,x), A is current change amount" -- Kejardon
 unknown_82_da4a: pha
 /*unknown_82_da4b:*/ pha
 /*unknown_82_da4c:*/ phx
@@ -11466,6 +11475,7 @@ unknown_82_ddf1: phb
 /*unknown_82_de10:*/ plb
 /*unknown_82_de11:*/ rts
 
+; TODO: "Load data from DDB during room transition" -- Kejardon
 unknown_82_de12: pea $8300.w
 /*unknown_82_de15:*/ plb
 /*unknown_82_de16:*/ plb
@@ -11644,6 +11654,7 @@ unknown_82_dfb6: ldx $078d.w
 /*unknown_82_dfc2:*/ jsr $80858c
 @unknown_82_dfc6: rts
 
+; TODO: "Ensures that Samus is drawn every frame?" -- Kejardon
 unknown_82_dfc7: lda $0e16.w
 /*unknown_82_dfca:*/ bne @unknown_82_dfd0
 /*unknown_82_dfcc:*/ jsr $908a00
@@ -11703,6 +11714,10 @@ unknown_2: dw
 unknown_3: dw
 .endst
 
+; TODO: "Sets up DMA transfer to VRAM. 7 bytes after the JSR are used as
+; arguments: Source address (3 bytes), VRAM address (2 bytes), size (2 bytes).
+; Waits for an IRQ to DMA - ONLY during door transitions." -- Kejardon
+;
 ; Call this procedure with the following sequence:
 ;
 ;   jsl unknown_82_e039
@@ -11993,7 +12008,8 @@ unknown_82_e288: php
 /*unknown_82_e29c:*/ plp
 /*unknown_82_e29d:*/ rts
 
-/*unknown_82_e29e:*/ php
+; TODO: "Handles room transitions" -- Kejardon
+unknown_82_e29e: php
 /*unknown_82_e29f:*/ jsr $a08eb6
 /*unknown_82_e2a3:*/ jsr $a08fd4
 /*unknown_82_e2a7:*/ jsr $a0884d

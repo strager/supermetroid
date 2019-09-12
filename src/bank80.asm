@@ -258,6 +258,8 @@ rng_advance:
 /*unknown_80_818c:*/ plp
 /*unknown_80_818d:*/ rtl
 
+; TODO: "7E:05E7 = bit (A mod 8), X = A / 8. Most often used for testing or
+; setting specific bits in a bit array." -- Kejardon
 unknown_80_818e:
   tax
   bpl @unknown_80_8192
@@ -278,7 +280,8 @@ unknown_80_818e:
   tax
   rtl
 
-/*unknown_80_81a6:*/ phx
+; TODO: "Set boss bits in A for current area (7E:D828,X)" -- Kejardon
+unknown_80_81a6: phx
 /*unknown_80_81a7:*/ phy
 /*unknown_80_81a8:*/ php
 /*unknown_80_81a9:*/ sep #$20
@@ -307,7 +310,10 @@ unknown_80_818e:
 /*unknown_80_81da:*/ plx
 /*unknown_80_81db:*/ rtl
 
-/*unknown_80_81dc:*/ phx
+; TODO: "checks if the boss bits for the current area matches any bits in A. SEC
+; if there's a match. It also pushes and pulls Y for ABSOLUTELY NO REASON."
+; -- Kejardon
+unknown_80_81dc: phx
 /*unknown_80_81dd:*/ phy
 /*unknown_80_81de:*/ php
 /*unknown_80_81df:*/ sep #$20
@@ -328,7 +334,9 @@ unknown_80_818e:
 /*unknown_80_81f8:*/ sec
 /*unknown_80_81f9:*/ rtl
 
-/*unknown_80_81fa:*/ phx
+; TODO: "marks an event as happened. Event bit # must be stored in A."
+; -- Kejardon
+unknown_80_81fa: phx
 /*unknown_80_81fb:*/ phy
 /*unknown_80_81fc:*/ php
 /*unknown_80_81fd:*/ rep #$30
@@ -357,7 +365,9 @@ unknown_80_818e:
 /*unknown_80_8231:*/ plx
 /*unknown_80_8232:*/ rtl
 
-/*unknown_80_8233:*/ phx
+; TODO: "calls 80:818E and tests against 7E:D820,X. CLC if 0, SEC if 1."
+; -- Kejardon
+unknown_80_8233: phx
 /*unknown_80_8234:*/ phy
 /*unknown_80_8235:*/ php
 /*unknown_80_8236:*/ rep #$30
@@ -430,7 +440,8 @@ unknown_80_82ad:
 unknown_80_82b9:
   .db "supermetroid"
 
-/*unknown_80_82c5:*/ pha
+; TODO: "Wait until the end of a VBlank" -- Kejardon
+unknown_80_82c5: pha
 /*unknown_80_82c6:*/ php
 /*unknown_80_82c7:*/ sep #$20
 @unknown_80_82c9: lda $4212.w
@@ -441,7 +452,9 @@ unknown_80_82b9:
 /*unknown_80_82d4:*/ pla
 /*unknown_80_82d5:*/ rtl
 
-/*unknown_80_82d6:*/ phx
+; TODO: "Multiplies A and Y together (16-bit * 16-bit). Result in $05F1-$05F4.
+; Not accurate: Can lose carry to top byte." -- Kejardon
+unknown_80_82d6: phx
 /*unknown_80_82d7:*/ sta $05e9.w
 /*unknown_80_82da:*/ sty $05eb.w
 /*unknown_80_82dd:*/ stz $05f1.w
@@ -1663,6 +1676,8 @@ unknown_80_8bd3:
   tax
   jmp @unknown_80_8bd4
 
+; TODO: "Processes $D0,X table. Runs once a frame during VBlank, should not be
+; called outside of VBlank." -- Kejardon
 unknown_80_8c83:
   php
   rep #$30
@@ -2035,7 +2050,9 @@ unknown_80_8ea2:
 /*unknown_80_8fbf:*/ plp
 /*unknown_80_8fc0:*/ rtl
 
-/*unknown_80_8fc1:*/ php
+; TODO: "Changes music song/instruments or music track to A, with an 8-frame
+; delay. Makes sure 0639 does not lap 063B." -- Kejardon
+unknown_80_8fc1: php
 /*unknown_80_8fc2:*/ rep #$30
 /*unknown_80_8fc4:*/ phx
 /*unknown_80_8fc5:*/ phy
@@ -2065,7 +2082,9 @@ unknown_80_8ea2:
 /*unknown_80_8ff5:*/ plp
 /*unknown_80_8ff6:*/ rtl
 
-/*unknown_80_8ff7:*/ php
+; TODO: "Changes music song/instruments or music track to A, with a Y-frame
+; delay (minimum of 8). Does not stop 0639 from lapping 063B." -- Kejardon
+unknown_80_8ff7: php
 /*unknown_80_8ff8:*/ rep #$30
 /*unknown_80_8ffa:*/ phx
 /*unknown_80_8ffb:*/ ldx $0998.w
@@ -2309,6 +2328,10 @@ unknown_80_914d: phx
 /*unknown_80_91a7:*/ nop
 /*unknown_80_91a8:*/ rts
 
+; TODO: "Initiate a DMA transfer. 2116 should be set before hand, if it's being
+; used. First byte tells channel (00 - 07), next 7 are copied into 47x0-47x6."
+; -- Kejardon
+;
 ; Call this procedure with the following sequence:
 ;
 ;   jsl unknown_80_91a9
@@ -3406,7 +3429,11 @@ das: .dw unknown_80_988b@size
 /*unknown_80_9b42:*/ plp
 /*unknown_80_9b43:*/ rtl
 
-; TODO: "Status bar stuff" -- Kejardon
+; TODO: "Status bar routine. Handles reserve tanks, energy tanks, health,
+; missiles, super missiles (skips 3-digit SM code), power bombs, changing items,
+; and finally auto-unselected flashing. Then puts in an entry in the $D0 graphic
+; table to update itself. Format: Length(2 bytes), Offset source (3 bytes),
+; something (2 bytes)" -- Kejardon
 unknown_80_9b44: php
 /*unknown_80_9b45:*/ phb
 /*unknown_80_9b46:*/ phk
@@ -4255,7 +4282,13 @@ unknown_80_a12b: php
 /*unknown_80_a2f5:*/ plp
 /*unknown_80_a2f6:*/ rtl
 
-/*unknown_80_a2f7:*/ lsr $0818.w
+/*unknown_80_a2f7:*/ 
+  .db $4e
+  .db $18
+
+; TODO: "Calculates Layer 2's X scroll position (0917) based on Layer 1 (0911)
+; and Layer 2's X scroll percent (091B)" -- Kejardon
+unknown_80_a2f9: php
 /*unknown_80_a2fa:*/ ldy $0911.w
 /*unknown_80_a2fd:*/ sep #$20
 /*unknown_80_a2ff:*/ lda $091b.w
@@ -4289,6 +4322,8 @@ unknown_80_a12b: php
 /*unknown_80_a338:*/ sec
 /*unknown_80_a339:*/ rts
 
+; TODO: "Calculates Layer 2's Y scroll position (0919) based on Layer 1 (0915)
+; and Layer 2's Y scroll percent (091C)" -- Kejardon
 unknown_80_a33a: php
 /*unknown_80_a33b:*/ ldy $0915.w
 /*unknown_80_a33e:*/ sep #$20
@@ -4323,6 +4358,8 @@ unknown_80_a33a: php
 /*unknown_80_a379:*/ sec
 /*unknown_80_a37a:*/ rts
 
+; TODO: "Translates Layer 1 and Layer 2 scroll positions to BG1 and BG2 scroll
+; positions" -- Kejardon
 unknown_80_a37b: lda $0911.w
 /*unknown_80_a37e:*/ clc
 /*unknown_80_a37f:*/ adc $091d.w
@@ -4341,6 +4378,7 @@ unknown_80_a37b: lda $0911.w
 /*unknown_80_a39d:*/ sta $b7
 /*unknown_80_a39f:*/ rts
 
+; TODO: "Updates only BG1 when scrolling, I think" -- Kejardon
 unknown_80_a3a0: php
 /*unknown_80_a3a1:*/ phb
 /*unknown_80_a3a2:*/ phk
@@ -4350,6 +4388,7 @@ unknown_80_a3a0: php
 /*unknown_80_a3a9:*/ bra @unknown_80_a3df
 
 ; TODO: "Handles the movement of layer 1 and 2" -- Kejardon
+; TODO: "Updates BG1 and BG2 graphics when scrolling" -- Kejardon
 @unknown_80_a3ab: lda $0a78.w
 /*unknown_80_a3ae:*/ beq @unknown_80_a3b1
 /*unknown_80_a3b0:*/ rtl
@@ -4469,6 +4508,8 @@ unknown_80_a3a0: php
 /*unknown_80_a4b9:*/ plp
 /*unknown_80_a4ba:*/ rtl
 
+; TODO: "Calculate blocks scrolled for various layers, which is used to update
+; room graphics" -- Kejardon
 unknown_80_a4bb: lda $b1
 /*unknown_80_a4bd:*/ lsr A
 /*unknown_80_a4be:*/ lsr A
@@ -4531,7 +4572,9 @@ unknown_80_a4bb: lda $b1
 @unknown_80_a524: sta $08fd.w
 /*unknown_80_a527:*/ rts
 
-/*unknown_80_a528:*/ php
+; TODO: "Handles autoscrolling when Samus isn't moving horizontally and part of
+; the screen is on a no-scroll area." -- Kejardon
+unknown_80_a528: php
 /*unknown_80_a529:*/ phb
 /*unknown_80_a52a:*/ sep #$20
 /*unknown_80_a52c:*/ lda $0a78.w
@@ -4650,7 +4693,9 @@ unknown_80_a4bb: lda $b1
 /*unknown_80_a63f:*/ plp
 /*unknown_80_a640:*/ rtl
 
-/*unknown_80_a641:*/ php
+; TODO: "Handles scrolling when Samus moves and triggered scrolling right.
+; Checks scrollmap." -- Kejardon
+unknown_80_a641: php
 /*unknown_80_a642:*/ phb
 /*unknown_80_a643:*/ sep #$20
 /*unknown_80_a645:*/ lda #$8f
@@ -4704,7 +4749,9 @@ unknown_80_a4bb: lda $b1
 /*unknown_80_a6b9:*/ plp
 /*unknown_80_a6ba:*/ rtl
 
-/*unknown_80_a6bb:*/ php
+; TODO: "Handles scrolling when Samus moves and triggered scrolling left."
+; -- Kejardon
+unknown_80_a6bb: php
 /*unknown_80_a6bc:*/ phb
 /*unknown_80_a6bd:*/ sep #$20
 /*unknown_80_a6bf:*/ lda #$8f
@@ -5221,8 +5268,10 @@ unknown_80_a9de: lda $0783.w
 /*unknown_80_ab6e:*/ plp
 /*unknown_80_ab6f:*/ rts
 
+; TODO: "Update a block in Layer 2 / BG2" -- Kejardon
 unknown_80_ab70: ldx #$001c.w
 /*unknown_80_ab73:*/ bra unknown_80_ab78
+; TODO: "Update a block in Layer 1 / BG1 (because of scrolling?). Room X/Y is " -- Kejardon
 unknown_80_ab75: ldx #$0000.w
 unknown_80_ab78: lda $0783.w
 /*unknown_80_ab7b:*/ beq @unknown_80_ab7e
@@ -5403,7 +5452,8 @@ unknown_80_ab78: lda $0783.w
 /*unknown_80_ad1b:*/ plp
 /*unknown_80_ad1c:*/ rts
 
-/*unknown_80_ad1d:*/ stz $0925.w
+; TODO: "Run to 'Fix' doors moving up; redraws top row of blocks." -- Kejardon
+unknown_80_ad1d: stz $0925.w
 /*unknown_80_ad20:*/ jsr unknown_80_a4bb
 /*unknown_80_ad23:*/ jsr $ae10.w
 /*unknown_80_ad26:*/ inc $0901.w
@@ -5504,8 +5554,10 @@ unknown_80_ab78: lda $0783.w
 /*unknown_80_ae08:*/ lsr A
 /*unknown_80_ae09:*/ lda $ad74.w
 /*unknown_80_ae0c:*/ stz $c8ad.w, X
-/*unknown_80_ae0f:*/ lda $f7ad.w
-/*unknown_80_ae12:*/ php
+/*unknown_80_ae0f:*/ .db $ad
+
+; TODO: "Record X/Y scrolling for BG1/BG2 during room transitions" -- Kejardon
+unknown_80_ae10: lda $08f7.w
 /*unknown_80_ae13:*/ sta $08ff.w
 /*unknown_80_ae16:*/ lda $08fb.w
 /*unknown_80_ae19:*/ sta $0903.w
@@ -5680,6 +5732,8 @@ unknown_80_af02: ldx $0925.w
 @unknown_80_af87: clc
 /*unknown_80_af88:*/ rts
 
+; TODO: "Scrolling routine for doors moving up. First time run is actually a fix
+; to redraw top row of blocks." -- Kejardon
 unknown_80_af89: ldx $0925.w
 /*unknown_80_af8c:*/ phx
 /*unknown_80_af8d:*/ bne @unknown_80_afcb
@@ -5850,6 +5904,10 @@ unknown_80_af89: ldx $0925.w
 @unknown_80_b0fd: plp
 /*unknown_80_b0fe:*/ rtl
 
+; TODO: "Decompression routine. 3 bytes after JSL are the target address, and
+; $47 contains a 3 byte source address. Source may overflow bank, target may
+; NOT." -- Kejardon
+;
 ; Call this procedure with the following sequence:
 ;
 ;   jsl unknown_80_b0ff
@@ -5881,7 +5939,9 @@ unknown_80_b0ff:
 /*unknown_80_b114:*/ iny
 /*unknown_80_b115:*/ lda [$44], Y
 /*unknown_80_b117:*/ sta $4d
-/*unknown_80_b119:*/ php
+; TODO: "Decompression routine. Target address in $4C (3 bytes), source address
+; in $47 (3 bytes)." -- Kejardon
+@unknown_80_b119: php
 /*unknown_80_b11a:*/ phb
 /*unknown_80_b11b:*/ sep #$20
 /*unknown_80_b11d:*/ rep #$10
