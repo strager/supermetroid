@@ -8106,48 +8106,51 @@ unknown_86_c26c:
 
 ; TODO: "Multiply $26 (2 bytes) by $28 (2 bytes), result in $2A (4 bytes). When
 ; leaving, A = $2B (2 bytes), Y = $2D." -- Kejardon
-unknown_86_c29b: rep #$20
-/*unknown_86_c29d:*/ sep #$10
-/*unknown_86_c29f:*/ ldx var_unknown_26_l
-/*unknown_86_c2a1:*/ stx IO_WRMPYA
-/*unknown_86_c2a4:*/ ldx var_unknown_28_l
-/*unknown_86_c2a6:*/ stx IO_WRMPYB
-/*unknown_86_c2a9:*/ xba
-/*unknown_86_c2aa:*/ nop
-/*unknown_86_c2ab:*/ lda IO_RDMPYL
-/*unknown_86_c2ae:*/ sta var_unknown_2a
-/*unknown_86_c2b0:*/ ldx var_unknown_26_h
-/*unknown_86_c2b2:*/ stx IO_WRMPYA
-/*unknown_86_c2b5:*/ ldx var_unknown_28_h
-/*unknown_86_c2b7:*/ stx IO_WRMPYB
-/*unknown_86_c2ba:*/ xba
-/*unknown_86_c2bb:*/ nop
-/*unknown_86_c2bc:*/ ldx IO_RDMPYL
-/*unknown_86_c2bf:*/ stx var_unknown_2b_h
-/*unknown_86_c2c1:*/ ldy IO_RDMPYH
-/*unknown_86_c2c4:*/ ldx var_unknown_26_h
-/*unknown_86_c2c6:*/ stx IO_WRMPYA
-/*unknown_86_c2c9:*/ ldx var_unknown_28
-/*unknown_86_c2cb:*/ stx IO_WRMPYB
-/*unknown_86_c2ce:*/ lda var_unknown_2b
-/*unknown_86_c2d0:*/ clc
-/*unknown_86_c2d1:*/ adc IO_RDMPY
-/*unknown_86_c2d4:*/ sta var_unknown_2b
-/*unknown_86_c2d6:*/ bcc @unknown_86_c2d9
-/*unknown_86_c2d8:*/ iny
-@unknown_86_c2d9: ldx var_unknown_26_l
-/*unknown_86_c2db:*/ stx IO_WRMPYA
-/*unknown_86_c2de:*/ ldx var_unknown_28_h
-/*unknown_86_c2e0:*/ stx IO_WRMPYB
-/*unknown_86_c2e3:*/ lda var_unknown_2b
-/*unknown_86_c2e5:*/ clc
-/*unknown_86_c2e6:*/ adc IO_RDMPY
-/*unknown_86_c2e9:*/ sta var_unknown_2b
-/*unknown_86_c2eb:*/ bcc @unknown_86_c2ee
-/*unknown_86_c2ed:*/ iny
-@unknown_86_c2ee: sty var_unknown_2d
-/*unknown_86_c2f0:*/ rep #$10
-/*unknown_86_c2f2:*/ rts
+unknown_86_c29b:
+  rep #$20
+  sep #$10
+  ldx var_unknown_26_l
+  stx IO_WRMPYA
+  ldx var_unknown_28_l
+  stx IO_WRMPYB
+  xba
+  nop
+  lda IO_RDMPYL
+  sta var_unknown_2a
+  ldx var_unknown_26_h
+  stx IO_WRMPYA
+  ldx var_unknown_28_h
+  stx IO_WRMPYB
+  xba
+  nop
+  ldx IO_RDMPYL
+  stx var_unknown_2b_h
+  ldy IO_RDMPYH
+  ldx var_unknown_26_h
+  stx IO_WRMPYA
+  ldx var_unknown_28
+  stx IO_WRMPYB
+  lda var_unknown_2b
+  clc
+  adc IO_RDMPY
+  sta var_unknown_2b
+  bcc @unknown_86_c2d9
+  iny
+@unknown_86_c2d9:
+  ldx var_unknown_26_l
+  stx IO_WRMPYA
+  ldx var_unknown_28_h
+  stx IO_WRMPYB
+  lda var_unknown_2b
+  clc
+  adc IO_RDMPY
+  sta var_unknown_2b
+  bcc @unknown_86_c2ee
+  iny
+@unknown_86_c2ee:
+  sty var_unknown_2d
+  rep #$10
+  rts
 
 /*unknown_86_c2f3:*/ tyx
 /*unknown_86_c2f4:*/ lda #$0008.w
