@@ -180,11 +180,25 @@ var_unknown_09c6: ds $e ; $7e09c6
 var_player_max_reserve_tanks: dw ; $7e09d4
 var_player_cur_reserve_tanks: dw ; $7e09d6
 var_unknown_09d8: dw ; $7e09d8
-var_unknown_09da: dw ; $7e09da
-var_unknown_09dc: dw ; $7e09dc
-var_unknown_09de: dw ; $7e09de
-var_unknown_09e0: dw ; $7e09e0
+var_game_time_frames: dw ; $7e09da
+var_game_time_seconds: dw ; $7e09dc
+var_game_time_minutes: dw ; $7e09de
+var_game_time_hours: dw ; $7e09e0
 .ende
+.define game_time_frames_per_second 60.b
+.export game_time_frames_per_second
+.define game_time_seconds_per_minute 60.b
+.export game_time_seconds_per_minute
+.define game_time_minutes_per_hour 60.b
+.export game_time_minutes_per_hour
+.define game_time_hours_max 100.b
+.export game_time_hours_max
+; If the timer exceeds the maximum number of hours (game_time_hours_max), show
+; the following time instead:
+.define game_time_frames_minutes_seconds_overflow 59.b
+.export game_time_frames_minutes_seconds_overflow
+.define game_time_hours_overflow 99.b
+.export game_time_hours_overflow
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0a76) export
 var_unknown_0a76: dw ; $7e0a76

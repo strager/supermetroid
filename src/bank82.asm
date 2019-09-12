@@ -1352,7 +1352,7 @@ unknown_82_8b44:
   jsl unknown_80_9b44
   jsl unknown_80_a3a0@unknown_80_a3ab
   jsl unknown_8f_e8bd
-  jsr unknown_82_db69
+  jsr check_player_health_and_advance_game_time
   jsl unknown_a0_8687
   jsl unknown_a0_9169
   plp
@@ -11153,78 +11153,85 @@ unknown_82_db0c: rep #$30
 /*unknown_82_db66:*/ bne @unknown_82_db44
 /*unknown_82_db68:*/ rts
 
-; TODO: "Handles game time. And kills Samus (!)." -- Kejardon
-unknown_82_db69:
+check_player_health_and_advance_game_time:
   php
   rep #$30
   lda var_player_cur_health.w
-  beq @unknown_82_db73
-  bpl @unknown_82_dbb2
-@unknown_82_db73:
+  beq @player_has_no_health
+  bpl @advance_game_time
+
+@player_has_no_health:
   lda var_reserve_tank_configuration.w
-  bit #$0001.w
-  beq @unknown_82_db95
+  bit #reserve_tank_configuration_automatic
+  beq @@dont_use_reserve_tank
   lda var_player_cur_reserve_tanks.w
-  beq @unknown_82_db95
+  beq @@dont_use_reserve_tank
+@@use_reserve_tank:
   lda #$8000.w
   sta var_unknown_0a78.w
   lda #game_state_reserve_tanks_auto
   sta var_game_state.w
   lda #$001b.w
   jsl unknown_90_f084
-  bra @unknown_82_dbb2
-@unknown_82_db95:
+  bra @advance_game_time
+@@dont_use_reserve_tank:
   lda var_game_state.w
   cmp #game_state_playing
-  beq @unknown_82_db9f
+  beq @@kill_player
   plp
   rts
-@unknown_82_db9f:
+@@kill_player:
   lda #$8000.w
   sta var_unknown_0a78.w
   lda #$0011.w
   jsl unknown_90_f084
   lda #game_state_dying_no_health
   sta var_game_state.w
-@unknown_82_dbb2:
-  lda var_unknown_09da.w
+
+@advance_game_time:
+@@advance_game_time_frames:
+  lda var_game_time_frames.w
   clc
-  adc #$0001.w
-  sta var_unknown_09da.w
-  cmp #$003c.w
-  bmi @unknown_82_dbf2
-  stz var_unknown_09da.w
-  lda var_unknown_09dc.w
+  adc #1
+  sta var_game_time_frames.w
+  cmp #game_time_frames_per_second
+  bmi @done_advancing_game_time
+@@advance_game_time_seconds:
+  stz var_game_time_frames.w
+  lda var_game_time_seconds.w
   clc
-  adc #$0001.w
-  sta var_unknown_09dc.w
-  cmp #$003c.w
-  bmi @unknown_82_dbf2
-  stz var_unknown_09dc.w
-  lda var_unknown_09de.w
+  adc #1
+  sta var_game_time_seconds.w
+  cmp #game_time_seconds_per_minute
+  bmi @done_advancing_game_time
+@@advance_game_time_minutes:
+  stz var_game_time_seconds.w
+  lda var_game_time_minutes.w
   clc
-  adc #$0001.w
-  sta var_unknown_09de.w
-  cmp #$003c.w
-  bmi @unknown_82_dbf2
-  stz var_unknown_09de.w
-  lda var_unknown_09e0.w
+  adc #1
+  sta var_game_time_minutes.w
+  cmp #game_time_minutes_per_hour 
+  bmi @done_advancing_game_time
+@@advance_game_time_hours:
+  stz var_game_time_minutes.w
+  lda var_game_time_hours.w
   clc
-  adc #$0001.w
-  sta var_unknown_09e0.w
-@unknown_82_dbf2:
-  lda var_unknown_09e0.w
-  cmp #$0064.w
-  bpl @unknown_82_dbfc
+  adc #1
+  sta var_game_time_hours.w
+
+@done_advancing_game_time:
+  lda var_game_time_hours.w
+  cmp #game_time_hours_max
+  bpl @overflow_game_time
   plp
   rts
-@unknown_82_dbfc:
-  lda #$003b.w
-  sta var_unknown_09da.w
-  sta var_unknown_09dc.w
-  sta var_unknown_09de.w
-  lda #$0063.w
-  sta var_unknown_09e0.w
+@overflow_game_time:
+  lda #game_time_frames_minutes_seconds_overflow
+  sta var_game_time_frames.w
+  sta var_game_time_seconds.w
+  sta var_game_time_minutes.w
+  lda #game_time_hours_overflow
+  sta var_game_time_hours.w
   plp
   rts
 
