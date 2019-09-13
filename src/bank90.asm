@@ -668,55 +668,58 @@ unknown_90_84e3: php
 /*unknown_90_85e1:*/ rts
 
 ; TODO: "Draws Samus" -- Kejardon
-unknown_90_85e2: php
-/*unknown_90_85e3:*/ phb
-/*unknown_90_85e4:*/ sep #$20
-/*unknown_90_85e6:*/ lda #$92
-/*unknown_90_85e8:*/ pha
-/*unknown_90_85e9:*/ plb
-/*unknown_90_85ea:*/ rep #$30
-/*unknown_90_85ec:*/ lda $18aa.w
-/*unknown_90_85ef:*/ bne @unknown_90_8606
-/*unknown_90_85f1:*/ lda $18a8.w
-/*unknown_90_85f4:*/ beq @unknown_90_8606
-/*unknown_90_85f6:*/ lda $0a68.w
-/*unknown_90_85f9:*/ bne @unknown_90_8606
-/*unknown_90_85fb:*/ lda $05b6.w
-/*unknown_90_85fe:*/ bit #$0001.w
-/*unknown_90_8601:*/ beq @unknown_90_8606
-/*unknown_90_8603:*/ jmp $8647.w
-@unknown_90_8606: lda $0a1c.w
-/*unknown_90_8609:*/ asl A
-/*unknown_90_860a:*/ tax
-/*unknown_90_860b:*/ phx
-/*unknown_90_860c:*/ lda $929263, X
-/*unknown_90_8610:*/ clc
-/*unknown_90_8611:*/ adc $0a96.w
-/*unknown_90_8614:*/ sta $0ac8.w
-/*unknown_90_8617:*/ pha
-/*unknown_90_8618:*/ jsr unknown_90_8c1f
-/*unknown_90_861b:*/ pla
-/*unknown_90_861c:*/ jsr $8189ae
-/*unknown_90_8620:*/ plx
-/*unknown_90_8621:*/ stx $24
-/*unknown_90_8623:*/ lda $0a1f.w
-/*unknown_90_8626:*/ and #$00ff.w
-/*unknown_90_8629:*/ asl A
-/*unknown_90_862a:*/ tax
-/*unknown_90_862b:*/ jsr ($864e.w, X)
-/*unknown_90_862e:*/ bcc @unknown_90_8647
-/*unknown_90_8630:*/ ldx $24
-/*unknown_90_8632:*/ lda $92945d, X
-/*unknown_90_8636:*/ clc
-/*unknown_90_8637:*/ adc $0a96.w
-/*unknown_90_863a:*/ sta $0aca.w
-/*unknown_90_863d:*/ ldx $0b04.w
-/*unknown_90_8640:*/ ldy $0b06.w
-/*unknown_90_8643:*/ jsr $8189ae
-@unknown_90_8647: jsr $928000
-/*unknown_90_864b:*/ plb
-/*unknown_90_864c:*/ plp
-/*unknown_90_864d:*/ rts
+unknown_90_85e2:
+  php
+  phb
+  sep #$20
+  lda #$92
+  pha
+  plb
+  rep #$30
+  lda $18aa.w
+  bne @unknown_90_8606
+  lda $18a8.w
+  beq @unknown_90_8606
+  lda $0a68.w
+  bne @unknown_90_8606
+  lda $05b6.w
+  bit #$0001.w
+  beq @unknown_90_8606
+  jmp $8647.w
+@unknown_90_8606:
+  lda $0a1c.w
+  asl A
+  tax
+  phx
+  lda $929263, X
+  clc
+  adc $0a96.w
+  sta $0ac8.w
+  pha
+  jsr unknown_90_8c1f
+  pla
+  jsr $8189ae
+  plx
+  stx $24
+  lda $0a1f.w
+  and #$00ff.w
+  asl A
+  tax
+  jsr ($864e.w, X)
+  bcc @unknown_90_8647
+  ldx $24
+  lda $92945d, X
+  clc
+  adc $0a96.w
+  sta $0aca.w
+  ldx $0b04.w
+  ldy $0b06.w
+  jsr $8189ae
+@unknown_90_8647:
+  jsr $928000
+  plb
+  plp
+  rts
 
 /*unknown_90_864e:*/ sta $8686.w
 /*unknown_90_8651:*/ stx $86
@@ -906,73 +909,83 @@ unknown_90_85e2: php
 /*unknown_90_87bc:*/ rts
 
 ; TODO: "Draw Samus's echoes" -- Kejardon
-unknown_90_87bd: php
-/*unknown_90_87be:*/ rep #$30
-/*unknown_90_87c0:*/ lda $0aae.w
-/*unknown_90_87c3:*/ bmi @unknown_90_87ea
-/*unknown_90_87c5:*/ lda $0b3e.w
-/*unknown_90_87c8:*/ and #$ff00.w
-/*unknown_90_87cb:*/ cmp #$0400.w
-/*unknown_90_87ce:*/ beq @unknown_90_87d2
-/*unknown_90_87d0:*/ plp
-/*unknown_90_87d1:*/ rts
-
-@unknown_90_87d2: lda $0ab2.w
-/*unknown_90_87d5:*/ beq @unknown_90_87dd
-/*unknown_90_87d7:*/ ldy #$0002.w
-/*unknown_90_87da:*/ jsr unknown_90_8855
-@unknown_90_87dd: lda $0ab0.w
-/*unknown_90_87e0:*/ beq @unknown_90_87e8
-/*unknown_90_87e2:*/ ldy #$0000.w
-/*unknown_90_87e5:*/ jsr unknown_90_8855
-@unknown_90_87e8: plp
-/*unknown_90_87e9:*/ rts
-
-@unknown_90_87ea: ldy #$0002.w
-@unknown_90_87ed: lda $0ab0.w, Y
-/*unknown_90_87f0:*/ beq @unknown_90_8842
-/*unknown_90_87f2:*/ lda $0ab8.w, Y
-/*unknown_90_87f5:*/ cmp $0afa.w
-/*unknown_90_87f8:*/ beq @unknown_90_880c
-/*unknown_90_87fa:*/ bmi @unknown_90_8805
-/*unknown_90_87fc:*/ sec
-/*unknown_90_87fd:*/ sbc #$0002.w
-/*unknown_90_8800:*/ sta $0ab8.w, Y
-/*unknown_90_8803:*/ bra @unknown_90_880c
-@unknown_90_8805: clc
-/*unknown_90_8806:*/ adc #$0002.w
-/*unknown_90_8809:*/ sta $0ab8.w, Y
-@unknown_90_880c: lda $0ac0.w, Y
-/*unknown_90_880f:*/ bmi @unknown_90_8828
-/*unknown_90_8811:*/ lda $0ab0.w, Y
-/*unknown_90_8814:*/ clc
-/*unknown_90_8815:*/ adc $0ac0.w, Y
-/*unknown_90_8818:*/ sta $0ab0.w, Y
-/*unknown_90_881b:*/ cmp $0af6.w
-/*unknown_90_881e:*/ bmi @unknown_90_883f
-/*unknown_90_8820:*/ lda #$0000.w
-/*unknown_90_8823:*/ sta $0ab0.w, Y
-/*unknown_90_8826:*/ bra @unknown_90_8842
-@unknown_90_8828: lda $0ab0.w, Y
-/*unknown_90_882b:*/ clc
-/*unknown_90_882c:*/ adc $0ac0.w, Y
-/*unknown_90_882f:*/ sta $0ab0.w, Y
-/*unknown_90_8832:*/ cmp $0af6.w
-/*unknown_90_8835:*/ bpl @unknown_90_883f
-/*unknown_90_8837:*/ lda #$0000.w
-/*unknown_90_883a:*/ sta $0ab0.w, Y
-/*unknown_90_883d:*/ bra @unknown_90_8842
-@unknown_90_883f: jsr $8855.w
-@unknown_90_8842: dey
-/*unknown_90_8843:*/ dey
-/*unknown_90_8844:*/ bpl @unknown_90_87ed
-/*unknown_90_8846:*/ lda $0ab2.w
-/*unknown_90_8849:*/ bne @unknown_90_8853
-/*unknown_90_884b:*/ lda $0ab0.w
-/*unknown_90_884e:*/ bne @unknown_90_8853
-/*unknown_90_8850:*/ stz $0aae.w
-@unknown_90_8853: plp
-/*unknown_90_8854:*/ rts
+unknown_90_87bd:
+  php
+  rep #$30
+  lda $0aae.w
+  bmi @unknown_90_87ea
+  lda $0b3e.w
+  and #$ff00.w
+  cmp #$0400.w
+  beq @unknown_90_87d2
+  plp
+  rts
+@unknown_90_87d2:
+  lda $0ab2.w
+  beq @unknown_90_87dd
+  ldy #$0002.w
+  jsr unknown_90_8855
+@unknown_90_87dd:
+  lda $0ab0.w
+  beq @unknown_90_87e8
+  ldy #$0000.w
+  jsr unknown_90_8855
+@unknown_90_87e8:
+  plp
+  rts
+@unknown_90_87ea:
+  ldy #$0002.w
+@unknown_90_87ed:
+  lda $0ab0.w, Y
+  beq @unknown_90_8842
+  lda $0ab8.w, Y
+  cmp $0afa.w
+  beq @unknown_90_880c
+  bmi @unknown_90_8805
+  sec
+  sbc #$0002.w
+  sta $0ab8.w, Y
+  bra @unknown_90_880c
+@unknown_90_8805:
+  clc
+  adc #$0002.w
+  sta $0ab8.w, Y
+@unknown_90_880c:
+  lda $0ac0.w, Y
+  bmi @unknown_90_8828
+  lda $0ab0.w, Y
+  clc
+  adc $0ac0.w, Y
+  sta $0ab0.w, Y
+  cmp $0af6.w
+  bmi @unknown_90_883f
+  lda #$0000.w
+  sta $0ab0.w, Y
+  bra @unknown_90_8842
+@unknown_90_8828:
+  lda $0ab0.w, Y
+  clc
+  adc $0ac0.w, Y
+  sta $0ab0.w, Y
+  cmp $0af6.w
+  bpl @unknown_90_883f
+  lda #$0000.w
+  sta $0ab0.w, Y
+  bra @unknown_90_8842
+@unknown_90_883f:
+  jsr $8855.w
+@unknown_90_8842:
+  dey
+  dey
+  bpl @unknown_90_87ed
+  lda $0ab2.w
+  bne @unknown_90_8853
+  lda $0ab0.w
+  bne @unknown_90_8853
+  stz $0aae.w
+@unknown_90_8853:
+  plp
+  rts
 
 unknown_90_8855: phy
 /*unknown_90_8856:*/ lda $0a1c.w
@@ -1236,59 +1249,64 @@ unknown_90_88ba: php
 /*unknown_90_8a4b:*/ rtl
 
 ; TODO: "Atmospheric effects (water splash, air bubbles, footsteps)" -- Kejardon
-unknown_90_8a4c: php
-/*unknown_90_8a4d:*/ rep #$30
-/*unknown_90_8a4f:*/ ldy #$0006.w
-@unknown_90_8a52: lda $0aec.w, Y
-/*unknown_90_8a55:*/ beq @unknown_90_8aaf
-/*unknown_90_8a57:*/ pha
-/*unknown_90_8a58:*/ and #$00ff.w
-/*unknown_90_8a5b:*/ asl A
-/*unknown_90_8a5c:*/ sta $12
-/*unknown_90_8a5e:*/ pla
-/*unknown_90_8a5f:*/ xba
-/*unknown_90_8a60:*/ and #$00ff.w
-/*unknown_90_8a63:*/ asl A
-/*unknown_90_8a64:*/ tax
-/*unknown_90_8a65:*/ lda $0ad4.w, Y
-/*unknown_90_8a68:*/ dec A
-/*unknown_90_8a69:*/ sta $0ad4.w, Y
-/*unknown_90_8a6c:*/ beq @unknown_90_8a86
-/*unknown_90_8a6e:*/ bpl @unknown_90_8aac
-/*unknown_90_8a70:*/ cmp #$8000.w
-/*unknown_90_8a73:*/ bne @unknown_90_8aaf
-/*unknown_90_8a75:*/ phx
-/*unknown_90_8a76:*/ lda $8b93.w, X
-/*unknown_90_8a79:*/ clc
-/*unknown_90_8a7a:*/ adc $12
-/*unknown_90_8a7c:*/ tax
-/*unknown_90_8a7d:*/ lda $0000.w, X
-/*unknown_90_8a80:*/ sta $0ad4.w, Y
-/*unknown_90_8a83:*/ plx
-/*unknown_90_8a84:*/ bra @unknown_90_8aac
-@unknown_90_8a86: phx
-/*unknown_90_8a87:*/ lda $8b93.w, X
-/*unknown_90_8a8a:*/ clc
-/*unknown_90_8a8b:*/ adc $12
-/*unknown_90_8a8d:*/ tax
-/*unknown_90_8a8e:*/ lda $0000.w, X
-/*unknown_90_8a91:*/ sta $0ad4.w, Y
-/*unknown_90_8a94:*/ plx
-/*unknown_90_8a95:*/ lda $0aec.w, Y
-/*unknown_90_8a98:*/ inc A
-/*unknown_90_8a99:*/ sta $0aec.w, Y
-/*unknown_90_8a9c:*/ and #$00ff.w
-/*unknown_90_8a9f:*/ cmp $8bef.w, X
-/*unknown_90_8aa2:*/ bmi @unknown_90_8aac
-/*unknown_90_8aa4:*/ lda #$0000.w
-/*unknown_90_8aa7:*/ sta $0aec.w, Y
-/*unknown_90_8aaa:*/ bra @unknown_90_8aaf
-@unknown_90_8aac: jsr ($8ab5.w, X)
-@unknown_90_8aaf: dey
-/*unknown_90_8ab0:*/ dey
-/*unknown_90_8ab1:*/ bpl @unknown_90_8a52
-/*unknown_90_8ab3:*/ plp
-/*unknown_90_8ab4:*/ rts
+unknown_90_8a4c:
+  php
+  rep #$30
+  ldy #$0006.w
+@unknown_90_8a52:
+  lda $0aec.w, Y
+  beq @unknown_90_8aaf
+  pha
+  and #$00ff.w
+  asl A
+  sta $12
+  pla
+  xba
+  and #$00ff.w
+  asl A
+  tax
+  lda $0ad4.w, Y
+  dec A
+  sta $0ad4.w, Y
+  beq @unknown_90_8a86
+  bpl @unknown_90_8aac
+  cmp #$8000.w
+  bne @unknown_90_8aaf
+  phx
+  lda $8b93.w, X
+  clc
+  adc $12
+  tax
+  lda $0000.w, X
+  sta $0ad4.w, Y
+  plx
+  bra @unknown_90_8aac
+@unknown_90_8a86:
+  phx
+  lda $8b93.w, X
+  clc
+  adc $12
+  tax
+  lda $0000.w, X
+  sta $0ad4.w, Y
+  plx
+  lda $0aec.w, Y
+  inc A
+  sta $0aec.w, Y
+  and #$00ff.w
+  cmp $8bef.w, X
+  bmi @unknown_90_8aac
+  lda #$0000.w
+  sta $0aec.w, Y
+  bra @unknown_90_8aaf
+@unknown_90_8aac:
+  jsr ($8ab5.w, X)
+@unknown_90_8aaf:
+  dey
+  dey
+  bpl @unknown_90_8a52
+  plp
+  rts
 
 /*unknown_90_8ab5:*/ brk $00
 /*unknown_90_8ab7:*/ cmp $8a
@@ -1766,14 +1784,15 @@ unknown_90_8c1f: lda $093f.w
 
 ; TODO: "Simple JSR list: 973E, 9BD1, 9A7E, 8EA9. Effectively, calculates
 ; horizontal momentum, speed, and new position and any collisions" -- Kejardon
-unknown_90_8e64: php
-/*unknown_90_8e65:*/ rep #$30
-/*unknown_90_8e67:*/ jsr unknown_90_973e
-/*unknown_90_8e6a:*/ jsr unknown_90_9bd1
-/*unknown_90_8e6d:*/ jsr unknown_90_9a7e
-/*unknown_90_8e70:*/ jsr unknown_90_8ea9
-/*unknown_90_8e73:*/ plp
-/*unknown_90_8e74:*/ rts
+unknown_90_8e64:
+  php
+  rep #$30
+  jsr unknown_90_973e
+  jsr unknown_90_9bd1
+  jsr unknown_90_9a7e
+  jsr unknown_90_8ea9
+  plp
+  rts
 
 /*unknown_90_8e75:*/ php
 /*unknown_90_8e76:*/ rep #$30
@@ -1800,29 +1819,34 @@ unknown_90_8e64: php
 
 ; TODO: "Check Samus's direction and go to E4AD or E464, then 9350 or 93B1
 ; depending on net movement." -- Kejardon
-unknown_90_8ea9: lda $0b4a.w
-/*unknown_90_8eac:*/ beq @unknown_90_8ec0
-/*unknown_90_8eae:*/ cmp #$0002.w
-/*unknown_90_8eb1:*/ beq @unknown_90_8ec0
-/*unknown_90_8eb3:*/ lda $0a1e.w
-/*unknown_90_8eb6:*/ and #$00ff.w
-/*unknown_90_8eb9:*/ cmp #$0008.w
-/*unknown_90_8ebc:*/ beq @unknown_90_8ed0
-/*unknown_90_8ebe:*/ bra @unknown_90_8ecb
-@unknown_90_8ec0: lda $0a1e.w
-/*unknown_90_8ec3:*/ and #$00ff.w
-/*unknown_90_8ec6:*/ cmp #$0004.w
-/*unknown_90_8ec9:*/ beq @unknown_90_8ed0
-@unknown_90_8ecb: jsr $e4ad.w
-/*unknown_90_8ece:*/ bra @unknown_90_8ed3
-@unknown_90_8ed0: jsr $e464.w
-@unknown_90_8ed3: lda $12
-/*unknown_90_8ed5:*/ bmi @unknown_90_8edb
-/*unknown_90_8ed7:*/ jsr unknown_90_93b1
-/*unknown_90_8eda:*/ rts
-
-@unknown_90_8edb: jsr $9350.w
-/*unknown_90_8ede:*/ rts
+unknown_90_8ea9:
+  lda $0b4a.w
+  beq @unknown_90_8ec0
+  cmp #$0002.w
+  beq @unknown_90_8ec0
+  lda $0a1e.w
+  and #$00ff.w
+  cmp #$0008.w
+  beq @unknown_90_8ed0
+  bra @unknown_90_8ecb
+@unknown_90_8ec0:
+  lda $0a1e.w
+  and #$00ff.w
+  cmp #$0004.w
+  beq @unknown_90_8ed0
+@unknown_90_8ecb:
+  jsr $e4ad.w
+  bra @unknown_90_8ed3
+@unknown_90_8ed0:
+  jsr $e464.w
+@unknown_90_8ed3:
+  lda $12
+  bmi @unknown_90_8edb
+  jsr unknown_90_93b1
+  rts
+@unknown_90_8edb:
+  jsr $9350.w
+  rts
 
 unknown_90_8edf: php
 /*unknown_90_8ee0:*/ rep #$30
@@ -2193,40 +2217,47 @@ unknown_90_919f: php
 
 ; TODO: "Calculate values for initial $12 and $14 (Y movement distance, don't
 ; currently understand calculations), and goto 93EC or 9440" -- Kejardon
-unknown_90_923f: php
-/*unknown_90_9240:*/ rep #$30
-/*unknown_90_9242:*/ lda $0b5c.w
-/*unknown_90_9245:*/ bne @unknown_90_9267
-/*unknown_90_9247:*/ lda $0b5a.w
-/*unknown_90_924a:*/ bne @unknown_90_9267
-/*unknown_90_924c:*/ lda $0dba.w
-/*unknown_90_924f:*/ bne @unknown_90_925e
-/*unknown_90_9251:*/ lda $0dbe.w
-/*unknown_90_9254:*/ sta $14
-/*unknown_90_9256:*/ lda $0dbc.w
-/*unknown_90_9259:*/ inc A
-/*unknown_90_925a:*/ sta $12
-/*unknown_90_925c:*/ bra @unknown_90_9265
-@unknown_90_925e: stz $14
-/*unknown_90_9260:*/ lda #$0001.w
-/*unknown_90_9263:*/ sta $12
-@unknown_90_9265: bra @unknown_90_927e
-@unknown_90_9267: stz $14
-/*unknown_90_9269:*/ stz $12
-/*unknown_90_926b:*/ lda $0b5a.w
-/*unknown_90_926e:*/ clc
-/*unknown_90_926f:*/ adc $14
-/*unknown_90_9271:*/ sta $14
-/*unknown_90_9273:*/ lda $0b5c.w
-/*unknown_90_9276:*/ adc $12
-/*unknown_90_9278:*/ sta $12
-/*unknown_90_927a:*/ bmi @unknown_90_9283
-/*unknown_90_927c:*/ inc $12
-@unknown_90_927e: jsr $9440.w
-/*unknown_90_9281:*/ bra @unknown_90_9286
-@unknown_90_9283: jsr $93ec.w
-@unknown_90_9286: plp
-/*unknown_90_9287:*/ rts
+unknown_90_923f:
+  php
+  rep #$30
+  lda $0b5c.w
+  bne @unknown_90_9267
+  lda $0b5a.w
+  bne @unknown_90_9267
+  lda $0dba.w
+  bne @unknown_90_925e
+  lda $0dbe.w
+  sta $14
+  lda $0dbc.w
+  inc A
+  sta $12
+  bra @unknown_90_9265
+@unknown_90_925e:
+  stz $14
+  lda #$0001.w
+  sta $12
+@unknown_90_9265:
+  bra @unknown_90_927e
+@unknown_90_9267:
+  stz $14
+  stz $12
+  lda $0b5a.w
+  clc
+  adc $14
+  sta $14
+  lda $0b5c.w
+  adc $12
+  sta $12
+  bmi @unknown_90_9283
+  inc $12
+@unknown_90_927e:
+  jsr $9440.w
+  bra @unknown_90_9286
+@unknown_90_9283:
+  jsr $93ec.w
+@unknown_90_9286:
+  plp
+  rts
 
 unknown_90_9288: php
 /*unknown_90_9289:*/ rep #$30
@@ -2328,150 +2359,161 @@ unknown_90_92e9: rts
 /*unknown_90_9347:*/ rts
 
 ; TODO: "Clear $12 and $14 and goto 90:8EA9" -- Kejardon
-unknown_90_9348: stz $12
-/*unknown_90_934a:*/ stz $14
-/*unknown_90_934c:*/ jsr unknown_90_8ea9
-/*unknown_90_934f:*/ rts
+unknown_90_9348:
+  stz $12
+  stz $14
+  jsr unknown_90_8ea9
+  rts
 
 ; TODO: "moves Samus left $12.$14 pixels with all the checks; this --> A0:A8F0,
 ; 94:971E, E5CE, 9842, 94:87F4" -- Kejardon
-unknown_90_9350: php
-/*unknown_90_9351:*/ rep #$30
-/*unknown_90_9353:*/ lda $12
-/*unknown_90_9355:*/ eor #$ffff.w
-/*unknown_90_9358:*/ sta $12
-/*unknown_90_935a:*/ lda $14
-/*unknown_90_935c:*/ eor #$ffff.w
-/*unknown_90_935f:*/ inc A
-/*unknown_90_9360:*/ sta $14
-/*unknown_90_9362:*/ bne @unknown_90_9366
-/*unknown_90_9364:*/ inc $12
-@unknown_90_9366: jsr $a0a8f0
-/*unknown_90_936a:*/ sta $0dd0.w
-/*unknown_90_936d:*/ tax
-/*unknown_90_936e:*/ beq @unknown_90_937c
-/*unknown_90_9370:*/ jsr unknown_90_e5ce
-/*unknown_90_9373:*/ jsr unknown_90_9842
-/*unknown_90_9376:*/ jsr $9487f4
-/*unknown_90_937a:*/ plp
-/*unknown_90_937b:*/ rts
-
-@unknown_90_937c: lda $12
-/*unknown_90_937e:*/ eor #$ffff.w
-/*unknown_90_9381:*/ sta $12
-/*unknown_90_9383:*/ lda $14
-/*unknown_90_9385:*/ eor #$ffff.w
-/*unknown_90_9388:*/ inc A
-/*unknown_90_9389:*/ sta $14
-/*unknown_90_938b:*/ bne @unknown_90_938f
-/*unknown_90_938d:*/ inc $12
-@unknown_90_938f: jsr $94971e
-/*unknown_90_9393:*/ lda $14
-/*unknown_90_9395:*/ sta $0dac.w
-/*unknown_90_9398:*/ lda $12
-/*unknown_90_939a:*/ sta $0daa.w
-/*unknown_90_939d:*/ lda $0b02.w
-/*unknown_90_93a0:*/ bit #$0001.w
-/*unknown_90_93a3:*/ beq @unknown_90_93a8
-/*unknown_90_93a5:*/ stz $0dd0.w
-@unknown_90_93a8: jsr $e5ce.w
-/*unknown_90_93ab:*/ jsr $9487f4
-/*unknown_90_93af:*/ plp
-/*unknown_90_93b0:*/ rts
+unknown_90_9350:
+  php
+  rep #$30
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_9366
+  inc $12
+@unknown_90_9366:
+  jsr $a0a8f0
+  sta $0dd0.w
+  tax
+  beq @unknown_90_937c
+  jsr unknown_90_e5ce
+  jsr unknown_90_9842
+  jsr $9487f4
+  plp
+  rts
+@unknown_90_937c:
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_938f
+  inc $12
+@unknown_90_938f:
+  jsr $94971e
+  lda $14
+  sta $0dac.w
+  lda $12
+  sta $0daa.w
+  lda $0b02.w
+  bit #$0001.w
+  beq @unknown_90_93a8
+  stz $0dd0.w
+@unknown_90_93a8:
+  jsr $e5ce.w
+  jsr $9487f4
+  plp
+  rts
 
 ; TODO: "moves Samus right $12.$14 pixels with all the checks; this --> A0:A8F0,
 ; 94:971E, E5CE, 9826, 94:87F4" -- Kejardon
-unknown_90_93b1: php
-/*unknown_90_93b2:*/ rep #$30
-/*unknown_90_93b4:*/ jsr $a0a8f0
-/*unknown_90_93b8:*/ sta $0dd0.w
-/*unknown_90_93bb:*/ tax
-/*unknown_90_93bc:*/ beq @unknown_90_93ca
-/*unknown_90_93be:*/ jsr unknown_90_e5ce
-/*unknown_90_93c1:*/ jsr unknown_90_9826
-/*unknown_90_93c4:*/ jsr $9487f4
-/*unknown_90_93c8:*/ plp
-/*unknown_90_93c9:*/ rts
-
-@unknown_90_93ca: jsr $94971e
-/*unknown_90_93ce:*/ lda $14
-/*unknown_90_93d0:*/ sta $0db0.w
-/*unknown_90_93d3:*/ lda $12
-/*unknown_90_93d5:*/ sta $0dae.w
-/*unknown_90_93d8:*/ lda $0b02.w
-/*unknown_90_93db:*/ bit #$0001.w
-/*unknown_90_93de:*/ bne @unknown_90_93e3
-/*unknown_90_93e0:*/ stz $0dd0.w
-@unknown_90_93e3: jsr $e5ce.w
-/*unknown_90_93e6:*/ jsr $9487f4
-/*unknown_90_93ea:*/ plp
-/*unknown_90_93eb:*/ rts
+unknown_90_93b1:
+  php
+  rep #$30
+  jsr $a0a8f0
+  sta $0dd0.w
+  tax
+  beq @unknown_90_93ca
+  jsr unknown_90_e5ce
+  jsr unknown_90_9826
+  jsr $9487f4
+  plp
+  rts
+@unknown_90_93ca:
+  jsr $94971e
+  lda $14
+  sta $0db0.w
+  lda $12
+  sta $0dae.w
+  lda $0b02.w
+  bit #$0001.w
+  bne @unknown_90_93e3
+  stz $0dd0.w
+@unknown_90_93e3:
+  jsr $e5ce.w
+  jsr $9487f4
+  plp
+  rts
 
 ; TODO: "moves Samus up $12.$14 pixels with all the checks; this --> A0:A8F0,
 ; 94:9763, E606, 988D" -- Kejardon
-unknown_90_93ec: php
-/*unknown_90_93ed:*/ rep #$30
-/*unknown_90_93ef:*/ lda #$0002.w
-/*unknown_90_93f2:*/ sta $0b02.w
-/*unknown_90_93f5:*/ lda $12
-/*unknown_90_93f7:*/ eor #$ffff.w
-/*unknown_90_93fa:*/ sta $12
-/*unknown_90_93fc:*/ lda $14
-/*unknown_90_93fe:*/ eor #$ffff.w
-/*unknown_90_9401:*/ inc A
-/*unknown_90_9402:*/ sta $14
-/*unknown_90_9404:*/ bne @unknown_90_9408
-/*unknown_90_9406:*/ inc $12
-@unknown_90_9408: jsr $a0a8f0
-/*unknown_90_940c:*/ sta $0dd0.w
-/*unknown_90_940f:*/ tax
-/*unknown_90_9410:*/ beq @unknown_90_941a
-/*unknown_90_9412:*/ jsr unknown_90_e606
-/*unknown_90_9415:*/ jsr unknown_90_988d
-/*unknown_90_9418:*/ plp
-/*unknown_90_9419:*/ rts
-
-@unknown_90_941a: lda $12
-/*unknown_90_941c:*/ eor #$ffff.w
-/*unknown_90_941f:*/ sta $12
-/*unknown_90_9421:*/ lda $14
-/*unknown_90_9423:*/ eor #$ffff.w
-/*unknown_90_9426:*/ inc A
-/*unknown_90_9427:*/ sta $14
-/*unknown_90_9429:*/ bne @unknown_90_942d
-/*unknown_90_942b:*/ inc $12
-@unknown_90_942d: jsr $949763
-/*unknown_90_9431:*/ lda $14
-/*unknown_90_9433:*/ sta $0db4.w
-/*unknown_90_9436:*/ lda $12
-/*unknown_90_9438:*/ sta $0db2.w
-/*unknown_90_943b:*/ jsr unknown_90_e606
-/*unknown_90_943e:*/ plp
-/*unknown_90_943f:*/ rts
+unknown_90_93ec:
+  php
+  rep #$30
+  lda #$0002.w
+  sta $0b02.w
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_9408
+  inc $12
+@unknown_90_9408:
+  jsr $a0a8f0
+  sta $0dd0.w
+  tax
+  beq @unknown_90_941a
+  jsr unknown_90_e606
+  jsr unknown_90_988d
+  plp
+  rts
+@unknown_90_941a:
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_942d
+  inc $12
+@unknown_90_942d:
+  jsr $949763
+  lda $14
+  sta $0db4.w
+  lda $12
+  sta $0db2.w
+  jsr unknown_90_e606
+  plp
+  rts
 
 ; TODO: "moves Samus down $12.$14 pixels with all the checks; this --> A0:A8F0,
 ; 94:9763, E61B, 9871" -- Kejardon
-unknown_90_9440: php
-/*unknown_90_9441:*/ rep #$30
-/*unknown_90_9443:*/ lda #$0003.w
-/*unknown_90_9446:*/ sta $0b02.w
-/*unknown_90_9449:*/ jsr $a0a8f0
-/*unknown_90_944d:*/ sta $0dd0.w
-/*unknown_90_9450:*/ tax
-/*unknown_90_9451:*/ beq @unknown_90_945b
-/*unknown_90_9453:*/ jsr unknown_90_e61b
-/*unknown_90_9456:*/ jsr unknown_90_9871
-/*unknown_90_9459:*/ plp
-/*unknown_90_945a:*/ rts
-
-@unknown_90_945b: jsr $949763
-/*unknown_90_945f:*/ lda $14
-/*unknown_90_9461:*/ sta $0db8.w
-/*unknown_90_9464:*/ lda $12
-/*unknown_90_9466:*/ sta $0db6.w
-/*unknown_90_9469:*/ jsr unknown_90_e61b
-/*unknown_90_946c:*/ plp
-/*unknown_90_946d:*/ rts
+unknown_90_9440:
+  php
+  rep #$30
+  lda #$0003.w
+  sta $0b02.w
+  jsr $a0a8f0
+  sta $0dd0.w
+  tax
+  beq @unknown_90_945b
+  jsr unknown_90_e61b
+  jsr unknown_90_9871
+  plp
+  rts
+@unknown_90_945b:
+  jsr $949763
+  lda $14
+  sta $0db8.w
+  lda $12
+  sta $0db6.w
+  jsr unknown_90_e61b
+  plp
+  rts
 
 /*unknown_90_946e:*/ lda $0b36.w
 /*unknown_90_9471:*/ cmp #$0001.w
@@ -2526,71 +2568,81 @@ unknown_90_9440: php
 ; TODO: "Main scrolling routine? Has $0CF8 scrolling (JSL $80A528 and JSL
 ; $80A731), and then normal scrolling. Also JSRs to $07E9 if it's not 0000. Sets
 ; previous frame's position($0B10 - $0B17)" -- Kejardon
-unknown_90_94ec: php
-/*unknown_90_94ed:*/ phb
-/*unknown_90_94ee:*/ phk
-/*unknown_90_94ef:*/ plb
-/*unknown_90_94f0:*/ rep #$30
-/*unknown_90_94f2:*/ lda $0cf8.w
-/*unknown_90_94f5:*/ beq @unknown_90_9557
-/*unknown_90_94f7:*/ lda $0af6.w
-/*unknown_90_94fa:*/ bmi @unknown_90_954d
-/*unknown_90_94fc:*/ sec
-/*unknown_90_94fd:*/ sbc $0911.w
-/*unknown_90_9500:*/ bcc @unknown_90_9518
-/*unknown_90_9502:*/ cmp #$00a0.w
-/*unknown_90_9505:*/ bcc @unknown_90_9513
-/*unknown_90_9507:*/ lda $0911.w
-/*unknown_90_950a:*/ clc
-/*unknown_90_950b:*/ adc #$0003.w
-/*unknown_90_950e:*/ sta $0911.w
-/*unknown_90_9511:*/ bra @unknown_90_9522
-@unknown_90_9513: cmp #$0060.w
-/*unknown_90_9516:*/ bcs @unknown_90_9522
-@unknown_90_9518: lda $0911.w
-/*unknown_90_951b:*/ sec
-/*unknown_90_951c:*/ sbc #$0003.w
-/*unknown_90_951f:*/ sta $0911.w
-@unknown_90_9522: lda $0afa.w
-/*unknown_90_9525:*/ bmi @unknown_90_954d
-/*unknown_90_9527:*/ sec
-/*unknown_90_9528:*/ sbc $0915.w
-/*unknown_90_952b:*/ bcc @unknown_90_9543
-/*unknown_90_952d:*/ cmp #$0090.w
-/*unknown_90_9530:*/ bcc @unknown_90_953e
-/*unknown_90_9532:*/ lda $0915.w
-/*unknown_90_9535:*/ clc
-/*unknown_90_9536:*/ adc #$0003.w
-/*unknown_90_9539:*/ sta $0915.w
-/*unknown_90_953c:*/ bra @unknown_90_954d
-@unknown_90_953e: cmp #$0070.w
-/*unknown_90_9541:*/ bcs @unknown_90_954d
-@unknown_90_9543: lda $0915.w
-/*unknown_90_9546:*/ sec
-/*unknown_90_9547:*/ sbc #$0003.w
-/*unknown_90_954a:*/ sta $0915.w
-@unknown_90_954d: jsr $80a528
-/*unknown_90_9551:*/ jsr $80a731
-/*unknown_90_9555:*/ bra @unknown_90_9563
-@unknown_90_9557: jsr $96c0.w
-/*unknown_90_955a:*/ jsr unknown_90_95a0
-/*unknown_90_955d:*/ jsr unknown_90_96ff
-/*unknown_90_9560:*/ jsr $964f.w
-@unknown_90_9563: ldx $07e9.w
-/*unknown_90_9566:*/ beq @unknown_90_956e
-/*unknown_90_9568:*/ ldx #$0000.w
-/*unknown_90_956b:*/ jsr ($07e9.w, X)
-@unknown_90_956e: lda $0af6.w
-/*unknown_90_9571:*/ sta $0b10.w
-/*unknown_90_9574:*/ lda $0af8.w
-/*unknown_90_9577:*/ sta $0b12.w
-/*unknown_90_957a:*/ lda $0afa.w
-/*unknown_90_957d:*/ sta $0b14.w
-/*unknown_90_9580:*/ lda $0afc.w
-/*unknown_90_9583:*/ sta $0b16.w
-/*unknown_90_9586:*/ plb
-/*unknown_90_9587:*/ plp
-/*unknown_90_9588:*/ rtl
+unknown_90_94ec:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  lda $0cf8.w
+  beq @unknown_90_9557
+  lda $0af6.w
+  bmi @unknown_90_954d
+  sec
+  sbc $0911.w
+  bcc @unknown_90_9518
+  cmp #$00a0.w
+  bcc @unknown_90_9513
+  lda $0911.w
+  clc
+  adc #$0003.w
+  sta $0911.w
+  bra @unknown_90_9522
+@unknown_90_9513:
+  cmp #$0060.w
+  bcs @unknown_90_9522
+@unknown_90_9518:
+  lda $0911.w
+  sec
+  sbc #$0003.w
+  sta $0911.w
+@unknown_90_9522:
+  lda $0afa.w
+  bmi @unknown_90_954d
+  sec
+  sbc $0915.w
+  bcc @unknown_90_9543
+  cmp #$0090.w
+  bcc @unknown_90_953e
+  lda $0915.w
+  clc
+  adc #$0003.w
+  sta $0915.w
+  bra @unknown_90_954d
+@unknown_90_953e:
+  cmp #$0070.w
+  bcs @unknown_90_954d
+@unknown_90_9543:
+  lda $0915.w
+  sec
+  sbc #$0003.w
+  sta $0915.w
+@unknown_90_954d:
+  jsr $80a528
+  jsr $80a731
+  bra @unknown_90_9563
+@unknown_90_9557:
+  jsr $96c0.w
+  jsr unknown_90_95a0
+  jsr unknown_90_96ff
+  jsr $964f.w
+@unknown_90_9563:
+  ldx $07e9.w
+  beq @unknown_90_956e
+  ldx #$0000.w
+  jsr ($07e9.w, X)
+@unknown_90_956e:
+  lda $0af6.w
+  sta $0b10.w
+  lda $0af8.w
+  sta $0b12.w
+  lda $0afa.w
+  sta $0b14.w
+  lda $0afc.w
+  sta $0b16.w
+  plb
+  plp
+  rtl
 
 /*unknown_90_9589:*/ lda #$01d0.w
 /*unknown_90_958c:*/ cmp $0915.w
@@ -2608,67 +2660,76 @@ unknown_90_94ec: php
 ; TODO: "Handles horizontal scrolling. If Samus didn't move, JSL $80A528 and do
 ; nothing else. Calculates ideal position, adjusts by how much Samus moved, and
 ; JSL $80A641 if scrolling right, JSL $80A6BB if scrolling left." -- Kejardon
-unknown_90_95a0: php
-/*unknown_90_95a1:*/ rep #$30
-/*unknown_90_95a3:*/ lda $0b10.w
-/*unknown_90_95a6:*/ cmp $0af6.w
-/*unknown_90_95a9:*/ bne @unknown_90_95b2
-/*unknown_90_95ab:*/ jsr $80a528
-/*unknown_90_95af:*/ jmp $963d.w
-@unknown_90_95b2: lda $0911.w
-/*unknown_90_95b5:*/ sta $12
-/*unknown_90_95b7:*/ lda $0a52.w
-/*unknown_90_95ba:*/ bne @unknown_90_95c7
-/*unknown_90_95bc:*/ lda $0a1f.w
-/*unknown_90_95bf:*/ and #$00ff.w
-/*unknown_90_95c2:*/ cmp #$0010.w
-/*unknown_90_95c5:*/ bne @unknown_90_95d4
-@unknown_90_95c7: lda $0a1e.w
-/*unknown_90_95ca:*/ and #$00ff.w
-/*unknown_90_95cd:*/ cmp #$0004.w
-/*unknown_90_95d0:*/ beq @unknown_90_95e7
-/*unknown_90_95d2:*/ bra @unknown_90_95f6
-@unknown_90_95d4: lda $0b4a.w
-/*unknown_90_95d7:*/ cmp #$0001.w
-/*unknown_90_95da:*/ beq @unknown_90_95c7
-/*unknown_90_95dc:*/ lda $0a1e.w
-/*unknown_90_95df:*/ and #$00ff.w
-/*unknown_90_95e2:*/ cmp #$0004.w
-/*unknown_90_95e5:*/ beq @unknown_90_95f6
-@unknown_90_95e7: ldx $0941.w
-/*unknown_90_95ea:*/ lda $0af6.w
-/*unknown_90_95ed:*/ sec
-/*unknown_90_95ee:*/ sbc $963f.w, X
-/*unknown_90_95f1:*/ sta $0b0a.w
-/*unknown_90_95f4:*/ bra @unknown_90_9603
-@unknown_90_95f6: ldx $0941.w
-/*unknown_90_95f9:*/ lda $0af6.w
-/*unknown_90_95fc:*/ sec
-/*unknown_90_95fd:*/ sbc $9647.w, X
-/*unknown_90_9600:*/ sta $0b0a.w
-@unknown_90_9603: lda $0b0a.w
-/*unknown_90_9606:*/ cmp $0911.w
-/*unknown_90_9609:*/ beq @unknown_90_963d
-/*unknown_90_960b:*/ bmi @unknown_90_9626
-/*unknown_90_960d:*/ lda $090f.w
-/*unknown_90_9610:*/ clc
-/*unknown_90_9611:*/ adc $0da4.w
-/*unknown_90_9614:*/ sta $090f.w
-/*unknown_90_9617:*/ lda $0911.w
-/*unknown_90_961a:*/ adc $0da2.w
-/*unknown_90_961d:*/ sta $0911.w
-/*unknown_90_9620:*/ jsr $80a641
-/*unknown_90_9624:*/ bra @unknown_90_963d
-@unknown_90_9626: lda $090f.w
-/*unknown_90_9629:*/ sec
-/*unknown_90_962a:*/ sbc $0da4.w
-/*unknown_90_962d:*/ sta $090f.w
-/*unknown_90_9630:*/ lda $0911.w
-/*unknown_90_9633:*/ sbc $0da2.w
-/*unknown_90_9636:*/ sta $0911.w
-/*unknown_90_9639:*/ jsr $80a6bb
-@unknown_90_963d: plp
-/*unknown_90_963e:*/ rts
+unknown_90_95a0:
+  php
+  rep #$30
+  lda $0b10.w
+  cmp $0af6.w
+  bne @unknown_90_95b2
+  jsr $80a528
+  jmp $963d.w
+@unknown_90_95b2:
+  lda $0911.w
+  sta $12
+  lda $0a52.w
+  bne @unknown_90_95c7
+  lda $0a1f.w
+  and #$00ff.w
+  cmp #$0010.w
+  bne @unknown_90_95d4
+@unknown_90_95c7:
+  lda $0a1e.w
+  and #$00ff.w
+  cmp #$0004.w
+  beq @unknown_90_95e7
+  bra @unknown_90_95f6
+@unknown_90_95d4:
+  lda $0b4a.w
+  cmp #$0001.w
+  beq @unknown_90_95c7
+  lda $0a1e.w
+  and #$00ff.w
+  cmp #$0004.w
+  beq @unknown_90_95f6
+@unknown_90_95e7:
+  ldx $0941.w
+  lda $0af6.w
+  sec
+  sbc $963f.w, X
+  sta $0b0a.w
+  bra @unknown_90_9603
+@unknown_90_95f6:
+  ldx $0941.w
+  lda $0af6.w
+  sec
+  sbc $9647.w, X
+  sta $0b0a.w
+@unknown_90_9603:
+  lda $0b0a.w
+  cmp $0911.w
+  beq @unknown_90_963d
+  bmi @unknown_90_9626
+  lda $090f.w
+  clc
+  adc $0da4.w
+  sta $090f.w
+  lda $0911.w
+  adc $0da2.w
+  sta $0911.w
+  jsr $80a641
+  bra @unknown_90_963d
+@unknown_90_9626:
+  lda $090f.w
+  sec
+  sbc $0da4.w
+  sta $090f.w
+  lda $0911.w
+  sbc $0da2.w
+  sta $0911.w
+  jsr $80a6bb
+@unknown_90_963d:
+  plp
+  rts
 
 /*unknown_90_963f:*/ rts
 
@@ -2726,298 +2787,336 @@ unknown_90_95a0: php
 
 ; TODO: "Calculates the horizontal distance Samus has moved last frame, + 1
 ; pixel. Results in $0DA2.$0DA4." -- Kejardon
-unknown_90_96c0: php
-/*unknown_90_96c1:*/ rep #$30
-/*unknown_90_96c3:*/ lda $0af6.w
-/*unknown_90_96c6:*/ cmp $0b10.w
-/*unknown_90_96c9:*/ bmi @unknown_90_96cd
-/*unknown_90_96cb:*/ bra @unknown_90_96e6
-@unknown_90_96cd: lda $0b12.w
-/*unknown_90_96d0:*/ sec
-/*unknown_90_96d1:*/ sbc $0af8.w
-/*unknown_90_96d4:*/ sta $0da4.w
-/*unknown_90_96d7:*/ lda $0b10.w
-/*unknown_90_96da:*/ sbc $0af6.w
-/*unknown_90_96dd:*/ clc
-/*unknown_90_96de:*/ adc $9ead.w
-/*unknown_90_96e1:*/ sta $0da2.w
-/*unknown_90_96e4:*/ bra @unknown_90_96fd
-@unknown_90_96e6: lda $0af8.w
-/*unknown_90_96e9:*/ sec
-/*unknown_90_96ea:*/ sbc $0b12.w
-/*unknown_90_96ed:*/ sta $0da4.w
-/*unknown_90_96f0:*/ lda $0af6.w
-/*unknown_90_96f3:*/ sbc $0b10.w
-/*unknown_90_96f6:*/ clc
-/*unknown_90_96f7:*/ adc $9ead.w
-/*unknown_90_96fa:*/ sta $0da2.w
-@unknown_90_96fd: plp
-/*unknown_90_96fe:*/ rts
+unknown_90_96c0:
+  php
+  rep #$30
+  lda $0af6.w
+  cmp $0b10.w
+  bmi @unknown_90_96cd
+  bra @unknown_90_96e6
+@unknown_90_96cd:
+  lda $0b12.w
+  sec
+  sbc $0af8.w
+  sta $0da4.w
+  lda $0b10.w
+  sbc $0af6.w
+  clc
+  adc $9ead.w
+  sta $0da2.w
+  bra @unknown_90_96fd
+@unknown_90_96e6:
+  lda $0af8.w
+  sec
+  sbc $0b12.w
+  sta $0da4.w
+  lda $0af6.w
+  sbc $0b10.w
+  clc
+  adc $9ead.w
+  sta $0da2.w
+@unknown_90_96fd:
+  plp
+  rts
 
 ; TODO: "Calculates the vertical distance Samus has moved last frame, + 1 pixel.
 ; Results in $0DA6.$0DA8." -- Kejardon
-unknown_90_96ff: php
-/*unknown_90_9700:*/ rep #$30
-/*unknown_90_9702:*/ lda $0afa.w
-/*unknown_90_9705:*/ cmp $0b14.w
-/*unknown_90_9708:*/ bmi @unknown_90_970c
-/*unknown_90_970a:*/ bra @unknown_90_9725
-@unknown_90_970c: lda $0b16.w
-/*unknown_90_970f:*/ sec
-/*unknown_90_9710:*/ sbc $0afc.w
-/*unknown_90_9713:*/ sta $0da8.w
-/*unknown_90_9716:*/ lda $0b14.w
-/*unknown_90_9719:*/ sbc $0afa.w
-/*unknown_90_971c:*/ clc
-/*unknown_90_971d:*/ adc $9ead.w
-/*unknown_90_9720:*/ sta $0da6.w
-/*unknown_90_9723:*/ bra @unknown_90_973c
-@unknown_90_9725: lda $0afc.w
-/*unknown_90_9728:*/ sec
-/*unknown_90_9729:*/ sbc $0b16.w
-/*unknown_90_972c:*/ sta $0da8.w
-/*unknown_90_972f:*/ lda $0afa.w
-/*unknown_90_9732:*/ sbc $0b14.w
-/*unknown_90_9735:*/ clc
-/*unknown_90_9736:*/ adc $9ead.w
-/*unknown_90_9739:*/ sta $0da6.w
-@unknown_90_973c: plp
-/*unknown_90_973d:*/ rts
+unknown_90_96ff:
+  php
+  rep #$30
+  lda $0afa.w
+  cmp $0b14.w
+  bmi @unknown_90_970c
+  bra @unknown_90_9725
+@unknown_90_970c:
+  lda $0b16.w
+  sec
+  sbc $0afc.w
+  sta $0da8.w
+  lda $0b14.w
+  sbc $0afa.w
+  clc
+  adc $9ead.w
+  sta $0da6.w
+  bra @unknown_90_973c
+@unknown_90_9725:
+  lda $0afc.w
+  sec
+  sbc $0b16.w
+  sta $0da8.w
+  lda $0afa.w
+  sbc $0b14.w
+  clc
+  adc $9ead.w
+  sta $0da6.w
+@unknown_90_973c:
+  plp
+  rts
 
 ; TODO: "Checks if Samus is being affected by water, or if she isn't
 ; walking/running on ground, if so, set her speed to 0 if her running byte isn't
 ; set ($0B3C). Otherwise, increase and cap her speed as appropriate."
 ; -- Kejardon
-unknown_90_973e: php
-/*unknown_90_973f:*/ rep #$30
-/*unknown_90_9741:*/ lda $09a2.w
-/*unknown_90_9744:*/ bit #$0020.w
-/*unknown_90_9747:*/ bne @unknown_90_9761
-/*unknown_90_9749:*/ jsr $90ec3e
-/*unknown_90_974d:*/ lda $195e.w
-/*unknown_90_9750:*/ bmi @unknown_90_9758
-/*unknown_90_9752:*/ cmp $12
-/*unknown_90_9754:*/ bmi @unknown_90_9766
-/*unknown_90_9756:*/ bra @unknown_90_9761
-@unknown_90_9758: lda $1962.w
-/*unknown_90_975b:*/ bmi @unknown_90_9761
-/*unknown_90_975d:*/ cmp $12
-/*unknown_90_975f:*/ bmi @unknown_90_976e
-@unknown_90_9761: ldx #$0000.w
-/*unknown_90_9764:*/ bra @unknown_90_9771
-@unknown_90_9766: lda $197e.w
-/*unknown_90_9769:*/ bit #$0004.w
-/*unknown_90_976c:*/ bne @unknown_90_9761
-@unknown_90_976e: jmp $9808.w
-@unknown_90_9771: lda $0a1f.w
-/*unknown_90_9774:*/ and #$00ff.w
-/*unknown_90_9777:*/ cmp #$0001.w
-/*unknown_90_977a:*/ beq @unknown_90_977f
-/*unknown_90_977c:*/ jmp @unknown_90_9808
-@unknown_90_977f: lda $8b
-/*unknown_90_9781:*/ and $09b6.w
-/*unknown_90_9784:*/ bne @unknown_90_9789
-/*unknown_90_9786:*/ jmp @unknown_90_9808
-@unknown_90_9789: lda $09a2.w
-/*unknown_90_978c:*/ bit #$2000.w
-/*unknown_90_978f:*/ beq @unknown_90_97c7
-/*unknown_90_9791:*/ lda $0b3c.w
-/*unknown_90_9794:*/ bne @unknown_90_97a9
-/*unknown_90_9796:*/ lda #$0001.w
-/*unknown_90_9799:*/ sta $0b3c.w
-/*unknown_90_979c:*/ sta $0ad0.w
-/*unknown_90_979f:*/ stz $0ace.w
-/*unknown_90_97a2:*/ lda $91b61f
-/*unknown_90_97a6:*/ sta $0b3e.w
-@unknown_90_97a9: lda $0b42.w
-/*unknown_90_97ac:*/ cmp $9f0d.w, X
-/*unknown_90_97af:*/ bmi @unknown_90_97f3
-/*unknown_90_97b1:*/ lda $0b44.w
-/*unknown_90_97b4:*/ cmp $9f13.w, X
-/*unknown_90_97b7:*/ bmi @unknown_90_97f3
-/*unknown_90_97b9:*/ lda $9f0d.w, X
-/*unknown_90_97bc:*/ sta $0b42.w
-/*unknown_90_97bf:*/ lda $9f13.w, X
-/*unknown_90_97c2:*/ sta $0b44.w
-/*unknown_90_97c5:*/ bra @unknown_90_9813
-@unknown_90_97c7: lda $0b3c.w
-/*unknown_90_97ca:*/ bne @unknown_90_97d5
-/*unknown_90_97cc:*/ lda #$0001.w
-/*unknown_90_97cf:*/ sta $0b3c.w
-/*unknown_90_97d2:*/ stz $0b3e.w
-@unknown_90_97d5: lda $0b42.w
-/*unknown_90_97d8:*/ cmp $9f19.w, X
-/*unknown_90_97db:*/ bmi @unknown_90_97f3
-/*unknown_90_97dd:*/ lda $0b44.w
-/*unknown_90_97e0:*/ cmp $9f1f.w, X
-/*unknown_90_97e3:*/ bmi @unknown_90_97f3
-/*unknown_90_97e5:*/ lda $9f19.w, X
-/*unknown_90_97e8:*/ sta $0b42.w
-/*unknown_90_97eb:*/ lda $9f1f.w, X
-/*unknown_90_97ee:*/ sta $0b44.w
-/*unknown_90_97f1:*/ bra @unknown_90_9813
-@unknown_90_97f3: lda $0b44.w
-/*unknown_90_97f6:*/ clc
-/*unknown_90_97f7:*/ adc $9f07.w, X
-/*unknown_90_97fa:*/ sta $0b44.w
-/*unknown_90_97fd:*/ lda $0b42.w
-/*unknown_90_9800:*/ adc $9f01.w, X
-/*unknown_90_9803:*/ sta $0b42.w
-/*unknown_90_9806:*/ bra @unknown_90_9813
-@unknown_90_9808: lda $0b3c.w
-/*unknown_90_980b:*/ bne @unknown_90_9813
-/*unknown_90_980d:*/ stz $0b42.w
-/*unknown_90_9810:*/ stz $0b44.w
-@unknown_90_9813: lda $0b3e.w
-/*unknown_90_9816:*/ and #$ff00.w
-/*unknown_90_9819:*/ cmp #$0400.w
-/*unknown_90_981c:*/ bne @unknown_90_9824
-/*unknown_90_981e:*/ lda #$0001.w
-/*unknown_90_9821:*/ sta $0a6e.w
-@unknown_90_9824: plp
-/*unknown_90_9825:*/ rts
+unknown_90_973e:
+  php
+  rep #$30
+  lda $09a2.w
+  bit #$0020.w
+  bne @unknown_90_9761
+  jsr $90ec3e
+  lda $195e.w
+  bmi @unknown_90_9758
+  cmp $12
+  bmi @unknown_90_9766
+  bra @unknown_90_9761
+@unknown_90_9758:
+  lda $1962.w
+  bmi @unknown_90_9761
+  cmp $12
+  bmi @unknown_90_976e
+@unknown_90_9761:
+  ldx #$0000.w
+  bra @unknown_90_9771
+@unknown_90_9766:
+  lda $197e.w
+  bit #$0004.w
+  bne @unknown_90_9761
+@unknown_90_976e:
+  jmp $9808.w
+@unknown_90_9771:
+  lda $0a1f.w
+  and #$00ff.w
+  cmp #$0001.w
+  beq @unknown_90_977f
+  jmp @unknown_90_9808
+@unknown_90_977f:
+  lda $8b
+  and $09b6.w
+  bne @unknown_90_9789
+  jmp @unknown_90_9808
+@unknown_90_9789:
+  lda $09a2.w
+  bit #$2000.w
+  beq @unknown_90_97c7
+  lda $0b3c.w
+  bne @unknown_90_97a9
+  lda #$0001.w
+  sta $0b3c.w
+  sta $0ad0.w
+  stz $0ace.w
+  lda $91b61f
+  sta $0b3e.w
+@unknown_90_97a9:
+  lda $0b42.w
+  cmp $9f0d.w, X
+  bmi @unknown_90_97f3
+  lda $0b44.w
+  cmp $9f13.w, X
+  bmi @unknown_90_97f3
+  lda $9f0d.w, X
+  sta $0b42.w
+  lda $9f13.w, X
+  sta $0b44.w
+  bra @unknown_90_9813
+@unknown_90_97c7:
+  lda $0b3c.w
+  bne @unknown_90_97d5
+  lda #$0001.w
+  sta $0b3c.w
+  stz $0b3e.w
+@unknown_90_97d5:
+  lda $0b42.w
+  cmp $9f19.w, X
+  bmi @unknown_90_97f3
+  lda $0b44.w
+  cmp $9f1f.w, X
+  bmi @unknown_90_97f3
+  lda $9f19.w, X
+  sta $0b42.w
+  lda $9f1f.w, X
+  sta $0b44.w
+  bra @unknown_90_9813
+@unknown_90_97f3:
+  lda $0b44.w
+  clc
+  adc $9f07.w, X
+  sta $0b44.w
+  lda $0b42.w
+  adc $9f01.w, X
+  sta $0b42.w
+  bra @unknown_90_9813
+@unknown_90_9808:
+  lda $0b3c.w
+  bne @unknown_90_9813
+  stz $0b42.w
+  stz $0b44.w
+@unknown_90_9813:
+  lda $0b3e.w
+  and #$ff00.w
+  cmp #$0400.w
+  bne @unknown_90_9824
+  lda #$0001.w
+  sta $0a6e.w
+@unknown_90_9824:
+  plp
+  rts
 
 ; TODO: "Move Samus $12.$14 pixels right and put $12 and $14 into $0DAE and
 ; $0DB0" -- Kejardon
-unknown_90_9826: lda $0af8.w
-/*unknown_90_9829:*/ clc
-/*unknown_90_982a:*/ adc $14
-/*unknown_90_982c:*/ sta $0af8.w
-/*unknown_90_982f:*/ lda $0af6.w
-/*unknown_90_9832:*/ adc $12
-/*unknown_90_9834:*/ sta $0af6.w
-/*unknown_90_9837:*/ lda $14
-/*unknown_90_9839:*/ sta $0db0.w
-/*unknown_90_983c:*/ lda $12
-/*unknown_90_983e:*/ sta $0dae.w
-/*unknown_90_9841:*/ rts
+unknown_90_9826:
+  lda $0af8.w
+  clc
+  adc $14
+  sta $0af8.w
+  lda $0af6.w
+  adc $12
+  sta $0af6.w
+  lda $14
+  sta $0db0.w
+  lda $12
+  sta $0dae.w
+  rts
 
 ; TODO: "Move Samus $12.$14 pixels left and put -$12 and -$14 into $0DAA and
 ; $0DAC" -- Kejardon
-unknown_90_9842: lda $0af8.w
-/*unknown_90_9845:*/ sec
-/*unknown_90_9846:*/ sbc $14
-/*unknown_90_9848:*/ sta $0af8.w
-/*unknown_90_984b:*/ lda $0af6.w
-/*unknown_90_984e:*/ sbc $12
-/*unknown_90_9850:*/ sta $0af6.w
-/*unknown_90_9853:*/ lda $12
-/*unknown_90_9855:*/ eor #$ffff.w
-/*unknown_90_9858:*/ sta $12
-/*unknown_90_985a:*/ lda $14
-/*unknown_90_985c:*/ eor #$ffff.w
-/*unknown_90_985f:*/ inc A
-/*unknown_90_9860:*/ sta $14
-/*unknown_90_9862:*/ bne @unknown_90_9866
-/*unknown_90_9864:*/ inc $12
-@unknown_90_9866: lda $14
-/*unknown_90_9868:*/ sta $0dac.w
-/*unknown_90_986b:*/ lda $12
-/*unknown_90_986d:*/ sta $0daa.w
-/*unknown_90_9870:*/ rts
+unknown_90_9842:
+  lda $0af8.w
+  sec
+  sbc $14
+  sta $0af8.w
+  lda $0af6.w
+  sbc $12
+  sta $0af6.w
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_9866
+  inc $12
+@unknown_90_9866:
+  lda $14
+  sta $0dac.w
+  lda $12
+  sta $0daa.w
+  rts
 
 ; TODO: "Move Samus $12.$14 pixels down and put $12 and $14 into $0DB6 and
 ; $0DB8" -- Kejardon
-unknown_90_9871: lda $0afc.w
-/*unknown_90_9874:*/ clc
-/*unknown_90_9875:*/ adc $14
-/*unknown_90_9877:*/ sta $0afc.w
-/*unknown_90_987a:*/ lda $0afa.w
-/*unknown_90_987d:*/ adc $12
-/*unknown_90_987f:*/ sta $0afa.w
-/*unknown_90_9882:*/ lda $14
-/*unknown_90_9884:*/ sta $0db8.w
-/*unknown_90_9887:*/ lda $12
-/*unknown_90_9889:*/ sta $0db6.w
-/*unknown_90_988c:*/ rts
+unknown_90_9871:
+  lda $0afc.w
+  clc
+  adc $14
+  sta $0afc.w
+  lda $0afa.w
+  adc $12
+  sta $0afa.w
+  lda $14
+  sta $0db8.w
+  lda $12
+  sta $0db6.w
+  rts
 
 ; TODO: "Move Samus $12.$14 pixels up and put -$12 and -$14 into $0DB2 and
 ; $0DB4" -- Kejardon
-unknown_90_988d: lda $0afc.w
-/*unknown_90_9890:*/ sec
-/*unknown_90_9891:*/ sbc $14
-/*unknown_90_9893:*/ sta $0afc.w
-/*unknown_90_9896:*/ lda $0afa.w
-/*unknown_90_9899:*/ sbc $12
-/*unknown_90_989b:*/ sta $0afa.w
-/*unknown_90_989e:*/ lda $12
-/*unknown_90_98a0:*/ eor #$ffff.w
-/*unknown_90_98a3:*/ sta $12
-/*unknown_90_98a5:*/ lda $14
-/*unknown_90_98a7:*/ eor #$ffff.w
-/*unknown_90_98aa:*/ inc A
-/*unknown_90_98ab:*/ sta $14
-/*unknown_90_98ad:*/ bne @unknown_90_98b1
-/*unknown_90_98af:*/ inc $12
-@unknown_90_98b1: lda $14
-/*unknown_90_98b3:*/ sta $0db4.w
-/*unknown_90_98b6:*/ lda $12
-/*unknown_90_98b8:*/ sta $0db2.w
-/*unknown_90_98bb:*/ rts
+unknown_90_988d:
+  lda $0afc.w
+  sec
+  sbc $14
+  sta $0afc.w
+  lda $0afa.w
+  sbc $12
+  sta $0afa.w
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_98b1
+  inc $12
+@unknown_90_98b1:
+  lda $14
+  sta $0db4.w
+  lda $12
+  sta $0db2.w
+  rts
 
 ; TODO: "Load Samus's vertical speeds(+2 for water, +4 for lava): Highjump:
 ; 9EBF.9EB9, normal: 9ECB.9EC5. Also adds Samus's horizontal speed / 2, IF Samus
 ; has speed boots. Sets Samus moving up, clears 0A9E and 0AA0, unknown uses."
 ; -- Kejardon
-unknown_90_98bc: php
-/*unknown_90_98bd:*/ phb
-/*unknown_90_98be:*/ phk
-/*unknown_90_98bf:*/ plb
-/*unknown_90_98c0:*/ rep #$30
-/*unknown_90_98c2:*/ lda $09a2.w
-/*unknown_90_98c5:*/ bit #$0020.w
-/*unknown_90_98c8:*/ bne @unknown_90_98e2
-/*unknown_90_98ca:*/ jsr $90ec3e
-/*unknown_90_98ce:*/ lda $195e.w
-/*unknown_90_98d1:*/ bmi @unknown_90_98d9
-/*unknown_90_98d3:*/ cmp $12
-/*unknown_90_98d5:*/ bmi @unknown_90_98e7
-/*unknown_90_98d7:*/ bra @unknown_90_98e2
-@unknown_90_98d9: lda $1962.w
-/*unknown_90_98dc:*/ bmi @unknown_90_98e2
-/*unknown_90_98de:*/ cmp $12
-/*unknown_90_98e0:*/ bmi @unknown_90_98f4
-@unknown_90_98e2: ldx #$0000.w
-/*unknown_90_98e5:*/ bra @unknown_90_98f7
-@unknown_90_98e7: lda $197e.w
-/*unknown_90_98ea:*/ bit #$0004.w
-/*unknown_90_98ed:*/ bne @unknown_90_98e2
-/*unknown_90_98ef:*/ ldx #$0002.w
-/*unknown_90_98f2:*/ bra @unknown_90_98f7
-@unknown_90_98f4: ldx #$0004.w
-@unknown_90_98f7: lda $09a2.w
-/*unknown_90_98fa:*/ bit #$0100.w
-/*unknown_90_98fd:*/ bne @unknown_90_990d
-/*unknown_90_98ff:*/ lda $9ebf.w, X
-/*unknown_90_9902:*/ sta $0b2c.w
-/*unknown_90_9905:*/ lda $9eb9.w, X
-/*unknown_90_9908:*/ sta $0b2e.w
-/*unknown_90_990b:*/ bra @unknown_90_9919
-@unknown_90_990d: lda $9ecb.w, X
-/*unknown_90_9910:*/ sta $0b2c.w
-/*unknown_90_9913:*/ lda $9ec5.w, X
-/*unknown_90_9916:*/ sta $0b2e.w
-@unknown_90_9919: lda $09a2.w
-/*unknown_90_991c:*/ bit #$2000.w
-/*unknown_90_991f:*/ beq @unknown_90_993a
-/*unknown_90_9921:*/ lda $0b42.w
-/*unknown_90_9924:*/ lsr A
-/*unknown_90_9925:*/ sta $12
-/*unknown_90_9927:*/ lda $0b2c.w
-/*unknown_90_992a:*/ clc
-/*unknown_90_992b:*/ adc $0b44.w
-/*unknown_90_992e:*/ sta $0b2c.w
-/*unknown_90_9931:*/ lda $0b2e.w
-/*unknown_90_9934:*/ clc
-/*unknown_90_9935:*/ adc $12
-/*unknown_90_9937:*/ sta $0b2e.w
-@unknown_90_993a: stz $0a9e.w
-/*unknown_90_993d:*/ stz $0aa0.w
-/*unknown_90_9940:*/ lda #$0001.w
-/*unknown_90_9943:*/ sta $0b36.w
-/*unknown_90_9946:*/ plb
-/*unknown_90_9947:*/ plp
-/*unknown_90_9948:*/ rtl
+unknown_90_98bc:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  lda $09a2.w
+  bit #$0020.w
+  bne @unknown_90_98e2
+  jsr $90ec3e
+  lda $195e.w
+  bmi @unknown_90_98d9
+  cmp $12
+  bmi @unknown_90_98e7
+  bra @unknown_90_98e2
+@unknown_90_98d9:
+  lda $1962.w
+  bmi @unknown_90_98e2
+  cmp $12
+  bmi @unknown_90_98f4
+@unknown_90_98e2:
+  ldx #$0000.w
+  bra @unknown_90_98f7
+@unknown_90_98e7:
+  lda $197e.w
+  bit #$0004.w
+  bne @unknown_90_98e2
+  ldx #$0002.w
+  bra @unknown_90_98f7
+@unknown_90_98f4:
+  ldx #$0004.w
+@unknown_90_98f7:
+  lda $09a2.w
+  bit #$0100.w
+  bne @unknown_90_990d
+  lda $9ebf.w, X
+  sta $0b2c.w
+  lda $9eb9.w, X
+  sta $0b2e.w
+  bra @unknown_90_9919
+@unknown_90_990d:
+  lda $9ecb.w, X
+  sta $0b2c.w
+  lda $9ec5.w, X
+  sta $0b2e.w
+@unknown_90_9919:
+  lda $09a2.w
+  bit #$2000.w
+  beq @unknown_90_993a
+  lda $0b42.w
+  lsr A
+  sta $12
+  lda $0b2c.w
+  clc
+  adc $0b44.w
+  sta $0b2c.w
+  lda $0b2e.w
+  clc
+  adc $12
+  sta $0b2e.w
+@unknown_90_993a:
+  stz $0a9e.w
+  stz $0aa0.w
+  lda #$0001.w
+  sta $0b36.w
+  plb
+  plp
+  rtl
 
 /*unknown_90_9949:*/ php
 /*unknown_90_994a:*/ phb
@@ -3153,75 +3252,82 @@ unknown_90_98bc: php
 
 ; TODO: "Modifies momentum according to $0B4A (add or subtract) and X (entry
 ; start). X is usually a start pointer indexed by $0A1F *#$0C" -- Kejardon
-unknown_90_9a7e: php
-/*unknown_90_9a7f:*/ rep #$30
-/*unknown_90_9a81:*/ lda $0b4a.w
-/*unknown_90_9a84:*/ bne @unknown_90_9aba
-/*unknown_90_9a86:*/ lda $0b48.w
-/*unknown_90_9a89:*/ clc
-/*unknown_90_9a8a:*/ adc $0002.w, X
-/*unknown_90_9a8d:*/ sta $0b48.w
-/*unknown_90_9a90:*/ lda $0b46.w
-/*unknown_90_9a93:*/ adc $0000.w, X
-/*unknown_90_9a96:*/ sta $0b46.w
-/*unknown_90_9a99:*/ cmp $0004.w, X
-/*unknown_90_9a9c:*/ bmi @unknown_90_9b13
-/*unknown_90_9a9e:*/ beq @unknown_90_9aae
-@unknown_90_9aa0: lda $0004.w, X
-/*unknown_90_9aa3:*/ sta $0b46.w
-/*unknown_90_9aa6:*/ lda $0006.w, X
-/*unknown_90_9aa9:*/ sta $0b48.w
-/*unknown_90_9aac:*/ bra @unknown_90_9b13
-@unknown_90_9aae: lda $0b48.w
-/*unknown_90_9ab1:*/ cmp $0006.w, X
-/*unknown_90_9ab4:*/ bmi @unknown_90_9b13
-/*unknown_90_9ab6:*/ beq @unknown_90_9b13
-/*unknown_90_9ab8:*/ bra @unknown_90_9aa0
-@unknown_90_9aba: sep #$20
-/*unknown_90_9abc:*/ lda $0b4c.w
-/*unknown_90_9abf:*/ beq @unknown_90_9aeb
-/*unknown_90_9ac1:*/ sta $4202.w
-/*unknown_90_9ac4:*/ lda $000b.w, X
-/*unknown_90_9ac7:*/ sta $4203.w
-/*unknown_90_9aca:*/ nop
-/*unknown_90_9acb:*/ nop
-/*unknown_90_9acc:*/ nop
-/*unknown_90_9acd:*/ rep #$20
-/*unknown_90_9acf:*/ lda $4216.w
-/*unknown_90_9ad2:*/ sta $14
-/*unknown_90_9ad4:*/ sep #$20
-/*unknown_90_9ad6:*/ lda $0008.w, X
-/*unknown_90_9ad9:*/ sta $4203.w
-/*unknown_90_9adc:*/ nop
-/*unknown_90_9add:*/ nop
-/*unknown_90_9ade:*/ nop
-/*unknown_90_9adf:*/ rep #$20
-/*unknown_90_9ae1:*/ lda $4217.w
-/*unknown_90_9ae4:*/ and #$00ff.w
-/*unknown_90_9ae7:*/ sta $12
-/*unknown_90_9ae9:*/ bra @unknown_90_9af7
-@unknown_90_9aeb: rep #$20
-/*unknown_90_9aed:*/ lda $000a.w, X
-/*unknown_90_9af0:*/ sta $14
-/*unknown_90_9af2:*/ lda $0008.w, X
-/*unknown_90_9af5:*/ sta $12
-@unknown_90_9af7: lda $0b48.w
-/*unknown_90_9afa:*/ sec
-/*unknown_90_9afb:*/ sbc $14
-/*unknown_90_9afd:*/ sta $0b48.w
-/*unknown_90_9b00:*/ lda $0b46.w
-/*unknown_90_9b03:*/ sbc $12
-/*unknown_90_9b05:*/ sta $0b46.w
-/*unknown_90_9b08:*/ bpl @unknown_90_9b13
-/*unknown_90_9b0a:*/ stz $0b46.w
-/*unknown_90_9b0d:*/ stz $0b48.w
-/*unknown_90_9b10:*/ stz $0b4a.w
-@unknown_90_9b13: lda $0b46.w
-/*unknown_90_9b16:*/ sta $12
-/*unknown_90_9b18:*/ lda $0b48.w
-/*unknown_90_9b1b:*/ sta $14
-/*unknown_90_9b1d:*/ plp
-/*unknown_90_9b1e:*/ rts
+unknown_90_9a7e:
+  php
+  rep #$30
+  lda $0b4a.w
+  bne @unknown_90_9aba
+  lda $0b48.w
+  clc
+  adc $0002.w, X
+  sta $0b48.w
+  lda $0b46.w
+  adc $0000.w, X
+  sta $0b46.w
+  cmp $0004.w, X
+  bmi @unknown_90_9b13
+  beq @unknown_90_9aae
+@unknown_90_9aa0:
+  lda $0004.w, X
+  sta $0b46.w
+  lda $0006.w, X
+  sta $0b48.w
+  bra @unknown_90_9b13
+@unknown_90_9aae:
+  lda $0b48.w
+  cmp $0006.w, X
+  bmi @unknown_90_9b13
+  beq @unknown_90_9b13
+  bra @unknown_90_9aa0
+@unknown_90_9aba:
+  sep #$20
+  lda $0b4c.w
+  beq @unknown_90_9aeb
+  sta $4202.w
+  lda $000b.w, X
+  sta $4203.w
+  nop
+  nop
+  nop
+  rep #$20
+  lda $4216.w
+  sta $14
+  sep #$20
+  lda $0008.w, X
+  sta $4203.w
+  nop
+  nop
+  nop
+  rep #$20
+  lda $4217.w
+  and #$00ff.w
+  sta $12
+  bra @unknown_90_9af7
+@unknown_90_9aeb:
+  rep #$20
+  lda $000a.w, X
+  sta $14
+  lda $0008.w, X
+  sta $12
+@unknown_90_9af7:
+  lda $0b48.w
+  sec
+  sbc $14
+  sta $0b48.w
+  lda $0b46.w
+  sbc $12
+  sta $0b46.w
+  bpl @unknown_90_9b13
+  stz $0b46.w
+  stz $0b48.w
+  stz $0b4a.w
+@unknown_90_9b13:
+  lda $0b46.w
+  sta $12
+  lda $0b48.w
+  sta $14
+  plp
+  rts
 
 unknown_90_9b1f: php
 /*unknown_90_9b20:*/ rep #$30
@@ -3306,43 +3412,49 @@ unknown_90_9b1f: php
 ; TODO: "Set $0A6C to #$A08D if affected by FX3, or #$A1DD if affected by FX3
 ; and FX3 fills the room. Also, X = ($0A1F * #$0C) + $0A6C when leaving."
 ; -- Kejardon
-unknown_90_9bd1: php
-/*unknown_90_9bd2:*/ rep #$30
-/*unknown_90_9bd4:*/ lda $09a2.w
-/*unknown_90_9bd7:*/ bit #$0020.w
-/*unknown_90_9bda:*/ bne @unknown_90_9bf4
-/*unknown_90_9bdc:*/ jsr $90ec3e
-/*unknown_90_9be0:*/ lda $195e.w
-/*unknown_90_9be3:*/ bmi @unknown_90_9beb
-/*unknown_90_9be5:*/ cmp $12
-/*unknown_90_9be7:*/ bmi @unknown_90_9bf6
-/*unknown_90_9be9:*/ bra @unknown_90_9bf4
-@unknown_90_9beb: lda $1962.w
-/*unknown_90_9bee:*/ bmi @unknown_90_9bf4
-/*unknown_90_9bf0:*/ cmp $12
-/*unknown_90_9bf2:*/ bmi @unknown_90_9c06
-@unknown_90_9bf4: bra @unknown_90_9c0c
-@unknown_90_9bf6: lda $197e.w
-/*unknown_90_9bf9:*/ bit #$0004.w
-/*unknown_90_9bfc:*/ bne @unknown_90_9bf4
-/*unknown_90_9bfe:*/ lda #$a08d.w
-/*unknown_90_9c01:*/ sta $0a6c.w
-/*unknown_90_9c04:*/ bra @unknown_90_9c0c
-@unknown_90_9c06: lda #$a1dd.w
-/*unknown_90_9c09:*/ sta $0a6c.w
-@unknown_90_9c0c: lda $0a1f.w
-/*unknown_90_9c0f:*/ and #$00ff.w
-/*unknown_90_9c12:*/ sta $14
-/*unknown_90_9c14:*/ asl A
-/*unknown_90_9c15:*/ clc
-/*unknown_90_9c16:*/ adc $14
-/*unknown_90_9c18:*/ asl A
-/*unknown_90_9c19:*/ asl A
-/*unknown_90_9c1a:*/ clc
-/*unknown_90_9c1b:*/ adc $0a6c.w
-/*unknown_90_9c1e:*/ tax
-/*unknown_90_9c1f:*/ plp
-/*unknown_90_9c20:*/ rts
+unknown_90_9bd1:
+  php
+  rep #$30
+  lda $09a2.w
+  bit #$0020.w
+  bne @unknown_90_9bf4
+  jsr $90ec3e
+  lda $195e.w
+  bmi @unknown_90_9beb
+  cmp $12
+  bmi @unknown_90_9bf6
+  bra @unknown_90_9bf4
+@unknown_90_9beb:
+  lda $1962.w
+  bmi @unknown_90_9bf4
+  cmp $12
+  bmi @unknown_90_9c06
+@unknown_90_9bf4:
+  bra @unknown_90_9c0c
+@unknown_90_9bf6:
+  lda $197e.w
+  bit #$0004.w
+  bne @unknown_90_9bf4
+  lda #$a08d.w
+  sta $0a6c.w
+  bra @unknown_90_9c0c
+@unknown_90_9c06:
+  lda #$a1dd.w
+  sta $0a6c.w
+@unknown_90_9c0c:
+  lda $0a1f.w
+  and #$00ff.w
+  sta $14
+  asl A
+  clc
+  adc $14
+  asl A
+  asl A
+  clc
+  adc $0a6c.w
+  tax
+  plp
+  rts
 
 unknown_90_9c21: php
 /*unknown_90_9c22:*/ rep #$30
@@ -4760,35 +4872,38 @@ unknown_90_a077: brk $c0
 ; $12 and $18, then JSR to 90:A8A6 after each entry, until a negative entry
 ; (such as FFFF). Entry format: bytes 1 and 3 ignored, bytes 2 and 4 = X/Y
 ; offset from topleft corner of room." -- Kejardon
-unknown_90_a7e2: php
-/*unknown_90_a7e3:*/ phb
-/*unknown_90_a7e4:*/ rep #$30
-/*unknown_90_a7e6:*/ phk
-/*unknown_90_a7e7:*/ plb
-/*unknown_90_a7e8:*/ lda #$0001.w
-/*unknown_90_a7eb:*/ sta $05f7.w
-/*unknown_90_a7ee:*/ lda #$001f.w
-/*unknown_90_a7f1:*/ ora #$2c00.w
-/*unknown_90_a7f4:*/ ldx #$0000.w
-@unknown_90_a7f7: sta $7ec63c, X
-/*unknown_90_a7fb:*/ sta $7ec67c, X
-/*unknown_90_a7ff:*/ sta $7ec6bc, X
-/*unknown_90_a803:*/ inx
-/*unknown_90_a804:*/ inx
-/*unknown_90_a805:*/ cpx #$000a.w
-/*unknown_90_a808:*/ bmi @unknown_90_a7f7
-/*unknown_90_a80a:*/ lda $179c.w
-/*unknown_90_a80d:*/ ldx #$0014.w
-@unknown_90_a810: cmp $a83a.w, X
-/*unknown_90_a813:*/ beq @unknown_90_a81e
-/*unknown_90_a815:*/ dex
-/*unknown_90_a816:*/ dex
-/*unknown_90_a817:*/ dex
-/*unknown_90_a818:*/ dex
-/*unknown_90_a819:*/ bpl @unknown_90_a810
-/*unknown_90_a81b:*/ plb
-/*unknown_90_a81c:*/ plp
-/*unknown_90_a81d:*/ rtl
+unknown_90_a7e2:
+  php
+  phb
+  rep #$30
+  phk
+  plb
+  lda #$0001.w
+  sta $05f7.w
+  lda #$001f.w
+  ora #$2c00.w
+  ldx #$0000.w
+@unknown_90_a7f7:
+  sta $7ec63c, X
+  sta $7ec67c, X
+  sta $7ec6bc, X
+  inx
+  inx
+  cpx #$000a.w
+  bmi @unknown_90_a7f7
+  lda $179c.w
+  ldx #$0014.w
+@unknown_90_a810:
+  cmp $a83a.w, X
+  beq @unknown_90_a81e
+  dex
+  dex
+  dex
+  dex
+  bpl @unknown_90_a810
+  plb
+  plp
+  rtl
 
 @unknown_90_a81e: lda $a83c.w, X
 /*unknown_90_a821:*/ tax
@@ -5514,66 +5629,71 @@ unknown_90_acfc: and #$0fff.w
 /*unknown_90_adb6:*/ rtl
 
 ; TODO: "Clean up (aka delete) projectile/bomb. Index in X." -- Kejardon
-unknown_90_adb7: php
-/*unknown_90_adb8:*/ rep #$30
-/*unknown_90_adba:*/ stz $0b64.w, X
-/*unknown_90_adbd:*/ stz $0b78.w, X
-/*unknown_90_adc0:*/ stz $0b8c.w, X
-/*unknown_90_adc3:*/ stz $0ba0.w, X
-/*unknown_90_adc6:*/ stz $0c04.w, X
-/*unknown_90_adc9:*/ stz $0bdc.w, X
-/*unknown_90_adcc:*/ stz $0bf0.w, X
-/*unknown_90_adcf:*/ stz $0bb4.w, X
-/*unknown_90_add2:*/ stz $0bc8.w, X
-/*unknown_90_add5:*/ stz $0c18.w, X
-/*unknown_90_add8:*/ stz $0c2c.w, X
-/*unknown_90_addb:*/ stz $0c40.w, X
-/*unknown_90_adde:*/ stz $0c54.w, X
-/*unknown_90_ade1:*/ stz $0c7c.w, X
-/*unknown_90_ade4:*/ stz $0cb8.w, X
-/*unknown_90_ade7:*/ lda #$b169.w
-/*unknown_90_adea:*/ sta $0c68.w, X
-/*unknown_90_aded:*/ cpx #$000a.w
-/*unknown_90_adf0:*/ bpl @unknown_90_adfc
-/*unknown_90_adf2:*/ dec $0cce.w
-/*unknown_90_adf5:*/ bpl @unknown_90_ae04
-/*unknown_90_adf7:*/ stz $0cce.w
-/*unknown_90_adfa:*/ bra @unknown_90_ae04
-@unknown_90_adfc: dec $0cd2.w
-/*unknown_90_adff:*/ bpl @unknown_90_ae04
-/*unknown_90_ae01:*/ stz $0cd2.w
-@unknown_90_ae04: plp
-/*unknown_90_ae05:*/ rtl
+unknown_90_adb7:
+  php
+  rep #$30
+  stz $0b64.w, X
+  stz $0b78.w, X
+  stz $0b8c.w, X
+  stz $0ba0.w, X
+  stz $0c04.w, X
+  stz $0bdc.w, X
+  stz $0bf0.w, X
+  stz $0bb4.w, X
+  stz $0bc8.w, X
+  stz $0c18.w, X
+  stz $0c2c.w, X
+  stz $0c40.w, X
+  stz $0c54.w, X
+  stz $0c7c.w, X
+  stz $0cb8.w, X
+  lda #$b169.w
+  sta $0c68.w, X
+  cpx #$000a.w
+  bpl @unknown_90_adfc
+  dec $0cce.w
+  bpl @unknown_90_ae04
+  stz $0cce.w
+  bra @unknown_90_ae04
+@unknown_90_adfc:
+  dec $0cd2.w
+  bpl @unknown_90_ae04
+  stz $0cd2.w
+@unknown_90_ae04:
+  plp
+  rtl
 
 ; TODO: "Kill projectile. 0C18 index in X." -- Kejardon
-unknown_90_ae06: php
-/*unknown_90_ae07:*/ phb
-/*unknown_90_ae08:*/ phk
-/*unknown_90_ae09:*/ plb
-/*unknown_90_ae0a:*/ rep #$30
-/*unknown_90_ae0c:*/ lda $0c19.w, X
-/*unknown_90_ae0f:*/ and #$000f.w
-/*unknown_90_ae12:*/ beq @unknown_90_ae20
-/*unknown_90_ae14:*/ cmp #$0003.w
-/*unknown_90_ae17:*/ bmi @unknown_90_ae2d
-/*unknown_90_ae19:*/ jsr $90adb7
-/*unknown_90_ae1d:*/ plb
-/*unknown_90_ae1e:*/ plp
-/*unknown_90_ae1f:*/ rtl
-
-@unknown_90_ae20: txy
-/*unknown_90_ae21:*/ lda $0c04.w, X
-/*unknown_90_ae24:*/ and #$000f.w
-/*unknown_90_ae27:*/ asl A
-/*unknown_90_ae28:*/ tax
-/*unknown_90_ae29:*/ jsr ($ae3a.w, X)
-/*unknown_90_ae2c:*/ tyx
-@unknown_90_ae2d: jsr $9380cf
-/*unknown_90_ae31:*/ lda #$b169.w
-/*unknown_90_ae34:*/ sta $0c68.w, X
-/*unknown_90_ae37:*/ plb
-/*unknown_90_ae38:*/ plp
-/*unknown_90_ae39:*/ rtl
+unknown_90_ae06:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  lda $0c19.w, X
+  and #$000f.w
+  beq @unknown_90_ae20
+  cmp #$0003.w
+  bmi @unknown_90_ae2d
+  jsr $90adb7
+  plb
+  plp
+  rtl
+@unknown_90_ae20:
+  txy
+  lda $0c04.w, X
+  and #$000f.w
+  asl A
+  tax
+  jsr ($ae3a.w, X)
+  tyx
+@unknown_90_ae2d:
+  jsr $9380cf
+  lda #$b169.w
+  sta $0c68.w, X
+  plb
+  plp
+  rtl
 
 /*unknown_90_ae3a:*/ lsr $59ae.w
 /*unknown_90_ae3d:*/ ldx $ae6e.w
@@ -8388,154 +8508,164 @@ unknown_90_c5eb: lda $0aaa.w
 /*unknown_90_c662:*/ rts
 
 ; TODO: "Draw arm cannon 'open' sprite." -- Kejardon
-unknown_90_c663: php
-/*unknown_90_c664:*/ rep #$30
-/*unknown_90_c666:*/ lda $0aa8.w
-/*unknown_90_c669:*/ beq @unknown_90_c678
-/*unknown_90_c66b:*/ lda $18a8.w
-/*unknown_90_c66e:*/ beq @unknown_90_c67a
-/*unknown_90_c670:*/ lda $05b6.w
-/*unknown_90_c673:*/ and #$0001.w
-/*unknown_90_c676:*/ beq @unknown_90_c67a
-@unknown_90_c678: plp
-/*unknown_90_c679:*/ rts
-
-@unknown_90_c67a: lda $0a1c.w
-/*unknown_90_c67d:*/ asl A
-/*unknown_90_c67e:*/ tax
-/*unknown_90_c67f:*/ lda $c7df.w, X
-/*unknown_90_c682:*/ tay
-/*unknown_90_c683:*/ lda $0000.w, Y
-/*unknown_90_c686:*/ and #$00ff.w
-/*unknown_90_c689:*/ bit #$0080.w
-/*unknown_90_c68c:*/ beq @unknown_90_c6b5
-/*unknown_90_c68e:*/ lda $0a96.w
-/*unknown_90_c691:*/ bne @unknown_90_c6a4
-/*unknown_90_c693:*/ lda $0000.w, Y
-/*unknown_90_c696:*/ and #$007f.w
-/*unknown_90_c699:*/ asl A
-/*unknown_90_c69a:*/ tax
-/*unknown_90_c69b:*/ tya
-/*unknown_90_c69c:*/ clc
-/*unknown_90_c69d:*/ adc #$0004.w
-/*unknown_90_c6a0:*/ sta $16
-/*unknown_90_c6a2:*/ bra @unknown_90_c6bc
-@unknown_90_c6a4: lda $0002.w, Y
-/*unknown_90_c6a7:*/ and #$007f.w
-/*unknown_90_c6aa:*/ asl A
-/*unknown_90_c6ab:*/ tax
-/*unknown_90_c6ac:*/ tya
-/*unknown_90_c6ad:*/ clc
-/*unknown_90_c6ae:*/ adc #$0004.w
-/*unknown_90_c6b1:*/ sta $16
-/*unknown_90_c6b3:*/ bra @unknown_90_c6bc
-@unknown_90_c6b5: asl A
-/*unknown_90_c6b6:*/ tax
-/*unknown_90_c6b7:*/ tya
-/*unknown_90_c6b8:*/ inc A
-/*unknown_90_c6b9:*/ inc A
-/*unknown_90_c6ba:*/ sta $16
-@unknown_90_c6bc: lda $c791.w, X
-/*unknown_90_c6bf:*/ sta $18
-/*unknown_90_c6c1:*/ lda $0a96.w
-/*unknown_90_c6c4:*/ asl A
-/*unknown_90_c6c5:*/ clc
-/*unknown_90_c6c6:*/ adc $16
-/*unknown_90_c6c8:*/ tay
-/*unknown_90_c6c9:*/ lda $0000.w, Y
-/*unknown_90_c6cc:*/ and #$00ff.w
-/*unknown_90_c6cf:*/ bit #$0080.w
-/*unknown_90_c6d2:*/ beq @unknown_90_c6d7
-/*unknown_90_c6d4:*/ ora #$ff00.w
-@unknown_90_c6d7: sta $12
-/*unknown_90_c6d9:*/ lda $0001.w, Y
-/*unknown_90_c6dc:*/ and #$00ff.w
-/*unknown_90_c6df:*/ bit #$0080.w
-/*unknown_90_c6e2:*/ beq @unknown_90_c6e7
-/*unknown_90_c6e4:*/ ora #$ff00.w
-@unknown_90_c6e7: sta $14
-/*unknown_90_c6e9:*/ lda $0a1c.w
-/*unknown_90_c6ec:*/ asl A
-/*unknown_90_c6ed:*/ asl A
-/*unknown_90_c6ee:*/ asl A
-/*unknown_90_c6ef:*/ tax
-/*unknown_90_c6f0:*/ lda $91b62d, X
-/*unknown_90_c6f4:*/ and #$00ff.w
-/*unknown_90_c6f7:*/ sta $16
-/*unknown_90_c6f9:*/ ldx $0590.w
-/*unknown_90_c6fc:*/ lda $0af6.w
-/*unknown_90_c6ff:*/ clc
-/*unknown_90_c700:*/ adc $12
-/*unknown_90_c702:*/ sec
-/*unknown_90_c703:*/ sbc $0911.w
-/*unknown_90_c706:*/ bmi @unknown_90_c733
-/*unknown_90_c708:*/ cmp #$0100.w
-/*unknown_90_c70b:*/ bpl @unknown_90_c733
-/*unknown_90_c70d:*/ sta $0370.w, X
-/*unknown_90_c710:*/ lda $0afa.w
-/*unknown_90_c713:*/ clc
-/*unknown_90_c714:*/ adc $14
-/*unknown_90_c716:*/ sec
-/*unknown_90_c717:*/ sbc $16
-/*unknown_90_c719:*/ sbc $0915.w
-/*unknown_90_c71c:*/ bmi @unknown_90_c733
-/*unknown_90_c71e:*/ cmp #$0100.w
-/*unknown_90_c721:*/ bpl @unknown_90_c733
-/*unknown_90_c723:*/ sta $0371.w, X
-/*unknown_90_c726:*/ lda $18
-/*unknown_90_c728:*/ sta $0372.w, X
-/*unknown_90_c72b:*/ txa
-/*unknown_90_c72c:*/ clc
-/*unknown_90_c72d:*/ adc #$0004.w
-/*unknown_90_c730:*/ sta $0590.w
-@unknown_90_c733: lda $0a1c.w
-/*unknown_90_c736:*/ asl A
-/*unknown_90_c737:*/ tax
-/*unknown_90_c738:*/ lda $c7df.w, X
-/*unknown_90_c73b:*/ tay
-/*unknown_90_c73c:*/ lda $0000.w, Y
-/*unknown_90_c73f:*/ and #$00ff.w
-/*unknown_90_c742:*/ bit #$0080.w
-/*unknown_90_c745:*/ beq @unknown_90_c75c
-/*unknown_90_c747:*/ lda $0a96.w
-/*unknown_90_c74a:*/ bne @unknown_90_c754
-/*unknown_90_c74c:*/ lda $0000.w, Y
-/*unknown_90_c74f:*/ and #$007f.w
-/*unknown_90_c752:*/ bra @unknown_90_c75c
-@unknown_90_c754: iny
-/*unknown_90_c755:*/ iny
-/*unknown_90_c756:*/ lda $0000.w, Y
-/*unknown_90_c759:*/ and #$007f.w
-@unknown_90_c75c: asl A
-/*unknown_90_c75d:*/ tax
-/*unknown_90_c75e:*/ lda $c7a5.w, X
-/*unknown_90_c761:*/ sta $16
-/*unknown_90_c763:*/ lda $0aa8.w
-/*unknown_90_c766:*/ asl A
-/*unknown_90_c767:*/ clc
-/*unknown_90_c768:*/ adc $16
-/*unknown_90_c76a:*/ tay
-/*unknown_90_c76b:*/ ldx $0330.w
-/*unknown_90_c76e:*/ lda #$0020.w
-/*unknown_90_c771:*/ sta $d0, X
-/*unknown_90_c773:*/ inx
-/*unknown_90_c774:*/ inx
-/*unknown_90_c775:*/ lda $0000.w, Y
-/*unknown_90_c778:*/ sta $d0, X
-/*unknown_90_c77a:*/ inx
-/*unknown_90_c77b:*/ inx
-/*unknown_90_c77c:*/ sep #$20
-/*unknown_90_c77e:*/ lda #$9a
-/*unknown_90_c780:*/ sta $d0, X
-/*unknown_90_c782:*/ rep #$20
-/*unknown_90_c784:*/ inx
-/*unknown_90_c785:*/ lda #$61f0.w
-/*unknown_90_c788:*/ sta $d0, X
-/*unknown_90_c78a:*/ inx
-/*unknown_90_c78b:*/ inx
-/*unknown_90_c78c:*/ stx $0330.w
-/*unknown_90_c78f:*/ plp
-/*unknown_90_c790:*/ rts
+unknown_90_c663:
+  php
+  rep #$30
+  lda $0aa8.w
+  beq @unknown_90_c678
+  lda $18a8.w
+  beq @unknown_90_c67a
+  lda $05b6.w
+  and #$0001.w
+  beq @unknown_90_c67a
+@unknown_90_c678:
+  plp
+  rts
+@unknown_90_c67a:
+  lda $0a1c.w
+  asl A
+  tax
+  lda $c7df.w, X
+  tay
+  lda $0000.w, Y
+  and #$00ff.w
+  bit #$0080.w
+  beq @unknown_90_c6b5
+  lda $0a96.w
+  bne @unknown_90_c6a4
+  lda $0000.w, Y
+  and #$007f.w
+  asl A
+  tax
+  tya
+  clc
+  adc #$0004.w
+  sta $16
+  bra @unknown_90_c6bc
+@unknown_90_c6a4:
+  lda $0002.w, Y
+  and #$007f.w
+  asl A
+  tax
+  tya
+  clc
+  adc #$0004.w
+  sta $16
+  bra @unknown_90_c6bc
+@unknown_90_c6b5:
+  asl A
+  tax
+  tya
+  inc A
+  inc A
+  sta $16
+@unknown_90_c6bc:
+  lda $c791.w, X
+  sta $18
+  lda $0a96.w
+  asl A
+  clc
+  adc $16
+  tay
+  lda $0000.w, Y
+  and #$00ff.w
+  bit #$0080.w
+  beq @unknown_90_c6d7
+  ora #$ff00.w
+@unknown_90_c6d7:
+  sta $12
+  lda $0001.w, Y
+  and #$00ff.w
+  bit #$0080.w
+  beq @unknown_90_c6e7
+  ora #$ff00.w
+@unknown_90_c6e7:
+  sta $14
+  lda $0a1c.w
+  asl A
+  asl A
+  asl A
+  tax
+  lda $91b62d, X
+  and #$00ff.w
+  sta $16
+  ldx $0590.w
+  lda $0af6.w
+  clc
+  adc $12
+  sec
+  sbc $0911.w
+  bmi @unknown_90_c733
+  cmp #$0100.w
+  bpl @unknown_90_c733
+  sta $0370.w, X
+  lda $0afa.w
+  clc
+  adc $14
+  sec
+  sbc $16
+  sbc $0915.w
+  bmi @unknown_90_c733
+  cmp #$0100.w
+  bpl @unknown_90_c733
+  sta $0371.w, X
+  lda $18
+  sta $0372.w, X
+  txa
+  clc
+  adc #$0004.w
+  sta $0590.w
+@unknown_90_c733:
+  lda $0a1c.w
+  asl A
+  tax
+  lda $c7df.w, X
+  tay
+  lda $0000.w, Y
+  and #$00ff.w
+  bit #$0080.w
+  beq @unknown_90_c75c
+  lda $0a96.w
+  bne @unknown_90_c754
+  lda $0000.w, Y
+  and #$007f.w
+  bra @unknown_90_c75c
+@unknown_90_c754:
+  iny
+  iny
+  lda $0000.w, Y
+  and #$007f.w
+@unknown_90_c75c:
+  asl A
+  tax
+  lda $c7a5.w, X
+  sta $16
+  lda $0aa8.w
+  asl A
+  clc
+  adc $16
+  tay
+  ldx $0330.w
+  lda #$0020.w
+  sta $d0, X
+  inx
+  inx
+  lda $0000.w, Y
+  sta $d0, X
+  inx
+  inx
+  sep #$20
+  lda #$9a
+  sta $d0, X
+  rep #$20
+  inx
+  lda #$61f0.w
+  sta $d0, X
+  inx
+  inx
+  stx $0330.w
+  plp
+  rts
 
 /*unknown_90_c791:*/ ora $281f28, X
 /*unknown_90_c795:*/ ora $681f28, X
@@ -9527,286 +9657,315 @@ unknown_90_cc8a: sep #$20
 @unknown_90_d0aa: rts
 
 ; TODO: "Used by 0A58. Vertical Super Jump routine." -- Kejardon
-unknown_90_d0ab: lda #$0002.w
-/*unknown_90_d0ae:*/ sta $0a6e.w
-/*unknown_90_d0b1:*/ lda #$0008.w
-/*unknown_90_d0b4:*/ sta $0a48.w
-/*unknown_90_d0b7:*/ ldx #$0004.w
-/*unknown_90_d0ba:*/ ldy $ef20.w
-/*unknown_90_d0bd:*/ jsr unknown_90_eee7
-/*unknown_90_d0c0:*/ jsr unknown_90_d1ff
-/*unknown_90_d0c3:*/ jsr unknown_90_d2ba
-/*unknown_90_d0c6:*/ lda $09c2.w
-/*unknown_90_d0c9:*/ cmp #$001e.w
-/*unknown_90_d0cc:*/ bmi @unknown_90_d0d6
-/*unknown_90_d0ce:*/ dec $09c2.w
-/*unknown_90_d0d1:*/ bpl @unknown_90_d0d6
-/*unknown_90_d0d3:*/ stz $09c2.w
-@unknown_90_d0d6: rts
+unknown_90_d0ab:
+  lda #$0002.w
+  sta $0a6e.w
+  lda #$0008.w
+  sta $0a48.w
+  ldx #$0004.w
+  ldy $ef20.w
+  jsr unknown_90_eee7
+  jsr unknown_90_d1ff
+  jsr unknown_90_d2ba
+  lda $09c2.w
+  cmp #$001e.w
+  bmi @unknown_90_d0d6
+  dec $09c2.w
+  bpl @unknown_90_d0d6
+  stz $09c2.w
+@unknown_90_d0d6:
+  rts
 
 ; TODO: "Used by 0A58. Diagonal Super Jump routine." -- Kejardon
-unknown_90_d0d7: lda #$0002.w
-/*unknown_90_d0da:*/ sta $0a6e.w
-/*unknown_90_d0dd:*/ lda #$0008.w
-/*unknown_90_d0e0:*/ sta $0a48.w
-/*unknown_90_d0e3:*/ ldx #$0004.w
-/*unknown_90_d0e6:*/ ldy $ef20.w
-/*unknown_90_d0e9:*/ jsr unknown_90_eee7
-/*unknown_90_d0ec:*/ jsr unknown_90_d132
-/*unknown_90_d0ef:*/ jsr unknown_90_d1ff
-/*unknown_90_d0f2:*/ jsr unknown_90_d2ba
-/*unknown_90_d0f5:*/ lda $09c2.w
-/*unknown_90_d0f8:*/ cmp #$001e.w
-/*unknown_90_d0fb:*/ bmi @unknown_90_d105
-/*unknown_90_d0fd:*/ dec $09c2.w
-/*unknown_90_d100:*/ bpl @unknown_90_d105
-/*unknown_90_d102:*/ stz $09c2.w
-@unknown_90_d105: rts
+unknown_90_d0d7:
+  lda #$0002.w
+  sta $0a6e.w
+  lda #$0008.w
+  sta $0a48.w
+  ldx #$0004.w
+  ldy $ef20.w
+  jsr unknown_90_eee7
+  jsr unknown_90_d132
+  jsr unknown_90_d1ff
+  jsr unknown_90_d2ba
+  lda $09c2.w
+  cmp #$001e.w
+  bmi @unknown_90_d105
+  dec $09c2.w
+  bpl @unknown_90_d105
+  stz $09c2.w
+@unknown_90_d105:
+  rts
 
 ; TODO: "Used by 0A58. Horizontal Super Jump routine." -- Kejardon
-unknown_90_d106: lda #$0002.w
-/*unknown_90_d109:*/ sta $0a6e.w
-/*unknown_90_d10c:*/ lda #$0008.w
-/*unknown_90_d10f:*/ sta $0a48.w
-/*unknown_90_d112:*/ ldx #$0008.w
-/*unknown_90_d115:*/ ldy $ef20.w
-/*unknown_90_d118:*/ jsr unknown_90_eee7
-/*unknown_90_d11b:*/ jsr unknown_90_d132
-/*unknown_90_d11e:*/ jsr unknown_90_d2ba
-/*unknown_90_d121:*/ lda $09c2.w
-/*unknown_90_d124:*/ cmp #$001e.w
-/*unknown_90_d127:*/ bmi @unknown_90_d131
-/*unknown_90_d129:*/ dec $09c2.w
-/*unknown_90_d12c:*/ bpl @unknown_90_d131
-/*unknown_90_d12e:*/ stz $09c2.w
-@unknown_90_d131: rts
+unknown_90_d106:
+  lda #$0002.w
+  sta $0a6e.w
+  lda #$0008.w
+  sta $0a48.w
+  ldx #$0008.w
+  ldy $ef20.w
+  jsr unknown_90_eee7
+  jsr unknown_90_d132
+  jsr unknown_90_d2ba
+  lda $09c2.w
+  cmp #$001e.w
+  bmi @unknown_90_d131
+  dec $09c2.w
+  bpl @unknown_90_d131
+  stz $09c2.w
+@unknown_90_d131:
+  rts
 
 ; TODO: "Super jump horizontal movement: Set $0A68 to #$000F, add acceleration
 ; to speed (cap at F.00 pixels), then standard enemy detection/movement
 ; (E4AD/E464, A0:A8F0, 94:971E, 94:87F4). Also caps scrolling to F pixels"
 ; -- Kejardon
-unknown_90_d132: lda #$000f.w
-/*unknown_90_d135:*/ sta $0a68.w
-/*unknown_90_d138:*/ lda $0b44.w
-/*unknown_90_d13b:*/ clc
-/*unknown_90_d13c:*/ adc $0b32.w
-/*unknown_90_d13f:*/ sta $0b44.w
-/*unknown_90_d142:*/ lda $0b42.w
-/*unknown_90_d145:*/ adc $0b34.w
-/*unknown_90_d148:*/ sta $0b42.w
-/*unknown_90_d14b:*/ cmp #$000f.w
-/*unknown_90_d14e:*/ bmi @unknown_90_d159
-/*unknown_90_d150:*/ lda #$000f.w
-/*unknown_90_d153:*/ sta $0b42.w
-/*unknown_90_d156:*/ stz $0b44.w
-@unknown_90_d159: stz $12
-/*unknown_90_d15b:*/ stz $14
-/*unknown_90_d15d:*/ lda $0a1e.w
-/*unknown_90_d160:*/ and #$00ff.w
-/*unknown_90_d163:*/ cmp #$0004.w
-/*unknown_90_d166:*/ beq @unknown_90_d18d
-/*unknown_90_d168:*/ jsr unknown_90_e4ad
-/*unknown_90_d16b:*/ lda $12
-/*unknown_90_d16d:*/ cmp #$000f.w
-/*unknown_90_d170:*/ bmi @unknown_90_d177
-/*unknown_90_d172:*/ lda #$000f.w
-/*unknown_90_d175:*/ sta $12
-@unknown_90_d177: jsr $a0a8f0
-/*unknown_90_d17b:*/ tax
-/*unknown_90_d17c:*/ beq @unknown_90_d183
-/*unknown_90_d17e:*/ sta $0dd0.w
-/*unknown_90_d181:*/ bra @unknown_90_d1d6
-@unknown_90_d183: jsr $94971e
-/*unknown_90_d187:*/ jsr $9487f4
-/*unknown_90_d18b:*/ bra @unknown_90_d1d6
-@unknown_90_d18d: jsr $e464.w
-/*unknown_90_d190:*/ lda $12
-/*unknown_90_d192:*/ eor #$ffff.w
-/*unknown_90_d195:*/ sta $12
-/*unknown_90_d197:*/ lda $14
-/*unknown_90_d199:*/ eor #$ffff.w
-/*unknown_90_d19c:*/ inc A
-/*unknown_90_d19d:*/ sta $14
-/*unknown_90_d19f:*/ bne @unknown_90_d1a3
-/*unknown_90_d1a1:*/ inc $12
-@unknown_90_d1a3: lda $12
-/*unknown_90_d1a5:*/ cmp #$000f.w
-/*unknown_90_d1a8:*/ bmi @unknown_90_d1af
-/*unknown_90_d1aa:*/ lda #$000f.w
-/*unknown_90_d1ad:*/ sta $12
-@unknown_90_d1af: jsr $a0a8f0
-/*unknown_90_d1b3:*/ tax
-/*unknown_90_d1b4:*/ beq @unknown_90_d1bb
-/*unknown_90_d1b6:*/ sta $0dd0.w
-/*unknown_90_d1b9:*/ bra @unknown_90_d1d6
-@unknown_90_d1bb: lda $12
-/*unknown_90_d1bd:*/ eor #$ffff.w
-/*unknown_90_d1c0:*/ sta $12
-/*unknown_90_d1c2:*/ lda $14
-/*unknown_90_d1c4:*/ eor #$ffff.w
-/*unknown_90_d1c7:*/ inc A
-/*unknown_90_d1c8:*/ sta $14
-/*unknown_90_d1ca:*/ bne @unknown_90_d1ce
-/*unknown_90_d1cc:*/ inc $12
-@unknown_90_d1ce: jsr $94971e
-/*unknown_90_d1d2:*/ jsr $9487f4
-@unknown_90_d1d6: lda $0af6.w
-/*unknown_90_d1d9:*/ sec
-/*unknown_90_d1da:*/ sbc $0b10.w
-/*unknown_90_d1dd:*/ bmi @unknown_90_d1ef
-/*unknown_90_d1df:*/ cmp #$0010.w
-/*unknown_90_d1e2:*/ bmi @unknown_90_d1fe
-/*unknown_90_d1e4:*/ lda $0af6.w
-/*unknown_90_d1e7:*/ sec
-/*unknown_90_d1e8:*/ sbc #$000f.w
-/*unknown_90_d1eb:*/ sta $0b10.w
-/*unknown_90_d1ee:*/ rts
-
-@unknown_90_d1ef: cmp #$fff1.w
-/*unknown_90_d1f2:*/ bpl @unknown_90_d1fe
-/*unknown_90_d1f4:*/ lda $0af6.w
-/*unknown_90_d1f7:*/ clc
-/*unknown_90_d1f8:*/ adc #$000f.w
-/*unknown_90_d1fb:*/ sta $0b10.w
-@unknown_90_d1fe: rts
+unknown_90_d132:
+  lda #$000f.w
+  sta $0a68.w
+  lda $0b44.w
+  clc
+  adc $0b32.w
+  sta $0b44.w
+  lda $0b42.w
+  adc $0b34.w
+  sta $0b42.w
+  cmp #$000f.w
+  bmi @unknown_90_d159
+  lda #$000f.w
+  sta $0b42.w
+  stz $0b44.w
+@unknown_90_d159:
+  stz $12
+  stz $14
+  lda $0a1e.w
+  and #$00ff.w
+  cmp #$0004.w
+  beq @unknown_90_d18d
+  jsr unknown_90_e4ad
+  lda $12
+  cmp #$000f.w
+  bmi @unknown_90_d177
+  lda #$000f.w
+  sta $12
+@unknown_90_d177:
+  jsr $a0a8f0
+  tax
+  beq @unknown_90_d183
+  sta $0dd0.w
+  bra @unknown_90_d1d6
+@unknown_90_d183:
+  jsr $94971e
+  jsr $9487f4
+  bra @unknown_90_d1d6
+@unknown_90_d18d:
+  jsr $e464.w
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_d1a3
+  inc $12
+@unknown_90_d1a3:
+  lda $12
+  cmp #$000f.w
+  bmi @unknown_90_d1af
+  lda #$000f.w
+  sta $12
+@unknown_90_d1af:
+  jsr $a0a8f0
+  tax
+  beq @unknown_90_d1bb
+  sta $0dd0.w
+  bra @unknown_90_d1d6
+@unknown_90_d1bb:
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_d1ce
+  inc $12
+@unknown_90_d1ce:
+  jsr $94971e
+  jsr $9487f4
+@unknown_90_d1d6:
+  lda $0af6.w
+  sec
+  sbc $0b10.w
+  bmi @unknown_90_d1ef
+  cmp #$0010.w
+  bmi @unknown_90_d1fe
+  lda $0af6.w
+  sec
+  sbc #$000f.w
+  sta $0b10.w
+  rts
+@unknown_90_d1ef:
+  cmp #$fff1.w
+  bpl @unknown_90_d1fe
+  lda $0af6.w
+  clc
+  adc #$000f.w
+  sta $0b10.w
+@unknown_90_d1fe:
+  rts
 
 ; TODO: "Super jump vertical movement: Set $0A68 to #$000F, add rate of
 ; acceleration (0B32) to acceleration (0DEC), add acceleration to vertical
 ; speed, set movement and cap it at at E.XX pixels, add external movement and
 ; cap total movement at F.XX pixels. Finally gets to normal movement stuff:
 ; A0:A8F0 and 94:9763, then cap scrolling to E pixels." -- Kejardon
-unknown_90_d1ff: lda #$000f.w
-/*unknown_90_d202:*/ sta $0a68.w
-/*unknown_90_d205:*/ lda $0dee.w
-/*unknown_90_d208:*/ clc
-/*unknown_90_d209:*/ adc $0b32.w
-/*unknown_90_d20c:*/ sta $0dee.w
-/*unknown_90_d20f:*/ lda $0dec.w
-/*unknown_90_d212:*/ adc $0b34.w
-/*unknown_90_d215:*/ sta $0dec.w
-/*unknown_90_d218:*/ lda $0b2c.w
-/*unknown_90_d21b:*/ clc
-/*unknown_90_d21c:*/ adc $0dee.w
-/*unknown_90_d21f:*/ sta $0b2c.w
-/*unknown_90_d222:*/ sta $14
-/*unknown_90_d224:*/ lda $0b2e.w
-/*unknown_90_d227:*/ adc $0dec.w
-/*unknown_90_d22a:*/ sta $0b2e.w
-/*unknown_90_d22d:*/ sta $12
-/*unknown_90_d22f:*/ cmp #$000e.w
-/*unknown_90_d232:*/ bmi @unknown_90_d239
-/*unknown_90_d234:*/ lda #$000e.w
-/*unknown_90_d237:*/ sta $12
-@unknown_90_d239: lda $12
-/*unknown_90_d23b:*/ eor #$ffff.w
-/*unknown_90_d23e:*/ sta $12
-/*unknown_90_d240:*/ lda $14
-/*unknown_90_d242:*/ eor #$ffff.w
-/*unknown_90_d245:*/ inc A
-/*unknown_90_d246:*/ sta $14
-/*unknown_90_d248:*/ bne @unknown_90_d24c
-/*unknown_90_d24a:*/ inc $12
-@unknown_90_d24c: lda $0b5a.w
-/*unknown_90_d24f:*/ clc
-/*unknown_90_d250:*/ adc $14
-/*unknown_90_d252:*/ sta $14
-/*unknown_90_d254:*/ lda $0b5c.w
-/*unknown_90_d257:*/ adc $12
-/*unknown_90_d259:*/ sta $12
-/*unknown_90_d25b:*/ lda #$0002.w
-/*unknown_90_d25e:*/ sta $0b02.w
-/*unknown_90_d261:*/ lda $12
-/*unknown_90_d263:*/ eor #$ffff.w
-/*unknown_90_d266:*/ sta $12
-/*unknown_90_d268:*/ lda $14
-/*unknown_90_d26a:*/ eor #$ffff.w
-/*unknown_90_d26d:*/ inc A
-/*unknown_90_d26e:*/ sta $14
-/*unknown_90_d270:*/ bne @unknown_90_d274
-/*unknown_90_d272:*/ inc $12
-@unknown_90_d274: lda $12
-/*unknown_90_d276:*/ cmp #$000f.w
-/*unknown_90_d279:*/ bmi @unknown_90_d280
-/*unknown_90_d27b:*/ lda #$000f.w
-/*unknown_90_d27e:*/ sta $12
-@unknown_90_d280: jsr $a0a8f0
-/*unknown_90_d284:*/ tax
-/*unknown_90_d285:*/ beq @unknown_90_d28c
-/*unknown_90_d287:*/ sta $0dd0.w
-/*unknown_90_d28a:*/ bra @unknown_90_d2a3
-@unknown_90_d28c: lda $12
-/*unknown_90_d28e:*/ eor #$ffff.w
-/*unknown_90_d291:*/ sta $12
-/*unknown_90_d293:*/ lda $14
-/*unknown_90_d295:*/ eor #$ffff.w
-/*unknown_90_d298:*/ inc A
-/*unknown_90_d299:*/ sta $14
-/*unknown_90_d29b:*/ bne @unknown_90_d29f
-/*unknown_90_d29d:*/ inc $12
-@unknown_90_d29f: jsr $949763
-@unknown_90_d2a3: lda $0afa.w
-/*unknown_90_d2a6:*/ sec
-/*unknown_90_d2a7:*/ sbc $0b14.w
-/*unknown_90_d2aa:*/ cmp #$fff2.w
-/*unknown_90_d2ad:*/ bpl @unknown_90_d2b9
-/*unknown_90_d2af:*/ lda $0afa.w
-/*unknown_90_d2b2:*/ clc
-/*unknown_90_d2b3:*/ adc #$000e.w
-/*unknown_90_d2b6:*/ sta $0b14.w
-@unknown_90_d2b9: rts
+unknown_90_d1ff:
+  lda #$000f.w
+  sta $0a68.w
+  lda $0dee.w
+  clc
+  adc $0b32.w
+  sta $0dee.w
+  lda $0dec.w
+  adc $0b34.w
+  sta $0dec.w
+  lda $0b2c.w
+  clc
+  adc $0dee.w
+  sta $0b2c.w
+  sta $14
+  lda $0b2e.w
+  adc $0dec.w
+  sta $0b2e.w
+  sta $12
+  cmp #$000e.w
+  bmi @unknown_90_d239
+  lda #$000e.w
+  sta $12
+@unknown_90_d239:
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_d24c
+  inc $12
+@unknown_90_d24c:
+  lda $0b5a.w
+  clc
+  adc $14
+  sta $14
+  lda $0b5c.w
+  adc $12
+  sta $12
+  lda #$0002.w
+  sta $0b02.w
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_d274
+  inc $12
+@unknown_90_d274:
+  lda $12
+  cmp #$000f.w
+  bmi @unknown_90_d280
+  lda #$000f.w
+  sta $12
+@unknown_90_d280:
+  jsr $a0a8f0
+  tax
+  beq @unknown_90_d28c
+  sta $0dd0.w
+  bra @unknown_90_d2a3
+@unknown_90_d28c:
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_d29f
+  inc $12
+@unknown_90_d29f:
+  jsr $949763
+@unknown_90_d2a3:
+  lda $0afa.w
+  sec
+  sbc $0b14.w
+  cmp #$fff2.w
+  bpl @unknown_90_d2b9
+  lda $0afa.w
+  clc
+  adc #$000e.w
+  sta $0b14.w
+@unknown_90_d2b9:
+  rts
 
 ; TODO: "Check whether or not to end Super Jump, and do so." -- Kejardon
-unknown_90_d2ba: lda $09c2.w
-/*unknown_90_d2bd:*/ cmp #$001e.w
-/*unknown_90_d2c0:*/ bmi @unknown_90_d2c9
-/*unknown_90_d2c2:*/ lda $0dd0.w
-/*unknown_90_d2c5:*/ bne @unknown_90_d2c9
-/*unknown_90_d2c7:*/ clc
-/*unknown_90_d2c8:*/ rts
-
-@unknown_90_d2c9: lda $0a1e.w
-/*unknown_90_d2cc:*/ and #$00ff.w
-/*unknown_90_d2cf:*/ cmp #$0004.w
-/*unknown_90_d2d2:*/ beq @unknown_90_d2e8
-/*unknown_90_d2d4:*/ lda #$00e0.w
-/*unknown_90_d2d7:*/ sta $0ac0.w
-/*unknown_90_d2da:*/ lda #$0060.w
-/*unknown_90_d2dd:*/ sta $0ac2.w
-/*unknown_90_d2e0:*/ lda #$fffc.w
-/*unknown_90_d2e3:*/ sta $0ab4.w
-/*unknown_90_d2e6:*/ bra @unknown_90_d2fa
-@unknown_90_d2e8: lda #$0020.w
-/*unknown_90_d2eb:*/ sta $0ac0.w
-/*unknown_90_d2ee:*/ lda #$00a0.w
-/*unknown_90_d2f1:*/ sta $0ac2.w
-/*unknown_90_d2f4:*/ lda #$0004.w
-/*unknown_90_d2f7:*/ sta $0ab4.w
-@unknown_90_d2fa: stz $0b2c.w
-/*unknown_90_d2fd:*/ stz $0b2e.w
-/*unknown_90_d300:*/ stz $0b42.w
-/*unknown_90_d303:*/ stz $0b44.w
-/*unknown_90_d306:*/ stz $0b3e.w
-/*unknown_90_d309:*/ stz $0b1a.w
-/*unknown_90_d30c:*/ stz $0b36.w
-/*unknown_90_d30f:*/ lda #$d346.w
-/*unknown_90_d312:*/ sta $0a58.w
-/*unknown_90_d315:*/ lda #$ebf3.w
-/*unknown_90_d318:*/ sta $0a5c.w
-/*unknown_90_d31b:*/ stz $0aae.w
-/*unknown_90_d31e:*/ lda $0af6.w
-/*unknown_90_d321:*/ sta $0ab0.w
-/*unknown_90_d324:*/ sta $0ab2.w
-/*unknown_90_d327:*/ lda $0afa.w
-/*unknown_90_d32a:*/ sta $0ab8.w
-/*unknown_90_d32d:*/ sta $0aba.w
-/*unknown_90_d330:*/ stz $0ac4.w
-/*unknown_90_d333:*/ stz $0a48.w
-/*unknown_90_d336:*/ lda #$0035.w
-/*unknown_90_d339:*/ jsr $809049
-/*unknown_90_d33d:*/ lda #$0010.w
-/*unknown_90_d340:*/ jsr $80914d
-/*unknown_90_d344:*/ sec
-/*unknown_90_d345:*/ rts
+unknown_90_d2ba:
+  lda $09c2.w
+  cmp #$001e.w
+  bmi @unknown_90_d2c9
+  lda $0dd0.w
+  bne @unknown_90_d2c9
+  clc
+  rts
+@unknown_90_d2c9:
+  lda $0a1e.w
+  and #$00ff.w
+  cmp #$0004.w
+  beq @unknown_90_d2e8
+  lda #$00e0.w
+  sta $0ac0.w
+  lda #$0060.w
+  sta $0ac2.w
+  lda #$fffc.w
+  sta $0ab4.w
+  bra @unknown_90_d2fa
+@unknown_90_d2e8:
+  lda #$0020.w
+  sta $0ac0.w
+  lda #$00a0.w
+  sta $0ac2.w
+  lda #$0004.w
+  sta $0ab4.w
+@unknown_90_d2fa:
+  stz $0b2c.w
+  stz $0b2e.w
+  stz $0b42.w
+  stz $0b44.w
+  stz $0b3e.w
+  stz $0b1a.w
+  stz $0b36.w
+  lda #$d346.w
+  sta $0a58.w
+  lda #$ebf3.w
+  sta $0a5c.w
+  stz $0aae.w
+  lda $0af6.w
+  sta $0ab0.w
+  sta $0ab2.w
+  lda $0afa.w
+  sta $0ab8.w
+  sta $0aba.w
+  stz $0ac4.w
+  stz $0a48.w
+  lda #$0035.w
+  jsr $809049
+  lda #$0010.w
+  jsr $80914d
+  sec
+  rts
 
 /*unknown_90_d346:*/ lda #$000f.w
 /*unknown_90_d349:*/ sta $0a68.w
@@ -11453,45 +11612,48 @@ unknown_90_e07d: lda #$a337.w
 
 ; TODO: "Set Samus into the grabbed by Draygon pose. A = 0 means left, A = 1
 ; means right" -- Kejardon
-unknown_90_e23b: php
-/*unknown_90_e23c:*/ phb
-/*unknown_90_e23d:*/ phk
-/*unknown_90_e23e:*/ plb
-/*unknown_90_e23f:*/ rep #$30
-/*unknown_90_e241:*/ bit #$0001.w
-/*unknown_90_e244:*/ beq @unknown_90_e24e
-/*unknown_90_e246:*/ lda #$00ec.w
-/*unknown_90_e249:*/ sta $0a1c.w
-/*unknown_90_e24c:*/ bra @unknown_90_e254
-@unknown_90_e24e: lda #$00ba.w
-/*unknown_90_e251:*/ sta $0a1c.w
-@unknown_90_e254: jsr $91f433
-/*unknown_90_e258:*/ jsr $91fb08
-/*unknown_90_e25c:*/ lda #$e2a1.w
-/*unknown_90_e25f:*/ sta $0a5a.w
-/*unknown_90_e262:*/ lda #$e90e.w
-/*unknown_90_e265:*/ sta $0a58.w
-/*unknown_90_e268:*/ stz $0dec.w
-/*unknown_90_e26b:*/ stz $0dee.w
-/*unknown_90_e26e:*/ stz $0df0.w
-/*unknown_90_e271:*/ lda $0a20.w
-/*unknown_90_e274:*/ sta $0a24.w
-/*unknown_90_e277:*/ lda $0a22.w
-/*unknown_90_e27a:*/ sta $0a26.w
-/*unknown_90_e27d:*/ lda $0a1c.w
-/*unknown_90_e280:*/ sta $0a20.w
-/*unknown_90_e283:*/ lda $0a1e.w
-/*unknown_90_e286:*/ sta $0a22.w
-/*unknown_90_e289:*/ lda #$ffff.w
-/*unknown_90_e28c:*/ sta $0a28.w
-/*unknown_90_e28f:*/ sta $0a2a.w
-/*unknown_90_e292:*/ sta $0a2c.w
-/*unknown_90_e295:*/ stz $0a2e.w
-/*unknown_90_e298:*/ stz $0a30.w
-/*unknown_90_e29b:*/ stz $0a32.w
-/*unknown_90_e29e:*/ plb
-/*unknown_90_e29f:*/ plp
-/*unknown_90_e2a0:*/ rtl
+unknown_90_e23b:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  bit #$0001.w
+  beq @unknown_90_e24e
+  lda #$00ec.w
+  sta $0a1c.w
+  bra @unknown_90_e254
+@unknown_90_e24e:
+  lda #$00ba.w
+  sta $0a1c.w
+@unknown_90_e254:
+  jsr $91f433
+  jsr $91fb08
+  lda #$e2a1.w
+  sta $0a5a.w
+  lda #$e90e.w
+  sta $0a58.w
+  stz $0dec.w
+  stz $0dee.w
+  stz $0df0.w
+  lda $0a20.w
+  sta $0a24.w
+  lda $0a22.w
+  sta $0a26.w
+  lda $0a1c.w
+  sta $0a20.w
+  lda $0a1e.w
+  sta $0a22.w
+  lda #$ffff.w
+  sta $0a28.w
+  sta $0a2a.w
+  sta $0a2c.w
+  stz $0a2e.w
+  stz $0a30.w
+  stz $0a32.w
+  plb
+  plp
+  rtl
 
 /*unknown_90_e2a1:*/ lda $0d32.w
 /*unknown_90_e2a4:*/ cmp #$c77e.w
@@ -11692,105 +11854,110 @@ unknown_90_e2de: lda $0a1e.w
 
 ; TODO: "subtracts Samus's horizontal speed from $12.$14 (moving left). Also
 ; calls E4E6." -- Kejardon
-unknown_90_e464: php
-/*unknown_90_e465:*/ rep #$30
-/*unknown_90_e467:*/ jsr unknown_90_e4e6
-/*unknown_90_e46a:*/ stz $0b02.w
-/*unknown_90_e46d:*/ lda $12
-/*unknown_90_e46f:*/ eor #$ffff.w
-/*unknown_90_e472:*/ sta $12
-/*unknown_90_e474:*/ lda $14
-/*unknown_90_e476:*/ eor #$ffff.w
-/*unknown_90_e479:*/ inc A
-/*unknown_90_e47a:*/ sta $14
-/*unknown_90_e47c:*/ bne @unknown_90_e480
-/*unknown_90_e47e:*/ inc $12
-@unknown_90_e480: lda $0b56.w
-/*unknown_90_e483:*/ clc
-/*unknown_90_e484:*/ adc $14
-/*unknown_90_e486:*/ sta $14
-/*unknown_90_e488:*/ lda $0b58.w
-/*unknown_90_e48b:*/ adc $12
-/*unknown_90_e48d:*/ sta $12
-/*unknown_90_e48f:*/ bmi @unknown_90_e49f
-/*unknown_90_e491:*/ cmp #$0010.w
-/*unknown_90_e494:*/ bpl @unknown_90_e498
-/*unknown_90_e496:*/ plp
-/*unknown_90_e497:*/ rts
-
-@unknown_90_e498: lda #$000f.w
-/*unknown_90_e49b:*/ sta $12
-/*unknown_90_e49d:*/ plp
-/*unknown_90_e49e:*/ rts
-
-@unknown_90_e49f: cmp #$fff1.w
-/*unknown_90_e4a2:*/ bmi @unknown_90_e4a6
-/*unknown_90_e4a4:*/ plp
-/*unknown_90_e4a5:*/ rts
-
-@unknown_90_e4a6: lda #$fff1.w
-/*unknown_90_e4a9:*/ sta $12
-/*unknown_90_e4ab:*/ plp
-/*unknown_90_e4ac:*/ rts
+unknown_90_e464:
+  php
+  rep #$30
+  jsr unknown_90_e4e6
+  stz $0b02.w
+  lda $12
+  eor #$ffff.w
+  sta $12
+  lda $14
+  eor #$ffff.w
+  inc A
+  sta $14
+  bne @unknown_90_e480
+  inc $12
+@unknown_90_e480:
+  lda $0b56.w
+  clc
+  adc $14
+  sta $14
+  lda $0b58.w
+  adc $12
+  sta $12
+  bmi @unknown_90_e49f
+  cmp #$0010.w
+  bpl @unknown_90_e498
+  plp
+  rts
+@unknown_90_e498:
+  lda #$000f.w
+  sta $12
+  plp
+  rts
+@unknown_90_e49f:
+  cmp #$fff1.w
+  bmi @unknown_90_e4a6
+  plp
+  rts
+@unknown_90_e4a6:
+  lda #$fff1.w
+  sta $12
+  plp
+  rts
 
 ; TODO: "adds Samus's horizontal speed to $12.$14 (moving right). Also calls
 ; E4E6." -- Kejardon
-unknown_90_e4ad: php
-/*unknown_90_e4ae:*/ rep #$30
-/*unknown_90_e4b0:*/ jsr unknown_90_e4e6
-/*unknown_90_e4b3:*/ lda #$0001.w
-/*unknown_90_e4b6:*/ sta $0b02.w
-/*unknown_90_e4b9:*/ lda $0b56.w
-/*unknown_90_e4bc:*/ clc
-/*unknown_90_e4bd:*/ adc $14
-/*unknown_90_e4bf:*/ sta $14
-/*unknown_90_e4c1:*/ lda $0b58.w
-/*unknown_90_e4c4:*/ adc $12
-/*unknown_90_e4c6:*/ sta $12
-/*unknown_90_e4c8:*/ bmi @unknown_90_e4d8
-/*unknown_90_e4ca:*/ cmp #$0010.w
-/*unknown_90_e4cd:*/ bpl @unknown_90_e4d1
-/*unknown_90_e4cf:*/ plp
-/*unknown_90_e4d0:*/ rts
-
-@unknown_90_e4d1: lda #$000f.w
-/*unknown_90_e4d4:*/ sta $12
-/*unknown_90_e4d6:*/ plp
-/*unknown_90_e4d7:*/ rts
-
-@unknown_90_e4d8: cmp #$fff1.w
-/*unknown_90_e4db:*/ bmi @unknown_90_e4df
-/*unknown_90_e4dd:*/ plp
-/*unknown_90_e4de:*/ rts
-
-@unknown_90_e4df: lda #$fff1.w
-/*unknown_90_e4e2:*/ sta $12
-/*unknown_90_e4e4:*/ plp
-/*unknown_90_e4e5:*/ rts
+unknown_90_e4ad:
+  php
+  rep #$30
+  jsr unknown_90_e4e6
+  lda #$0001.w
+  sta $0b02.w
+  lda $0b56.w
+  clc
+  adc $14
+  sta $14
+  lda $0b58.w
+  adc $12
+  sta $12
+  bmi @unknown_90_e4d8
+  cmp #$0010.w
+  bpl @unknown_90_e4d1
+  plp
+  rts
+@unknown_90_e4d1:
+  lda #$000f.w
+  sta $12
+  plp
+  rts
+@unknown_90_e4d8:
+  cmp #$fff1.w
+  bmi @unknown_90_e4df
+  plp
+  rts
+@unknown_90_e4df:
+  lda #$fff1.w
+  sta $12
+  plp
+  rts
 
 ; TODO: "Convulated routine to divide Samus's horizontal movement by 2^($0A66)."
 ; -- Kejardon
-unknown_90_e4e6: lda $0a66.w
-/*unknown_90_e4e9:*/ cmp #$0005.w
-/*unknown_90_e4ec:*/ bmi @unknown_90_e4f1
-/*unknown_90_e4ee:*/ lda #$0004.w
-@unknown_90_e4f1: asl A
-/*unknown_90_e4f2:*/ tax
-/*unknown_90_e4f3:*/ jmp ($e4f6.w, X)
-/*unknown_90_e4f6:*/ brk $e5
-/*unknown_90_e4f8:*/ asl $e5, X
-/*unknown_90_e4fa:*/ eor ($e5, X)
-/*unknown_90_e4fc:*/ ror $9de5.w
-/*unknown_90_e4ff:*/ sbc $a5
-/*unknown_90_e501:*/ trb $18
-/*unknown_90_e503:*/ adc $0b44.w
-/*unknown_90_e506:*/ sta $14
-/*unknown_90_e508:*/ sta $0dbe.w
-/*unknown_90_e50b:*/ lda $12
-/*unknown_90_e50d:*/ adc $0b42.w
-/*unknown_90_e510:*/ sta $12
-/*unknown_90_e512:*/ sta $0dbc.w
-/*unknown_90_e515:*/ rts
+unknown_90_e4e6:
+  lda $0a66.w
+  cmp #$0005.w
+  bmi @unknown_90_e4f1
+  lda #$0004.w
+@unknown_90_e4f1:
+  asl A
+  tax
+  jmp ($e4f6.w, X)
+  brk $e5
+  asl $e5, X
+  eor ($e5, X)
+  ror $9de5.w
+  sbc $a5
+  trb $18
+  adc $0b44.w
+  sta $14
+  sta $0dbe.w
+  lda $12
+  adc $0b42.w
+  sta $12
+  sta $0dbc.w
+  rts
 
 /*unknown_90_e516:*/ lda $14
 /*unknown_90_e518:*/ clc
@@ -11902,70 +12069,81 @@ unknown_90_e4e6: lda $0a66.w
 
 ; TODO: "If Samus collided with something, stop her horizontally and clean up
 ; speed(91:DE53). Else just clear 0DC6 and 0DCE." -- Kejardon
-unknown_90_e5ce: php
-/*unknown_90_e5cf:*/ rep #$30
-/*unknown_90_e5d1:*/ lda $0dd0.w
-/*unknown_90_e5d4:*/ beq @unknown_90_e5fe
-/*unknown_90_e5d6:*/ lda $0b02.w
-/*unknown_90_e5d9:*/ beq @unknown_90_e5e3
-/*unknown_90_e5db:*/ lda #$0008.w
-/*unknown_90_e5de:*/ sta $0dce.w
-/*unknown_90_e5e1:*/ bra @unknown_90_e5e9
-@unknown_90_e5e3: lda #$0004.w
-/*unknown_90_e5e6:*/ sta $0dce.w
-@unknown_90_e5e9: jsr $91de53
-/*unknown_90_e5ed:*/ stz $0b42.w
-/*unknown_90_e5f0:*/ stz $0b44.w
-/*unknown_90_e5f3:*/ stz $0b46.w
-/*unknown_90_e5f6:*/ stz $0b48.w
-/*unknown_90_e5f9:*/ stz $0b4a.w
-/*unknown_90_e5fc:*/ bra @unknown_90_e604
-@unknown_90_e5fe: stz $0dc6.w
-/*unknown_90_e601:*/ stz $0dce.w
-@unknown_90_e604: plp
-/*unknown_90_e605:*/ rts
+unknown_90_e5ce:
+  php
+  rep #$30
+  lda $0dd0.w
+  beq @unknown_90_e5fe
+  lda $0b02.w
+  beq @unknown_90_e5e3
+  lda #$0008.w
+  sta $0dce.w
+  bra @unknown_90_e5e9
+@unknown_90_e5e3:
+  lda #$0004.w
+  sta $0dce.w
+@unknown_90_e5e9:
+  jsr $91de53
+  stz $0b42.w
+  stz $0b44.w
+  stz $0b46.w
+  stz $0b48.w
+  stz $0b4a.w
+  bra @unknown_90_e604
+@unknown_90_e5fe:
+  stz $0dc6.w
+  stz $0dce.w
+@unknown_90_e604:
+  plp
+  rts
 
 ; TODO: "Set $0DC6 to 4 if $0DD0 is set, else clear $0DC6. Unknown use"
 ; -- Kejardon
-unknown_90_e606: php
-/*unknown_90_e607:*/ rep #$30
-/*unknown_90_e609:*/ lda $0dd0.w
-/*unknown_90_e60c:*/ beq @unknown_90_e616
-/*unknown_90_e60e:*/ lda #$0004.w
-/*unknown_90_e611:*/ sta $0dc6.w
-/*unknown_90_e614:*/ bra @unknown_90_e619
-@unknown_90_e616: stz $0dc6.w
-@unknown_90_e619: plp
-/*unknown_90_e61a:*/ rts
+unknown_90_e606:
+  php
+  rep #$30
+  lda $0dd0.w
+  beq @unknown_90_e616
+  lda #$0004.w
+  sta $0dc6.w
+  bra @unknown_90_e619
+@unknown_90_e616:
+  stz $0dc6.w
+@unknown_90_e619:
+  plp
+  rts
 
 ; TODO: "Sets $0DC6 depending on $0DD0 and $0A1F. Unknown use" -- Kejardon
-unknown_90_e61b: php
-/*unknown_90_e61c:*/ rep #$30
-/*unknown_90_e61e:*/ lda $0dd0.w
-/*unknown_90_e621:*/ beq @unknown_90_e639
-/*unknown_90_e623:*/ lda #$0001.w
-/*unknown_90_e626:*/ sta $0dc6.w
-/*unknown_90_e629:*/ sep #$30
-/*unknown_90_e62b:*/ lda $0a1f.w
-/*unknown_90_e62e:*/ tax
-/*unknown_90_e62f:*/ lda $e676.w, X
-/*unknown_90_e632:*/ sta $0dc7.w
-/*unknown_90_e635:*/ rep #$30
-/*unknown_90_e637:*/ bra @unknown_90_e658
-@unknown_90_e639: lda $0dc6.w
-/*unknown_90_e63c:*/ and #$00ff.w
-/*unknown_90_e63f:*/ cmp #$0005.w
-/*unknown_90_e642:*/ beq @unknown_90_e658
-/*unknown_90_e644:*/ lda #$0002.w
-/*unknown_90_e647:*/ sta $0dc6.w
-/*unknown_90_e64a:*/ sep #$30
-/*unknown_90_e64c:*/ lda $0a1f.w
-/*unknown_90_e64f:*/ tax
-/*unknown_90_e650:*/ lda $e65a.w, X
-/*unknown_90_e653:*/ sta $0dc7.w
-/*unknown_90_e656:*/ rep #$30
-@unknown_90_e658: plp
-/*unknown_90_e659:*/ rts
+unknown_90_e61b:
+  php
+  rep #$30
+  lda $0dd0.w
+  beq @unknown_90_e639
+  lda #$0001.w
+  sta $0dc6.w
+  sep #$30
+  lda $0a1f.w
+  tax
+  lda $e676.w, X
+  sta $0dc7.w
+  rep #$30
+  bra @unknown_90_e658
+@unknown_90_e639:
+  lda $0dc6.w
+  and #$00ff.w
+  cmp #$0005.w
+  beq @unknown_90_e658
+  lda #$0002.w
+  sta $0dc6.w
+  sep #$30
+  lda $0a1f.w
+  tax
+  lda $e65a.w, X
+  sta $0dc7.w
+  rep #$30
+@unknown_90_e658:
+  plp
+  rts
 
 /*unknown_90_e65a:*/ brk $00
 /*unknown_90_e65c:*/ tsb $04
@@ -12673,46 +12851,48 @@ unknown_90_ec22: php
 
 ; TODO: "Just calculates Samus's lower boundary and puts it into $12"
 ; -- Kejardon
-unknown_90_ec3e: php
-/*unknown_90_ec3f:*/ rep #$30
-/*unknown_90_ec41:*/ lda $0a1c.w
-/*unknown_90_ec44:*/ asl A
-/*unknown_90_ec45:*/ asl A
-/*unknown_90_ec46:*/ asl A
-/*unknown_90_ec47:*/ tax
-/*unknown_90_ec48:*/ lda $91b62f, X
-/*unknown_90_ec4c:*/ and #$00ff.w
-/*unknown_90_ec4f:*/ clc
-/*unknown_90_ec50:*/ adc $0afa.w
-/*unknown_90_ec53:*/ dec A
-/*unknown_90_ec54:*/ sta $12
-/*unknown_90_ec56:*/ plp
-/*unknown_90_ec57:*/ rtl
+unknown_90_ec3e:
+  php
+  rep #$30
+  lda $0a1c.w
+  asl A
+  asl A
+  asl A
+  tax
+  lda $91b62f, X
+  and #$00ff.w
+  clc
+  adc $0afa.w
+  dec A
+  sta $12
+  plp
+  rtl
 
 ; TODO: "This calculates Samus's lower and upper boundaries, then puts them in
 ; $12 and $14." -- Kejardon
-unknown_90_ec58: php
-/*unknown_90_ec59:*/ rep #$30
-/*unknown_90_ec5b:*/ lda $0a1c.w
-/*unknown_90_ec5e:*/ asl A
-/*unknown_90_ec5f:*/ asl A
-/*unknown_90_ec60:*/ asl A
-/*unknown_90_ec61:*/ tax
-/*unknown_90_ec62:*/ lda $91b62f, X
-/*unknown_90_ec66:*/ and #$00ff.w
-/*unknown_90_ec69:*/ pha
-/*unknown_90_ec6a:*/ clc
-/*unknown_90_ec6b:*/ adc $0afa.w
-/*unknown_90_ec6e:*/ dec A
-/*unknown_90_ec6f:*/ sta $12
-/*unknown_90_ec71:*/ pla
-/*unknown_90_ec72:*/ sta $14
-/*unknown_90_ec74:*/ lda $0afa.w
-/*unknown_90_ec77:*/ sec
-/*unknown_90_ec78:*/ sbc $14
-/*unknown_90_ec7a:*/ sta $14
-/*unknown_90_ec7c:*/ plp
-/*unknown_90_ec7d:*/ rtl
+unknown_90_ec58:
+  php
+  rep #$30
+  lda $0a1c.w
+  asl A
+  asl A
+  asl A
+  tax
+  lda $91b62f, X
+  and #$00ff.w
+  pha
+  clc
+  adc $0afa.w
+  dec A
+  sta $12
+  pla
+  sta $14
+  lda $0afa.w
+  sec
+  sbc $14
+  sta $14
+  plp
+  rtl
 
 /*unknown_90_ec7e:*/ php
 /*unknown_90_ec7f:*/ rep #$30
@@ -12850,11 +13030,12 @@ unknown_90_ed26: lda $0a1f.w
 ; TODO: "Footstep graphics. Water splashing in Maridia and Crateria, dust if
 ; speedrunning. Only works on certain frames, assumed to be walking/running."
 ; -- Kejardon
-unknown_90_ed88: lda $079f.w
-/*unknown_90_ed8b:*/ asl A
-/*unknown_90_ed8c:*/ tax
-/*unknown_90_ed8d:*/ jsr ($ed91.w, X)
-/*unknown_90_ed90:*/ rts
+unknown_90_ed88:
+  lda $079f.w
+  asl A
+  tax
+  jsr ($ed91.w, X)
+  rts
 
 /*unknown_90_ed91:*/ lda ($ed, X)
 /*unknown_90_ed93:*/ stz $ee
@@ -12994,27 +13175,30 @@ unknown_90_ed88: lda $079f.w
 @unknown_90_eee6: rts
 
 ; TODO: "Echoes for Blue Suit - updates echo position to Samus's." -- Kejardon
-unknown_90_eee7: lda $0b3e.w
-/*unknown_90_eeea:*/ and #$ff00.w
-/*unknown_90_eeed:*/ cmp #$0400.w
-/*unknown_90_eef0:*/ bne @unknown_90_ef1b
-/*unknown_90_eef2:*/ lda $0aae.w
-/*unknown_90_eef5:*/ bmi @unknown_90_ef1b
-/*unknown_90_eef7:*/ lda $09da.w
-/*unknown_90_eefa:*/ bit #$0003.w
-/*unknown_90_eefd:*/ bne @unknown_90_ef1b
-/*unknown_90_eeff:*/ ldx $0aae.w
-/*unknown_90_ef02:*/ lda $0af6.w
-/*unknown_90_ef05:*/ sta $0ab0.w, X
-/*unknown_90_ef08:*/ lda $0afa.w
-/*unknown_90_ef0b:*/ sta $0ab8.w, X
-/*unknown_90_ef0e:*/ inx
-/*unknown_90_ef0f:*/ inx
-/*unknown_90_ef10:*/ cpx #$0004.w
-/*unknown_90_ef13:*/ bmi @unknown_90_ef18
-/*unknown_90_ef15:*/ ldx #$0000.w
-@unknown_90_ef18: stx $0aae.w
-@unknown_90_ef1b: rts
+unknown_90_eee7:
+  lda $0b3e.w
+  and #$ff00.w
+  cmp #$0400.w
+  bne @unknown_90_ef1b
+  lda $0aae.w
+  bmi @unknown_90_ef1b
+  lda $09da.w
+  bit #$0003.w
+  bne @unknown_90_ef1b
+  ldx $0aae.w
+  lda $0af6.w
+  sta $0ab0.w, X
+  lda $0afa.w
+  sta $0ab8.w, X
+  inx
+  inx
+  cpx #$0004.w
+  bmi @unknown_90_ef18
+  ldx #$0000.w
+@unknown_90_ef18:
+  stx $0aae.w
+@unknown_90_ef1b:
+  rts
 
 /*unknown_90_ef1c:*/ tsb $1000.w
 /*unknown_90_ef1f:*/ brk $10
@@ -13258,15 +13442,16 @@ unknown_90_f084: php
 /*unknown_90_f0ec:*/ bne ($f4 - $100) ; $f0e2.w
 
 ; TODO: "Update $0A20 through $0A27" -- Kejardon
-unknown_90_f0ee: lda $0a20.w
-/*unknown_90_f0f1:*/ sta $0a24.w
-/*unknown_90_f0f4:*/ lda $0a22.w
-/*unknown_90_f0f7:*/ sta $0a26.w
-/*unknown_90_f0fa:*/ lda $0a1c.w
-/*unknown_90_f0fd:*/ sta $0a20.w
-/*unknown_90_f100:*/ lda $0a1e.w
-/*unknown_90_f103:*/ sta $0a22.w
-/*unknown_90_f106:*/ rts
+unknown_90_f0ee:
+  lda $0a20.w
+  sta $0a24.w
+  lda $0a22.w
+  sta $0a26.w
+  lda $0a1c.w
+  sta $0a20.w
+  lda $0a1e.w
+  sta $0a22.w
+  rts
 
 /*unknown_90_f107:*/ clc
 /*unknown_90_f108:*/ rts
@@ -13761,80 +13946,90 @@ unknown_90_f52f: rts
 
 ; TODO: "Checks to play sounds: Continue charge sound, end(?) blue suit sound,
 ; end spin jump, and game over if escaping Zebes and 0A5A = E114?" -- Kejardon
-unknown_90_f576: php
-/*unknown_90_f577:*/ rep #$30
-/*unknown_90_f579:*/ lda $0dc0.w
-/*unknown_90_f57c:*/ bmi @unknown_90_f5de
-/*unknown_90_f57e:*/ beq @unknown_90_f591
-/*unknown_90_f580:*/ lda $8b
-/*unknown_90_f582:*/ bit $09b2.w
-/*unknown_90_f585:*/ beq @unknown_90_f58e
-/*unknown_90_f587:*/ lda #$0041.w
-/*unknown_90_f58a:*/ jsr $80902b
-@unknown_90_f58e: stz $0dc0.w
-@unknown_90_f591: lda $0b40.w
-/*unknown_90_f594:*/ beq @unknown_90_f5a8
-/*unknown_90_f596:*/ lda $0b3e.w
-/*unknown_90_f599:*/ bit #$0400.w
-/*unknown_90_f59c:*/ bne @unknown_90_f5a8
-/*unknown_90_f59e:*/ stz $0b40.w
-/*unknown_90_f5a1:*/ lda #$0025.w
-/*unknown_90_f5a4:*/ jsr $809125
-@unknown_90_f5a8: lda $0a11.w
-/*unknown_90_f5ab:*/ and #$00ff.w
-/*unknown_90_f5ae:*/ cmp #$0003.w
-/*unknown_90_f5b1:*/ beq @unknown_90_f5b8
-/*unknown_90_f5b3:*/ cmp #$0014.w
-/*unknown_90_f5b6:*/ bne @unknown_90_f5e4
-@unknown_90_f5b8: lda $0a1f.w
-/*unknown_90_f5bb:*/ and #$00ff.w
-/*unknown_90_f5be:*/ cmp #$0003.w
-/*unknown_90_f5c1:*/ beq @unknown_90_f5e4
-/*unknown_90_f5c3:*/ cmp #$0014.w
-/*unknown_90_f5c6:*/ beq @unknown_90_f5e4
-/*unknown_90_f5c8:*/ lda #$0032.w
-/*unknown_90_f5cb:*/ jsr $809021
-/*unknown_90_f5cf:*/ lda $0cd0.w
-/*unknown_90_f5d2:*/ cmp #$0010.w
-/*unknown_90_f5d5:*/ bmi @unknown_90_f5e4
-/*unknown_90_f5d7:*/ lda $8b
-/*unknown_90_f5d9:*/ bit $09b2.w
-/*unknown_90_f5dc:*/ beq @unknown_90_f5e4
-@unknown_90_f5de: lda #$0001.w
-/*unknown_90_f5e1:*/ sta $0dc0.w
-@unknown_90_f5e4: lda $05d1.w
-/*unknown_90_f5e7:*/ beq @unknown_90_f619
-/*unknown_90_f5e9:*/ lda $0a1c.w
-/*unknown_90_f5ec:*/ beq @unknown_90_f5fd
-/*unknown_90_f5ee:*/ cmp #$009b.w
-/*unknown_90_f5f1:*/ beq @unknown_90_f5fd
-/*unknown_90_f5f3:*/ lda $0de0.w
-/*unknown_90_f5f6:*/ cmp #$0007.w
-/*unknown_90_f5f9:*/ bmi @unknown_90_f616
-/*unknown_90_f5fb:*/ plp
-/*unknown_90_f5fc:*/ rts
-
-@unknown_90_f5fd: lda $8d
-/*unknown_90_f5ff:*/ and #$0030.w
-/*unknown_90_f602:*/ cmp #$0030.w
-/*unknown_90_f605:*/ bne @unknown_90_f619
-/*unknown_90_f607:*/ lda $91
-/*unknown_90_f609:*/ bit #$0080.w
-/*unknown_90_f60c:*/ beq @unknown_90_f619
-/*unknown_90_f60e:*/ lda #$0007.w
-/*unknown_90_f611:*/ sta $0de0.w
-/*unknown_90_f614:*/ bra @unknown_90_f619
-@unknown_90_f616: stz $0de0.w
-@unknown_90_f619: lda #$000e.w
-/*unknown_90_f61c:*/ jsr $808233
-/*unknown_90_f620:*/ bcc @unknown_90_f638
-/*unknown_90_f622:*/ lda $0a5a.w
-/*unknown_90_f625:*/ cmp #$e114.w
-/*unknown_90_f628:*/ bne @unknown_90_f638
-/*unknown_90_f62a:*/ lda $0998.w
-/*unknown_90_f62d:*/ cmp #$0023.w
-/*unknown_90_f630:*/ beq @unknown_90_f638
-/*unknown_90_f632:*/ lda #$0023.w
-/*unknown_90_f635:*/ sta $0998.w
-@unknown_90_f638: plp
-/*unknown_90_f639:*/ rts
+unknown_90_f576:
+  php
+  rep #$30
+  lda $0dc0.w
+  bmi @unknown_90_f5de
+  beq @unknown_90_f591
+  lda $8b
+  bit $09b2.w
+  beq @unknown_90_f58e
+  lda #$0041.w
+  jsr $80902b
+@unknown_90_f58e:
+  stz $0dc0.w
+@unknown_90_f591:
+  lda $0b40.w
+  beq @unknown_90_f5a8
+  lda $0b3e.w
+  bit #$0400.w
+  bne @unknown_90_f5a8
+  stz $0b40.w
+  lda #$0025.w
+  jsr $809125
+@unknown_90_f5a8:
+  lda $0a11.w
+  and #$00ff.w
+  cmp #$0003.w
+  beq @unknown_90_f5b8
+  cmp #$0014.w
+  bne @unknown_90_f5e4
+@unknown_90_f5b8:
+  lda $0a1f.w
+  and #$00ff.w
+  cmp #$0003.w
+  beq @unknown_90_f5e4
+  cmp #$0014.w
+  beq @unknown_90_f5e4
+  lda #$0032.w
+  jsr $809021
+  lda $0cd0.w
+  cmp #$0010.w
+  bmi @unknown_90_f5e4
+  lda $8b
+  bit $09b2.w
+  beq @unknown_90_f5e4
+@unknown_90_f5de:
+  lda #$0001.w
+  sta $0dc0.w
+@unknown_90_f5e4:
+  lda $05d1.w
+  beq @unknown_90_f619
+  lda $0a1c.w
+  beq @unknown_90_f5fd
+  cmp #$009b.w
+  beq @unknown_90_f5fd
+  lda $0de0.w
+  cmp #$0007.w
+  bmi @unknown_90_f616
+  plp
+  rts
+@unknown_90_f5fd:
+  lda $8d
+  and #$0030.w
+  cmp #$0030.w
+  bne @unknown_90_f619
+  lda $91
+  bit #$0080.w
+  beq @unknown_90_f619
+  lda #$0007.w
+  sta $0de0.w
+  bra @unknown_90_f619
+@unknown_90_f616:
+  stz $0de0.w
+@unknown_90_f619:
+  lda #$000e.w
+  jsr $808233
+  bcc @unknown_90_f638
+  lda $0a5a.w
+  cmp #$e114.w
+  bne @unknown_90_f638
+  lda $0998.w
+  cmp #$0023.w
+  beq @unknown_90_f638
+  lda #$0023.w
+  sta $0998.w
+@unknown_90_f638:
+  plp
+  rts
