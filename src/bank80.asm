@@ -2005,22 +2005,22 @@ unknown_80_8ff7:
   php
   rep #$30
   phx
-  ldx $0998.w
+  ldx var_game_state.w
   cpx #$0028.w
   bcs @unknown_80_901e
-  ldx $0639.w
-  sta $0619.w, X
+  ldx var_unknown_0639.w
+  sta var_unknown_0619.w, X
   tya
   cmp #$0008.w
   bcs @unknown_80_9012
   lda #$0008.w
 @unknown_80_9012:
-  sta $0629.w, X
+  sta var_unknown_0629.w, X
   inx
   inx
   txa
   and #$000e.w
-  sta $0639.w
+  sta var_unknown_0639.w
 @unknown_80_901e:
   plx
   plp
