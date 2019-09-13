@@ -369,25 +369,26 @@ unknown_80_81fa:
 
 ; TODO: "calls 80:818E and tests against 7E:D820,X. CLC if 0, SEC if 1."
 ; -- Kejardon
-unknown_80_8233: phx
-/*unknown_80_8234:*/ phy
-/*unknown_80_8235:*/ php
-/*unknown_80_8236:*/ rep #$30
-/*unknown_80_8238:*/ jsl unknown_80_818e
-/*unknown_80_823c:*/ lda $7ed820, X
-/*unknown_80_8240:*/ and $05e7.w
-/*unknown_80_8243:*/ bne @unknown_80_824a
-/*unknown_80_8245:*/ plp
-/*unknown_80_8246:*/ ply
-/*unknown_80_8247:*/ plx
-/*unknown_80_8248:*/ clc
-/*unknown_80_8249:*/ rtl
-
-@unknown_80_824a: plp
-/*unknown_80_824b:*/ ply
-/*unknown_80_824c:*/ plx
-/*unknown_80_824d:*/ sec
-/*unknown_80_824e:*/ rtl
+unknown_80_8233:
+  phx
+  phy
+  php
+  rep #$30
+  jsl unknown_80_818e
+  lda var_unknown_d820.l, X
+  and var_unknown_05e7.w
+  bne @unknown_80_824a
+  plp
+  ply
+  plx
+  clc
+  rtl
+@unknown_80_824a:
+  plp
+  ply
+  plx
+  sec
+  rtl
 
 /*unknown_80_824f:*/ phx
 /*unknown_80_8250:*/ ldx #$000a.w
