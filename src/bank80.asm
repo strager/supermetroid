@@ -3509,18 +3509,23 @@ unknown_80_9b44:
 @unknown_80_9ca4:
   lda var_unknown_0a04.w
   jsr unknown_80_9cea.w
+@add_to_vram_write_queue:
   ldx var_vram_write_queue_tail.w
+  ; vram_write_queue@entry.copy_size
   lda #$00c0.w
   sta var_vram_write_queue, X
   inx
   inx
-  lda #$c608.w
+  ; vram_write_queue@entry.source_address
+  lda #var_unknown_c608
   sta var_vram_write_queue, X
   inx
   inx
-  lda #$007e.w
+  ; vram_write_queue@entry.source_address_bank
+  lda #var_unknown_c608 >> 16
   sta var_vram_write_queue, X
   inx
+  ; vram_write_queue@entry.vram_address
   lda #$5820.w
   sta var_vram_write_queue, X
   inx
