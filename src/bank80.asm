@@ -4301,23 +4301,24 @@ unknown_80_a33a:
 
 ; TODO: "Translates Layer 1 and Layer 2 scroll positions to BG1 and BG2 scroll
 ; positions" -- Kejardon
-unknown_80_a37b: lda $0911.w
-/*unknown_80_a37e:*/ clc
-/*unknown_80_a37f:*/ adc $091d.w
-/*unknown_80_a382:*/ sta $b1
-/*unknown_80_a384:*/ lda $0915.w
-/*unknown_80_a387:*/ clc
-/*unknown_80_a388:*/ adc $091f.w
-/*unknown_80_a38b:*/ sta $b3
-/*unknown_80_a38d:*/ lda $0917.w
-/*unknown_80_a390:*/ clc
-/*unknown_80_a391:*/ adc $0921.w
-/*unknown_80_a394:*/ sta $b5
-/*unknown_80_a396:*/ lda $0919.w
-/*unknown_80_a399:*/ clc
-/*unknown_80_a39a:*/ adc $0923.w
-/*unknown_80_a39d:*/ sta $b7
-/*unknown_80_a39f:*/ rts
+unknown_80_a37b:
+  lda $0911.w
+  clc
+  adc $091d.w
+  sta $b1
+  lda $0915.w
+  clc
+  adc $091f.w
+  sta $b3
+  lda $0917.w
+  clc
+  adc $0921.w
+  sta $b5
+  lda $0919.w
+  clc
+  adc $0923.w
+  sta $b7
+  rts
 
 ; TODO: "Updates only BG1 when scrolling, I think" -- Kejardon
 unknown_80_a3a0: php
