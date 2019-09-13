@@ -379,7 +379,7 @@ unknown_88_81fe: rep #$30
 
 /*unknown_88_829e:*/ php
 /*unknown_88_829f:*/ sep #$20
-/*unknown_88_82a1:*/ jsr $8082c5
+/*unknown_88_82a1:*/ jsr wait_until_end_of_next_vblank.l
 /*unknown_88_82a5:*/ stz $420b.w
 /*unknown_88_82a8:*/ stz $420c.w
 /*unknown_88_82ab:*/ plp

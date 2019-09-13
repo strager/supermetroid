@@ -11615,7 +11615,7 @@ unknown_82_def2: pea $8f00.w
 
 unknown_82_df69: php
 /*unknown_82_df6a:*/ sep #$20
-/*unknown_82_df6c:*/ jsr $8082c5
+/*unknown_82_df6c:*/ jsr wait_until_end_of_next_vblank.l
 /*unknown_82_df70:*/ lda $84
 /*unknown_82_df72:*/ and #$30
 /*unknown_82_df74:*/ cmp #$30
