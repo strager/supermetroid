@@ -459,48 +459,49 @@ wait_until_end_of_next_vblank:
 
 ; TODO: "Multiplies A and Y together (16-bit * 16-bit). Result in $05F1-$05F4.
 ; Not accurate: Can lose carry to top byte." -- Kejardon
-unknown_80_82d6: phx
-/*unknown_80_82d7:*/ sta $05e9.w
-/*unknown_80_82da:*/ sty $05eb.w
-/*unknown_80_82dd:*/ stz $05f1.w
-/*unknown_80_82e0:*/ stz $05f3.w
-/*unknown_80_82e3:*/ sep #$10
-/*unknown_80_82e5:*/ ldy $05eb.w
-/*unknown_80_82e8:*/ sty $4202.w
-/*unknown_80_82eb:*/ ldy $05e9.w
-/*unknown_80_82ee:*/ sty $4203.w
-/*unknown_80_82f1:*/ nop
-/*unknown_80_82f2:*/ nop
-/*unknown_80_82f3:*/ nop
-/*unknown_80_82f4:*/ lda $4216.w
-/*unknown_80_82f7:*/ sta $05f1.w
-/*unknown_80_82fa:*/ ldy $05ea.w
-/*unknown_80_82fd:*/ sty $4203.w
-/*unknown_80_8300:*/ nop
-/*unknown_80_8301:*/ lda $05f2.w
-/*unknown_80_8304:*/ clc
-/*unknown_80_8305:*/ adc $4216.w
-/*unknown_80_8308:*/ sta $05f2.w
-/*unknown_80_830b:*/ ldy $05ec.w
-/*unknown_80_830e:*/ sty $4202.w
-/*unknown_80_8311:*/ ldy $05e9.w
-/*unknown_80_8314:*/ sty $4203.w
-/*unknown_80_8317:*/ nop
-/*unknown_80_8318:*/ lda $05f2.w
-/*unknown_80_831b:*/ clc
-/*unknown_80_831c:*/ adc $4216.w
-/*unknown_80_831f:*/ sta $05f2.w
-/*unknown_80_8322:*/ ldy $05ea.w
-/*unknown_80_8325:*/ sty $4203.w
-/*unknown_80_8328:*/ nop
-/*unknown_80_8329:*/ nop
-/*unknown_80_832a:*/ lda $05f3.w
-/*unknown_80_832d:*/ clc
-/*unknown_80_832e:*/ adc $4216.w
-/*unknown_80_8331:*/ sta $05f3.w
-/*unknown_80_8334:*/ rep #$30
-/*unknown_80_8336:*/ plx
-/*unknown_80_8337:*/ rtl
+unknown_80_82d6:
+  phx
+  sta var_unknown_05e9.w
+  sty var_unknown_05eb.w
+  stz var_unknown_05f1.w
+  stz var_unknown_05f3.w
+  sep #$10
+  ldy var_unknown_05eb.w
+  sty IO_WRMPYA
+  ldy var_unknown_05e9.w
+  sty IO_WRMPYB
+  nop
+  nop
+  nop
+  lda IO_RDMPY
+  sta var_unknown_05f1.w
+  ldy var_unknown_05ea.w
+  sty IO_WRMPYB
+  nop
+  lda var_unknown_05f2.w
+  clc
+  adc IO_RDMPY
+  sta var_unknown_05f2.w
+  ldy var_unknown_05ec.w
+  sty IO_WRMPYA
+  ldy var_unknown_05e9.w
+  sty IO_WRMPYB
+  nop
+  lda var_unknown_05f2.w
+  clc
+  adc IO_RDMPY
+  sta var_unknown_05f2.w
+  ldy var_unknown_05ea.w
+  sty IO_WRMPYB
+  nop
+  nop
+  lda var_unknown_05f3.w
+  clc
+  adc IO_RDMPY
+  sta var_unknown_05f3.w
+  rep #$30
+  plx
+  rtl
 
 ; On the next call to interrupt_nmi, update I/O. Wait for that next call to
 ; finish.

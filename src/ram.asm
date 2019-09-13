@@ -148,6 +148,18 @@ var_random_state_h: db ; $7e05e6
 .endu
 
 var_unknown_05e7: dw ; $7e05e7
+
+var_unknown_05e9: db ; $7e05e9
+var_unknown_05ea: db ; $7e05ea
+var_unknown_05eb: db ; $7e05eb
+var_unknown_05ec: db ; $7e05ec
+var_unknown_05ed: db ; $7e05ed
+var_unknown_05ee: db ; $7e05ee
+var_unknown_05ef: db ; $7e05ef
+var_unknown_05f0: db ; $7e05f0
+var_unknown_05f1: db ; $7e05f1
+var_unknown_05f2: db ; $7e05f2
+var_unknown_05f3: db ; $7e05f3
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0617) export
