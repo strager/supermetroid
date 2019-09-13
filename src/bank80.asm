@@ -1972,27 +1972,27 @@ unknown_80_8fc1:
   rep #$30
   phx
   phy
-  ldx $0998.w
-  cpx #$0028.w
+  ldx var_game_state.w
+  cpx #game_state_unknown_28
   bcs @unknown_80_8ff3
   pha
-  lda $0639.w
+  lda var_unknown_0639.w
   inc A
   inc A
   and #$000e.w
   tax
   pla
-  cpx $063b.w
+  cpx var_unknown_063b.w
   beq @unknown_80_8ff3
-  ldx $0639.w
-  sta $0619.w, X
+  ldx var_unknown_0639.w
+  sta var_unknown_0619.w, X
   lda #$0008.w
-  sta $0629.w, X
+  sta var_unknown_0629.w, X
   inx
   inx
   txa
   and #$000e.w
-  sta $0639.w
+  sta var_unknown_0639.w
 @unknown_80_8ff3:
   ply
   plx
