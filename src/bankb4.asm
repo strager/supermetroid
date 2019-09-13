@@ -1,6 +1,6 @@
 .include "include/common.asm"
 .include "include/io.asm"
-.include "include/unknown_80_91a9.asm"
+.include "include/start_dma_copy.asm"
 
 .bank ($b4 - $80) slot $0
 .org $0
@@ -2306,8 +2306,8 @@ unknown_b4_9809: phb
 /*unknown_b4_99f8:*/ sta $2117.w
 /*unknown_b4_99fb:*/ lda #$80
 /*unknown_b4_99fd:*/ sta $2115.w
-/*unknown_b4_9a00:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_b4_9a00:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -2332,8 +2332,8 @@ das: .dw unknown_b0_8000@size
 /*unknown_b4_9a2b:*/ sta $2117.w
 /*unknown_b4_9a2e:*/ lda #$80
 /*unknown_b4_9a30:*/ sta $2115.w
-/*unknown_b4_9a33:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_b4_9a33:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE

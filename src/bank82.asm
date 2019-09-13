@@ -1,7 +1,7 @@
 .include "include/asm.asm"
 .include "include/common.asm"
 .include "include/io.asm"
-.include "include/unknown_80_91a9.asm"
+.include "include/start_dma_copy.asm"
 .include "include/decompress_to.asm"
 
 .bank ($82 - $80) slot $0
@@ -323,8 +323,8 @@ unknown_82_82e2: php
 /*unknown_82_82ec:*/ sta IO_VMADDH
 /*unknown_82_82ef:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_82f1:*/ sta IO_VMAIN
-/*unknown_82_82f4:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_82f4:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -340,8 +340,8 @@ das: .dw unknown_9a_b200@size
 /*unknown_82_830c:*/ sta IO_VMADDH
 /*unknown_82_830f:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8311:*/ sta IO_VMAIN
-/*unknown_82_8314:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8314:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -358,8 +358,8 @@ das: .dw $4000
 /*unknown_82_832c:*/ sta IO_VMADDH
 /*unknown_82_832f:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8331:*/ sta IO_VMAIN
-/*unknown_82_8334:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8334:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -375,8 +375,8 @@ das: .dw $1000
 /*unknown_82_834c:*/ sta IO_VMADDH
 /*unknown_82_834f:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8351:*/ sta IO_VMAIN
-/*unknown_82_8354:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8354:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1607,8 +1607,8 @@ unknown_82_8d96: php
 /*unknown_82_8da2:*/ sta IO_VMADDH
 /*unknown_82_8da5:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8da7:*/ sta IO_VMAIN
-/*unknown_82_8daa:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8daa:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1707,8 +1707,8 @@ unknown_82_8e19: php
 /*unknown_82_8e7f:*/ sta IO_VMADDH
 /*unknown_82_8e82:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8e84:*/ sta IO_VMAIN
-/*unknown_82_8e87:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8e87:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1724,8 +1724,8 @@ das: .dw unknown_b6_8000@size + unknown_b6_a000@size
 /*unknown_82_8e9f:*/ sta IO_VMADDH
 /*unknown_82_8ea2:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8ea4:*/ sta IO_VMAIN
-/*unknown_82_8ea7:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8ea7:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1741,8 +1741,8 @@ das: .dw unknown_b6_c000@size
 /*unknown_82_8ebf:*/ sta IO_VMADDH
 /*unknown_82_8ec2:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8ec4:*/ sta IO_VMAIN
-/*unknown_82_8ec7:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8ec7:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1763,8 +1763,8 @@ das: .dw unknown_9a_b200@size
 /*unknown_82_8ee4:*/ sta IO_VMADDH
 /*unknown_82_8ee7:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_8ee9:*/ sta IO_VMAIN
-/*unknown_82_8eec:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8eec:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1780,8 +1780,8 @@ das: .dw unknown_b6_e000@size + unknown_b6_e400@size
 /*unknown_82_8f04:*/ sta $2182.w
 /*unknown_82_8f07:*/ lda #$7e
 /*unknown_82_8f09:*/ sta $2183.w
-/*unknown_82_8f0c:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8f0c:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_WMDATA - IO_BBAD_BASE
@@ -1797,8 +1797,8 @@ das: .dw unknown_b6_e400@size
 /*unknown_82_8f24:*/ sta $2182.w
 /*unknown_82_8f27:*/ lda #$7e
 /*unknown_82_8f29:*/ sta $2183.w
-/*unknown_82_8f2c:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_8f2c:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_WMDATA - IO_BBAD_BASE
@@ -2373,8 +2373,8 @@ unknown_82_93a1: php
 /*unknown_82_93dd:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_93df:*/ sta IO_VMAIN
 /*unknown_82_93e2:*/ jsr unknown_82_943d
-/*unknown_82_93e5:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_93e5:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4233,8 +4233,8 @@ unknown_82_a2be: php
 /*unknown_82_a2c8:*/ sta IO_VMADDH
 /*unknown_82_a2cb:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_a2cd:*/ sta IO_VMAIN
-/*unknown_82_a2d0:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_a2d0:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -5376,8 +5376,8 @@ unknown_82_a92b: php
 /*unknown_82_ac2f:*/ sta IO_VMADDH
 /*unknown_82_ac32:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_ac34:*/ sta IO_VMAIN
-/*unknown_82_ac37:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_ac37:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -13187,8 +13187,8 @@ unknown_82_eb9f: php
 /*unknown_82_ec31:*/ sta IO_VMADDH
 /*unknown_82_ec34:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_ec36:*/ sta IO_VMAIN
-/*unknown_82_ec39:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_82_ec39:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE

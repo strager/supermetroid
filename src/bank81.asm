@@ -1,6 +1,6 @@
 .include "include/common.asm"
 .include "include/io.asm"
-.include "include/unknown_80_91a9.asm"
+.include "include/start_dma_copy.asm"
 
 .bank ($81 - $80) slot $0
 .org $0
@@ -1730,8 +1730,8 @@ unknown_81_8ddb: php
 /*unknown_81_8de5:*/ sta IO_VMADDH
 /*unknown_81_8de8:*/ lda #IO_VMAIN_INCREMENT_HIGH
 /*unknown_81_8dea:*/ sta IO_VMAIN
-/*unknown_81_8ded:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_81_8ded:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1747,8 +1747,8 @@ das: .dw unknown_8e_8000@size + unknown_8e_c000@size
 /*unknown_81_8e05:*/ sta IO_VMADDH
 /*unknown_81_8e08:*/ lda #IO_VMAIN_INCREMENT_HIGH
 /*unknown_81_8e0a:*/ sta IO_VMAIN
-/*unknown_81_8e0d:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_81_8e0d:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1764,8 +1764,8 @@ das: .dw unknown_b6_8000@size
 /*unknown_81_8e25:*/ sta IO_VMADDH
 /*unknown_81_8e28:*/ lda #IO_VMAIN_INCREMENT_HIGH
 /*unknown_81_8e2a:*/ sta IO_VMAIN
-/*unknown_81_8e2d:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_81_8e2d:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1781,8 +1781,8 @@ das: .dw unknown_b6_c000@size
 /*unknown_81_8e45:*/ sta IO_VMADDH
 /*unknown_81_8e48:*/ lda #IO_VMAIN_INCREMENT_HIGH
 /*unknown_81_8e4a:*/ sta IO_VMAIN
-/*unknown_81_8e4d:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_81_8e4d:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -2061,8 +2061,8 @@ unknown_81_8e60: rep #$30
 /*unknown_81_9087:*/ sta IO_VMADDH
 /*unknown_81_908a:*/ lda #IO_VMAIN_INCREMENT_HIGH
 /*unknown_81_908c:*/ sta IO_VMAIN
-/*unknown_81_908f:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_81_908f:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE

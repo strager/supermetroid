@@ -1,6 +1,6 @@
 .include "include/common.asm"
 .include "include/io.asm"
-.include "include/unknown_80_91a9.asm"
+.include "include/start_dma_copy.asm"
 
 .bank ($a7 - $80) slot $0
 .org $0
@@ -7325,8 +7325,8 @@ unknown_a7_a716:
 /*unknown_a7_c212:*/ sta $2117.w
 /*unknown_a7_c215:*/ lda #$80
 /*unknown_a7_c217:*/ sta $2115.w
-/*unknown_a7_c21a:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_a7_c21a:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7342,8 +7342,8 @@ das: .dw unknown_a7_a716@size
 /*unknown_a7_c232:*/ sta $2117.w
 /*unknown_a7_c235:*/ lda #$80
 /*unknown_a7_c237:*/ sta $2115.w
-/*unknown_a7_c23a:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_a7_c23a:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7365,8 +7365,8 @@ das: .dw $800
 /*unknown_a7_c25f:*/ sta $2117.w
 /*unknown_a7_c262:*/ lda #$80
 /*unknown_a7_c264:*/ sta $2115.w
-/*unknown_a7_c267:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_a7_c267:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7383,8 +7383,8 @@ das: .dw $400
 /*unknown_a7_c281:*/ sta $2117.w
 /*unknown_a7_c284:*/ lda #$80
 /*unknown_a7_c286:*/ sta $2115.w
-/*unknown_a7_c289:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_a7_c289:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7409,8 +7409,8 @@ das: .dw $800
 /*unknown_a7_c2b1:*/ sta $2117.w
 /*unknown_a7_c2b4:*/ lda #$80
 /*unknown_a7_c2b6:*/ sta $2115.w
-/*unknown_a7_c2b9:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_a7_c2b9:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE

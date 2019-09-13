@@ -1,6 +1,6 @@
 .include "include/common.asm"
 .include "include/io.asm"
-.include "include/unknown_80_91a9.asm"
+.include "include/start_dma_copy.asm"
 .include "include/decompress_to.asm"
 
 .bank ($8b - $80) slot $0
@@ -2221,8 +2221,8 @@ output_address: .dl $7f5000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -3399,8 +3399,8 @@ output_address: .dl $7f9000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db $19
@@ -3426,8 +3426,8 @@ das: .dw $4000
 /*unknown_8b_9c2c:*/ ora [$21], Y
 /*unknown_8b_9c2e:*/ lda #$8d00.w
 /*unknown_8b_9c31:*/ ora $21, X
-/*unknown_8b_9c33:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_9c33:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -3443,8 +3443,8 @@ das: .dw $1000
 /*unknown_8b_9c4b:*/ sta IO_VMADDH
 /*unknown_8b_9c4e:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_8b_9c50:*/ sta IO_VMAIN
-/*unknown_8b_9c53:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_9c53:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4408,8 +4408,8 @@ output_address: .dl $7fe000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4425,8 +4425,8 @@ das: .dw $8000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4442,8 +4442,8 @@ das: .dw $900
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4459,8 +4459,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4476,8 +4476,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4493,8 +4493,8 @@ das: .dw $2000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4510,8 +4510,8 @@ das: .dw $2000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -4660,8 +4660,8 @@ output_address: .dl $7fa000
 /*unknown_8b_a67d:*/ sta IO_VMADDH
 /*unknown_8b_a680:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_8b_a682:*/ sta IO_VMAIN
-/*unknown_8b_a685:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_a685:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7094,8 +7094,8 @@ output_address: .dl $7f5000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_VMDATAH - IO_BBAD_BASE
@@ -7121,8 +7121,8 @@ das: .dw $4000
 /*unknown_8b_bd31:*/ ora [$21], Y
 /*unknown_8b_bd33:*/ lda #$8d00.w
 /*unknown_8b_bd36:*/ ora $21, X
-/*unknown_8b_bd38:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_bd38:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7138,8 +7138,8 @@ das: .dw $300
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7609,8 +7609,8 @@ output_address: .dl $7f5000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db $19
@@ -7638,8 +7638,8 @@ das: .dw $4000
 /*unknown_8b_c1c9:*/ ora [$21], Y
 /*unknown_8b_c1cb:*/ lda #$8d00.w
 /*unknown_8b_c1ce:*/ ora $21, X
-/*unknown_8b_c1d0:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_c1d0:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7655,8 +7655,8 @@ das: .dw $600
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -7672,8 +7672,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -8192,8 +8192,8 @@ output_address: .dl $7f5000
   sta IO_VMADDH
   lda #$00
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -8209,8 +8209,8 @@ das: .dw $300
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -8226,8 +8226,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -9859,8 +9859,8 @@ output_address: .dl $7f8000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -9876,8 +9876,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -9893,8 +9893,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -9910,8 +9910,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db $19
@@ -10127,8 +10127,8 @@ unknown_8b_d701: lda $1a51.w
 /*unknown_8b_d73a:*/ sta IO_VMADDH
 /*unknown_8b_d73d:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_8b_d73f:*/ sta IO_VMAIN
-/*unknown_8b_d742:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_d742:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10144,8 +10144,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10172,8 +10172,8 @@ output_address: .dl $7e2000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db $19
@@ -10245,8 +10245,8 @@ unknown_8b_d807: lda $1a51.w
 /*unknown_8b_d840:*/ sta IO_VMADDH
 /*unknown_8b_d843:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_8b_d845:*/ sta IO_VMAIN
-/*unknown_8b_d848:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_8b_d848:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10262,8 +10262,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10290,8 +10290,8 @@ output_address: .dl $7e6000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db $19
@@ -10307,8 +10307,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10324,8 +10324,8 @@ das: .dw $6000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10341,8 +10341,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10358,8 +10358,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10375,8 +10375,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -10392,8 +10392,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11036,8 +11036,8 @@ output_address: .dl $7ff000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11053,8 +11053,8 @@ das: .dw $100
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11070,8 +11070,8 @@ das: .dw $800
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11087,8 +11087,8 @@ das: .dw $1000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11104,8 +11104,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11121,8 +11121,8 @@ das: .dw $2000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11161,8 +11161,8 @@ output_address: .dl $7e8000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -11181,8 +11181,8 @@ das: .dw $4000
   sta IO_VMADDH
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE

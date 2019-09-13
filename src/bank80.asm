@@ -3,7 +3,7 @@
 .include "include/decompress_to.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
-.include "include/unknown_80_91a9.asm"
+.include "include/start_dma_copy.asm"
 .include "include/vram_write_queue.asm"
 
 .bank ($80 - $80) slot $0
@@ -994,8 +994,8 @@ unknown_80_85f6:
   sta IO_VMADDH
   lda #$80
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1011,8 +1011,8 @@ das: .dw unknown_8e_8000@size
   sta IO_VMADDH
   lda #$80
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1023,8 +1023,8 @@ das: .dw unknown_80_c437 - unknown_80_b437
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   stz IO_CGADD
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 bbad: .db IO_CGDATA - IO_BBAD_BASE
@@ -1101,8 +1101,8 @@ das: .dw unknown_8e_e400@size
   sta IO_VMADDH
   lda #$80
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1118,8 +1118,8 @@ das: .dw unknown_8e_8000@size
   sta IO_VMADDH
   lda #$80
   sta IO_VMAIN
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
@@ -1130,8 +1130,8 @@ das: .dw unknown_80_cc37 - unknown_80_bc37
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   stz IO_CGADD
-  jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+  jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO
 bbad: .db IO_CGDATA - IO_BBAD_BASE
@@ -2262,14 +2262,16 @@ unknown_80_914d: phx
 /*unknown_80_91a7:*/ nop
 /*unknown_80_91a8:*/ rts
 
-; TODO: "Initiate a DMA transfer. 2116 should be set before hand, if it's being
-; used. First byte tells channel (00 - 07), next 7 are copied into 47x0-47x6."
-; -- Kejardon
-; 
+; Initiate a DMA transfer.
+;
+; Inputs:
+; * [IO_BBAD_BASE + [IO_BBADX]]: I/O port to load from or store to.
+; * PC (see below)
+;
 ; Call this procedure with the following sequence:
 ;
-;   jsl unknown_80_91a9
-; .dstruct instanceof unknown_80_91a9@parameters values
+;   jsl start_dma_copy
+; .dstruct instanceof start_dma_copy@parameters values
 ; channel_index: .db 1
 ; dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
 ; bbad: .db IO_CGDATA - IO_BBAD_BASE
@@ -2278,12 +2280,12 @@ unknown_80_914d: phx
 ; .ENDST
 ; @resume:
 ;
-; unknown_80_91a9 returns execution at @resume (i.e. after the
-; unknown_80_91a9@parameters data).
+; start_dma_copy returns execution at @resume (i.e. after the
+; start_dma_copy@parameters data).
 ;
-; See the definition of unknown_80_91a9@parameters for details on what each
+; See the definition of start_dma_copy@parameters for details on what each
 ; parameter means.
-unknown_80_91a9:
+start_dma_copy:
   ; Below, read 'SS' as the value of S on procedure entry.
   ; Below, read 'RA' as the 24-bit address of the last byte of the jsr
   ; instruction (i.e. the return address).
@@ -2297,19 +2299,19 @@ unknown_80_91a9:
   plb
   lda $03, S ; Address: SS + 1, pointing to the 16-bit portion of RA.
   tay ; Y := RA
-  lda unknown_80_91a9@parameters.channel_index + 1, Y
+  lda start_dma_copy@parameters.channel_index + 1, Y
   and #$00ff.w
   tax
   lda @io_dma_offset.l, X
   and #$00ff.w
   tax
-  lda unknown_80_91a9@parameters.dmap + 1, Y
+  lda start_dma_copy@parameters.dmap + 1, Y
   sta IO_DMAP0, X ; Address: IO_DMAPX and IO_BBADX
-  lda unknown_80_91a9@parameters.a1 + 1, Y
+  lda start_dma_copy@parameters.a1 + 1, Y
   sta IO_A1T0, X ; Address: IO_A1TX
-  lda unknown_80_91a9@parameters.a1 + 2 + 1, Y
+  lda start_dma_copy@parameters.a1 + 2 + 1, Y
   sta IO_A1B0, X ; Address: IO_A1BX
-  lda unknown_80_91a9@parameters.das + 1, Y
+  lda start_dma_copy@parameters.das + 1, Y
   sta IO_DAS0, X ; Address: IO_DASX
   tya ; A := RA
   clc
@@ -3292,8 +3294,8 @@ unknown_80_9997: and ($2c, S), Y
 /*unknown_80_9a82:*/ sta IO_VMADD
 /*unknown_80_9a85:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_80_9a88:*/ sta IO_VMAIN
-/*unknown_80_9a8b:*/ jsl unknown_80_91a9
-.dstruct instanceof unknown_80_91a9@parameters values
+/*unknown_80_9a8b:*/ jsl start_dma_copy
+.dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
 bbad: .db IO_VMDATA - IO_BBAD_BASE
