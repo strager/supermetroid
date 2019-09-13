@@ -1433,22 +1433,14 @@ unknown_80_896e:
 unknown_80_8b1a:
   php
   rep #$30
-  stz $0570.w
-  stz $0572.w
-  stz $0574.w
-  stz $0576.w
-  stz $0578.w
-  stz $057a.w
-  stz $057c.w
-  stz $057e.w
-  stz $0580.w
-  stz $0582.w
-  stz $0584.w
-  stz $0586.w
-  stz $0588.w
-  stz $058a.w
-  stz $058c.w
-  stz $058e.w
+
+.define index 0
+.repeat 16
+  stz (var_unknown_0570.w + (index * 2)) & $ffff
+  .redefine index index + 1
+.endr
+.undefine index
+
   plp
   rtl
 
