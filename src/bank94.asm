@@ -679,7 +679,7 @@ unknown_94_84d6: lda $1e77.w
 /*unknown_94_8522:*/ eor #$ffff.w
 /*unknown_94_8525:*/ inc A
 /*unknown_94_8526:*/ ldy $8588.w, X
-/*unknown_94_8529:*/ jsr $8082d6
+/*unknown_94_8529:*/ jsl buggy_multiply_16
 /*unknown_94_852d:*/ lda $05f1.w
 /*unknown_94_8530:*/ eor #$ffff.w
 /*unknown_94_8533:*/ clc
@@ -713,7 +713,7 @@ unknown_94_84d6: lda $1e77.w
 /*unknown_94_856f:*/ lda $15
 /*unknown_94_8571:*/ rep #$20
 /*unknown_94_8573:*/ ldy $8588.w, X
-/*unknown_94_8576:*/ jsr $8082d6
+/*unknown_94_8576:*/ jsl buggy_multiply_16
 /*unknown_94_857a:*/ lda $05f1.w
 /*unknown_94_857d:*/ sta $14
 /*unknown_94_857f:*/ lda $05f3.w
@@ -5796,14 +5796,14 @@ unknown_94_abe6: lda #$0006.w
 /*unknown_94_ad16:*/ bpl @unknown_94_ad2f
 /*unknown_94_ad18:*/ eor #$ffff.w
 /*unknown_94_ad1b:*/ inc A
-/*unknown_94_ad1c:*/ jsr $8082d6
+/*unknown_94_ad1c:*/ jsl buggy_multiply_16
 /*unknown_94_ad20:*/ lda $05f2.w
 /*unknown_94_ad23:*/ eor #$ffff.w
 /*unknown_94_ad26:*/ inc A
 /*unknown_94_ad27:*/ beq @unknown_94_ad3d
 /*unknown_94_ad29:*/ sta $0d9c.w
 /*unknown_94_ad2c:*/ jmp @unknown_94_ae10
-@unknown_94_ad2f: jsr $8082d6
+@unknown_94_ad2f: jsl buggy_multiply_16
 /*unknown_94_ad33:*/ lda $05f2.w
 /*unknown_94_ad36:*/ beq @unknown_94_ad3d
 /*unknown_94_ad38:*/ sta $0d9c.w

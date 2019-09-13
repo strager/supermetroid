@@ -12151,7 +12151,7 @@ unknown_a3_e8a5: lda $0f7a.w, X
 /*unknown_a3_e90c:*/ sta $14
 /*unknown_a3_e90e:*/ rts
 
-@unknown_a3_e90f: jsr $8082d6
+@unknown_a3_e90f: jsl buggy_multiply_16
 /*unknown_a3_e913:*/ lda $05f1.w
 /*unknown_a3_e916:*/ sta $12
 /*unknown_a3_e918:*/ lda $05f3.w

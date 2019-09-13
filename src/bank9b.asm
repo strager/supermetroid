@@ -9055,7 +9055,7 @@
 /*unknown_9b_ca7c:*/ lda sine_table.l, X
 /*unknown_9b_ca80:*/ bmi @unknown_9b_ca9c
 /*unknown_9b_ca82:*/ phy
-/*unknown_9b_ca83:*/ jsr $8082d6
+/*unknown_9b_ca83:*/ jsl buggy_multiply_16
 /*unknown_9b_ca87:*/ ply
 /*unknown_9b_ca88:*/ lda $05f1.w
 /*unknown_9b_ca8b:*/ sta $0b2c.w
@@ -9067,7 +9067,7 @@
 @unknown_9b_ca9c: eor #$ffff.w
 /*unknown_9b_ca9f:*/ inc A
 /*unknown_9b_caa0:*/ phy
-/*unknown_9b_caa1:*/ jsr $8082d6
+/*unknown_9b_caa1:*/ jsl buggy_multiply_16
 /*unknown_9b_caa5:*/ ply
 /*unknown_9b_caa6:*/ lda $05f1.w
 /*unknown_9b_caa9:*/ sta $0b2c.w
@@ -9102,7 +9102,7 @@
 /*unknown_9b_cae7:*/ bpl @unknown_9b_caed
 /*unknown_9b_cae9:*/ eor #$ffff.w
 /*unknown_9b_caec:*/ inc A
-@unknown_9b_caed: jsr $8082d6
+@unknown_9b_caed: jsl buggy_multiply_16
 /*unknown_9b_caf1:*/ lda $05f1.w
 /*unknown_9b_caf4:*/ sta $0b48.w
 /*unknown_9b_caf7:*/ lda $05f3.w
@@ -9121,7 +9121,7 @@
 /*unknown_9b_cb0f:*/ eor #$ffff.w
 /*unknown_9b_cb12:*/ inc A
 /*unknown_9b_cb13:*/ phy
-/*unknown_9b_cb14:*/ jsr $8082d6
+/*unknown_9b_cb14:*/ jsl buggy_multiply_16
 /*unknown_9b_cb18:*/ ply
 /*unknown_9b_cb19:*/ lda $05f1.w
 /*unknown_9b_cb1c:*/ sta $0b2c.w
@@ -9131,7 +9131,7 @@
 /*unknown_9b_cb28:*/ sta $0b36.w
 /*unknown_9b_cb2b:*/ bra @unknown_9b_cb45
 @unknown_9b_cb2d: phy
-/*unknown_9b_cb2e:*/ jsr $8082d6
+/*unknown_9b_cb2e:*/ jsl buggy_multiply_16
 /*unknown_9b_cb32:*/ ply
 /*unknown_9b_cb33:*/ lda $05f1.w
 /*unknown_9b_cb36:*/ sta $0b2c.w
@@ -9166,7 +9166,7 @@
 /*unknown_9b_cb74:*/ bpl @unknown_9b_cb7a
 /*unknown_9b_cb76:*/ eor #$ffff.w
 /*unknown_9b_cb79:*/ inc A
-@unknown_9b_cb7a: jsr $8082d6
+@unknown_9b_cb7a: jsl buggy_multiply_16
 /*unknown_9b_cb7e:*/ lda $05f1.w
 /*unknown_9b_cb81:*/ sta $0b48.w
 /*unknown_9b_cb84:*/ lda $05f3.w

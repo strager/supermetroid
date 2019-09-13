@@ -7845,7 +7845,7 @@ unknown_a0_c26a: phb
 /*unknown_a0_c465:*/ lda $13
 /*unknown_a0_c467:*/ eor #$ffff.w
 /*unknown_a0_c46a:*/ inc A
-/*unknown_a0_c46b:*/ jsr $8082d6
+/*unknown_a0_c46b:*/ jsl buggy_multiply_16
 /*unknown_a0_c46f:*/ lda $05f1.w
 /*unknown_a0_c472:*/ eor #$ffff.w
 /*unknown_a0_c475:*/ clc
@@ -7861,7 +7861,7 @@ unknown_a0_c26a: phb
 @unknown_a0_c488: lda $a0c4a1, X
 /*unknown_a0_c48c:*/ tay
 /*unknown_a0_c48d:*/ lda $13
-/*unknown_a0_c48f:*/ jsr $8082d6
+/*unknown_a0_c48f:*/ jsl buggy_multiply_16
 /*unknown_a0_c493:*/ lda $05f1.w
 /*unknown_a0_c496:*/ sta $12
 /*unknown_a0_c498:*/ lda $05f3.w
