@@ -1,6 +1,6 @@
 .include "include/common.asm"
 .include "include/memory.asm"
-.include "include/unknown_d0.asm"
+.include "include/vram_write_queue.asm"
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00) export
 var_unknown_00: dw ; $7e0000
@@ -192,9 +192,9 @@ var_unknown_bf_h: db ; $7e00c0
 .endu
 .ende
 
-.define unknown_d0_count 0 ; TODO. The unknown_d0 array seems to be 0-terminated.
+.define vram_write_queue_count 0 ; TODO. The vram_write_queue array seems to be 0-terminated.
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00d0) export
-var_unknown_d0: ds unknown_d0@entry@size * unknown_d0_count ; $7e00d0
+var_vram_write_queue: ds vram_write_queue@entry@size * vram_write_queue_count ; $7e00d0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0330) export

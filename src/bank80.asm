@@ -4,7 +4,7 @@
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/unknown_80_91a9.asm"
-.include "include/unknown_d0.asm"
+.include "include/vram_write_queue.asm"
 
 .bank ($80 - $80) slot $0
 .org $0
@@ -1598,20 +1598,20 @@ unknown_80_8c83:
   rep #$30
   ldx var_unknown_0330.w
   beq @unknown_80_8cc9
-  stz var_unknown_d0, X
+  stz var_vram_write_queue, X
   lda #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_BBAD_VRAM) << 8)
   sta IO_DMAP1 ; IO_DMAP1 and IO_DMAP1
   ldy #$0000.w
 @unknown_80_8c96:
-  lda (var_unknown_d0 + unknown_d0@entry.copy_size) & $ffff, Y
+  lda (var_vram_write_queue + vram_write_queue@entry.copy_size) & $ffff, Y
   beq @unknown_80_8cc9
   sta IO_DAS1
-  lda (var_unknown_d0 + unknown_d0@entry.source_address) & $ffff, Y
+  lda (var_vram_write_queue + vram_write_queue@entry.source_address) & $ffff, Y
   sta IO_A1T1
-  lda (var_unknown_d0 + unknown_d0@entry.source_address + 1) & $ffff, Y
+  lda (var_vram_write_queue + vram_write_queue@entry.source_address + 1) & $ffff, Y
   sta IO_A1T1 + 1 ; IO_A1T1 (high) and IO_A1B1
   lda #IO_VMAIN_INCREMENT_HIGH
-  ldx (var_unknown_d0 + unknown_d0@entry.vram_address) & $ffff, Y
+  ldx (var_vram_write_queue + vram_write_queue@entry.vram_address) & $ffff, Y
   bpl @unknown_80_8cb2
   inc A
 @unknown_80_8cb2:
@@ -1623,7 +1623,7 @@ unknown_80_8c83:
   rep #$20
   tya
   clc
-  adc #unknown_d0@entry@size
+  adc #vram_write_queue@entry@size
   tay
   bra @unknown_80_8c96
 @unknown_80_8cc9:
@@ -3511,18 +3511,18 @@ unknown_80_9b44:
   jsr unknown_80_9cea.w
   ldx var_unknown_0330.w
   lda #$00c0.w
-  sta var_unknown_d0, X
+  sta var_vram_write_queue, X
   inx
   inx
   lda #$c608.w
-  sta var_unknown_d0, X
+  sta var_vram_write_queue, X
   inx
   inx
   lda #$007e.w
-  sta var_unknown_d0, X
+  sta var_vram_write_queue, X
   inx
   lda #$5820.w
-  sta var_unknown_d0, X
+  sta var_vram_write_queue, X
   inx
   inx
   stx var_unknown_0330.w
