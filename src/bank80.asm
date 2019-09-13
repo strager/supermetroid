@@ -403,7 +403,7 @@ unknown_80_8233:
 unknown_80_8261:
   phx
   lda #$0003.w
-  sta $1f59.w
+  sta var_unknown_1f59.w
   lda #$0000.w
   jsl unknown_81_8085
   bcc unknown_80_8294
@@ -433,7 +433,7 @@ unknown_80_8294:
   dex
   bpl @unknown_80_8297
   lda #$0004.w
-  sta $1f59.w
+  sta var_unknown_1f59.w
 @unknown_80_82ab:
   plx
   rtl

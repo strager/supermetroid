@@ -723,7 +723,7 @@ unknown_82_8637: php
 /*unknown_82_865a:*/ stz $0dec.w
 /*unknown_82_865d:*/ lda $1f55.w
 /*unknown_82_8660:*/ inc A
-/*unknown_82_8661:*/ cmp $1f59.w
+/*unknown_82_8661:*/ cmp var_unknown_1f59.w
 /*unknown_82_8664:*/ bcc @unknown_82_8669
 /*unknown_82_8666:*/ lda #$0000.w
 @unknown_82_8669: sta $1f55.w
@@ -1274,7 +1274,7 @@ unknown_82_8ae4: stz $0df8.w
 /*unknown_82_8aed:*/ lda #$9b68.w
 /*unknown_82_8af0:*/ sta $1f51.w
 /*unknown_82_8af3:*/ stz $1f55.w
-/*unknown_82_8af6:*/ lda $1f59.w
+/*unknown_82_8af6:*/ lda var_unknown_1f59.w
 /*unknown_82_8af9:*/ cmp #$0004.w
 /*unknown_82_8afc:*/ bne @unknown_82_8b04
 /*unknown_82_8afe:*/ lda #$0003.w
