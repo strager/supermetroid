@@ -2001,27 +2001,30 @@ unknown_80_8fc1:
 
 ; TODO: "Changes music song/instruments or music track to A, with a Y-frame
 ; delay (minimum of 8). Does not stop 0639 from lapping 063B." -- Kejardon
-unknown_80_8ff7: php
-/*unknown_80_8ff8:*/ rep #$30
-/*unknown_80_8ffa:*/ phx
-/*unknown_80_8ffb:*/ ldx $0998.w
-/*unknown_80_8ffe:*/ cpx #$0028.w
-/*unknown_80_9001:*/ bcs @unknown_80_901e
-/*unknown_80_9003:*/ ldx $0639.w
-/*unknown_80_9006:*/ sta $0619.w, X
-/*unknown_80_9009:*/ tya
-/*unknown_80_900a:*/ cmp #$0008.w
-/*unknown_80_900d:*/ bcs @unknown_80_9012
-/*unknown_80_900f:*/ lda #$0008.w
-@unknown_80_9012: sta $0629.w, X
-/*unknown_80_9015:*/ inx
-/*unknown_80_9016:*/ inx
-/*unknown_80_9017:*/ txa
-/*unknown_80_9018:*/ and #$000e.w
-/*unknown_80_901b:*/ sta $0639.w
-@unknown_80_901e: plx
-/*unknown_80_901f:*/ plp
-/*unknown_80_9020:*/ rtl
+unknown_80_8ff7:
+  php
+  rep #$30
+  phx
+  ldx $0998.w
+  cpx #$0028.w
+  bcs @unknown_80_901e
+  ldx $0639.w
+  sta $0619.w, X
+  tya
+  cmp #$0008.w
+  bcs @unknown_80_9012
+  lda #$0008.w
+@unknown_80_9012:
+  sta $0629.w, X
+  inx
+  inx
+  txa
+  and #$000e.w
+  sta $0639.w
+@unknown_80_901e:
+  plx
+  plp
+  rtl
 
 /*unknown_80_9021:*/ phx
 /*unknown_80_9022:*/ phy
