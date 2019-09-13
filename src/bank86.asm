@@ -6622,7 +6622,7 @@ unknown_86_abae: lda $0000.w, X
 /*unknown_86_b6f6:*/ lda $1b23.w, Y
 /*unknown_86_b6f9:*/ jsr $80818e
 /*unknown_86_b6fd:*/ lda $7ed8b0, X
-/*unknown_86_b701:*/ and $05e7.w
+/*unknown_86_b701:*/ and var_unknown_05e7.w
 /*unknown_86_b704:*/ bne @unknown_86_b707
 /*unknown_86_b706:*/ rts
 

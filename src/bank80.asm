@@ -264,12 +264,12 @@ unknown_80_818e:
   bpl @unknown_80_8192
   .db $00
 @unknown_80_8192:
-  stz $05e7
+  stz var_unknown_05e7.w
   pha
   and #$0007.w
   sec
 @unknown_80_819a:
-  rol $05e7.w
+  rol var_unknown_05e7.w
   dec A
   bpl @unknown_80_819a
   pla
@@ -300,10 +300,10 @@ unknown_80_81a6:
 /*unknown_80_81c2:*/ php
 /*unknown_80_81c3:*/ sep #$20
 /*unknown_80_81c5:*/ eor #$ff
-/*unknown_80_81c7:*/ sta $05e7.w
+/*unknown_80_81c7:*/ sta var_unknown_05e7.w
 /*unknown_80_81ca:*/ ldx var_unknown_079f.w
 /*unknown_80_81cd:*/ lda $7ed828, X
-/*unknown_80_81d1:*/ and $05e7.w
+/*unknown_80_81d1:*/ and var_unknown_05e7.w
 /*unknown_80_81d4:*/ sta $7ed828, X
 /*unknown_80_81d8:*/ plp
 /*unknown_80_81d9:*/ ply
@@ -356,11 +356,11 @@ unknown_80_81fa:
 /*unknown_80_8214:*/ php
 /*unknown_80_8215:*/ rep #$30
 /*unknown_80_8217:*/ jsl unknown_80_818e
-/*unknown_80_821b:*/ lda $05e7.w
+/*unknown_80_821b:*/ lda var_unknown_05e7.w
 /*unknown_80_821e:*/ eor #$ffff.w
-/*unknown_80_8221:*/ sta $05e7.w
+/*unknown_80_8221:*/ sta var_unknown_05e7.w
 /*unknown_80_8224:*/ lda $7ed820, X
-/*unknown_80_8228:*/ and $05e7.w
+/*unknown_80_8228:*/ and var_unknown_05e7.w
 /*unknown_80_822b:*/ sta $7ed820, X
 /*unknown_80_822f:*/ plp
 /*unknown_80_8230:*/ ply

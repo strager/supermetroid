@@ -12819,7 +12819,7 @@ unknown_82_e91c: ldx $078d.w
 /*unknown_82_e957:*/ jsr $80818e
 /*unknown_82_e95b:*/ lda $7ed8b0, X
 /*unknown_82_e95f:*/ plx
-/*unknown_82_e960:*/ and $05e7.w
+/*unknown_82_e960:*/ and var_unknown_05e7.w
 /*unknown_82_e963:*/ bne @unknown_82_e94a
 @unknown_82_e965: lda #$0001.w
 /*unknown_82_e968:*/ sta $7ede1c, X
