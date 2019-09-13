@@ -2305,14 +2305,15 @@ unknown_80_91a9:
   plp
   rtl
 
-@io_dma_offset: .db $00
-/*unknown_80_91e7:*/ .db $10
-/*unknown_80_91e8:*/ .db $20
-/*unknown_80_91e9:*/ .db $30
-/*unknown_80_91ea:*/ .db $40
-/*unknown_80_91eb:*/ .db $50
-/*unknown_80_91ec:*/ .db $60
-/*unknown_80_91ed:*/ .db $70
+@io_dma_offset:
+  .db $00
+  .db $10
+  .db $20
+  .db $30
+  .db $40
+  .db $50
+  .db $60
+  .db $70
 
 unknown_80_91ee:
   ldx $84
