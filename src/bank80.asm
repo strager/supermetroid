@@ -4332,7 +4332,7 @@ unknown_80_a3a0:
 ; TODO: "Handles the movement of layer 1 and 2" -- Kejardon
 ; TODO: "Updates BG1 and BG2 graphics when scrolling" -- Kejardon
 @unknown_80_a3ab:
-  lda $0a78.w
+  lda var_unknown_0a78.w
   beq @unknown_80_a3b1
   rtl
 @unknown_80_a3b1:
@@ -4341,120 +4341,120 @@ unknown_80_a3a0:
   phk
   plb
   rep #$30
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
-  adc $091d.w
-  sta $b1
-  lda $0915.w
+  adc var_unknown_091d.w
+  sta var_unknown_b1
+  lda var_unknown_0915.w
   clc
-  adc $091f.w
-  sta $b3
+  adc var_unknown_091f.w
+  sta var_unknown_b3
   jsr unknown_80_a2f9
   bcs @unknown_80_a3d4
   clc
-  adc $0921.w
-  sta $b5
+  adc var_unknown_0921.w
+  sta var_unknown_b5
 @unknown_80_a3d4:
-  jsr $a33a.w
+  jsr unknown_80_a33a.w
   bcs @unknown_80_a3df
   clc
-  adc $0923.w
-  sta $b7
+  adc var_unknown_0923.w
+  sta var_unknown_b7
 @unknown_80_a3df:
   rep #$20
   jsr unknown_80_a4bb
   ldx #$0000.w
-  lda $08f7.w
-  cmp $08ff.w
+  lda var_unknown_08f7.w
+  cmp var_unknown_08ff.w
   beq @unknown_80_a416
-  sta $08ff.w
+  sta var_unknown_08ff.w
   bmi @unknown_80_a3f7
   ldx #$0010.w
 @unknown_80_a3f7:
   txa
   clc
-  adc $08f7.w
-  sta $0990.w
+  adc var_unknown_08f7.w
+  sta var_unknown_0990.w
   txa
   clc
-  adc $0907.w
-  sta $0994.w
-  lda $08f9.w
-  sta $0992.w
-  lda $0909.w
-  sta $0996.w
+  adc var_unknown_0907.w
+  sta var_unknown_0994.w
+  lda var_unknown_08f9.w
+  sta var_unknown_0992.w
+  lda var_unknown_0909.w
+  sta var_unknown_0996.w
   jsr unknown_80_a9db
 @unknown_80_a416:
-  lda $091b.w
+  lda var_unknown_091b.w
   lsr A
   bcs @unknown_80_a44e
   ldx #$0000.w
-  lda $08fb.w
-  cmp $0903.w
+  lda var_unknown_08fb.w
+  cmp var_unknown_0903.w
   beq @unknown_80_a44e
-  sta $0903.w
+  sta var_unknown_0903.w
   bmi @unknown_80_a42f
   ldx #$0010.w
 @unknown_80_a42f:
   txa
   clc
-  adc $08fb.w
-  sta $0990.w
+  adc var_unknown_08fb.w
+  sta var_unknown_0990.w
   txa
   clc
-  adc $090b.w
-  sta $0994.w
-  lda $08fd.w
-  sta $0992.w
-  lda $090d.w
-  sta $0996.w
+  adc var_unknown_090b.w
+  sta var_unknown_0994.w
+  lda var_unknown_08fd.w
+  sta var_unknown_0992.w
+  lda var_unknown_090d.w
+  sta var_unknown_0996.w
   jsr unknown_80_a9d6
 @unknown_80_a44e:
   ldx #$0001.w
-  lda $08f9.w
-  cmp $0901.w
+  lda var_unknown_08f9.w
+  cmp var_unknown_0901.w
   beq @unknown_80_a480
-  sta $0901.w
+  sta var_unknown_0901.w
   bmi @unknown_80_a461
   ldx #$000f.w
 @unknown_80_a461:
   txa
   clc
-  adc $08f9.w
-  sta $0992.w
+  adc var_unknown_08f9.w
+  sta var_unknown_0992.w
   txa
   clc
-  adc $0909.w
-  sta $0996.w
-  lda $08f7.w
-  sta $0990.w
-  lda $0907.w
-  sta $0994.w
+  adc var_unknown_0909.w
+  sta var_unknown_0996.w
+  lda var_unknown_08f7.w
+  sta var_unknown_0990.w
+  lda var_unknown_0907.w
+  sta var_unknown_0994.w
   jsr unknown_80_ab75
 @unknown_80_a480:
-  lda $091c.w
+  lda var_unknown_091c.w
   lsr A
   bcs @unknown_80_a4b8
   ldx #$0001.w
-  lda $08fd.w
-  cmp $0905.w
+  lda var_unknown_08fd.w
+  cmp var_unknown_0905.w
   beq @unknown_80_a4b8
-  sta $0905.w
+  sta var_unknown_0905.w
   bmi @unknown_80_a499
   ldx #$000f.w
 @unknown_80_a499:
   txa
   clc
-  adc $08fd.w
-  sta $0992.w
+  adc var_unknown_08fd.w
+  sta var_unknown_0992.w
   txa
   clc
-  adc $090d.w
-  sta $0996.w
-  lda $08fb.w
-  sta $0990.w
-  lda $090b.w
-  sta $0994.w
+  adc var_unknown_090d.w
+  sta var_unknown_0996.w
+  lda var_unknown_08fb.w
+  sta var_unknown_0990.w
+  lda var_unknown_090b.w
+  sta var_unknown_0994.w
   jsr unknown_80_ab70
 @unknown_80_a4b8:
   plb
