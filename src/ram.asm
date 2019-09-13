@@ -83,6 +83,18 @@ var_unknown_74: db ; $7e0074
 var_unknown_75: db ; $7e0075
 var_unknown_76: db ; $7e0076
 var_unknown_77: db ; $7e0077
+var_unknown_78: db ; $7e0078
+var_unknown_79: db ; $7e0079
+var_unknown_7a: db ; $7e007a
+var_unknown_7b: db ; $7e007b
+var_unknown_7c: db ; $7e007c
+var_unknown_7d: db ; $7e007d
+var_unknown_7e: db ; $7e007e
+var_unknown_7f: db ; $7e007f
+var_unknown_80: db ; $7e0080
+var_unknown_81: db ; $7e0081
+var_unknown_82: db ; $7e0082
+var_unknown_83: db ; $7e0083
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $84) export
@@ -120,6 +132,25 @@ var_unknown_a3: dw ; $7e00a3
 ; Related to var_pressed_buttons_p2.
 var_unknown_a5: dw ; $7e00a5
 
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $b1) export
+var_unknown_b1: db ; $7e00b1
+var_unknown_b2: db ; $7e00b2
+var_unknown_b3: db ; $7e00b3
+var_unknown_b4: db ; $7e00b4
+var_unknown_b5: db ; $7e00b5
+var_unknown_b6: db ; $7e00b6
+var_unknown_b7: db ; $7e00b7
+var_unknown_b8: db ; $7e00b8
+var_unknown_b9: db ; $7e00b9
+var_unknown_ba: db ; $7e00ba
+var_unknown_bb: db ; $7e00bb
+var_unknown_bc: db ; $7e00bc
+var_unknown_bd: db ; $7e00bd
+var_unknown_be: db ; $7e00be
+var_unknown_bf: db ; $7e00bf
+var_unknown_c0: db ; $7e00c0
 .ende
 
 .define unknown_d2_count 0 ; TODO. The unknown_d2 array seems to be 0-terminated.
@@ -271,6 +302,10 @@ var_reserve_tank_timer: dw ; $7e0757
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $079f) export
 var_unknown_079f: db ; $7e079f
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $07ec) export
+var_unknown_07ec: db ; $7e07ec
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0998) export

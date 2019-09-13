@@ -2316,140 +2316,140 @@ unknown_80_91a9:
   .db $70
 
 unknown_80_91ee:
-  ldx $84
+  ldx var_unknown_84
   stx IO_NMITIMEN
-  ldx $51
+  ldx var_unknown_51
   stx IO_INIDISP
-  ldx $52
+  ldx var_unknown_52
   stx IO_OBSEL
-  ldx $55
+  ldx var_unknown_55
   stx IO_BGMODE
-  ldx $57
+  ldx var_unknown_57
   stx IO_MOSAIC
-  ldx $58
+  ldx var_unknown_58
   stx IO_BG1SC
-  ldx $59
+  ldx var_unknown_59
   stx IO_BG2SC
-  ldx $5a
+  ldx var_unknown_5a
   stx IO_BG3SC
-  ldx $5c
+  ldx var_unknown_5c
   stx IO_BG4SC
-  ldx $5d
+  ldx var_unknown_5d
   stx IO_BG12NBA
-  ldx $5e
+  ldx var_unknown_5e
   stx IO_BG34NBA
-  ldx $5f
+  ldx var_unknown_5f
   stx IO_M7SEL
-  ldx $60
+  ldx var_unknown_60
   stx IO_W12SEL
-  ldx $61
+  ldx var_unknown_61
   stx IO_W34SEL
-  ldx $62
+  ldx var_unknown_62
   stx IO_WOBJSEL
-  ldx $63
+  ldx var_unknown_63
   stx IO_WH0
-  ldx $64
+  ldx var_unknown_64
   stx IO_WH1
-  ldx $65
+  ldx var_unknown_65
   stx IO_WH2
-  ldx $66
+  ldx var_unknown_66
   stx IO_WH3
-  ldx $67
+  ldx var_unknown_67
   stx IO_WBGLOG
-  ldx $68
+  ldx var_unknown_68
   stx IO_WOBJLOG
-  ldx $69
-  stx $6a
+  ldx var_unknown_69
+  stx var_unknown_6a
   stx IO_TM
-  ldx $6c
+  ldx var_unknown_6c
   stx IO_TMW
-  ldx $6b
+  ldx var_unknown_6b
   stx IO_TS
-  ldx $6d
+  ldx var_unknown_6d
   stx IO_TSW
-  ldx $6f
+  ldx var_unknown_6f
   stx IO_CGWSEL
-  ldx $72
+  ldx var_unknown_72
   stx IO_CGADSUB
-  ldx $6e
-  stx $70
-  ldx $71
-  stx $73
-  ldx $74
+  ldx var_unknown_6e
+  stx var_unknown_70
+  ldx var_unknown_71
+  stx var_unknown_73
+  ldx var_unknown_74
   stx IO_COLDATA
-  ldx $75
+  ldx var_unknown_75
   stx IO_COLDATA
-  ldx $76
+  ldx var_unknown_76
   stx IO_COLDATA
-  ldx $77
+  ldx var_unknown_77
   stx IO_SETINI
-  ldx $b1
+  ldx var_unknown_b1
   stx IO_BG1HOFS
-  ldx $b2
+  ldx var_unknown_b2
   stx IO_BG1HOFS
-  ldx $b3
+  ldx var_unknown_b3
   stx IO_BG1VOFS
-  ldx $b4
+  ldx var_unknown_b4
   stx IO_BG1VOFS
-  ldx $b5
+  ldx var_unknown_b5
   stx IO_BG2HOFS
-  ldx $b6
+  ldx var_unknown_b6
   stx IO_BG2HOFS
-  ldx $b7
+  ldx var_unknown_b7
   stx IO_BG2VOFS
-  ldx $b8
+  ldx var_unknown_b8
   stx IO_BG2VOFS
-  ldx $b9
+  ldx var_unknown_b9
   stx IO_BG3HOFS
-  ldx $ba
+  ldx var_unknown_ba
   stx IO_BG3HOFS
-  ldx $bb
+  ldx var_unknown_bb
   stx IO_BG3VOFS
-  ldx $bc
+  ldx var_unknown_bc
   stx IO_BG3VOFS
-  ldx $bd
+  ldx var_unknown_bd
   stx IO_BG4HOFS
-  ldx $be
+  ldx var_unknown_be
   stx IO_BG4HOFS
-  ldx $bf
+  ldx var_unknown_bf
   stx IO_BG4VOFS
-  ldx $c0
+  ldx var_unknown_c0
   stx IO_BG4VOFS
-  ldx $56
-  stx $07ec.w
-  lda $55
+  ldx var_unknown_56
+  stx var_unknown_07ec.w
+  lda var_unknown_55
   and #$0007.w
   cmp #$0007.w
   beq @unknown_80_92fd
-  lda $56
+  lda var_unknown_56
   and #$0007.w
   cmp #$0007.w
   beq @unknown_80_92fd
   rts
 @unknown_80_92fd:
-  ldx $78
+  ldx var_unknown_78
   stx IO_M7A
-  ldx $79
+  ldx var_unknown_79
   stx IO_M7A
-  ldx $7a
+  ldx var_unknown_7a
   stx IO_M7B
-  ldx $7b
+  ldx var_unknown_7b
   stx IO_M7B
-  ldx $7c
+  ldx var_unknown_7c
   stx IO_M7C
-  ldx $7d
+  ldx var_unknown_7d
   stx IO_M7C
-  ldx $7e
+  ldx var_unknown_7e
   stx IO_M7D
-  ldx $7f
+  ldx var_unknown_7f
   stx IO_M7D
-  ldx $80
+  ldx var_unknown_80
   stx IO_M7X
-  ldx $81
+  ldx var_unknown_81
   stx IO_M7X
-  ldx $82
+  ldx var_unknown_82
   stx IO_M7Y
-  ldx $83
+  ldx var_unknown_83
   stx IO_M7Y
   rts
 
