@@ -16,8 +16,7 @@ unknown_80_8004: .db $00
 unknown_80_8005: .db $00
 unknown_80_8006: .db $00
 unknown_80_8007: .db $00
-unknown_80_8008: .db $00
-unknown_80_8009: .db $00
+unknown_80_8008: .dw $0000
 
 .struct unknown_80_800a@parameters
 unknown_0: db
@@ -59,7 +58,7 @@ unknown_80_800a:
   rtl
 
 unknown_80_8028:
-  lda $808008
+  lda unknown_80_8008.l
   beq @unknown_80_802f
   rts
 @unknown_80_802f:
@@ -67,19 +66,19 @@ unknown_80_8028:
   phb
   rep #$30
   lda #$ffff.w
-  sta $000617.l
+  sta var_unknown_0617.l - MEM_LOW_HIGH_RAM_BEGIN
   sep #$20
   rep #$10
   lda #$ff
-  sta $002140.l
-  ldy $00
-  lda $02
+  sta IO_APUI00.l
+  ldy var_unknown_00
+  lda var_unknown_02
   pha
   plb
   rep #$30
   jsr unknown_80_8059
   lda #$0000.w
-  sta $000617.l
+  sta var_unknown_0617.l - MEM_LOW_HIGH_RAM_BEGIN
   plb
   plp
   rts

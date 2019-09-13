@@ -1,6 +1,11 @@
 .include "include/common.asm"
 .include "include/memory.asm"
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $00) export
+var_unknown_00: dw ; $7e0000
+var_unknown_02: dw ; $7e0002
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $12) export
 var_unknown_12: dw ; $7e0012
 var_unknown_14: dw ; $7e0014
@@ -141,6 +146,10 @@ var_random_state: dw ; $7e05e5
 var_random_state_l: db ; $7e05e5
 var_random_state_h: db ; $7e05e6
 .endu
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0617) export
+var_unknown_0617: dw ; $7e0617
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071d) export
