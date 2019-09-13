@@ -1,9 +1,10 @@
 .include "include/asm.asm"
 .include "include/common.asm"
+.include "include/decompress_to.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/unknown_80_91a9.asm"
-.include "include/decompress_to.asm"
+.include "include/unknown_d2.asm"
 
 .bank ($80 - $80) slot $0
 .org $0
@@ -1595,38 +1596,38 @@ unknown_80_8bd3:
 unknown_80_8c83:
   php
   rep #$30
-  ldx $0330.w
+  ldx var_unknown_0330.w
   beq @unknown_80_8cc9
-  stz $d0, X
-  lda #$1801.w
-  sta $4310.w
+  stz var_unknown_d0, X
+  lda #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_BBAD_VRAM) << 8)
+  sta IO_DMAP1 ; IO_DMAP1 and IO_DMAP1
   ldy #$0000.w
 @unknown_80_8c96:
-  lda $00d0.w, Y
+  lda var_unknown_d0, Y
   beq @unknown_80_8cc9
-  sta $4315.w
-  lda $00d2.w, Y
-  sta $4312.w
-  lda $00d3.w, Y
-  sta $4313.w
+  sta IO_DAS1
+  lda (var_unknown_d2 + 0) & $ffff, Y
+  sta IO_A1T1
+  lda (var_unknown_d2 + 1) & $ffff, Y
+  sta IO_A1T1 + 1 ; IO_A1T1 (high) and IO_A1B1
   lda #IO_VMAIN_INCREMENT_HIGH
-  ldx $d5, Y
+  ldx (var_unknown_d2 + 3) & $ffff, Y
   bpl @unknown_80_8cb2
   inc A
 @unknown_80_8cb2:
   sta IO_VMAIN ; NOTE: This stores to IO_VMADDL too.
   stx IO_VMADD
   sep #$20
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN.w
   rep #$20
   tya
   clc
-  adc #$0007.w
+  adc #unknown_d2@entry@size
   tay
   bra @unknown_80_8c96
 @unknown_80_8cc9:
-  stz $0330.w
+  stz var_unknown_0330.w
   sep #$20
   rep #$10
   jsr unknown_80_8cd8
