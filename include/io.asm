@@ -259,6 +259,7 @@
 ; CPU: H/V-Blank flag and joypad busy flag
 .define IO_HVBJOY $4212.w
 .define IO_HVBJOY_JOYPAD_BUSY $01.b
+.define IO_HVBJOY_VBLANK $80.b
 
 ; CPU: unsigned division remainder and multiply product (16 bits)
 .define IO_RDMPY $4216.w

@@ -443,17 +443,19 @@ unknown_80_82ad:
 unknown_80_82b9:
   .db "supermetroid"
 
-; TODO: "Wait until the end of a VBlank" -- Kejardon
-unknown_80_82c5: pha
-/*unknown_80_82c6:*/ php
-/*unknown_80_82c7:*/ sep #$20
-@unknown_80_82c9: lda $4212.w
-/*unknown_80_82cc:*/ bpl @unknown_80_82c9
-@unknown_80_82ce: lda $4212.w
-/*unknown_80_82d1:*/ bmi @unknown_80_82ce
-/*unknown_80_82d3:*/ plp
-/*unknown_80_82d4:*/ pla
-/*unknown_80_82d5:*/ rtl
+wait_until_end_of_next_vblank:
+  pha
+  php
+  sep #$20
+@outside_vblank:
+  lda IO_HVBJOY
+  bpl @outside_vblank ; Branch if not IO_HVBJOY_VBLANK.
+@inside_vblank:
+  lda IO_HVBJOY
+  bmi @inside_vblank ; Branch if IO_HVBJOY_VBLANK.
+  plp
+  pla
+  rtl
 
 ; TODO: "Multiplies A and Y together (16-bit * 16-bit). Result in $05F1-$05F4.
 ; Not accurate: Can lose carry to top byte." -- Kejardon
