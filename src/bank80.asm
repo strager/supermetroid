@@ -581,18 +581,19 @@ unknown_80_835d:
   plp
   rtl
 
-/*unknown_80_836f:*/ php
-/*unknown_80_8370:*/ phb
-/*unknown_80_8371:*/ phk
-/*unknown_80_8372:*/ plb
-/*unknown_80_8373:*/ sep #$20
-/*unknown_80_8375:*/ lda $51
-/*unknown_80_8377:*/ ora #$80
-/*unknown_80_8379:*/ sta $51
-/*unknown_80_837b:*/ jsr $808338
-/*unknown_80_837f:*/ plb
-/*unknown_80_8380:*/ plp
-/*unknown_80_8381:*/ rtl
+unknown_80_836f:
+  php
+  phb
+  phk
+  plb
+  sep #$20
+  lda var_unknown_51
+  ora #$80
+  sta var_unknown_51
+  jsl render_and_synchronize
+  plb
+  plp
+  rtl
 
 /*unknown_80_8382:*/ php
 /*unknown_80_8383:*/ phb
