@@ -559,10 +559,10 @@ unknown_80_834b:
   phk
   plb
   sep #$20
-  lda $84
+  lda var_unknown_84
   ora #IO_NMITIMEN_ENABLE_VBLANK
   sta IO_NMITIMEN
-  sta $84
+  sta var_unknown_84
   plb
   plp
   rtl
