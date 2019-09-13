@@ -5716,79 +5716,79 @@ unknown_80_af02: ldx $0925.w
 ; TODO: "Scrolling routine for doors moving up. First time run is actually a fix
 ; to redraw top row of blocks." -- Kejardon
 unknown_80_af89:
-  ldx $0925.w
+  ldx var_unknown_0925.w
   phx
   bne @unknown_80_afcb
-  lda $b3
+  lda var_unknown_b3
   pha
-  lda $b7
+  lda var_unknown_b7
   pha
-  lda $0915.w
-  pha
-  sec
-  sbc #$0010.w
-  sta $0915.w
-  lda $0919.w
+  lda var_unknown_0915.w
   pha
   sec
   sbc #$0010.w
-  sta $0919.w
+  sta var_unknown_0915.w
+  lda var_unknown_0919.w
+  pha
+  sec
+  sbc #$0010.w
+  sta var_unknown_0919.w
   jsr unknown_80_a4bb
-  jsr $ae10.w
-  inc $0901.w
-  inc $0905.w
-  jsr $80a3a0
+  jsr unknown_80_ae10
+  inc var_unknown_0901.w
+  inc var_unknown_0905.w
+  jsl unknown_80_a3a0
   pla
-  sta $0919.w
+  sta var_unknown_0919.w
   pla
-  sta $0915.w
+  sta var_unknown_0915.w
   pla
-  sta $b7
+  sta var_unknown_b7
   pla
-  sta $b3
+  sta var_unknown_b3
   bra @unknown_80_b024
 @unknown_80_afcb:
-  lda $0afc.w
+  lda var_unknown_0afc.w
   sec
-  sbc $092b.w
-  sta $0afc.w
-  lda $0afa.w
-  sbc $092d.w
-  sta $0afa.w
-  sta $0b14.w
-  lda $0915.w
-  sec
-  sbc #$0004.w
-  sta $0915.w
-  lda $0919.w
+  sbc var_unknown_092b.w
+  sta var_unknown_0afc.w
+  lda var_unknown_0afa.w
+  sbc var_unknown_092d.w
+  sta var_unknown_0afa.w
+  sta var_unknown_0b14.w
+  lda var_unknown_0915.w
   sec
   sbc #$0004.w
-  sta $0919.w
+  sta var_unknown_0915.w
+  lda var_unknown_0919.w
+  sec
+  sbc #$0004.w
+  sta var_unknown_0919.w
   cpx #$0005.w
   bcs @unknown_80_b020
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
-  adc $091d.w
-  sta $b1
-  lda $0915.w
+  adc var_unknown_091d.w
+  sta var_unknown_b1
+  lda var_unknown_0915.w
   clc
-  adc $091f.w
-  sta $b3
-  lda $0917.w
+  adc var_unknown_091f.w
+  sta var_unknown_b3
+  lda var_unknown_0917.w
   clc
-  adc $0921.w
-  sta $b5
-  lda $0919.w
+  adc var_unknown_0921.w
+  sta var_unknown_b5
+  lda var_unknown_0919.w
   clc
-  adc $0923.w
-  sta $b7
+  adc var_unknown_0923.w
+  sta var_unknown_b7
   bra @unknown_80_b024
 @unknown_80_b020:
-  jsr $80a3a0
+  jsl unknown_80_a3a0
 @unknown_80_b024:
   plx
   inx
-  stx $0925.w
+  stx var_unknown_0925.w
   cpx #$0039.w
   bne @unknown_80_b030
   sec
