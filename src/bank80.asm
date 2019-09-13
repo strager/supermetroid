@@ -4532,124 +4532,135 @@ unknown_80_a4bb:
 
 ; TODO: "Handles autoscrolling when Samus isn't moving horizontally and part of
 ; the screen is on a no-scroll area." -- Kejardon
-unknown_80_a528: php
-/*unknown_80_a529:*/ phb
-/*unknown_80_a52a:*/ sep #$20
-/*unknown_80_a52c:*/ lda $0a78.w
-/*unknown_80_a52f:*/ ora $0a79.w
-/*unknown_80_a532:*/ beq @unknown_80_a537
-/*unknown_80_a534:*/ jmp $a63e.w
-@unknown_80_a537: lda #$8f
-/*unknown_80_a539:*/ pha
-/*unknown_80_a53a:*/ plb
-/*unknown_80_a53b:*/ rep #$30
-/*unknown_80_a53d:*/ lda $0911.w
-/*unknown_80_a540:*/ sta $0939.w
-/*unknown_80_a543:*/ bpl @unknown_80_a548
-/*unknown_80_a545:*/ stz $0911.w
-@unknown_80_a548: lda $07a9.w
-/*unknown_80_a54b:*/ dec A
-/*unknown_80_a54c:*/ xba
-/*unknown_80_a54d:*/ cmp $0911.w
-/*unknown_80_a550:*/ bcs @unknown_80_a555
-/*unknown_80_a552:*/ sta $0911.w
-@unknown_80_a555: lda $0915.w
-/*unknown_80_a558:*/ clc
-/*unknown_80_a559:*/ adc #$0080.w
-/*unknown_80_a55c:*/ xba
-/*unknown_80_a55d:*/ sep #$20
-/*unknown_80_a55f:*/ sta $4202.w
-/*unknown_80_a562:*/ lda $07a9.w
-/*unknown_80_a565:*/ sta $4203.w
-/*unknown_80_a568:*/ rep #$20
-/*unknown_80_a56a:*/ lda $0912.w
-/*unknown_80_a56d:*/ and #$00ff.w
-/*unknown_80_a570:*/ clc
-/*unknown_80_a571:*/ adc $4216.w
-/*unknown_80_a574:*/ tax
-/*unknown_80_a575:*/ lda $7ecd20, X
-/*unknown_80_a579:*/ and #$00ff.w
-/*unknown_80_a57c:*/ bne @unknown_80_a5d9
-/*unknown_80_a57e:*/ lda $0911.w
-/*unknown_80_a581:*/ and #$ff00.w
-/*unknown_80_a584:*/ clc
-/*unknown_80_a585:*/ adc #$0100.w
-/*unknown_80_a588:*/ sta $0933.w
-/*unknown_80_a58b:*/ lda $0939.w
-/*unknown_80_a58e:*/ clc
-/*unknown_80_a58f:*/ adc $0da2.w
-/*unknown_80_a592:*/ adc #$0002.w
-/*unknown_80_a595:*/ cmp $0933.w
-/*unknown_80_a598:*/ bcs @unknown_80_a5d4
-/*unknown_80_a59a:*/ sta $0939.w
-/*unknown_80_a59d:*/ lda $0915.w
-/*unknown_80_a5a0:*/ clc
-/*unknown_80_a5a1:*/ adc #$0080.w
-/*unknown_80_a5a4:*/ xba
-/*unknown_80_a5a5:*/ sep #$20
-/*unknown_80_a5a7:*/ sta $4202.w
-/*unknown_80_a5aa:*/ lda $07a9.w
-/*unknown_80_a5ad:*/ sta $4203.w
-/*unknown_80_a5b0:*/ rep #$20
-/*unknown_80_a5b2:*/ lda $093a.w
-/*unknown_80_a5b5:*/ inc A
-/*unknown_80_a5b6:*/ and #$00ff.w
-/*unknown_80_a5b9:*/ clc
-/*unknown_80_a5ba:*/ adc $4216.w
-/*unknown_80_a5bd:*/ tax
-/*unknown_80_a5be:*/ lda $7ecd20, X
-/*unknown_80_a5c2:*/ and #$00ff.w
-/*unknown_80_a5c5:*/ bne @unknown_80_a5cf
-/*unknown_80_a5c7:*/ lda $0939.w
-/*unknown_80_a5ca:*/ and #$ff00.w
-/*unknown_80_a5cd:*/ bra @unknown_80_a63b
-@unknown_80_a5cf: lda $0939.w
-/*unknown_80_a5d2:*/ bra @unknown_80_a63b
-@unknown_80_a5d4: lda $0933.w
-/*unknown_80_a5d7:*/ bra @unknown_80_a63b
-@unknown_80_a5d9: inx
-/*unknown_80_a5da:*/ lda $7ecd20, X
-/*unknown_80_a5de:*/ and #$00ff.w
-/*unknown_80_a5e1:*/ bne @unknown_80_a63e
-/*unknown_80_a5e3:*/ lda $0911.w
-/*unknown_80_a5e6:*/ and #$ff00.w
-/*unknown_80_a5e9:*/ sta $0933.w
-/*unknown_80_a5ec:*/ lda $0939.w
-/*unknown_80_a5ef:*/ sec
-/*unknown_80_a5f0:*/ sbc $0da2.w
-/*unknown_80_a5f3:*/ sbc #$0002.w
-/*unknown_80_a5f6:*/ cmp $0933.w
-/*unknown_80_a5f9:*/ bmi @unknown_80_a638
-/*unknown_80_a5fb:*/ sta $0939.w
-/*unknown_80_a5fe:*/ lda $0915.w
-/*unknown_80_a601:*/ clc
-/*unknown_80_a602:*/ adc #$0080.w
-/*unknown_80_a605:*/ xba
-/*unknown_80_a606:*/ sep #$20
-/*unknown_80_a608:*/ sta $4202.w
-/*unknown_80_a60b:*/ lda $07a9.w
-/*unknown_80_a60e:*/ sta $4203.w
-/*unknown_80_a611:*/ rep #$20
-/*unknown_80_a613:*/ lda $093a.w
-/*unknown_80_a616:*/ and #$00ff.w
-/*unknown_80_a619:*/ clc
-/*unknown_80_a61a:*/ adc $4216.w
-/*unknown_80_a61d:*/ tax
-/*unknown_80_a61e:*/ lda $7ecd20, X
-/*unknown_80_a622:*/ and #$00ff.w
-/*unknown_80_a625:*/ bne @unknown_80_a633
-/*unknown_80_a627:*/ lda $0939.w
-/*unknown_80_a62a:*/ and #$ff00.w
-/*unknown_80_a62d:*/ clc
-/*unknown_80_a62e:*/ adc #$0100.w
-/*unknown_80_a631:*/ bra @unknown_80_a63b
-@unknown_80_a633: lda $0939.w
-/*unknown_80_a636:*/ bra @unknown_80_a63b
-@unknown_80_a638: lda $0933.w
-@unknown_80_a63b: sta $0911.w
-@unknown_80_a63e: plb
-/*unknown_80_a63f:*/ plp
-/*unknown_80_a640:*/ rtl
+unknown_80_a528:
+  php
+  phb
+  sep #$20
+  lda $0a78.w
+  ora $0a79.w
+  beq @unknown_80_a537
+  jmp $a63e.w
+@unknown_80_a537:
+  lda #$8f
+  pha
+  plb
+  rep #$30
+  lda $0911.w
+  sta $0939.w
+  bpl @unknown_80_a548
+  stz $0911.w
+@unknown_80_a548:
+  lda $07a9.w
+  dec A
+  xba
+  cmp $0911.w
+  bcs @unknown_80_a555
+  sta $0911.w
+@unknown_80_a555:
+  lda $0915.w
+  clc
+  adc #$0080.w
+  xba
+  sep #$20
+  sta $4202.w
+  lda $07a9.w
+  sta $4203.w
+  rep #$20
+  lda $0912.w
+  and #$00ff.w
+  clc
+  adc $4216.w
+  tax
+  lda $7ecd20, X
+  and #$00ff.w
+  bne @unknown_80_a5d9
+  lda $0911.w
+  and #$ff00.w
+  clc
+  adc #$0100.w
+  sta $0933.w
+  lda $0939.w
+  clc
+  adc $0da2.w
+  adc #$0002.w
+  cmp $0933.w
+  bcs @unknown_80_a5d4
+  sta $0939.w
+  lda $0915.w
+  clc
+  adc #$0080.w
+  xba
+  sep #$20
+  sta $4202.w
+  lda $07a9.w
+  sta $4203.w
+  rep #$20
+  lda $093a.w
+  inc A
+  and #$00ff.w
+  clc
+  adc $4216.w
+  tax
+  lda $7ecd20, X
+  and #$00ff.w
+  bne @unknown_80_a5cf
+  lda $0939.w
+  and #$ff00.w
+  bra @unknown_80_a63b
+@unknown_80_a5cf:
+  lda $0939.w
+  bra @unknown_80_a63b
+@unknown_80_a5d4:
+  lda $0933.w
+  bra @unknown_80_a63b
+@unknown_80_a5d9:
+  inx
+  lda $7ecd20, X
+  and #$00ff.w
+  bne @unknown_80_a63e
+  lda $0911.w
+  and #$ff00.w
+  sta $0933.w
+  lda $0939.w
+  sec
+  sbc $0da2.w
+  sbc #$0002.w
+  cmp $0933.w
+  bmi @unknown_80_a638
+  sta $0939.w
+  lda $0915.w
+  clc
+  adc #$0080.w
+  xba
+  sep #$20
+  sta $4202.w
+  lda $07a9.w
+  sta $4203.w
+  rep #$20
+  lda $093a.w
+  and #$00ff.w
+  clc
+  adc $4216.w
+  tax
+  lda $7ecd20, X
+  and #$00ff.w
+  bne @unknown_80_a633
+  lda $0939.w
+  and #$ff00.w
+  clc
+  adc #$0100.w
+  bra @unknown_80_a63b
+@unknown_80_a633:
+  lda $0939.w
+  bra @unknown_80_a63b
+@unknown_80_a638:
+  lda $0933.w
+@unknown_80_a63b:
+  sta $0911.w
+@unknown_80_a63e:
+  plb
+  plp
+  rtl
 
 ; TODO: "Handles scrolling when Samus moves and triggered scrolling right.
 ; Checks scrollmap." -- Kejardon
