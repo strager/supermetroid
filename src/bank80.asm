@@ -5537,15 +5537,16 @@ unknown_80_ad1d:
 /*unknown_80_ae0f:*/ .db $ad
 
 ; TODO: "Record X/Y scrolling for BG1/BG2 during room transitions" -- Kejardon
-unknown_80_ae10: lda $08f7.w
-/*unknown_80_ae13:*/ sta $08ff.w
-/*unknown_80_ae16:*/ lda $08fb.w
-/*unknown_80_ae19:*/ sta $0903.w
-/*unknown_80_ae1c:*/ lda $08f9.w
-/*unknown_80_ae1f:*/ sta $0901.w
-/*unknown_80_ae22:*/ lda $08fd.w
-/*unknown_80_ae25:*/ sta $0905.w
-/*unknown_80_ae28:*/ rts
+unknown_80_ae10:
+  lda var_unknown_08f7.w
+  sta var_unknown_08ff.w
+  lda var_unknown_08fb.w
+  sta var_unknown_0903.w
+  lda var_unknown_08f9.w
+  sta var_unknown_0901.w
+  lda var_unknown_08fd.w
+  sta var_unknown_0905.w
+  rts
 
 unknown_80_ae29: lda $b1
 /*unknown_80_ae2b:*/ sec
