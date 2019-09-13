@@ -4302,22 +4302,22 @@ unknown_80_a33a:
 ; TODO: "Translates Layer 1 and Layer 2 scroll positions to BG1 and BG2 scroll
 ; positions" -- Kejardon
 unknown_80_a37b:
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
-  adc $091d.w
-  sta $b1
-  lda $0915.w
+  adc var_unknown_091d.w
+  sta var_unknown_b1
+  lda var_unknown_0915.w
   clc
-  adc $091f.w
-  sta $b3
-  lda $0917.w
+  adc var_unknown_091f.w
+  sta var_unknown_b3
+  lda var_unknown_0917.w
   clc
-  adc $0921.w
-  sta $b5
-  lda $0919.w
+  adc var_unknown_0921.w
+  sta var_unknown_b5
+  lda var_unknown_0919.w
   clc
-  adc $0923.w
-  sta $b7
+  adc var_unknown_0923.w
+  sta var_unknown_b7
   rts
 
 ; TODO: "Updates only BG1 when scrolling, I think" -- Kejardon
