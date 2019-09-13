@@ -1591,31 +1591,45 @@ unknown_80_8bd3:
   tax
   jmp @unknown_80_8bd4
 
-; TODO: "Processes $D0,X table. Runs once a frame during VBlank, should not be
-; called outside of VBlank." -- Kejardon
-unknown_80_8c83:
+; Copy data to VRAM according to var_vram_write_queue.
+;
+; Call this routine only during V-blank.
+;
+; Inputs:
+; * [var_vram_write_queue]
+; * [var_vram_write_queue_tail]
+;
+; Outputs:
+; * [var_vram_write_queue_tail]: Reset to 0.
+; * VRAM
+flush_vram_write_queue:
   php
   rep #$30
   ldx var_vram_write_queue_tail.w
-  beq @unknown_80_8cc9
-  stz var_vram_write_queue, X
+  beq @done
+  ; Mark the entry after the last.
+  stz (var_vram_write_queue + vram_write_queue@entry.copy_size) & $ffff, X
+@configure_dma:
   lda #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_BBAD_VRAM) << 8)
   sta IO_DMAP1 ; IO_DMAP1 and IO_DMAP1
-  ldy #$0000.w
-@unknown_80_8c96:
+@copy_first_entry:
+  ldy #0
+@copy_entry:
   lda (var_vram_write_queue + vram_write_queue@entry.copy_size) & $ffff, Y
-  beq @unknown_80_8cc9
+  beq @done ; Stop when we encounter the entry marked above.
   sta IO_DAS1
   lda (var_vram_write_queue + vram_write_queue@entry.source_address) & $ffff, Y
   sta IO_A1T1
   lda (var_vram_write_queue + vram_write_queue@entry.source_address + 1) & $ffff, Y
-  sta IO_A1T1 + 1 ; IO_A1T1 (high) and IO_A1B1
+  sta IO_A1T1 + 1 ; Address: IO_A1T1H and IO_A1B1
   lda #IO_VMAIN_INCREMENT_HIGH
   ldx (var_vram_write_queue + vram_write_queue@entry.vram_address) & $ffff, Y
-  bpl @unknown_80_8cb2
-  inc A
-@unknown_80_8cb2:
-  sta IO_VMAIN ; NOTE: This stores to IO_VMADDL too.
+  bpl @increment_32_flag_unset
+  inc A ; A := A | IO_VMAIN_INCREMENT_32
+@increment_32_flag_unset:
+  sta IO_VMAIN ; Address: IO_VMAIN and IO_VMADDL. Store to IO_VMADDL is dead.
+  ; NOTE: Bit 15 of IO_VMADD is ignored, so we don't need to mask off
+  ; VRAM_WRITE_QUEUE_INCREMENT_32 ($8000).
   stx IO_VMADD
   sep #$20
   lda #IO_MDMAEN_1
@@ -1625,8 +1639,8 @@ unknown_80_8c83:
   clc
   adc #vram_write_queue@entry@size
   tay
-  bra @unknown_80_8c96
-@unknown_80_8cc9:
+  bra @copy_entry
+@done:
   stz var_vram_write_queue_tail.w
   sep #$20
   rep #$10
@@ -2765,7 +2779,7 @@ interrupt_nmi:
 @unknown_80_95cc:
   jsl unknown_80_8bba
 @unknown_80_95d0:
-  jsl unknown_80_8c83
+  jsl flush_vram_write_queue
   jsl unknown_80_8ea2
   sep #$10
   rep #$20

@@ -10,3 +10,5 @@ source_address_bank: db
 vram_address: dw
 .endst
 .define vram_write_queue@entry@size _sizeof_vram_write_queue@entry
+
+.define VRAM_WRITE_QUEUE_INCREMENT_32 $8000.w
