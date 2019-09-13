@@ -280,19 +280,20 @@ unknown_80_818e:
   rtl
 
 ; TODO: "Set boss bits in A for current area (7E:D828,X)" -- Kejardon
-unknown_80_81a6: phx
-/*unknown_80_81a7:*/ phy
-/*unknown_80_81a8:*/ php
-/*unknown_80_81a9:*/ sep #$20
-/*unknown_80_81ab:*/ sta $05e7.w
-/*unknown_80_81ae:*/ ldx $079f.w
-/*unknown_80_81b1:*/ lda $7ed828, X
-/*unknown_80_81b5:*/ ora $05e7.w
-/*unknown_80_81b8:*/ sta $7ed828, X
-/*unknown_80_81bc:*/ plp
-/*unknown_80_81bd:*/ ply
-/*unknown_80_81be:*/ plx
-/*unknown_80_81bf:*/ rtl
+unknown_80_81a6:
+  phx
+  phy
+  php
+  sep #$20
+  sta var_unknown_05e7.w
+  ldx var_unknown_079f.w
+  lda var_unknown_d828.l, X
+  ora var_unknown_05e7.w
+  sta var_unknown_d828.l, X
+  plp
+  ply
+  plx
+  rtl
 
 /*unknown_80_81c0:*/ phx
 /*unknown_80_81c1:*/ phy
