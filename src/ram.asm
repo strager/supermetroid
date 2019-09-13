@@ -121,8 +121,17 @@ var_unknown_a5: dw ; $7e00a5
 
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0371) export
+var_unknown_0371: ds 4 * 128 ; $7e0371
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0590) export
+.union
 var_unknown_0590: dw ; $7e0590
+.nextu
+var_unknown_0590_l: db ; $7e0590
+var_unknown_0590_h: db ; $7e0591
+.endu
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05b4) export

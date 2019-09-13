@@ -1416,138 +1416,16 @@ unknown_80_896e:
   stz var_unknown_0590.w
   plp
   rtl
-
 @unknown_80_8992:
-  sta $0371.w
-  sta $0375.w
-  sta $0379.w
-  sta $037d.w
-  sta $0381.w
-  sta $0385.w
-  sta $0389.w
-  sta $038d.w
-  sta $0391.w
-  sta $0395.w
-  sta $0399.w
-  sta $039d.w
-  sta $03a1.w
-  sta $03a5.w
-  sta $03a9.w
-  sta $03ad.w
-  sta $03b1.w
-  sta $03b5.w
-  sta $03b9.w
-  sta $03bd.w
-  sta $03c1.w
-  sta $03c5.w
-  sta $03c9.w
-  sta $03cd.w
-  sta $03d1.w
-  sta $03d5.w
-  sta $03d9.w
-  sta $03dd.w
-  sta $03e1.w
-  sta $03e5.w
-  sta $03e9.w
-  sta $03ed.w
-  sta $03f1.w
-  sta $03f5.w
-  sta $03f9.w
-  sta $03fd.w
-  sta $0401.w
-  sta $0405.w
-  sta $0409.w
-  sta $040d.w
-  sta $0411.w
-  sta $0415.w
-  sta $0419.w
-  sta $041d.w
-  sta $0421.w
-  sta $0425.w
-  sta $0429.w
-  sta $042d.w
-  sta $0431.w
-  sta $0435.w
-  sta $0439.w
-  sta $043d.w
-  sta $0441.w
-  sta $0445.w
-  sta $0449.w
-  sta $044d.w
-  sta $0451.w
-  sta $0455.w
-  sta $0459.w
-  sta $045d.w
-  sta $0461.w
-  sta $0465.w
-  sta $0469.w
-  sta $046d.w
-  sta $0471.w
-  sta $0475.w
-  sta $0479.w
-  sta $047d.w
-  sta $0481.w
-  sta $0485.w
-  sta $0489.w
-  sta $048d.w
-  sta $0491.w
-  sta $0495.w
-  sta $0499.w
-  sta $049d.w
-  sta $04a1.w
-  sta $04a5.w
-  sta $04a9.w
-  sta $04ad.w
-  sta $04b1.w
-  sta $04b5.w
-  sta $04b9.w
-  sta $04bd.w
-  sta $04c1.w
-  sta $04c5.w
-  sta $04c9.w
-  sta $04cd.w
-  sta $04d1.w
-  sta $04d5.w
-  sta $04d9.w
-  sta $04dd.w
-  sta $04e1.w
-  sta $04e5.w
-  sta $04e9.w
-  sta $04ed.w
-  sta $04f1.w
-  sta $04f5.w
-  sta $04f9.w
-  sta $04fd.w
-  sta $0501.w
-  sta $0505.w
-  sta $0509.w
-  sta $050d.w
-  sta $0511.w
-  sta $0515.w
-  sta $0519.w
-  sta $051d.w
-  sta $0521.w
-  sta $0525.w
-  sta $0529.w
-  sta $052d.w
-  sta $0531.w
-  sta $0535.w
-  sta $0539.w
-  sta $053d.w
-  sta $0541.w
-  sta $0545.w
-  sta $0549.w
-  sta $054d.w
-  sta $0551.w
-  sta $0555.w
-  sta $0559.w
-  sta $055d.w
-  sta $0561.w
-  sta $0565.w
-  sta $0569.w
-  sta $056d.w
-  stz $0590.w
-  stz $0591.w
+.define index 0
+.repeat 128
+  sta (var_unknown_0371.w + (index * 4)) & $ffff
+  .redefine index index + 1
+.endr
+.undefine index
+
+  stz var_unknown_0590_l.w
+  stz var_unknown_0590_h.w
   plp
   rtl
 
