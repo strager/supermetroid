@@ -677,7 +677,7 @@ unknown_80_83f6:
   plb
   rep #$30
 @loop:
-  sta MEM_LOW_HIGH_RAM_BANK << 16, X
+  sta MEM_LOW_HIGH_RAM_BEGIN, X
   inx
   inx
   dey
