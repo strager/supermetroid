@@ -4733,50 +4733,50 @@ unknown_80_a6bb:
   pha
   plb
   rep #$30
-  lda $0911.w
-  sta $0939.w
-  cmp $0b0a.w
+  lda var_unknown_0911.w
+  sta var_unknown_0939.w
+  cmp var_unknown_0b0a.w
   bpl @unknown_80_a6d9
-  lda $0b0a.w
-  sta $0911.w
-  stz $090f.w
+  lda var_unknown_0b0a.w
+  sta var_unknown_0911.w
+  stz var_unknown_090f.w
 @unknown_80_a6d9:
-  lda $0911.w
+  lda var_unknown_0911.w
   bpl @unknown_80_a6e3
-  stz $0911.w
+  stz var_unknown_0911.w
   bra @unknown_80_a72e
 @unknown_80_a6e3:
-  lda $0915.w
+  lda var_unknown_0915.w
   clc
   adc #$0080.w
   xba
   sep #$20
   sta IO_WRMPYA
-  lda $07a9.w
+  lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda $0912.w
-  and #$00ff.w
+  lda (var_unknown_0911.w + 1) & $ffff
+  and #$00ff.w ; [var_unknown_0911] >> 8
   clc
-  adc $4216.w
+  adc IO_RDMPY
   tax
-  lda $7ecd20, X
+  lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a72e
-  lda $0911.w
+  lda var_unknown_0911.w
   and #$ff00.w
   clc
   adc #$0100.w
-  sta $0933.w
-  lda $0939.w
+  sta var_unknown_0933.w
+  lda var_unknown_0939.w
   clc
-  adc $0da2.w
+  adc var_unknown_0da2.w
   adc #$0002.w
-  cmp $0933.w
+  cmp var_unknown_0933.w
   bcc @unknown_80_a72b
-  lda $0933.w
+  lda var_unknown_0933.w
 @unknown_80_a72b:
-  sta $0911.w
+  sta var_unknown_0911.w
 @unknown_80_a72e:
   plb
   plp
