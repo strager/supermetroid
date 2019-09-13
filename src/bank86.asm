@@ -8074,35 +8074,78 @@ unknown_86_c239: jsr unknown_86_c3e9
 @unknown_86_c26a: sec
 /*unknown_86_c26b:*/ rts
 
-; TODO: "Calculates A * sin ($12 * 360/256), result in A." -- Kejardon
-unknown_86_c26c:
+; Calculate sin(THETA) * A, where
+; THETA = [var_unknown_12] * 2*pi/sine_table@count.
+;
+; Inputs:
+; * A: unsigned 16-bit multiplier
+; * [var_unknown_12]: angle in range [0, sine_table@count)
+;
+; Outputs:
+; * A: sin(THETA) * A
+;
+; See also: cosine_times_a
+sine_times_a:
   sta var_multiply_16_input_1
   lda var_unknown_12
-  bra @unknown_86_c27a
-; TODO: "Calculates A * cos ($12 * 360/256), result in A." -- Kejardon
-@unknown_86_c272:
+  bra _multiply_sine
+
+; Calculate cos(THETA) * A, where
+; THETA = [var_unknown_12] * 2*pi/sine_table@count.
+;
+; Inputs:
+; * A: unsigned 16-bit multiplier
+; * [var_unknown_12]: angle in range [0, sine_table@count)
+;
+; Outputs:
+; * A: sin(THETA) * A
+;
+; See also: sine_times_a
+cosine_times_a:
   sta var_multiply_16_input_1
   lda var_unknown_12
   clc
   adc #sine_table@count / 4
-@unknown_86_c27a:
+  ; Fall through.
+
+; Calculate cos(THETA) * A, where
+; THETA = [var_unknown_12] * 2*pi/sine_table@count.
+;
+; Inputs:
+; * [var_multiply_16_input_1]: unsigned 16-bit multiplier
+; * [var_unknown_12]: angle in range [0, sine_table@count)
+;
+; Outputs:
+; * A: sin(THETA) * A
+_multiply_sine:
+  ; A := abs(sin(THETA) * $100)
   asl A
   and #sine_table@mask
   tax
   lda sine_table.l, X
   sta var_unknown_2e
-  bpl @unknown_86_c28b
+  bpl @non_negative_sine_1
+@negative_sine_1:
   eor #$ffff.w
   inc A
-@unknown_86_c28b:
+
+@non_negative_sine_1:
+  ; A := abs(sin(THETA) * $100) * original_A / $100
+  ;    = abs(sin(THETA)) * original_A
   sta var_multiply_16_input_2
   jsr multiply_16
   lda0 var_multiply_16_output + 1
+
+  ; A := A * sign(sin(THETA))
+  ;    = sin(THETA) * original_A
   bit var_unknown_2e
-  bpl @unknown_86_c29a
+  bpl @non_negative_sine_2
+@negative_sine_2:
   eor #$ffff.w
   inc A
-@unknown_86_c29a:
+
+@non_negative_sine_2:
+@done:
   rtl
 
 ; Multiply two 16-bit integers, calculating a 32-bit result.
