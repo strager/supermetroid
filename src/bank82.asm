@@ -1145,23 +1145,25 @@ unknown_82_89ea: jsr $819e3e
 /*unknown_82_89ee:*/ rts
 
 ; TODO: "Sound effects" -- Kejardon
-unknown_82_89ef: php
-/*unknown_82_89f0:*/ sep #$30
-/*unknown_82_89f2:*/ lda $0686.w
-/*unknown_82_89f5:*/ dec A
-/*unknown_82_89f6:*/ bpl @unknown_82_8a0b
-/*unknown_82_89f8:*/ ldy #$00
-@unknown_82_89fa: phy
-/*unknown_82_89fb:*/ lda $0649.w, Y
-/*unknown_82_89fe:*/ asl A
-/*unknown_82_89ff:*/ tax
-/*unknown_82_8a00:*/ jsr ($8a22.w, X)
-/*unknown_82_8a03:*/ ply
-/*unknown_82_8a04:*/ iny
-/*unknown_82_8a05:*/ cpy #$03
-/*unknown_82_8a07:*/ bcc @unknown_82_89fa
-/*unknown_82_8a09:*/ plp
-/*unknown_82_8a0a:*/ rtl
+unknown_82_89ef:
+  php
+  sep #$30
+  lda $0686.w
+  dec A
+  bpl @unknown_82_8a0b
+  ldy #$00
+@unknown_82_89fa:
+  phy
+  lda $0649.w, Y
+  asl A
+  tax
+  jsr ($8a22.w, X)
+  ply
+  iny
+  cpy #$03
+  bcc @unknown_82_89fa
+  plp
+  rtl
 
 @unknown_82_8a0b: sta $0686.w
 /*unknown_82_8a0e:*/ stz $2141.w
@@ -1244,29 +1246,33 @@ unknown_82_89ef: php
 /*unknown_82_8aaf:*/ rtl
 
 ; TODO: "A lot of debug stuff, and put $8B into $0DFE" -- Kejardon
-unknown_82_8ab0: php
-/*unknown_82_8ab1:*/ rep #$30
-/*unknown_82_8ab3:*/ lda $05c5.w
-/*unknown_82_8ab6:*/ and #$4000.w
-/*unknown_82_8ab9:*/ beq @unknown_82_8acb
-/*unknown_82_8abb:*/ lda $0df4.w
-/*unknown_82_8abe:*/ bne @unknown_82_8ac8
-/*unknown_82_8ac0:*/ lda #$0001.w
-/*unknown_82_8ac3:*/ sta $0df4.w
-/*unknown_82_8ac6:*/ bra @unknown_82_8acb
-@unknown_82_8ac8: stz $0df4.w
-@unknown_82_8acb: lda $0df4.w
-/*unknown_82_8ace:*/ beq @unknown_82_8add
-/*unknown_82_8ad0:*/ sep #$20
-/*unknown_82_8ad2:*/ lda $51
-/*unknown_82_8ad4:*/ and #$f0
-/*unknown_82_8ad6:*/ ora #$05
-/*unknown_82_8ad8:*/ sta $2100.w
-/*unknown_82_8adb:*/ rep #$20
-@unknown_82_8add: lda $8b
-/*unknown_82_8adf:*/ sta $0dfe.w
-/*unknown_82_8ae2:*/ plp
-/*unknown_82_8ae3:*/ rtl
+unknown_82_8ab0:
+  php
+  rep #$30
+  lda $05c5.w
+  and #$4000.w
+  beq @unknown_82_8acb
+  lda $0df4.w
+  bne @unknown_82_8ac8
+  lda #$0001.w
+  sta $0df4.w
+  bra @unknown_82_8acb
+@unknown_82_8ac8:
+  stz $0df4.w
+@unknown_82_8acb:
+  lda $0df4.w
+  beq @unknown_82_8add
+  sep #$20
+  lda $51
+  and #$f0
+  ora #$05
+  sta $2100.w
+  rep #$20
+@unknown_82_8add:
+  lda $8b
+  sta $0dfe.w
+  plp
+  rtl
 
 unknown_82_8ae4: stz $0df8.w
 /*unknown_82_8ae7:*/ stz $0dfa.w
@@ -1836,56 +1842,58 @@ das: .dw unknown_b6_e800@size
 
 ; TODO: "Writes the number next to your reserve amount in the pause screen"
 ; -- Kejardon
-unknown_82_8f70: php
-/*unknown_82_8f71:*/ rep #$30
-/*unknown_82_8f73:*/ lda $09d4.w
-/*unknown_82_8f76:*/ beq @unknown_82_8fd2
-/*unknown_82_8f78:*/ lda $09d6.w
-/*unknown_82_8f7b:*/ sta $4204.w
-/*unknown_82_8f7e:*/ sep #$20
-/*unknown_82_8f80:*/ lda #$64
-/*unknown_82_8f82:*/ sta $4206.w
-/*unknown_82_8f85:*/ nop
-/*unknown_82_8f86:*/ nop
-/*unknown_82_8f87:*/ nop
-/*unknown_82_8f88:*/ nop
-/*unknown_82_8f89:*/ nop
-/*unknown_82_8f8a:*/ nop
-/*unknown_82_8f8b:*/ nop
-/*unknown_82_8f8c:*/ nop
-/*unknown_82_8f8d:*/ nop
-/*unknown_82_8f8e:*/ lda $4214.w
-/*unknown_82_8f91:*/ sta $2a
-/*unknown_82_8f93:*/ lda $4215.w
-/*unknown_82_8f96:*/ sta $2b
-/*unknown_82_8f98:*/ lda $4216.w
-/*unknown_82_8f9b:*/ sta $4204.w
-/*unknown_82_8f9e:*/ lda $4217.w
-/*unknown_82_8fa1:*/ sta $4205.w
-/*unknown_82_8fa4:*/ lda #$0a
-/*unknown_82_8fa6:*/ sta $4206.w
-/*unknown_82_8fa9:*/ rep #$20
-/*unknown_82_8fab:*/ nop
-/*unknown_82_8fac:*/ nop
-/*unknown_82_8fad:*/ nop
-/*unknown_82_8fae:*/ nop
-/*unknown_82_8faf:*/ nop
-/*unknown_82_8fb0:*/ nop
-/*unknown_82_8fb1:*/ nop
-/*unknown_82_8fb2:*/ lda $4216.w
-/*unknown_82_8fb5:*/ clc
-/*unknown_82_8fb6:*/ adc #$0804.w
-/*unknown_82_8fb9:*/ sta $7e3b14
-/*unknown_82_8fbd:*/ lda $4214.w
-/*unknown_82_8fc0:*/ clc
-/*unknown_82_8fc1:*/ adc #$0804.w
-/*unknown_82_8fc4:*/ sta $7e3b12
-/*unknown_82_8fc8:*/ lda $2a
-/*unknown_82_8fca:*/ clc
-/*unknown_82_8fcb:*/ adc #$0804.w
-/*unknown_82_8fce:*/ sta $7e3b10
-@unknown_82_8fd2: plp
-/*unknown_82_8fd3:*/ rts
+unknown_82_8f70:
+  php
+  rep #$30
+  lda $09d4.w
+  beq @unknown_82_8fd2
+  lda $09d6.w
+  sta $4204.w
+  sep #$20
+  lda #$64
+  sta $4206.w
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  lda $4214.w
+  sta $2a
+  lda $4215.w
+  sta $2b
+  lda $4216.w
+  sta $4204.w
+  lda $4217.w
+  sta $4205.w
+  lda #$0a
+  sta $4206.w
+  rep #$20
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  lda $4216.w
+  clc
+  adc #$0804.w
+  sta $7e3b14
+  lda $4214.w
+  clc
+  adc #$0804.w
+  sta $7e3b12
+  lda $2a
+  clc
+  adc #$0804.w
+  sta $7e3b10
+@unknown_82_8fd2:
+  plp
+  rts
 
 unknown_82_8fd4: php
 /*unknown_82_8fd5:*/ sep #$30
@@ -4045,145 +4053,159 @@ unknown_82_a0f7: rep #$30
 ; TODO: "Sets the equipment screen up (reserve tank tiles, clears uncollected
 ; items, greys unequipped items, oranges equipped items). Runs when the game is
 ; paused" -- Kejardon
-unknown_82_a12b: rep #$30
-/*unknown_82_a12d:*/ lda $09d4.w
-/*unknown_82_a130:*/ beq @unknown_82_a16a
-/*unknown_82_a132:*/ ldy #$0000.w
-/*unknown_82_a135:*/ lda #$c068.w
-/*unknown_82_a138:*/ sta $03
-/*unknown_82_a13a:*/ lda #$0082.w
-/*unknown_82_a13d:*/ sta $05
-/*unknown_82_a13f:*/ lda [$03], Y
-/*unknown_82_a141:*/ sta $00
-/*unknown_82_a143:*/ ldx $c088.w
-/*unknown_82_a146:*/ lda #$000e.w
-/*unknown_82_a149:*/ sta $16
-/*unknown_82_a14b:*/ jsr $a27e.w
-/*unknown_82_a14e:*/ ldy #$0002.w
-/*unknown_82_a151:*/ lda #$c068.w
-/*unknown_82_a154:*/ sta $03
-/*unknown_82_a156:*/ lda #$0082.w
-/*unknown_82_a159:*/ sta $05
-/*unknown_82_a15b:*/ lda [$03], Y
-/*unknown_82_a15d:*/ sta $00
-/*unknown_82_a15f:*/ ldx $c08a.w
-/*unknown_82_a162:*/ lda #$000e.w
-/*unknown_82_a165:*/ sta $16
-/*unknown_82_a167:*/ jsr $a27e.w
-@unknown_82_a16a: ldy #$0000.w
-/*unknown_82_a16d:*/ lda #$c06c.w
-/*unknown_82_a170:*/ sta $03
-/*unknown_82_a172:*/ lda #$0082.w
-/*unknown_82_a175:*/ sta $05
-/*unknown_82_a177:*/ lda [$03], Y
-/*unknown_82_a179:*/ sta $00
-/*unknown_82_a17b:*/ lda $0a76.w
-/*unknown_82_a17e:*/ bne @unknown_82_a1c2
-@unknown_82_a180: lda $c04c.w, Y
-/*unknown_82_a183:*/ bit $09a8.w
-/*unknown_82_a186:*/ bne @unknown_82_a195
-/*unknown_82_a188:*/ ldx #$c01a.w
-/*unknown_82_a18b:*/ lda #$000a.w
-/*unknown_82_a18e:*/ sta $16
-/*unknown_82_a190:*/ jsr $a27e.w
-/*unknown_82_a193:*/ bra @unknown_82_a1b5
-@unknown_82_a195: ldx $c08c.w, Y
-/*unknown_82_a198:*/ lda #$000a.w
-/*unknown_82_a19b:*/ sta $16
-/*unknown_82_a19d:*/ jsr $a27e.w
-/*unknown_82_a1a0:*/ lda $c04c.w, Y
-/*unknown_82_a1a3:*/ bit $09a6.w
-/*unknown_82_a1a6:*/ bne @unknown_82_a1b5
-/*unknown_82_a1a8:*/ lda #$0c00.w
-/*unknown_82_a1ab:*/ sta $12
-/*unknown_82_a1ad:*/ lda #$000a.w
-/*unknown_82_a1b0:*/ sta $16
-/*unknown_82_a1b2:*/ jsr $a29d.w
-@unknown_82_a1b5: iny
-/*unknown_82_a1b6:*/ iny
-/*unknown_82_a1b7:*/ lda [$03], Y
-/*unknown_82_a1b9:*/ sta $00
-/*unknown_82_a1bb:*/ cpy #$000c.w
-/*unknown_82_a1be:*/ bmi @unknown_82_a180
-/*unknown_82_a1c0:*/ bra @unknown_82_a1db
-@unknown_82_a1c2: ldy #$0000.w
-@unknown_82_a1c5: ldx $c0a8.w, Y
-/*unknown_82_a1c8:*/ lda #$000a.w
-/*unknown_82_a1cb:*/ sta $16
-/*unknown_82_a1cd:*/ jsr $a27e.w
-/*unknown_82_a1d0:*/ iny
-/*unknown_82_a1d1:*/ iny
-/*unknown_82_a1d2:*/ lda [$03], Y
-/*unknown_82_a1d4:*/ sta $00
-/*unknown_82_a1d6:*/ cpy #$000c.w
-/*unknown_82_a1d9:*/ bmi @unknown_82_a1c5
-@unknown_82_a1db: ldy #$0000.w
-/*unknown_82_a1de:*/ lda #$c076.w
-/*unknown_82_a1e1:*/ sta $03
-/*unknown_82_a1e3:*/ lda #$0082.w
-/*unknown_82_a1e6:*/ sta $05
-/*unknown_82_a1e8:*/ lda [$03], Y
-/*unknown_82_a1ea:*/ sta $00
-@unknown_82_a1ec: lda $c056.w, Y
-/*unknown_82_a1ef:*/ bit $09a4.w
-/*unknown_82_a1f2:*/ bne @unknown_82_a201
-/*unknown_82_a1f4:*/ ldx #$c01a.w
-/*unknown_82_a1f7:*/ lda #$0012.w
-/*unknown_82_a1fa:*/ sta $16
-/*unknown_82_a1fc:*/ jsr $a27e.w
-/*unknown_82_a1ff:*/ bra @unknown_82_a221
-@unknown_82_a201: ldx $c096.w, Y
-/*unknown_82_a204:*/ lda #$0012.w
-/*unknown_82_a207:*/ sta $16
-/*unknown_82_a209:*/ jsr $a27e.w
-/*unknown_82_a20c:*/ lda $c056.w, Y
-/*unknown_82_a20f:*/ bit $09a2.w
-/*unknown_82_a212:*/ bne @unknown_82_a221
-/*unknown_82_a214:*/ lda #$0c00.w
-/*unknown_82_a217:*/ sta $12
-/*unknown_82_a219:*/ lda #$0012.w
-/*unknown_82_a21c:*/ sta $16
-/*unknown_82_a21e:*/ jsr $a29d.w
-@unknown_82_a221: iny
-/*unknown_82_a222:*/ iny
-/*unknown_82_a223:*/ lda [$03], Y
-/*unknown_82_a225:*/ sta $00
-/*unknown_82_a227:*/ cpy #$000c.w
-/*unknown_82_a22a:*/ bmi @unknown_82_a1ec
-/*unknown_82_a22c:*/ ldy #$0000.w
-/*unknown_82_a22f:*/ lda #$c082.w
-/*unknown_82_a232:*/ sta $03
-/*unknown_82_a234:*/ lda #$0082.w
-/*unknown_82_a237:*/ sta $05
-/*unknown_82_a239:*/ lda [$03], Y
-/*unknown_82_a23b:*/ sta $00
-@unknown_82_a23d: lda $c062.w, Y
-/*unknown_82_a240:*/ bit $09a4.w
-/*unknown_82_a243:*/ bne @unknown_82_a252
-/*unknown_82_a245:*/ ldx #$c01a.w
-/*unknown_82_a248:*/ lda #$0012.w
-/*unknown_82_a24b:*/ sta $16
-/*unknown_82_a24d:*/ jsr $a27e.w
-/*unknown_82_a250:*/ bra @unknown_82_a272
-@unknown_82_a252: lda #$0012.w
-/*unknown_82_a255:*/ sta $16
-/*unknown_82_a257:*/ ldx $c0a2.w, Y
-/*unknown_82_a25a:*/ jsr $a27e.w
-/*unknown_82_a25d:*/ lda $c062.w, Y
-/*unknown_82_a260:*/ bit $09a2.w
-/*unknown_82_a263:*/ bne @unknown_82_a272
-/*unknown_82_a265:*/ lda #$0c00.w
-/*unknown_82_a268:*/ sta $12
-/*unknown_82_a26a:*/ lda #$0012.w
-/*unknown_82_a26d:*/ sta $16
-/*unknown_82_a26f:*/ jsr $a29d.w
-@unknown_82_a272: iny
-/*unknown_82_a273:*/ iny
-/*unknown_82_a274:*/ lda [$03], Y
-/*unknown_82_a276:*/ sta $00
-/*unknown_82_a278:*/ cpy #$0006.w
-/*unknown_82_a27b:*/ bmi @unknown_82_a23d
-/*unknown_82_a27d:*/ rts
+unknown_82_a12b:
+  rep #$30
+  lda $09d4.w
+  beq @unknown_82_a16a
+  ldy #$0000.w
+  lda #$c068.w
+  sta $03
+  lda #$0082.w
+  sta $05
+  lda [$03], Y
+  sta $00
+  ldx $c088.w
+  lda #$000e.w
+  sta $16
+  jsr $a27e.w
+  ldy #$0002.w
+  lda #$c068.w
+  sta $03
+  lda #$0082.w
+  sta $05
+  lda [$03], Y
+  sta $00
+  ldx $c08a.w
+  lda #$000e.w
+  sta $16
+  jsr $a27e.w
+@unknown_82_a16a:
+  ldy #$0000.w
+  lda #$c06c.w
+  sta $03
+  lda #$0082.w
+  sta $05
+  lda [$03], Y
+  sta $00
+  lda $0a76.w
+  bne @unknown_82_a1c2
+@unknown_82_a180:
+  lda $c04c.w, Y
+  bit $09a8.w
+  bne @unknown_82_a195
+  ldx #$c01a.w
+  lda #$000a.w
+  sta $16
+  jsr $a27e.w
+  bra @unknown_82_a1b5
+@unknown_82_a195:
+  ldx $c08c.w, Y
+  lda #$000a.w
+  sta $16
+  jsr $a27e.w
+  lda $c04c.w, Y
+  bit $09a6.w
+  bne @unknown_82_a1b5
+  lda #$0c00.w
+  sta $12
+  lda #$000a.w
+  sta $16
+  jsr $a29d.w
+@unknown_82_a1b5:
+  iny
+  iny
+  lda [$03], Y
+  sta $00
+  cpy #$000c.w
+  bmi @unknown_82_a180
+  bra @unknown_82_a1db
+@unknown_82_a1c2:
+  ldy #$0000.w
+@unknown_82_a1c5:
+  ldx $c0a8.w, Y
+  lda #$000a.w
+  sta $16
+  jsr $a27e.w
+  iny
+  iny
+  lda [$03], Y
+  sta $00
+  cpy #$000c.w
+  bmi @unknown_82_a1c5
+@unknown_82_a1db:
+  ldy #$0000.w
+  lda #$c076.w
+  sta $03
+  lda #$0082.w
+  sta $05
+  lda [$03], Y
+  sta $00
+@unknown_82_a1ec:
+  lda $c056.w, Y
+  bit $09a4.w
+  bne @unknown_82_a201
+  ldx #$c01a.w
+  lda #$0012.w
+  sta $16
+  jsr $a27e.w
+  bra @unknown_82_a221
+@unknown_82_a201:
+  ldx $c096.w, Y
+  lda #$0012.w
+  sta $16
+  jsr $a27e.w
+  lda $c056.w, Y
+  bit $09a2.w
+  bne @unknown_82_a221
+  lda #$0c00.w
+  sta $12
+  lda #$0012.w
+  sta $16
+  jsr $a29d.w
+@unknown_82_a221:
+  iny
+  iny
+  lda [$03], Y
+  sta $00
+  cpy #$000c.w
+  bmi @unknown_82_a1ec
+  ldy #$0000.w
+  lda #$c082.w
+  sta $03
+  lda #$0082.w
+  sta $05
+  lda [$03], Y
+  sta $00
+@unknown_82_a23d:
+  lda $c062.w, Y
+  bit $09a4.w
+  bne @unknown_82_a252
+  ldx #$c01a.w
+  lda #$0012.w
+  sta $16
+  jsr $a27e.w
+  bra @unknown_82_a272
+@unknown_82_a252:
+  lda #$0012.w
+  sta $16
+  ldx $c0a2.w, Y
+  jsr $a27e.w
+  lda $c062.w, Y
+  bit $09a2.w
+  bne @unknown_82_a272
+  lda #$0c00.w
+  sta $12
+  lda #$0012.w
+  sta $16
+  jsr $a29d.w
+@unknown_82_a272:
+  iny
+  iny
+  lda [$03], Y
+  sta $00
+  cpy #$0006.w
+  bmi @unknown_82_a23d
+  rts
 
 unknown_82_a27e: php
 /*unknown_82_a27f:*/ phy
@@ -10954,103 +10976,107 @@ unknown_82_c04c: .db $00
 
 ; TODO: "Gradual color change routine for all colors, based on C402 and C400."
 ; -- Kejardon
-unknown_82_da02: rep #$30
-/*unknown_82_da04:*/ lda $7ec402
-/*unknown_82_da08:*/ inc A
-/*unknown_82_da09:*/ cmp $7ec400
-/*unknown_82_da0d:*/ bcs @unknown_82_da18
-/*unknown_82_da0f:*/ lda #$0000.w
-/*unknown_82_da12:*/ sta $7ec400
-/*unknown_82_da16:*/ sec
-/*unknown_82_da17:*/ rts
-
-@unknown_82_da18: phb
-/*unknown_82_da19:*/ pea $7e7e.w
-/*unknown_82_da1c:*/ plb
-/*unknown_82_da1d:*/ plb
-/*unknown_82_da1e:*/ ldx #$0000.w
-@unknown_82_da21: stx $c404.w
-/*unknown_82_da24:*/ lda $c200.w, X
-/*unknown_82_da27:*/ cmp $c000.w, X
-/*unknown_82_da2a:*/ beq @unknown_82_da3d
-/*unknown_82_da2c:*/ tay
-/*unknown_82_da2d:*/ lda $c000.w, X
-/*unknown_82_da30:*/ tax
-/*unknown_82_da31:*/ lda $c400.w
-/*unknown_82_da34:*/ jsr unknown_82_da4a
-/*unknown_82_da37:*/ ldx $c404.w
-/*unknown_82_da3a:*/ sta $c000.w, X
-@unknown_82_da3d: inx
-/*unknown_82_da3e:*/ inx
-/*unknown_82_da3f:*/ cpx #$0200.w
-/*unknown_82_da42:*/ bcc @unknown_82_da21
-/*unknown_82_da44:*/ inc $c400.w
-/*unknown_82_da47:*/ plb
-/*unknown_82_da48:*/ clc
-/*unknown_82_da49:*/ rts
+unknown_82_da02:
+  rep #$30
+  lda $7ec402
+  inc A
+  cmp $7ec400
+  bcs @unknown_82_da18
+  lda #$0000.w
+  sta $7ec400
+  sec
+  rts
+@unknown_82_da18:
+  phb
+  pea $7e7e.w
+  plb
+  plb
+  ldx #$0000.w
+@unknown_82_da21:
+  stx $c404.w
+  lda $c200.w, X
+  cmp $c000.w, X
+  beq @unknown_82_da3d
+  tay
+  lda $c000.w, X
+  tax
+  lda $c400.w
+  jsr unknown_82_da4a
+  ldx $c404.w
+  sta $c000.w, X
+@unknown_82_da3d:
+  inx
+  inx
+  cpx #$0200.w
+  bcc @unknown_82_da21
+  inc $c400.w
+  plb
+  clc
+  rts
 
 ; TODO: "Gradual color change routine. Y is new color (C200,x), X is original
 ; color (C000,x), A is current change amount" -- Kejardon
-unknown_82_da4a: pha
-/*unknown_82_da4b:*/ pha
-/*unknown_82_da4c:*/ phx
-/*unknown_82_da4d:*/ phy
-/*unknown_82_da4e:*/ lda $01, S
-/*unknown_82_da50:*/ and #$001f.w
-/*unknown_82_da53:*/ tay
-/*unknown_82_da54:*/ lda $03, S
-/*unknown_82_da56:*/ and #$001f.w
-/*unknown_82_da59:*/ tax
-/*unknown_82_da5a:*/ lda $05, S
-/*unknown_82_da5c:*/ jsr unknown_82_daa6
-/*unknown_82_da5f:*/ sta $07, S
-/*unknown_82_da61:*/ lda $01, S
-/*unknown_82_da63:*/ asl A
-/*unknown_82_da64:*/ asl A
-/*unknown_82_da65:*/ asl A
-/*unknown_82_da66:*/ xba
-/*unknown_82_da67:*/ and #$001f.w
-/*unknown_82_da6a:*/ tay
-/*unknown_82_da6b:*/ lda $03, S
-/*unknown_82_da6d:*/ asl A
-/*unknown_82_da6e:*/ asl A
-/*unknown_82_da6f:*/ asl A
-/*unknown_82_da70:*/ xba
-/*unknown_82_da71:*/ and #$001f.w
-/*unknown_82_da74:*/ tax
-/*unknown_82_da75:*/ lda $05, S
-/*unknown_82_da77:*/ jsr unknown_82_daa6
-/*unknown_82_da7a:*/ asl A
-/*unknown_82_da7b:*/ asl A
-/*unknown_82_da7c:*/ asl A
-/*unknown_82_da7d:*/ asl A
-/*unknown_82_da7e:*/ asl A
-/*unknown_82_da7f:*/ ora $07, S
-/*unknown_82_da81:*/ sta $07, S
-/*unknown_82_da83:*/ lda $01, S
-/*unknown_82_da85:*/ lsr A
-/*unknown_82_da86:*/ lsr A
-/*unknown_82_da87:*/ xba
-/*unknown_82_da88:*/ and #$001f.w
-/*unknown_82_da8b:*/ tay
-/*unknown_82_da8c:*/ lda $03, S
-/*unknown_82_da8e:*/ lsr A
-/*unknown_82_da8f:*/ lsr A
-/*unknown_82_da90:*/ xba
-/*unknown_82_da91:*/ and #$001f.w
-/*unknown_82_da94:*/ tax
-/*unknown_82_da95:*/ lda $05, S
-/*unknown_82_da97:*/ jsr unknown_82_daa6
-/*unknown_82_da9a:*/ asl A
-/*unknown_82_da9b:*/ asl A
-/*unknown_82_da9c:*/ xba
-/*unknown_82_da9d:*/ ora $07, S
-/*unknown_82_da9f:*/ sta $07, S
-/*unknown_82_daa1:*/ ply
-/*unknown_82_daa2:*/ plx
-/*unknown_82_daa3:*/ pla
-/*unknown_82_daa4:*/ pla
-/*unknown_82_daa5:*/ rts
+unknown_82_da4a:
+  pha
+  pha
+  phx
+  phy
+  lda $01, S
+  and #$001f.w
+  tay
+  lda $03, S
+  and #$001f.w
+  tax
+  lda $05, S
+  jsr unknown_82_daa6
+  sta $07, S
+  lda $01, S
+  asl A
+  asl A
+  asl A
+  xba
+  and #$001f.w
+  tay
+  lda $03, S
+  asl A
+  asl A
+  asl A
+  xba
+  and #$001f.w
+  tax
+  lda $05, S
+  jsr unknown_82_daa6
+  asl A
+  asl A
+  asl A
+  asl A
+  asl A
+  ora $07, S
+  sta $07, S
+  lda $01, S
+  lsr A
+  lsr A
+  xba
+  and #$001f.w
+  tay
+  lda $03, S
+  lsr A
+  lsr A
+  xba
+  and #$001f.w
+  tax
+  lda $05, S
+  jsr unknown_82_daa6
+  asl A
+  asl A
+  xba
+  ora $07, S
+  sta $07, S
+  ply
+  plx
+  pla
+  pla
+  rts
 
 unknown_82_daa6: cmp #$0000.w
 /*unknown_82_daa9:*/ bne @unknown_82_daad
@@ -11655,10 +11681,12 @@ unknown_82_dfb6: ldx $078d.w
 @unknown_82_dfc6: rts
 
 ; TODO: "Ensures that Samus is drawn every frame?" -- Kejardon
-unknown_82_dfc7: lda $0e16.w
-/*unknown_82_dfca:*/ bne @unknown_82_dfd0
-/*unknown_82_dfcc:*/ jsr $908a00
-@unknown_82_dfd0: rts
+unknown_82_dfc7:
+  lda $0e16.w
+  bne @unknown_82_dfd0
+  jsr $908a00
+@unknown_82_dfd0:
+  rts
 
 unknown_82_dfd1: lda #$7000.w
 /*unknown_82_dfd4:*/ sta $12
@@ -11736,33 +11764,34 @@ unknown_3: dw
 ; parameter means.
 unknown_82_e039:
   lda $01, S
-/*unknown_82_e03b:*/ inc A
-/*unknown_82_e03c:*/ sta $ad ; [$ad] := @parameters.unknown_0
-/*unknown_82_e03e:*/ phb
-/*unknown_82_e03f:*/ phk
-/*unknown_82_e040:*/ plb
-/*unknown_82_e041:*/ lda ($ad)
-/*unknown_82_e043:*/ sta $05c0.w
-/*unknown_82_e046:*/ inc $ad ; [$ad] := @parameters.unknown_1
-/*unknown_82_e048:*/ lda ($ad)
-/*unknown_82_e04a:*/ sta $05c1.w
-/*unknown_82_e04d:*/ inc $ad
-/*unknown_82_e04f:*/ inc $ad ; [$ad] := @parameters.unknown_2
-/*unknown_82_e051:*/ lda ($ad)
-/*unknown_82_e053:*/ sta $05be.w
-/*unknown_82_e056:*/ inc $ad
-/*unknown_82_e058:*/ inc $ad ; [$ad] := @parameters.unknown_3
-/*unknown_82_e05a:*/ lda ($ad)
-/*unknown_82_e05c:*/ sta $05c3.w
-/*unknown_82_e05f:*/ plb
-/*unknown_82_e060:*/ lda $ad
-/*unknown_82_e062:*/ inc A
-/*unknown_82_e063:*/ sta $01, S ; Return to the instruction after @parameters.
-/*unknown_82_e065:*/ lda #$8000.w
-/*unknown_82_e068:*/ tsb $05bc.w
-@unknown_82_e06b: lda $05bc.w
-/*unknown_82_e06e:*/ bmi @unknown_82_e06b
-/*unknown_82_e070:*/ rts
+  inc A
+  sta $ad ; [$ad] := @parameters.unknown_0
+  phb
+  phk
+  plb
+  lda ($ad)
+  sta $05c0.w
+  inc $ad ; [$ad] := @parameters.unknown_1
+  lda ($ad)
+  sta $05c1.w
+  inc $ad
+  inc $ad ; [$ad] := @parameters.unknown_2
+  lda ($ad)
+  sta $05be.w
+  inc $ad
+  inc $ad ; [$ad] := @parameters.unknown_3
+  lda ($ad)
+  sta $05c3.w
+  plb
+  lda $ad
+  inc A
+  sta $01, S ; Return to the instruction after @parameters.
+  lda #$8000.w
+  tsb $05bc.w
+@unknown_82_e06b:
+  lda $05bc.w
+  bmi @unknown_82_e06b
+  rts
 
 /*unknown_82_e071:*/ php
 /*unknown_82_e072:*/ phb
@@ -12009,32 +12038,34 @@ unknown_82_e288: php
 /*unknown_82_e29d:*/ rts
 
 ; TODO: "Handles room transitions" -- Kejardon
-unknown_82_e29e: php
-/*unknown_82_e29f:*/ jsr $a08eb6
-/*unknown_82_e2a3:*/ jsr $a08fd4
-/*unknown_82_e2a7:*/ jsr $a0884d
-/*unknown_82_e2ab:*/ jsr unknown_82_dfc7
-/*unknown_82_e2ae:*/ sep #$20
-/*unknown_82_e2b0:*/ lda $0646.w
-/*unknown_82_e2b3:*/ sec
-/*unknown_82_e2b4:*/ sbc $0643.w
-/*unknown_82_e2b7:*/ and #$0f
-/*unknown_82_e2b9:*/ bne @unknown_82_e2d9
-/*unknown_82_e2bb:*/ lda $0647.w
-/*unknown_82_e2be:*/ sec
-/*unknown_82_e2bf:*/ sbc $0644.w
-/*unknown_82_e2c2:*/ and #$0f
-/*unknown_82_e2c4:*/ bne @unknown_82_e2d9
-/*unknown_82_e2c6:*/ lda $0648.w
-/*unknown_82_e2c9:*/ sec
-/*unknown_82_e2ca:*/ sbc $0645.w
-/*unknown_82_e2cd:*/ and #$0f
-/*unknown_82_e2cf:*/ bne @unknown_82_e2d9
-/*unknown_82_e2d1:*/ rep #$20
-/*unknown_82_e2d3:*/ lda #$e2db.w
-/*unknown_82_e2d6:*/ sta $099c.w
-@unknown_82_e2d9: plp
-/*unknown_82_e2da:*/ rts
+unknown_82_e29e:
+  php
+  jsr $a08eb6
+  jsr $a08fd4
+  jsr $a0884d
+  jsr unknown_82_dfc7
+  sep #$20
+  lda $0646.w
+  sec
+  sbc $0643.w
+  and #$0f
+  bne @unknown_82_e2d9
+  lda $0647.w
+  sec
+  sbc $0644.w
+  and #$0f
+  bne @unknown_82_e2d9
+  lda $0648.w
+  sec
+  sbc $0645.w
+  and #$0f
+  bne @unknown_82_e2d9
+  rep #$20
+  lda #$e2db.w
+  sta $099c.w
+@unknown_82_e2d9:
+  plp
+  rts
 
 /*unknown_82_e2db:*/ jsr $d961.w
 /*unknown_82_e2de:*/ bcs @unknown_82_e2f0
