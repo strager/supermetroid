@@ -5432,13 +5432,14 @@ unknown_80_ab78: lda $0783.w
 /*unknown_80_ad1c:*/ rts
 
 ; TODO: "Run to 'Fix' doors moving up; redraws top row of blocks." -- Kejardon
-unknown_80_ad1d: stz $0925.w
-/*unknown_80_ad20:*/ jsr unknown_80_a4bb
-/*unknown_80_ad23:*/ jsr $ae10.w
-/*unknown_80_ad26:*/ inc $0901.w
-/*unknown_80_ad29:*/ inc $0905.w
-/*unknown_80_ad2c:*/ jsr unknown_80_af89
-/*unknown_80_ad2f:*/ rtl
+unknown_80_ad1d:
+  stz var_unknown_0925.w
+  jsr unknown_80_a4bb
+  jsr unknown_80_ae10
+  inc var_unknown_0901.w
+  inc var_unknown_0905.w
+  jsr unknown_80_af89
+  rtl
 
 /*unknown_80_ad30:*/ rep #$30
 /*unknown_80_ad32:*/ lda $0927.w
