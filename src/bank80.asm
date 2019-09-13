@@ -4464,19 +4464,19 @@ unknown_80_a3a0:
 ; TODO: "Calculate blocks scrolled for various layers, which is used to update
 ; room graphics" -- Kejardon
 unknown_80_a4bb:
-  lda $b1
+  lda var_unknown_b1
   lsr A
   lsr A
   lsr A
   lsr A
-  sta $0907.w
-  lda $b5
+  sta var_unknown_0907.w
+  lda var_unknown_b5
   lsr A
   lsr A
   lsr A
   lsr A
-  sta $090b.w
-  lda $0911.w
+  sta var_unknown_090b.w
+  lda var_unknown_0911.w
   lsr A
   lsr A
   lsr A
@@ -4485,8 +4485,8 @@ unknown_80_a4bb:
   beq @unknown_80_a4dc
   ora #$f000.w
 @unknown_80_a4dc:
-  sta $08f7.w
-  lda $0917.w
+  sta var_unknown_08f7.w
+  lda var_unknown_0917.w
   lsr A
   lsr A
   lsr A
@@ -4495,20 +4495,20 @@ unknown_80_a4bb:
   beq @unknown_80_a4ee
   ora #$f000.w
 @unknown_80_a4ee:
-  sta $08fb.w
-  lda $b3
+  sta var_unknown_08fb.w
+  lda var_unknown_b3
   lsr A
   lsr A
   lsr A
   lsr A
-  sta $0909.w
-  lda $b7
+  sta var_unknown_0909.w
+  lda var_unknown_b7
   lsr A
   lsr A
   lsr A
   lsr A
-  sta $090d.w
-  lda $0915.w
+  sta var_unknown_090d.w
+  lda var_unknown_0915.w
   lsr A
   lsr A
   lsr A
@@ -4517,8 +4517,8 @@ unknown_80_a4bb:
   beq @unknown_80_a512
   ora #$f000.w
 @unknown_80_a512:
-  sta $08f9.w
-  lda $0919.w
+  sta var_unknown_08f9.w
+  lda var_unknown_0919.w
   lsr A
   lsr A
   lsr A
@@ -4527,7 +4527,7 @@ unknown_80_a4bb:
   beq @unknown_80_a524
   ora #$f000.w
 @unknown_80_a524:
-  sta $08fd.w
+  sta var_unknown_08fd.w
   rts
 
 ; TODO: "Handles autoscrolling when Samus isn't moving horizontally and part of
