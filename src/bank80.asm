@@ -4321,134 +4321,145 @@ unknown_80_a37b:
   rts
 
 ; TODO: "Updates only BG1 when scrolling, I think" -- Kejardon
-unknown_80_a3a0: php
-/*unknown_80_a3a1:*/ phb
-/*unknown_80_a3a2:*/ phk
-/*unknown_80_a3a3:*/ plb
-/*unknown_80_a3a4:*/ rep #$30
-/*unknown_80_a3a6:*/ jsr unknown_80_a37b
-/*unknown_80_a3a9:*/ bra @unknown_80_a3df
-
+unknown_80_a3a0:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  jsr unknown_80_a37b
+  bra @unknown_80_a3df
 ; TODO: "Handles the movement of layer 1 and 2" -- Kejardon
 ; TODO: "Updates BG1 and BG2 graphics when scrolling" -- Kejardon
-@unknown_80_a3ab: lda $0a78.w
-/*unknown_80_a3ae:*/ beq @unknown_80_a3b1
-/*unknown_80_a3b0:*/ rtl
-
-@unknown_80_a3b1: php
-/*unknown_80_a3b2:*/ phb
-/*unknown_80_a3b3:*/ phk
-/*unknown_80_a3b4:*/ plb
-/*unknown_80_a3b5:*/ rep #$30
-/*unknown_80_a3b7:*/ lda $0911.w
-/*unknown_80_a3ba:*/ clc
-/*unknown_80_a3bb:*/ adc $091d.w
-/*unknown_80_a3be:*/ sta $b1
-/*unknown_80_a3c0:*/ lda $0915.w
-/*unknown_80_a3c3:*/ clc
-/*unknown_80_a3c4:*/ adc $091f.w
-/*unknown_80_a3c7:*/ sta $b3
-/*unknown_80_a3c9:*/ jsr $a2f9.w
-/*unknown_80_a3cc:*/ bcs @unknown_80_a3d4
-/*unknown_80_a3ce:*/ clc
-/*unknown_80_a3cf:*/ adc $0921.w
-/*unknown_80_a3d2:*/ sta $b5
-@unknown_80_a3d4: jsr $a33a.w
-/*unknown_80_a3d7:*/ bcs @unknown_80_a3df
-/*unknown_80_a3d9:*/ clc
-/*unknown_80_a3da:*/ adc $0923.w
-/*unknown_80_a3dd:*/ sta $b7
-@unknown_80_a3df: rep #$20
-/*unknown_80_a3e1:*/ jsr unknown_80_a4bb
-/*unknown_80_a3e4:*/ ldx #$0000.w
-/*unknown_80_a3e7:*/ lda $08f7.w
-/*unknown_80_a3ea:*/ cmp $08ff.w
-/*unknown_80_a3ed:*/ beq @unknown_80_a416
-/*unknown_80_a3ef:*/ sta $08ff.w
-/*unknown_80_a3f2:*/ bmi @unknown_80_a3f7
-/*unknown_80_a3f4:*/ ldx #$0010.w
-@unknown_80_a3f7: txa
-/*unknown_80_a3f8:*/ clc
-/*unknown_80_a3f9:*/ adc $08f7.w
-/*unknown_80_a3fc:*/ sta $0990.w
-/*unknown_80_a3ff:*/ txa
-/*unknown_80_a400:*/ clc
-/*unknown_80_a401:*/ adc $0907.w
-/*unknown_80_a404:*/ sta $0994.w
-/*unknown_80_a407:*/ lda $08f9.w
-/*unknown_80_a40a:*/ sta $0992.w
-/*unknown_80_a40d:*/ lda $0909.w
-/*unknown_80_a410:*/ sta $0996.w
-/*unknown_80_a413:*/ jsr unknown_80_a9db
-@unknown_80_a416: lda $091b.w
-/*unknown_80_a419:*/ lsr A
-/*unknown_80_a41a:*/ bcs @unknown_80_a44e
-/*unknown_80_a41c:*/ ldx #$0000.w
-/*unknown_80_a41f:*/ lda $08fb.w
-/*unknown_80_a422:*/ cmp $0903.w
-/*unknown_80_a425:*/ beq @unknown_80_a44e
-/*unknown_80_a427:*/ sta $0903.w
-/*unknown_80_a42a:*/ bmi @unknown_80_a42f
-/*unknown_80_a42c:*/ ldx #$0010.w
-@unknown_80_a42f: txa
-/*unknown_80_a430:*/ clc
-/*unknown_80_a431:*/ adc $08fb.w
-/*unknown_80_a434:*/ sta $0990.w
-/*unknown_80_a437:*/ txa
-/*unknown_80_a438:*/ clc
-/*unknown_80_a439:*/ adc $090b.w
-/*unknown_80_a43c:*/ sta $0994.w
-/*unknown_80_a43f:*/ lda $08fd.w
-/*unknown_80_a442:*/ sta $0992.w
-/*unknown_80_a445:*/ lda $090d.w
-/*unknown_80_a448:*/ sta $0996.w
-/*unknown_80_a44b:*/ jsr unknown_80_a9d6
-@unknown_80_a44e: ldx #$0001.w
-/*unknown_80_a451:*/ lda $08f9.w
-/*unknown_80_a454:*/ cmp $0901.w
-/*unknown_80_a457:*/ beq @unknown_80_a480
-/*unknown_80_a459:*/ sta $0901.w
-/*unknown_80_a45c:*/ bmi @unknown_80_a461
-/*unknown_80_a45e:*/ ldx #$000f.w
-@unknown_80_a461: txa
-/*unknown_80_a462:*/ clc
-/*unknown_80_a463:*/ adc $08f9.w
-/*unknown_80_a466:*/ sta $0992.w
-/*unknown_80_a469:*/ txa
-/*unknown_80_a46a:*/ clc
-/*unknown_80_a46b:*/ adc $0909.w
-/*unknown_80_a46e:*/ sta $0996.w
-/*unknown_80_a471:*/ lda $08f7.w
-/*unknown_80_a474:*/ sta $0990.w
-/*unknown_80_a477:*/ lda $0907.w
-/*unknown_80_a47a:*/ sta $0994.w
-/*unknown_80_a47d:*/ jsr unknown_80_ab75
-@unknown_80_a480: lda $091c.w
-/*unknown_80_a483:*/ lsr A
-/*unknown_80_a484:*/ bcs @unknown_80_a4b8
-/*unknown_80_a486:*/ ldx #$0001.w
-/*unknown_80_a489:*/ lda $08fd.w
-/*unknown_80_a48c:*/ cmp $0905.w
-/*unknown_80_a48f:*/ beq @unknown_80_a4b8
-/*unknown_80_a491:*/ sta $0905.w
-/*unknown_80_a494:*/ bmi @unknown_80_a499
-/*unknown_80_a496:*/ ldx #$000f.w
-@unknown_80_a499: txa
-/*unknown_80_a49a:*/ clc
-/*unknown_80_a49b:*/ adc $08fd.w
-/*unknown_80_a49e:*/ sta $0992.w
-/*unknown_80_a4a1:*/ txa
-/*unknown_80_a4a2:*/ clc
-/*unknown_80_a4a3:*/ adc $090d.w
-/*unknown_80_a4a6:*/ sta $0996.w
-/*unknown_80_a4a9:*/ lda $08fb.w
-/*unknown_80_a4ac:*/ sta $0990.w
-/*unknown_80_a4af:*/ lda $090b.w
-/*unknown_80_a4b2:*/ sta $0994.w
-/*unknown_80_a4b5:*/ jsr unknown_80_ab70
-@unknown_80_a4b8: plb
-/*unknown_80_a4b9:*/ plp
-/*unknown_80_a4ba:*/ rtl
+@unknown_80_a3ab:
+  lda $0a78.w
+  beq @unknown_80_a3b1
+  rtl
+@unknown_80_a3b1:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  lda $0911.w
+  clc
+  adc $091d.w
+  sta $b1
+  lda $0915.w
+  clc
+  adc $091f.w
+  sta $b3
+  jsr $a2f9.w
+  bcs @unknown_80_a3d4
+  clc
+  adc $0921.w
+  sta $b5
+@unknown_80_a3d4:
+  jsr $a33a.w
+  bcs @unknown_80_a3df
+  clc
+  adc $0923.w
+  sta $b7
+@unknown_80_a3df:
+  rep #$20
+  jsr unknown_80_a4bb
+  ldx #$0000.w
+  lda $08f7.w
+  cmp $08ff.w
+  beq @unknown_80_a416
+  sta $08ff.w
+  bmi @unknown_80_a3f7
+  ldx #$0010.w
+@unknown_80_a3f7:
+  txa
+  clc
+  adc $08f7.w
+  sta $0990.w
+  txa
+  clc
+  adc $0907.w
+  sta $0994.w
+  lda $08f9.w
+  sta $0992.w
+  lda $0909.w
+  sta $0996.w
+  jsr unknown_80_a9db
+@unknown_80_a416:
+  lda $091b.w
+  lsr A
+  bcs @unknown_80_a44e
+  ldx #$0000.w
+  lda $08fb.w
+  cmp $0903.w
+  beq @unknown_80_a44e
+  sta $0903.w
+  bmi @unknown_80_a42f
+  ldx #$0010.w
+@unknown_80_a42f:
+  txa
+  clc
+  adc $08fb.w
+  sta $0990.w
+  txa
+  clc
+  adc $090b.w
+  sta $0994.w
+  lda $08fd.w
+  sta $0992.w
+  lda $090d.w
+  sta $0996.w
+  jsr unknown_80_a9d6
+@unknown_80_a44e:
+  ldx #$0001.w
+  lda $08f9.w
+  cmp $0901.w
+  beq @unknown_80_a480
+  sta $0901.w
+  bmi @unknown_80_a461
+  ldx #$000f.w
+@unknown_80_a461:
+  txa
+  clc
+  adc $08f9.w
+  sta $0992.w
+  txa
+  clc
+  adc $0909.w
+  sta $0996.w
+  lda $08f7.w
+  sta $0990.w
+  lda $0907.w
+  sta $0994.w
+  jsr unknown_80_ab75
+@unknown_80_a480:
+  lda $091c.w
+  lsr A
+  bcs @unknown_80_a4b8
+  ldx #$0001.w
+  lda $08fd.w
+  cmp $0905.w
+  beq @unknown_80_a4b8
+  sta $0905.w
+  bmi @unknown_80_a499
+  ldx #$000f.w
+@unknown_80_a499:
+  txa
+  clc
+  adc $08fd.w
+  sta $0992.w
+  txa
+  clc
+  adc $090d.w
+  sta $0996.w
+  lda $08fb.w
+  sta $0990.w
+  lda $090b.w
+  sta $0994.w
+  jsr unknown_80_ab70
+@unknown_80_a4b8:
+  plb
+  plp
+  rtl
 
 ; TODO: "Calculate blocks scrolled for various layers, which is used to update
 ; room graphics" -- Kejardon
