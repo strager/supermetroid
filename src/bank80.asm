@@ -301,7 +301,7 @@ unknown_80_81a6:
 /*unknown_80_81c3:*/ sep #$20
 /*unknown_80_81c5:*/ eor #$ff
 /*unknown_80_81c7:*/ sta $05e7.w
-/*unknown_80_81ca:*/ ldx $079f.w
+/*unknown_80_81ca:*/ ldx var_unknown_079f.w
 /*unknown_80_81cd:*/ lda $7ed828, X
 /*unknown_80_81d1:*/ and $05e7.w
 /*unknown_80_81d4:*/ sta $7ed828, X
@@ -313,26 +313,27 @@ unknown_80_81a6:
 ; TODO: "checks if the boss bits for the current area matches any bits in A. SEC
 ; if there's a match. It also pushes and pulls Y for ABSOLUTELY NO REASON."
 ; -- Kejardon
-unknown_80_81dc: phx
-/*unknown_80_81dd:*/ phy
-/*unknown_80_81de:*/ php
-/*unknown_80_81df:*/ sep #$20
-/*unknown_80_81e1:*/ sta $05e7.w
-/*unknown_80_81e4:*/ ldx $079f.w
-/*unknown_80_81e7:*/ lda $7ed828, X
-/*unknown_80_81eb:*/ and $05e7.w
-/*unknown_80_81ee:*/ bne @unknown_80_81f5
-/*unknown_80_81f0:*/ plp
-/*unknown_80_81f1:*/ ply
-/*unknown_80_81f2:*/ plx
-/*unknown_80_81f3:*/ clc
-/*unknown_80_81f4:*/ rtl
-
-@unknown_80_81f5: plp
-/*unknown_80_81f6:*/ ply
-/*unknown_80_81f7:*/ plx
-/*unknown_80_81f8:*/ sec
-/*unknown_80_81f9:*/ rtl
+unknown_80_81dc:
+  phx
+  phy
+  php
+  sep #$20
+  sta var_unknown_05e7.w
+  ldx var_unknown_079f.w
+  lda var_unknown_d828.l, X
+  and var_unknown_05e7.w
+  bne @unknown_80_81f5
+  plp
+  ply
+  plx
+  clc
+  rtl
+@unknown_80_81f5:
+  plp
+  ply
+  plx
+  sec
+  rtl
 
 ; TODO: "marks an event as happened. Event bit # must be stored in A."
 ; -- Kejardon
