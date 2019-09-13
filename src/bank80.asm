@@ -2383,37 +2383,37 @@ unknown_80_91ee:
   stx IO_COLDATA
   ldx var_unknown_77
   stx IO_SETINI
-  ldx var_unknown_b1
+  ldx var_unknown_b1_l
   stx IO_BG1HOFS
-  ldx var_unknown_b2
+  ldx var_unknown_b1_h
   stx IO_BG1HOFS
-  ldx var_unknown_b3
+  ldx var_unknown_b3_l
   stx IO_BG1VOFS
-  ldx var_unknown_b4
+  ldx var_unknown_b3_h
   stx IO_BG1VOFS
-  ldx var_unknown_b5
+  ldx var_unknown_b5_l
   stx IO_BG2HOFS
-  ldx var_unknown_b6
+  ldx var_unknown_b5_h
   stx IO_BG2HOFS
-  ldx var_unknown_b7
+  ldx var_unknown_b7_l
   stx IO_BG2VOFS
-  ldx var_unknown_b8
+  ldx var_unknown_b7_h
   stx IO_BG2VOFS
-  ldx var_unknown_b9
+  ldx var_unknown_b9_l
   stx IO_BG3HOFS
-  ldx var_unknown_ba
+  ldx var_unknown_b9_h
   stx IO_BG3HOFS
-  ldx var_unknown_bb
+  ldx var_unknown_bb_l
   stx IO_BG3VOFS
-  ldx var_unknown_bc
+  ldx var_unknown_bb_h
   stx IO_BG3VOFS
-  ldx var_unknown_bd
+  ldx var_unknown_bd_l
   stx IO_BG4HOFS
-  ldx var_unknown_be
+  ldx var_unknown_bd_h
   stx IO_BG4HOFS
-  ldx var_unknown_bf
+  ldx var_unknown_bf_l
   stx IO_BG4VOFS
-  ldx var_unknown_c0
+  ldx var_unknown_bf_h
   stx IO_BG4VOFS
   ldx var_unknown_56
   stx var_unknown_07ec.w

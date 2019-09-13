@@ -135,22 +135,61 @@ var_unknown_a5: dw ; $7e00a5
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $b1) export
-var_unknown_b1: db ; $7e00b1
-var_unknown_b2: db ; $7e00b2
-var_unknown_b3: db ; $7e00b3
-var_unknown_b4: db ; $7e00b4
-var_unknown_b5: db ; $7e00b5
-var_unknown_b6: db ; $7e00b6
-var_unknown_b7: db ; $7e00b7
-var_unknown_b8: db ; $7e00b8
-var_unknown_b9: db ; $7e00b9
-var_unknown_ba: db ; $7e00ba
-var_unknown_bb: db ; $7e00bb
-var_unknown_bc: db ; $7e00bc
-var_unknown_bd: db ; $7e00bd
-var_unknown_be: db ; $7e00be
-var_unknown_bf: db ; $7e00bf
-var_unknown_c0: db ; $7e00c0
+.union
+var_unknown_b1: dw ; $7e00b1
+.nextu
+var_unknown_b1_l: db ; $7e00b1
+var_unknown_b1_h: db ; $7e00b2
+.endu
+
+.union
+var_unknown_b3: dw ; $7e00b3
+.nextu
+var_unknown_b3_l: db ; $7e00b3
+var_unknown_b3_h: db ; $7e00b4
+.endu
+
+.union
+var_unknown_b5: dw ; $7e00b5
+.nextu
+var_unknown_b5_l: db ; $7e00b5
+var_unknown_b5_h: db ; $7e00b6
+.endu
+
+.union
+var_unknown_b7: dw ; $7e00b7
+.nextu
+var_unknown_b7_l: db ; $7e00b7
+var_unknown_b7_h: db ; $7e00b8
+.endu
+
+.union
+var_unknown_b9: dw ; $7e00b9
+.nextu
+var_unknown_b9_l: db ; $7e00b9
+var_unknown_b9_h: db ; $7e00ba
+.endu
+
+.union
+var_unknown_bb: dw ; $7e00bb
+.nextu
+var_unknown_bb_l: db ; $7e00bb
+var_unknown_bb_h: db ; $7e00bc
+.endu
+
+.union
+var_unknown_bd: dw ; $7e00bd
+.nextu
+var_unknown_bd_l: db ; $7e00bd
+var_unknown_bd_h: db ; $7e00be
+.endu
+
+.union
+var_unknown_bf: dw ; $7e00bf
+.nextu
+var_unknown_bf_l: db ; $7e00bf
+var_unknown_bf_h: db ; $7e00c0
+.endu
 .ende
 
 .define unknown_d2_count 0 ; TODO. The unknown_d2 array seems to be 0-terminated.
