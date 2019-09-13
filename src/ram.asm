@@ -198,7 +198,7 @@ var_vram_write_queue: ds vram_write_queue@entry@size * vram_write_queue_count ; 
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0330) export
-var_unknown_0330: dw ; $7e0330
+var_vram_write_queue_tail: dw ; $7e0330
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0371) export

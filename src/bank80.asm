@@ -1596,7 +1596,7 @@ unknown_80_8bd3:
 unknown_80_8c83:
   php
   rep #$30
-  ldx var_unknown_0330.w
+  ldx var_vram_write_queue_tail.w
   beq @unknown_80_8cc9
   stz var_vram_write_queue, X
   lda #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_BBAD_VRAM) << 8)
@@ -1627,7 +1627,7 @@ unknown_80_8c83:
   tay
   bra @unknown_80_8c96
 @unknown_80_8cc9:
-  stz var_unknown_0330.w
+  stz var_vram_write_queue_tail.w
   sep #$20
   rep #$10
   jsr unknown_80_8cd8
@@ -3509,7 +3509,7 @@ unknown_80_9b44:
 @unknown_80_9ca4:
   lda var_unknown_0a04.w
   jsr unknown_80_9cea.w
-  ldx var_unknown_0330.w
+  ldx var_vram_write_queue_tail.w
   lda #$00c0.w
   sta var_vram_write_queue, X
   inx
@@ -3525,7 +3525,7 @@ unknown_80_9b44:
   sta var_vram_write_queue, X
   inx
   inx
-  stx var_unknown_0330.w
+  stx var_vram_write_queue_tail.w
   plb
   plp
   rtl
