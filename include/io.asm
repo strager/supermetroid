@@ -261,6 +261,9 @@
 .define IO_HVBJOY_JOYPAD_BUSY $01.b
 .define IO_HVBJOY_VBLANK $80.b
 
+; CPU: unsigned division result (16 bits)
+.define IO_RDDIV $4214.w
+
 ; CPU: unsigned division remainder and multiply product (16 bits)
 .define IO_RDMPY $4216.w
 .define IO_RDMPYL IO_RDMPY + 0

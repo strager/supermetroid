@@ -3152,13 +3152,14 @@ unknown_80_988b:
 /*unknown_80_9983:*/ bit $a8
 /*unknown_80_9985:*/ ora $28, X
 /*unknown_80_9987:*/ asl $2c, X
-/*unknown_80_9989:*/ asl $332c.w, X
+/*unknown_80_9989:*/ .db $1e, $2c
+unknown_80_998b: .db $33
 /*unknown_80_998c:*/ bit $3c46.w, X
 /*unknown_80_998f:*/ eor [$3c]
 /*unknown_80_9991:*/ pha
 /*unknown_80_9992:*/ bit $bc33.w, X
 /*unknown_80_9995:*/ lsr $bc
-/*unknown_80_9997:*/ and ($2c, S), Y
+unknown_80_9997: and ($2c, S), Y
 /*unknown_80_9999:*/ lsr $2c
 /*unknown_80_999b:*/ eor [$2c]
 /*unknown_80_999d:*/ pha
@@ -3361,175 +3362,175 @@ unknown_80_9b44:
   phk
   plb
   sep #$20
-  stz $02
+  stz var_unknown_02
   rep #$30
-  lda $09c0.w
-  cmp #$0001.w
+  lda var_reserve_tank_configuration.w
+  cmp #reserve_tank_configuration_automatic
   bne @unknown_80_9b8b
-  ldy #$998b.w
-  lda $09d6.w
+  ldy #unknown_80_998b
+  lda var_player_cur_reserve_tanks.w
   bne @unknown_80_9b61
-  ldy #$9997.w
+  ldy #unknown_80_9997
 @unknown_80_9b61:
-  lda $0000.w, Y
-  sta $7ec618
-  lda $0002.w, Y
-  sta $7ec61a
-  lda $0004.w, Y
-  sta $7ec658
-  lda $0006.w, Y
-  sta $7ec65a
-  lda $0008.w, Y
-  sta $7ec698
-  lda $000a.w, Y
-  sta $7ec69a
+  lda 0, Y
+  sta var_unknown_c618.l
+  lda 2, Y
+  sta var_unknown_c61a.l
+  lda 4, Y
+  sta var_unknown_c658.l
+  lda 6, Y
+  sta var_unknown_c65a.l
+  lda 8, Y
+  sta var_unknown_c698.l
+  lda 10, Y
+  sta var_unknown_c69a.l
 @unknown_80_9b8b:
-  lda $09c2.w
-  cmp $0a06.w
+  lda var_player_cur_health.w
+  cmp var_unknown_0a06.w
   beq @unknown_80_9bfb
-  sta $0a06.w
-  lda $09c2.w
-  sta $4204.w
+  sta var_unknown_0a06.w
+  lda var_player_cur_health.w
+  sta IO_WRDIV
   sep #$20
-  lda #$64
-  sta $4206.w
+  lda #player_health_per_tank
+  sta IO_WRDIVB
   pha
   pla
   pha
   pla
   rep #$20
-  lda $4214.w
-  sta $14
-  lda $4216.w
-  sta $12
-  lda $09c4.w
-  sta $4204.w
+  lda IO_RDDIV
+  sta var_unknown_14
+  lda IO_RDMPY
+  sta var_unknown_12
+  lda var_player_max_health.w
+  sta IO_WRDIV
   sep #$20
-  lda #$64
-  sta $4206.w
+  lda #player_health_per_tank
+  sta IO_WRDIVB
   pha
   pla
   pha
   pla
   rep #$30
   ldy #$0000.w
-  lda $4214.w
+  lda IO_RDDIV
   inc A
-  sta $16
+  sta var_unknown_16
 @unknown_80_9bcf:
-  dec $16
+  dec var_unknown_16
   beq @unknown_80_9bee
   ldx #$3430.w
-  lda $14
+  lda var_unknown_14
   beq @unknown_80_9bdf
-  dec $14
+  dec var_unknown_14
   ldx #$2831.w
 @unknown_80_9bdf:
   txa
-  ldx $9cce.w, Y
-  sta $7ec608, X
+  ldx unknown_80_9cce.w, Y
+  sta var_unknown_c608.l, X
   iny
   iny
   cpy #$001c.w
   bmi @unknown_80_9bcf
 @unknown_80_9bee:
-  lda #$9dbf.w
-  sta $00
+  lda #unknown_80_9dbf
+  sta var_unknown_00
   ldx #$008c.w
-  lda $12
+  lda var_unknown_12
   jsr unknown_80_9d98
 @unknown_80_9bfb:
-  lda #$9dd3.w
-  sta $00
-  lda $09c8.w
+  lda #unknown_80_9dd3
+  sta var_unknown_00
+  lda var_unknown_09c8.w
   beq @unknown_80_9c16
-  lda $09c6.w
-  cmp $0a08.w
+  lda var_unknown_09c6.w
+  cmp var_unknown_0a08.w
   beq @unknown_80_9c16
-  sta $0a08.w
+  sta var_unknown_0a08.w
   ldx #$0094.w
-  jsr $9d78.w
+  jsr unknown_80_9d78
 @unknown_80_9c16:
-  lda $09cc.w
+  lda var_unknown_09cc.w
   beq @unknown_80_9c3f
-  lda $09ca.w
-  cmp $0a0a.w
+  lda var_unknown_09ca.w
+  cmp var_unknown_0a0a.w
   beq @unknown_80_9c3f
-  sta $0a0a.w
+  sta var_unknown_0a0a.w
   ldx #$009c.w
-  lda $05cf.w
+  lda var_unknown_05cf.w
   bit #$1f40.w
   bne @unknown_80_9c39
-  lda $0a0a.w
+  lda var_unknown_0a0a.w
   jsr unknown_80_9d98
   bra @unknown_80_9c3f
 @unknown_80_9c39:
-  lda $0a0a.w
-  jsr $9d78.w
+  lda var_unknown_0a0a.w
+  jsr unknown_80_9d78.w
 @unknown_80_9c3f:
-  lda $09d0.w
+  lda var_unknown_09d0.w
   beq @unknown_80_9c55
-  lda $09ce.w
-  cmp $0a0c.w
+  lda var_unknown_09ce.w
+  cmp var_unknown_0a0c.w
   beq @unknown_80_9c55
-  sta $0a0c.w
+  sta var_unknown_0a0c.w
   ldx #$00a2.w
   jsr unknown_80_9d98
 @unknown_80_9c55:
-  lda $09d2.w
-  cmp $0a0e.w
+  lda var_unknown_09d2.w
+  cmp var_unknown_0a0e.w
   beq @unknown_80_9c96
   ldx #$1000.w
-  jsr $9cea.w
-  lda $0a0e.w
+  jsr unknown_80_9cea
+  lda var_unknown_0a0e.w
   ldx #$1400.w
-  jsr $9cea.w
-  lda $09d2.w
-  sta $0a0e.w
-  lda $0a1f.w
+  jsr unknown_80_9cea.w
+  lda var_unknown_09d2.w
+  sta var_unknown_0a0e.w
+  lda var_unknown_0a1f.w
   and #$00ff.w
   cmp #$0003.w
   beq @unknown_80_9c96
   cmp #$0014.w
   beq @unknown_80_9c96
-  lda $0d32.w
+  lda var_unknown_0d32.w
   cmp #$c4f0.w
   bne @unknown_80_9c96
-  lda $0a78.w
+  lda var_unknown_0a78.w
   bne @unknown_80_9c96
   lda #$0039.w
-  jsr $809049
+  jsl unknown_80_9049
 @unknown_80_9c96:
   ldx #$1400.w
-  lda $05b5.w
+  lda var_unknown_05b5.w
   bit #$0010.w
   beq @unknown_80_9ca4
   ldx #$1000.w
 @unknown_80_9ca4:
-  lda $0a04.w
-  jsr $9cea.w
-  ldx $0330.w
+  lda var_unknown_0a04.w
+  jsr unknown_80_9cea.w
+  ldx var_unknown_0330.w
   lda #$00c0.w
-  sta $d0, X
+  sta var_unknown_d0, X
   inx
   inx
   lda #$c608.w
-  sta $d0, X
+  sta var_unknown_d0, X
   inx
   inx
   lda #$007e.w
-  sta $d0, X
+  sta var_unknown_d0, X
   inx
   lda #$5820.w
-  sta $d0, X
+  sta var_unknown_d0, X
   inx
   inx
-  stx $0330.w
+  stx var_unknown_0330.w
   plb
   plp
   rtl
 
-/*unknown_80_9cce:*/ .db $42, $00
+unknown_80_9cce: .db $42, $00
 /*unknown_80_9cd0:*/ mvp $46, $00
 /*unknown_80_9cd3:*/ brk $48
 /*unknown_80_9cd5:*/ brk $4a
@@ -3542,7 +3543,8 @@ unknown_80_9b44:
 /*unknown_80_9ce3:*/ brk $0a
 /*unknown_80_9ce5:*/ brk $0c
 /*unknown_80_9ce7:*/ brk $0e
-/*unknown_80_9ce9:*/ brk $8e
+/*unknown_80_9ce9:*/ .db $00
+unknown_80_9cea: .db $8e
 /*unknown_80_9ceb:*/ jmp ($3a07.w, X)
 /*unknown_80_9cee:*/ bmi @unknown_80_9d6d
 /*unknown_80_9cf0:*/ asl A
@@ -3594,7 +3596,8 @@ unknown_80_9b44:
 /*unknown_80_9d70:*/ trb $2200.w
 /*unknown_80_9d73:*/ brk $28
 /*unknown_80_9d75:*/ brk $2e
-/*unknown_80_9d77:*/ brk $8d
+/*unknown_80_9d77:*/ .db $00
+unknown_80_9d78: .db $8d
 /*unknown_80_9d79:*/ tsb $42
 /*unknown_80_9d7b:*/ sep #$20
 /*unknown_80_9d7d:*/ lda #$64
@@ -3633,7 +3636,7 @@ unknown_80_9d98: sta $4204.w
 /*unknown_80_9dba:*/ sta $7ec60a, X
 /*unknown_80_9dbe:*/ rts
 
-/*unknown_80_9dbf:*/ ora #$002c.w
+unknown_80_9dbf: ora #$002c.w
 /*unknown_80_9dc2:*/ bit $2c01.w
 /*unknown_80_9dc5:*/ cop $2c
 /*unknown_80_9dc7:*/ ora $2c, S
@@ -3642,7 +3645,8 @@ unknown_80_9d98: sta $4204.w
 /*unknown_80_9dcd:*/ asl $2c
 /*unknown_80_9dcf:*/ ora [$2c]
 /*unknown_80_9dd1:*/ php
-/*unknown_80_9dd2:*/ bit $2c09.w
+/*unknown_80_9dd2:*/ .db $2c
+unknown_80_9dd3: .db $09, $2c
 /*unknown_80_9dd5:*/ brk $2c
 /*unknown_80_9dd7:*/ ora ($2c, X)
 /*unknown_80_9dd9:*/ cop $2c

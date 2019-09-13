@@ -189,12 +189,14 @@ var_unknown_0590_h: db ; $7e0591
 ; If non-zero:
 ; * The game engine has prepared a frame to be rendered.
 ; * NMI will update I/O.
-var_engine_frame_is_ready: dw ; $7e05b4
+var_engine_frame_is_ready: db ; $7e05b4
 
+var_unknown_05b5: db ; $7e05b5
 var_unknown_05b6: dw ; $7e05b6
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $05d1) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $05cf) export
+var_unknown_05cf: dw ; $7e05cf
 var_unknown_05d1: dw ; $7e05d1
 .ende
 
@@ -354,10 +356,18 @@ var_reserve_tank_configuration: dw ; $7e09c0
 .define reserve_tank_configuration_manual $0002.w
 .export reserve_tank_configuration_manual
 
+.define player_health_per_tank 100
+.export player_health_per_tank
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c2) export
 var_player_cur_health: dw ; $7e09c2
 var_player_max_health: dw ; $7e09c4
-var_unknown_09c6: ds $e ; $7e09c6
+var_unknown_09c6: dw ; $7e09c6
+var_unknown_09c8: dw ; $7e09c8
+var_unknown_09ca: dw ; $7e09ca
+var_unknown_09cc: dw ; $7e09cc
+var_unknown_09ce: dw ; $7e09ce
+var_unknown_09d0: dw ; $7e09d0
+var_unknown_09d2: dw ; $7e09d2
 var_player_max_reserve_tanks: dw ; $7e09d4
 var_player_cur_reserve_tanks: dw ; $7e09d6
 var_unknown_09d8: dw ; $7e09d8
@@ -381,9 +391,26 @@ var_game_time_hours: dw ; $7e09e0
 .define game_time_hours_overflow 99.b
 .export game_time_hours_overflow
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0a04) export
+var_unknown_0a04: dw ; $7e0a04
+var_unknown_0a06: dw ; $7e0a06
+var_unknown_0a08: dw ; $7e0a08
+var_unknown_0a0a: dw ; $7e0a0a
+var_unknown_0a0c: dw ; $7e0a0c
+var_unknown_0a0e: dw ; $7e0a0e
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0a1f) export
+var_unknown_0a1f: dw ; $7e0a1f
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0a76) export
 var_unknown_0a76: dw ; $7e0a76
 var_unknown_0a78: dw ; $7e0a78
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0d32) export
+var_unknown_0d32: dw ; $7e0d32
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0df4) export
@@ -400,6 +427,25 @@ var_unknown_1f59: dw ; $7e1f59
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3a8e) export
 var_unknown_3a8e: dsw $8 ; $7e3a8e
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c608) export
+var_unknown_c608: dw ; $7ec608
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c618) export
+var_unknown_c618: dw ; $7ec618
+var_unknown_c61a: dw ; $7ec61a
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c658) export
+var_unknown_c658: dw ; $7ec658
+var_unknown_c65a: dw ; $7ec65a
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c698) export
+var_unknown_c698: dw ; $7ec698
+var_unknown_c69a: dw ; $7ec69a
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d820) export
