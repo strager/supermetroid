@@ -4463,67 +4463,72 @@ unknown_80_a3a0:
 
 ; TODO: "Calculate blocks scrolled for various layers, which is used to update
 ; room graphics" -- Kejardon
-unknown_80_a4bb: lda $b1
-/*unknown_80_a4bd:*/ lsr A
-/*unknown_80_a4be:*/ lsr A
-/*unknown_80_a4bf:*/ lsr A
-/*unknown_80_a4c0:*/ lsr A
-/*unknown_80_a4c1:*/ sta $0907.w
-/*unknown_80_a4c4:*/ lda $b5
-/*unknown_80_a4c6:*/ lsr A
-/*unknown_80_a4c7:*/ lsr A
-/*unknown_80_a4c8:*/ lsr A
-/*unknown_80_a4c9:*/ lsr A
-/*unknown_80_a4ca:*/ sta $090b.w
-/*unknown_80_a4cd:*/ lda $0911.w
-/*unknown_80_a4d0:*/ lsr A
-/*unknown_80_a4d1:*/ lsr A
-/*unknown_80_a4d2:*/ lsr A
-/*unknown_80_a4d3:*/ lsr A
-/*unknown_80_a4d4:*/ bit #$0800.w
-/*unknown_80_a4d7:*/ beq @unknown_80_a4dc
-/*unknown_80_a4d9:*/ ora #$f000.w
-@unknown_80_a4dc: sta $08f7.w
-/*unknown_80_a4df:*/ lda $0917.w
-/*unknown_80_a4e2:*/ lsr A
-/*unknown_80_a4e3:*/ lsr A
-/*unknown_80_a4e4:*/ lsr A
-/*unknown_80_a4e5:*/ lsr A
-/*unknown_80_a4e6:*/ bit #$0800.w
-/*unknown_80_a4e9:*/ beq @unknown_80_a4ee
-/*unknown_80_a4eb:*/ ora #$f000.w
-@unknown_80_a4ee: sta $08fb.w
-/*unknown_80_a4f1:*/ lda $b3
-/*unknown_80_a4f3:*/ lsr A
-/*unknown_80_a4f4:*/ lsr A
-/*unknown_80_a4f5:*/ lsr A
-/*unknown_80_a4f6:*/ lsr A
-/*unknown_80_a4f7:*/ sta $0909.w
-/*unknown_80_a4fa:*/ lda $b7
-/*unknown_80_a4fc:*/ lsr A
-/*unknown_80_a4fd:*/ lsr A
-/*unknown_80_a4fe:*/ lsr A
-/*unknown_80_a4ff:*/ lsr A
-/*unknown_80_a500:*/ sta $090d.w
-/*unknown_80_a503:*/ lda $0915.w
-/*unknown_80_a506:*/ lsr A
-/*unknown_80_a507:*/ lsr A
-/*unknown_80_a508:*/ lsr A
-/*unknown_80_a509:*/ lsr A
-/*unknown_80_a50a:*/ bit #$0800.w
-/*unknown_80_a50d:*/ beq @unknown_80_a512
-/*unknown_80_a50f:*/ ora #$f000.w
-@unknown_80_a512: sta $08f9.w
-/*unknown_80_a515:*/ lda $0919.w
-/*unknown_80_a518:*/ lsr A
-/*unknown_80_a519:*/ lsr A
-/*unknown_80_a51a:*/ lsr A
-/*unknown_80_a51b:*/ lsr A
-/*unknown_80_a51c:*/ bit #$0800.w
-/*unknown_80_a51f:*/ beq @unknown_80_a524
-/*unknown_80_a521:*/ ora #$f000.w
-@unknown_80_a524: sta $08fd.w
-/*unknown_80_a527:*/ rts
+unknown_80_a4bb:
+  lda $b1
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  sta $0907.w
+  lda $b5
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  sta $090b.w
+  lda $0911.w
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  bit #$0800.w
+  beq @unknown_80_a4dc
+  ora #$f000.w
+@unknown_80_a4dc:
+  sta $08f7.w
+  lda $0917.w
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  bit #$0800.w
+  beq @unknown_80_a4ee
+  ora #$f000.w
+@unknown_80_a4ee:
+  sta $08fb.w
+  lda $b3
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  sta $0909.w
+  lda $b7
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  sta $090d.w
+  lda $0915.w
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  bit #$0800.w
+  beq @unknown_80_a512
+  ora #$f000.w
+@unknown_80_a512:
+  sta $08f9.w
+  lda $0919.w
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  bit #$0800.w
+  beq @unknown_80_a524
+  ora #$f000.w
+@unknown_80_a524:
+  sta $08fd.w
+  rts
 
 ; TODO: "Handles autoscrolling when Samus isn't moving horizontally and part of
 ; the screen is on a no-scroll area." -- Kejardon
