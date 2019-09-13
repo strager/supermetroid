@@ -595,18 +595,19 @@ unknown_80_836f:
   plp
   rtl
 
-/*unknown_80_8382:*/ php
-/*unknown_80_8383:*/ phb
-/*unknown_80_8384:*/ phk
-/*unknown_80_8385:*/ plb
-/*unknown_80_8386:*/ sep #$20
-/*unknown_80_8388:*/ lda $51
-/*unknown_80_838a:*/ and #$7f
-/*unknown_80_838c:*/ sta $51
-/*unknown_80_838e:*/ jsr $808338
-/*unknown_80_8392:*/ plb
-/*unknown_80_8393:*/ plp
-/*unknown_80_8394:*/ rtl
+unknown_80_8382:
+  php
+  phb
+  phk
+  plb
+  sep #$20
+  lda var_unknown_51
+  and #$7f
+  sta var_unknown_51
+  jsl render_and_synchronize
+  plb
+  plp
+  rtl
 
 /*unknown_80_8395:*/ php
 /*unknown_80_8396:*/ sep #$10
