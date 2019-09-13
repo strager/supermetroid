@@ -567,18 +567,19 @@ unknown_80_834b:
   plp
   rtl
 
-/*unknown_80_835d:*/ php
-/*unknown_80_835e:*/ phb
-/*unknown_80_835f:*/ phk
-/*unknown_80_8360:*/ plb
-/*unknown_80_8361:*/ sep #$20
-/*unknown_80_8363:*/ lda $84
-/*unknown_80_8365:*/ and #$7f
-/*unknown_80_8367:*/ sta $4200.w
-/*unknown_80_836a:*/ sta $84
-/*unknown_80_836c:*/ plb
-/*unknown_80_836d:*/ plp
-/*unknown_80_836e:*/ rtl
+unknown_80_835d:
+  php
+  phb
+  phk
+  plb
+  sep #$20
+  lda var_unknown_84
+  and #IO_NMITIMEN_ENABLE_VBLANK ~ $ff
+  sta IO_NMITIMEN
+  sta var_unknown_84
+  plb
+  plp
+  rtl
 
 /*unknown_80_836f:*/ php
 /*unknown_80_8370:*/ phb
