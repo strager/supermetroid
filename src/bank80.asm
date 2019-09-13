@@ -1967,35 +1967,37 @@ unknown_80_8ea2:
 
 ; TODO: "Changes music song/instruments or music track to A, with an 8-frame
 ; delay. Makes sure 0639 does not lap 063B." -- Kejardon
-unknown_80_8fc1: php
-/*unknown_80_8fc2:*/ rep #$30
-/*unknown_80_8fc4:*/ phx
-/*unknown_80_8fc5:*/ phy
-/*unknown_80_8fc6:*/ ldx $0998.w
-/*unknown_80_8fc9:*/ cpx #$0028.w
-/*unknown_80_8fcc:*/ bcs @unknown_80_8ff3
-/*unknown_80_8fce:*/ pha
-/*unknown_80_8fcf:*/ lda $0639.w
-/*unknown_80_8fd2:*/ inc A
-/*unknown_80_8fd3:*/ inc A
-/*unknown_80_8fd4:*/ and #$000e.w
-/*unknown_80_8fd7:*/ tax
-/*unknown_80_8fd8:*/ pla
-/*unknown_80_8fd9:*/ cpx $063b.w
-/*unknown_80_8fdc:*/ beq @unknown_80_8ff3
-/*unknown_80_8fde:*/ ldx $0639.w
-/*unknown_80_8fe1:*/ sta $0619.w, X
-/*unknown_80_8fe4:*/ lda #$0008.w
-/*unknown_80_8fe7:*/ sta $0629.w, X
-/*unknown_80_8fea:*/ inx
-/*unknown_80_8feb:*/ inx
-/*unknown_80_8fec:*/ txa
-/*unknown_80_8fed:*/ and #$000e.w
-/*unknown_80_8ff0:*/ sta $0639.w
-@unknown_80_8ff3: ply
-/*unknown_80_8ff4:*/ plx
-/*unknown_80_8ff5:*/ plp
-/*unknown_80_8ff6:*/ rtl
+unknown_80_8fc1:
+  php
+  rep #$30
+  phx
+  phy
+  ldx $0998.w
+  cpx #$0028.w
+  bcs @unknown_80_8ff3
+  pha
+  lda $0639.w
+  inc A
+  inc A
+  and #$000e.w
+  tax
+  pla
+  cpx $063b.w
+  beq @unknown_80_8ff3
+  ldx $0639.w
+  sta $0619.w, X
+  lda #$0008.w
+  sta $0629.w, X
+  inx
+  inx
+  txa
+  and #$000e.w
+  sta $0639.w
+@unknown_80_8ff3:
+  ply
+  plx
+  plp
+  rtl
 
 ; TODO: "Changes music song/instruments or music track to A, with a Y-frame
 ; delay (minimum of 8). Does not stop 0639 from lapping 063B." -- Kejardon
