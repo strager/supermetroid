@@ -687,20 +687,22 @@ unknown_80_83f6:
   plp
   rtl
 
-/*unknown_80_8409:*/ php
-/*unknown_80_840a:*/ phb
-/*unknown_80_840b:*/ phk
-/*unknown_80_840c:*/ plb
-/*unknown_80_840d:*/ rep #$30
-@unknown_80_840f: sta $7f0000, X
-/*unknown_80_8413:*/ inx
-/*unknown_80_8414:*/ inx
-/*unknown_80_8415:*/ dey
-/*unknown_80_8416:*/ dey
-/*unknown_80_8417:*/ bne @unknown_80_840f
-/*unknown_80_8419:*/ plb
-/*unknown_80_841a:*/ plp
-/*unknown_80_841b:*/ rtl
+unknown_80_8409:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+@loop:
+  sta MEM_HIGH_RAM_BEGIN, X
+  inx
+  inx
+  dey
+  dey
+  bne @loop
+  plb
+  plp
+  rtl
 
 interrupt_reset:
   sei
