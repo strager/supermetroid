@@ -4266,32 +4266,32 @@ unknown_80_a2f9:
 ; and Layer 2's Y scroll percent (091C)" -- Kejardon
 unknown_80_a33a:
   php
-  ldy $0915.w
+  ldy var_unknown_0915.w
   sep #$20
-  lda $091c.w
+  lda var_unknown_091c.w
   beq @unknown_80_a36f
   cmp #$01
   beq @unknown_80_a378
   and #$fe
   sta IO_WRMPYA
-  lda $0915.w
+  lda var_unknown_0915_l.w
   sta IO_WRMPYB
-  stz $0934.w
+  stz var_unknown_0933_h.w
   pha
   pla
   lda IO_RDMPYH
-  sta $0933.w
-  lda $0916.w
+  sta var_unknown_0933_l.w
+  lda var_unknown_0915_h.w
   sta IO_WRMPYB
   rep #$20
-  lda $0933.w
+  lda var_unknown_0933.w
   clc
-  adc $4216.w
+  adc IO_RDMPY
   tay
 @unknown_80_a36f:
   rep #$20
   tya
-  sta $0919.w
+  sta var_unknown_0919.w
   plp
   clc
   rts
