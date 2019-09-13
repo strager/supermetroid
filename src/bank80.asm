@@ -457,48 +457,81 @@ wait_until_end_of_next_vblank:
   pla
   rtl
 
-; TODO: "Multiplies A and Y together (16-bit * 16-bit). Result in $05F1-$05F4.
-; Not accurate: Can lose carry to top byte." -- Kejardon
-unknown_80_82d6:
+; Multiply two 16-bit integers, calculating a 32-bit result.
+;
+; BUG: the top 8 bits of the result may be incorrect! Use multiply_16 if you
+; want a correct result.
+;
+; TODO: Is multiplication signed or unsigned?
+;
+; Inputs:
+; * A: 16-bit integer to multiply with Y
+; * Y: 16-bit integer to multiply with A
+;
+; Outputs:
+; * [var_buggy_multiply_16_output]: A * Y
+;
+; See also: multiply_16
+buggy_multiply_16:
   phx
-  sta var_unknown_05e9.w
-  sty var_unknown_05eb.w
-  stz var_unknown_05f1.w
-  stz var_unknown_05f3.w
+  sta var_buggy_multiply_16_input_1.w
+  sty var_buggy_multiply_16_input_2.w
+  stz var_buggy_multiply_16_output.w
+  stz (var_buggy_multiply_16_output.w + 2) & $ffff
   sep #$10
-  ldy var_unknown_05eb.w
+
+  ; result := Y_l * A_l           ; @step_1
+  ;         + ((Y_l * A_h) << 8)  ; @step_2
+  ;         + ((Y_h * A_l) << 8)  ; @step_3
+  ;         + ((Y_h * A_h) << 16) ; @step_4
+
+@step_1:
+  ; [var_buggy_multiply_16_output[0..15]] := [var_buggy_multiply_16_input_2_l] * [var_buggy_multiply_16_input_1_l]
+  ldy var_buggy_multiply_16_input_2_l.w
   sty IO_WRMPYA
-  ldy var_unknown_05e9.w
+  ldy var_buggy_multiply_16_input_1_l.w
   sty IO_WRMPYB
   nop
   nop
   nop
   lda IO_RDMPY
-  sta var_unknown_05f1.w
-  ldy var_unknown_05ea.w
+  sta var_buggy_multiply_16_output.w
+
+@step_2:
+  ; [var_buggy_multiply_16_output[8..23]] := [var_buggy_multiply_16_output[8..23]] + [var_buggy_multiply_16_input_2_l] * [var_buggy_multiply_16_input_1_h]
+  ldy var_buggy_multiply_16_input_1_h.w
   sty IO_WRMPYB
   nop
-  lda var_unknown_05f2.w
+  lda (var_buggy_multiply_16_output.w + 1) & $ffff
   clc
   adc IO_RDMPY
-  sta var_unknown_05f2.w
-  ldy var_unknown_05ec.w
+  ; BUG: Carry should be added to var_buggy_multiply_16_output bit 24, but isn't.
+  sta (var_buggy_multiply_16_output.w + 1) & $ffff
+
+@step_3:
+  ; [var_buggy_multiply_16_output[8..23]] := [var_buggy_multiply_16_output[8..23]] + [var_buggy_multiply_16_input_2_h] * [var_buggy_multiply_16_input_1_l]
+  ldy var_buggy_multiply_16_input_2_h.w
   sty IO_WRMPYA
-  ldy var_unknown_05e9.w
+  ldy var_buggy_multiply_16_input_1_l.w
   sty IO_WRMPYB
   nop
-  lda var_unknown_05f2.w
+  lda (var_buggy_multiply_16_output.w + 1) & $ffff
   clc
   adc IO_RDMPY
-  sta var_unknown_05f2.w
-  ldy var_unknown_05ea.w
+  ; BUG: Carry should be added to var_buggy_multiply_16_output bit 24, but isn't.
+  sta (var_buggy_multiply_16_output.w + 1) & $ffff
+
+@step_4:
+  ; [var_buggy_multiply_16_output[16..31]] := [var_buggy_multiply_16_output[16..31]] + [var_buggy_multiply_16_input_2_h] * [var_buggy_multiply_16_input_1_h]
+  ldy var_buggy_multiply_16_input_1_h.w
   sty IO_WRMPYB
   nop
   nop
-  lda var_unknown_05f3.w
+  lda (var_buggy_multiply_16_output.w + 2) & $ffff
   clc
   adc IO_RDMPY
-  sta var_unknown_05f3.w
+  sta (var_buggy_multiply_16_output.w + 2) & $ffff
+
   rep #$30
   plx
   rtl

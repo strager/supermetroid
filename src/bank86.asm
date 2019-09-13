@@ -8160,6 +8160,8 @@ _multiply_sine:
 ; * [var_multiply_16_output]: [var_multiply_16_input_1] * [var_multiply_16_input_2]
 ; * A: (([var_multiply_16_input_1] * [var_multiply_16_input_2]) >> 8) & $ffff
 ; * Y: [var_multiply_16_input_1] * [var_multiply_16_input_2]) >> 24
+;
+; See also: buggy_multiply_16
 multiply_16:
   rep #$20
   sep #$10
