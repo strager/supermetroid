@@ -4751,9 +4751,9 @@ unknown_80_a6bb:
   adc #$0080.w
   xba
   sep #$20
-  sta $4202.w
+  sta IO_WRMPYA
   lda $07a9.w
-  sta $4203.w
+  sta IO_WRMPYB
   rep #$20
   lda $0912.w
   and #$00ff.w
