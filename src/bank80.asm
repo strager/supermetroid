@@ -337,18 +337,19 @@ unknown_80_81dc:
 
 ; TODO: "marks an event as happened. Event bit # must be stored in A."
 ; -- Kejardon
-unknown_80_81fa: phx
-/*unknown_80_81fb:*/ phy
-/*unknown_80_81fc:*/ php
-/*unknown_80_81fd:*/ rep #$30
-/*unknown_80_81ff:*/ jsl unknown_80_818e
-/*unknown_80_8203:*/ lda $7ed820, X
-/*unknown_80_8207:*/ ora $05e7.w
-/*unknown_80_820a:*/ sta $7ed820, X
-/*unknown_80_820e:*/ plp
-/*unknown_80_820f:*/ ply
-/*unknown_80_8210:*/ plx
-/*unknown_80_8211:*/ rtl
+unknown_80_81fa:
+  phx
+  phy
+  php
+  rep #$30
+  jsl unknown_80_818e
+  lda var_unknown_d820.l, X
+  ora var_unknown_05e7.w
+  sta var_unknown_d820.l, X
+  plp
+  ply
+  plx
+  rtl
 
 /*unknown_80_8212:*/ phx
 /*unknown_80_8213:*/ phy
