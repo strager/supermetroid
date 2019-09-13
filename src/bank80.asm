@@ -87,14 +87,14 @@ unknown_80_8059:
   php
   rep #$30
   lda #$3000.w
-  sta $000641.l
+  sta var_unknown_0641.l - MEM_LOW_HIGH_RAM_BEGIN
 @unknown_80_8063:
   lda #$bbaa.w
-  cmp $002140.l
+  cmp IO_APUI00.l
   beq @unknown_80_8079
-  lda $000641.l
+  lda var_unknown_0641.l - MEM_LOW_HIGH_RAM_BEGIN
   dec A
-  sta $000641.l
+  sta var_unknown_0641.l - MEM_LOW_HIGH_RAM_BEGIN
   bne @unknown_80_8063
 @unknown_80_8077:
   bra @unknown_80_8077
@@ -114,17 +114,17 @@ unknown_80_8059:
   jsr unknown_80_8103
   xba
 @unknown_80_8092:
-  cmp $002140.l
+  cmp IO_APUI00.l
   bne @unknown_80_8092
   inc A
 @unknown_80_8099:
   rep #$20
-  sta $002140.l
+  sta IO_APUI00.l
   sep #$20
   dex
   bne @unknown_80_808a
 @unknown_80_80a4:
-  cmp $002140.l
+  cmp IO_APUI00.l
   bne @unknown_80_80a4
 @unknown_80_80aa:
   adc #$03
@@ -137,35 +137,35 @@ unknown_80_8059:
   tax
   lda $0000.w, Y
   jsr unknown_80_8100
-  sta $002142.l
+  sta IO_APUI02.l
   sep #$20
   cpx #$0001.w
   lda #$00
   rol A
-  sta $002141.l
+  sta IO_APUI01.l
   adc #$7f
   pla
-  sta $002140.l
+  sta IO_APUI00.l
   phx
   ldx #$1000.w
 @unknown_80_80d9:
   dex
   beq @unknown_80_80f2
-  cmp $002140.l
+  cmp IO_APUI00.l
   bne @unknown_80_80d9
   plx
   bvs @unknown_80_807f
   sep #$20
-  stz $2141.w
-  stz $2142.w
-  stz $2143.w
+  stz IO_APUI01
+  stz IO_APUI02
+  stz IO_APUI03
   plp
   rts
 @unknown_80_80f2:
   sep #$20
-  stz $2141.w
-  stz $2142.w
-  stz $2143.w
+  stz IO_APUI01
+  stz IO_APUI02
+  stz IO_APUI03
   plx
   plp
   rts

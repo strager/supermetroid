@@ -152,6 +152,10 @@ var_random_state_h: db ; $7e05e6
 var_unknown_0617: dw ; $7e0617
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0641) export
+var_unknown_0641: dw ; $7e0641
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071d) export
 var_unknown_071d: dw ; $7e071d
 var_unknown_071f: dw ; $7e071f
