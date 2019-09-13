@@ -4226,75 +4226,78 @@ unknown_80_a12b: php
 
 ; TODO: "Calculates Layer 2's X scroll position (0917) based on Layer 1 (0911)
 ; and Layer 2's X scroll percent (091B)" -- Kejardon
-unknown_80_a2f9: php
-/*unknown_80_a2fa:*/ ldy $0911.w
-/*unknown_80_a2fd:*/ sep #$20
-/*unknown_80_a2ff:*/ lda $091b.w
-/*unknown_80_a302:*/ beq @unknown_80_a32e
-/*unknown_80_a304:*/ cmp #$01
-/*unknown_80_a306:*/ beq @unknown_80_a337
-/*unknown_80_a308:*/ and #$fe
-/*unknown_80_a30a:*/ sta $4202.w
-/*unknown_80_a30d:*/ lda $0911.w
-/*unknown_80_a310:*/ sta $4203.w
-/*unknown_80_a313:*/ stz $0934.w
-/*unknown_80_a316:*/ pha
-/*unknown_80_a317:*/ pla
-/*unknown_80_a318:*/ lda $4217.w
-/*unknown_80_a31b:*/ sta $0933.w
-/*unknown_80_a31e:*/ lda $0912.w
-/*unknown_80_a321:*/ sta $4203.w
-/*unknown_80_a324:*/ rep #$20
-/*unknown_80_a326:*/ lda $0933.w
-/*unknown_80_a329:*/ clc
-/*unknown_80_a32a:*/ adc $4216.w
-/*unknown_80_a32d:*/ tay
-@unknown_80_a32e: rep #$20
-/*unknown_80_a330:*/ tya
-/*unknown_80_a331:*/ sta $0917.w
-/*unknown_80_a334:*/ plp
-/*unknown_80_a335:*/ clc
-/*unknown_80_a336:*/ rts
-
-@unknown_80_a337: plp
-/*unknown_80_a338:*/ sec
-/*unknown_80_a339:*/ rts
+unknown_80_a2f9:
+  php
+  ldy $0911.w
+  sep #$20
+  lda $091b.w
+  beq @unknown_80_a32e
+  cmp #$01
+  beq @unknown_80_a337
+  and #$fe
+  sta $4202.w
+  lda $0911.w
+  sta $4203.w
+  stz $0934.w
+  pha
+  pla
+  lda $4217.w
+  sta $0933.w
+  lda $0912.w
+  sta $4203.w
+  rep #$20
+  lda $0933.w
+  clc
+  adc $4216.w
+  tay
+@unknown_80_a32e:
+  rep #$20
+  tya
+  sta $0917.w
+  plp
+  clc
+  rts
+@unknown_80_a337:
+  plp
+  sec
+  rts
 
 ; TODO: "Calculates Layer 2's Y scroll position (0919) based on Layer 1 (0915)
 ; and Layer 2's Y scroll percent (091C)" -- Kejardon
-unknown_80_a33a: php
-/*unknown_80_a33b:*/ ldy $0915.w
-/*unknown_80_a33e:*/ sep #$20
-/*unknown_80_a340:*/ lda $091c.w
-/*unknown_80_a343:*/ beq @unknown_80_a36f
-/*unknown_80_a345:*/ cmp #$01
-/*unknown_80_a347:*/ beq @unknown_80_a378
-/*unknown_80_a349:*/ and #$fe
-/*unknown_80_a34b:*/ sta $4202.w
-/*unknown_80_a34e:*/ lda $0915.w
-/*unknown_80_a351:*/ sta $4203.w
-/*unknown_80_a354:*/ stz $0934.w
-/*unknown_80_a357:*/ pha
-/*unknown_80_a358:*/ pla
-/*unknown_80_a359:*/ lda $4217.w
-/*unknown_80_a35c:*/ sta $0933.w
-/*unknown_80_a35f:*/ lda $0916.w
-/*unknown_80_a362:*/ sta $4203.w
-/*unknown_80_a365:*/ rep #$20
-/*unknown_80_a367:*/ lda $0933.w
-/*unknown_80_a36a:*/ clc
-/*unknown_80_a36b:*/ adc $4216.w
-/*unknown_80_a36e:*/ tay
-@unknown_80_a36f: rep #$20
-/*unknown_80_a371:*/ tya
-/*unknown_80_a372:*/ sta $0919.w
-/*unknown_80_a375:*/ plp
-/*unknown_80_a376:*/ clc
-/*unknown_80_a377:*/ rts
-
+unknown_80_a33a:
+  php
+  ldy $0915.w
+  sep #$20
+  lda $091c.w
+  beq @unknown_80_a36f
+  cmp #$01
+  beq @unknown_80_a378
+  and #$fe
+  sta $4202.w
+  lda $0915.w
+  sta $4203.w
+  stz $0934.w
+  pha
+  pla
+  lda $4217.w
+  sta $0933.w
+  lda $0916.w
+  sta $4203.w
+  rep #$20
+  lda $0933.w
+  clc
+  adc $4216.w
+  tay
+@unknown_80_a36f:
+  rep #$20
+  tya
+  sta $0919.w
+  plp
+  clc
+  rts
 @unknown_80_a378: plp
-/*unknown_80_a379:*/ sec
-/*unknown_80_a37a:*/ rts
+  sec
+  rts
 
 ; TODO: "Translates Layer 1 and Layer 2 scroll positions to BG1 and BG2 scroll
 ; positions" -- Kejardon
