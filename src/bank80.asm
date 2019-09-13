@@ -4228,32 +4228,32 @@ unknown_80_a12b: php
 ; and Layer 2's X scroll percent (091B)" -- Kejardon
 unknown_80_a2f9:
   php
-  ldy $0911.w
+  ldy var_unknown_0911.w
   sep #$20
-  lda $091b.w
+  lda var_unknown_091b.w
   beq @unknown_80_a32e
   cmp #$01
   beq @unknown_80_a337
   and #$fe
-  sta $4202.w
-  lda $0911.w
-  sta $4203.w
-  stz $0934.w
+  sta IO_WRMPYA
+  lda var_unknown_0911_l.w
+  sta IO_WRMPYB
+  stz var_unknown_0933_h.w
   pha
   pla
-  lda $4217.w
-  sta $0933.w
-  lda $0912.w
-  sta $4203.w
+  lda IO_RDMPYH
+  sta var_unknown_0933_l.w
+  lda var_unknown_0911_h.w
+  sta IO_WRMPYB
   rep #$20
-  lda $0933.w
+  lda var_unknown_0933.w
   clc
-  adc $4216.w
+  adc IO_RDMPY
   tay
 @unknown_80_a32e:
   rep #$20
   tya
-  sta $0917.w
+  sta var_unknown_0917.w
   plp
   clc
   rts
@@ -4273,16 +4273,16 @@ unknown_80_a33a:
   cmp #$01
   beq @unknown_80_a378
   and #$fe
-  sta $4202.w
+  sta IO_WRMPYA
   lda $0915.w
-  sta $4203.w
+  sta IO_WRMPYB
   stz $0934.w
   pha
   pla
-  lda $4217.w
+  lda IO_RDMPYH
   sta $0933.w
   lda $0916.w
-  sta $4203.w
+  sta IO_WRMPYB
   rep #$20
   lda $0933.w
   clc

@@ -310,6 +310,30 @@ var_unknown_079f: db ; $7e079f
 var_unknown_07ec: db ; $7e07ec
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0911) export
+.union
+var_unknown_0911: db ; $7e0911
+.nextu
+var_unknown_0911_l: db ; $7e0911
+var_unknown_0911_h: db ; $7e0912
+.endu
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0917) export
+var_unknown_0917: dw ; $7e0917
+var_unknown_0919: dw ; $7e0919
+var_unknown_091b: dw ; $7e091b
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0933) export
+.union
+var_unknown_0933: dw ; $7e0933
+.nextu
+var_unknown_0933_l: db ; $7e0933
+var_unknown_0933_h: db ; $7e0934
+.endu
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0998) export
 var_game_state: db ; $7e0998
 .ende
