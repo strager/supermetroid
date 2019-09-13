@@ -2225,7 +2225,7 @@ output_address: .dl $7f5000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f5000
 das: .dw $4000
 .ENDST
@@ -3430,7 +3430,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f4000
 das: .dw $1000
 .ENDST
@@ -3447,7 +3447,7 @@ das: .dw $1000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f5000
 das: .dw $4000
 .ENDST
@@ -4412,7 +4412,7 @@ output_address: .dl $7fe000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f0000
 das: .dw $8000
 .ENDST
@@ -4429,7 +4429,7 @@ das: .dw $8000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f8000
 das: .dw $900
 .ENDST
@@ -4446,7 +4446,7 @@ das: .dw $900
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f9000
 das: .dw $800
 .ENDST
@@ -4463,7 +4463,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fe000
 das: .dw $800
 .ENDST
@@ -4480,7 +4480,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f9800
 das: .dw $2000
 .ENDST
@@ -4497,7 +4497,7 @@ das: .dw $2000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_9a_d200
 das: .dw $2000
 .ENDST
@@ -4514,7 +4514,7 @@ das: .dw $2000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fb800
 das: .dw $2400
 .ENDST
@@ -4664,7 +4664,7 @@ output_address: .dl $7fa000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e4000
 das: .dw $600
 .ENDST
@@ -7098,7 +7098,7 @@ output_address: .dl $7f5000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_UNKNOWN_19
+bbad: .db IO_VMDATAH - IO_BBAD_BASE
 a1: .dl $7f0000
 das: .dw $4000
 .ENDST
@@ -7125,7 +7125,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f4000
 das: .dw $300
 .ENDST
@@ -7142,7 +7142,7 @@ das: .dw $300
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f5000
 das: .dw $4000
 .ENDST
@@ -7642,7 +7642,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f4600
 das: .dw $600
 .ENDST
@@ -7659,7 +7659,7 @@ das: .dw $600
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f5000
 das: .dw $4000
 .ENDST
@@ -7676,7 +7676,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_9a_d200
 das: .dw $1a00
 .ENDST
@@ -8196,7 +8196,7 @@ output_address: .dl $7f5000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f4300
 das: .dw $300
 .ENDST
@@ -8213,7 +8213,7 @@ das: .dw $300
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f9000
 das: .dw $800
 .ENDST
@@ -8230,7 +8230,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f5000
 das: .dw $4000
 .ENDST
@@ -9863,7 +9863,7 @@ output_address: .dl $7f8000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f8000
 das: .dw $4000
 .ENDST
@@ -9880,7 +9880,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f8000
 das: .dw $4000
 .ENDST
@@ -9897,7 +9897,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f4000
 das: .dw $4000
 .ENDST
@@ -10131,7 +10131,7 @@ unknown_8b_d701: lda $1a51.w
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e2000
 das: .dw $4000
 .ENDST
@@ -10148,7 +10148,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e2000
 das: .dw $4000
 .ENDST
@@ -10249,7 +10249,7 @@ unknown_8b_d807: lda $1a51.w
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e6000
 das: .dw $4000
 .ENDST
@@ -10266,7 +10266,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e6000
 das: .dw $4000
 .ENDST
@@ -10311,7 +10311,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f8000
 das: .dw $6000
 .ENDST
@@ -10328,7 +10328,7 @@ das: .dw $6000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fe000
 das: .dw $800
 .ENDST
@@ -10345,7 +10345,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fe800
 das: .dw $800
 .ENDST
@@ -10362,7 +10362,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7ff000
 das: .dw $800
 .ENDST
@@ -10379,7 +10379,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7ff800
 das: .dw $800
 .ENDST
@@ -10396,7 +10396,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7ea000
 das: .dw $1000
 .ENDST
@@ -11040,7 +11040,7 @@ output_address: .dl $7ff000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fe800
 das: .dw $100
 .ENDST
@@ -11057,7 +11057,7 @@ das: .dw $100
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7ff000
 das: .dw $800
 .ENDST
@@ -11074,7 +11074,7 @@ das: .dw $800
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fc000
 das: .dw $1000
 .ENDST
@@ -11091,7 +11091,7 @@ das: .dw $1000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e6000
 das: .dw $4000
 .ENDST
@@ -11108,7 +11108,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f0000
 das: .dw $2000
 .ENDST
@@ -11125,7 +11125,7 @@ das: .dw $2000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7fe000
 das: .dw $800
 .ENDST
@@ -11165,7 +11165,7 @@ output_address: .dl $7e8000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e2000
 das: .dw $4000
 .ENDST
@@ -11185,7 +11185,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7f0000
 das: .dw $4000
 .ENDST

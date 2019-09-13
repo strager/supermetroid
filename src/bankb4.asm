@@ -2310,7 +2310,7 @@ unknown_b4_9809: phb
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_b0_8000
 das: .dw unknown_b0_8000@size
 .ENDST
@@ -2336,7 +2336,7 @@ das: .dw unknown_b0_8000@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_ab_ea00
 das: .dw unknown_ab_ea00@size
 .ENDST

@@ -84,6 +84,8 @@
 
 ; PPU: VRAM data write (16 bits)
 .define IO_VMDATA $2118.w
+.define IO_VMDATAL IO_VMDATA
+.define IO_VMDATAH IO_VMDATA + 1
 
 ; PPU: rotation/scaling mode settings
 .define IO_M7SEL $211a.w
@@ -209,6 +211,9 @@
 ; APU: main CPU to sound CPU communication port 3
 .define IO_APUI03 $2143.w
 
+; CPU: WRAM data read/write
+.define IO_WMDATA $2180.w
+
 ; CPU: interrupt enable and joypad request
 .define IO_NMITIMEN $4200.w
 .define IO_NMITIMEN_ENABLE_JOYPAD $01.b
@@ -295,11 +300,7 @@
 
 ; CPU: DMA/HDMA I/O bus address (channel 0)
 .define IO_BBAD0 $4301.w
-.define IO_BBAD_CGRAM $22.b
-.define IO_BBAD_OAM $04.b
-.define IO_BBAD_RAM $80.b
-.define IO_BBAD_UNKNOWN_19 $19.b
-.define IO_BBAD_VRAM $18.b
+.define IO_BBAD_BASE $2100.w
 
 ; CPU: HDMA table start address; DMA current address (16 bits) (channel 0)
 .define IO_A1T0 $4302.w

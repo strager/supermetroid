@@ -327,7 +327,7 @@ unknown_82_82e2: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_9a_b200
 das: .dw unknown_9a_b200@size
 .ENDST
@@ -344,7 +344,7 @@ das: .dw unknown_9a_b200@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_9a_d200
  ; TODO(strager): Does this really wrap around the address space?
 das: .dw $4000
@@ -362,7 +362,7 @@ das: .dw $4000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e4000
 das: .dw $1000
 .ENDST
@@ -379,7 +379,7 @@ das: .dw $1000
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e4000
 das: .dw $800
 .ENDST
@@ -1611,7 +1611,7 @@ unknown_82_8d96: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7edf5c
 das: .dw $1000
 .ENDST
@@ -1711,7 +1711,7 @@ unknown_82_8e19: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_b6_8000
 das: .dw unknown_b6_8000@size + unknown_b6_a000@size
 .ENDST
@@ -1728,7 +1728,7 @@ das: .dw unknown_b6_8000@size + unknown_b6_a000@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_b6_c000
 das: .dw unknown_b6_c000@size
 .ENDST
@@ -1745,7 +1745,7 @@ das: .dw unknown_b6_c000@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_9a_b200
 das: .dw unknown_9a_b200@size
 .ENDST
@@ -1767,7 +1767,7 @@ das: .dw unknown_9a_b200@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_b6_e000
 das: .dw unknown_b6_e000@size + unknown_b6_e400@size
 .ENDST
@@ -1784,7 +1784,7 @@ das: .dw unknown_b6_e000@size + unknown_b6_e400@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_RAM
+bbad: .db IO_WMDATA - IO_BBAD_BASE
 a1: .dl unknown_b6_e400
 das: .dw unknown_b6_e400@size
 .ENDST
@@ -1801,7 +1801,7 @@ das: .dw unknown_b6_e400@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_RAM
+bbad: .db IO_WMDATA - IO_BBAD_BASE
 a1: .dl unknown_b6_e800
 das: .dw unknown_b6_e800@size
 .ENDST
@@ -2377,7 +2377,7 @@ unknown_82_93a1: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e4000
 das: .dw $1000
 .ENDST
@@ -4237,7 +4237,7 @@ unknown_82_a2be: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_9a_d200
 das: .dw unknown_9a_d200@size
 .ENDST
@@ -5380,7 +5380,7 @@ unknown_82_a92b: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl $7e3800
 das: .dw $800
 .ENDST
@@ -13191,7 +13191,7 @@ unknown_82_eb9f: php
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_8e_dc00
 das: .dw unknown_8e_dc00@size
 .ENDST

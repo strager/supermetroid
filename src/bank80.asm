@@ -998,7 +998,7 @@ unknown_80_85f6:
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_8e_8000
 das: .dw unknown_8e_8000@size
 .ENDST
@@ -1015,7 +1015,7 @@ das: .dw unknown_8e_8000@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_80_b437
 das: .dw unknown_80_c437 - unknown_80_b437
 .ENDST
@@ -1027,7 +1027,7 @@ das: .dw unknown_80_c437 - unknown_80_b437
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-bbad: .db IO_BBAD_CGRAM
+bbad: .db IO_CGDATA - IO_BBAD_BASE
 a1: .dl unknown_8e_e400
 das: .dw unknown_8e_e400@size
 .ENDST
@@ -1105,7 +1105,7 @@ das: .dw unknown_8e_e400@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_8e_8000
 das: .dw unknown_8e_8000@size
 .ENDST
@@ -1122,7 +1122,7 @@ das: .dw unknown_8e_8000@size
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_80_bc37
 das: .dw unknown_80_cc37 - unknown_80_bc37
 .ENDST
@@ -1134,7 +1134,7 @@ das: .dw unknown_80_cc37 - unknown_80_bc37
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO
-bbad: .db IO_BBAD_CGRAM
+bbad: .db IO_CGDATA - IO_BBAD_BASE
 a1: .dl unknown_8e_e400
 das: .dw unknown_8e_e400@size
 .ENDST
@@ -1610,7 +1610,7 @@ flush_vram_write_queue:
   ; Mark the entry after the last.
   stz (var_vram_write_queue + vram_write_queue@entry.copy_size) & $ffff, X
 @configure_dma:
-  lda #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_BBAD_VRAM) << 8)
+  lda #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_VMDATA - IO_BBAD_BASE) << 8)
   sta IO_DMAP1 ; IO_DMAP1 and IO_DMAP1
 @copy_first_entry:
   ldy #0
@@ -2265,14 +2265,14 @@ unknown_80_914d: phx
 ; TODO: "Initiate a DMA transfer. 2116 should be set before hand, if it's being
 ; used. First byte tells channel (00 - 07), next 7 are copied into 47x0-47x6."
 ; -- Kejardon
-;
+; 
 ; Call this procedure with the following sequence:
 ;
 ;   jsl unknown_80_91a9
 ; .dstruct instanceof unknown_80_91a9@parameters values
 ; channel_index: .db 1
 ; dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM
-; bbad: .db IO_BBAD_CGRAM
+; bbad: .db IO_CGDATA - IO_BBAD_BASE
 ; a1: .dl unknown_8e_e400
 ; das: .dw unknown_8e_e400@size
 ; .ENDST
@@ -2468,7 +2468,7 @@ unknown_80_91ee:
   rts
 
 unknown_80_933a:
-  lda #IO_BBAD_OAM << 8
+  lda #(IO_OAMDATA - IO_BBAD_BASE) << 8
   sta IO_DMAP0 ; and IO_BBAD0
   lda #$0370.w
   sta IO_A1T0
@@ -2477,7 +2477,7 @@ unknown_80_933a:
   lda #$0220.w
   sta IO_DAS0
   stz IO_OAMADD
-  lda #IO_BBAD_CGRAM << 8
+  lda #(IO_CGDATA - IO_BBAD_BASE) << 8
   sta IO_DMAP1 ; and IO_BBAD1
   lda #$c000.w
   sta IO_A1T1
@@ -3296,7 +3296,7 @@ unknown_80_9997: and ($2c, S), Y
 .dstruct instanceof unknown_80_91a9@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
-bbad: .db IO_BBAD_VRAM
+bbad: .db IO_VMDATA - IO_BBAD_BASE
 a1: .dl unknown_80_988b
 das: .dw unknown_80_988b@size
 .ENDST
