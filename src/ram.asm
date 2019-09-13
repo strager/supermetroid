@@ -139,6 +139,10 @@ var_engine_frame_is_ready: dw ; $7e05b4
 var_unknown_05b6: dw ; $7e05b6
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $05d1) export
+var_unknown_05d1: dw ; $7e05d1
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05e5) export
 .union
 var_random_state: dw ; $7e05e5
@@ -146,7 +150,11 @@ var_random_state: dw ; $7e05e5
 var_random_state_l: db ; $7e05e5
 var_random_state_h: db ; $7e05e6
 .endu
+.ende
+.define random_state_unknown_0061 $0061.w
+.export random_state_unknown_0061
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $05e7) export
 var_unknown_05e7: dw ; $7e05e7
 
 .union
@@ -168,14 +176,59 @@ var_unknown_05ee: db ; $7e05ee
 var_unknown_05ef: db ; $7e05ef
 var_unknown_05f0: db ; $7e05f0
 var_buggy_multiply_16_output: ds 4 ; $7e05f1
+var_unknown_05f5: dw ; $7e05f5
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0617) export
 var_unknown_0617: dw ; $7e0617
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0641) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0629) export
+var_unknown_0629: dw ; $7e0629
+var_unknown_062b: dw ; $7e062b
+var_unknown_062d: dw ; $7e062d
+var_unknown_062f: dw ; $7e062f
+var_unknown_0631: dw ; $7e0631
+var_unknown_0633: dw ; $7e0633
+var_unknown_0635: dw ; $7e0635
+var_unknown_0637: dw ; $7e0637
+var_unknown_0639: ds 6 ; $7e0639
+
+var_unknown_063f: dw ; $7e063f
 var_unknown_0641: dw ; $7e0641
+var_unknown_0643: db ; $7e0643
+var_unknown_0644: db ; $7e0644
+var_unknown_0645: db ; $7e0645
+var_unknown_0646: db ; $7e0646
+var_unknown_0647: db ; $7e0647
+var_unknown_0648: db ; $7e0648
+var_unknown_0649: db ; $7e0649
+var_unknown_064a: db ; $7e064a
+var_unknown_064b: db ; $7e064b
+var_unknown_064c: db ; $7e064c
+var_unknown_064d: db ; $7e064d
+var_unknown_064e: db ; $7e064e
+var_unknown_064f: db ; $7e064f
+
+var_unknown_0650: db ; $7e0650
+var_unknown_0651: db ; $7e0651
+var_unknown_0652: db ; $7e0652
+var_unknown_0653: db ; $7e0653
+var_unknown_0654: db ; $7e0654
+var_unknown_0655: db ; $7e0655
+var_unknown_0656: db ; $7e0656
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0666) export
+var_unknown_0666: db ; $7e0666
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0676) export
+var_unknown_0676: db ; $7e0676
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0686) export
+var_unknown_0686: db ; $7e0686
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071d) export

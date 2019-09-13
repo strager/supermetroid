@@ -12,8 +12,7 @@ unknown_80_8000: .db $00
 unknown_80_8001: .db $00
 unknown_80_8002: .db $00
 unknown_80_8003: .db $00
-unknown_80_8004: .db $00
-unknown_80_8005: .db $00
+unknown_80_8004: .dw $0000
 unknown_80_8006: .db $00
 unknown_80_8007: .db $00
 unknown_80_8008: .dw $0000
@@ -826,39 +825,39 @@ unknown_80_8482:
   plb
   sep #$30
   stz IO_NMITIMEN
-  stz $84
+  stz var_unknown_84
   lda #$8f
-  sta $51
+  sta0 var_unknown_51
   jsr unknown_80_875d
   jsr unknown_80_8792
   jsr unknown_80_88d1
   sep #$20
-  stz $0643.w
-  stz $0644.w
-  stz $0645.w
-  stz $0646.w
-  stz $0647.w
-  stz $0648.w
-  stz $0649.w
-  stz $064a.w
-  stz $064b.w
-  stz $064d.w
-  stz $064e.w
-  stz $064f.w
-  stz $0650.w
-  stz $0651.w
-  stz $0652.w
-  stz $0656.w
-  stz $0666.w
-  stz $0676.w
+  stz var_unknown_0643.w
+  stz var_unknown_0644.w
+  stz var_unknown_0645.w
+  stz var_unknown_0646.w
+  stz var_unknown_0647.w
+  stz var_unknown_0648.w
+  stz var_unknown_0649.w
+  stz var_unknown_064a.w
+  stz var_unknown_064b.w
+  stz var_unknown_064d.w
+  stz var_unknown_064e.w
+  stz var_unknown_064f.w
+  stz var_unknown_0650.w
+  stz var_unknown_0651.w
+  stz var_unknown_0652.w
+  stz var_unknown_0656.w
+  stz var_unknown_0666.w
+  stz var_unknown_0676.w
   rep #$20
-  stz $0590.w
-  stz $53
+  stz var_unknown_0590.w
+  stz var_unknown_53
   jsl unknown_80_8b1a
   jsl unknown_80_896e
-  stz $071d.w
-  stz $071f.w
-  stz $0721.w
+  stz var_unknown_071d.w
+  stz var_unknown_071f.w
+  stz var_unknown_0721.w
   jsl unknown_80_834b
   rep #$30
   stz IO_APUI00
@@ -874,25 +873,25 @@ unknown_80_8482:
   dex
   bne @unknown_80_8525
   rep #$30
-  lda #$0061.w
-  sta $05e5.w
+  lda #random_state_unknown_0061.w
+  sta var_random_state.w
   lda #$0000.w
-  sta $063f.w
-  sta $0629.w
-  sta $062b.w
-  sta $062d.w
-  sta $062f.w
-  sta $0631.w
-  sta $0633.w
-  sta $0635.w
-  sta $0637.w
-  lda $808004
-  sta $05d1.w
+  sta var_unknown_063f.w
+  sta var_unknown_0629.w
+  sta var_unknown_062b.w
+  sta var_unknown_062d.w
+  sta var_unknown_062f.w
+  sta var_unknown_0631.w
+  sta var_unknown_0633.w
+  sta var_unknown_0635.w
+  sta var_unknown_0637.w
+  lda unknown_80_8004.l
+  sta var_unknown_05d1.w
   jsr unknown_80_85f6
   rep #$30
   jsl unknown_80_8261
-  stz $05f5.w
-  stz $0686.w
+  stz var_unknown_05f5.w
+  stz var_unknown_0686.w
   jml main
 
   .db $00
