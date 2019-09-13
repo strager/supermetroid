@@ -1603,15 +1603,15 @@ unknown_80_8c83:
   sta IO_DMAP1 ; IO_DMAP1 and IO_DMAP1
   ldy #$0000.w
 @unknown_80_8c96:
-  lda (var_unknown_d0 + 0) & $ffff, Y
+  lda (var_unknown_d0 + unknown_d0@entry.copy_size) & $ffff, Y
   beq @unknown_80_8cc9
   sta IO_DAS1
-  lda (var_unknown_d0 + 2) & $ffff, Y
+  lda (var_unknown_d0 + unknown_d0@entry.source_address) & $ffff, Y
   sta IO_A1T1
-  lda (var_unknown_d0 + 3) & $ffff, Y
+  lda (var_unknown_d0 + unknown_d0@entry.source_address + 1) & $ffff, Y
   sta IO_A1T1 + 1 ; IO_A1T1 (high) and IO_A1B1
   lda #IO_VMAIN_INCREMENT_HIGH
-  ldx (var_unknown_d0 + 5) & $ffff, Y
+  ldx (var_unknown_d0 + unknown_d0@entry.vram_address) & $ffff, Y
   bpl @unknown_80_8cb2
   inc A
 @unknown_80_8cb2:
