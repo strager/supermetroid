@@ -1,4 +1,4 @@
-.struct unknown_0340@entry
+.struct vram_read_queue@entry
 .union
 vmadd: dw   ; Value to store into IO_VMADD.
 .nextu
@@ -13,4 +13,4 @@ a1t1h: db   ; Value to store into IO_A1T1H.
 a1b1: db    ; Value to store into IO_A1B1.
 das1: dw    ; Value to store into IO_DAS1.
 .endst
-.define unknown_0340@entry@size _sizeof_unknown_0340@entry
+.define vram_read_queue@entry@size _sizeof_vram_read_queue@entry

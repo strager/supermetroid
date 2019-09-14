@@ -5,7 +5,7 @@
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/start_dma_copy.asm"
-.include "include/unknown_0340.asm"
+.include "include/vram_read_queue.asm"
 .include "include/vram_write_queue.asm"
 
 .bank ($80 - $80) slot $0
@@ -1901,23 +1901,23 @@ unknown_80_8ea2:
   plp
   rtl
 @unknown_80_8eac:
-  stz (var_unknown_0340.w + unknown_0340@entry.vmadd_l) & $ffff, X
+  stz (var_vram_read_queue.w + vram_read_queue@entry.vmadd_l) & $ffff, X
   ldx #0
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
 @unknown_80_8eb6:
   rep #$20
-  lda (var_unknown_0340.w + unknown_0340@entry.vmadd) & $ffff, X
+  lda (var_vram_read_queue.w + vram_read_queue@entry.vmadd) & $ffff, X
   beq @unknown_80_8eef
   sta IO_VMADD
   lda IO_RDVRAM
-  lda (var_unknown_0340.w + unknown_0340@entry.dmap) & $ffff, X ; Address: .dmap and .bbad
+  lda (var_vram_read_queue.w + vram_read_queue@entry.dmap) & $ffff, X ; Address: .dmap and .bbad
   sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
-  lda (var_unknown_0340.w + unknown_0340@entry.a1t1l) & $ffff, X ; Address: .a1t1l and .a1t1h
+  lda (var_vram_read_queue.w + vram_read_queue@entry.a1t1l) & $ffff, X ; Address: .a1t1l and .a1t1h
   sta IO_A1T1L ; Address: IO_A1T1L and IO_A1T1H
-  lda (var_unknown_0340.w + unknown_0340@entry.a1t1h) & $ffff, X ; Address: .a1t1h and .a1b1
+  lda (var_vram_read_queue.w + vram_read_queue@entry.a1t1h) & $ffff, X ; Address: .a1t1h and .a1b1
   sta IO_A1T1H ; Address: IO_A1T1H and IO_A1B1
-  lda (var_unknown_0340.w + unknown_0340@entry.das1) & $ffff, X
+  lda (var_vram_read_queue.w + vram_read_queue@entry.das1) & $ffff, X
   sta IO_DAS1
   stz IO_DASB1 ; Address: IO_DASB1 and IO_A2A1L
   stz IO_A2A1H ; Address: IO_A2A1H and IO_NTRL1
@@ -1926,7 +1926,7 @@ unknown_80_8ea2:
   sta IO_MDMAEN
   txa
   clc
-  adc #unknown_0340@entry@size
+  adc #vram_read_queue@entry@size
   tax
   bra @unknown_80_8eb6
 @unknown_80_8eef:
