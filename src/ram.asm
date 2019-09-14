@@ -198,14 +198,15 @@ var_vram_write_queue: ds vram_write_queue@entry@size * vram_write_queue_count ; 
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $02d0) export
-; Array of unknown_02d0@cgdata_entry or unknown_02d0@vmdata_entry.
-var_unknown_02d0: ds 1 ; $7e02d0
+; Array of cgvm_write_queue@cgdata_entry and cgvm_write_queue@vmdata_entry. Terminated
+; by an entry where .header.type_and_dmap = CGVM_WRITE_QUEUE_ENTRY_TYPE_NONE.
+var_cgvm_write_queue: ds 1 ; $7e02d0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0330) export
 var_vram_write_queue_tail: dw ; $7e0330
 var_unknown_0332: dw ; $7e0332
-var_unknown_0334: dw ; $7e0334
+var_cgvm_write_queue_tail: dw ; $7e0334
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0371) export

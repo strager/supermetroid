@@ -1,10 +1,10 @@
 .include "include/asm.asm"
+.include "include/cgvm_write_queue.asm"
 .include "include/common.asm"
 .include "include/decompress_to.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/start_dma_copy.asm"
-.include "include/unknown_02d0.asm"
 .include "include/vram_write_queue.asm"
 
 .bank ($80 - $80) slot $0
@@ -1480,67 +1480,67 @@ unknown_80_8b1a:
 unknown_80_8b4f:
   phx
   phy
-  ldy var_unknown_0334.w
+  ldy var_cgvm_write_queue_tail.w
   dex
 @unknown_80_8b55:
-  bit unknown_02d0@entry_header.type_and_dmap.w, X
-  bmi @vmdata_entry ; Branch if UNKNOWN_02D0_ENTRY_TYPE_VMDATAL or UNKNOWN_02D0_ENTRY_TYPE_VMDATAH.
-  bvs @cgdata_entry ; Branch if UNKNOWN_02D0_ENTRY_TYPE_CGDATA.
-  sty var_unknown_0334.w
+  bit cgvm_write_queue@entry_header.type_and_dmap.w, X
+  bmi @vmdata_entry ; Branch if CGVM_WRITE_QUEUE_ENTRY_TYPE_VMDATAL or CGVM_WRITE_QUEUE_ENTRY_TYPE_VMDATAH.
+  bvs @cgdata_entry ; Branch if CGVM_WRITE_QUEUE_ENTRY_TYPE_CGDATA.
+  sty var_cgvm_write_queue_tail.w
   ply
   plx
   rtl
 @cgdata_entry:
   lda 1.w + 0, X
-  sta (var_unknown_02d0.w + 0) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 0) & $ffff, Y
   lda 1.w + 2, X
-  sta (var_unknown_02d0.w + 2) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 2) & $ffff, Y
   lda 1.w + 4, X
-  sta (var_unknown_02d0.w + 4) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 4) & $ffff, Y
   lda 1.w + 6, X
   and #$00ff.w
-  sta (var_unknown_02d0.w + 6) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 6) & $ffff, Y
   txa
   clc
-  adc #unknown_02d0@cgdata_entry@size
+  adc #cgvm_write_queue@cgdata_entry@size
   tax
   tya
   clc
-  adc #unknown_02d0@cgdata_entry@size
+  adc #cgvm_write_queue@cgdata_entry@size
   tay
   bra @unknown_80_8b55
 @vmdata_entry:
   lda 1.w + 0, X
-  sta (var_unknown_02d0.w + 0) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 0) & $ffff, Y
   lda 1.w + 2, X
-  sta (var_unknown_02d0.w + 2) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 2) & $ffff, Y
   lda 1.w + 4, X
-  sta (var_unknown_02d0.w + 4) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 4) & $ffff, Y
   lda 1.w + 6, X
-  sta (var_unknown_02d0.w + 6) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 6) & $ffff, Y
   lda 1.w + 8, X
   and #$00ff.w
-  sta (var_unknown_02d0.w + 8) & $ffff, Y
+  sta (var_cgvm_write_queue.w + 8) & $ffff, Y
   txa
   clc
-  adc #unknown_02d0@vmdata_entry@size
+  adc #cgvm_write_queue@vmdata_entry@size
   tax
   tya
   clc
-  adc #unknown_02d0@vmdata_entry@size
+  adc #cgvm_write_queue@vmdata_entry@size
   tay
   bra @unknown_80_8b55
 
 unknown_80_8bba:
   php
   rep #$10
-  ldx var_unknown_0334.w
+  ldx var_cgvm_write_queue_tail.w
   beq @unknown_80_8bd1
-  ldx #var_unknown_02d0
+  ldx #var_cgvm_write_queue
   jsl unknown_80_8bd3
   rep #$20
-  stz var_unknown_02d0.w ; UNKNOWN_02D0_ENTRY_TYPE_NONE
-  stz var_unknown_0334.w
+  stz var_cgvm_write_queue.w ; CGVM_WRITE_QUEUE_ENTRY_TYPE_NONE
+  stz var_cgvm_write_queue_tail.w
 @unknown_80_8bd1:
   plp
   rtl
@@ -1549,31 +1549,31 @@ unknown_80_8bd3:
   php
 @unknown_80_8bd4:
   sep #$20
-  lda unknown_02d0@entry_header.type_and_dmap.w, X
-  bmi @vmdata_entry ; Branch if UNKNOWN_02D0_ENTRY_HEADER_VMDATAL or UNKNOWN_02D0_ENTRY_TYPE_VMDATAH.
+  lda cgvm_write_queue@entry_header.type_and_dmap.w, X
+  bmi @vmdata_entry ; Branch if CGVM_WRITE_QUEUE_ENTRY_HEADER_VMDATAL or CGVM_WRITE_QUEUE_ENTRY_TYPE_VMDATAH.
   asl A
-  bmi @cgdata_entry ; Branch if UNKNOWN_02D0_ENTRY_HEADER_CGDATA.
+  bmi @cgdata_entry ; Branch if CGVM_WRITE_QUEUE_ENTRY_HEADER_CGDATA.
   plp
   rtl
 @cgdata_entry:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy unknown_02d0@cgdata_entry.a1.w, X
+  ldy cgvm_write_queue@cgdata_entry.a1.w, X
   sty IO_A1T1
-  lda unknown_02d0@cgdata_entry.a1_bank.w, X
+  lda cgvm_write_queue@cgdata_entry.a1_bank.w, X
   sta IO_A1B1
-  ldy unknown_02d0@cgdata_entry.das.w, X
+  ldy cgvm_write_queue@cgdata_entry.das.w, X
   sty IO_DAS1
   lda #IO_CGDATA - IO_BBAD_BASE
   sta IO_BBAD1
-  lda unknown_02d0@cgdata_entry.cgadd.w, X
+  lda cgvm_write_queue@cgdata_entry.cgadd.w, X
   sta IO_CGADD
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   rep #$21
   txa
-  adc #unknown_02d0@cgdata_entry@size
+  adc #cgvm_write_queue@cgdata_entry@size
   tax
   bra @unknown_80_8bd4
 @vmdata_entry:
@@ -1584,23 +1584,23 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy unknown_02d0@vmdata_entry.a1.w, X
+  ldy cgvm_write_queue@vmdata_entry.a1.w, X
   sty IO_A1T1
-  lda unknown_02d0@vmdata_entry.a1_bank.w, X
+  lda cgvm_write_queue@vmdata_entry.a1_bank.w, X
   sta IO_A1B1
-  ldy unknown_02d0@vmdata_entry.das.w, X
+  ldy cgvm_write_queue@vmdata_entry.das.w, X
   sty IO_DAS1
   lda #IO_VMDATAL - IO_BBAD_BASE
   sta IO_BBAD1
-  ldy unknown_02d0@vmdata_entry.vmadd.w, X
+  ldy cgvm_write_queue@vmdata_entry.vmadd.w, X
   sty IO_VMADD
-  lda unknown_02d0@vmdata_entry.vmain.w, X
+  lda cgvm_write_queue@vmdata_entry.vmain.w, X
   sta IO_VMAIN
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   rep #$21
   txa
-  adc #unknown_02d0@vmdata_entry@size
+  adc #cgvm_write_queue@vmdata_entry@size
   tax
   bra @unknown_80_8bd4
 @vmdatah_entry
@@ -1608,23 +1608,23 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy unknown_02d0@vmdata_entry.a1.w, X
+  ldy cgvm_write_queue@vmdata_entry.a1.w, X
   sty IO_A1T1
-  lda unknown_02d0@vmdata_entry.a1_bank.w, X
+  lda cgvm_write_queue@vmdata_entry.a1_bank.w, X
   sta IO_A1B1
-  ldy unknown_02d0@vmdata_entry.das.w, X
+  ldy cgvm_write_queue@vmdata_entry.das.w, X
   sty IO_DAS1
   lda #IO_VMDATAH - IO_BBAD_BASE
   sta IO_BBAD1
-  ldy unknown_02d0@vmdata_entry.vmadd.w, X
+  ldy cgvm_write_queue@vmdata_entry.vmadd.w, X
   sty IO_VMADD
-  lda unknown_02d0@vmdata_entry.vmain.w, X
+  lda cgvm_write_queue@vmdata_entry.vmain.w, X
   sta IO_VMAIN
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   rep #$21
   txa
-  adc #unknown_02d0@vmdata_entry@size
+  adc #cgvm_write_queue@vmdata_entry@size
   tax
   jmp @unknown_80_8bd4
 
