@@ -2670,29 +2670,29 @@ unknown_80_9416:
   phb
   ldx #$87
   phx
-  plb
-  lda $1ef1.w
+  plb ; DB := $87
+  lda var_unknown_1ef1.w
   bpl @unknown_80_9457
-  ldx #$0a
+  ldx #(unknown_1ef5_count - 1) * 2
 @unknown_80_9422:
-  lda $1ef5.w, X
+  lda var_unknown_1ef5.w, X
   beq @unknown_80_9453
-  lda $1f25.w, X
+  lda var_unknown_1f25.w, X
   beq @unknown_80_9453
-  sta $4302.w
+  sta IO_A1T0
   ldy #$87
-  sty $4304.w
-  lda #$1801.w
-  sta $4300.w
-  lda $1f31.w, X
-  sta $4305.w
-  lda $1f3d.w, X
-  sta $2116.w
-  ldy #$80
-  sty $2115.w
-  ldy #$01
-  sty $420b.w
-  stz $1f25.w, X
+  sty IO_A1B0
+  lda #IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  sta IO_DMAP0 ; Address: IO_DMAP0 and IO_BBAD0
+  lda var_unknown_1f31.w, X
+  sta IO_DAS0
+  lda var_unknown_1f3d.w, X
+  sta IO_VMADD
+  ldy #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+  sty IO_VMAIN
+  ldy #IO_MDMAEN_0
+  sty IO_MDMAEN
+  stz var_unknown_1f25.w, X
 @unknown_80_9453:
   dex
   dex

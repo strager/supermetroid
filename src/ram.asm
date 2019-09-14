@@ -626,6 +626,20 @@ var_unknown_0df4: dw ; $7e0df4
 var_unknown_0e12: dw ; $7e0e12
 .ende
 
+.define unknown_1ef5_count 6
+.export unknown_1ef5_count
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $1ef1) export
+var_unknown_1ef1: dw ; $7e1ef1
+var_unknown_1ef3: dw ; $7e1ef3
+var_unknown_1ef5: dsw unknown_1ef5_count ; $7e1ef5
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $1f25) export
+var_unknown_1f25: dsw unknown_1ef5_count ; $7e1f25
+var_unknown_1f31: dsw unknown_1ef5_count ; $7e1f31
+var_unknown_1f3d: dsw unknown_1ef5_count ; $7e1f3d
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $1f59) export
 var_unknown_1f59: dw ; $7e1f59
 .ende
