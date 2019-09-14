@@ -485,6 +485,11 @@ var_unknown_0937: dw ; $7e0937
 var_unknown_0939: dw ; $7e0939
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0948) export
+var_unknown_0948: dw ; $7e0948
+var_unknown_094a: dw ; $7e094a
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0956) export
 var_unknown_0956: dw ; $7e0956
 var_unknown_0958: dw ; $7e0958

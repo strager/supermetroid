@@ -4065,35 +4065,35 @@ unknown_80_9f95:
   lsr A
   lsr A
   tax
-  ldy $9fd4.w, X
+  ldy unknown_80_9fd4.w, X
   lda $03, S
   jsr unknown_80_9fb3
   pla
   and #$000f.w
   asl A
   tax
-  ldy $9fd4.w, X
+  ldy unknown_80_9fd4.w, X
   pla
   adc #$0008.w
   ; Fall through
 unknown_80_9fb3:
-  sta $14
-  lda $0948.w
+  sta var_unknown_14
+  lda var_unknown_0948.w
   xba
   and #$00ff.w
   clc
-  adc $14
-  sta $14
-  lda $094a.w
+  adc var_unknown_14
+  sta var_unknown_14
+  lda var_unknown_094a.w
   xba
   and #$00ff.w
-  sta $12
+  sta var_unknown_12
   lda #$0a00.w
-  sta $16
-  jsr $81879f
+  sta var_unknown_16
+  jsl unknown_81_879f
   rts
 
-/*unknown_80_9fd4:*/ inx
+unknown_80_9fd4: inx
 /*unknown_80_9fd5:*/ sta $009ff4.l, X
 /*unknown_80_9fd9:*/ ldy #$a00c.w
 /*unknown_80_9fdc:*/ clc
