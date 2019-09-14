@@ -4363,41 +4363,42 @@ unknown_80_a23f:
   rep #$20
   lda #$4800.w
   sta IO_VMADD
-  lda #$1808.w
-  sta $4310.w
-  lda #$a29a.w
-  sta $4312.w
-  lda #$0080.w
-  sta $4314.w
+  lda #IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM | IO_DMAP_STEP_FIXED | ((IO_VMDATAL - IO_BBAD_BASE) << 8)
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  lda #@unknown_80_a29a
+  sta IO_A1T1
+  lda #$80 ; TODO: Why doesn't (@unknown_80_a29a >> 16) work?
+  sta IO_A1B1 ; Address: IO_A1B1 and IO_DAS1L
   lda #$0800.w
-  sta $4315.w
+  sta IO_DAS1
   sep #$20
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_LOW
   sta IO_VMAIN
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$20
   lda #$4800.w
   sta IO_VMADD
-  lda #$1908.w
-  sta $4310.w
-  lda #$a29a.w
-  sta $4312.w
-  lda #$0080.w
-  sta $4314.w
+  lda #IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_0_RAM | IO_DMAP_STEP_FIXED | ((IO_VMDATAH - IO_BBAD_BASE) << 8)
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  lda #@unknown_80_a29a
+  sta IO_A1T1
+  lda #$80 ; TODO: Why doesn't (@unknown_80_a29a >> 16) work?
+  sta IO_A1B1 ; Address: IO_A1B1 and IO_DAS1L
   lda #$0800.w
-  sta $4315.w
+  sta IO_DAS1
   sep #$20
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   plp
   rtl
+@unknown_80_a29a:
+  .db $38, $03
 
-unknown_80_a29a:
-  sec
-  ora $08, S
+unknown_80_a29c:
+  php
   rep #$20
   lda #$5880.w
   sta IO_VMADD
