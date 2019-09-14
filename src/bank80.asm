@@ -677,7 +677,7 @@ unknown_80_83e3:
   sep #$20
   rep #$10
 @unknown_80_83eb:
-  sta $7e0000, X
+  sta MEM_LOW_HIGH_RAM_BEGIN, X
   inx
   dey
   bne @unknown_80_83eb
