@@ -4999,159 +4999,159 @@ unknown_80_a731:
   php
   phb
   sep #$20
-  lda $0a78.w
-  ora $0a79.w
+  lda var_unknown_0a78_l.w
+  ora var_unknown_0a78_h.w
   beq @unknown_80_a740
-  jmp $a890.w
+  jmp @unknown_80_a890
 @unknown_80_a740:
   lda #$8f
   pha
-  plb
+  plb ; DB := $8f
   rep #$30
   ldy #$0000.w
   sep #$20
-  lda $0916.w
-  sta $4202.w
-  lda $07a9.w
-  sta $4203.w
+  lda var_unknown_0915_h.w
+  sta IO_WRMPYA
+  lda var_unknown_07a9.w
+  sta IO_WRMPYB
   rep #$20
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
   adc #$0080.w
   xba
   and #$00ff.w
   clc
-  adc $4216.w
-  sta $14
+  adc IO_RDMPY
+  sta var_unknown_14
   tax
-  lda $7ecd20, X
+  lda var_unknown_cd20.l, X
   and #$00ff.w
   cmp #$0001.w
   beq @unknown_80_a77a
   ldy #$001f.w
 @unknown_80_a77a:
-  sty $0933.w
-  lda $0915.w
-  sta $0939.w
+  sty var_unknown_0933.w
+  lda var_unknown_0915.w
+  sta var_unknown_0939.w
   bpl @unknown_80_a788
-  stz $0915.w
+  stz var_unknown_0915.w
 @unknown_80_a788:
-  lda $07ab.w
+  lda var_unknown_07ab.w
   dec A
   xba
   clc
-  adc $0933.w
-  cmp $0915.w
+  adc var_unknown_0933.w
+  cmp var_unknown_0915.w
   bcs @unknown_80_a799
-  sta $0915.w
+  sta var_unknown_0915.w
 @unknown_80_a799:
   sep #$20
-  lda $0916.w
-  sta $4202.w
-  lda $07a9.w
-  sta $4203.w
+  lda var_unknown_0915_h.w
+  sta IO_WRMPYA
+  lda var_unknown_07a9.w
+  sta IO_WRMPYB
   rep #$20
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
   adc #$0080.w
   xba
   and #$00ff.w
   clc
-  adc $4216.w
+  adc IO_RDMPY
   tax
-  lda $7ecd20, X
+  lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a81d
-  lda $0915.w
+  lda var_unknown_0915.w
   and #$ff00.w
   clc
   adc #$0100.w
-  sta $0935.w
-  lda $0939.w
+  sta var_unknown_0935.w
+  lda var_unknown_0939.w
   clc
-  adc $0da6.w
+  adc var_unknown_0da6.w
   adc #$0002.w
-  cmp $0935.w
+  cmp var_unknown_0935.w
   bcs @unknown_80_a818
-  sta $0939.w
+  sta var_unknown_0939.w
   sep #$20
-  lda $093a.w
+  lda var_unknown_0939_h.w
   inc A
-  sta $4202.w
-  lda $07a9.w
-  sta $4203.w
+  sta IO_WRMPYA
+  lda var_unknown_07a9.w
+  sta IO_WRMPYB
   rep #$20
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
   adc #$0080.w
   xba
   and #$00ff.w
   clc
-  adc $4216.w
+  adc IO_RDMPY
   tax
-  lda $7ecd20, X
+  lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a813
-  lda $0939.w
+  lda var_unknown_0939.w
   and #$ff00.w
   bra @unknown_80_a88d
 @unknown_80_a813:
-  lda $0939.w
+  lda var_unknown_0939.w
   bra @unknown_80_a88d
 @unknown_80_a818:
-  lda $0935.w
+  lda var_unknown_0935.w
   bra @unknown_80_a88d
 @unknown_80_a81d:
   txa
   clc
-  adc $07a9.w
+  adc var_unknown_07a9.w
   tax
-  lda $7ecd20, X
+  lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a890
-  lda $0915.w
+  lda var_unknown_0915.w
   and #$ff00.w
   clc
-  adc $0933.w
-  sta $0937.w
-  cmp $0915.w
+  adc var_unknown_0933.w
+  sta var_unknown_0937.w
+  cmp var_unknown_0915.w
   bcs @unknown_80_a890
-  lda $0939.w
+  lda var_unknown_0939.w
   sec
-  sbc $0da6.w
+  sbc var_unknown_0da6.w
   sbc #$0002.w
-  cmp $0937.w
+  cmp var_unknown_0937.w
   bmi @unknown_80_a88a
-  sta $0939.w
+  sta var_unknown_0939.w
   sep #$20
-  lda $093a.w
-  sta $4202.w
-  lda $07a9.w
-  sta $4203.w
+  lda var_unknown_0939_h.w
+  sta IO_WRMPYA
+  lda var_unknown_07a9.w
+  sta IO_WRMPYB
   rep #$20
-  lda $0911.w
+  lda var_unknown_0911.w
   clc
   adc #$0080.w
   xba
   and #$00ff.w
   clc
-  adc $4216.w
+  adc IO_RDMPY
   tax
-  lda $7ecd20, X
+  lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a885
-  lda $0939.w
+  lda var_unknown_0939.w
   and #$ff00.w
   clc
   adc #$0100.w
   bra @unknown_80_a88d
 @unknown_80_a885:
-  lda $0939.w
+  lda var_unknown_0939.w
   bra @unknown_80_a88d
 @unknown_80_a88a:
-  lda $0937.w
+  lda var_unknown_0937.w
 @unknown_80_a88d:
-  sta $0915.w
+  sta var_unknown_0915.w
 @unknown_80_a890:
   plb
   plp
