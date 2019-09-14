@@ -448,9 +448,9 @@ var_unknown_0911: db ; $7e0911
 var_unknown_0911_l: db ; $7e0911
 var_unknown_0911_h: db ; $7e0912
 .endu
-.ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0915) export
+var_unknown_0913: dw ; $7e0913
+
 .union
 var_unknown_0915: dw ; $7e0915
 .nextu
@@ -650,6 +650,8 @@ var_unknown_0afc: dw ; $7e0afc
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0b0a) export
 var_unknown_0b0a: dw ; $7e0b0a
+var_unknown_0b0c: dw ; $7e0b0c
+var_unknown_0b0e: dw ; $7e0b0e
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0b14) export
