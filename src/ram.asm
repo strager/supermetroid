@@ -287,6 +287,9 @@ var_unknown_05cb: dw ; $7e05cb
 var_unknown_05cd: dw ; $7e05cd
 var_unknown_05cf: dw ; $7e05cf
 var_unknown_05d1: dw ; $7e05d1
+var_unknown_05d3: dw ; $7e05d3
+var_unknown_05d5: dw ; $7e05d5
+var_unknown_05d7: dw ; $7e05d7
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05e5) export

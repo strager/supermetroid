@@ -5293,25 +5293,24 @@ unknown_80_a936:
 
 ; TODO: "Debug Scroll position saving/loading?" -- Kejardon
 unknown_80_a9ac:
-  lda $91
-  and #$0040.w
+  lda var_new_pressed_buttons_p2
+  and #IO_JOY_X
   beq @unknown_80_a9b6
-  inc $05d3.w
+  inc var_unknown_05d3.w
 @unknown_80_a9b6:
-  lda $05d3.w
+  lda var_unknown_05d3.w
   lsr A
   bcc @unknown_80_a9c9
-  lda $05d5.w
-  sta $0911.w
-  lda $05d7.w
-  sta $0915.w
+  lda var_unknown_05d5.w
+  sta var_unknown_0911.w
+  lda var_unknown_05d7.w
+  sta var_unknown_0915.w
   rtl
-
 @unknown_80_a9c9:
-  lda $0911.w
-  sta $05d5.w
-  lda $0915.w
-  sta $05d7.w
+  lda var_unknown_0911.w
+  sta var_unknown_05d5.w
+  lda var_unknown_0915.w
+  sta var_unknown_05d7.w
   rtl
 
 unknown_80_a9d6:
