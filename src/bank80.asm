@@ -3001,18 +3001,18 @@ unknown_80_968b:
 
 unknown_80_96a9:
   sep #$20
-  lda $70
-  sta $2130.w
-  lda $73
-  sta $2131.w
-  lda $5b
-  sta $2109.w
-  lda $6a
-  sta $212c.w
+  lda var_unknown_70
+  sta IO_CGWSEL
+  lda var_unknown_73
+  sta IO_CGADSUB
+  lda var_unknown_5b
+  sta IO_BG3SC
+  lda var_unknown_6a
+  sta IO_TM
   rep #$20
-  lda $a7
+  lda var_unknown_a7
   beq @unknown_80_96c9
-  stz $a7
+  stz var_unknown_a7
   bra @unknown_80_96cc
 @unknown_80_96c9:
   lda #$0004.w

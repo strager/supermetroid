@@ -141,6 +141,7 @@ var_unknown_a3: dw ; $7e00a3
 ; Related to var_pressed_buttons_p2.
 var_unknown_a5: dw ; $7e00a5
 
+var_unknown_a7: dw ; $7e00a7
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $b1) export
