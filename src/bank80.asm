@@ -1539,7 +1539,7 @@ unknown_80_8bba:
   ldx #var_unknown_02d0
   jsl unknown_80_8bd3
   rep #$20
-  stz var_unknown_02d0.w
+  stz var_unknown_02d0.w ; UNKNOWN_02D0_ENTRY_TYPE_NONE
   stz var_unknown_0334.w
 @unknown_80_8bd1:
   plp

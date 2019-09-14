@@ -3,6 +3,7 @@
 type_and_dmap: db
 .endst
 ; Type bits for unknown_02d0@entry_header.type_and_dmap.
+.define UNKNOWN_02D0_ENTRY_TYPE_NONE $00.b
 .define UNKNOWN_02D0_ENTRY_TYPE_CGDATA $40.b  ; unknown_02d0@cgdata_entry
 .define UNKNOWN_02D0_ENTRY_TYPE_VMDATAH $c0.b ; unknown_02d0@vmdata_entry
 .define UNKNOWN_02D0_ENTRY_TYPE_VMDATAL $80.b ; unknown_02d0@vmdata_entry
