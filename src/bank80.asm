@@ -2922,6 +2922,7 @@ interrupt_nmi:
   bcc @unknown_80_95f7
   stx var_unknown_05bb.w
   bra @unknown_80_95f7
+.index 16
 
 unknown_80_9616:
   .dw unknown_80_966e
@@ -2941,26 +2942,26 @@ unknown_80_9616:
 
 unknown_80_9632:
   sep #$20
-  lda #$80
-  sta $2100.w
-  ldx $05be.w
+  lda #IO_INIDISP_FORCE_BLANK
+  sta IO_INIDISP
+  ldx var_unknown_05be.w
   stx IO_VMADD
-  ldx #$1801.w
-  stx $4310.w
-  ldx $05c0.w
-  stx $4312.w
-  lda $05c2.w
-  sta $4314.w
-  ldx $05c3.w
-  stx $4315.w
+  ldx #IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  stx IO_DMAP1
+  ldx var_unknown_05c0.w
+  stx IO_A1T1
+  lda var_unknown_05c0_bank.w
+  sta IO_A1B1
+  ldx var_unknown_05c3.w
+  stx IO_DAS1
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   lda #$80
-  trb $05bd.w
-  lda #$0f
-  sta $2100.w
+  trb var_unknown_05bd.w
+  lda #IO_INIDISP_MAX_BRIGHTNESS
+  sta IO_INIDISP
   rep #$20
   rts
 

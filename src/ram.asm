@@ -263,6 +263,19 @@ var_unknown_05b6: dw ; $7e05b6
 var_unknown_05b8: dw ; $7e05b8
 var_unknown_05ba: db ; $7e05ba
 var_unknown_05bb: db ; $7e05bb
+var_unknown_05bc: db ; $7e05bc
+var_unknown_05bd: db ; $7e05bd
+var_unknown_05be: dw ; $7e05be
+
+.union
+var_unknown_05c0: dl ; $7e05c0
+.nextu
+var_unknown_05c0_l: db ; $7e05c0
+var_unknown_05c0_h: db ; $7e05c1
+var_unknown_05c0_bank: db ; $7e05c2
+.endu
+
+var_unknown_05c3: dw ; $7e05c3
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05c5) export
