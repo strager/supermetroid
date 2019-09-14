@@ -4255,15 +4255,15 @@ unknown_80_a149:
   plb
   rep #$30
   sei
-  stz $420b.w
-  jsr $80835d
-  jsr $80985f
-  jsr $82e783
-  jsr $82e97c
-  jsr $80a176
-  jsr $848232
-  jsr $80834b
-  jsr $80982a
+  stz IO_MDMAEN
+  jsl unknown_80_835d
+  jsl unknown_80_985f
+  jsl unknown_82_e783
+  jsl unknown_82_e97c
+  jsl unknown_80_a176
+  jsl unknown_84_8232
+  jsl unknown_80_834b
+  jsl unknown_80_982a
   plb
   plp
   rtl

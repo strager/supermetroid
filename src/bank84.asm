@@ -267,7 +267,8 @@
 /*unknown_84_822c:*/ brk $46
 /*unknown_84_822e:*/ bra $44 ; $8274.w
 /*unknown_84_8230:*/ brk $00
-/*unknown_84_8232:*/ php
+
+unknown_84_8232: php
 /*unknown_84_8233:*/ phb
 /*unknown_84_8234:*/ rep #$30
 /*unknown_84_8236:*/ phk

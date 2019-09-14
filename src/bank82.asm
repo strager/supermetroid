@@ -12612,14 +12612,15 @@ unknown_82_e5eb: lda $0003.w, Y
 /*unknown_82_e777:*/ jsr unknown_82_de12
 /*unknown_82_e77a:*/ jsr unknown_82_de6f
 /*unknown_82_e77d:*/ jsr unknown_82_def2
-/*unknown_82_e780:*/ jmp @unknown_82_e78c
-/*unknown_82_e783:*/ php
+/*unknown_82_e780:*/ jmp unknown_82_e78c
+
+unknown_82_e783: php
 /*unknown_82_e784:*/ phb
 /*unknown_82_e785:*/ rep #$30
 /*unknown_82_e787:*/ pea $8f00.w
 /*unknown_82_e78a:*/ plb
 /*unknown_82_e78b:*/ plb
-@unknown_82_e78c: stz $0e16.w
+unknown_82_e78c: stz $0e16.w
 /*unknown_82_e78f:*/ lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
 /*unknown_82_e792:*/ sta IO_VMAIN
 /*unknown_82_e795:*/ lda #$b900.w
@@ -12863,7 +12864,7 @@ unknown_82_e91c: ldx $078d.w
 /*unknown_82_e97a:*/ sec
 /*unknown_82_e97b:*/ rts
 
-/*unknown_82_e97c:*/ php
+unknown_82_e97c: php
 /*unknown_82_e97d:*/ phb
 /*unknown_82_e97e:*/ rep #$30
 /*unknown_82_e980:*/ jsr $80a29c
