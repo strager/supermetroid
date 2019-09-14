@@ -1583,17 +1583,17 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy 1.w + unknown_02d0@entry_9.unknown_0, X
+  ldy unknown_02d0@entry_9.unknown_1.w, X
   sty IO_A1T1
-  lda 1.w + unknown_02d0@entry_9.unknown_0_bank, X
+  lda unknown_02d0@entry_9.unknown_1_bank.w, X
   sta IO_A1B1
-  ldy 1.w + unknown_02d0@entry_9.unknown_3, X
+  ldy unknown_02d0@entry_9.unknown_4.w, X
   sty IO_DAS1
   lda #IO_VMDATA - IO_BBAD_BASE
   sta IO_BBAD1
-  ldy 1.w + unknown_02d0@entry_9.unknown_5, X
+  ldy unknown_02d0@entry_9.unknown_6.w, X
   sty IO_VMADD
-  lda 1.w + unknown_02d0@entry_9.unknown_7, X
+  lda unknown_02d0@entry_9.unknown_8.w, X
   sta IO_VMAIN
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
@@ -1607,17 +1607,17 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy 1.w + unknown_02d0@entry_9.unknown_0, X
+  ldy unknown_02d0@entry_9.unknown_1.w, X
   sty IO_A1T1
-  lda 1.w + unknown_02d0@entry_9.unknown_0_bank, X
+  lda unknown_02d0@entry_9.unknown_1_bank.w, X
   sta IO_A1B1
-  ldy 1.w + unknown_02d0@entry_9.unknown_3, X
+  ldy unknown_02d0@entry_9.unknown_4.w, X
   sty IO_DAS1
   lda #IO_VMDATAH - IO_BBAD_BASE
   sta IO_BBAD1
-  ldy 1.w + unknown_02d0@entry_9.unknown_5, X
+  ldy unknown_02d0@entry_9.unknown_6.w, X
   sty IO_VMADD
-  lda 1.w + unknown_02d0@entry_9.unknown_7, X
+  lda unknown_02d0@entry_9.unknown_8.w, X
   sta IO_VMAIN
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
