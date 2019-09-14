@@ -3182,13 +3182,13 @@ unknown_80_97da:
   rts
 
 unknown_80_980a:
-  ldx $05bc.w
+  ldx var_unknown_05bc.w
   bpl @unknown_80_9812
-  jsr $9632.w
+  jsr unknown_80_9632.w
 @unknown_80_9812:
-  lda $a7
+  lda0 var_unknown_a7
   beq @unknown_80_981a
-  stz $a7
+  stz var_unknown_a7
   bra @unknown_80_981d
 @unknown_80_981a:
   lda #$0016.w
