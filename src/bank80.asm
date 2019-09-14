@@ -2590,18 +2590,21 @@ unknown_80_933a:
   rts
 
 unknown_80_9376:
+.index 8
   phb
-  ldx #$da92.w
+  ldx #$92
+  phx
   plb
-  ldx #$a002.w
-  bra ($8c - $100) ; $930c.w
-  ora $21, X
+  ldx #$02
+  ldy #$80
+  sty $2115.w
   ldy $071d.w
   beq @unknown_80_93cb
-  ldy #$ad02.w
-  ora $3c8507, X
+  ldy #$02
+  lda $071f.w
+  sta $3c
   lda #$6000.w
-  sta IO_VMADD
+  sta $2116.w
   lda #$1801.w
   sta $4310.w
   lda ($3c)
@@ -2619,7 +2622,7 @@ unknown_80_9376:
   iny
   stx $420b.w
   lda #$6100.w
-  sta IO_VMADD
+  sta $2116.w
   lda $14
   sta $4312.w
   lda ($3c), Y
@@ -2629,11 +2632,11 @@ unknown_80_9376:
 @unknown_80_93cb:
   ldy $071e.w
   beq @unknown_80_9414
-  ldy #$ad02.w
-  and ($07, X)
+  ldy #$02
+  lda $0721.w
   sta $3c
   lda #$6080.w
-  sta IO_VMADD
+  sta $2116.w
   lda #$1801.w
   sta $4310.w
   lda ($3c)
@@ -2651,7 +2654,7 @@ unknown_80_9376:
   iny
   stx $420b.w
   lda #$6180.w
-  sta IO_VMADD
+  sta $2116.w
   lda $14
   sta $4312.w
   lda ($3c), Y
@@ -2663,35 +2666,37 @@ unknown_80_9376:
   rts
 
 unknown_80_9416:
+.index 8
   phb
-  ldx #$da87.w
+  ldx #$87
+  phx
   plb
   lda $1ef1.w
   bpl @unknown_80_9457
-  ldx #$bd0a.w
-  sbc $1e, X
+  ldx #$0a
+@unknown_80_9422:
+  lda $1ef5.w, X
   beq @unknown_80_9453
   lda $1f25.w, X
   beq @unknown_80_9453
   sta $4302.w
-  ldy #$8c87.w
-  tsb $43
+  ldy #$87
+  sty $4304.w
   lda #$1801.w
   sta $4300.w
   lda $1f31.w, X
   sta $4305.w
   lda $1f3d.w, X
-  sta IO_VMADD
-  ldy #$8c80.w
-  ora $21, X
-  ldy #$8c01.w
-  phd
-  .db $42, $9e
-  and $1f
+  sta $2116.w
+  ldy #$80
+  sty $2115.w
+  ldy #$01
+  sty $420b.w
+  stz $1f25.w, X
 @unknown_80_9453:
   dex
   dex
-  bpl ($cb - $100) ; $9422.w
+  bpl @unknown_80_9422
 @unknown_80_9457:
   plb
   rts
