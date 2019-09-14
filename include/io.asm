@@ -192,6 +192,9 @@
 .define IO_MPYM IO_MPY + 1
 .define IO_MPYH IO_MPY + 2
 
+; PPU: VRAM data read (16 bits)
+.define IO_RDVRAM $2139.w
+
 ; PPU: PPU1 status and PPU1 version number
 .define IO_STAT77 $213e.w
 
@@ -326,8 +329,12 @@
 .define IO_DMAP1 $4310.w
 .define IO_BBAD1 $4311.w
 .define IO_A1T1 $4312.w
+.define IO_A1T1L IO_A1T1 + 0
+.define IO_A1T1H IO_A1T1 + 1
 .define IO_A1B1 $4314.w
 .define IO_DAS1 $4315.w
 .define IO_DASB1 $4317.w
 .define IO_A2A1 $4318.w
+.define IO_A2A1L IO_A2A1 + 0
+.define IO_A2A1H IO_A2A1 + 1
 .define IO_NTRL1 $431a.w

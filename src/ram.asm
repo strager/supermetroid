@@ -209,6 +209,16 @@ var_unknown_0332: dw ; $7e0332
 var_cgvm_write_queue_tail: dw ; $7e0334
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0340) export
+; Array of unknown_0340@entry. Terminated by an entry where
+; unknown_0340@entry.unknown_0 = 0.
+var_unknown_0340: ds 1 ; $7e0340
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0360) export
+var_unknown_0360: db ; $7e0360
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0371) export
 var_unknown_0371: ds 4 * 128 ; $7e0371
 .ende

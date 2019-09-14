@@ -5,6 +5,7 @@
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/start_dma_copy.asm"
+.include "include/unknown_0340.asm"
 .include "include/vram_write_queue.asm"
 
 .bank ($80 - $80) slot $0
@@ -1895,41 +1896,41 @@ unknown_80_8dac:
 unknown_80_8ea2:
   php
   sep #$30
-  ldx $0360.w
+  ldx var_unknown_0360.w
   bne @unknown_80_8eac
   plp
   rtl
 @unknown_80_8eac:
-  stz $0340.w, X
-  ldx #$00
+  stz (var_unknown_0340.w + unknown_0340@entry.unknown_0_l) & $ffff, X
+  ldx #0
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
 @unknown_80_8eb6:
   rep #$20
-  lda $0340.w, X
+  lda (var_unknown_0340.w + unknown_0340@entry.unknown_0) & $ffff, X
   beq @unknown_80_8eef
   sta IO_VMADD
-  lda $2139.w
-  lda $0342.w, X
-  sta $4310.w
-  lda $0344.w, X
-  sta $4312.w
-  lda $0345.w, X
-  sta $4313.w
-  lda $0347.w, X
-  sta $4315.w
-  stz $4317.w
-  stz $4319.w
+  lda IO_RDVRAM
+  lda (var_unknown_0340.w + unknown_0340@entry.unknown_2) & $ffff, X
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  lda (var_unknown_0340.w + unknown_0340@entry.unknown_4_l) & $ffff, X
+  sta IO_A1T1L ; Address: IO_A1T1L and IO_A1T1H
+  lda (var_unknown_0340.w + unknown_0340@entry.unknown_4_h) & $ffff, X
+  sta IO_A1T1H ; Address: IO_A1T1H and IO_A1B1
+  lda (var_unknown_0340.w + unknown_0340@entry.unknown_7) & $ffff, X
+  sta IO_DAS1
+  stz IO_DASB1 ; Address: IO_DASB1 and IO_A2A1L
+  stz IO_A2A1H ; Address: IO_A2A1H and IO_NTRL1
   sep #$20
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   txa
   clc
-  adc #$09
+  adc #unknown_0340@entry@size
   tax
   bra @unknown_80_8eb6
 @unknown_80_8eef:
-  stz $0360.w
+  stz var_unknown_0360.w
   plp
   rtl
 
