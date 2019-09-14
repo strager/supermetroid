@@ -2988,11 +2988,11 @@ unknown_80_9680:
 unknown_80_968b:
   sep #$20
   lda #$5a
-  sta $2109.w
-  stz $2130.w
-  stz $2131.w
-  lda #$04
-  sta $212c.w
+  sta IO_BG3SC
+  stz IO_CGWSEL
+  stz IO_CGADSUB
+  lda #IO_TM_BG3
+  sta IO_TM
   rep #$20
   lda #$0006.w
   ldy #$001f.w
