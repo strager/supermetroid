@@ -3132,9 +3132,9 @@ unknown_80_9771:
   rts
 
 unknown_80_97a9:
-  lda $a7
+  lda0 var_unknown_a7
   beq @unknown_80_97b1
-  stz $a7
+  stz var_unknown_a7
   bra @unknown_80_97b4
 @unknown_80_97b1:
   lda #$0010.w
