@@ -4271,45 +4271,45 @@ unknown_80_a149:
 unknown_80_a176:
   php
   sep #$20
-  lda $58
+  lda var_unknown_58
   sec
-  sbc $59
+  sbc var_unknown_59
   xba
   rep #$20
   and #$f800.w
-  sta $098e.w
+  sta var_unknown_098e.w
   jsr unknown_80_a4bb
   ldx #$0000.w
 @unknown_80_a18d:
   phx
-  lda $08f7.w
-  sta $0990.w
-  lda $08f9.w
-  sta $0992.w
-  lda $0907.w
-  sta $0994.w
-  lda $0909.w
-  sta $0996.w
+  lda var_unknown_08f7.w
+  sta var_unknown_0990.w
+  lda var_unknown_08f9.w
+  sta var_unknown_0992.w
+  lda var_unknown_0907.w
+  sta var_unknown_0994.w
+  lda var_unknown_0909.w
+  sta var_unknown_0996.w
   jsr unknown_80_a9db
-  lda $091b.w
+  lda var_unknown_091b.w
   lsr A
   bcs @unknown_80_a1ca
-  lda $08fb.w
-  sta $0990.w
-  lda $08fd.w
-  sta $0992.w
-  lda $090b.w
-  sta $0994.w
-  lda $090d.w
-  sta $0996.w
+  lda var_unknown_08fb.w
+  sta var_unknown_0990.w
+  lda var_unknown_08fd.w
+  sta var_unknown_0992.w
+  lda var_unknown_090b.w
+  sta var_unknown_0994.w
+  lda var_unknown_090d.w
+  sta var_unknown_0996.w
   jsr unknown_80_a9d6
 @unknown_80_a1ca:
-  jsr $808c83
+  jsl flush_vram_write_queue
   plx
-  inc $08f7.w
-  inc $0907.w
-  inc $08fb.w
-  inc $090b.w
+  inc var_unknown_08f7.w
+  inc var_unknown_0907.w
+  inc var_unknown_08fb.w
+  inc var_unknown_090b.w
   inx
   cpx #$0011.w
   bne @unknown_80_a18d
