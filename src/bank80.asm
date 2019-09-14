@@ -3073,16 +3073,16 @@ unknown_80_971a:
 
 unknown_80_9733:
   sep #$20
-  lda $5b
-  sta $2109.w
-  lda $70
-  sta $2130.w
-  lda $73
-  sta $2131.w
+  lda var_unknown_5b
+  sta IO_BG3SC
+  lda var_unknown_70
+  sta IO_CGWSEL
+  lda var_unknown_73
+  sta IO_CGADSUB
   rep #$20
-  lda $a7
+  lda var_unknown_a7
   beq @unknown_80_974e
-  stz $a7
+  stz var_unknown_a7
   bra @unknown_80_9751
 @unknown_80_974e:
   lda #$000c.w
