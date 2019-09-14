@@ -1483,14 +1483,14 @@ unknown_80_8b4f:
   ldy var_unknown_0334.w
   dex
 @unknown_80_8b55:
-  bit unknown_02d0@entry_header.unknown_0.w, X
-  bmi @unknown_80_8b8b
-  bvs @unknown_80_8b62
+  bit unknown_02d0@entry_header.type_and_dmap.w, X
+  bmi @vmdata_entry ; Branch if UNKNOWN_02D0_ENTRY_TYPE_VMDATAL or UNKNOWN_02D0_ENTRY_TYPE_VMDATAH.
+  bvs @cgdata_entry ; Branch if UNKNOWN_02D0_ENTRY_TYPE_CGDATA.
   sty var_unknown_0334.w
   ply
   plx
   rtl
-@unknown_80_8b62:
+@cgdata_entry:
   lda 1.w + 0, X
   sta (var_unknown_02d0.w + 0) & $ffff, Y
   lda 1.w + 2, X
@@ -1509,7 +1509,7 @@ unknown_80_8b4f:
   adc #unknown_02d0@entry_7@size
   tay
   bra @unknown_80_8b55
-@unknown_80_8b8b:
+@vmdata_entry:
   lda 1.w + 0, X
   sta (var_unknown_02d0.w + 0) & $ffff, Y
   lda 1.w + 2, X
@@ -1549,13 +1549,13 @@ unknown_80_8bd3:
   php
 @unknown_80_8bd4:
   sep #$20
-  lda unknown_02d0@entry_header.unknown_0.w, X
-  bmi @unknown_80_8c11
+  lda unknown_02d0@entry_header.type_and_dmap.w, X
+  bmi @vmdata_entry ; Branch if UNKNOWN_02D0_ENTRY_HEADER_VMDATAL or UNKNOWN_02D0_ENTRY_TYPE_VMDATAH.
   asl A
-  bmi @unknown_80_8be0
+  bmi @cgdata_entry ; Branch if UNKNOWN_02D0_ENTRY_HEADER_CGDATA.
   plp
   rtl
-@unknown_80_8be0:
+@cgdata_entry:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
@@ -1576,10 +1576,11 @@ unknown_80_8bd3:
   adc #unknown_02d0@entry_7@size
   tax
   bra @unknown_80_8bd4
-@unknown_80_8c11:
+@vmdata_entry:
 .accu 8
   asl A
-  bmi @unknown_80_8c4b
+  bmi @vmdatah_entry
+@vmdatal_entry:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
@@ -1589,7 +1590,7 @@ unknown_80_8bd3:
   sta IO_A1B1
   ldy unknown_02d0@entry_9.unknown_4.w, X
   sty IO_DAS1
-  lda #IO_VMDATA - IO_BBAD_BASE
+  lda #IO_VMDATAL - IO_BBAD_BASE
   sta IO_BBAD1
   ldy unknown_02d0@entry_9.unknown_6.w, X
   sty IO_VMADD
@@ -1602,7 +1603,7 @@ unknown_80_8bd3:
   adc #unknown_02d0@entry_9@size
   tax
   bra @unknown_80_8bd4
-@unknown_80_8c4b:
+@vmdatah_entry
 .accu 8
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
