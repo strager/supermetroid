@@ -3203,11 +3203,11 @@ unknown_80_982a:
   php
   rep #$30
   lda #$0000.w
-  sta $4209.w
+  sta IO_VTIME
   lda #$0098.w
-  sta $4207.w
+  sta IO_HTIME
   lda #$0030.w
-  tsb $84
+  tsb var_unknown_84
   plp
   cli
   rtl
@@ -3216,14 +3216,14 @@ unknown_80_9841:
   php
   rep #$30
   lda #$0000.w
-  sta $4209.w
+  sta IO_VTIME
   lda #$0098.w
-  sta $4207.w
+  sta IO_HTIME
   lda #$0030.w
-  tsb $84
+  tsb var_unknown_84
   sep #$20
-  lda $84
-  sta $4200.w
+  lda var_unknown_84
+  sta IO_NMITIMEN
   plp
   cli
   rtl
