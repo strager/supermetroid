@@ -2046,15 +2046,15 @@ unknown_80_8fa3:
   rep #$30
   phx
   phy
-  ldx $0639.w
-  sta $0619.w, X
+  ldx var_unknown_0639.w
+  sta var_unknown_0619.w, X
   lda #$0010.w
-  sta $0629.w, X
+  sta var_unknown_0629.w, X
   inx
   inx
   txa
   and #$000e.w
-  sta $0639.w
+  sta var_unknown_0639.w
   ply
   plx
   plp
