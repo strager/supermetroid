@@ -559,6 +559,10 @@ var_game_state: db ; $7e0998
 .define game_state_unknown_28 $28.b
 .export game_state_unknown_28
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $09a2) export
+var_unknown_09a2: dw ; $7e09a2
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c0) export
 var_reserve_tank_configuration: dw ; $7e09c0
 .ende

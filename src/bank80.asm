@@ -3263,7 +3263,7 @@ unknown_80_988b:
   .incbin "graphics/unknown_80_988b.bin" fsize unknown_80_988b@size
 .export unknown_80_988b@size
 
-/*unknown_80_98cb:*/ ora $2c0f2c
+unknown_80_98cb: ora $2c0f2c
 /*unknown_80_98cf:*/ ora $2c0f2c
 /*unknown_80_98d3:*/ ora $2c0f2c
 /*unknown_80_98d7:*/ ora $2c0f2c
@@ -3357,7 +3357,8 @@ unknown_80_99c7: .db $3a
 /*unknown_80_99c8:*/ bit $3a, X
 /*unknown_80_99ca:*/ stz $3b, X
 /*unknown_80_99cc:*/ bit $3b, X
-/*unknown_80_99ce:*/ stz $08, X
+/*unknown_80_99ce:*/ .db $74
+unknown_80_99cf: php
 /*unknown_80_99d0:*/ phb
 /*unknown_80_99d1:*/ phk
 /*unknown_80_99d2:*/ plb
@@ -3392,7 +3393,9 @@ unknown_80_9a0e:
   rep #$30
   ldy #unknown_80_99af
   ldx #$001c.w
-  bra @unknown_80_9a4c
+  bra _unknown_80_9a4c
+
+unknown_80_9a1e:
   php
   phx
   phy
@@ -3402,7 +3405,9 @@ unknown_80_9a0e:
   rep #$30
   ldy #unknown_80_99b7
   ldx #$0022.w
-  bra @unknown_80_9a4c
+  bra _unknown_80_9a4c
+
+unknown_80_9a2e:
   php
   phx
   phy
@@ -3412,7 +3417,9 @@ unknown_80_9a0e:
   rep #$30
   ldy #unknown_80_99bf
   ldx #$0028.w
-  bra @unknown_80_9a4c
+  bra _unknown_80_9a4c
+
+unknown_80_9a3e:
   php
   phx
   phy
@@ -3422,7 +3429,9 @@ unknown_80_9a0e:
   rep #$30
   ldy #unknown_80_99c7
   ldx #$002e.w
-@unknown_80_9a4c:
+  ; Fall through.
+
+_unknown_80_9a4c:
   lda var_unknown_c608.l, X
   and #$03ff.w
   cmp #$000f.w
@@ -3467,74 +3476,74 @@ das:
 .ENDST
 
   sep #$20
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$20
   ldx #$0000.w
 @unknown_80_9aa3:
-  lda $98cb.w, X
-  sta $7ec608, X
+  lda unknown_80_98cb.w, X
+  sta var_unknown_c608.l, X
   inx
   inx
   cpx #$00c0.w
   bne @unknown_80_9aa3
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$8000.w
   beq @unknown_80_9abd
-  jsr $809a3e
+  jsl unknown_80_9a3e
 @unknown_80_9abd:
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$4000.w
   beq @unknown_80_9ac9
-  jsr $809a2e
+  jsl unknown_80_9a2e
 @unknown_80_9ac9:
-  lda $09c8.w
+  lda var_unknown_09c8.w
   beq @unknown_80_9ad2
-  jsr $8099cf
+  jsl unknown_80_99cf
 @unknown_80_9ad2:
-  lda $09cc.w
+  lda var_unknown_09cc.w
   beq @unknown_80_9adb
-  jsr $809a0e
+  jsl unknown_80_9a0e
 @unknown_80_9adb:
-  lda $09d0.w
+  lda var_unknown_09d0.w
   beq @unknown_80_9ae4
-  jsr $809a1e
+  jsl unknown_80_9a1e
 @unknown_80_9ae4:
-  stz $0a06.w
-  stz $0a08.w
-  stz $0a0a.w
-  stz $0a0c.w
-  stz $0a0e.w
-  jsr $90a8ef
-  lda #$9dd3.w
-  sta $00
+  stz var_unknown_0a06.w
+  stz var_unknown_0a08.w
+  stz var_unknown_0a0a.w
+  stz var_unknown_0a0c.w
+  stz var_unknown_0a0e.w
+  jsl unknown_90_a8ef
+  lda #unknown_80_9dd3
+  sta0 var_unknown_00
   lda #$0080.w
-  sta $02
-  lda $09c8.w
+  sta var_unknown_02
+  lda var_unknown_09c8.w
   beq @unknown_80_9b0f
-  lda $09c6.w
+  lda var_unknown_09c6.w
   ldx #$0094.w
-  jsr $9d78.w
+  jsr unknown_80_9d78
 @unknown_80_9b0f:
-  lda $09cc.w
+  lda var_unknown_09cc.w
   beq @unknown_80_9b1d
   ldx #$009c.w
-  lda $09ca.w
+  lda var_unknown_09ca.w
   jsr unknown_80_9d98
 @unknown_80_9b1d:
-  lda $09d0.w
+  lda var_unknown_09d0.w
   beq @unknown_80_9b2b
-  lda $09ce.w
+  lda var_unknown_09ce.w
   ldx #$00a2.w
   jsr unknown_80_9d98
 @unknown_80_9b2b:
-  lda $09d2.w
+  lda var_unknown_09d2.w
   ldx #$1000.w
-  jsr $9cea.w
-  lda $0a0e.w
+  jsr unknown_80_9cea
+  lda var_unknown_0a0e.w
   ldx #$1400.w
-  jsr $9cea.w
-  jsr $809b44
+  jsr unknown_80_9cea
+  jsl unknown_80_9b44
   plb
   plp
   rtl

@@ -5014,7 +5014,7 @@ unknown_90_a7e2:
 /*unknown_90_a8ed:*/ plp
 /*unknown_90_a8ee:*/ rts
 
-/*unknown_90_a8ef:*/ php
+unknown_90_a8ef: php
 /*unknown_90_a8f0:*/ rep #$30
 /*unknown_90_a8f2:*/ lda $0af6.w
 /*unknown_90_a8f5:*/ and #$ff00.w
