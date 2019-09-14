@@ -1502,11 +1502,11 @@ unknown_80_8b4f:
   sta (var_unknown_02d0.w + 6) & $ffff, Y
   txa
   clc
-  adc #unknown_02d0@entry_7@size
+  adc #unknown_02d0@cgdata_entry@size
   tax
   tya
   clc
-  adc #unknown_02d0@entry_7@size
+  adc #unknown_02d0@cgdata_entry@size
   tay
   bra @unknown_80_8b55
 @vmdata_entry:
@@ -1523,11 +1523,11 @@ unknown_80_8b4f:
   sta (var_unknown_02d0.w + 8) & $ffff, Y
   txa
   clc
-  adc #unknown_02d0@entry_9@size
+  adc #unknown_02d0@vmdata_entry@size
   tax
   tya
   clc
-  adc #unknown_02d0@entry_9@size
+  adc #unknown_02d0@vmdata_entry@size
   tay
   bra @unknown_80_8b55
 
@@ -1559,21 +1559,21 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy unknown_02d0@entry_7.unknown_1.w, X
+  ldy unknown_02d0@cgdata_entry.a1.w, X
   sty IO_A1T1
-  lda unknown_02d0@entry_7.unknown_1_bank.w, X
+  lda unknown_02d0@cgdata_entry.a1_bank.w, X
   sta IO_A1B1
-  ldy unknown_02d0@entry_7.unknown_4.w, X
+  ldy unknown_02d0@cgdata_entry.das.w, X
   sty IO_DAS1
   lda #IO_CGDATA - IO_BBAD_BASE
   sta IO_BBAD1
-  lda unknown_02d0@entry_7.unknown_6.w, X
+  lda unknown_02d0@cgdata_entry.cgadd.w, X
   sta IO_CGADD
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   rep #$21
   txa
-  adc #unknown_02d0@entry_7@size
+  adc #unknown_02d0@cgdata_entry@size
   tax
   bra @unknown_80_8bd4
 @vmdata_entry:
@@ -1584,23 +1584,23 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy unknown_02d0@entry_9.unknown_1.w, X
+  ldy unknown_02d0@vmdata_entry.a1.w, X
   sty IO_A1T1
-  lda unknown_02d0@entry_9.unknown_1_bank.w, X
+  lda unknown_02d0@vmdata_entry.a1_bank.w, X
   sta IO_A1B1
-  ldy unknown_02d0@entry_9.unknown_4.w, X
+  ldy unknown_02d0@vmdata_entry.das.w, X
   sty IO_DAS1
   lda #IO_VMDATAL - IO_BBAD_BASE
   sta IO_BBAD1
-  ldy unknown_02d0@entry_9.unknown_6.w, X
+  ldy unknown_02d0@vmdata_entry.vmadd.w, X
   sty IO_VMADD
-  lda unknown_02d0@entry_9.unknown_8.w, X
+  lda unknown_02d0@vmdata_entry.vmain.w, X
   sta IO_VMAIN
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   rep #$21
   txa
-  adc #unknown_02d0@entry_9@size
+  adc #unknown_02d0@vmdata_entry@size
   tax
   bra @unknown_80_8bd4
 @vmdatah_entry
@@ -1608,23 +1608,23 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy unknown_02d0@entry_9.unknown_1.w, X
+  ldy unknown_02d0@vmdata_entry.a1.w, X
   sty IO_A1T1
-  lda unknown_02d0@entry_9.unknown_1_bank.w, X
+  lda unknown_02d0@vmdata_entry.a1_bank.w, X
   sta IO_A1B1
-  ldy unknown_02d0@entry_9.unknown_4.w, X
+  ldy unknown_02d0@vmdata_entry.das.w, X
   sty IO_DAS1
   lda #IO_VMDATAH - IO_BBAD_BASE
   sta IO_BBAD1
-  ldy unknown_02d0@entry_9.unknown_6.w, X
+  ldy unknown_02d0@vmdata_entry.vmadd.w, X
   sty IO_VMADD
-  lda unknown_02d0@entry_9.unknown_8.w, X
+  lda unknown_02d0@vmdata_entry.vmain.w, X
   sta IO_VMAIN
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
   rep #$21
   txa
-  adc #unknown_02d0@entry_9@size
+  adc #unknown_02d0@vmdata_entry@size
   tax
   jmp @unknown_80_8bd4
 

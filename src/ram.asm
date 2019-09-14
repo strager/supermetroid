@@ -198,7 +198,7 @@ var_vram_write_queue: ds vram_write_queue@entry@size * vram_write_queue_count ; 
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $02d0) export
-; Array of unknown_02d0@entry_7 or unknown_02d0@entry_9.
+; Array of unknown_02d0@cgdata_entry or unknown_02d0@vmdata_entry.
 var_unknown_02d0: ds 1 ; $7e02d0
 .ende
 
