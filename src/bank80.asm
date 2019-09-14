@@ -1383,25 +1383,25 @@ unknown_80_8911:
 unknown_80_8924:
   php
   rep #$20
-  lda $0725.w
+  lda var_unknown_0725.w
   dec A
   bmi @unknown_80_8932
-  sta $0725.w
+  sta var_unknown_0725.w
   bra @unknown_80_894b
 @unknown_80_8932:
-  lda $0723.w
-  sta $0725.w
+  lda var_unknown_0723.w
+  sta var_unknown_0725.w
   sep #$30
-  lda $51
+  lda var_unknown_51
   and #$0f
   beq @unknown_80_894b
   dec A
   bne @unknown_80_8949
   lda #$80
-  sta $51
+  sta var_unknown_51
   bra @unknown_80_894b
 @unknown_80_8949:
-  sta $51
+  sta var_unknown_51
 @unknown_80_894b:
   plp
   rtl
@@ -1409,20 +1409,20 @@ unknown_80_8924:
 unknown_80_894d:
   php
   rep #$20
-  lda $0725.w
+  lda var_unknown_0725.w
   dec A
   bmi @unknown_80_895b
-  sta $0725.w
+  sta var_unknown_0725.w
   bra @unknown_80_896c
 @unknown_80_895b:
-  lda $0723.w
-  sta $0725.w
+  lda var_unknown_0723.w
+  sta var_unknown_0725.w
   sep #$30
-  lda $51
+  lda var_unknown_51
   inc A
   and #$0f
   beq @unknown_80_896c
-  sta $51
+  sta var_unknown_51
 @unknown_80_896c:
   plp
   rtl
