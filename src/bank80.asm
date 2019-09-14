@@ -2313,45 +2313,45 @@ unknown_80_914d:
   xba
   lda #$06
 @unknown_80_9155:
-  sta $0655.w
-  lda $0648.w
+  sta var_unknown_0655.w
+  lda var_unknown_0648.w
   sec
-  sbc $0645.w
+  sbc var_unknown_0645.w
   and #$0f
-  cmp $0655.w
+  cmp var_unknown_0655.w
   bcs @unknown_80_9196
   xba
   rep #$30
-  ldx $05f5.w
+  ldx var_unknown_05f5.w
   bne @unknown_80_9196
-  ldx $0998.w
+  ldx var_game_state.w
   cpx #$0028.w
   bcs @unknown_80_9196
-  ldx $0592.w
+  ldx var_unknown_0592.w
   bmi @unknown_80_9196
   sep #$30
-  ldy $0648.w
+  ldy var_unknown_0648.w
   tyx
   inx
   cpx #$10
   bcc @unknown_80_9188
   ldx #$00
 @unknown_80_9188:
-  cpx $0645.w
+  cpx var_unknown_0645.w
   beq @unknown_80_919a
-  sta $0676.w, Y
-  stx $0648.w
-  stz $0676.w, X
+  sta var_unknown_0676.w, Y
+  stx var_unknown_0648.w
+  stz var_unknown_0676.w, X
 @unknown_80_9196:
   plp
   ply
   plx
   rtl
 @unknown_80_919a:
-  jsr $91a7.w
-  cmp $0676.w, Y
+  jsr unknown_80_91a7
+  cmp var_unknown_0676.w, Y
   bcs @unknown_80_9196
-  sta $0676.w, Y
+  sta var_unknown_0676.w, Y
   bra @unknown_80_9196
 
 unknown_80_91a7:
