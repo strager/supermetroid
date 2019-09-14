@@ -1531,23 +1531,46 @@ unknown_80_8b4f:
   tay
   bra @unknown_80_8b55
 
-unknown_80_8bba:
+; Copy data to CGRAM and VRAM according to var_cgvm_write_queue.
+;
+; Call this routine only during V-blank.
+;
+; Inputs:
+; * [var_cgvm_write_queue]
+; * [var_cgvm_write_queue_tail]
+;
+; Outputs:
+; * CGRAM
+; * VRAM
+; * [var_cgvm_write_queue_tail]: Reset to 0.
+flush_cgvm_write_queue:
   php
   rep #$10
   ldx var_cgvm_write_queue_tail.w
-  beq @unknown_80_8bd1
+  beq @done
   ldx #var_cgvm_write_queue
-  jsl unknown_80_8bd3
+  jsl flush_custom_cgvm_write_queue
   rep #$20
   stz var_cgvm_write_queue.w ; CGVM_WRITE_QUEUE_ENTRY_TYPE_NONE
   stz var_cgvm_write_queue_tail.w
-@unknown_80_8bd1:
+@done:
   plp
   rtl
 
-unknown_80_8bd3:
+; Copy data to CGRAM and VRAM according to cgvm_write_queue entries.
+;
+; Call this routine only during V-blank.
+;
+; Inputs:
+; * [Y]: Array of cgvm_write_queue@cgdata_entry and
+;        cgvm_write_queue@vmdata_entry.
+;
+; Outputs:
+; * CGRAM
+; * VRAM
+flush_custom_cgvm_write_queue:
   php
-@unknown_80_8bd4:
+@next_entry:
   sep #$20
   lda cgvm_write_queue@entry_header.type_and_dmap.w, X
   bmi @vmdata_entry ; Branch if CGVM_WRITE_QUEUE_ENTRY_HEADER_VMDATAL or CGVM_WRITE_QUEUE_ENTRY_TYPE_VMDATAH.
@@ -1575,7 +1598,7 @@ unknown_80_8bd3:
   txa
   adc #cgvm_write_queue@cgdata_entry@size
   tax
-  bra @unknown_80_8bd4
+  bra @next_entry
 @vmdata_entry:
 .accu 8
   asl A
@@ -1602,7 +1625,7 @@ unknown_80_8bd3:
   txa
   adc #cgvm_write_queue@vmdata_entry@size
   tax
-  bra @unknown_80_8bd4
+  bra @next_entry
 @vmdatah_entry
 .accu 8
   lsr A
@@ -1626,7 +1649,7 @@ unknown_80_8bd3:
   txa
   adc #cgvm_write_queue@vmdata_entry@size
   tax
-  jmp @unknown_80_8bd4
+  jmp @next_entry
 
 ; Copy data to VRAM according to var_vram_write_queue.
 ;
@@ -2840,7 +2863,7 @@ interrupt_nmi:
   cpx #$07
   bne @unknown_80_95d0
 @unknown_80_95cc:
-  jsl unknown_80_8bba
+  jsl flush_cgvm_write_queue
 @unknown_80_95d0:
   jsl flush_vram_write_queue
   jsl unknown_80_8ea2
