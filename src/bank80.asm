@@ -1180,7 +1180,7 @@ das: .dw unknown_8e_e400@size
 unknown_80_875d:
   lda #IO_NMITIMEN_ENABLE_JOYPAD
   sta IO_NMITIMEN
-  sta $84
+  sta var_unknown_84
   stz IO_WRIO
   stz IO_WRMPYA
   stz IO_WRMPYB
@@ -1193,49 +1193,49 @@ unknown_80_875d:
   stz IO_VTIME + 1
   stz IO_MDMAEN
   stz IO_HDMAEN
-  stz $85
+  stz var_unknown_85
   lda #IO_MEMSEL_FASTROM
   sta IO_MEMSEL
-  sta $86
+  sta var_unknown_86
   rts
 
 unknown_80_8792:
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
   sta IO_INIDISP
-  sta $51
+  sta var_unknown_51
   lda #$03
   sta IO_OBSEL
-  sta $52
+  sta var_unknown_52
   stz IO_OAMADD + 0
-  stz $53
+  stz var_unknown_53
   lda #IO_OAMADD_HIGH_OBJECT_PRIORITY >> 8
   sta IO_OAMADD + 1
-  sta $54
+  sta var_unknown_54
   stz IO_OAMDATA
   stz IO_OAMDATA
   lda #IO_BGMODE_1 | IO_BGMODE_1_BG3_HIGH_PRIORITY
   sta IO_BGMODE
-  sta $55
+  sta var_unknown_55
   stz IO_MOSAIC
-  stz $57
+  stz var_unknown_57
   lda #$40
   sta IO_BG1SC
-  sta $58
+  sta var_unknown_58
   lda #$44
   sta IO_BG2SC
-  sta $59
+  sta var_unknown_59
   lda #$48
   sta IO_BG3SC
-  sta $5a
+  sta var_unknown_5a
   lda #$48
   stz IO_BG4SC
-  stz $5c
+  stz var_unknown_5c
   lda #$00
   sta IO_BG12NBA
-  sta $5d
+  sta var_unknown_5d
   lda #$05
   sta IO_BG34NBA
-  sta $5e
+  sta var_unknown_5e
   stz IO_BG1HOFS
   stz IO_BG1HOFS
   stz IO_BG1VOFS
@@ -1254,7 +1254,7 @@ unknown_80_8792:
   stz IO_BG4VOFS
   stz IO_VMAIN
   stz IO_M7SEL
-  stz $5f
+  stz var_unknown_5f
   stz IO_M7A
   stz IO_M7B
   stz IO_M7C
@@ -1263,58 +1263,58 @@ unknown_80_8792:
   stz IO_M7Y
   lda #$00
   sta IO_W12SEL
-  sta $60
+  sta var_unknown_60
   lda #$00
   sta IO_W34SEL
-  sta $61
+  sta var_unknown_61
   stz IO_WOBJSEL
-  stz $62
+  stz var_unknown_62
   lda #$00
   sta IO_WH0
-  sta $63
+  sta var_unknown_63
   lda #$f8
   sta IO_WH1
-  sta $64
+  sta var_unknown_64
   stz IO_WH2
-  stz $65
+  stz var_unknown_65
   stz IO_WH3
-  stz $66
+  stz var_unknown_66
   stz IO_WBGLOG
-  stz $67
+  stz var_unknown_67
   stz IO_WOBJLOG
-  stz $68
+  stz var_unknown_68
   lda #IO_TM_BG1 | IO_TM_OBJ
   sta IO_TM
-  sta $69
+  sta var_unknown_69
   sta IO_TMW
-  sta $6c
+  sta var_unknown_6c
   lda #IO_TS_BG2
   sta IO_TS
-  sta $6b
+  sta var_unknown_6b
   sta IO_TSW
-  sta $6d
+  sta var_unknown_6d
   lda #IO_CGWSEL_BACKDROP_BG_OBJ
   sta IO_CGWSEL
-  sta $6e
+  sta var_unknown_6e
   lda #IO_CGADSUB_BG1 | IO_CGADSUB_BACKDROP | IO_CGADSUB_MAIN_MINUS_SUB
   sta IO_CGADSUB
-  sta $71
+  sta var_unknown_71
   lda #IO_COLDATA_RED | IO_COLDATA_GREEN | IO_COLDATA_BLUE
   sta IO_COLDATA
   lda #IO_COLDATA_RED | IO_COLDATA_GREEN | IO_COLDATA_BLUE
   sta IO_COLDATA
   lda #IO_COLDATA_BLUE
   sta IO_COLDATA
-  sta $74
+  sta var_unknown_74
   lda #IO_COLDATA_GREEN
   sta IO_COLDATA
-  sta $75
+  sta var_unknown_75
   lda #IO_COLDATA_RED
   sta IO_COLDATA
-  sta $76
+  sta var_unknown_76
   lda #$00
   sta IO_SETINI
-  sta $77
+  sta var_unknown_77
   rts
 
 unknown_80_88b4:
