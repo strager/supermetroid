@@ -3093,10 +3093,10 @@ unknown_80_9733:
 
 unknown_80_9758:
   sep #$20
-  lda #$04
-  sta $212c.w
-  stz $2130.w
-  stz $2131.w
+  lda #IO_TM_BG3
+  sta IO_TM
+  stz IO_CGWSEL
+  stz IO_CGADSUB
   rep #$20
   lda #$0012.w
   ldy #$001f.w
