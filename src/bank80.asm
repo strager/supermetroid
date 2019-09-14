@@ -921,10 +921,10 @@ unknown_80_8577:
   phk
   plb
   sep #$20
-  sta $071c.w
+  sta var_unknown_071c.w
 @unknown_80_8580:
-  jsr $808338
-  dec $071c.w
+  jsl render_and_synchronize
+  dec var_unknown_071c.w
   bne @unknown_80_8580
   plb
   plp
