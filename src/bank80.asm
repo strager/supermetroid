@@ -4233,18 +4233,18 @@ unknown_80_9fd4: inx
 unknown_80_a12b:
   php
   sep #$30
-  jsr $80834b
+  jsl unknown_80_834b
   ldx #$14
 @unknown_80_a134:
   phx
   php
-  jsr $808f0c
-  jsr $808338
+  jsl unknown_80_8f0c
+  jsl render_and_synchronize
   plp
   plx
   dex
   bne @unknown_80_a134
-  jsr $80835d
+  jsl unknown_80_835d
   plp
   rts
 
