@@ -3037,20 +3037,20 @@ unknown_80_96d3:
 
 unknown_80_96f1:
   sep #$20
-  lda $07b3.w
-  ora $07b1.w
+  lda var_unknown_07b3.w
+  ora var_unknown_07b1.w
   bit #$01
   beq @unknown_80_9701
-  lda #$10
+  lda #IO_TM_OBJ
   bra @unknown_80_9703
 @unknown_80_9701:
-  lda #$11
+  lda #IO_TM_OBJ | IO_TM_BG1
 @unknown_80_9703:
-  sta $212c.w
+  sta IO_TM
   rep #$20
-  lda $a7
+  lda var_unknown_a7
   beq @unknown_80_9710
-  stz $a7
+  stz var_unknown_a7
   bra @unknown_80_9713
 @unknown_80_9710:
   lda #$0008.w
