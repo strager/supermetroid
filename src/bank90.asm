@@ -685,7 +685,7 @@ unknown_90_85e2:
   lda $05b6.w
   bit #$0001.w
   beq @unknown_90_8606
-  jmp $8647.w
+  jmp @unknown_90_8647
 @unknown_90_8606:
   lda $0a1c.w
   asl A
