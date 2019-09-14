@@ -1,5 +1,9 @@
-.struct unknown_02d0@entry_7
+.struct unknown_02d0@entry_header
 unknown_0: db
+.endst
+
+.struct unknown_02d0@entry_7
+header: instanceof unknown_02d0@entry_header
 
 .union
 unknown_1: dl
@@ -15,7 +19,7 @@ unknown_6: db
 .define unknown_02d0@entry_7@size _sizeof_unknown_02d0@entry_7
 
 .struct unknown_02d0@entry_9
-unknown_0: db
+header: instanceof unknown_02d0@entry_header
 
 .union
 unknown_1: dl

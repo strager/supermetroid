@@ -1483,7 +1483,7 @@ unknown_80_8b4f:
   ldy var_unknown_0334.w
   dex
 @unknown_80_8b55:
-  bit var_unknown_00.w, X
+  bit unknown_02d0@entry_header.unknown_0.w, X
   bmi @unknown_80_8b8b
   bvs @unknown_80_8b62
   sty var_unknown_0334.w
@@ -1549,7 +1549,7 @@ unknown_80_8bd3:
   php
 @unknown_80_8bd4:
   sep #$20
-  lda 0.w, X
+  lda unknown_02d0@entry_header.unknown_0.w, X
   bmi @unknown_80_8c11
   asl A
   bmi @unknown_80_8be0
