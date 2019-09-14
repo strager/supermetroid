@@ -689,12 +689,20 @@ var_unknown_3a8e: dsw $8 ; $7e3a8e
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c608) export
-var_unknown_c608: dw ; $7ec608
+var_unknown_c608: dsw 24 ; $7ec608
+; TODO: var_unknown_c608 overflows into var_unknown_c618. Are these two part of
+; the same array?
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c618) export
 var_unknown_c618: dw ; $7ec618
 var_unknown_c61a: dw ; $7ec61a
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c648) export
+var_unknown_c648: dsw 24 ; $7ec648
+; TODO: var_unknown_c648 overflows into var_unknown_c658. Are these two part of
+; the same array?
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c658) export

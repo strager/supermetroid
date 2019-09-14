@@ -3337,19 +3337,23 @@ unknown_80_9997: and ($2c, S), Y
 /*unknown_80_99a8:*/ stz $4c, X
 /*unknown_80_99aa:*/ bit $4a, X
 /*unknown_80_99ac:*/ bit $4c, X
-/*unknown_80_99ae:*/ stz $34, X
+/*unknown_80_99ae:*/ .db $74
+unknown_80_99af: .db $34
 /*unknown_80_99b0:*/ bit $34, X
 /*unknown_80_99b2:*/ stz $35, X
 /*unknown_80_99b4:*/ bit $35, X
-/*unknown_80_99b6:*/ stz $36, X
+/*unknown_80_99b6:*/ .db $74
+unknown_80_99b7: .db $36
 /*unknown_80_99b8:*/ bit $36, X
 /*unknown_80_99ba:*/ stz $37, X
 /*unknown_80_99bc:*/ bit $37, X
-/*unknown_80_99be:*/ stz $38, X
+/*unknown_80_99be:*/ .db $74
+unknown_80_99bf: .db $38
 /*unknown_80_99c0:*/ bit $38, X
 /*unknown_80_99c2:*/ stz $39, X
 /*unknown_80_99c4:*/ bit $39, X
-/*unknown_80_99c6:*/ stz $3a, X
+/*unknown_80_99c6:*/ .db $74
+unknown_80_99c7: .db $3a
 /*unknown_80_99c8:*/ bit $3a, X
 /*unknown_80_99ca:*/ stz $3b, X
 /*unknown_80_99cc:*/ bit $3b, X
@@ -3386,7 +3390,7 @@ unknown_80_9a0e:
   phk
   plb
   rep #$30
-  ldy #$99af.w
+  ldy #unknown_80_99af
   ldx #$001c.w
   bra @unknown_80_9a4c
   php
@@ -3396,7 +3400,7 @@ unknown_80_9a0e:
   phk
   plb
   rep #$30
-  ldy #$99b7.w
+  ldy #unknown_80_99b7
   ldx #$0022.w
   bra @unknown_80_9a4c
   php
@@ -3406,7 +3410,7 @@ unknown_80_9a0e:
   phk
   plb
   rep #$30
-  ldy #$99bf.w
+  ldy #unknown_80_99bf
   ldx #$0028.w
   bra @unknown_80_9a4c
   php
@@ -3416,21 +3420,21 @@ unknown_80_9a0e:
   phk
   plb
   rep #$30
-  ldy #$99c7.w
+  ldy #unknown_80_99c7
   ldx #$002e.w
 @unknown_80_9a4c:
-  lda $7ec608, X
+  lda var_unknown_c608.l, X
   and #$03ff.w
   cmp #$000f.w
   bne @unknown_80_9a74
-  lda $0000.w, Y
-  sta $7ec608, X
-  lda $0002.w, Y
-  sta $7ec60a, X
-  lda $0004.w, Y
-  sta $7ec648, X
-  lda $0006.w, Y
-  sta $7ec64a, X
+  lda 0, Y
+  sta var_unknown_c608.l + 0, X
+  lda 2, Y
+  sta var_unknown_c608.l + 2, X
+  lda 4, Y
+  sta var_unknown_c648.l + 0, X
+  lda 6, Y
+  sta var_unknown_c648.l + 2, X
 @unknown_80_9a74:
   plb
   ply
