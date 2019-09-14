@@ -2159,45 +2159,45 @@ unknown_80_9049:
   xba
   lda #$06
 @unknown_80_9051:
-  sta $0653.w
-  lda $0646.w
+  sta var_unknown_0653.w
+  lda var_unknown_0646.w
   sec
-  sbc $0643.w
+  sbc var_unknown_0643.w
   and #$0f
-  cmp $0653.w
+  cmp var_unknown_0653.w
   bcs @unknown_80_9092
   xba
   rep #$30
-  ldx $05f5.w
+  ldx var_unknown_05f5.w
   bne @unknown_80_9092
-  ldx $0998.w
+  ldx var_game_state.w
   cpx #$0028.w
   bcs @unknown_80_9092
-  ldx $0592.w
+  ldx var_unknown_0592.w
   bmi @unknown_80_9092
   sep #$30
-  ldy $0646.w
+  ldy var_unknown_0646.w
   tyx
   inx
   cpx #$10
   bcc @unknown_80_9084
   ldx #$00
 @unknown_80_9084:
-  cpx $0643.w
+  cpx var_unknown_0643.w
   beq @unknown_80_9096
-  sta $0656.w, Y
-  stx $0646.w
-  stz $0656.w, X
+  sta var_unknown_0656.w, Y
+  stx var_unknown_0646.w
+  stz var_unknown_0656.w, X
 @unknown_80_9092:
   plp
   ply
   plx
   rtl
 @unknown_80_9096:
-  jsr $91a7.w
-  cmp $0656.w, Y
+  jsr unknown_80_91a7
+  cmp var_unknown_0656.w, Y
   bcs @unknown_80_9092
-  sta $0656.w, Y
+  sta var_unknown_0656.w, Y
   bra @unknown_80_9092
   phx
   phy
@@ -2234,45 +2234,45 @@ unknown_80_9049:
   xba
   lda #$06
 @unknown_80_90d3:
-  sta $0654.w
-  lda $0647.w
+  sta var_unknown_0654.w
+  lda var_unknown_0647.w
   sec
-  sbc $0644.w
+  sbc var_unknown_0644.w
   and #$0f
-  cmp $0654.w
+  cmp var_unknown_0654.w
   bcs @unknown_80_9114
   xba
   rep #$30
-  ldx $05f5.w
+  ldx var_unknown_05f5.w
   bne @unknown_80_9114
-  ldx $0998.w
+  ldx var_game_state.w
   cpx #$0028.w
   bcs @unknown_80_9114
-  ldx $0592.w
+  ldx var_unknown_0592.w
   bmi @unknown_80_9114
   sep #$30
-  ldy $0647.w
+  ldy var_unknown_0647.w
   tyx
   inx
   cpx #$10
   bcc @unknown_80_9106
   ldx #$00
 @unknown_80_9106:
-  cpx $0644.w
+  cpx var_unknown_0644.w
   beq @unknown_80_9118
-  sta $0666.w, Y
-  stx $0647.w
-  stz $0666.w, X
+  sta var_unknown_0666.w, Y
+  stx var_unknown_0647.w
+  stz var_unknown_0666.w, X
 @unknown_80_9114:
   plp
   ply
   plx
   rtl
 @unknown_80_9118:
-  jsr $91a7.w
-  cmp $0666.w, Y
+  jsr unknown_80_91a7
+  cmp var_unknown_0666.w, Y
   bcs @unknown_80_9114
-  sta $0666.w, Y
+  sta var_unknown_0666.w, Y
   bra @unknown_80_9114
   phx
   phy
@@ -2353,6 +2353,8 @@ unknown_80_914d:
   bcs @unknown_80_9196
   sta $0676.w, Y
   bra @unknown_80_9196
+
+unknown_80_91a7:
   nop
   rts
 

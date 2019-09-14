@@ -239,6 +239,8 @@ var_unknown_0590: dw ; $7e0590
 var_unknown_0590_l: db ; $7e0590
 var_unknown_0590_h: db ; $7e0591
 .endu
+
+var_unknown_0592: dw ; $7e0592
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05b4) export
