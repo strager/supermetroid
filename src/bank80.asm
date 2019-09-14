@@ -1534,13 +1534,13 @@ unknown_80_8b4f:
 unknown_80_8bba:
   php
   rep #$10
-  ldx $0334.w
+  ldx var_unknown_0334.w
   beq @unknown_80_8bd1
-  ldx #$02d0.w
+  ldx #var_unknown_02d0
   jsl unknown_80_8bd3
   rep #$20
-  stz $02d0.w
-  stz $0334.w
+  stz var_unknown_02d0.w
+  stz var_unknown_0334.w
 @unknown_80_8bd1:
   plp
   rtl
