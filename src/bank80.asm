@@ -1712,168 +1712,168 @@ flush_vram_write_queue:
 unknown_80_8cd8:
   lda #IO_VMAIN_INCREMENT_32 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  lda $0962.w
+  lda var_unknown_0962.w
   beq @unknown_80_8d44
-  stz $0962.w
-  ldy $095a.w
+  stz var_unknown_0962.w
+  ldy var_unknown_095a.w
   sty IO_VMADD
-  ldx #$1801.w
-  stx $4310.w
-  ldx #$c8c8.w
-  stx $4312.w
-  lda #$7e
-  sta $4314.w
-  ldx $0956.w
-  stx $4315.w
-  lda #$02
-  sta $420b.w
+  ldx #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  stx IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  ldx #var_unknown_c8c8
+  stx IO_A1T1
+  lda #var_unknown_c8c8 >> 16 ; = var_unknown_c908 >> 16
+  sta IO_A1B1
+  ldx var_unknown_0956.w
+  stx IO_DAS1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   iny
   sty IO_VMADD
-  stx $4315.w
-  ldx #$c908.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
-  ldx $095e.w
-  stx $4312.w
-  ldx $0958.w
+  stx IO_DAS1
+  ldx #var_unknown_c908
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  ldx var_unknown_095e.w
+  stx IO_A1T1
+  ldx var_unknown_0958.w
   beq @unknown_80_8d44
-  stx $4315.w
-  ldy $095c.w
+  stx IO_DAS1
+  ldy var_unknown_095c.w
   sty IO_VMADD
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   iny
   sty IO_VMADD
-  stx $4315.w
-  ldx $0960.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
+  stx IO_DAS1
+  ldx var_unknown_0960.w
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
 @unknown_80_8d44:
-  lda $097e.w
+  lda var_unknown_097e.w
   beq @unknown_80_8dab
-  stz $097e.w
-  ldy $0976.w
+  stz var_unknown_097e.w
+  ldy var_unknown_0976.w
   sty IO_VMADD
-  ldx #$1801.w
-  stx $4310.w
-  ldx #$c9d0.w
-  stx $4312.w
-  lda #$7e
-  sta $4314.w
-  ldx $0972.w
-  stx $4315.w
-  lda #$02
-  sta $420b.w
+  ldx #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  stx IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  ldx #var_unknown_c9d0
+  stx IO_A1T1
+  lda #var_unknown_c9d0 >> 16 ; = var_unknown_ca10 >> 16
+  sta IO_A1B1
+  ldx var_unknown_0972.w
+  stx IO_DAS1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   iny
   sty IO_VMADD
-  stx $4315.w
-  ldx #$ca10.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
-  ldx $097a.w
-  stx $4312.w
-  ldx $0974.w
+  stx IO_DAS1
+  ldx #var_unknown_ca10
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  ldx var_unknown_097a.w
+  stx IO_A1T1
+  ldx var_unknown_0974.w
   beq @unknown_80_8dab
-  stx $4315.w
-  ldy $0978.w
+  stx IO_DAS1
+  ldy var_unknown_0978.w
   sty IO_VMADD
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   iny
   sty IO_VMADD
-  stx $4315.w
-  ldx $097c.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
+  stx IO_DAS1
+  ldx var_unknown_097c.w
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
 @unknown_80_8dab:
   rts
 
 unknown_80_8dac:
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-  lda $0970.w
+  lda var_unknown_0970.w
   beq @unknown_80_8e26
-  stz $0970.w
-  ldy $0968.w
+  stz var_unknown_0970.w
+  ldy var_unknown_0968.w
   sty IO_VMADD
-  ldx #$1801.w
-  stx $4310.w
-  ldx #$c948.w
-  stx $4312.w
-  lda #$7e
-  sta $4314.w
-  ldx $0964.w
-  stx $4315.w
-  lda #$02
-  sta $420b.w
+  ldx #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  stx IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  ldx #var_unknown_c948
+  stx IO_A1T1
+  lda #var_unknown_c948 >> 16 ; = var_unknown_c98c >> 16
+  sta IO_A1B1
+  ldx var_unknown_0964.w
+  stx IO_DAS1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$20
   tya
   ora #$0020.w
   sta IO_VMADD
   sep #$20
-  stx $4315.w
-  ldx #$c98c.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
-  ldx $096c.w
-  stx $4312.w
-  ldx $0966.w
+  stx IO_DAS1
+  ldx #var_unknown_c98c
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  ldx var_unknown_096c.w
+  stx IO_A1T1
+  ldx var_unknown_0966.w
   beq @unknown_80_8e26
-  stx $4315.w
-  ldy $096a.w
+  stx IO_DAS1
+  ldy var_unknown_096a.w
   sty IO_VMADD
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$20
   tya
   ora #$0020.w
   sta IO_VMADD
   sep #$20
-  stx $4315.w
-  ldx $096e.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
+  stx IO_DAS1
+  ldx var_unknown_096e.w
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
 @unknown_80_8e26:
-  lda $098c.w
+  lda var_unknown_098c.w
   beq @unknown_80_8ea1
-  stz $098c.w
-  ldy $0984.w
+  stz var_unknown_098c.w
+  ldy var_unknown_0984.w
   sty IO_VMADD
-  ldx #$1801.w
-  stx $4310.w
-  ldx #$ca50.w
-  stx $4312.w
-  lda #$7e
-  sta $4314.w
-  ldx $0980.w
-  stx $4315.w
-  lda #$02
-  sta $420b.w
+  ldx #IO_DMAP_MODE_1_VRAM | IO_DMAP_CPU_TO_IO | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  stx IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  ldx #var_unknown_ca50
+  stx IO_A1T1
+  lda #var_unknown_ca50 >> 16 ; = var_unknown_ca94 >> 16
+  sta IO_A1B1
+  ldx var_unknown_0980.w
+  stx IO_DAS1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$20
   tya
   ora #$0020.w
   sta IO_VMADD
   sep #$20
-  stx $4315.w
-  ldx #$ca94.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
-  ldx $0988.w
-  stx $4312.w
-  ldx $0982.w
+  stx IO_DAS1
+  ldx #var_unknown_ca94
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
+  ldx var_unknown_0988.w
+  stx IO_A1T1
+  ldx var_unknown_0982.w
   beq @unknown_80_8ea1
-  stx $4315.w
-  ldy $0986.w
+  stx IO_DAS1
+  ldy var_unknown_0986.w
   sty IO_VMADD
-  lda #$02
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   sep #$02
   beq @unknown_80_8e88
 @unknown_80_8e86:
@@ -1884,11 +1884,11 @@ unknown_80_8dac:
   ora #$0020.w
   sta IO_VMADD
   sep #$20
-  stx $4315.w
-  ldx $098a.w
-  stx $4312.w
-  lda #$02
-  sta $420b.w
+  stx IO_DAS1
+  ldx var_unknown_098a.w
+  stx IO_A1T1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
 @unknown_80_8ea1:
   rts
 

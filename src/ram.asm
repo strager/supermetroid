@@ -431,7 +431,36 @@ var_unknown_0937: dw ; $7e0937
 var_unknown_0939: dw ; $7e0939
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0990) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0956) export
+var_unknown_0956: dw ; $7e0956
+var_unknown_0958: dw ; $7e0958
+var_unknown_095a: dw ; $7e095a
+var_unknown_095c: dw ; $7e095c
+var_unknown_095e: dw ; $7e095e
+var_unknown_0960: dw ; $7e0960
+var_unknown_0962: dw ; $7e0962
+var_unknown_0964: dw ; $7e0964
+var_unknown_0966: dw ; $7e0966
+var_unknown_0968: dw ; $7e0968
+var_unknown_096a: dw ; $7e096a
+var_unknown_096c: dw ; $7e096c
+var_unknown_096e: dw ; $7e096e
+var_unknown_0970: dw ; $7e0970
+var_unknown_0972: dw ; $7e0972
+var_unknown_0974: dw ; $7e0974
+var_unknown_0976: dw ; $7e0976
+var_unknown_0978: dw ; $7e0978
+var_unknown_097a: dw ; $7e097a
+var_unknown_097c: dw ; $7e097c
+var_unknown_097e: dw ; $7e097e
+var_unknown_0980: dw ; $7e0980
+var_unknown_0982: dw ; $7e0982
+var_unknown_0984: dw ; $7e0984
+var_unknown_0986: dw ; $7e0986
+var_unknown_0988: dw ; $7e0988
+var_unknown_098a: dw ; $7e098a
+var_unknown_098c: dw ; $7e098c
+var_unknown_098e: dw ; $7e098e
 var_unknown_0990: dw ; $7e0990
 var_unknown_0992: dw ; $7e0992
 var_unknown_0994: dw ; $7e0994
@@ -597,6 +626,38 @@ var_unknown_c65a: dw ; $7ec65a
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c698) export
 var_unknown_c698: dw ; $7ec698
 var_unknown_c69a: dw ; $7ec69a
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c8c8) export
+var_unknown_c8c8: ds 1 ; $7ec8c8
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c908) export
+var_unknown_c908: ds 1 ; $7ec908
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c948) export
+var_unknown_c948: ds 1 ; $7ec948
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c98c) export
+var_unknown_c98c: ds 1 ; $7ec98c
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c9d0) export
+var_unknown_c9d0: ds 1 ; $7ec9d0
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $ca10) export
+var_unknown_ca10: ds 1 ; $7eca10
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $ca50) export
+var_unknown_ca50: ds 1 ; $7eca50
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $ca94) export
+var_unknown_ca94: ds 1 ; $7eca94
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $cd20) export
