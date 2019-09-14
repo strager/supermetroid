@@ -308,7 +308,7 @@ var_unknown_0635: dw ; $7e0635
 var_unknown_0637: dw ; $7e0637
 var_unknown_0639: dw ; $7e0639
 var_unknown_063b: dw ; $7e063b
-var_unknown_063e: dw ; $7e063e
+var_unknown_063d: dw ; $7e063d
 var_unknown_063f: dw ; $7e063f
 var_unknown_0641: dw ; $7e0641
 var_unknown_0643: db ; $7e0643
