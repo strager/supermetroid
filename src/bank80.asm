@@ -621,18 +621,18 @@ unknown_80_8395:
   php
   sep #$10
   rep #$20
-  lda #$2200.w
-  sta $4310.w
+  lda #IO_DMAP_MODE_0_RAM | IO_DMAP_CPU_TO_IO | ((IO_CGDATA - IO_BBAD_BASE) << 8)
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
   lda #$c000.w
-  sta $4312.w
+  sta IO_A1T1
   ldx #$7e
-  stx $4314.w
+  stx IO_A1B1
   lda #$0200.w
-  sta $4315.w
+  sta IO_DAS1
   ldx #$00
-  stx $2121.w
-  ldx #$02
-  stx $420b.w
+  stx IO_CGADD
+  ldx #IO_MDMAEN_1
+  stx IO_MDMAEN
   plp
   rtl
 
