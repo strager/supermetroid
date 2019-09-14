@@ -2732,7 +2732,7 @@ unknown_80_9459:
 @unknown_80_948c:
   lda var_pressed_buttons
   sta var_pressed_buttons_last_frame
-  lda $05d1.w
+  lda var_unknown_05d1.w
   bne @unknown_80_9497
   plp
   rtl
@@ -2760,27 +2760,27 @@ unknown_80_9459:
 @unknown_80_94be:
   lda var_pressed_buttons_p2
   sta var_pressed_buttons_last_frame_p2
-  lda $0617.w
+  lda var_unknown_0617.w
   bne @unknown_80_94d4
   lda var_pressed_buttons
   cmp #IO_JOY_SELECT | IO_JOY_START | IO_JOY_L | IO_JOY_R
   bne @unknown_80_94d4
-  stz $05f5.w
+  stz var_unknown_05f5.w
   jmp unknown_80_8462
 @unknown_80_94d4:
-  lda $05d1.w
+  lda var_unknown_05d1.w
   bne @unknown_80_94e8
-  stz $05c5.w
-  stz $05c7.w
+  stz var_unknown_05c5.w
+  stz var_unknown_05c7.w
   lda #$ffef.w
   trb var_pressed_buttons_p2
   trb var_new_pressed_buttons_p2
   plp
   rtl
 @unknown_80_94e8:
-  stz $05c5.w
-  stz $05c7.w
-  bit $05cf.w
+  stz var_unknown_05c5.w
+  stz var_unknown_05c7.w
+  bit var_unknown_05cf.w
   bvc @unknown_80_94f6
   jmp @unknown_80_9581
 @unknown_80_94f6:
@@ -2789,7 +2789,7 @@ unknown_80_9459:
   cmp #IO_JOY_SELECT | IO_JOY_L
   bne @unknown_80_9509
   lda var_new_pressed_buttons
-  sta $05c5.w
+  sta var_unknown_05c5.w
   stz var_pressed_buttons
   stz var_new_pressed_buttons
 @unknown_80_9509:
@@ -2798,49 +2798,49 @@ unknown_80_9459:
   cmp #IO_JOY_SELECT | IO_JOY_R
   bne @unknown_80_951f
   lda var_new_pressed_buttons
-  sta $05c7.w
+  sta var_unknown_05c7.w
   lda #$e0f0.w
   stz var_pressed_buttons
   stz var_new_pressed_buttons
 @unknown_80_951f:
-  lda $05c7.w
+  lda var_unknown_05c7.w
   bit #$0080.w
   beq @unknown_80_952e
   lda var_unknown_84
   eor #$0030.w
   sta var_unknown_84
 @unknown_80_952e:
-  lda $05c7.w
+  lda var_unknown_05c7.w
   bit #$8000.w
   beq @unknown_80_9570
-  lda $05cf.w
+  lda var_unknown_05cf.w
   eor #$8000.w
-  sta $05cf.w
+  sta var_unknown_05cf.w
   bpl @unknown_80_955e
-  lda $09c6.w
-  sta $05c9.w
-  lda $09ca.w
-  sta $05cb.w
-  lda $09ce.w
-  sta $05cd.w
-  stz $09c6.w
-  stz $09ca.w
-  stz $09ce.w
+  lda var_unknown_09c6.w
+  sta var_unknown_05c9.w
+  lda var_unknown_09ca.w
+  sta var_unknown_05cb.w
+  lda var_unknown_09ce.w
+  sta var_unknown_05cd.w
+  stz var_unknown_09c6.w
+  stz var_unknown_09ca.w
+  stz var_unknown_09ce.w
   bra @unknown_80_9570
 @unknown_80_955e:
-  lda $05c9.w
-  sta $09c6.w
-  lda $05cb.w
-  sta $09ca.w
-  lda $05cd.w
-  sta $09ce.w
+  lda var_unknown_05c9.w
+  sta var_unknown_09c6.w
+  lda var_unknown_05cb.w
+  sta var_unknown_09ca.w
+  lda var_unknown_05cd.w
+  sta var_unknown_09ce.w
 @unknown_80_9570:
-  lda $05c7.w
+  lda var_unknown_05c7.w
   bit #$0040.w
   beq @unknown_80_9581
-  lda $05cf.w
+  lda var_unknown_05cf.w
   eor #$2000.w
-  sta $05cf.w
+  sta var_unknown_05cf.w
 @unknown_80_9581:
   plp
   rtl
