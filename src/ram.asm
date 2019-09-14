@@ -38,6 +38,10 @@ var_multiply_16_output: ds 4 ; $7e002a
 var_unknown_2e: dw ; $7e002e
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $3c) export
+var_unknown_3c: dw ; $7e003c
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $44) export
 var_decompress_output_address_temp: dl ; $7e0044
 var_decompress_input_address: dl ; $7e0047
@@ -355,7 +359,8 @@ var_unknown_0686: db ; $7e0686
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071c) export
 var_unknown_071c: db ; $7e071c
-var_unknown_071d: dw ; $7e071d
+var_unknown_071d: db ; $7e071d
+var_unknown_071e: db ; $7e071e
 var_unknown_071f: dw ; $7e071f
 var_unknown_0721: dw ; $7e0721
 var_unknown_0723: dw ; $7e0723

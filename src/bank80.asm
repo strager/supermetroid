@@ -876,7 +876,7 @@ unknown_80_8482:
   stz var_unknown_53
   jsl unknown_80_8b1a
   jsl unknown_80_896e
-  stz var_unknown_071d.w
+  stz var_unknown_071d.w ; Address: var_unknown_071d and var_unknown_071e
   stz var_unknown_071f.w
   stz var_unknown_0721.w
   jsl unknown_80_834b
@@ -2594,73 +2594,73 @@ unknown_80_9376:
   phb
   ldx #$92
   phx
-  plb
-  ldx #$02
-  ldy #$80
-  sty $2115.w
-  ldy $071d.w
+  plb ; DB := $92
+  ldx #IO_MDMAEN_1
+  ldy #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
+  sty IO_VMAIN
+  ldy var_unknown_071d.w
   beq @unknown_80_93cb
-  ldy #$02
-  lda $071f.w
-  sta $3c
+  ldy #2
+  lda var_unknown_071f.w
+  sta var_unknown_3c
   lda #$6000.w
-  sta $2116.w
-  lda #$1801.w
-  sta $4310.w
-  lda ($3c)
-  sta $4312.w
-  sta $14
-  lda ($3c), Y
-  sta $4314.w
+  sta IO_VMADD
+  lda #IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  lda (var_unknown_3c)
+  sta IO_A1T1
+  sta var_unknown_14
+  lda (var_unknown_3c), Y ; Y = 2
+  sta IO_A1B1 ; Address: IO_A1B1 and IO_DAS1L
   iny
-  lda ($3c), Y
-  sta $4315.w
+  lda (var_unknown_3c), Y ; Y = 3
+  sta IO_DAS1
   clc
-  adc $14
-  sta $14
+  adc var_unknown_14
+  sta var_unknown_14
   iny
   iny
-  stx $420b.w
+  stx IO_MDMAEN ; X = IO_MDMAEN_1
   lda #$6100.w
-  sta $2116.w
-  lda $14
-  sta $4312.w
-  lda ($3c), Y
+  sta IO_VMADD
+  lda var_unknown_14
+  sta IO_A1T1
+  lda (var_unknown_3c), Y ; Y = 5
   beq @unknown_80_93cb
-  sta $4315.w
-  stx $420b.w
+  sta IO_DAS1
+  stx IO_MDMAEN ; X = IO_MDMAEN_1
 @unknown_80_93cb:
-  ldy $071e.w
+  ldy var_unknown_071e.w
   beq @unknown_80_9414
-  ldy #$02
-  lda $0721.w
-  sta $3c
+  ldy #2
+  lda var_unknown_0721.w
+  sta var_unknown_3c
   lda #$6080.w
-  sta $2116.w
-  lda #$1801.w
-  sta $4310.w
-  lda ($3c)
-  sta $4312.w
-  sta $14
-  lda ($3c), Y
-  sta $4314.w
+  sta IO_VMADD
+  lda #IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM | ((IO_VMDATA - IO_BBAD_BASE) << 8)
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  lda (var_unknown_3c)
+  sta IO_A1T1
+  sta var_unknown_14
+  lda (var_unknown_3c), Y ; Y = 2
+  sta IO_A1B1 ; Address: IO_A1B1 and IO_DAS1L
   iny
-  lda ($3c), Y
-  sta $4315.w
+  lda (var_unknown_3c), Y ; Y = 3
+  sta IO_DAS1
   clc
-  adc $14
-  sta $14
+  adc var_unknown_14
+  sta var_unknown_14
   iny
   iny
-  stx $420b.w
+  stx IO_MDMAEN ; X = IO_MDMAEN_1
   lda #$6180.w
-  sta $2116.w
-  lda $14
-  sta $4312.w
-  lda ($3c), Y
+  sta IO_VMADD
+  lda var_unknown_14
+  sta IO_A1T1
+  lda (var_unknown_3c), Y ; Y = 5
   beq @unknown_80_9414
-  sta $4315.w
-  stx $420b.w
+  sta IO_DAS1
+  stx IO_MDMAEN ; X = IO_MDMAEN_1
 @unknown_80_9414:
   plb
   rts
