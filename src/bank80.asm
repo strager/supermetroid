@@ -2924,20 +2924,22 @@ interrupt_nmi:
   bra @unknown_80_95f7
 
 unknown_80_9616:
-  ror $8096.w
-  stx $8b, Y
-  stx $a9, Y
-  stx $d3, Y
-  stx $f1, Y
-  stx $1a, Y
-  sta [$33], Y
-  sta [$58], Y
-  sta [$71], Y
-  sta [$a9], Y
-  sta [$c1], Y
-  sta [$da], Y
-  sta [$0a], Y
-  tya
+  .dw unknown_80_966e
+  .dw unknown_80_9680
+  .dw unknown_80_968b
+  .dw unknown_80_96a9
+  .dw unknown_80_96d3
+  .dw unknown_80_96f1
+  .dw unknown_80_971a
+  .dw unknown_80_9733
+  .dw unknown_80_9758
+  .dw unknown_80_9771
+  .dw unknown_80_97a9
+  .dw unknown_80_97c1
+  .dw unknown_80_97da
+  .dw unknown_80_980a
+
+unknown_80_9632:
   sep #$20
   lda #$80
   sta $2100.w
