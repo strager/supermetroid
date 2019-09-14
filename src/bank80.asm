@@ -1322,11 +1322,11 @@ unknown_80_88b4:
   lda #$0000.w
   ldx #$2000.w
   ldy #$e000.w
-  jsr $8083f6
+  jsl unknown_80_83f6
   lda #$0000.w
   tax
   ldy #$dffe.w
-  jsr $808409
+  jsl unknown_80_8409
   sep #$30
   rts
 
