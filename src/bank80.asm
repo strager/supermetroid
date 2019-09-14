@@ -1549,7 +1549,7 @@ unknown_80_8bd3:
   php
 @unknown_80_8bd4:
   sep #$20
-  lda $0000.w, X
+  lda 0.w, X
   bmi @unknown_80_8c11
   asl A
   bmi @unknown_80_8be0
@@ -1557,72 +1557,73 @@ unknown_80_8bd3:
   rtl
 @unknown_80_8be0:
   lsr A
-  and #$1f
-  sta $4310.w
-  ldy $0001.w, X
-  sty $4312.w
-  lda $0003.w, X
-  sta $4314.w
-  ldy $0004.w, X
-  sty $4315.w
-  lda #$22
-  sta $4311.w
-  lda $0006.w, X
-  sta $2121.w
-  lda #$02
-  sta $420b.w
+  and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
+  sta IO_DMAP1
+  ldy 1.w + unknown_02d0@entry_7.unknown_0, X
+  sty IO_A1T1
+  lda 1.w + unknown_02d0@entry_7.unknown_0_bank, X
+  sta IO_A1B1
+  ldy 1.w + unknown_02d0@entry_7.unknown_3, X
+  sty IO_DAS1
+  lda #IO_CGDATA - IO_BBAD_BASE
+  sta IO_BBAD1
+  lda 1.w + unknown_02d0@entry_7.unknown_5, X
+  sta IO_CGADD
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$21
   txa
-  adc #$0007.w
+  adc #unknown_02d0@entry_7@size
   tax
   bra @unknown_80_8bd4
 @unknown_80_8c11:
+.accu 8
   asl A
   bmi @unknown_80_8c4b
   lsr A
-  and #$1f.b
-  sta $4310.w
-  ldy $0001.w, X
-  sty $4312.w
-  lda $0003.w, X
-  sta $4314.w
-  ldy $0004.w, X
-  sty $4315.w
-  lda #$18.b
-  sta $4311.w
-  ldy $0006.w, X
+  and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
+  sta IO_DMAP1
+  ldy 1.w + unknown_02d0@entry_9.unknown_0, X
+  sty IO_A1T1
+  lda 1.w + unknown_02d0@entry_9.unknown_0_bank, X
+  sta IO_A1B1
+  ldy 1.w + unknown_02d0@entry_9.unknown_3, X
+  sty IO_DAS1
+  lda #IO_VMDATA - IO_BBAD_BASE
+  sta IO_BBAD1
+  ldy 1.w + unknown_02d0@entry_9.unknown_5, X
   sty IO_VMADD
-  lda $0008.w, X
+  lda 1.w + unknown_02d0@entry_9.unknown_7, X
   sta IO_VMAIN
-  lda #$02.b
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$21
   txa
-  adc #$0009.w
+  adc #unknown_02d0@entry_9@size
   tax
   bra @unknown_80_8bd4
 @unknown_80_8c4b:
+.accu 8
   lsr A
-  and #$1f.b
-  sta $4310.w
-  ldy $0001.w, X
-  sty $4312.w
-  lda $0003.w, X
-  sta $4314.w
-@unknown_80_8c5d:
-  ldy $0004.w, X
-  sty $4315.w
-  lda #$19.b
-  sta $4311.w
-  ldy $0006.w, X
+  and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
+  sta IO_DMAP1
+  ldy 1.w + unknown_02d0@entry_9.unknown_0, X
+  sty IO_A1T1
+  lda 1.w + unknown_02d0@entry_9.unknown_0_bank, X
+  sta IO_A1B1
+  ldy 1.w + unknown_02d0@entry_9.unknown_3, X
+  sty IO_DAS1
+  lda #IO_VMDATAH - IO_BBAD_BASE
+  sta IO_BBAD1
+  ldy 1.w + unknown_02d0@entry_9.unknown_5, X
   sty IO_VMADD
-  lda $0008.w, X
+  lda 1.w + unknown_02d0@entry_9.unknown_7, X
   sta IO_VMAIN
-  lda #$02.b
-  sta $420b.w
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   rep #$21
   txa
-  adc #$0009.w
+  adc #unknown_02d0@entry_9@size
   tax
   jmp @unknown_80_8bd4
 

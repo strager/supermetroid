@@ -296,7 +296,9 @@
 .define IO_DMAP0 $4300.w
 .define IO_DMAP_MODE_0_RAM $00.b
 .define IO_DMAP_MODE_1_VRAM $01.b
+.define IO_DMAP_MODE_MASK $07.b
 .define IO_DMAP_CPU_TO_IO $00.b
+.define IO_DMAP_ADDRESS_STEP_MASK $18.b
 
 ; CPU: DMA/HDMA I/O bus address (channel 0)
 .define IO_BBAD0 $4301.w
