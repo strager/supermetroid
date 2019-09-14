@@ -4,6 +4,7 @@
 .include "include/io.asm"
 .include "include/memory.asm"
 .include "include/start_dma_copy.asm"
+.include "include/unknown_02d0.asm"
 .include "include/vram_write_queue.asm"
 
 .bank ($80 - $80) slot $0
@@ -1479,54 +1480,54 @@ unknown_80_8b1a:
 unknown_80_8b4f:
   phx
   phy
-  ldy $0334.w
+  ldy var_unknown_0334.w
   dex
 @unknown_80_8b55:
-  bit $0000.w, X
+  bit var_unknown_00.w, X
   bmi @unknown_80_8b8b
   bvs @unknown_80_8b62
-  sty $0334.w
+  sty var_unknown_0334.w
   ply
   plx
   rtl
 @unknown_80_8b62:
-  lda $0001.w, X
-  sta $02d0.w, Y
-  lda $0003.w, X
-  sta $02d2.w, Y
-  lda $0005.w, X
-  sta $02d4.w, Y
-  lda $0007.w, X
+  lda 1.w + 0, X
+  sta (var_unknown_02d0.w + 0) & $ffff, Y
+  lda 1.w + 2, X
+  sta (var_unknown_02d0.w + 2) & $ffff, Y
+  lda 1.w + 4, X
+  sta (var_unknown_02d0.w + 4) & $ffff, Y
+  lda 1.w + 6, X
   and #$00ff.w
-  sta $02d6.w, Y
+  sta (var_unknown_02d0.w + 6) & $ffff, Y
   txa
   clc
-  adc #$0007.w
+  adc #unknown_02d0@entry_7@size
   tax
   tya
   clc
-  adc #$0007.w
+  adc #unknown_02d0@entry_7@size
   tay
   bra @unknown_80_8b55
 @unknown_80_8b8b:
-  lda $0001.w, X
-  sta $02d0.w, Y
-  lda $0003.w, X
-  sta $02d2.w, Y
-  lda $0005.w, X
-  sta $02d4.w, Y
-  lda $0007.w, X
-  sta $02d6.w, Y
-  lda $0009.w, X
+  lda 1.w + 0, X
+  sta (var_unknown_02d0.w + 0) & $ffff, Y
+  lda 1.w + 2, X
+  sta (var_unknown_02d0.w + 2) & $ffff, Y
+  lda 1.w + 4, X
+  sta (var_unknown_02d0.w + 4) & $ffff, Y
+  lda 1.w + 6, X
+  sta (var_unknown_02d0.w + 6) & $ffff, Y
+  lda 1.w + 8, X
   and #$00ff.w
-  sta $02d8.w, Y
+  sta (var_unknown_02d0.w + 8) & $ffff, Y
   txa
   clc
-  adc #$0009.w
+  adc #unknown_02d0@entry_9@size
   tax
   tya
   clc
-  adc #$0009.w
+  adc #unknown_02d0@entry_9@size
   tay
   bra @unknown_80_8b55
 

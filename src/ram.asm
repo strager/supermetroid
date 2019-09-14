@@ -197,8 +197,15 @@ var_unknown_bf_h: db ; $7e00c0
 var_vram_write_queue: ds vram_write_queue@entry@size * vram_write_queue_count ; $7e00d0
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $02d0) export
+; Array of unknown_02d0@entry_7 or unknown_02d0@entry_9.
+var_unknown_02d0: ds 1 ; $7e02d0
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0330) export
 var_vram_write_queue_tail: dw ; $7e0330
+var_unknown_0332: dw ; $7e0332
+var_unknown_0334: dw ; $7e0334
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0371) export
