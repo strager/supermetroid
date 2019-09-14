@@ -1559,15 +1559,15 @@ unknown_80_8bd3:
   lsr A
   and #IO_DMAP_MODE_MASK | IO_DMAP_ADDRESS_STEP_MASK
   sta IO_DMAP1
-  ldy 1.w + unknown_02d0@entry_7.unknown_0, X
+  ldy unknown_02d0@entry_7.unknown_1.w, X
   sty IO_A1T1
-  lda 1.w + unknown_02d0@entry_7.unknown_0_bank, X
+  lda unknown_02d0@entry_7.unknown_1_bank.w, X
   sta IO_A1B1
-  ldy 1.w + unknown_02d0@entry_7.unknown_3, X
+  ldy unknown_02d0@entry_7.unknown_4.w, X
   sty IO_DAS1
   lda #IO_CGDATA - IO_BBAD_BASE
   sta IO_BBAD1
-  lda 1.w + unknown_02d0@entry_7.unknown_5, X
+  lda unknown_02d0@entry_7.unknown_6.w, X
   sta IO_CGADD
   lda #IO_MDMAEN_1
   sta IO_MDMAEN
