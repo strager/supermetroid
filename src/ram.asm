@@ -341,6 +341,10 @@ var_pause_weapons_selected_item: db ; $7e0756
 var_reserve_tank_timer: dw ; $7e0757
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0789) export
+var_unknown_0789: dw ; $7e0789
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $079f) export
 var_unknown_079f: db ; $7e079f
 .ende
@@ -351,6 +355,10 @@ var_unknown_07a9: db ; $7e07a9
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $07ec) export
 var_unknown_07ec: db ; $7e07ec
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $07f7) export
+var_unknown_07f7: dw ; $7e07f7
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $08f7) export
@@ -585,7 +593,15 @@ var_unknown_c69a: dw ; $7ec69a
 var_unknown_cd20: dw ; $7ecd20
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $cd52) export
+var_unknown_cd52: dw ; $7ecd52
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d820) export
 var_unknown_d820: dsb $8 ; $7ed820
 var_unknown_d828: dsw $8 ; $7ed828
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $d908) export
+var_unknown_d908: dw ; $7ed908
 .ende

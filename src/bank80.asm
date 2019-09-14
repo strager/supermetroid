@@ -933,23 +933,23 @@ unknown_80_8577:
 unknown_80_858c:
   php
   rep #$30
-  lda $079f.w
+  lda var_unknown_079f.w
   xba
   tax
-  ldy #$0000.w
+  ldy #var_unknown_00.w
 @unknown_80_8597:
-  lda $7ecd52, X
-  sta $07f7.w, Y
+  lda var_unknown_cd52.l, X
+  sta var_unknown_07f7.w, Y
   inx
   inx
   iny
   iny
   cpy #$0100.w
   bmi @unknown_80_8597
-  ldx $079f.w
-  lda $7ed908, X
+  ldx var_unknown_079f.w
+  lda var_unknown_d908.l, X
   and #$00ff.w
-  sta $0789.w
+  sta var_unknown_0789.w
   plp
   rtl
 
