@@ -3105,26 +3105,26 @@ unknown_80_9758:
 
 unknown_80_9771:
   sep #$20
-  lda $07b3.w
-  ora $07b1.w
+  lda var_unknown_07b3.w
+  ora var_unknown_07b1.w
   bit #$01
   beq @unknown_80_9781
-  lda #$10
+  lda #IO_TM_OBJ
   bra @unknown_80_9783
 @unknown_80_9781:
-  lda #$11
+  lda #IO_TM_OBJ | IO_TM_BG1
 @unknown_80_9783:
-  sta $212c.w
-  stz $2130.w
-  stz $2131.w
+  sta IO_TM
+  stz IO_CGWSEL
+  stz IO_CGADSUB
   rep #$20
-  ldx $05bc.w
+  ldx var_unknown_05bc.w
   bpl @unknown_80_9796
-  jsr $9632.w
+  jsr unknown_80_9632
 @unknown_80_9796:
-  lda $0931.w
+  lda var_unknown_0931.w
   bmi @unknown_80_979f
-  jsr $80ae4e
+  jsl unknown_80_ae4e
 @unknown_80_979f:
   lda #$0014.w
   ldy #$00d8.w
