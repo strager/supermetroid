@@ -3,7 +3,12 @@
 .include "include/vram_write_queue.asm"
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00) export
+.union
 var_unknown_00: dw ; $7e0000
+.nextu
+var_unknown_00_l: db ; $7e0000
+var_unknown_00_h: db ; $7e0001
+.endu
 var_unknown_02: dw ; $7e0002
 .ende
 
@@ -377,7 +382,10 @@ var_unknown_07a9: db ; $7e07a9
 var_unknown_07ec: db ; $7e07ec
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $07f7) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $07f3) export
+var_unknown_07f3: dw ; $7e07f3
+var_unknown_07f5: db ; $7e07f5
+var_unknown_07f6: db ; $7e07f6
 var_unknown_07f7: dw ; $7e07f7
 .ende
 

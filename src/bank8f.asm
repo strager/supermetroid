@@ -12855,17 +12855,18 @@
 /*unknown_8f_e7c6:*/ sbc [$32]
 /*unknown_8f_e7c8:*/ sbc [$3b]
 /*unknown_8f_e7ca:*/ sbc [$44]
-@unknown_8f_e7cc: sbc [$4d]
+unknown_8f_e7cc: sbc [$4d]
 /*unknown_8f_e7ce:*/ sbc [$56]
 /*unknown_8f_e7d0:*/ sbc [$5f]
 /*unknown_8f_e7d2:*/ sbc [$68]
-@unknown_8f_e7d4: sbc [$71]
+unknown_8f_e7d4: sbc [$71]
 /*unknown_8f_e7d6:*/ sbc [$7a]
 /*unknown_8f_e7d8:*/ sbc [$83]
 /*unknown_8f_e7da:*/ sbc [$8c]
 /*unknown_8f_e7dc:*/ sbc [$95]
 /*unknown_8f_e7de:*/ sbc [$9e]
-/*unknown_8f_e7e0:*/ sbc [$00]
+/*unknown_8f_e7e0:*/ .db $e7
+unknown_8f_e7e1: .db $00
 /*unknown_8f_e7e2:*/ bra ($cf - $100) ; $e7b3.w
 /*unknown_8f_e7e4:*/ ora $d0e2.w
 /*unknown_8f_e7e7:*/ rol A
@@ -12892,7 +12893,7 @@
 /*unknown_8f_e80e:*/ tdc
 /*unknown_8f_e80f:*/ ldx $d9, Y
 /*unknown_8f_e811:*/ cmp $d9f5.w, X
-/*unknown_8f_e814:*/ bvc @unknown_8f_e7cc
+/*unknown_8f_e814:*/ bvc unknown_8f_e7cc
 /*unknown_8f_e816:*/ phx
 /*unknown_8f_e817:*/ tsc
 /*unknown_8f_e818:*/ dec $da, X
@@ -12904,7 +12905,7 @@
 /*unknown_8f_e82b:*/ dec $0700.w, X
 /*unknown_8f_e82e:*/ brk $00
 /*unknown_8f_e830:*/ asl $02
-/*unknown_8f_e832:*/ bvs @unknown_8f_e7d4
+/*unknown_8f_e832:*/ bvs unknown_8f_e7d4
 /*unknown_8f_e834:*/ brk $53
 /*unknown_8f_e836:*/ inx
 /*unknown_8f_e837:*/ inc $e5

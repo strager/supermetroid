@@ -56,6 +56,9 @@ unknown_80_800a:
   iny
   lda [$03], Y
   sta $01
+  ; Fall through.
+
+unknown_80_8024:
   jsr unknown_80_8028
   rtl
 
@@ -1970,71 +1973,71 @@ unknown_80_8ef4:
 unknown_80_8f0c:
   php
   rep #$20
-  dec $063f.w
+  dec var_unknown_063f.w
   bmi @unknown_80_8f47
   beq @unknown_80_8f18
   plp
   rtl
 @unknown_80_8f18:
-  lda $063d.w
+  lda var_unknown_063d.w
   bmi @unknown_80_8f62
   sep #$20
   and #$7f
-  sta $07f5.w
-  stz $07f6.w
-  sta $2140.w
-  sta $064c.w
+  sta var_unknown_07f5.w
+  stz var_unknown_07f6.w
+  sta IO_APUI00
+  sta var_unknown_064c.w
   rep #$20
   lda #$0008.w
-  sta $0686.w
-  ldx $063b.w
-  stz $0619.w, X
-  stz $0629.w, X
+  sta var_unknown_0686.w
+  ldx var_unknown_063b.w
+  stz var_unknown_0619.w, X
+  stz var_unknown_0629.w, X
   inx
   inx
   txa
   and #$000e.w
-  sta $063b.w
+  sta var_unknown_063b.w
 @unknown_80_8f47:
-  ldx $063b.w
-  cpx $0639.w
+  ldx var_unknown_063b.w
+  cpx var_unknown_0639.w
   beq @unknown_80_8f5d
-  lda $0619.w, X
-  sta $063d.w
-  lda $0629.w, X
-  sta $063f.w
+  lda var_unknown_0619.w, X
+  sta var_unknown_063d.w
+  lda var_unknown_0629.w, X
+  sta var_unknown_063f.w
   plp
   rtl
 @unknown_80_8f5d:
-  stz $063f.w
+  stz var_unknown_063f.w
   plp
   rtl
 @unknown_80_8f62:
   and #$00ff.w
-  sta $07f3.w
+  sta var_unknown_07f3.w
   tax
   sep #$20
   lda #$ff
-  sta $064c.w
+  sta var_unknown_064c.w
   rep #$20
-  lda $8fe7e1, X
-  sta $00
-  lda $8fe7e2, X
-  sta $01
-  jsr $808024
+  lda unknown_8f_e7e1.l + 0, X
+  sta0 var_unknown_00_l
+  lda unknown_8f_e7e1.l + 1, X
+  sta0 var_unknown_00_h
+  jsl unknown_80_8024
   sep #$20
-  stz $064c.w
+  stz var_unknown_064c.w
   rep #$20
-  ldx $063b.w
-  stz $0619.w, X
-  stz $0629.w, X
+  ldx var_unknown_063b.w
+  stz var_unknown_0619.w, X
+  stz var_unknown_0629.w, X
   inx
   inx
   txa
   and #$000e.w
-  sta $063b.w
+  sta var_unknown_063b.w
   lda #$0008.w
-  sta $0686.w
+  sta var_unknown_0686.w
   plp
   rtl
 
