@@ -3024,11 +3024,11 @@ unknown_80_96a9:
 unknown_80_96d3:
   sep #$20
   lda #$5a
-  sta $2109.w
-  lda #$04
-  sta $212c.w
-  stz $2130.w
-  stz $2131.w
+  sta IO_BG3SC
+  lda #IO_TM_BG3
+  sta IO_TM
+  stz IO_CGWSEL
+  stz IO_CGADSUB
   rep #$20
   lda #$000a.w
   ldy #$001f.w
