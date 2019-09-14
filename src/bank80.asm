@@ -2859,7 +2859,7 @@ interrupt_nmi:
   lda #$0000.w
   tcd
   sep #$10
-  ldx $4210.w
+  ldx IO_RDNMI ; Reset IO_RDNMI_VBLANK_REQUESTED.
   ldx var_engine_frame_is_ready.w
   beq @frame_is_not_ready
 @frame_is_ready:
@@ -2867,22 +2867,22 @@ interrupt_nmi:
   jsr unknown_80_9376
   jsr unknown_80_9416
   jsr unknown_80_91ee
-  ldx #$00
+  ldx #0
 @unknown_80_95ac:
-  lda $18b4.w, X
+  lda var_unknown_18b4.w, X
   beq @unknown_80_95ba
-  ldy $18c0.w, X
-  lda $18d8.w, X
-  sta $4302.w, Y
+  ldy var_unknown_18c0.w, X
+  lda var_unknown_18d8.w, X
+  sta IO_A1T0, Y
 @unknown_80_95ba:
   inx
   inx
-  cpx #$0c
+  cpx #unknown_18b4_count * 2
   bne @unknown_80_95ac
-  ldx $55
+  ldx var_unknown_55
   cpx #$07
   beq @unknown_80_95cc
-  ldx $56
+  ldx var_unknown_56
   cpx #$07
   bne @unknown_80_95d0
 @unknown_80_95cc:
@@ -2892,20 +2892,20 @@ interrupt_nmi:
   jsl flush_vram_read_queue
   sep #$10
   rep #$20
-  ldx $85
-  stx $420c.w
+  ldx var_unknown_85
+  stx IO_HDMAEN
   jsl unknown_80_9459
   ; Signal to the game engine that we've finished rendering.
   ldx #$00
   stx var_engine_frame_is_ready.w
-  stx $05ba.w
-  ldx $05b5.w
+  stx var_unknown_05ba.w
+  ldx var_unknown_05b5.w
   inx
-  stx $05b5.w
-  inc $05b6.w
+  stx var_unknown_05b5.w
+  inc var_unknown_05b6.w
 @unknown_80_95f7:
   rep #$30
-  inc $05b8.w
+  inc var_unknown_05b8.w
   ply
   plx
   pla
@@ -2913,13 +2913,14 @@ interrupt_nmi:
   plb
   rti
 @frame_is_not_ready:
-  ldx $05ba.w
+.index 8
+  ldx var_unknown_05ba.w
   inx
-  stx $05ba.w
-  ldx $05ba.w
-  cpx $05bb.w
+  stx var_unknown_05ba.w
+  ldx var_unknown_05ba.w
+  cpx var_unknown_05bb.w
   bcc @unknown_80_95f7
-  stx $05bb.w
+  stx var_unknown_05bb.w
   bra @unknown_80_95f7
 
 unknown_80_9616:

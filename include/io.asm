@@ -261,6 +261,10 @@
 .define IO_MEMSEL $420d.w
 .define IO_MEMSEL_FASTROM $01
 
+; CPU: V-blank NMI flag and CPU version number
+.define IO_RDNMI $4210.w
+.define IO_RDNMI_VBLANK_REQUESTED $80.w
+
 ; CPU: H/V-timer IRQ flag
 .define IO_TIMEUP $4211.w
 

@@ -260,6 +260,9 @@ var_engine_frame_is_ready: db ; $7e05b4
 
 var_unknown_05b5: db ; $7e05b5
 var_unknown_05b6: dw ; $7e05b6
+var_unknown_05b8: dw ; $7e05b8
+var_unknown_05ba: db ; $7e05ba
+var_unknown_05bb: db ; $7e05bb
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $05c5) export
@@ -629,6 +632,17 @@ var_unknown_0df4: dw ; $7e0df4
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0e12) export
 var_unknown_0e12: dw ; $7e0e12
+.ende
+
+.define unknown_18b4_count 6
+.export unknown_18b4_count
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $18b4) export
+var_unknown_18b4: dsw unknown_18b4_count ; $7e18b4
+var_unknown_18c0: dsb unknown_18b4_count ; $7e18c0
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $18d8) export
+var_unknown_18d8: dsb unknown_18b4_count ; $7e18d8
 .ende
 
 .define unknown_1ef5_count 6
