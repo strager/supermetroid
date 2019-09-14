@@ -1,21 +1,16 @@
 .struct unknown_0340@entry
 .union
-unknown_0: dw
+vmadd: dw   ; Value to store into IO_VMADD.
 .nextu
-unknown_0_l: db
-unknown_0_h: db
+vmadd_l: db ; Value to store into IO_VMADDL.
+vmadd_h: db ; Value to store into IO_VMADDH.
 .endu
 
-unknown_2: dw
-
-.union
-unknown_4: dl
-.nextu
-unknown_4_l: db
-unknown_4_h: db
-unknown_4_bank: db
-.endu
-
-unknown_7: dw
+dmap: db    ; Value to store into IO_DMAP1.
+bbad: db    ; Value to store into IO_BBAD1.
+a1t1l: db   ; Value to store into IO_A1T1L.
+a1t1h: db   ; Value to store into IO_A1T1H.
+a1b1: db    ; Value to store into IO_A1B1.
+das1: dw    ; Value to store into IO_DAS1.
 .endst
 .define unknown_0340@entry@size _sizeof_unknown_0340@entry
