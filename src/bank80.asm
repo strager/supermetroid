@@ -965,12 +965,12 @@ unknown_80_858c:
 
 unknown_80_85c7:
   rep #$30
-  lda $079f.w
+  lda var_unknown_079f.w
   xba
   tax
-  ldy #$0000.w
+  ldy #var_unknown_00.w
 @unknown_80_85d1:
-  lda $07f7.w, Y
+  lda var_unknown_07f7.w, Y
   sta $7ecd52, X
   inx
   inx
@@ -978,12 +978,12 @@ unknown_80_85c7:
   iny
   cpy #$0100.w
   bmi @unknown_80_85d1
-  lda $0789.w
+  lda var_unknown_0789.w
   beq @unknown_80_85f4
-  ldx $079f.w
-  lda $7ed908, X
+  ldx var_unknown_079f.w
+  lda var_unknown_d908.l, X
   ora #$00ff.w
-  sta $7ed908, X
+  sta var_unknown_d908.l, X
 @unknown_80_85f4:
   plp
   rtl
