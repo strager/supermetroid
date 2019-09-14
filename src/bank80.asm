@@ -1893,22 +1893,34 @@ unknown_80_8dac:
 @unknown_80_8ea1:
   rts
 
-unknown_80_8ea2:
+; Copy data from VRAM according to var_vram_read_queue.
+;
+; Call this routine only during V-blank.
+;
+; Inputs:
+; * [var_vram_read_queue]
+; * [var_vram_read_queue_tail]
+; * VRAM
+;
+; Outputs:
+; * [vram_read_queue@a1t1l]: Data copied from VRAM.
+; * [var_vram_read_queue_tail]: Reset to 0.
+flush_vram_read_queue:
   php
   sep #$30
-  ldx var_unknown_0360.w
-  bne @unknown_80_8eac
+  ldx var_vram_read_queue_tail.w
+  bne @not_empty
   plp
   rtl
-@unknown_80_8eac:
+@not_empty:
   stz (var_vram_read_queue.w + vram_read_queue@entry.vmadd_l) & $ffff, X
   ldx #0
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
-@unknown_80_8eb6:
+@next_entry:
   rep #$20
   lda (var_vram_read_queue.w + vram_read_queue@entry.vmadd) & $ffff, X
-  beq @unknown_80_8eef
+  beq @done
   sta IO_VMADD
   lda IO_RDVRAM
   lda (var_vram_read_queue.w + vram_read_queue@entry.dmap) & $ffff, X ; Address: .dmap and .bbad
@@ -1928,9 +1940,9 @@ unknown_80_8ea2:
   clc
   adc #vram_read_queue@entry@size
   tax
-  bra @unknown_80_8eb6
-@unknown_80_8eef:
-  stz var_unknown_0360.w
+  bra @next_entry
+@done:
+  stz var_vram_read_queue_tail.w
   plp
   rtl
 
@@ -2867,7 +2879,7 @@ interrupt_nmi:
   jsl flush_cgvm_write_queue
 @unknown_80_95d0:
   jsl flush_vram_write_queue
-  jsl unknown_80_8ea2
+  jsl flush_vram_read_queue
   sep #$10
   rep #$20
   ldx $85
