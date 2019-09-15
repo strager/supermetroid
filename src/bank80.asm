@@ -4579,7 +4579,8 @@ unknown_80_a33a:
   plp
   clc
   rts
-@unknown_80_a378: plp
+@unknown_80_a378:
+  plp
   sec
   rts
 
