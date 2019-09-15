@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/io.asm"
 
 .bank ($84 - $80) slot $0
 .org $0
@@ -321,10 +322,10 @@ unknown_84_8232: php
 ; in the same bank as PLMs." -- Kejardon
 unknown_84_8290: lda $1c87.w, X
 /*unknown_84_8293:*/ lsr A
-/*unknown_84_8294:*/ sta $4204.w
+/*unknown_84_8294:*/ sta IO_WRDIV
 /*unknown_84_8297:*/ sep #$20
 /*unknown_84_8299:*/ lda $07a5.w
-/*unknown_84_829c:*/ sta $4206.w
+/*unknown_84_829c:*/ sta IO_WRDIVB
 /*unknown_84_829f:*/ rep #$20
 /*unknown_84_82a1:*/ nop
 /*unknown_84_82a2:*/ nop
@@ -332,9 +333,9 @@ unknown_84_8290: lda $1c87.w, X
 /*unknown_84_82a4:*/ nop
 /*unknown_84_82a5:*/ nop
 /*unknown_84_82a6:*/ nop
-/*unknown_84_82a7:*/ lda $4214.w
+/*unknown_84_82a7:*/ lda IO_RDDIV
 /*unknown_84_82aa:*/ sta $1c2b.w
-/*unknown_84_82ad:*/ lda $4216.w
+/*unknown_84_82ad:*/ lda IO_RDMPY
 /*unknown_84_82b0:*/ sta $1c29.w
 /*unknown_84_82b3:*/ rtl
 
@@ -524,15 +525,15 @@ unknown_84_83d7: phb
 /*unknown_84_83fb:*/ tyx
 /*unknown_84_83fc:*/ ldy #$0002.w
 /*unknown_84_83ff:*/ lda ($06, S), Y
-/*unknown_84_8401:*/ sta $4202.w
+/*unknown_84_8401:*/ sta IO_WRMPYA
 /*unknown_84_8404:*/ lda $07a5.w
-/*unknown_84_8407:*/ sta $4203.w
+/*unknown_84_8407:*/ sta IO_WRMPYB
 /*unknown_84_840a:*/ ldy #$0001.w
 /*unknown_84_840d:*/ lda ($06, S), Y
 /*unknown_84_840f:*/ rep #$20
 /*unknown_84_8411:*/ and #$00ff.w
 /*unknown_84_8414:*/ clc
-/*unknown_84_8415:*/ adc $4216.w
+/*unknown_84_8415:*/ adc IO_RDMPY
 /*unknown_84_8418:*/ asl A
 /*unknown_84_8419:*/ sta $1c87.w, X
 /*unknown_84_841c:*/ ldy #$0003.w
@@ -594,14 +595,14 @@ unknown_84_83d7: phb
 
 @unknown_84_8482: sep #$20
 /*unknown_84_8484:*/ lda $8f0003, X
-/*unknown_84_8488:*/ sta $4202.w
+/*unknown_84_8488:*/ sta IO_WRMPYA
 /*unknown_84_848b:*/ lda $07a5.w
-/*unknown_84_848e:*/ sta $4203.w
+/*unknown_84_848e:*/ sta IO_WRMPYB
 /*unknown_84_8491:*/ lda $8f0002, X
 /*unknown_84_8495:*/ rep #$20
 /*unknown_84_8497:*/ and #$00ff.w
 /*unknown_84_849a:*/ clc
-/*unknown_84_849b:*/ adc $4216.w
+/*unknown_84_849b:*/ adc IO_RDMPY
 /*unknown_84_849e:*/ asl A
 /*unknown_84_849f:*/ sta $1c87.w, Y
 /*unknown_84_84a2:*/ lda $8f0004, X
@@ -707,9 +708,9 @@ unknown_84_84e7: phb
 /*unknown_84_855b:*/ lsr A
 /*unknown_84_855c:*/ lsr A
 /*unknown_84_855d:*/ sep #$20
-/*unknown_84_855f:*/ sta $4202.w
+/*unknown_84_855f:*/ sta IO_WRMPYA
 /*unknown_84_8562:*/ lda $07a5.w
-/*unknown_84_8565:*/ sta $4203.w
+/*unknown_84_8565:*/ sta IO_WRMPYB
 /*unknown_84_8568:*/ rep #$20
 /*unknown_84_856a:*/ lda $0f7a.w, Y
 /*unknown_84_856d:*/ lsr A
@@ -717,7 +718,7 @@ unknown_84_84e7: phb
 /*unknown_84_856f:*/ lsr A
 /*unknown_84_8570:*/ lsr A
 /*unknown_84_8571:*/ clc
-/*unknown_84_8572:*/ adc $4216.w
+/*unknown_84_8572:*/ adc IO_RDMPY
 /*unknown_84_8575:*/ asl A
 /*unknown_84_8576:*/ sta $1c87.w, X
 /*unknown_84_8579:*/ pla
@@ -1859,7 +1860,7 @@ unknown_84_8dbb: lda $1c29.w
 /*unknown_84_8e5f:*/ lda $1a
 /*unknown_84_8e61:*/ and #$000f.w
 /*unknown_84_8e64:*/ ora #$4000.w
-/*unknown_84_8e67:*/ sta $4202.w
+/*unknown_84_8e67:*/ sta IO_WRMPYA
 /*unknown_84_8e6a:*/ lda $18
 /*unknown_84_8e6c:*/ and #$001f.w
 /*unknown_84_8e6f:*/ cmp #$0010.w
@@ -1867,7 +1868,7 @@ unknown_84_8dbb: lda $1c29.w
 /*unknown_84_8e74:*/ asl A
 /*unknown_84_8e75:*/ clc
 /*unknown_84_8e76:*/ adc $09
-/*unknown_84_8e78:*/ adc $4216.w
+/*unknown_84_8e78:*/ adc IO_RDMPY
 /*unknown_84_8e7b:*/ pha
 /*unknown_84_8e7c:*/ lda $091d.w
 /*unknown_84_8e7f:*/ and #$0100.w
@@ -1880,7 +1881,7 @@ unknown_84_8dbb: lda $1c29.w
 @unknown_84_8e8c: asl A
 /*unknown_84_8e8d:*/ clc
 /*unknown_84_8e8e:*/ adc $0c
-/*unknown_84_8e90:*/ adc $4216.w
+/*unknown_84_8e90:*/ adc IO_RDMPY
 /*unknown_84_8e93:*/ pha
 /*unknown_84_8e94:*/ lda $091d.w
 /*unknown_84_8e97:*/ and #$0100.w
@@ -2289,7 +2290,7 @@ unknown_84_8dbb: lda $1c29.w
 unknown_84_91dc: lda $1a
 /*unknown_84_91de:*/ and #$000f.w
 /*unknown_84_91e1:*/ ora #$4000.w
-/*unknown_84_91e4:*/ sta $4202.w
+/*unknown_84_91e4:*/ sta IO_WRMPYA
 /*unknown_84_91e7:*/ lda $18
 /*unknown_84_91e9:*/ and #$001f.w
 /*unknown_84_91ec:*/ cmp #$0010.w
@@ -2297,7 +2298,7 @@ unknown_84_91dc: lda $1a
 /*unknown_84_91f1:*/ asl A
 /*unknown_84_91f2:*/ clc
 /*unknown_84_91f3:*/ adc $09
-/*unknown_84_91f5:*/ adc $4216.w
+/*unknown_84_91f5:*/ adc IO_RDMPY
 /*unknown_84_91f8:*/ pha
 /*unknown_84_91f9:*/ lda $091d.w
 /*unknown_84_91fc:*/ and #$0100.w
@@ -2310,7 +2311,7 @@ unknown_84_91dc: lda $1a
 @unknown_84_9209: asl A
 /*unknown_84_920a:*/ clc
 /*unknown_84_920b:*/ adc $0c
-/*unknown_84_920d:*/ adc $4216.w
+/*unknown_84_920d:*/ adc IO_RDMPY
 /*unknown_84_9210:*/ pha
 /*unknown_84_9211:*/ lda $091d.w
 /*unknown_84_9214:*/ and #$0100.w
@@ -9879,14 +9880,14 @@ unknown_84_d0ae: sbc $ce83cc, X
 /*unknown_84_d15c:*/ phx
 /*unknown_84_d15d:*/ sep #$20
 /*unknown_84_d15f:*/ lda #$08
-/*unknown_84_d161:*/ sta $4202.w
+/*unknown_84_d161:*/ sta IO_WRMPYA
 /*unknown_84_d164:*/ lda $07a5.w
-/*unknown_84_d167:*/ sta $4203.w
+/*unknown_84_d167:*/ sta IO_WRMPYB
 /*unknown_84_d16a:*/ lda #$04
 /*unknown_84_d16c:*/ rep #$20
 /*unknown_84_d16e:*/ and #$00ff.w
 /*unknown_84_d171:*/ clc
-/*unknown_84_d172:*/ adc $4216.w
+/*unknown_84_d172:*/ adc IO_RDMPY
 /*unknown_84_d175:*/ asl A
 /*unknown_84_d176:*/ tax
 /*unknown_84_d177:*/ lda $7f0002, X
