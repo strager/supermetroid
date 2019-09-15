@@ -4,6 +4,7 @@
 .include "include/decompress_to.asm"
 .include "include/io.asm"
 .include "include/memory.asm"
+.include "include/oam.asm"
 .include "include/start_dma_copy.asm"
 .include "include/vram_read_queue.asm"
 .include "include/vram_write_queue.asm"
@@ -1525,7 +1526,7 @@ unknown_80_896e:
   clc
   adc #@unknown_80_8992.w
   sta var_unknown_12
-  lda #$00f0.w
+  lda #$f0 | ($00 << 8) ; oam_obj.y | (oam_obj.tile << 8)
   sep #$30
   jmp (var_unknown_12)
 @unknown_80_898d:
@@ -1534,8 +1535,8 @@ unknown_80_896e:
   rtl
 @unknown_80_8992:
 .define index 0
-.repeat 128
-  sta (var_oam_objects.w + (index * 4) + 1) & $ffff
+.repeat OAM_OBJ_COUNT
+  sta (var_oam_objects.w + (index * 4) + oam_obj.y) & $ffff ; Address: .y and .tile
   .redefine index index + 1
 .endr
 .undefine index
@@ -2647,7 +2648,7 @@ unknown_80_91ee:
 ; Copy [var_oam_objects] to OAM, and copy [var_color_palette] to CGRAM.
 ;
 ; Inputs:
-; * [var_oam_objects] to [var_oam_objects + $100*2 + $32]
+; * [var_oam_objects] to [var_oam_objects + OAM_OBJ_COUNT*oam_obj@size + $32]
 ; * [var_color_palette] to [var_color_palette + $100*2]
 ;
 ; Outputs:

@@ -1,5 +1,6 @@
 .include "include/common.asm"
 .include "include/memory.asm"
+.include "include/oam.asm"
 .include "include/vram_write_queue.asm"
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00) export
@@ -235,7 +236,7 @@ var_vram_read_queue_tail: db ; $7e0360
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0370) export
-var_oam_objects: ds 4 * 128 ; $7e0370
+var_oam_objects: instanceof oam_obj OAM_OBJ_COUNT ; $7e0370
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0570) export
