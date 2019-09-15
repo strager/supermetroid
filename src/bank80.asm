@@ -1535,7 +1535,7 @@ unknown_80_896e:
 @unknown_80_8992:
 .define index 0
 .repeat 128
-  sta (var_unknown_0370.w + (index * 4) + 1) & $ffff
+  sta (var_oam_objects.w + (index * 4) + 1) & $ffff
   .redefine index index + 1
 .endr
 .undefine index
@@ -2644,14 +2644,23 @@ unknown_80_91ee:
   stx IO_M7Y
   rts
 
-unknown_80_933a:
+; Copy [var_oam_objects] to OAM, and copy [var_color_palette] to CGRAM.
+;
+; Inputs:
+; * [var_oam_objects] to [var_oam_objects + $100*2 + $32]
+; * [var_color_palette] to [var_color_palette + $100*2]
+;
+; Outputs:
+; * CGRAM
+; * OAM
+copy_oam_and_color_palette:
 .index 8
 @configure_oam_dma:
   lda #IO_DMAP_MODE_0_RAM | IO_DMAP_CPU_TO_IO | ((IO_OAMDATA - IO_BBAD_BASE) << 8)
   sta IO_DMAP0 ; Address: IO_DMAP0 and IO_BBAD0
-  lda #var_unknown_0370
+  lda #var_oam_objects
   sta IO_A1T0
-  ldx #$00 ; Assumption: var_unknown_0370 is accessible from bank $00.
+  ldx #$00 ; Assumption: var_oam_objects is accessible from bank $00.
   stx IO_A1B0
   lda #$0220.w
   sta IO_DAS0
@@ -2946,7 +2955,7 @@ interrupt_nmi:
   ldx var_engine_frame_is_ready.w
   beq @frame_is_not_ready
 @frame_is_ready:
-  jsr unknown_80_933a
+  jsr copy_oam_and_color_palette
   jsr unknown_80_9376
   jsr unknown_80_9416
   jsr unknown_80_91ee
