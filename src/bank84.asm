@@ -4,34 +4,37 @@
 .bank ($84 - $80) slot $0
 .org $0
 
-/*unknown_84_8000:*/ phx
-/*unknown_84_8001:*/ phy
-/*unknown_84_8002:*/ phb
-/*unknown_84_8003:*/ phk
-/*unknown_84_8004:*/ plb
-/*unknown_84_8005:*/ xba
-/*unknown_84_8006:*/ and #$0078.w
-/*unknown_84_8009:*/ bit #$0040.w
-/*unknown_84_800c:*/ beq @unknown_84_8011
-/*unknown_84_800e:*/ lda #$0038.w
-@unknown_84_8011: asl A
-/*unknown_84_8012:*/ asl A
-/*unknown_84_8013:*/ ora #$001e.w
-/*unknown_84_8016:*/ tay
-/*unknown_84_8017:*/ ldx #$001e.w
-@unknown_84_801a: lda $8132.w, Y
-/*unknown_84_801d:*/ sta $7ec140, X
-/*unknown_84_8021:*/ lda $8032.w, Y
-/*unknown_84_8024:*/ sta $7ec120, X
-/*unknown_84_8028:*/ dey
-/*unknown_84_8029:*/ dey
-/*unknown_84_802a:*/ dex
-/*unknown_84_802b:*/ dex
-/*unknown_84_802c:*/ bpl @unknown_84_801a
-/*unknown_84_802e:*/ plb
-/*unknown_84_802f:*/ ply
-/*unknown_84_8030:*/ plx
-/*unknown_84_8031:*/ rtl
+unknown_84_8000:
+  phx
+  phy
+  phb
+  phk
+  plb
+  xba
+  and #$0078.w
+  bit #$0040.w
+  beq @unknown_84_8011
+  lda #$0038.w
+@unknown_84_8011:
+  asl A
+  asl A
+  ora #$001e.w
+  tay
+  ldx #$001e.w
+@unknown_84_801a:
+  lda $8132.w, Y
+  sta $7ec140, X
+  lda $8032.w, Y
+  sta $7ec120, X
+  dey
+  dey
+  dex
+  dex
+  bpl @unknown_84_801a
+  plb
+  ply
+  plx
+  rtl
 
 /*unknown_84_8032:*/ brk $10
 /*unknown_84_8034:*/ tsx
@@ -269,51 +272,56 @@
 /*unknown_84_822e:*/ bra $44 ; $8274.w
 /*unknown_84_8230:*/ brk $00
 
-unknown_84_8232: php
-/*unknown_84_8233:*/ phb
-/*unknown_84_8234:*/ rep #$30
-/*unknown_84_8236:*/ phk
-/*unknown_84_8237:*/ plb
-/*unknown_84_8238:*/ stz $1c2d.w
-/*unknown_84_823b:*/ ldx #$0000.w
+unknown_84_8232:
+  php
+  phb
+  rep #$30
+  phk
+  plb
+  stz $1c2d.w
+  ldx #$0000.w
 @unknown_84_823e: phx
-/*unknown_84_823f:*/ ldy $1c2f.w, X
-/*unknown_84_8242:*/ jsr unknown_84_8764
-/*unknown_84_8245:*/ plx
-/*unknown_84_8246:*/ inx
-/*unknown_84_8247:*/ inx
-/*unknown_84_8248:*/ cpx #$0008.w
-/*unknown_84_824b:*/ bne @unknown_84_823e
-/*unknown_84_824d:*/ plb
-/*unknown_84_824e:*/ plp
-/*unknown_84_824f:*/ rtl
+  ldy $1c2f.w, X
+  jsr unknown_84_8764
+  plx
+  inx
+  inx
+  cpx #$0008.w
+  bne @unknown_84_823e
+  plb
+  plp
+  rtl
 
-/*unknown_84_8250:*/ lda #$001d.w
-/*unknown_84_8253:*/ jsr $90f084
-/*unknown_84_8257:*/ rtl
+unknown_84_8250:
+  lda #$001d.w
+  jsr $90f084
+  rtl
 
-/*unknown_84_8258:*/ lda $0a1e.w
-/*unknown_84_825b:*/ and #$ff00.w
-/*unknown_84_825e:*/ cmp #$0300.w
-/*unknown_84_8261:*/ beq @unknown_84_8268
-/*unknown_84_8263:*/ cmp #$1400.w
-/*unknown_84_8266:*/ bne @unknown_84_826f
+unknown_84_8258:
+  lda $0a1e.w
+  and #$ff00.w
+  cmp #$0300.w
+  beq @unknown_84_8268
+  cmp #$1400.w
+  bne @unknown_84_826f
 @unknown_84_8268: lda #$0032.w
-/*unknown_84_826b:*/ jsr $809021
+  jsr $809021
 @unknown_84_826f: rtl
 
-/*unknown_84_8270:*/ lda #$001c.w
-/*unknown_84_8273:*/ jsr $90f084
-/*unknown_84_8277:*/ rtl
+unknown_84_8270:
+  lda #$001c.w
+  jsr $90f084
+  rtl
 
-/*unknown_84_8278:*/ lda $0a1e.w
-/*unknown_84_827b:*/ and #$ff00.w
-/*unknown_84_827e:*/ cmp #$0300.w
-/*unknown_84_8281:*/ beq @unknown_84_8288
-/*unknown_84_8283:*/ cmp #$1400.w
-/*unknown_84_8286:*/ bne @unknown_84_828f
+unknown_84_8278:
+  lda $0a1e.w
+  and #$ff00.w
+  cmp #$0300.w
+  beq @unknown_84_8288
+  cmp #$1400.w
+  bne @unknown_84_828f
 @unknown_84_8288: lda #$0030.w
-/*unknown_84_828b:*/ jsr $809021
+  jsr $809021
 @unknown_84_828f: rtl
 
 ; TODO: "calculates the X and Y coord of a PLM from it's absolute location
