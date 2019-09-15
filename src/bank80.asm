@@ -5506,22 +5506,21 @@ unknown_80_ab70:
 unknown_80_ab75:
   ldx #$0000.w
 unknown_80_ab78:
-  lda $0783.w
+  lda var_unknown_0783.w
   beq @unknown_80_ab7e
   rts
-
 @unknown_80_ab7e:
   php
   sep #$20
-  lda $07a5.w
-  sta $4202.w
-  lda $0992.w
-  sta $4203.w
+  lda var_unknown_07a5.w
+  sta IO_WRMPYA
+  lda var_unknown_0992.w
+  sta IO_WRMPYB
   phb
   rep #$30
-  lda $0990.w
+  lda var_unknown_0990.w
   clc
-  adc $4216.w
+  adc IO_RDMPY
   asl A
   clc
   adc #$0002.w
@@ -5530,169 +5529,169 @@ unknown_80_ab78:
   clc
   adc #$9600.w
 @unknown_80_aba3:
-  sta $36
+  sta var_unknown_36
   lda #$007f.w
-  sta $38
-  lda $0994.w
+  sta var_unknown_38
+  lda var_unknown_0994.w
   and #$000f.w
-  sta $0933.w
+  sta var_unknown_0933.w
   lda #$0010.w
   sec
-  sbc $0933.w
+  sbc var_unknown_0933.w
   asl A
   asl A
-  sta $0964.w, X
-  lda $0933.w
+  sta var_unknown_0964.w, X
+  lda var_unknown_0933.w
   inc A
   asl A
   asl A
-  sta $0966.w, X
+  sta var_unknown_0966.w, X
   sep #$20
-  lda $0996.w
+  lda var_unknown_0996.w
   and #$0f
-  sta $4202.w
+  sta IO_WRMPYA
   lda #$40
-  sta $4203.w
+  sta IO_WRMPYB
   rep #$20
-  lda $0994.w
+  lda var_unknown_0994.w
   and #$001f.w
-  sta $0935.w
+  sta var_unknown_0935.w
   asl A
   clc
-  adc $4216.w
-  sta $0933.w
+  adc IO_RDMPY
+  sta var_unknown_0933.w
   lda #$5400.w
-  sta $0937.w
+  sta var_unknown_0937.w
   lda #$5000.w
-  ldy $0935.w
+  ldy var_unknown_0935.w
   cpy #$0010.w
   bcc @unknown_80_ac04
   lda #$5000.w
-  sta $0937.w
+  sta var_unknown_0937.w
   lda #$53e0.w
 @unknown_80_ac04:
   txy
   beq @unknown_80_ac0b
   sec
-  sbc $098e.w
+  sbc var_unknown_098e.w
 @unknown_80_ac0b:
   clc
-  adc $0933.w
-  sta $0968.w, X
-  lda $0937.w
+  adc var_unknown_0933.w
+  sta var_unknown_0968.w, X
+  lda var_unknown_0937.w
   txy
   beq @unknown_80_ac1c
   sec
-  sbc $098e.w
+  sbc var_unknown_098e.w
 @unknown_80_ac1c:
   clc
-  adc $4216.w
-  sta $096a.w, X
-  lda #$c948.w
+  adc IO_RDMPY
+  sta var_unknown_096a.w, X
+  lda #var_unknown_c948
   ldy #$0000.w
   cpx #$0000.w
   beq @unknown_80_ac34
-  lda #$ca50.w
+  lda #var_unknown_ca50
   ldy #$0108.w
 @unknown_80_ac34:
   clc
-  adc $0964.w, X
-  sta $096c.w, X
+  adc var_unknown_0964.w, X
+  sta var_unknown_096c.w, X
   clc
   adc #$0044.w
-  sta $096e.w, X
-  sty $0937.w
+  sta var_unknown_096e.w, X
+  sty var_unknown_0937.w
   sep #$20
-  lda #$7e
+  lda #var_unknown_a000 >> 16 ; = var_unknown_c948 >> 16 = var_unknown_ca50 >> 16
   pha
-  plb
+  plb ; DB := $7e
   rep #$20
   phx
   ldy #$0000.w
   lda #$0011.w
-  sta $0939.w
+  sta var_unknown_0939.w
 @unknown_80_ac57:
-  lda [$36], Y
-  sta $093b.w
+  lda [var_unknown_36], Y
+  sta var_unknown_093b.w
   and #$03ff.w
   asl A
   asl A
   asl A
   tax
   phy
-  ldy $0937.w
-  lda $093b.w
+  ldy var_unknown_0937.w
+  lda var_unknown_093b.w
   and #$0c00.w
   bne @unknown_80_ac8a
-  lda $a000.w, X
-  sta $c948.w, Y
-  lda $a002.w, X
-  sta $c94a.w, Y
-  lda $a004.w, X
-  sta $c98c.w, Y
-  lda $a006.w, X
-  sta $c98e.w, Y
-  jmp $ad04.w
+  lda (var_unknown_a000.w + 0) & $ffff, X
+  sta (var_unknown_c948.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 2) & $ffff, X
+  sta (var_unknown_c948.w + 2) & $ffff, Y
+  lda (var_unknown_a000.w + 4) & $ffff, X
+  sta (var_unknown_c98c.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 6) & $ffff, X
+  sta (var_unknown_c98c.w + 2) & $ffff, Y
+  jmp @unknown_80_ad04
 @unknown_80_ac8a:
   cmp #$0400.w
   bne @unknown_80_acb5
-  lda $a002.w, X
+  lda (var_unknown_a000.w + 2) & $ffff, X
   eor #$4000.w
-  sta $c948.w, Y
-  lda $a000.w, X
+  sta (var_unknown_c948.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 0) & $ffff, X
   eor #$4000.w
-  sta $c94a.w, Y
-  lda $a006.w, X
+  sta (var_unknown_c948.w + 2) & $ffff, Y
+  lda (var_unknown_a000.w + 6) & $ffff, X
   eor #$4000.w
-  sta $c98c.w, Y
-  lda $a004.w, X
+  sta (var_unknown_c98c.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 4) & $ffff, X
   eor #$4000.w
-  sta $c98e.w, Y
+  sta (var_unknown_c98c.w + 2) & $ffff, Y
   bra @unknown_80_ad04
 @unknown_80_acb5:
   cmp #$0800.w
   bne @unknown_80_ace0
-  lda $a004.w, X
+  lda (var_unknown_a000.w + 4) & $ffff, X
   eor #$8000.w
-  sta $c948.w, Y
-  lda $a006.w, X
+  sta (var_unknown_c948.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 6) & $ffff, X
   eor #$8000.w
-  sta $c94a.w, Y
-  lda $a000.w, X
+  sta (var_unknown_c948.w + 2) & $ffff, Y
+  lda (var_unknown_a000.w + 0) & $ffff, X
   eor #$8000.w
-  sta $c98c.w, Y
-  lda $a002.w, X
+  sta (var_unknown_c98c.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 2) & $ffff, X
   eor #$8000.w
-  sta $c98e.w, Y
+  sta (var_unknown_c98c.w + 2) & $ffff, Y
   bra @unknown_80_ad04
 @unknown_80_ace0:
-  lda $a006.w, X
+  lda (var_unknown_a000.w + 6) & $ffff, X
   eor #$c000.w
-  sta $c948.w, Y
-  lda $a004.w, X
+  sta (var_unknown_c948.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 4) & $ffff, X
   eor #$c000.w
-  sta $c94a.w, Y
-  lda $a002.w, X
+  sta (var_unknown_c948.w + 2) & $ffff, Y
+  lda (var_unknown_a000.w + 2) & $ffff, X
   eor #$c000.w
-  sta $c98c.w, Y
-  lda $a000.w, X
+  sta (var_unknown_c98c.w + 0) & $ffff, Y
+  lda (var_unknown_a000.w + 0) & $ffff, X
   eor #$c000.w
-  sta $c98e.w, Y
+  sta (var_unknown_c98c.w + 2) & $ffff, Y
 @unknown_80_ad04:
   iny
   iny
   iny
   iny
-  sty $0937.w
+  sty var_unknown_0937.w
   ply
   iny
   iny
-  dec $0939.w
+  dec var_unknown_0939.w
   beq @unknown_80_ad16
   jmp @unknown_80_ac57
 @unknown_80_ad16:
   plx
-  inc $0970.w, X
+  inc var_unknown_0970.w, X
   plb
   plp
   rts
