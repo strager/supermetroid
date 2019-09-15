@@ -1132,17 +1132,21 @@ main:
   .dw unknown_82_8593 ; game_state_unknown_2b
   .dw unknown_82_85fb ; game_state_unknown_2c
 
-unknown_82_89db: jsl $818cf4
-/*unknown_82_89df:*/ rts
+unknown_82_89db:
+  jsl unknown_81_8cf4
+  rts
 
-unknown_82_89e0: jsr $8190ae
-/*unknown_82_89e4:*/ rts
+unknown_82_89e0:
+  jsl unknown_81_90ae
+  rts
 
-unknown_82_89e5: jsr $8193fb
-/*unknown_82_89e9:*/ rts
+unknown_82_89e5:
+  jsl unknown_81_93fb
+  rts
 
-unknown_82_89ea: jsr $819e3e
-/*unknown_82_89ee:*/ rts
+unknown_82_89ea:
+  jsl unknown_81_9e3e
+  rts
 
 ; TODO: "Sound effects" -- Kejardon
 unknown_82_89ef:
