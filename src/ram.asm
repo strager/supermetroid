@@ -14,7 +14,13 @@ var_unknown_02: dw ; $7e0002
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $12) export
+.union
+; TODO: Rename to var_temp_12?
 var_unknown_12: dw ; $7e0012
+.nextu
+var_temp_12: dw ; $7e0012
+.endu
+
 var_unknown_14: dw ; $7e0014
 var_unknown_16: dw ; $7e0016
 var_unknown_18: dw ; $7e0018
@@ -240,10 +246,10 @@ var_oam_objects: instanceof oam_obj OAM_OBJ_COUNT ; $7e0370
 var_oam_objects_extra: instanceof oam_obj_extra OAM_OBJ_COUNT / oam_obj_extra@objects_per ; $7e0570
 
 .union
-var_unknown_0590: dw ; $7e0590
+var_oam_objects_tail: dw ; $7e0590
 .nextu
-var_unknown_0590_l: db ; $7e0590
-var_unknown_0590_h: db ; $7e0591
+var_oam_objects_tail_l: db ; $7e0590
+var_oam_objects_tail_h: db ; $7e0591
 .endu
 
 var_unknown_0592: dw ; $7e0592

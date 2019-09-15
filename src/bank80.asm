@@ -952,10 +952,10 @@ unknown_80_8482:
   stz var_unknown_0666.w
   stz var_unknown_0676.w
   rep #$20
-  stz var_unknown_0590.w
+  stz var_oam_objects_tail.w
   stz var_unknown_53
   jsl clear_oam_objects_extra
-  jsl unknown_80_896e
+  jsl hide_unused_objects
   stz var_unknown_071d.w ; Address: var_unknown_071d and var_unknown_071e
   stz var_unknown_071f.w
   stz var_unknown_0721.w
@@ -1512,37 +1512,55 @@ unknown_80_894d:
   plp
   rtl
 
-; TODO: "Clear OAM (sprites to Y = F0)" -- Kejardon
-unknown_80_896e:
+; Make unused OAM objects invisible by moving them past the bottom of the
+; screen.
+;
+; Inputs:
+; * [var_oam_objects_tail]
+;
+; Outputs:
+; * [var_oam_objects + [var_oam_objects_tail]]
+hide_unused_objects:
   php
   rep #$30
-  lda var_unknown_0590.w
-  cmp #$0200.w
-  bpl @unknown_80_898d
+  lda var_oam_objects_tail.w
+  cmp #OAM_OBJ_COUNT * oam_obj@size
+  bpl @all_objects_used
+
+  ; [var_temp_12] := @clear_object_{[var_oam_objects_tail] / oam_obj@size}
   lsr A
-  sta var_unknown_12
+  sta var_temp_12
   lsr A
-  adc var_unknown_12
+  adc var_temp_12
   clc
-  adc #@unknown_80_8992.w
-  sta var_unknown_12
+  adc #@clear_object_n
+  sta var_temp_12
+
   lda #$f0 | ($00 << 8) ; oam_obj.y | (oam_obj.tile << 8)
   sep #$30
-  jmp (var_unknown_12)
-@unknown_80_898d:
-  stz var_unknown_0590.w
+  jmp (var_temp_12)
+
+@all_objects_used:
+.accu 16
+.index 16
+  stz var_oam_objects_tail.w
   plp
   rtl
-@unknown_80_8992:
-.define index 0
-.repeat OAM_OBJ_COUNT
-  sta (var_oam_objects.w + (index * 4) + oam_obj.y) & $ffff ; Address: .y and .tile
-  .redefine index index + 1
-.endr
-.undefine index
 
-  stz var_unknown_0590_l.w
-  stz var_unknown_0590_h.w
+@clear_object_n:
+.accu 8
+.index 8
+
+.macro clear_object_n
+@clear_object_\@:
+  sta (var_oam_objects.w + (\@ * 4) + oam_obj.y) & $ffff ; Address: .y and .tile
+.endm
+.repeat OAM_OBJ_COUNT
+  clear_object_n index
+.endr
+
+  stz var_oam_objects_tail_l.w
+  stz var_oam_objects_tail_h.w
   plp
   rtl
 

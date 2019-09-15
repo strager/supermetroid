@@ -282,7 +282,7 @@ unknown_82_81dd: php
 /*unknown_82_8292:*/ sta IO_SETINI
 /*unknown_82_8295:*/ sta0 var_unknown_77
 /*unknown_82_8297:*/ rep #$30
-/*unknown_82_8299:*/ stz var_unknown_0590.w
+/*unknown_82_8299:*/ stz var_oam_objects_tail.w
 /*unknown_82_829c:*/ lda #$0000.w
 /*unknown_82_829f:*/ ldx #$3000.w
 /*unknown_82_82a2:*/ ldy #$07fe.w
@@ -1067,7 +1067,7 @@ main:
   jsl unknown_88_84b9
   jsl rng_advance
   jsl clear_oam_objects_extra
-  stz var_unknown_0590.w
+  stz var_oam_objects_tail.w
   stz var_unknown_071d.w
   stz var_unknown_071f.w
   stz var_unknown_0721.w ; TODO: "Clearing stuff for vram" -- Kejardon
@@ -1077,7 +1077,7 @@ main:
   tax
   jsr (@game_state_routines, X)
   jsl unknown_82_89ef
-  jsl unknown_80_896e
+  jsl hide_unused_objects
   jsl unknown_82_8ab0
   jsl render_and_synchronize
   plp
