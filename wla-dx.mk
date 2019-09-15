@@ -13,7 +13,7 @@ $(WLALINK): $(WLA_DX_BUILD)/Makefile $(BUILD)/wla-dx-rebuild
 	$(MAKE) -C $(WLA_DX_BUILD) wlalink
 
 $(WLA_DX_BUILD)/Makefile:
-	cmake -G 'Unix Makefiles' -S vendor/wla-dx -B $(WLA_DX_BUILD)
+	cmake -G 'Unix Makefiles' -Hvendor/wla-dx -B$(WLA_DX_BUILD)
 
 .PHONY: $(BUILD)/wla-dx-rebuild
 $(BUILD)/wla-dx-rebuild:
