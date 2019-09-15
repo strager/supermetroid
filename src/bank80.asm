@@ -765,19 +765,33 @@ set_ram_to_word:
   plp
   rtl
 
-unknown_80_8409:
+; Set words [$7f:X] through [$7f:X + Y - 2] to A.
+;
+; This routine always stores words in bank $7f, regardless of DB.
+;
+; Inputs:
+; * A: Word to store.
+; * X: Start address to store to.
+; * Y: Number of bytes to store (i.e. twice the number of words to store). Must
+;      be even.
+;
+; Outputs:
+; * [$7f:X]
+; * X: X + Y
+; * Y: 0
+set_high_ram_to_word:
   php
   phb
   phk
-  plb
+  plb ; DB := PB = $80
   rep #$30
-@loop:
-  sta MEM_HIGH_RAM_BEGIN, X
+@next:
+  sta MEM_HIGH_RAM_BEGIN.l, X
   inx
   inx
   dey
   dey
-  bne @loop
+  bne @next
   plb
   plp
   rtl
@@ -1389,7 +1403,7 @@ unknown_80_88b4:
   lda #$0000.w
   tax
   ldy #$dffe.w
-  jsl unknown_80_8409
+  jsl set_high_ram_to_word
   sep #$30
   rts
 
