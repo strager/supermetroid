@@ -1552,8 +1552,8 @@ unknown_80_8b1a:
   rep #$30
 
 .define index 0
-.repeat 16
-  stz (var_unknown_0570.w + (index * 2)) & $ffff
+.repeat OAM_OBJ_COUNT / oam_obj_extra@objects_per / 2
+  stz (var_oam_objects_extra.w + (index * 2)) & $ffff
   .redefine index index + 1
 .endr
 .undefine index
@@ -2648,7 +2648,7 @@ unknown_80_91ee:
 ; Copy [var_oam_objects] to OAM, and copy [var_color_palette] to CGRAM.
 ;
 ; Inputs:
-; * [var_oam_objects] to [var_oam_objects + OAM_OBJ_COUNT*oam_obj@size + $32]
+; * [var_oam_objects] to [var_oam_objects + OAM_OBJ_COUNT*(oam_obj@size + 1/oam_obj_extra@objects_per)]
 ; * [var_color_palette] to [var_color_palette + $100*2]
 ;
 ; Outputs:
@@ -2663,7 +2663,7 @@ copy_oam_and_color_palette:
   sta IO_A1T0
   ldx #$00 ; Assumption: var_oam_objects is accessible from bank $00.
   stx IO_A1B0
-  lda #$0220.w
+  lda #OAM_OBJ_COUNT * (oam_obj@size + 1 / oam_obj_extra@objects_per)
   sta IO_DAS0
   stz IO_OAMADD
 @configure_cgdata_dma:

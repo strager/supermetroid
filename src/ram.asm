@@ -237,13 +237,8 @@ var_vram_read_queue_tail: db ; $7e0360
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0370) export
 var_oam_objects: instanceof oam_obj OAM_OBJ_COUNT ; $7e0370
-.ende
+var_oam_objects_extra: instanceof oam_obj_extra OAM_OBJ_COUNT / oam_obj_extra@objects_per ; $7e0570
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0570) export
-var_unknown_0570: dsw 16 ; $7e0570
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0590) export
 .union
 var_unknown_0590: dw ; $7e0590
 .nextu
