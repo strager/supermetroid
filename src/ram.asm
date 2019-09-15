@@ -234,8 +234,8 @@ var_vram_read_queue: ds 1 ; $7e0340
 var_vram_read_queue_tail: db ; $7e0360
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0371) export
-var_unknown_0371: ds 4 * 128 ; $7e0371
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0370) export
+var_unknown_0370: ds 4 * 128 ; $7e0370
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0570) export

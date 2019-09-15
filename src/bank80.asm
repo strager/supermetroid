@@ -1535,7 +1535,7 @@ unknown_80_896e:
 @unknown_80_8992:
 .define index 0
 .repeat 128
-  sta (var_unknown_0371.w + (index * 4)) & $ffff
+  sta (var_unknown_0370.w + (index * 4) + 1) & $ffff
   .redefine index index + 1
 .endr
 .undefine index
@@ -2645,26 +2645,30 @@ unknown_80_91ee:
   rts
 
 unknown_80_933a:
-  lda #(IO_OAMDATA - IO_BBAD_BASE) << 8
+.index 8
+@configure_oam_dma:
+  lda #IO_DMAP_MODE_0_RAM | IO_DMAP_CPU_TO_IO | ((IO_OAMDATA - IO_BBAD_BASE) << 8)
   sta IO_DMAP0 ; Address: IO_DMAP0 and IO_BBAD0
-  lda #$0370.w
+  lda #var_unknown_0370
   sta IO_A1T0
-  ldx #$00.b
+  ldx #$00 ; Assumption: var_unknown_0370 is accessible from bank $00.
   stx IO_A1B0
   lda #$0220.w
   sta IO_DAS0
   stz IO_OAMADD
-  lda #(IO_CGDATA - IO_BBAD_BASE) << 8
+@configure_cgdata_dma:
+  lda #IO_DMAP_MODE_0_RAM | IO_DMAP_CPU_TO_IO | ((IO_CGDATA - IO_BBAD_BASE) << 8)
   sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
-  lda #$c000.w
+  lda #var_color_palette
   sta IO_A1T1
-  ldx #$7e.b
+  ldx #var_color_palette >> 16
   stx IO_A1B1
-  lda #$0200.w
+  lda #var_color_palette@size
   sta IO_DAS1
-  ldx #$00.b
+  ldx #$00
   stx IO_CGADD
-  ldx.b #IO_MDMAEN_0 | IO_MDMAEN_1
+@start_dma:
+  ldx #IO_MDMAEN_0 | IO_MDMAEN_1
   stx IO_MDMAEN
   rts
 
