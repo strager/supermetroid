@@ -735,14 +735,24 @@ var_unknown_18d8: dsb unknown_18b4_count ; $7e18d8
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $1ef1) export
 var_unknown_1ef1: dw ; $7e1ef1
 var_unknown_1ef3: dw ; $7e1ef3
-var_unknown_1ef5: dsw unknown_1ef5_count ; $7e1ef5
-.ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $1f25) export
-var_unknown_1f25: dsw unknown_1ef5_count ; $7e1f25
-var_unknown_1f31: dsw unknown_1ef5_count ; $7e1f31
-var_unknown_1f3d: dsw unknown_1ef5_count ; $7e1f3d
+; var_unknown_1ef5_enabled, var_unknown_1ef5_a1t, var_unknown_1ef5_das, and
+; unknown_1ef5_vmadd are parallel arrays (struct-of-arrays).
+var_unknown_1ef5_enabled: dsw unknown_1ef5_count ; $7e1ef5
+
+var_unknown_1f01: ds 36 ; $7e1f01
+
+; Values to store in IO_A1T0.
+var_unknown_1ef5_a1t: dsw unknown_1ef5_count ; $7e1f25
+
+; Values to store in IO_DAS0.
+var_unknown_1ef5_das: dsw unknown_1ef5_count ; $7e1f31
+
+; Values to store in IO_VMADD.
+unknown_1ef5_vmadd: dsw unknown_1ef5_count ; $7e1f3d
 .ende
+.define unknown_1ef5_bank $87
+.export unknown_1ef5_bank
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $1f59) export
 var_unknown_1f59: dw ; $7e1f59
