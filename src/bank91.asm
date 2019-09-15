@@ -10192,7 +10192,7 @@ unknown_91_d01d: lda ($03), Y
 /*unknown_91_d047:*/ sta $7e4080, X
 /*unknown_91_d04b:*/ rts
 
-/*unknown_91_d04c:*/ php
+unknown_91_d04c: php
 /*unknown_91_d04d:*/ phx
 /*unknown_91_d04e:*/ phy
 /*unknown_91_d04f:*/ rep #$30
@@ -12395,7 +12395,7 @@ unknown_91_df51: php
 @unknown_91_e3f4: plp
 /*unknown_91_e3f5:*/ rtl
 
-/*unknown_91_e3f6:*/ php
+unknown_91_e3f6: php
 /*unknown_91_e3f7:*/ phb
 /*unknown_91_e3f8:*/ phk
 /*unknown_91_e3f9:*/ plb

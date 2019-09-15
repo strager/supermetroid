@@ -11872,7 +11872,7 @@ unknown_82_e039:
 /*unknown_82_e116:*/ plp
 /*unknown_82_e117:*/ rtl
 
-/*unknown_82_e118:*/ php
+unknown_82_e118: php
 /*unknown_82_e119:*/ phb
 /*unknown_82_e11a:*/ rep #$30
 /*unknown_82_e11c:*/ phy
