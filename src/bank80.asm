@@ -641,35 +641,65 @@ unknown_80_8395:
   plp
   rtl
 
-unknown_80_83bd:
+; Set bytes [$00:X] through [$00:X + Y - 1] to A.
+;
+; This routine always stores bytes in bank $00 (i.e. bank $80), regardless of
+; DB.
+;
+; Inputs:
+; * A & $ff: Byte to store.
+; * X: Start address to store to.
+; * Y: Number of bytes to store.
+;
+; Outputs:
+; * [$00:X]
+; * A: High byte cleared. Low byte preserved.
+; * X: X + Y
+; * Y: 0
+unused_set_memory_to_byte:
   php
   phb
   phk
-  plb
+  plb ; DB := PB = $80
   sep #$20
   rep #$10
-@unknown_80_83c5:
-  sta $000000.l, X
+@next:
+  sta 0.l, X
   inx
   dey
-  bne @unknown_80_83c5
+  bne @next
   plb
   plp
   rtl
 
-unknown_80_83d0:
+; Set words [$00:X] through [$00:X + Y - 2] to A.
+;
+; This routine always stores words in bank $00 (i.e. bank $80), regardless of
+; DB.
+;
+; Inputs:
+; * A: Word to store.
+; * X: Start address to store to.
+; * Y: Number of bytes to store (i.e. twice the number of words to store). Must
+;      be even.
+;
+; Outputs:
+; * [$00:X]
+; * X: X + Y
+; * Y: 0
+unused_set_memory_to_word:
   php
   phb
   phk
-  plb
+  plb ; DB := PB = $80
   rep #$30
-@unknown_80_83d6:
-  sta $000000.l, X
+@next:
+  sta 0.l, X
   inx
   inx
   dey
   dey
-  bne @unknown_80_83d6
+  bne @next
   plb
   plp
   rtl
