@@ -5487,7 +5487,7 @@ unknown_90_ab75: php
 /*unknown_90_ac8b:*/ clc
 /*unknown_90_ac8c:*/ rts
 
-/*unknown_90_ac8d:*/ php
+unknown_90_ac8d: php
 /*unknown_90_ac8e:*/ phb
 /*unknown_90_ac8f:*/ phk
 /*unknown_90_ac90:*/ plb
