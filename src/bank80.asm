@@ -2228,6 +2228,8 @@ unknown_80_9021:
   xba
   lda #$0f
   bra unknown_80_9049@unknown_80_9051
+
+unknown_80_902b:
   phx
   phy
   php
@@ -2235,6 +2237,8 @@ unknown_80_9021:
   xba
   lda #$09
   bra unknown_80_9049@unknown_80_9051
+
+unknown_80_9035:
   phx
   phy
   php
@@ -2242,6 +2246,8 @@ unknown_80_9021:
   xba
   lda #$03
   bra unknown_80_9049@unknown_80_9051
+
+unknown_80_903f:
   phx
   phy
   php
@@ -2298,6 +2304,7 @@ unknown_80_9049:
   bcs @unknown_80_9092
   sta var_unknown_0656.w, Y
   bra @unknown_80_9092
+@unknown_80_90a3:
   phx
   phy
   php
@@ -2305,6 +2312,7 @@ unknown_80_9049:
   xba
   lda #$0f
   bra @unknown_80_90d3
+@unknown_80_90ad:
   phx
   phy
   php
@@ -2312,6 +2320,7 @@ unknown_80_9049:
   xba
   lda #$09
   bra @unknown_80_90d3
+@unknown_80_90b7:
   phx
   phy
   php
@@ -2319,6 +2328,7 @@ unknown_80_9049:
   xba
   lda #$03
   bra @unknown_80_90d3
+@unknown_80_90c1:
   phx
   phy
   php
@@ -2326,6 +2336,7 @@ unknown_80_9049:
   xba
   lda #$01
   bra @unknown_80_90d3
+@unknown_80_90cb:
   phx
   phy
   php
@@ -2373,6 +2384,7 @@ unknown_80_9049:
   bcs @unknown_80_9114
   sta var_unknown_0666.w, Y
   bra @unknown_80_9114
+@unknown_80_9125:
   phx
   phy
   php
@@ -2380,6 +2392,7 @@ unknown_80_9049:
   xba
   lda #$0f
   bra unknown_80_914d@unknown_80_9155
+@unknown_80_912f:
   phx
   phy
   php
@@ -2396,6 +2409,8 @@ unknown_80_9139:
   xba
   lda #$03
   bra unknown_80_914d@unknown_80_9155
+
+unknown_80_9143:
   phx
   phy
   php
