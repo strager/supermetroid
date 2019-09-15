@@ -1066,7 +1066,7 @@ main:
   rep #$30
   jsl unknown_88_84b9
   jsl rng_advance
-  jsl unknown_80_8b1a
+  jsl clear_oam_objects_extra
   stz var_unknown_0590.w
   stz var_unknown_071d.w
   stz var_unknown_071f.w

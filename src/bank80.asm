@@ -954,7 +954,7 @@ unknown_80_8482:
   rep #$20
   stz var_unknown_0590.w
   stz var_unknown_53
-  jsl unknown_80_8b1a
+  jsl clear_oam_objects_extra
   jsl unknown_80_896e
   stz var_unknown_071d.w ; Address: var_unknown_071d and var_unknown_071e
   stz var_unknown_071f.w
@@ -1546,18 +1546,19 @@ unknown_80_896e:
   plp
   rtl
 
-; TODO: "Clear OAM high x bits and sizes" -- Kejardon
-unknown_80_8b1a:
+; Clear var_oam_objects_extra.
+;
+; Outputs:
+; * [var_oam_objects_extra]
+clear_oam_objects_extra:
   php
   rep #$30
-
 .define index 0
 .repeat OAM_OBJ_COUNT / oam_obj_extra@objects_per / 2
   stz (var_oam_objects_extra.w + (index * 2)) & $ffff
   .redefine index index + 1
 .endr
 .undefine index
-
   plp
   rtl
 
