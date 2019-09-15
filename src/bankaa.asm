@@ -10237,7 +10237,7 @@
 /*unknown_aa_d3b1:*/ rts
 
 /*unknown_aa_d3b2:*/ lda $0f8c.w, X
-/*unknown_aa_d3b5:*/ jsr $848000
+/*unknown_aa_d3b5:*/ jsl unknown_84_8000
 /*unknown_aa_d3b9:*/ rts
 
 /*unknown_aa_d3ba:*/ ldx $0e54.w
@@ -12341,7 +12341,7 @@
 /*unknown_aa_e5bc:*/ sbc $07a5.w
 /*unknown_aa_e5bf:*/ tax
 /*unknown_aa_e5c0:*/ lda #$d113.w
-/*unknown_aa_e5c3:*/ jsr $8484e7
+/*unknown_aa_e5c3:*/ jsl unknown_84_84e7
 /*unknown_aa_e5c7:*/ ply
 /*unknown_aa_e5c8:*/ phy
 /*unknown_aa_e5c9:*/ lda $0000.w, Y
@@ -12483,7 +12483,7 @@
 /*unknown_aa_e705:*/ ror $01a9.w, X
 /*unknown_aa_e708:*/ brk $8f
 /*unknown_aa_e70a:*/ and $7ecd.w
-/*unknown_aa_e70d:*/ jsr $8483d7
+/*unknown_aa_e70d:*/ jsl unknown_84_83d7
 /*unknown_aa_e711:*/ ora [$1d], Y
 /*unknown_aa_e713:*/ jsr ($6bd6.w, X)
 /*unknown_aa_e716:*/ ldx #$3e
@@ -12530,7 +12530,7 @@
 /*unknown_aa_e76f:*/ dex
 /*unknown_aa_e770:*/ dex
 /*unknown_aa_e771:*/ bpl ($ee - $100) ; $e761.w
-/*unknown_aa_e773:*/ jsr $8483d7
+/*unknown_aa_e773:*/ jsl unknown_84_83d7
 /*unknown_aa_e777:*/ lsr A
 /*unknown_aa_e778:*/ ora [$ee], Y
 /*unknown_aa_e77a:*/ dec $22, X
@@ -12550,7 +12550,7 @@
 /*unknown_aa_e795:*/ dex
 /*unknown_aa_e796:*/ dex
 /*unknown_aa_e797:*/ bpl ($ee - $100) ; $e787.w
-/*unknown_aa_e799:*/ jsr $8483d7
+/*unknown_aa_e799:*/ jsl unknown_84_83d7
 /*unknown_aa_e79d:*/ tsb $d61d.w
 /*unknown_aa_e7a0:*/ dec $6b, X
 /*unknown_aa_e7a2:*/ eor [$e4], Y

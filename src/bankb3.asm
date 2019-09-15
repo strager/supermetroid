@@ -2468,7 +2468,7 @@
 /*unknown_b3_9587:*/ and #$0002.w
 /*unknown_b3_958a:*/ beq @unknown_b3_95b0
 /*unknown_b3_958c:*/ ldx $0e54.w
-/*unknown_b3_958f:*/ jsr $8483d7
+/*unknown_b3_958f:*/ jsl unknown_84_83d7
 /*unknown_b3_9593:*/ ora $b79704
 /*unknown_b3_9597:*/ lda #$0101.w
 /*unknown_b3_959a:*/ sta $7ecd20
@@ -2996,7 +2996,7 @@
 /*unknown_b3_9ad9:*/ jsr $9add.w
 @unknown_b3_9adc: rts
 
-/*unknown_b3_9add:*/ jsr $8483d7
+/*unknown_b3_9add:*/ jsl unknown_84_83d7
 /*unknown_b3_9ae1:*/ ora $b79b04
 /*unknown_b3_9ae5:*/ jsr $a0ba3e
 /*unknown_b3_9ae9:*/ lda #$0000.w

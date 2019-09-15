@@ -4322,7 +4322,7 @@ unknown_80_9fd4: inx
 /*unknown_80_a0aa:*/ jsr $878016
 /*unknown_80_a0ae:*/ jsr $88829e
 /*unknown_80_a0b2:*/ jsr $8882c1
-/*unknown_80_a0b6:*/ jsr $8483c3
+/*unknown_80_a0b6:*/ jsl unknown_84_83c3
 /*unknown_80_a0ba:*/ jsr $868016
 /*unknown_80_a0be:*/ jsr $8dc4d8
 /*unknown_80_a0c2:*/ jsr $90ac8d
@@ -4351,7 +4351,7 @@ unknown_80_9fd4: inx
 @unknown_80_a111: sta $a7
 /*unknown_80_a113:*/ jsr $80982a
 /*unknown_80_a117:*/ jsr unknown_80_a12b
-/*unknown_80_a11a:*/ jsr $8483d7
+/*unknown_80_a11a:*/ jsl unknown_84_83d7
 /*unknown_80_a11e:*/ php
 /*unknown_80_a11f:*/ php
 /*unknown_80_a120:*/ xba

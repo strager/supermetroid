@@ -9756,7 +9756,7 @@ unknown_91_852f: lda $0e20.w
 /*unknown_91_ccb3:*/ sta $22
 /*unknown_91_ccb5:*/ dec $14
 /*unknown_91_ccb7:*/ bne @unknown_91_cc87
-/*unknown_91_ccb9:*/ jsr $84831a
+/*unknown_91_ccb9:*/ jsl unknown_84_831a
 /*unknown_91_ccbd:*/ ldx $0360.w
 /*unknown_91_ccc0:*/ lda $59
 /*unknown_91_ccc2:*/ and #$00fc.w
@@ -12226,7 +12226,7 @@ unknown_91_df51: php
 /*unknown_91_e22e:*/ dex
 /*unknown_91_e22f:*/ bpl @unknown_91_e226
 /*unknown_91_e231:*/ jsr $86800b
-/*unknown_91_e235:*/ jsr $8483b8
+/*unknown_91_e235:*/ jsl unknown_84_83b8
 /*unknown_91_e239:*/ jsr $87800b
 /*unknown_91_e23d:*/ jsr $8dc4cd
 /*unknown_91_e241:*/ lda #$0001.w

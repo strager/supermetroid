@@ -12013,7 +12013,7 @@ unknown_82_e1b7: php
 /*unknown_82_e261:*/ lda $c1ba.w
 /*unknown_82_e264:*/ sta $c3ba.w
 /*unknown_82_e267:*/ jsr $809f6c
-@unknown_82_e26b: jsr $848250
+@unknown_82_e26b: jsl unknown_84_8250
 /*unknown_82_e26f:*/ lda #$0071.w
 /*unknown_82_e272:*/ jsr $8090a3
 /*unknown_82_e276:*/ lda #$ffff.w
@@ -12293,7 +12293,7 @@ unknown_3: .dw $1000
 /*unknown_82_e4b1:*/ jsr $868016
 /*unknown_82_e4b5:*/ jsr $878016
 /*unknown_82_e4b9:*/ jsr $8dc4d8
-/*unknown_82_e4bd:*/ jsr $8483c3
+/*unknown_82_e4bd:*/ jsl unknown_84_83c3
 /*unknown_82_e4c1:*/ jsr $82eb6c
 /*unknown_82_e4c5:*/ jsr $89ab82
 /*unknown_82_e4c9:*/ jsr unknown_82_e8eb
@@ -12337,7 +12337,7 @@ unknown_3: .dw $1000
 /*unknown_82_e532:*/ jsr $88d865
 /*unknown_82_e536:*/ lda #$8000.w
 /*unknown_82_e539:*/ tsb $18b0.w
-/*unknown_82_e53c:*/ jsr $8485b4
+/*unknown_82_e53c:*/ jsl unknown_84_85b4
 /*unknown_82_e540:*/ jsr $808338
 /*unknown_82_e544:*/ lda $0791.w
 /*unknown_82_e547:*/ bit #$0002.w
@@ -12595,7 +12595,7 @@ unknown_82_e5eb: lda $0003.w, Y
 /*unknown_82_e752:*/ jsr $d961.w
 /*unknown_82_e755:*/ bcc @unknown_82_e76a
 /*unknown_82_e757:*/ stz $05f5.w
-/*unknown_82_e75a:*/ jsr $848270
+/*unknown_82_e75a:*/ jsl unknown_84_8270
 /*unknown_82_e75e:*/ stz $0795.w
 /*unknown_82_e761:*/ stz $0797.w
 /*unknown_82_e764:*/ lda #game_state_playing
@@ -12779,7 +12779,7 @@ output_address: .dl $7ea000
 /*unknown_82_e8c3:*/ tax
 @unknown_82_e8c4: lda $0000.w, X
 /*unknown_82_e8c7:*/ beq @unknown_82_e8d5
-/*unknown_82_e8c9:*/ jsr $84846a
+/*unknown_82_e8c9:*/ jsl unknown_84_846a
 /*unknown_82_e8cd:*/ txa
 /*unknown_82_e8ce:*/ clc
 /*unknown_82_e8cf:*/ adc #$0006.w
@@ -12815,7 +12815,7 @@ unknown_82_e8eb: php
 /*unknown_82_e90c:*/ lda $830004, X
 /*unknown_82_e910:*/ sta $14
 /*unknown_82_e912:*/ ldx #$0012.w
-/*unknown_82_e915:*/ jsr $84846a
+/*unknown_82_e915:*/ jsl unknown_84_846a
 @unknown_82_e919: plb
 /*unknown_82_e91a:*/ plp
 /*unknown_82_e91b:*/ rts
@@ -13127,7 +13127,7 @@ output_address: .dl $7ea000
 /*unknown_82_eb79:*/ tax
 @unknown_82_eb7a: lda $0000.w, X
 /*unknown_82_eb7d:*/ beq @unknown_82_eb8b
-/*unknown_82_eb7f:*/ jsr $84846a
+/*unknown_82_eb7f:*/ jsl unknown_84_846a
 /*unknown_82_eb83:*/ txa
 /*unknown_82_eb84:*/ clc
 /*unknown_82_eb85:*/ adc #$0006.w

@@ -11558,9 +11558,9 @@
 /*unknown_ad_e3b4:*/ lda #$0009.w
 /*unknown_ad_e3b7:*/ ldy #$e509.w
 /*unknown_ad_e3ba:*/ jsr $868097
-/*unknown_ad_e3be:*/ jsr $8483d7
+/*unknown_ad_e3be:*/ jsl unknown_84_83d7
 /*unknown_ad_e3c2:*/ ora $b67304
-/*unknown_ad_e3c6:*/ jsr $8483d7
+/*unknown_ad_e3c6:*/ jsl unknown_84_83d7
 /*unknown_ad_e3ca:*/ ora $b67309
 /*unknown_ad_e3ce:*/ lda #$881d.w
 /*unknown_ad_e3d1:*/ sta $0fa8.w

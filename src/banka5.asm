@@ -12472,7 +12472,7 @@
 /*unknown_a5_eaaa:*/ ora #$8000.w
 /*unknown_a5_eaad:*/ sta $0f86.w
 /*unknown_a5_eab0:*/ jsr $ec49.w
-/*unknown_a5_eab3:*/ jsr $8483d7
+/*unknown_a5_eab3:*/ jsl unknown_84_83d7
 /*unknown_a5_eab7:*/ ora [$1e]
 /*unknown_a5_eab9:*/ sta ($b7, S), Y
 /*unknown_a5_eabb:*/ stz $07e9.w
@@ -12835,7 +12835,7 @@
 /*unknown_a5_ee37:*/ ora #$0002.w
 /*unknown_a5_ee3a:*/ sta $7ed828, X
 /*unknown_a5_ee3e:*/ stz $07e9.w
-/*unknown_a5_ee41:*/ jsr $8483d7
+/*unknown_a5_ee41:*/ jsl unknown_84_83d7
 /*unknown_a5_ee45:*/ ora [$1e]
 /*unknown_a5_ee47:*/ sta $5a6bb7
 /*unknown_a5_ee4b:*/ phx

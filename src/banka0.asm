@@ -7640,7 +7640,7 @@ unknown_a0_c26a: phb
 /*unknown_a0_c2cb:*/ tax
 /*unknown_a0_c2cc:*/ lda $a0c2da, X
 /*unknown_a0_c2d0:*/ beq @unknown_a0_c2d8
-/*unknown_a0_c2d2:*/ jsr $8484e7
+/*unknown_a0_c2d2:*/ jsl unknown_84_84e7
 /*unknown_a0_c2d6:*/ clc
 /*unknown_a0_c2d7:*/ rts
 

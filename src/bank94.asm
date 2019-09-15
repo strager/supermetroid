@@ -2120,7 +2120,7 @@ unknown_94_87f4: phb
 /*unknown_94_907c:*/ asl A
 /*unknown_94_907d:*/ tax
 /*unknown_94_907e:*/ lda $9139.w, X
-/*unknown_94_9081:*/ jsr $8484e7
+/*unknown_94_9081:*/ jsl unknown_84_84e7
 /*unknown_94_9085:*/ clc
 /*unknown_94_9086:*/ rts
 
@@ -2133,7 +2133,7 @@ unknown_94_87f4: phb
 /*unknown_94_9091:*/ lda $92d9.w, X
 /*unknown_94_9094:*/ sta $22
 /*unknown_94_9096:*/ lda ($22), Y
-/*unknown_94_9098:*/ jsr $8484e7
+/*unknown_94_9098:*/ jsl unknown_84_84e7
 /*unknown_94_909c:*/ rts
 
 /*unknown_94_909d:*/ ldx $0dc4.w
@@ -2144,7 +2144,7 @@ unknown_94_87f4: phb
 /*unknown_94_90aa:*/ asl A
 /*unknown_94_90ab:*/ tax
 /*unknown_94_90ac:*/ lda $9139.w, X
-/*unknown_94_90af:*/ jsr $8484e7
+/*unknown_94_90af:*/ jsl unknown_84_84e7
 /*unknown_94_90b3:*/ clc
 /*unknown_94_90b4:*/ rts
 
@@ -2157,7 +2157,7 @@ unknown_94_87f4: phb
 /*unknown_94_90bf:*/ lda $92d9.w, X
 /*unknown_94_90c2:*/ sta $22
 /*unknown_94_90c4:*/ lda ($22), Y
-/*unknown_94_90c6:*/ jsr $8484e7
+/*unknown_94_90c6:*/ jsl unknown_84_84e7
 /*unknown_94_90ca:*/ rts
 
 /*unknown_94_90cb:*/ ldx $0dc4.w
@@ -2168,7 +2168,7 @@ unknown_94_87f4: phb
 /*unknown_94_90d8:*/ asl A
 /*unknown_94_90d9:*/ tax
 /*unknown_94_90da:*/ lda $9139.w, X
-/*unknown_94_90dd:*/ jsr $8484e7
+/*unknown_94_90dd:*/ jsl unknown_84_84e7
 /*unknown_94_90e1:*/ bcc @unknown_94_90e6
 /*unknown_94_90e3:*/ jmp @unknown_94_8f49
 @unknown_94_90e6: rts
@@ -2182,7 +2182,7 @@ unknown_94_87f4: phb
 /*unknown_94_90f1:*/ lda $92e9.w, X
 /*unknown_94_90f4:*/ sta $22
 /*unknown_94_90f6:*/ lda ($22), Y
-/*unknown_94_90f8:*/ jsr $8484e7
+/*unknown_94_90f8:*/ jsl unknown_84_84e7
 /*unknown_94_90fc:*/ bcc @unknown_94_9101
 /*unknown_94_90fe:*/ jmp @unknown_94_8f49
 @unknown_94_9101: rts
@@ -2195,7 +2195,7 @@ unknown_94_87f4: phb
 /*unknown_94_910f:*/ asl A
 /*unknown_94_9110:*/ tax
 /*unknown_94_9111:*/ lda $9139.w, X
-/*unknown_94_9114:*/ jsr $8484e7
+/*unknown_94_9114:*/ jsl unknown_84_84e7
 /*unknown_94_9118:*/ bcc @unknown_94_911d
 /*unknown_94_911a:*/ jmp @unknown_94_8f82
 @unknown_94_911d: rts
@@ -2209,7 +2209,7 @@ unknown_94_87f4: phb
 /*unknown_94_9128:*/ lda $92e9.w, X
 /*unknown_94_912b:*/ sta $22
 /*unknown_94_912d:*/ lda ($22), Y
-/*unknown_94_912f:*/ jsr $8484e7
+/*unknown_94_912f:*/ jsl unknown_84_84e7
 /*unknown_94_9133:*/ bcc @unknown_94_9138
 /*unknown_94_9135:*/ jmp @unknown_94_8f82
 @unknown_94_9138: rts
@@ -2446,7 +2446,7 @@ unknown_94_87f4: phb
 /*unknown_94_9306:*/ asl A
 /*unknown_94_9307:*/ tax
 /*unknown_94_9308:*/ lda $936b.w, X
-/*unknown_94_930b:*/ jsr $8484e7
+/*unknown_94_930b:*/ jsl unknown_84_84e7
 /*unknown_94_930f:*/ clc
 @unknown_94_9310: rts
 
@@ -2461,7 +2461,7 @@ unknown_94_87f4: phb
 /*unknown_94_9320:*/ asl A
 /*unknown_94_9321:*/ tax
 @unknown_94_9322: lda $936b.w, X
-/*unknown_94_9325:*/ jsr $8484e7
+/*unknown_94_9325:*/ jsl unknown_84_84e7
 /*unknown_94_9329:*/ clc
 /*unknown_94_932a:*/ rts
 
@@ -2476,7 +2476,7 @@ unknown_94_87f4: phb
 /*unknown_94_933a:*/ asl A
 /*unknown_94_933b:*/ tax
 /*unknown_94_933c:*/ lda $936b.w, X
-/*unknown_94_933f:*/ jsr $8484e7
+/*unknown_94_933f:*/ jsl unknown_84_84e7
 /*unknown_94_9343:*/ bcc @unknown_94_934b
 /*unknown_94_9345:*/ jmp @unknown_94_8f49
 @unknown_94_9348: jmp $8f49.w
@@ -2490,7 +2490,7 @@ unknown_94_87f4: phb
 /*unknown_94_9359:*/ asl A
 /*unknown_94_935a:*/ tax
 /*unknown_94_935b:*/ lda $936b.w, X
-/*unknown_94_935e:*/ jsr $8484e7
+/*unknown_94_935e:*/ jsl unknown_84_84e7
 /*unknown_94_9362:*/ bcc @unknown_94_936a
 /*unknown_94_9364:*/ jmp @unknown_94_8f82
 @unknown_94_9367: jmp $8f82.w
@@ -3286,7 +3286,7 @@ unknown_94_9763: php
 /*unknown_94_9959:*/ cmp #$0001.w
 /*unknown_94_995c:*/ bne @unknown_94_9965
 /*unknown_94_995e:*/ lda #$b6ff.w
-/*unknown_94_9961:*/ jsr $8484e7
+/*unknown_94_9961:*/ jsl unknown_84_84e7
 @unknown_94_9965: rts
 
 /*unknown_94_9966:*/ sbc $98, S
@@ -3519,7 +3519,7 @@ unknown_94_9763: php
 /*unknown_94_9b34:*/ lda $9b06.w, X
 /*unknown_94_9b37:*/ sta $22
 /*unknown_94_9b39:*/ lda ($22), Y
-/*unknown_94_9b3b:*/ jsr $8484e7
+/*unknown_94_9b3b:*/ jsl unknown_84_84e7
 /*unknown_94_9b3f:*/ rts
 
 /*unknown_94_9b40:*/ bne @unknown_94_9ad9
@@ -3817,7 +3817,7 @@ unknown_94_9d4e: txa
 /*unknown_94_9d7e:*/ asl A
 /*unknown_94_9d7f:*/ tax
 /*unknown_94_9d80:*/ lda $9da4.w, X
-/*unknown_94_9d83:*/ jsr $8484e7
+/*unknown_94_9d83:*/ jsl unknown_84_84e7
 /*unknown_94_9d87:*/ rep #$40
 /*unknown_94_9d89:*/ sec
 /*unknown_94_9d8a:*/ rts
@@ -3831,7 +3831,7 @@ unknown_94_9d4e: txa
 /*unknown_94_9d95:*/ lda $9e44.w, X
 /*unknown_94_9d98:*/ sta $12
 /*unknown_94_9d9a:*/ lda ($12), Y
-/*unknown_94_9d9c:*/ jsr $8484e7
+/*unknown_94_9d9c:*/ jsl unknown_84_84e7
 /*unknown_94_9da0:*/ rep #$40
 /*unknown_94_9da2:*/ sec
 /*unknown_94_9da3:*/ rts
@@ -3931,7 +3931,7 @@ unknown_94_9d4e: txa
 /*unknown_94_9e62:*/ asl A
 /*unknown_94_9e63:*/ tax
 /*unknown_94_9e64:*/ lda $9ea6.w, X
-/*unknown_94_9e67:*/ jsr $8484e7
+/*unknown_94_9e67:*/ jsl unknown_84_84e7
 /*unknown_94_9e6b:*/ rep #$40
 /*unknown_94_9e6d:*/ clc
 /*unknown_94_9e6e:*/ rts
@@ -3948,7 +3948,7 @@ unknown_94_9d4e: txa
 /*unknown_94_9e80:*/ asl A
 /*unknown_94_9e81:*/ tax
 /*unknown_94_9e82:*/ lda $9ea6.w, X
-/*unknown_94_9e85:*/ jsr $8484e7
+/*unknown_94_9e85:*/ jsl unknown_84_84e7
 /*unknown_94_9e89:*/ rep #$40
 /*unknown_94_9e8b:*/ sec
 /*unknown_94_9e8c:*/ rts
@@ -3962,7 +3962,7 @@ unknown_94_9d4e: txa
 /*unknown_94_9e97:*/ lda $9fc6.w, X
 /*unknown_94_9e9a:*/ sta $12
 /*unknown_94_9e9c:*/ lda ($12), Y
-/*unknown_94_9e9e:*/ jsr $8484e7
+/*unknown_94_9e9e:*/ jsl unknown_84_84e7
 /*unknown_94_9ea2:*/ rep #$40
 /*unknown_94_9ea4:*/ sec
 /*unknown_94_9ea5:*/ rts
@@ -4072,7 +4072,7 @@ unknown_94_9d4e: txa
 @unknown_94_9fe3: asl A
 /*unknown_94_9fe4:*/ tax
 /*unknown_94_9fe5:*/ lda $a012.w, X
-/*unknown_94_9fe8:*/ jsr $8484e7
+/*unknown_94_9fe8:*/ jsl unknown_84_84e7
 /*unknown_94_9fec:*/ rep #$40
 /*unknown_94_9fee:*/ clc
 @unknown_94_9fef: rts
@@ -4089,7 +4089,7 @@ unknown_94_9d4e: txa
 /*unknown_94_a001:*/ asl A
 /*unknown_94_a002:*/ tax
 /*unknown_94_a003:*/ lda $a012.w, X
-/*unknown_94_a006:*/ jsr $8484e7
+/*unknown_94_a006:*/ jsl unknown_84_84e7
 /*unknown_94_a00a:*/ rep #$40
 /*unknown_94_a00c:*/ sec
 /*unknown_94_a00d:*/ rts
@@ -5159,7 +5159,7 @@ unknown_94_a569: rep #$20
 /*unknown_94_a7e4:*/ asl A
 /*unknown_94_a7e5:*/ tax
 /*unknown_94_a7e6:*/ lda $a7f5.w, X
-/*unknown_94_a7e9:*/ jsr $8484e7
+/*unknown_94_a7e9:*/ jsl unknown_84_84e7
 /*unknown_94_a7ed:*/ rts
 
 @unknown_94_a7ee: and #$007f.w
@@ -5180,7 +5180,7 @@ unknown_94_a569: rep #$20
 @unknown_94_a80a: asl A
 /*unknown_94_a80b:*/ tax
 @unknown_94_a80c: lda $a81b.w, X
-/*unknown_94_a80f:*/ jsr $8484e7
+/*unknown_94_a80f:*/ jsl unknown_84_84e7
 /*unknown_94_a813:*/ rts
 
 @unknown_94_a814: and #$007f.w

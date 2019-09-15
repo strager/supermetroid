@@ -9933,7 +9933,7 @@ unknown_88_b5a9: sep #$20
 /*unknown_88_db8a:*/ lda #$000a.w
 /*unknown_88_db8d:*/ jsr $808233
 /*unknown_88_db91:*/ bcc @unknown_88_dba2
-/*unknown_88_db93:*/ jsr $8483d7
+/*unknown_88_db93:*/ jsl unknown_84_83d7
 /*unknown_88_db97:*/ asl $0c
 /*unknown_88_db99:*/ adc [$b7], Y
 /*unknown_88_db9b:*/ lda #$0202.w
@@ -10036,7 +10036,7 @@ unknown_88_dbcb: lda $1920.w, X
 /*unknown_88_dc95:*/ phx
 @unknown_88_dc96: php
 /*unknown_88_dc97:*/ rep #$10
-/*unknown_88_dc99:*/ jsr $8483d7
+/*unknown_88_dc99:*/ jsl unknown_84_83d7
 /*unknown_88_dc9d:*/ asl $0c
 /*unknown_88_dc9f:*/ adc ($b7, S), Y
 /*unknown_88_dca1:*/ plp
