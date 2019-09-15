@@ -3532,16 +3532,17 @@ unknown_81_9de4: phx
 /*unknown_81_9e3b:*/ brk $33
 /*unknown_81_9e3d:*/ .db $00
 
-unknown_81_9e3e: .db $c2
-/*unknown_81_9e3f:*/ bmi unknown_81_9dcc
-/*unknown_81_9e41:*/ phk
-/*unknown_81_9e42:*/ plb
-/*unknown_81_9e43:*/ lda $0727.w
-/*unknown_81_9e46:*/ asl A
-/*unknown_81_9e47:*/ tax
-/*unknown_81_9e48:*/ jsr ($9e4d.w, X)
-/*unknown_81_9e4b:*/ plb
-/*unknown_81_9e4c:*/ rtl
+unknown_81_9e3e:
+  rep #$30
+  phb
+  phk
+  plb
+  lda $0727.w
+  asl A
+  tax
+  jsr ($9e4d.w, X)
+  plb
+  rtl
 
 /*unknown_81_9e4d:*/ rol A
 /*unknown_81_9e4e:*/ lda $7c, S
