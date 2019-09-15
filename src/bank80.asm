@@ -704,35 +704,63 @@ unused_set_memory_to_word:
   plp
   rtl
 
-unknown_80_83e3:
+; Set bytes [$7e:X] through [$7e:X + Y - 1] to A.
+;
+; This routine always stores bytes in bank $7e, regardless of DB.
+;
+; Inputs:
+; * A & $ff: Byte to store.
+; * X: Start address to store to.
+; * Y: Number of bytes to store.
+;
+; Outputs:
+; * [$7e:X]
+; * A: High byte cleared. Low byte preserved.
+; * X: X + Y
+; * Y: 0
+unused_set_ram_to_byte:
   php
   phb
   phk
-  plb
+  plb ; DB := PB = $80
   sep #$20
   rep #$10
-@unknown_80_83eb:
-  sta MEM_LOW_HIGH_RAM_BEGIN, X
+@next:
+  sta MEM_LOW_HIGH_RAM_BEGIN.l, X
   inx
   dey
-  bne @unknown_80_83eb
+  bne @next
   plb
   plp
   rtl
 
-unknown_80_83f6:
+; Set words [$7e:X] through [$7e:X + Y - 2] to A.
+;
+; This routine always stores words in bank $7e, regardless of DB.
+;
+; Inputs:
+; * A: Word to store.
+; * X: Start address to store to.
+; * Y: Number of bytes to store (i.e. twice the number of words to store). Must
+;      be even.
+;
+; Outputs:
+; * [$7e:X]
+; * X: X + Y
+; * Y: 0
+set_ram_to_word:
   php
   phb
   phk
-  plb
+  plb ; DB := PB = $80
   rep #$30
-@loop:
-  sta MEM_LOW_HIGH_RAM_BEGIN, X
+@next:
+  sta MEM_LOW_HIGH_RAM_BEGIN.l, X
   inx
   inx
   dey
   dey
-  bne @loop
+  bne @next
   plb
   plp
   rtl
@@ -1357,7 +1385,7 @@ unknown_80_88b4:
   lda #$0000.w
   ldx #$2000.w
   ldy #$e000.w
-  jsl unknown_80_83f6
+  jsl set_ram_to_word
   lda #$0000.w
   tax
   ldy #$dffe.w
@@ -1384,7 +1412,7 @@ unknown_80_88eb:
   rep #$30
   ldx #$3000.w
   ldy #$0800.w
-  jsl unknown_80_83f6
+  jsl set_ram_to_word
   plb
   plp
   rtl
@@ -1397,7 +1425,7 @@ unknown_80_88fe:
   rep #$30
   ldx #$4000.w
   ldy #$0800.w
-  jsl unknown_80_83f6
+  jsl set_ram_to_word
   plb
   plp
   rtl
@@ -1410,7 +1438,7 @@ unknown_80_8911:
   rep #$30
   ldx #$6000.w
   ldy #$0800.w
-  jsl unknown_80_83f6
+  jsl set_ram_to_word
   plb
   plp
   rtl
