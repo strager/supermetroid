@@ -4,6 +4,7 @@
 .bank ($84 - $80) slot $0
 .org $0
 
+; TODO: "Set Golden Torizo palette" -- P.JBoy
 unknown_84_8000:
   phx
   phy
@@ -36,6 +37,7 @@ unknown_84_8000:
   plx
   rtl
 
+; TODO: "Golden Torizo colour palette 1" -- P.JBoy
 /*unknown_84_8032:*/ brk $10
 /*unknown_84_8034:*/ tsx
 /*unknown_84_8035:*/ lsr $b2, X
@@ -146,6 +148,8 @@ unknown_84_8000:
 /*unknown_84_8127:*/ eor $e02a20
 /*unknown_84_812b:*/ adc $205aa0, X
 /*unknown_84_812f:*/ eor $0043.w, Y
+
+; TODO: "Golden Torizo colour palette 2" -- P.JBoy
 /*unknown_84_8132:*/ brk $10
 /*unknown_84_8134:*/ ora $42, X
 /*unknown_84_8136:*/ ora $022d.w
@@ -272,6 +276,7 @@ unknown_84_8000:
 /*unknown_84_822e:*/ bra $44 ; $8274.w
 /*unknown_84_8230:*/ brk $00
 
+; TODO: "Load room PLM GFX" -- P.JBoy
 unknown_84_8232:
   php
   phb
@@ -292,11 +297,13 @@ unknown_84_8232:
   plp
   rtl
 
+; TODO: "Clear sounds when going through door" -- P.JBoy
 unknown_84_8250:
   lda #$001d.w
   jsl unknown_90_f084
   rtl
 
+; TODO: "Unused: clear spin jump sound when going through door" -- P.JBoy
 unknown_84_8258:
   lda $0a1e.w
   and #$ff00.w
@@ -308,11 +315,13 @@ unknown_84_8258:
   jsl unknown_80_9021
 @unknown_84_826f: rtl
 
+; TODO: "Play spin jump sound" -- P.JBoy
 unknown_84_8270:
   lda #$001c.w
   jsl unknown_90_f084
   rtl
 
+; TODO: "Unused: play resumed spin jump sound" -- P.JBoy
 unknown_84_8278:
   lda $0a1e.w
   and #$ff00.w
@@ -328,6 +337,7 @@ unknown_84_8278:
 ; (1C87,X). Results stored in $1C29(X) and $1C2B(Y). NOTE: This must be called
 ; LONG (JSL). Do not attempt to use this as a PLM instruction, even though it's
 ; in the same bank as PLMs." -- Kejardon
+; "Calculate PLM block co-ordinates" -- P.JBoy
 unknown_84_8290:
   lda $1c87.w, X
   lsr A
@@ -348,6 +358,7 @@ unknown_84_8290:
   sta $1c29.w
   rtl
 
+; TODO: "Write level data block type and BTS" -- P.JBoy
 unknown_84_82b4:
   phx
   sta $12
@@ -366,7 +377,8 @@ unknown_84_82b4:
   rep #$20
   plx
   rts
-
+ 
+; TODO: "Write row of level data block and BTS" -- P.JBoy
 unknown_84_82d6:
   phx
   phy
@@ -411,6 +423,7 @@ unknown_84_82d6:
   plx
   rts
 
+; TODO: "Load x-ray blocks" -- P.JBoy
 unknown_84_831a:
   php
   phb
@@ -476,18 +489,27 @@ unknown_84_831a:
   plp
   rtl
 
-/*unknown_84_839d:*/ ora $a31ba3
-/*unknown_84_83a1:*/ and [$a3]
-/*unknown_84_83a3:*/ and ($a3, S), Y
-/*unknown_84_83a5:*/ cmp $a2f1a2, X
-/*unknown_84_83a9:*/ sbc $03a2.w, X
-/*unknown_84_83ac:*/ lda $08, S
-/*unknown_84_83ae:*/ rep #$20
-/*unknown_84_83b0:*/ lda #$8000.w
-/*unknown_84_83b3:*/ tsb $1c23.w
-/*unknown_84_83b6:*/ plp
-/*unknown_84_83b7:*/ rtl
+; TODO: "Pointers to x-ray block drawing instructions" -- P.JBoy
+unknown_84_839d:
+  .dw $a30f
+  .dw $a31b
+  .dw $a327
+  .dw $a333
+  .dw $a2df
+  .dw $a2f1
+  .dw $a2fd
+  .dw $a303
 
+; TODO: "Enable PLMs" -- P.JBoy
+unknown_84_83ad:
+  php
+  rep #$20
+  lda #$8000.w
+  tsb $1c23.w
+  plp
+  rtl
+
+; TODO: "Disable PLMs" -- P.JBoy
 unknown_84_83b8: 
   php
   rep #$20
@@ -496,6 +518,7 @@ unknown_84_83b8:
   plp
   rtl
 
+; TODO: "Clear PLMs" -- P.JBoy
 unknown_84_83c3:
   php
   rep #$30
@@ -517,6 +540,7 @@ unknown_84_83c3:
 ; code will resume, after those four bytes. If there are already too many PLMs
 ; and the game fails to make a new one, it just resumes code past those four
 ; bytes." -- Kejardon
+; "Spawn hard-coded PLM" -- P.JBoy
 unknown_84_83d7:
   phb
   phy
@@ -597,6 +621,7 @@ unknown_84_83d7:
 unknown_84_8469:
   rts
 
+; TODO: "Spawn room PLM" -- P.JBoy
 unknown_84_846a:
   php
   phb
@@ -617,7 +642,6 @@ unknown_84_846a:
   plp
   sec
   rtl
-
 @unknown_84_8482:
   sep #$20
   lda $8f0003, X
@@ -665,6 +689,7 @@ unknown_84_84e6:
 ; TODO: "Creates PLMs. Before running, nth block is stored at $0DC4 (Block Samus
 ; is in contact with?) (Multiplied by two to get absolute address), A contains
 ; the PLM header. (TODO!)" -- Kejardon
+; "Spawn PLM" -- P.JBoy
 unknown_84_84e7:
   phb
   phy
@@ -713,6 +738,7 @@ unknown_84_84e7:
 unknown_84_853d:
   rts
 
+; TODO: "Unused. Spawn enemy PLM" -- P.JBoy
 unknown_84_853e:
   phb
   phy
@@ -733,73 +759,79 @@ unknown_84_853e:
   ply
   plb
   rtl
+@unknown_84_8556:
+  lda $0f7e.w, Y
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  sep #$20
+  sta IO_WRMPYA
+  lda $07a5.w
+  sta IO_WRMPYB
+  rep #$20
+  lda $0f7a.w, Y
+  lsr A
+  lsr A
+  lsr A
+  lsr A
+  clc
+  adc IO_RDMPY
+  asl A
+  sta $1c87.w, X
+  pla
+  sta $1c37.w, X
+  tay
+  lda #$85b3.w
+  sta $1cd7.w, X
+  lda $0002.w, Y
+  sta $1d27.w, X
+  lda #$0001.w
+  sta $7ede1c, X
+  lda #$8da0.w
+  sta $7ede6c, X
+  lda #$0000.w
+  sta $1d77.w, X
+  sta $1dc7.w, X
+  sta $7edf0c, X
+  stx $1c27.w
+  tyx
+  ldy $1c27.w
+  jsr ($0000.w, X)
+  plx
+  ply
+  plb
+  rtl
 
-@unknown_84_8556: lda $0f7e.w, Y
-/*unknown_84_8559:*/ lsr A
-/*unknown_84_855a:*/ lsr A
-/*unknown_84_855b:*/ lsr A
-/*unknown_84_855c:*/ lsr A
-/*unknown_84_855d:*/ sep #$20
-/*unknown_84_855f:*/ sta IO_WRMPYA
-/*unknown_84_8562:*/ lda $07a5.w
-/*unknown_84_8565:*/ sta IO_WRMPYB
-/*unknown_84_8568:*/ rep #$20
-/*unknown_84_856a:*/ lda $0f7a.w, Y
-/*unknown_84_856d:*/ lsr A
-/*unknown_84_856e:*/ lsr A
-/*unknown_84_856f:*/ lsr A
-/*unknown_84_8570:*/ lsr A
-/*unknown_84_8571:*/ clc
-/*unknown_84_8572:*/ adc IO_RDMPY
-/*unknown_84_8575:*/ asl A
-/*unknown_84_8576:*/ sta $1c87.w, X
-/*unknown_84_8579:*/ pla
-/*unknown_84_857a:*/ sta $1c37.w, X
-/*unknown_84_857d:*/ tay
-/*unknown_84_857e:*/ lda #$85b3.w
-/*unknown_84_8581:*/ sta $1cd7.w, X
-/*unknown_84_8584:*/ lda $0002.w, Y
-/*unknown_84_8587:*/ sta $1d27.w, X
-/*unknown_84_858a:*/ lda #$0001.w
-/*unknown_84_858d:*/ sta $7ede1c, X
-/*unknown_84_8591:*/ lda #$8da0.w
-/*unknown_84_8594:*/ sta $7ede6c, X
-/*unknown_84_8598:*/ lda #$0000.w
-/*unknown_84_859b:*/ sta $1d77.w, X
-/*unknown_84_859e:*/ sta $1dc7.w, X
-/*unknown_84_85a1:*/ sta $7edf0c, X
-/*unknown_84_85a5:*/ stx $1c27.w
-/*unknown_84_85a8:*/ tyx
-/*unknown_84_85a9:*/ ldy $1c27.w
-/*unknown_84_85ac:*/ jsr ($0000.w, X)
-/*unknown_84_85af:*/ plx
-/*unknown_84_85b0:*/ ply
-/*unknown_84_85b1:*/ plb
-/*unknown_84_85b2:*/ rtl
-
-/*unknown_84_85b3:*/ rts
+unknown_84_85b3:
+  rts
 
 ; TODO: "Handles PLMs" -- Kejardon
-unknown_84_85b4: php
-/*unknown_84_85b5:*/ phb
-/*unknown_84_85b6:*/ phk
-/*unknown_84_85b7:*/ plb
-/*unknown_84_85b8:*/ rep #$30
-/*unknown_84_85ba:*/ bit $1c23.w
-/*unknown_84_85bd:*/ bpl @unknown_84_85d7
-/*unknown_84_85bf:*/ stz $1c25.w
-/*unknown_84_85c2:*/ ldx #$004e.w
-@unknown_84_85c5: stx $1c27.w
-/*unknown_84_85c8:*/ lda $1c37.w, X
-/*unknown_84_85cb:*/ beq @unknown_84_85d3
-/*unknown_84_85cd:*/ jsr unknown_84_85da
-/*unknown_84_85d0:*/ ldx $1c27.w
-@unknown_84_85d3: dex
-/*unknown_84_85d4:*/ dex
-/*unknown_84_85d5:*/ bpl @unknown_84_85c5
-@unknown_84_85d7: plb
-/*unknown_84_85d8:*/ plp
-/*unknown_84_85d9:*/ rtl
+; TODO: "PLM handler" -- P.JBoy
+unknown_84_85b4:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  bit $1c23.w
+  bpl @unknown_84_85d7
+  stz $1c25.w
+  ldx #$004e.w
+@unknown_84_85c5:
+  stx $1c27.w
+  lda $1c37.w, X
+  beq @unknown_84_85d3
+  jsr unknown_84_85da
+  ldx $1c27.w
+@unknown_84_85d3:
+  dex
+  dex
+  bpl @unknown_84_85c5
+@unknown_84_85d7:
+  plb
+  plp
+  rtl
 
 unknown_84_85da: jsr ($1cd7.w, X)
 /*unknown_84_85dd:*/ ldx $1c27.w
