@@ -21,7 +21,13 @@ var_unknown_12: dw ; $7e0012
 var_temp_12: dw ; $7e0012
 .endu
 
+.union
+; TODO: Rename to var_temp_14?
 var_unknown_14: dw ; $7e0014
+.nextu
+var_temp_14: dw ; $7e0014
+.endu
+
 var_unknown_16: dw ; $7e0016
 var_unknown_18: dw ; $7e0018
 var_unknown_1a: dw ; $7e001a
@@ -51,7 +57,7 @@ var_unknown_38: dw ; $7e0038
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3c) export
-var_unknown_3c: dw ; $7e003c
+var_temp_3c: dw ; $7e003c
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $44) export
@@ -391,13 +397,26 @@ var_unknown_0686: db ; $7e0686
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $071c) export
 var_unknown_071c: db ; $7e071c
-var_unknown_071d: db ; $7e071d
-var_unknown_071e: db ; $7e071e
+
+; If non-zero, apply var_unknown_071f on the next V-blank.
+var_enable_unknown_071f: db ; $7e071d
+
+; If non-zero, apply var_unknown_0721 on the next V-blank.
+var_enable_unknown_0721: db ; $7e071e
+
+; Address of an instance of unknown_071f_entry in bank unknown_071f_bank. Takes
+; effect only if var_enable_unknown_071f is non-zero.
 var_unknown_071f: dw ; $7e071f
+
+; Address of an instance of unknown_071f_entry in bank unknown_071f_bank. Takes
+; effect only if var_enable_unknown_0721 is non-zero.
 var_unknown_0721: dw ; $7e0721
+
 var_unknown_0723: dw ; $7e0723
 var_unknown_0725: dw ; $7e0725
 .ende
+.define unknown_071f_bank $92
+.export unknown_071f_bank
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0755) export
 var_pause_weapons_selected_list: db ; $7e0755

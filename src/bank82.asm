@@ -1068,7 +1068,7 @@ main:
   jsl rng_advance
   jsl clear_oam_objects_extra
   stz var_oam_objects_tail.w
-  stz var_unknown_071d.w
+  stz var_enable_unknown_071f.w
   stz var_unknown_071f.w
   stz var_unknown_0721.w ; TODO: "Clearing stuff for vram" -- Kejardon
   lda var_game_state.w
