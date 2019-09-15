@@ -5708,15 +5708,15 @@ unknown_80_ad1d:
 
 unknown_80_ad30:
   rep #$30
-  lda $0927.w
-  sta $0911.w
-  lda $0929.w
-  sta $0915.w
-  lda $0791.w
+  lda var_unknown_0927.w
+  sta var_unknown_0911.w
+  lda var_unknown_0929.w
+  sta var_unknown_0915.w
+  lda var_unknown_0791.w
   and #$0003.w
   asl A
   tax
-  jsr ($ae08.w, X)
+  jsr (unknown_80_ae08, X)
   rtl
 
 unknown_80_ad4a:
@@ -5801,10 +5801,11 @@ unknown_80_adc8:
   jsr unknown_80_af89
   rts
 
-/*unknown_80_ae08:*/ lsr A
-/*unknown_80_ae09:*/ lda $ad74.w
-/*unknown_80_ae0c:*/ stz $c8ad.w, X
-/*unknown_80_ae0f:*/ .db $ad
+unknown_80_ae08:
+  .dw unknown_80_ad4a
+  .dw unknown_80_ad74
+  .dw unknown_80_ad9e
+  .dw unknown_80_adc8
 
 ; TODO: "Record X/Y scrolling for BG1/BG2 during room transitions" -- Kejardon
 unknown_80_ae10:
