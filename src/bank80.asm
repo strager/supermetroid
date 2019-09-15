@@ -4506,8 +4506,7 @@ unknown_80_a29c:
   plp
   rtl
 @unknown_80_a2f7:
-  .db $4e
-  .db var_unknown_18
+  .db $4e, $18
 
 ; TODO: "Calculates Layer 2's X scroll position (0917) based on Layer 1 (0911)
 ; and Layer 2's X scroll percent (091B)" -- Kejardon
