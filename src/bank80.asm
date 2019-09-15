@@ -2646,7 +2646,7 @@ unknown_80_91ee:
 
 unknown_80_933a:
   lda #(IO_OAMDATA - IO_BBAD_BASE) << 8
-  sta IO_DMAP0 ; and IO_BBAD0
+  sta IO_DMAP0 ; Address: IO_DMAP0 and IO_BBAD0
   lda #$0370.w
   sta IO_A1T0
   ldx #$00.b
@@ -2655,7 +2655,7 @@ unknown_80_933a:
   sta IO_DAS0
   stz IO_OAMADD
   lda #(IO_CGDATA - IO_BBAD_BASE) << 8
-  sta IO_DMAP1 ; and IO_BBAD1
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
   lda #$c000.w
   sta IO_A1T1
   ldx #$7e.b
