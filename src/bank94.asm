@@ -5261,33 +5261,33 @@ unknown_94_a569: rep #$20
 /*unknown_94_a8c6:*/ lda $0af8.w
 /*unknown_94_a8c9:*/ clc
 /*unknown_94_a8ca:*/ adc $0d0e.w
-/*unknown_94_a8cd:*/ sta $0d06.w
+/*unknown_94_a8cd:*/ sta var_grapple_subpixel_x.w
 /*unknown_94_a8d0:*/ lda $0af6.w
 /*unknown_94_a8d3:*/ adc $0d10.w
 /*unknown_94_a8d6:*/ clc
-/*unknown_94_a8d7:*/ adc $0d02.w
-/*unknown_94_a8da:*/ sta $0d08.w
+/*unknown_94_a8d7:*/ adc var_grapple_offset_x.w
+/*unknown_94_a8da:*/ sta var_grapple_position_x.w
 /*unknown_94_a8dd:*/ lda $0afc.w
 /*unknown_94_a8e0:*/ clc
 /*unknown_94_a8e1:*/ adc $0d12.w
-/*unknown_94_a8e4:*/ sta $0d0a.w
+/*unknown_94_a8e4:*/ sta var_grapple_subpixel_y.w
 /*unknown_94_a8e7:*/ lda $0afa.w
 /*unknown_94_a8ea:*/ adc $0d14.w
 /*unknown_94_a8ed:*/ clc
-/*unknown_94_a8ee:*/ adc $0d04.w
-/*unknown_94_a8f1:*/ sta $0d0c.w
+/*unknown_94_a8ee:*/ adc var_grapple_offset_y.w
+/*unknown_94_a8f1:*/ sta var_grapple_position_y.w
 /*unknown_94_a8f4:*/ jsr $94a91f
 /*unknown_94_a8f8:*/ bvc @unknown_94_a918
 /*unknown_94_a8fa:*/ bcc @unknown_94_a918
 /*unknown_94_a8fc:*/ php
-/*unknown_94_a8fd:*/ lda $0d08.w
+/*unknown_94_a8fd:*/ lda var_grapple_position_x.w
 /*unknown_94_a900:*/ and #$fff0.w
 /*unknown_94_a903:*/ ora #$0008.w
-/*unknown_94_a906:*/ sta $0d08.w
-/*unknown_94_a909:*/ lda $0d0c.w
+/*unknown_94_a906:*/ sta var_grapple_position_x.w
+/*unknown_94_a909:*/ lda var_grapple_position_y.w
 /*unknown_94_a90c:*/ and #$fff0.w
 /*unknown_94_a90f:*/ ora #$0008.w
-/*unknown_94_a912:*/ sta $0d0c.w
+/*unknown_94_a912:*/ sta var_grapple_position_y.w
 /*unknown_94_a915:*/ plp
 /*unknown_94_a916:*/ plb
 /*unknown_94_a917:*/ rtl
@@ -5300,7 +5300,7 @@ unknown_94_a569: rep #$20
 /*unknown_94_a91f:*/ phb
 /*unknown_94_a920:*/ phk
 /*unknown_94_a921:*/ plb
-/*unknown_94_a922:*/ lda $0d0c.w
+/*unknown_94_a922:*/ lda var_grapple_position_y.w
 /*unknown_94_a925:*/ lsr A
 /*unknown_94_a926:*/ lsr A
 /*unknown_94_a927:*/ lsr A
@@ -5310,7 +5310,7 @@ unknown_94_a569: rep #$20
 /*unknown_94_a92e:*/ lda $07a5.w
 /*unknown_94_a931:*/ sta $4203.w
 /*unknown_94_a934:*/ rep #$20
-/*unknown_94_a936:*/ lda $0d08.w
+/*unknown_94_a936:*/ lda var_grapple_position_x.w
 /*unknown_94_a939:*/ lsr A
 /*unknown_94_a93a:*/ lsr A
 /*unknown_94_a93b:*/ lsr A
@@ -5336,24 +5336,24 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_a95d:*/ bmi @unknown_94_a999
 /*unknown_94_a95f:*/ lda sine_table.l, X
 /*unknown_94_a963:*/ bmi @unknown_94_a970
-/*unknown_94_a965:*/ lda $0d08.w
+/*unknown_94_a965:*/ lda var_grapple_position_x.w
 /*unknown_94_a968:*/ and #$fff0.w
 /*unknown_94_a96b:*/ ora #$0008.w
 /*unknown_94_a96e:*/ bra @unknown_94_a979
-@unknown_94_a970: lda $0d08.w
+@unknown_94_a970: lda var_grapple_position_x.w
 /*unknown_94_a973:*/ and #$fff0.w
 /*unknown_94_a976:*/ ora #$0007.w
-@unknown_94_a979: sta $0d08.w
+@unknown_94_a979: sta var_grapple_position_x.w
 /*unknown_94_a97c:*/ lda $a0b3c3, X
 /*unknown_94_a980:*/ bmi @unknown_94_a98d
-/*unknown_94_a982:*/ lda $0d0c.w
+/*unknown_94_a982:*/ lda var_grapple_position_y.w
 /*unknown_94_a985:*/ and #$fff0.w
 /*unknown_94_a988:*/ ora #$0008.w
 /*unknown_94_a98b:*/ bra @unknown_94_a996
-@unknown_94_a98d: lda $0d0c.w
+@unknown_94_a98d: lda var_grapple_position_y.w
 /*unknown_94_a990:*/ and #$fff0.w
 /*unknown_94_a993:*/ ora #$0007.w
-@unknown_94_a996: sta $0d0c.w
+@unknown_94_a996: sta var_grapple_position_y.w
 @unknown_94_a999: sep #$20
 /*unknown_94_a99b:*/ lda $0d84.w
 /*unknown_94_a99e:*/ sta $4202.w
@@ -5362,7 +5362,7 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_a9a7:*/ bmi @unknown_94_a9cd
 /*unknown_94_a9a9:*/ cmp #$0100.w
 /*unknown_94_a9ac:*/ bne @unknown_94_a9b7
-/*unknown_94_a9ae:*/ lda $0d08.w
+/*unknown_94_a9ae:*/ lda var_grapple_position_x.w
 /*unknown_94_a9b1:*/ clc
 /*unknown_94_a9b2:*/ adc $0d84.w
 /*unknown_94_a9b5:*/ bra @unknown_94_a9f6
@@ -5375,11 +5375,11 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_a9c3:*/ and #$ff00.w
 /*unknown_94_a9c6:*/ xba
 /*unknown_94_a9c7:*/ clc
-/*unknown_94_a9c8:*/ adc $0d08.w
+/*unknown_94_a9c8:*/ adc var_grapple_position_x.w
 /*unknown_94_a9cb:*/ bra @unknown_94_a9f6
 @unknown_94_a9cd: cmp #$ff00.w
 /*unknown_94_a9d0:*/ bne @unknown_94_a9db
-/*unknown_94_a9d2:*/ lda $0d08.w
+/*unknown_94_a9d2:*/ lda var_grapple_position_x.w
 /*unknown_94_a9d5:*/ sec
 /*unknown_94_a9d6:*/ sbc $0d84.w
 /*unknown_94_a9d9:*/ bra @unknown_94_a9f6
@@ -5396,7 +5396,7 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_a9ee:*/ eor #$ffff.w
 /*unknown_94_a9f1:*/ inc A
 /*unknown_94_a9f2:*/ clc
-/*unknown_94_a9f3:*/ adc $0d08.w
+/*unknown_94_a9f3:*/ adc var_grapple_position_x.w
 @unknown_94_a9f6: sta $0d90.w
 /*unknown_94_a9f9:*/ lsr A
 /*unknown_94_a9fa:*/ lsr A
@@ -5408,7 +5408,7 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_aa07:*/ bmi @unknown_94_aa2d
 /*unknown_94_aa09:*/ cmp #$0100.w
 /*unknown_94_aa0c:*/ bne @unknown_94_aa17
-/*unknown_94_aa0e:*/ lda $0d0c.w
+/*unknown_94_aa0e:*/ lda var_grapple_position_y.w
 /*unknown_94_aa11:*/ clc
 /*unknown_94_aa12:*/ adc $0d84.w
 /*unknown_94_aa15:*/ bra @unknown_94_aa56
@@ -5421,11 +5421,11 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_aa23:*/ and #$ff00.w
 /*unknown_94_aa26:*/ xba
 /*unknown_94_aa27:*/ clc
-/*unknown_94_aa28:*/ adc $0d0c.w
+/*unknown_94_aa28:*/ adc var_grapple_position_y.w
 /*unknown_94_aa2b:*/ bra @unknown_94_aa56
 @unknown_94_aa2d: cmp #$ff00.w
 /*unknown_94_aa30:*/ bne @unknown_94_aa3b
-/*unknown_94_aa32:*/ lda $0d0c.w
+/*unknown_94_aa32:*/ lda var_grapple_position_y.w
 /*unknown_94_aa35:*/ sec
 /*unknown_94_aa36:*/ sbc $0d84.w
 /*unknown_94_aa39:*/ bra @unknown_94_aa56
@@ -5442,7 +5442,7 @@ unknown_94_a957: ldx $0d82.w
 /*unknown_94_aa4e:*/ eor #$ffff.w
 /*unknown_94_aa51:*/ inc A
 /*unknown_94_aa52:*/ clc
-/*unknown_94_aa53:*/ adc $0d0c.w
+/*unknown_94_aa53:*/ adc var_grapple_position_y.w
 @unknown_94_aa56: sta $0d92.w
 /*unknown_94_aa59:*/ lsr A
 /*unknown_94_aa5a:*/ lsr A
@@ -6029,7 +6029,7 @@ unknown_94_abe6: lda #$0006.w
 /*unknown_94_af0d:*/ phb
 /*unknown_94_af0e:*/ phk
 /*unknown_94_af0f:*/ plb
-/*unknown_94_af10:*/ lda $0d08.w
+/*unknown_94_af10:*/ lda var_grapple_position_x.w
 /*unknown_94_af13:*/ lsr A
 /*unknown_94_af14:*/ lsr A
 /*unknown_94_af15:*/ lsr A
@@ -6037,7 +6037,7 @@ unknown_94_abe6: lda #$0006.w
 /*unknown_94_af17:*/ and #$00ff.w
 /*unknown_94_af1a:*/ xba
 /*unknown_94_af1b:*/ sta $0d94.w
-/*unknown_94_af1e:*/ lda $0d0c.w
+/*unknown_94_af1e:*/ lda var_grapple_position_y.w
 /*unknown_94_af21:*/ lsr A
 /*unknown_94_af22:*/ lsr A
 /*unknown_94_af23:*/ lsr A
@@ -6115,11 +6115,11 @@ unknown_94_abe6: lda #$0006.w
 /*unknown_94_afba:*/ phb
 /*unknown_94_afbb:*/ phk
 /*unknown_94_afbc:*/ plb
-/*unknown_94_afbd:*/ lda $0d08.w
+/*unknown_94_afbd:*/ lda var_grapple_position_x.w
 /*unknown_94_afc0:*/ sec
 /*unknown_94_afc1:*/ sbc $0d1a.w
 /*unknown_94_afc4:*/ sta $12
-/*unknown_94_afc6:*/ lda $0d0c.w
+/*unknown_94_afc6:*/ lda var_grapple_position_y.w
 /*unknown_94_afc9:*/ sec
 /*unknown_94_afca:*/ sbc $0d1c.w
 /*unknown_94_afcd:*/ sta $14
@@ -6270,7 +6270,7 @@ unknown_94_b0aa: ldx $0590.w
 /*unknown_94_b0f7:*/ tay
 /*unknown_94_b0f8:*/ rts
 
-unknown_94_b0f9: lda $0d0c.w
+unknown_94_b0f9: lda var_grapple_position_y.w
 /*unknown_94_b0fc:*/ sec
 /*unknown_94_b0fd:*/ sbc $0915.w
 /*unknown_94_b100:*/ bit #$ff00.w
@@ -6278,7 +6278,7 @@ unknown_94_b0f9: lda $0d0c.w
 /*unknown_94_b105:*/ ldx $0590.w
 /*unknown_94_b108:*/ clc
 /*unknown_94_b109:*/ lda $14
-/*unknown_94_b10b:*/ lda $0d08.w
+/*unknown_94_b10b:*/ lda var_grapple_position_x.w
 /*unknown_94_b10e:*/ sec
 /*unknown_94_b10f:*/ sbc $0911.w
 /*unknown_94_b112:*/ sec
@@ -6292,7 +6292,7 @@ unknown_94_b0f9: lda $0d0c.w
 /*unknown_94_b126:*/ ora $81839f, X
 /*unknown_94_b12a:*/ sta ($22)
 @unknown_94_b12c: lda $18
-/*unknown_94_b12e:*/ lda $0d0c.w
+/*unknown_94_b12e:*/ lda var_grapple_position_y.w
 /*unknown_94_b131:*/ sec
 /*unknown_94_b132:*/ sbc $0915.w
 /*unknown_94_b135:*/ sec
@@ -6308,7 +6308,7 @@ unknown_94_b0f9: lda $0d0c.w
 
 /*unknown_94_b14b:*/ ldx $0590.w
 /*unknown_94_b14e:*/ clc
-/*unknown_94_b14f:*/ lda $0d08.w
+/*unknown_94_b14f:*/ lda var_grapple_position_x.w
 /*unknown_94_b152:*/ sec
 /*unknown_94_b153:*/ sbc $0911.w
 /*unknown_94_b156:*/ sbc #$0004.w
@@ -6320,7 +6320,7 @@ unknown_94_b0f9: lda $0d0c.w
 /*unknown_94_b167:*/ lda ($22)
 /*unknown_94_b169:*/ ora $81839f, X
 /*unknown_94_b16d:*/ sta ($22)
-@unknown_94_b16f: lda $0d0c.w
+@unknown_94_b16f: lda var_grapple_position_y.w
 /*unknown_94_b172:*/ sec
 /*unknown_94_b173:*/ sbc $0915.w
 /*unknown_94_b176:*/ sbc #$0004.w
