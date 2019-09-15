@@ -414,6 +414,7 @@ var_unknown_0721: dw ; $7e0721
 
 var_unknown_0723: dw ; $7e0723
 var_unknown_0725: dw ; $7e0725
+var_unknown_0727: dw ; $7e0727
 .ende
 .define unknown_071f_bank $92
 .export unknown_071f_bank
