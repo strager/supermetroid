@@ -628,9 +628,9 @@ unknown_80_8395:
   rep #$20
   lda #IO_DMAP_MODE_0_RAM | IO_DMAP_CPU_TO_IO | ((IO_CGDATA - IO_BBAD_BASE) << 8)
   sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
-  lda #$c000.w
+  lda #var_unknown_c000
   sta IO_A1T1
-  ldx #$7e
+  ldx #var_unknown_c000 >> 16
   stx IO_A1B1
   lda #$0200.w
   sta IO_DAS1
