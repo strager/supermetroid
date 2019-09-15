@@ -622,17 +622,24 @@ unknown_80_8382:
   plp
   rtl
 
-unknown_80_8395:
+; Copy [var_color_palette] to CGRAM.
+;
+; Inputs:
+; * [var_color_palette] through [var_color_palette + $ff*2]
+;
+; Outputs:
+; * CGRAM
+copy_color_palette:
   php
   sep #$10
   rep #$20
   lda #IO_DMAP_MODE_0_RAM | IO_DMAP_CPU_TO_IO | ((IO_CGDATA - IO_BBAD_BASE) << 8)
   sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
-  lda #var_unknown_c000
+  lda #var_color_palette
   sta IO_A1T1
-  ldx #var_unknown_c000 >> 16
+  ldx #var_color_palette >> 16
   stx IO_A1B1
-  lda #$0200.w
+  lda #var_color_palette@size
   sta IO_DAS1
   ldx #$00
   stx IO_CGADD

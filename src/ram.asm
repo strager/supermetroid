@@ -763,8 +763,11 @@ var_unknown_c69a: dw ; $7ec69a
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c000) export
-var_unknown_c000: ds 1 ; $7ec000
+var_color_palette: dsw $100 ; $7ec000
+var_color_palette_end: db
 .ende
+.define var_color_palette@size _sizeof_var_color_palette
+.export var_color_palette@size
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c8c8) export
 var_unknown_c8c8: ds 1 ; $7ec8c8
