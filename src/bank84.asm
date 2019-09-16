@@ -23,9 +23,9 @@ unknown_84_8000:
   tay
   ldx #$001e.w
 @unknown_84_801a:
-  lda $8132.w, Y
+  lda unknown_84_8132.w, Y
   sta $7ec140, X
-  lda $8032.w, Y
+  lda unknown_84_8032.w, Y
   sta $7ec120, X
   dey
   dey
@@ -38,243 +38,42 @@ unknown_84_8000:
   rtl
 
 ; TODO: "Golden Torizo colour palette 1" -- P.JBoy
-/*unknown_84_8032:*/ brk $10
-/*unknown_84_8034:*/ tsx
-/*unknown_84_8035:*/ lsr $b2, X
-/*unknown_84_8037:*/ eor ($47, X)
-/*unknown_84_8039:*/ trb $03
-/*unknown_84_803b:*/ tsb $15
-/*unknown_84_803d:*/ lsr $3570.w
-/*unknown_84_8040:*/ wai
-/*unknown_84_8041:*/ bit $68
-/*unknown_84_8043:*/ clc
-/*unknown_84_8044:*/ adc $51f86f, X
-/*unknown_84_8048:*/ asl $1f41.w
-/*unknown_84_804b:*/ ora $da, S
-/*unknown_84_804d:*/ ora ($f5, X)
-/*unknown_84_804f:*/ brk $63
-/*unknown_84_8051:*/ tsb $1000.w
-/*unknown_84_8054:*/ stp
-/*unknown_84_8055:*/ lsr $d3, X
-/*unknown_84_8057:*/ and $1047.w, Y
-/*unknown_84_805a:*/ ora $04, S
-/*unknown_84_805c:*/ rol $46, X
-/*unknown_84_805e:*/ sta ($2d), Y
-/*unknown_84_8060:*/ cpx $8920.w
-/*unknown_84_8063:*/ trb $9b
-/*unknown_84_8065:*/ adc $2c5215
-/*unknown_84_8069:*/ and $133b.w, X
-/*unknown_84_806c:*/ inc $0d, X
-/*unknown_84_806e:*/ sbc ($0c)
-/*unknown_84_8070:*/ adc $0c, S
-/*unknown_84_8072:*/ brk $10
-/*unknown_84_8074:*/ xce
-/*unknown_84_8075:*/ eor ($f4)
-/*unknown_84_8077:*/ and ($67), Y
-/*unknown_84_8079:*/ bpl @unknown_84_807d
-/*unknown_84_807b:*/ tsb $76
-@unknown_84_807d: rol $25b2.w, X
-/*unknown_84_8080:*/ and $a919.w
-/*unknown_84_8083:*/ bpl ($96 - $100) ; $801b.w
-/*unknown_84_8085:*/ adc $6a5251
-/*unknown_84_8089:*/ and $2756.w, Y
-/*unknown_84_808c:*/ ora ($1a, S), Y
-/*unknown_84_808e:*/ ora $086319
-@unknown_84_8092: brk $10
-/*unknown_84_8094:*/ trb $1553.w
-/*unknown_84_8097:*/ rol A
-/*unknown_84_8098:*/ adc [$0c]
-/*unknown_84_809a:*/ cop $04
-/*unknown_84_809c:*/ sta [$36], Y
-/*unknown_84_809e:*/ cmp ($1d, S), Y
-/*unknown_84_80a0:*/ lsr $ca15.w
-/*unknown_84_80a3:*/ tsb $6fb2.w
-/*unknown_84_80a6:*/ ror $8852.w
-/*unknown_84_80a9:*/ and $72, X
-/*unknown_84_80ab:*/ and [$2f], Y
-/*unknown_84_80ad:*/ rol $0c
-/*unknown_84_80af:*/ and $63
-/*unknown_84_80b1:*/ php
-/*unknown_84_80b2:*/ brk $10
-/*unknown_84_80b4:*/ jmp $1e564f
-/*unknown_84_80b8:*/ dey
-/*unknown_84_80b9:*/ php
-/*unknown_84_80ba:*/ ora ($00, X)
-/*unknown_84_80bc:*/ clv
-/*unknown_84_80bd:*/ rol $1a13.w
-/*unknown_84_80c0:*/ adc $0ceb11
-/*unknown_84_80c4:*/ lda $aa73.w
-/*unknown_84_80c7:*/ lsr $35a6.w
-/*unknown_84_80ca:*/ sta $4b4b.w
-/*unknown_84_80cd:*/ rol $09, X
-/*unknown_84_80cf:*/ and $43, X
-/*unknown_84_80d1:*/ tsb $00
-/*unknown_84_80d3:*/ bpl $7d ; $8152.w
-/*unknown_84_80d5:*/ eor $881677
-/*unknown_84_80d9:*/ tsb $01
-/*unknown_84_80db:*/ brk $d9
-/*unknown_84_80dd:*/ rol $34
-/*unknown_84_80df:*/ ora ($90)
-/*unknown_84_80e1:*/ ora $090c.w
-/*unknown_84_80e4:*/ cmp #$c773.w
-/*unknown_84_80e7:*/ lsr $31c4.w
-/*unknown_84_80ea:*/ lda #$675b.w
-/*unknown_84_80ed:*/ .db $42, $06
-/*unknown_84_80ef:*/ eor ($43, X)
-/*unknown_84_80f1:*/ tsb $00
-/*unknown_84_80f3:*/ bpl @unknown_84_8092
-/*unknown_84_80f5:*/ phk
-/*unknown_84_80f6:*/ tya
-/*unknown_84_80f7:*/ asl $04a8.w
-/*unknown_84_80fa:*/ brk $00
-/*unknown_84_80fc:*/ ora $551f.w, Y
-/*unknown_84_80ff:*/ asl A
-/*unknown_84_8100:*/ cmp ($05), Y
-/*unknown_84_8102:*/ bit $c405.w
-/*unknown_84_8105:*/ adc ($03, S), Y
-/*unknown_84_8107:*/ eor $c42e02
-/*unknown_84_810b:*/ adc $234e84
-/*unknown_84_810f:*/ eor $0043.w
-/*unknown_84_8112:*/ brk $00
-/*unknown_84_8114:*/ ldx $b94b.w, Y
-/*unknown_84_8117:*/ asl $a8
-/*unknown_84_8119:*/ brk $00
-/*unknown_84_811b:*/ brk $3a
-/*unknown_84_811d:*/ ora [$76], Y
-/*unknown_84_811f:*/ cop $f2
-/*unknown_84_8121:*/ ora ($4d, X)
-/*unknown_84_8123:*/ ora ($e0, X)
-/*unknown_84_8125:*/ adc ($20, S), Y
-/*unknown_84_8127:*/ eor $e02a20
-/*unknown_84_812b:*/ adc $205aa0, X
-/*unknown_84_812f:*/ eor $0043.w, Y
+unknown_84_8032:
+  .dw $1000, $56ba, $41b2, $1447, $0403, $4e15, $3570, $24cb
+  .dw $1868, $6f7f, $51f8, $410e, $031f, $01da, $00f5, $0c63
+  .dw $1000, $56db, $39d3, $1047, $0403, $4636, $2d91, $20ec 
+  .dw $1489, $6f9b, $5215, $3d2c, $133b, $0df6, $0cf2, $0c63
+  .dw $1000, $52fb, $31f4, $1067, $0402, $3e76, $25b2, $192d
+  .dw $10a9, $6f96, $5251, $396a, $2756, $1a13, $190f, $0863
+  .dw $1000, $531c, $2a15, $0c67, $0402, $3697, $1dd3, $154e
+  .dw $0cca, $6fb2, $526e, $3588, $3772, $262f, $250c, $0863
+  .dw $1000, $4f5c, $1e56, $0888, $0001, $2eb8, $1a13, $116f
+  .dw $0ceb, $73ad, $4eaa, $35a6, $4b8d, $364b, $3509, $0443
+  .dw $1000, $4f7d, $1677, $0488, $0001, $26d9, $1234, $0d90
+  .dw $090c, $73c9, $4ec7, $31c4, $5ba9, $4267, $4106, $0443
+  .dw $1000, $4b9d, $0e98, $04a8, $0000, $1f19, $0a55, $05d1
+  .dw $052c, $73c4, $4f03, $2e02, $6fc4, $4e84, $4d23, $0043
+  .dw $0000, $4bbe, $06b9, $00a8, $0000, $173a, $0276, $01f2
+  .dw $014d, $73e0, $4f20, $2a20, $7fe0, $5aa0, $5920, $0043
 
 ; TODO: "Golden Torizo colour palette 2" -- P.JBoy
-/*unknown_84_8132:*/ brk $10
-/*unknown_84_8134:*/ ora $42, X
-/*unknown_84_8136:*/ ora $022d.w
-/*unknown_84_8139:*/ brk $00
-/*unknown_84_813b:*/ brk $70
-/*unknown_84_813d:*/ and $20cb.w, Y
-/*unknown_84_8140:*/ rol $0c
-/*unknown_84_8142:*/ ora $04, S
-/*unknown_84_8144:*/ dec A
-/*unknown_84_8145:*/ lsr $b3
-/*unknown_84_8147:*/ plp
-/*unknown_84_8148:*/ ora #$7f18.w
-/*unknown_84_814b:*/ adc $1351fd
-/*unknown_84_814f:*/ eor ($63, X)
-/*unknown_84_8151:*/ tsb $1000.w
-/*unknown_84_8154:*/ rol $42, X
-/*unknown_84_8156:*/ rol $0225.w
-/*unknown_84_8159:*/ brk $00
-/*unknown_84_815b:*/ brk $91
-/*unknown_84_815d:*/ and ($ec), Y
-/*unknown_84_815f:*/ trb $0c47.w
-/*unknown_84_8162:*/ bit $04
-/*unknown_84_8164:*/ lsr $46, X
-/*unknown_84_8166:*/ bne @unknown_84_8190
-/*unknown_84_8168:*/ plp
-/*unknown_84_8169:*/ trb $7b
-/*unknown_84_816b:*/ adc $f051f9
-/*unknown_84_816f:*/ rti
-
-/*unknown_84_8170:*/ adc $0c, S
-/*unknown_84_8172:*/ brk $10
-/*unknown_84_8174:*/ lsr $3e, X
-/*unknown_84_8176:*/ eor $000221.l
-/*unknown_84_817a:*/ brk $00
-/*unknown_84_817c:*/ cmp ($29), Y
-/*unknown_84_817e:*/ ora $8819.w
-/*unknown_84_8181:*/ php
-/*unknown_84_8182:*/ bit $04
-/*unknown_84_8184:*/ sta ($46, S), Y
-/*unknown_84_8186:*/ asl $4629.w
-/*unknown_84_8189:*/ bpl $76 ; $8201.w
-/*unknown_84_818b:*/ adc $ee4df5
-/*unknown_84_818f:*/ rti
-
-@unknown_84_8190: .db $42, $08
-/*unknown_84_8192:*/ brk $10
-/*unknown_84_8194:*/ adc [$3e], Y
-/*unknown_84_8196:*/ bvs $19 ; $81b1.w
-/*unknown_84_8198:*/ cop $00
-/*unknown_84_819a:*/ brk $00
-/*unknown_84_819c:*/ sbc ($21)
-/*unknown_84_819e:*/ rol $a915.w
-/*unknown_84_81a1:*/ php
-/*unknown_84_81a2:*/ eor $04
-/*unknown_84_81a4:*/ lda $292b46
-/*unknown_84_81a8:*/ adc $0c
-/*unknown_84_81aa:*/ adc ($6f)
-/*unknown_84_81ac:*/ sbc ($4d), Y
-/*unknown_84_81ae:*/ wai
-/*unknown_84_81af:*/ rti
-
-/*unknown_84_81b0:*/ .db $42, $08
-/*unknown_84_81b2:*/ brk $10
-/*unknown_84_81b4:*/ lda [$3a], Y
-/*unknown_84_81b6:*/ lda ($15), Y
-/*unknown_84_81b8:*/ ora $00, S
-/*unknown_84_81ba:*/ brk $00
-/*unknown_84_81bc:*/ ora ($1a, S), Y
-/*unknown_84_81be:*/ ror $ca0d.w
-/*unknown_84_81c1:*/ tsb $66
-/*unknown_84_81c3:*/ brk $cb
-/*unknown_84_81c5:*/ lsr A
-/*unknown_84_81c6:*/ pla
-/*unknown_84_81c7:*/ and $84
-/*unknown_84_81c9:*/ tsb $6b4d.w
-/*unknown_84_81cc:*/ tsb $c84a.w
-/*unknown_84_81cf:*/ mvp $04, $21
-/*unknown_84_81d2:*/ brk $10
-/*unknown_84_81d4:*/ cld
-/*unknown_84_81d5:*/ dec A
-/*unknown_84_81d6:*/ cmp ($0d)
-/*unknown_84_81d8:*/ ora $00, S
-/*unknown_84_81da:*/ brk $00
-/*unknown_84_81dc:*/ bit $12, X
-/*unknown_84_81de:*/ sta $04eb09
-/*unknown_84_81e2:*/ sta [$00]
-/*unknown_84_81e4:*/ sbc [$4a]
-/*unknown_84_81e6:*/ sta $25
-/*unknown_84_81e8:*/ lda $08, S
-/*unknown_84_81ea:*/ eor #$086b.w
-/*unknown_84_81ed:*/ lsr A
-/*unknown_84_81ee:*/ lda $44
-/*unknown_84_81f0:*/ and ($04, X)
-/*unknown_84_81f2:*/ brk $10
-/*unknown_84_81f4:*/ sed
-/*unknown_84_81f5:*/ rol $f3, X
-/*unknown_84_81f7:*/ ora #$0003.w
-/*unknown_84_81fa:*/ brk $00
-/*unknown_84_81fc:*/ stz $0a, X
-/*unknown_84_81fe:*/ bcs @unknown_84_8205
-/*unknown_84_8200:*/ bit $8701.w
-/*unknown_84_8203:*/ brk $24
-@unknown_84_8205: phk
-/*unknown_84_8206:*/ cmp $25, S
-/*unknown_84_8208:*/ cmp ($04, X)
-/*unknown_84_820a:*/ mvp $04, $6b
-/*unknown_84_820d:*/ lsr $a3
-/*unknown_84_820f:*/ mvp $00, $00
-/*unknown_84_8212:*/ brk $10
-/*unknown_84_8214:*/ ora $1437.w, Y
-/*unknown_84_8217:*/ cop $03
-/*unknown_84_8219:*/ brk $00
-/*unknown_84_821b:*/ brk $95
-/*unknown_84_821d:*/ cop $d1
-/*unknown_84_821f:*/ ora ($4d, X)
-/*unknown_84_8221:*/ ora ($a8, X)
-/*unknown_84_8223:*/ brk $40
-/*unknown_84_8225:*/ phk
-/*unknown_84_8226:*/ cpx #$e025.w
-/*unknown_84_8229:*/ brk $40
-/*unknown_84_822b:*/ rtl
-
-/*unknown_84_822c:*/ brk $46
-/*unknown_84_822e:*/ bra $44 ; $8274.w
-/*unknown_84_8230:*/ brk $00
+unknown_84_8132:
+  .dw $1000, $4215, $2d0d, $0002, $0000, $3970, $20cb, $0c26
+  .dw $0403, $463a, $28b3, $1809, $6f7f, $51fd, $4113, $0c63
+  .dw $1000, $4236, $252e, $0002, $0000, $3191, $1cec, $0c47
+  .dw $0424, $4656, $28d0, $1428, $6f7b, $51f9, $40f0, $0c63
+  .dw $1000, $3e56, $214f, $0002, $0000, $29d1, $190d, $0888
+  .dw $0424, $4693, $290e, $1046, $6f76, $4df5, $40ee, $0842
+  .dw $1000, $3e77, $1970, $0002, $0000, $21f2, $152e, $08a9
+  .dw $0445, $46af, $292b, $0c65, $6f72, $4df1, $40cb, $0842
+  .dw $1000, $3ab7, $15b1, $0003, $0000, $1a13, $0d6e, $04ca
+  .dw $0066, $4acb, $2568, $0c84, $6b4d, $4a0c, $44c8, $0421
+  .dw $1000, $3ad8, $0dd2, $0003, $0000, $1234, $098f, $04eb
+  .dw $0087, $4ae7, $2585, $08a3, $6b49, $4a08, $44a5, $0421
+  .dw $1000, $36f8, $09f3, $0003, $0000, $0a74, $05b0, $012c
+  .dw $0087, $4b24, $25c3, $04c1, $6b44, $4604, $44a3, $0000
+  .dw $1000, $3719, $0214, $0003, $0000, $0295, $01d1, $014d
+  .dw $00a8, $4b40, $25e0, $00e0, $6b40, $4600, $4480, $0000
 
 ; TODO: "Load room PLM GFX" -- P.JBoy
 unknown_84_8232:
