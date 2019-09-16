@@ -857,3 +857,11 @@ var_unknown_d828: dsw $8 ; $7ed828
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d908) export
 var_unknown_d908: dw ; $7ed908
 .ende
+
+.define plm_instruction_count $28
+.export plm_instruction_count
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $de1c) export
+var_plm_instruction_timer: dsw plm_instruction_count ; $7ede1c
+var_plm_instruction_draw_pointer: dsw plm_instruction_count ; 7ede6c
+var_plm_instruction_list_pointer: dsw plm_instruction_count ; 7edebc
+.ende

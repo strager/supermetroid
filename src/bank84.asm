@@ -403,9 +403,9 @@ unknown_84_83d7:
   lda $0002.w, Y
   sta $1d27.w, X
   lda #$0001.w
-  sta $7ede1c, X
+  sta var_plm_instruction_timer.l, X
   lda #$8da0.w
-  sta $7ede6c, X
+  sta var_plm_instruction_draw_pointer.l, X
   stz $1d77.w, X
   stx $1c27.w
   tyx
@@ -467,9 +467,9 @@ unknown_84_846a:
   lda $0002.w, Y
   sta $1d27.w, X
   lda #$0001.w
-  sta $7ede1c, X
+  sta var_plm_instruction_timer.l, X
   lda #$8da0.w
-  sta $7ede6c, X
+  sta var_plm_instruction_draw_pointer.l, X
   stz $1d77.w, X
   stx $1c27.w
   tyx
@@ -518,9 +518,9 @@ unknown_84_84e7:
   lda $0002.w, Y
   sta $1d27.w, X
   lda #$0001.w
-  sta $7ede1c, X
+  sta var_plm_instruction_timer.l, X
   lda #$8da0.w
-  sta $7ede6c, X
+  sta var_plm_instruction_draw_pointer.l, X
   lda #$0000.w
   sta $1d77.w, X
   sta $1dc7.w, X
@@ -586,9 +586,9 @@ unknown_84_853e:
   lda $0002.w, Y
   sta $1d27.w, X
   lda #$0001.w
-  sta $7ede1c, X
+  sta var_plm_instruction_timer.l, X
   lda #$8da0.w
-  sta $7ede6c, X
+  sta var_plm_instruction_draw_pointer.l, X
   lda #$0000.w
   sta $1d77.w, X
   sta $1dc7.w, X
@@ -632,71 +632,82 @@ unknown_84_85b4:
   plp
   rtl
 
-unknown_84_85da: jsr ($1cd7.w, X)
-/*unknown_84_85dd:*/ ldx $1c27.w
-/*unknown_84_85e0:*/ lda $7ede1c, X
-/*unknown_84_85e4:*/ dec A
-/*unknown_84_85e5:*/ sta $7ede1c, X
-/*unknown_84_85e9:*/ bne @unknown_84_861d
-/*unknown_84_85eb:*/ ldy $1d27.w, X
-/*unknown_84_85ee:*/ lda $0000.w, Y
-/*unknown_84_85f1:*/ bpl @unknown_84_85fd
-/*unknown_84_85f3:*/ sta $12
-/*unknown_84_85f5:*/ iny
-/*unknown_84_85f6:*/ iny
-/*unknown_84_85f7:*/ pea $85ed.w
-/*unknown_84_85fa:*/ jmp ($0012)
-@unknown_84_85fd: sta $7ede1c, X
-/*unknown_84_8601:*/ lda $0002.w, Y
-/*unknown_84_8604:*/ sta $7ede6c, X
-/*unknown_84_8608:*/ tya
-/*unknown_84_8609:*/ clc
-/*unknown_84_860a:*/ adc #$0004.w
-/*unknown_84_860d:*/ sta $1d27.w, X
-/*unknown_84_8610:*/ jsr unknown_84_861e
-/*unknown_84_8613:*/ ldx $1c27.w
-/*unknown_84_8616:*/ jsl unknown_84_8290
-/*unknown_84_861a:*/ jsr unknown_84_8daa
-@unknown_84_861d: rts
+; TODO: "Process PLM" -- P.JBoy
+unknown_84_85da:
+  jsr ($1cd7.w, X)
+  ldx $1c27.w
+  lda var_plm_instruction_timer.l, X
+  dec A
+  sta var_plm_instruction_timer.l, X
+  bne @unknown_84_861d
+  ldy $1d27.w, X
+  lda $0000.w, Y
+  bpl @unknown_84_85fd
+  sta $12
+  iny
+  iny
+  pea $85ed.w
+  jmp ($0012)
+@unknown_84_85fd:
+  sta var_plm_instruction_timer.l, X
+  lda $0002.w, Y
+  sta var_plm_instruction_draw_pointer.l, X
+  tya
+  clc
+  adc #$0004.w
+  sta $1d27.w, X
+  jsr unknown_84_861e
+  ldx $1c27.w
+  jsl unknown_84_8290
+  jsr unknown_84_8daa
+@unknown_84_861d:
+  rts
 
-unknown_84_861e: lda $7ede6c, X
-/*unknown_84_8622:*/ tay
-/*unknown_84_8623:*/ lda $1c87.w, X
-/*unknown_84_8626:*/ sta $12
-/*unknown_84_8628:*/ tax
-@unknown_84_8629: lda $0000.w, Y
-/*unknown_84_862c:*/ bmi @unknown_84_8647
-/*unknown_84_862e:*/ and #$00ff.w
-/*unknown_84_8631:*/ sta $16
-/*unknown_84_8633:*/ iny
-/*unknown_84_8634:*/ iny
-@unknown_84_8635: lda $0000.w, Y
-/*unknown_84_8638:*/ sta $7f0002, X
-/*unknown_84_863c:*/ iny
-/*unknown_84_863d:*/ iny
-/*unknown_84_863e:*/ inx
-/*unknown_84_863f:*/ inx
-/*unknown_84_8640:*/ dec $16
-/*unknown_84_8642:*/ bne @unknown_84_8635
-/*unknown_84_8644:*/ jmp @unknown_84_8664
-@unknown_84_8647: and #$00ff.w
-/*unknown_84_864a:*/ sta $16
-/*unknown_84_864c:*/ iny
-/*unknown_84_864d:*/ iny
-@unknown_84_864e: lda $0000.w, Y
-/*unknown_84_8651:*/ sta $7f0002, X
-/*unknown_84_8655:*/ iny
-/*unknown_84_8656:*/ iny
-/*unknown_84_8657:*/ txa
-/*unknown_84_8658:*/ clc
-/*unknown_84_8659:*/ adc $07a5.w
-/*unknown_84_865c:*/ adc $07a5.w
-/*unknown_84_865f:*/ tax
-/*unknown_84_8660:*/ dec $16
-/*unknown_84_8662:*/ bne @unknown_84_864e
-@unknown_84_8664: lda $0000.w, Y
-/*unknown_84_8667:*/ bne @unknown_84_866a
-/*unknown_84_8669:*/ rts
+; TODO: "Process PLM draw instruction" -- P.JBoy
+unknown_84_861e:
+  lda var_plm_instruction_draw_pointer.l, X
+  tay
+  lda $1c87.w, X
+  sta $12
+  tax
+@unknown_84_8629:
+  lda $0000.w, Y
+  bmi @unknown_84_8647
+  and #$00ff.w
+  sta $16
+  iny
+  iny
+@unknown_84_8635:
+  lda $0000.w, Y
+  sta $7f0002, X
+  iny
+  iny
+  inx
+  inx
+  dec $16
+  bne @unknown_84_8635
+  jmp @unknown_84_8664
+@unknown_84_8647:
+  and #$00ff.w
+  sta $16
+  iny
+  iny
+@unknown_84_864e:
+  lda $0000.w, Y
+  sta $7f0002, X
+  iny
+  iny
+  txa
+  clc
+  adc $07a5.w
+  adc $07a5.w
+  tax
+  dec $16
+  bne @unknown_84_864e
+@unknown_84_8664:
+  lda $0000.w, Y
+  bne @unknown_84_866a
+  rts
 
 @unknown_84_866a: dey
 /*unknown_84_866b:*/ lda $0000.w, Y
@@ -1168,7 +1179,7 @@ unknown_84_8764: lda $1c2d.w
 /*unknown_84_8a23:*/ rts
 
 /*unknown_84_8a24:*/ lda $0000.w, Y
-/*unknown_84_8a27:*/ sta $7edebc, X
+/*unknown_84_8a27:*/ sta var_plm_instruction_list_pointer.l, X
 /*unknown_84_8a2b:*/ iny
 /*unknown_84_8a2c:*/ iny
 /*unknown_84_8a2d:*/ rts
@@ -1176,12 +1187,12 @@ unknown_84_8764: lda $1c2d.w
 /*unknown_84_8a2e:*/ tya
 /*unknown_84_8a2f:*/ inc A
 /*unknown_84_8a30:*/ inc A
-/*unknown_84_8a31:*/ sta $7edebc, X
+/*unknown_84_8a31:*/ sta var_plm_instruction_list_pointer.l, X
 /*unknown_84_8a35:*/ lda $0000.w, Y
 /*unknown_84_8a38:*/ tay
 /*unknown_84_8a39:*/ rts
 
-/*unknown_84_8a3a:*/ lda $7edebc, X
+/*unknown_84_8a3a:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_8a3e:*/ tay
 /*unknown_84_8a3f:*/ rts
 
@@ -1193,7 +1204,7 @@ unknown_84_8764: lda $1c2d.w
 /*unknown_84_8a4e:*/ beq @unknown_84_8a58
 /*unknown_84_8a50:*/ pla
 /*unknown_84_8a51:*/ lda #$0001.w
-/*unknown_84_8a54:*/ sta $7ede1c, X
+/*unknown_84_8a54:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_8a58: rts
 
 /*unknown_84_8a59:*/ lda $0fc6.w
@@ -1204,7 +1215,7 @@ unknown_84_8764: lda $1c2d.w
 /*unknown_84_8a67:*/ beq @unknown_84_8a71
 /*unknown_84_8a69:*/ pla
 /*unknown_84_8a6a:*/ lda #$0001.w
-/*unknown_84_8a6d:*/ sta $7ede1c, X
+/*unknown_84_8a6d:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_8a71: rts
 
 /*unknown_84_8a72:*/ phx
@@ -1303,9 +1314,9 @@ unknown_84_8764: lda $1c2d.w
 /*unknown_84_8b32:*/ ply
 /*unknown_84_8b33:*/ plx
 /*unknown_84_8b34:*/ lda #$0001.w
-/*unknown_84_8b37:*/ sta $7ede1c, X
+/*unknown_84_8b37:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_8b3b:*/ lda #$1e67.w
-/*unknown_84_8b3e:*/ sta $7ede6c, X
+/*unknown_84_8b3e:*/ sta var_plm_instruction_draw_pointer.l, X
 /*unknown_84_8b42:*/ tya
 /*unknown_84_8b43:*/ sta $1d27.w, X
 /*unknown_84_8b46:*/ jsr unknown_84_861e
@@ -1626,7 +1637,7 @@ unknown_84_8daa: rep #$30
 /*unknown_84_8daf:*/ sta $09
 /*unknown_84_8db1:*/ lda #$53e0.w
 /*unknown_84_8db4:*/ sta $0c
-/*unknown_84_8db6:*/ lda $7ede6c, X
+/*unknown_84_8db6:*/ lda var_plm_instruction_draw_pointer.l, X
 /*unknown_84_8dba:*/ tay
 unknown_84_8dbb: lda $1c29.w
 /*unknown_84_8dbe:*/ sta $1e
@@ -5229,7 +5240,7 @@ unknown_84_9220: ora $1c
 /*unknown_84_ab26:*/ stx $60
 /*unknown_84_ab28:*/ tyx
 /*unknown_84_ab29:*/ lda #$0040.w
-/*unknown_84_ab2c:*/ sta $7ede1c, X
+/*unknown_84_ab2c:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_ab30:*/ rts
 
 /*unknown_84_ab31:*/ lsr $0987.w
@@ -5960,10 +5971,10 @@ unknown_84_9220: ora $1c
 /*unknown_84_b164:*/ ora #$000b.w
 /*unknown_84_b167:*/ cmp $0afa.w
 /*unknown_84_b16a:*/ bne @unknown_84_b183
-/*unknown_84_b16c:*/ lda $7edebc, X
+/*unknown_84_b16c:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_b170:*/ sta $1d27.w, X
 /*unknown_84_b173:*/ lda #$0001.w
-/*unknown_84_b176:*/ sta $7ede1c, X
+/*unknown_84_b176:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_b17a:*/ lda #$0006.w
 /*unknown_84_b17d:*/ jsl unknown_90_f084
 /*unknown_84_b181:*/ sec
@@ -6215,7 +6226,7 @@ unknown_84_9220: ora $1c
 /*unknown_84_b3b3:*/ inc $1d27.w, X
 /*unknown_84_b3b6:*/ inc $1d27.w, X
 /*unknown_84_b3b9:*/ lda #$0001.w
-/*unknown_84_b3bc:*/ sta $7ede1c, X
+/*unknown_84_b3bc:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_b3c0: rts
 
 /*unknown_84_b3c1:*/ ldx $1c87.w, Y
@@ -6483,7 +6494,7 @@ unknown_84_9220: ora $1c
 @unknown_84_b5df: inc $1d27.w, X
 /*unknown_84_b5e2:*/ inc $1d27.w, X
 /*unknown_84_b5e5:*/ lda #$0001.w
-@unknown_84_b5e8: sta $7ede1c, X
+@unknown_84_b5e8: sta var_plm_instruction_timer.l, X
 @unknown_84_b5ec: sec
 /*unknown_84_b5ed:*/ rts
 
@@ -6735,7 +6746,7 @@ unknown_84_9220: ora $1c
 /*unknown_84_b80f:*/ lda #$ff80.w
 /*unknown_84_b812:*/ sta $197c.w
 /*unknown_84_b815:*/ lda #$0001.w
-/*unknown_84_b818:*/ sta $7ede1c, X
+/*unknown_84_b818:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_b81c:*/ inc $1d27.w, X
 /*unknown_84_b81f:*/ inc $1d27.w, X
 /*unknown_84_b822:*/ stz $1d77.w, X
@@ -6749,7 +6760,7 @@ unknown_84_9220: ora $1c
 /*unknown_84_b830:*/ bcc @unknown_84_b845
 /*unknown_84_b832:*/ lda #$0001.w
 /*unknown_84_b835:*/ sta $1980.w
-/*unknown_84_b838:*/ sta $7ede1c, X
+/*unknown_84_b838:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_b83c:*/ inc $1d27.w, X
 /*unknown_84_b83f:*/ inc $1d27.w, X
 /*unknown_84_b842:*/ stz $1d77.w, X
@@ -6846,7 +6857,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_b90b:*/ inc $1d27.w, X
 /*unknown_84_b90e:*/ inc $1d27.w, X
 /*unknown_84_b911:*/ lda #$0001.w
-/*unknown_84_b914:*/ sta $7ede1c, X
+/*unknown_84_b914:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_b918: rts
 
 /*unknown_84_b919:*/ cmp ($86, X)
@@ -7122,7 +7133,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bb57:*/ inc $1d27.w, X
 /*unknown_84_bb5a:*/ inc $1d27.w, X
 /*unknown_84_bb5d:*/ lda #$0001.w
-/*unknown_84_bb60:*/ sta $7ede1c, X
+/*unknown_84_bb60:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bb64:*/ lda #$bb6a.w
 /*unknown_84_bb67:*/ sta $1cd7.w, X
 @unknown_84_bb6a: rts
@@ -7149,7 +7160,7 @@ unknown_84_b8fd: lda $12
 @unknown_84_bb90: inc $1d27.w, X
 /*unknown_84_bb93:*/ inc $1d27.w, X
 /*unknown_84_bb96:*/ lda #$0001.w
-/*unknown_84_bb99:*/ sta $7ede1c, X
+/*unknown_84_bb99:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bb9d:*/ lda #$bba3.w
 /*unknown_84_bba0:*/ sta $1cd7.w, X
 @unknown_84_bba3: rts
@@ -7176,7 +7187,7 @@ unknown_84_b8fd: lda $12
 @unknown_84_bbc9: inc $1d27.w, X
 /*unknown_84_bbcc:*/ inc $1d27.w, X
 /*unknown_84_bbcf:*/ lda #$0001.w
-/*unknown_84_bbd2:*/ sta $7ede1c, X
+/*unknown_84_bbd2:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bbd6:*/ lda #$bbdc.w
 /*unknown_84_bbd9:*/ sta $1cd7.w, X
 @unknown_84_bbdc: rts
@@ -7346,10 +7357,10 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bd10:*/ adc [$1d], Y
 /*unknown_84_bd12:*/ beq @unknown_84_bd25
 /*unknown_84_bd14:*/ stz $1d77.w, X
-/*unknown_84_bd17:*/ lda $7edebc, X
+/*unknown_84_bd17:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_bd1b:*/ sta $1d27.w, X
 /*unknown_84_bd1e:*/ lda #$0001.w
-/*unknown_84_bd21:*/ sta $7ede1c, X
+/*unknown_84_bd21:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_bd25: rts
 
 /*unknown_84_bd26:*/ lda $1d77.w, X
@@ -7358,10 +7369,10 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bd2e:*/ cmp #$0300.w
 /*unknown_84_bd31:*/ bne @unknown_84_bd45
 /*unknown_84_bd33:*/ stz $1d77.w, X
-/*unknown_84_bd36:*/ lda $7edebc, X
+/*unknown_84_bd36:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_bd3a:*/ sta $1d27.w, X
 /*unknown_84_bd3d:*/ lda #$0001.w
-/*unknown_84_bd40:*/ sta $7ede1c, X
+/*unknown_84_bd40:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bd44:*/ rts
 
 @unknown_84_bd45: lda #$0057.w
@@ -7377,10 +7388,10 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bd5d:*/ cmp #$0100.w
 /*unknown_84_bd60:*/ bne @unknown_84_bd74
 @unknown_84_bd62: stz $1d77.w, X
-/*unknown_84_bd65:*/ lda $7edebc, X
+/*unknown_84_bd65:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_bd69:*/ sta $1d27.w, X
 /*unknown_84_bd6c:*/ lda #$0001.w
-/*unknown_84_bd6f:*/ sta $7ede1c, X
+/*unknown_84_bd6f:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bd73:*/ rts
 
 @unknown_84_bd74: lda #$0057.w
@@ -7397,10 +7408,10 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bd90:*/ cmp #$0200.w
 /*unknown_84_bd93:*/ bne @unknown_84_bda7
 /*unknown_84_bd95:*/ stz $1d77.w, X
-/*unknown_84_bd98:*/ lda $7edebc, X
+/*unknown_84_bd98:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_bd9c:*/ sta $1d27.w, X
 /*unknown_84_bd9f:*/ lda #$0001.w
-/*unknown_84_bda2:*/ sta $7ede1c, X
+/*unknown_84_bda2:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bda6:*/ rts
 
 @unknown_84_bda7: lda #$0057.w
@@ -7409,10 +7420,10 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bdb1:*/ rts
 
 @unknown_84_bdb2: stz $1d77.w, X
-/*unknown_84_bdb5:*/ lda $7edebc, X
+/*unknown_84_bdb5:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_bdb9:*/ sta $1d27.w, X
 /*unknown_84_bdbc:*/ lda #$0001.w
-/*unknown_84_bdbf:*/ sta $7ede1c, X
+/*unknown_84_bdbf:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_bdc3:*/ rts
 
 @unknown_84_bdc4: lda $1d77.w, X
@@ -9392,7 +9403,7 @@ unknown_84_c6a9: lda $7f6402, X
 /*unknown_84_ce55:*/ sta $7f0002, X
 /*unknown_84_ce59:*/ tyx
 /*unknown_84_ce5a:*/ lda #$0004.w
-/*unknown_84_ce5d:*/ sta $7ede1c, X
+/*unknown_84_ce5d:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_ce61:*/ sec
 /*unknown_84_ce62:*/ rts
 
@@ -9971,7 +9982,7 @@ unknown_84_d331: phy
 /*unknown_84_d33e:*/ and #$1000.w
 /*unknown_84_d341:*/ beq @unknown_84_d356
 /*unknown_84_d343:*/ lda #$0001.w
-/*unknown_84_d346:*/ sta $7ede1c, X
+/*unknown_84_d346:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_d34a:*/ inc $1d27.w, X
 /*unknown_84_d34d:*/ inc $1d27.w, X
 /*unknown_84_d350:*/ lda #$d356.w
@@ -10073,10 +10084,10 @@ unknown_84_d331: phy
 /*unknown_84_d40c:*/ and #$0f00.w
 /*unknown_84_d40f:*/ cmp #$0500.w
 /*unknown_84_d412:*/ bne @unknown_84_d422
-/*unknown_84_d414:*/ lda $7edebc, X
+/*unknown_84_d414:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_d418:*/ sta $1d27.w, X
 /*unknown_84_d41b:*/ lda #$0001.w
-/*unknown_84_d41e:*/ sta $7ede1c, X
+/*unknown_84_d41e:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_d422: stz $1d77.w, X
 /*unknown_84_d425:*/ rts
 
@@ -10163,7 +10174,7 @@ unknown_84_d331: phy
 /*unknown_84_d4c1:*/ and #$c3c0.w
 /*unknown_84_d4c4:*/ beq @unknown_84_d4d3
 /*unknown_84_d4c6:*/ lda #$0001.w
-/*unknown_84_d4c9:*/ sta $7ede1c, X
+/*unknown_84_d4c9:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_d4cd:*/ inc $1d27.w, X
 /*unknown_84_d4d0:*/ inc $1d27.w, X
 @unknown_84_d4d3: rts
@@ -10441,10 +10452,10 @@ unknown_84_d331: phy
 @unknown_84_d73d: cmp #$0004.w
 /*unknown_84_d740:*/ beq @unknown_84_d744
 /*unknown_84_d742:*/ bcs @unknown_84_d752
-@unknown_84_d744: lda $7edebc, X
+@unknown_84_d744: lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_d748:*/ sta $1d27.w, X
 /*unknown_84_d74b:*/ lda #$0001.w
-/*unknown_84_d74e:*/ sta $7ede1c, X
+/*unknown_84_d74e:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_d752: rts
 
 /*unknown_84_d753:*/ txy
@@ -10456,10 +10467,10 @@ unknown_84_d331: phy
 /*unknown_84_d764:*/ tyx
 /*unknown_84_d765:*/ lda #$d779.w
 /*unknown_84_d768:*/ sta $1cd7.w, X
-/*unknown_84_d76b:*/ lda $7edebc, X
+/*unknown_84_d76b:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_d76f:*/ sta $1d27.w, X
 /*unknown_84_d772:*/ lda #$0001.w
-/*unknown_84_d775:*/ sta $7ede1c, X
+/*unknown_84_d775:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_d779: rts
 
 /*unknown_84_d77a:*/ lda $0000.w, Y
@@ -10964,10 +10975,10 @@ unknown_84_d331: phy
 /*unknown_84_db6f:*/ cmp #$0100.w
 /*unknown_84_db72:*/ bne @unknown_84_db85
 @unknown_84_db74: stz $1d77.w, X
-/*unknown_84_db77:*/ lda $7edebc, X
+/*unknown_84_db77:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_db7b:*/ sta $1d27.w, X
 /*unknown_84_db7e:*/ lda #$0001.w
-/*unknown_84_db81:*/ sta $7ede1c, X
+/*unknown_84_db81:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_db85: rts
 
 @unknown_84_db86: lda #$0077.w
@@ -11422,10 +11433,10 @@ unknown_84_d331: phy
 /*unknown_84_df92:*/ bne @unknown_84_dfa8
 /*unknown_84_df94:*/ lda #$dfa8.w
 /*unknown_84_df97:*/ sta $1cd7.w, X
-/*unknown_84_df9a:*/ lda $7edebc, X
+/*unknown_84_df9a:*/ lda var_plm_instruction_list_pointer.l, X
 /*unknown_84_df9e:*/ sta $1d27.w, X
 /*unknown_84_dfa1:*/ lda #$0001.w
-/*unknown_84_dfa4:*/ sta $7ede1c, X
+/*unknown_84_dfa4:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_dfa8: rts
 
 /*unknown_84_dfa9:*/ ora ($00, X)
@@ -11463,7 +11474,7 @@ unknown_84_d331: phy
 /*unknown_84_dff9:*/ inc $1d27.w, X
 /*unknown_84_dffc:*/ inc $1d27.w, X
 /*unknown_84_dfff:*/ lda #$0001.w
-/*unknown_84_e002:*/ sta $7ede1c, X
+/*unknown_84_e002:*/ sta var_plm_instruction_timer.l, X
 @unknown_84_e006: rts
 
 /*unknown_84_e007:*/ cmp ($86, X)
@@ -11511,7 +11522,7 @@ unknown_84_d331: phy
 /*unknown_84_e050:*/ lda $7edf0c, X
 /*unknown_84_e054:*/ tay
 /*unknown_84_e055:*/ lda $e05f.w, Y
-/*unknown_84_e058:*/ sta $7ede6c, X
+/*unknown_84_e058:*/ sta var_plm_instruction_draw_pointer.l, X
 /*unknown_84_e05c:*/ ply
 /*unknown_84_e05d:*/ bra $20 ; $e07f.w
 /*unknown_84_e05f:*/ ora $a31ba3
@@ -11521,7 +11532,7 @@ unknown_84_d331: phy
 /*unknown_84_e068:*/ lda $7edf0c, X
 /*unknown_84_e06c:*/ tay
 /*unknown_84_e06d:*/ lda $e077.w, Y
-/*unknown_84_e070:*/ sta $7ede6c, X
+/*unknown_84_e070:*/ sta var_plm_instruction_draw_pointer.l, X
 /*unknown_84_e074:*/ ply
 /*unknown_84_e075:*/ bra $08 ; $e07f.w
 /*unknown_84_e077:*/ ora $a3, X
@@ -11529,7 +11540,7 @@ unknown_84_d331: phy
 /*unknown_84_e07b:*/ and $39a3.w
 /*unknown_84_e07e:*/ lda $a9, S
 /*unknown_84_e080:*/ tsb $00
-/*unknown_84_e082:*/ sta $7ede1c, X
+/*unknown_84_e082:*/ sta var_plm_instruction_timer.l, X
 /*unknown_84_e086:*/ tya
 /*unknown_84_e087:*/ sta $1d27.w, X
 /*unknown_84_e08a:*/ jsr unknown_84_861e
