@@ -739,6 +739,11 @@ var_unknown_18c0: dsb unknown_18b4_count ; $7e18c0
 var_unknown_18d8: dsb unknown_18b4_count ; $7e18d8
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $1c2d) export
+var_plm_item_graphics_index: dw ; $7e1c2d
+var_plm_item_graphics_pointers: dsw 3 ; $7e1c2f
+.ende
+
 .define unknown_1ef5_count 6
 .export unknown_1ef5_count
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $1ef1) export

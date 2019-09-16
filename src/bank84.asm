@@ -82,10 +82,10 @@ unknown_84_8232:
   rep #$30
   phk
   plb
-  stz $1c2d.w
+  stz var_plm_item_graphics_index.w
   ldx #$0000.w
 @unknown_84_823e: phx
-  ldy $1c2f.w, X
+  ldy var_plm_item_graphics_pointers.w, X
   jsr unknown_84_8764
   plx
   inx
@@ -328,7 +328,7 @@ unknown_84_83c3:
   dex
   dex
   bpl @unknown_84_83ca
-  stz $1c2d.w
+  stz var_plm_item_graphics_index.w
   plx
   plp
   rtl
@@ -858,13 +858,13 @@ unknown_84_8721: jmp [$0012]
 
 /*unknown_84_8763:*/ rts
 
-unknown_84_8764: lda $1c2d.w
+unknown_84_8764: lda var_plm_item_graphics_index.w
 /*unknown_84_8767:*/ sta $7edf0c, X
 /*unknown_84_876b:*/ tax
 /*unknown_84_876c:*/ inc A
 /*unknown_84_876d:*/ inc A
 /*unknown_84_876e:*/ and #$0006.w
-/*unknown_84_8771:*/ sta $1c2d.w
+/*unknown_84_8771:*/ sta var_plm_item_graphics_index.w
 /*unknown_84_8774:*/ lda $87cd.w, X
 /*unknown_84_8777:*/ sta $12
 /*unknown_84_8779:*/ lda $87d5.w, X
@@ -872,7 +872,7 @@ unknown_84_8764: lda $1c2d.w
 /*unknown_84_877e:*/ lda $87dd.w, X
 /*unknown_84_8781:*/ sta $16
 /*unknown_84_8783:*/ tya
-/*unknown_84_8784:*/ sta $1c2f.w, X
+/*unknown_84_8784:*/ sta var_plm_item_graphics_pointers.w, X
 /*unknown_84_8787:*/ ldx $0330.w
 /*unknown_84_878a:*/ lda #$0100.w
 /*unknown_84_878d:*/ sta $d0, X
