@@ -739,7 +739,12 @@ var_unknown_18c0: dsb unknown_18b4_count ; $7e18c0
 var_unknown_18d8: dsb unknown_18b4_count ; $7e18d8
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $1c2d) export
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $1c25) export
+var_unknown_1c25: dw ; 7e1c25
+var_plm_current_index: dw ; $7e1c27
+var_plm_calculated_position_x: dw ; 7e1c29
+var_plm_calculated_position_y: dw ; 7e1c2b
 var_plm_item_graphics_index: dw ; $7e1c2d
 var_plm_item_graphics_pointers: dsw 3 ; $7e1c2f
 .ende
