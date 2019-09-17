@@ -708,712 +708,850 @@ unknown_84_861e:
   lda $0000.w, Y
   bne @unknown_84_866a
   rts
+@unknown_84_866a:
+  dey
+  lda $0000.w, Y
+  xba
+  bpl @unknown_84_8676
+  ora #$ff00.w
+  bra @unknown_84_8679
+@unknown_84_8676:
+  and #$00ff.w
+@unknown_84_8679:
+  asl A
+  clc
+  adc $12
+  sta $14
+  lda $0001.w, Y
+  xba
+  bpl @unknown_84_8699
+  ora #$ff00.w
+  eor #$ffff.w
+  inc A
+  tax
+  lda #$0000.w
+@unknown_84_8690:
+  sec
+  sbc $07a5.w
+  dex
+  bne @unknown_84_8690
+  bra @unknown_84_86a9
+@unknown_84_8699:
+  and #$00ff.w
+  beq @unknown_84_86a9
+  tax
+  lda #$0000.w
+@unknown_84_86a2:
+  clc
+  adc $07a5.w
+  dex
+  bne @unknown_84_86a2
+@unknown_84_86a9:
+  asl A
+  clc
+  adc $14
+  tax
+  iny
+  iny
+  iny
+  jmp @unknown_84_8629
 
-@unknown_84_866a: dey
-/*unknown_84_866b:*/ lda $0000.w, Y
-/*unknown_84_866e:*/ xba
-/*unknown_84_866f:*/ bpl @unknown_84_8676
-/*unknown_84_8671:*/ ora #$ff00.w
-/*unknown_84_8674:*/ bra @unknown_84_8679
-@unknown_84_8676: and #$00ff.w
-@unknown_84_8679: asl A
-/*unknown_84_867a:*/ clc
-/*unknown_84_867b:*/ adc $12
-/*unknown_84_867d:*/ sta $14
-/*unknown_84_867f:*/ lda $0001.w, Y
-/*unknown_84_8682:*/ xba
-/*unknown_84_8683:*/ bpl @unknown_84_8699
-/*unknown_84_8685:*/ ora #$ff00.w
-/*unknown_84_8688:*/ eor #$ffff.w
-/*unknown_84_868b:*/ inc A
-/*unknown_84_868c:*/ tax
-/*unknown_84_868d:*/ lda #$0000.w
-@unknown_84_8690: sec
-/*unknown_84_8691:*/ sbc $07a5.w
-/*unknown_84_8694:*/ dex
-/*unknown_84_8695:*/ bne @unknown_84_8690
-/*unknown_84_8697:*/ bra @unknown_84_86a9
-@unknown_84_8699: and #$00ff.w
-/*unknown_84_869c:*/ beq @unknown_84_86a9
-/*unknown_84_869e:*/ tax
-/*unknown_84_869f:*/ lda #$0000.w
-@unknown_84_86a2: clc
-/*unknown_84_86a3:*/ adc $07a5.w
-/*unknown_84_86a6:*/ dex
-/*unknown_84_86a7:*/ bne @unknown_84_86a2
-@unknown_84_86a9: asl A
-/*unknown_84_86aa:*/ clc
-/*unknown_84_86ab:*/ adc $14
-/*unknown_84_86ad:*/ tax
-/*unknown_84_86ae:*/ iny
-/*unknown_84_86af:*/ iny
-/*unknown_84_86b0:*/ iny
-/*unknown_84_86b1:*/ jmp @unknown_84_8629
-/*unknown_84_86b4:*/ dey
-/*unknown_84_86b5:*/ dey
-/*unknown_84_86b6:*/ tya
-/*unknown_84_86b7:*/ sta $1d27.w, X
-/*unknown_84_86ba:*/ pla
-/*unknown_84_86bb:*/ rts
+; TODO: "Instruction - sleep" -- P.JBoy
+unknown_84_86b4:
+  dey
+  dey
+  tya
+  sta $1d27.w, X
+  pla
+  rts
 
-/*unknown_84_86bc:*/ stz $1c37.w, X
-/*unknown_84_86bf:*/ pla
-/*unknown_84_86c0:*/ rts
+; TODO: "Instruction - delete" -- P.JBoy
+unknown_84_86bc:
+  stz $1c37.w, X
+  pla
+  rts
 
-/*unknown_84_86c1:*/ lda $0000.w, Y
-/*unknown_84_86c4:*/ sta $1cd7.w, X
-/*unknown_84_86c7:*/ iny
-/*unknown_84_86c8:*/ iny
-/*unknown_84_86c9:*/ rts
+; TODO: "Instruction - pre-instruction" -- P.JBoy
+unknown_84_86c1:
+  lda $0000.w, Y
+  sta $1cd7.w, X
+  iny
+  iny
+  rts
 
-/*unknown_84_86ca:*/ lda #$86d0.w
-/*unknown_84_86cd:*/ sta $1cd7.w, X
-/*unknown_84_86d0:*/ rts
+; TODO: "Instruction - clear pre-instruction" -- P.JBoy
+unknown_84_86ca:
+  lda #$86d0.w
+  sta $1cd7.w, X
+  rts
 
-/*unknown_84_86d1:*/ lda $0000.w, Y
-/*unknown_84_86d4:*/ sta $12
-/*unknown_84_86d6:*/ lda $0001.w, Y
-/*unknown_84_86d9:*/ sta $13
-/*unknown_84_86db:*/ phy
-unknown_84_86dc: jsl unknown_84_86e8
-/*unknown_84_86e0:*/ ply
-/*unknown_84_86e1:*/ ldx $1c27.w
-/*unknown_84_86e4:*/ iny
-/*unknown_84_86e5:*/ iny
-/*unknown_84_86e6:*/ iny
-/*unknown_84_86e7:*/ rts
+; TODO: "Unused. Instruction - call function" -- P.JBoy
+unknown_84_86d1:
+  lda $0000.w, Y
+  sta $12
+  lda $0001.w, Y
+  sta $13
+  phy
+  jsl @unknown_84_86e8
+  ply
+  ldx $1c27.w
+  iny
+  iny
+  iny
+  rts
+@unknown_84_86e8:
+  jmp [$0012]
 
-unknown_84_86e8: jmp [$0012]
-/*unknown_84_86eb:*/ lda $0000.w, Y
-/*unknown_84_86ee:*/ sta $12
-/*unknown_84_86f0:*/ lda $0001.w, Y
-/*unknown_84_86f3:*/ sta $13
-/*unknown_84_86f5:*/ lda $0003.w, Y
-/*unknown_84_86f8:*/ phy
-/*unknown_84_86f9:*/ jsl unknown_84_8708
-/*unknown_84_86fd:*/ ply
-/*unknown_84_86fe:*/ ldx $1c27.w
-/*unknown_84_8701:*/ tya
-/*unknown_84_8702:*/ clc
-/*unknown_84_8703:*/ adc #$0005.w
-/*unknown_84_8706:*/ tay
-/*unknown_84_8707:*/ rts
+; TODO: "Unused. Instruction - call function [[Y]] with A = [[Y] + 3]" -- P.JBoy
+unknown_84_86eb:
+  lda $0000.w, Y
+  sta $12
+  lda $0001.w, Y
+  sta $13
+  lda $0003.w, Y
+  phy
+  jsl @unknown_84_8708
+  ply
+  ldx $1c27.w
+  tya
+  clc
+  adc #$0005.w
+  tay
+  rts
+@unknown_84_8708:
+  jmp [$0012]
 
-unknown_84_8708: jmp [$0012]
-/*unknown_84_870b:*/ lda $0000.w, Y
-/*unknown_84_870e:*/ sta $12
-/*unknown_84_8710:*/ lda $0001.w, Y
-/*unknown_84_8713:*/ sta $13
-/*unknown_84_8715:*/ phx
-/*unknown_84_8716:*/ phy
-/*unknown_84_8717:*/ jsl unknown_84_8721
-/*unknown_84_871b:*/ ply
-/*unknown_84_871c:*/ plx
-/*unknown_84_871d:*/ iny
-/*unknown_84_871e:*/ iny
-/*unknown_84_871f:*/ iny
-/*unknown_84_8720:*/ rts
+; TODO: "Instruction - call function [[Y]]" -- P.JBoy
+unknown_84_870b:
+  lda $0000.w, Y
+  sta $12
+  lda $0001.w, Y
+  sta $13
+  phx
+  phy
+  jsl @unknown_84_8721
+  ply
+  plx
+  iny
+  iny
+  iny
+  rts
+@unknown_84_8721:
+  jmp [$0012]
 
-unknown_84_8721: jmp [$0012]
-@unknown_84_8724: lda $0000.w, Y
-/*unknown_84_8727:*/ tay
-/*unknown_84_8728:*/ rts
+; TODO: "Instruction - go to [[Y]]" -- P.JBoy
+unknown_84_8724:
+  lda $0000.w, Y
+  tay
+  rts
 
-@unknown_84_8729: sty $12
-/*unknown_84_872b:*/ dey
-/*unknown_84_872c:*/ lda $0000.w, Y
-/*unknown_84_872f:*/ xba
-/*unknown_84_8730:*/ bmi @unknown_84_8737
-/*unknown_84_8732:*/ and #$00ff.w
-/*unknown_84_8735:*/ bra @unknown_84_873a
-@unknown_84_8737: ora #$ff00.w
-@unknown_84_873a: clc
-/*unknown_84_873b:*/ adc $12
-/*unknown_84_873d:*/ tay
-/*unknown_84_873e:*/ rts
+; TODO: "Unused. Instruction - go to [Y] + +/-[[Y]]" -- P.JBoy
+unknown_84_8729:
+  sty $12
+  dey
+  lda $0000.w, Y
+  xba
+  bmi @unknown_84_8737
+  and #$00ff.w
+  bra @unknown_84_873a
+@unknown_84_8737:
+  ora #$ff00.w
+@unknown_84_873a:
+  clc
+  adc $12
+  tay
+  rts
 
-/*unknown_84_873f:*/ dec $1d77.w, X
-/*unknown_84_8742:*/ bne @unknown_84_8724
-/*unknown_84_8744:*/ iny
-/*unknown_84_8745:*/ iny
-/*unknown_84_8746:*/ rts
+; TODO: "Instruction - decrement timer and go to [[Y]] if non-zero" -- P.JBoy
+unknown_84_873f:
+  dec $1d77.w, X
+  bne unknown_84_8724
+  iny
+  iny
+  rts
 
-/*unknown_84_8747:*/ dec $1d77.w, X
-/*unknown_84_874a:*/ bne @unknown_84_8729
-/*unknown_84_874c:*/ iny
-/*unknown_84_874d:*/ rts
+; TODO: "Unused. Instruction - decrement timer and go to [Y] + +/-[[Y]] if 
+; non-zero" -- P.JBoy
+unknown_84_8747:
+  dec $1d77.w, X
+  bne unknown_84_8729
+  iny
+  rts
 
-/*unknown_84_874e:*/ sep #$20
-/*unknown_84_8750:*/ lda $0000.w, Y
-/*unknown_84_8753:*/ sta $1d77.w, X
-/*unknown_84_8756:*/ rep #$20
-/*unknown_84_8758:*/ iny
-/*unknown_84_8759:*/ rts
+; TODO: "Instruction - timer = [[Y]] (8-bit)" -- P.JBoy
+unknown_84_874e:
+  sep #$20
+  lda $0000.w, Y
+  sta $1d77.w, X
+  rep #$20
+  iny
+  rts
 
-/*unknown_84_875a:*/ lda $0000.w, Y
-/*unknown_84_875d:*/ sta $1d77.w, X
-/*unknown_84_8760:*/ iny
-/*unknown_84_8761:*/ iny
-/*unknown_84_8762:*/ rts
+; TODO: "Unused. Instruction - timer = [[Y]] (16-bit)" -- P.JBoy
+unknown_84_875a:
+  lda $0000.w, Y
+  sta $1d77.w, X
+  iny
+  iny
+  rts
 
-/*unknown_84_8763:*/ rts
+unknown_84_8763:
+  rts
 
-unknown_84_8764: lda var_plm_item_graphics_index.w
-/*unknown_84_8767:*/ sta $7edf0c, X
-/*unknown_84_876b:*/ tax
-/*unknown_84_876c:*/ inc A
-/*unknown_84_876d:*/ inc A
-/*unknown_84_876e:*/ and #$0006.w
-/*unknown_84_8771:*/ sta var_plm_item_graphics_index.w
-/*unknown_84_8774:*/ lda $87cd.w, X
-/*unknown_84_8777:*/ sta $12
-/*unknown_84_8779:*/ lda $87d5.w, X
-/*unknown_84_877c:*/ sta $14
-/*unknown_84_877e:*/ lda $87dd.w, X
-/*unknown_84_8781:*/ sta $16
-/*unknown_84_8783:*/ tya
-/*unknown_84_8784:*/ sta var_plm_item_graphics_pointers.w, X
-/*unknown_84_8787:*/ ldx $0330.w
-/*unknown_84_878a:*/ lda #$0100.w
-/*unknown_84_878d:*/ sta $d0, X
-/*unknown_84_878f:*/ lda $0000.w, Y
-/*unknown_84_8792:*/ sta $d2, X
-/*unknown_84_8794:*/ lda #$0089.w
-/*unknown_84_8797:*/ sta $d4, X
-/*unknown_84_8799:*/ lda $12
-/*unknown_84_879b:*/ sta $d5, X
-/*unknown_84_879d:*/ txa
-/*unknown_84_879e:*/ clc
-/*unknown_84_879f:*/ adc #$0007.w
-/*unknown_84_87a2:*/ sta $0330.w
-/*unknown_84_87a5:*/ iny
-/*unknown_84_87a6:*/ iny
-/*unknown_84_87a7:*/ ldx $14
-/*unknown_84_87a9:*/ txa
-/*unknown_84_87aa:*/ clc
-/*unknown_84_87ab:*/ adc #$0010.w
-/*unknown_84_87ae:*/ sta $18
-@unknown_84_87b0: lda $0000.w, Y
-/*unknown_84_87b3:*/ and #$00ff.w
-/*unknown_84_87b6:*/ xba
-/*unknown_84_87b7:*/ asl A
-/*unknown_84_87b8:*/ asl A
-/*unknown_84_87b9:*/ clc
-/*unknown_84_87ba:*/ adc $16
-/*unknown_84_87bc:*/ sta $7ea000, X
-/*unknown_84_87c0:*/ inc $16
-/*unknown_84_87c2:*/ iny
-/*unknown_84_87c3:*/ inx
-/*unknown_84_87c4:*/ inx
-/*unknown_84_87c5:*/ cpx $18
-/*unknown_84_87c7:*/ bne @unknown_84_87b0
-/*unknown_84_87c9:*/ ldx $1c27.w
-/*unknown_84_87cc:*/ rts
+; TODO: "Instruction - load item PLM GFX" -- P.JBoy
+unknown_84_8764:
+  lda var_plm_item_graphics_index.w
+  sta $7edf0c, X
+  tax
+  inc A
+  inc A
+  and #$0006.w
+  sta var_plm_item_graphics_index.w
+  lda unknown_84_87cd.w, X
+  sta $12
+  lda unknown_84_87d5.w, X
+  sta $14
+  lda unknown_84_87dd.w, X
+  sta $16
+  tya
+  sta var_plm_item_graphics_pointers.w, X
+  ldx $0330.w
+  lda #$0100.w
+  sta $d0, X
+  lda $0000.w, Y
+  sta $d2, X
+  lda #$0089.w
+  sta $d4, X
+  lda $12
+  sta $d5, X
+  txa
+  clc
+  adc #$0007.w
+  sta $0330.w
+  iny
+  iny
+  ldx $14
+  txa
+  clc
+  adc #$0010.w
+  sta $18
+@unknown_84_87b0:
+  lda $0000.w, Y
+  and #$00ff.w
+  xba
+  asl A
+  asl A
+  clc
+  adc $16
+  sta $7ea000, X
+  inc $16
+  iny
+  inx
+  inx
+  cpx $18
+  bne @unknown_84_87b0
+  ldx $1c27.w
+  rts
 
-/*unknown_84_87cd:*/ brk $3e
-/*unknown_84_87cf:*/ bra $3e ; $880f.w
-/*unknown_84_87d1:*/ brk $3f
-/*unknown_84_87d3:*/ bra $3f ; $8814.w
-/*unknown_84_87d5:*/ bvs @unknown_84_87db
-/*unknown_84_87d7:*/ bra $04 ; $87dd.w
-/*unknown_84_87d9:*/ bcc $04 ; $87df.w
-@unknown_84_87db: ldy #$e004.w
-/*unknown_84_87de:*/ ora $e8, S
-/*unknown_84_87e0:*/ ora $f0, S
-/*unknown_84_87e2:*/ ora $f8, S
-/*unknown_84_87e4:*/ ora $ae, S
-/*unknown_84_87e6:*/ bmi @unknown_84_87eb
-/*unknown_84_87e8:*/ lda $0000.w, Y
-@unknown_84_87eb: sta $d0, X
-/*unknown_84_87ed:*/ lda $0002.w, Y
-/*unknown_84_87f0:*/ sta $d2, X
-/*unknown_84_87f2:*/ lda $0003.w, Y
-/*unknown_84_87f5:*/ sta $d3, X
-/*unknown_84_87f7:*/ lda $0005.w, Y
-/*unknown_84_87fa:*/ sta $d5, X
-/*unknown_84_87fc:*/ txa
-/*unknown_84_87fd:*/ clc
-/*unknown_84_87fe:*/ adc #$0007.w
-/*unknown_84_8801:*/ sta $0330.w
-/*unknown_84_8804:*/ tya
-/*unknown_84_8805:*/ clc
-/*unknown_84_8806:*/ adc #$0007.w
-/*unknown_84_8809:*/ tay
-/*unknown_84_880a:*/ ldx $1c27.w
-/*unknown_84_880d:*/ rts
+; TODO: "VRAM addresses" -- P.JBoy
+unknown_84_87cd:
+  .dw $3e00, $3e80, $3f00, $3f80
 
-/*unknown_84_880e:*/ lda $0000.w, Y
-/*unknown_84_8811:*/ iny
-/*unknown_84_8812:*/ and #$00ff.w
-/*unknown_84_8815:*/ jsl unknown_80_81dc
-/*unknown_84_8819:*/ bcc @unknown_84_881e
-/*unknown_84_881b:*/ jmp $8724.w
-@unknown_84_881e: iny
-/*unknown_84_881f:*/ iny
-/*unknown_84_8820:*/ rts
+; TODO: "Tile data offsets" -- P.JBoy
+unknown_84_87d5:
+  .dw $0470, $0480, $0490, $04a0
 
-/*unknown_84_8821:*/ lda $0000.w, Y
-/*unknown_84_8824:*/ and #$00ff.w
-/*unknown_84_8827:*/ jsl unknown_80_81a6
-/*unknown_84_882b:*/ iny
-/*unknown_84_882c:*/ rts
+; TODO: "Starting tile numbers" -- P.JBoy
+unknown_84_87dd:
+  .dw $03e0, $03e8, $03f0, $03f8
 
-/*unknown_84_882d:*/ lda $0000.w, Y
-/*unknown_84_8830:*/ iny
-/*unknown_84_8831:*/ iny
-/*unknown_84_8832:*/ jsl unknown_80_8233
-/*unknown_84_8836:*/ bcc @unknown_84_883b
-/*unknown_84_8838:*/ jmp $8724.w
-@unknown_84_883b: iny
-/*unknown_84_883c:*/ iny
-/*unknown_84_883d:*/ rts
+; TODO: "Instruction - transfer [[Y]] bytes from [[Y] + 2] to VRAM [[Y] + 5]"
+; -- P.JBoy
+unknown_84_87e5:
+  ldx $0330.w
+  lda $0000.w, Y
+@unknown_84_87eb:
+  sta $d0, X
+  lda $0002.w, Y
+  sta $d2, X
+  lda $0003.w, Y
+  sta $d3, X
+  lda $0005.w, Y
+  sta $d5, X
+  txa
+  clc
+  adc #$0007.w
+  sta $0330.w
+  tya
+  clc
+  adc #$0007.w
+  tay
+  ldx $1c27.w
+  rts
 
-/*unknown_84_883e:*/ lda $0000.w, Y
-/*unknown_84_8841:*/ jsl unknown_80_81fa
-/*unknown_84_8845:*/ iny
-/*unknown_84_8846:*/ iny
-/*unknown_84_8847:*/ rts
+; TODO: "Instruction - go to [[Y] + 1] if any of the boss bits [[Y]] are set"
+; -- P.JBoy
+unknown_84_880e:
+  lda $0000.w, Y
+  iny
+  and #$00ff.w
+  jsl unknown_80_81dc
+  bcc @unknown_84_881e
+  jmp $8724.w
+@unknown_84_881e:
+  iny
+  iny
+  rts
 
-/*unknown_84_8848:*/ phx
-/*unknown_84_8849:*/ lda $1dc7.w, X
-/*unknown_84_884c:*/ bmi @unknown_84_8862
-/*unknown_84_884e:*/ jsl unknown_80_818e
-/*unknown_84_8852:*/ lda $7ed830, X
-/*unknown_84_8856:*/ plx
-/*unknown_84_8857:*/ and var_unknown_05e7.w
-/*unknown_84_885a:*/ beq @unknown_84_885f
-/*unknown_84_885c:*/ jmp $8724.w
-@unknown_84_885f: iny
-/*unknown_84_8860:*/ iny
-/*unknown_84_8861:*/ rts
+; TODO: "Unused. Instruction - set the boss bits [[Y]]" -- P.JBoy
+unknown_84_8821:
+  lda $0000.w, Y
+  and #$00ff.w
+  jsl unknown_80_81a6
+  iny
+  rts
 
-@unknown_84_8862: plx
-/*unknown_84_8863:*/ bra @unknown_84_885f
-/*unknown_84_8865:*/ phx
-/*unknown_84_8866:*/ lda $1dc7.w, X
-/*unknown_84_8869:*/ bmi @unknown_84_887a
-/*unknown_84_886b:*/ jsl unknown_80_818e
-/*unknown_84_886f:*/ lda $7ed830, X
-/*unknown_84_8873:*/ ora var_unknown_05e7.w
-/*unknown_84_8876:*/ sta $7ed830, X
-@unknown_84_887a: plx
-/*unknown_84_887b:*/ rts
+; TODO: "Instruction - go to [[Y] + 2] if the event [[Y]] is set" -- P.JBoy
+unknown_84_882d:
+  lda $0000.w, Y
+  iny
+  iny
+  jsl unknown_80_8233
+  bcc @unknown_84_883b
+  jmp $8724.w
+@unknown_84_883b:
+  iny
+  iny
+  rts
 
-/*unknown_84_887c:*/ phx
-/*unknown_84_887d:*/ lda $1dc7.w, X
-/*unknown_84_8880:*/ bmi @unknown_84_8896
-/*unknown_84_8882:*/ jsl unknown_80_818e
-/*unknown_84_8886:*/ lda $7ed870, X
-/*unknown_84_888a:*/ plx
-/*unknown_84_888b:*/ and var_unknown_05e7.w
-/*unknown_84_888e:*/ beq @unknown_84_8893
-/*unknown_84_8890:*/ jmp $8724.w
-@unknown_84_8893: iny
-/*unknown_84_8894:*/ iny
-/*unknown_84_8895:*/ rts
+; TODO: "Instruction - set the event [[Y]]" -- P.JBoy
+unknown_84_883e:
+  lda $0000.w, Y
+  jsl unknown_80_81fa
+  iny
+  iny
+  rts
 
-@unknown_84_8896: plx
-/*unknown_84_8897:*/ bra @unknown_84_8893
-/*unknown_84_8899:*/ phx
-/*unknown_84_889a:*/ lda $1dc7.w, X
-/*unknown_84_889d:*/ bmi @unknown_84_88ae
-/*unknown_84_889f:*/ jsl unknown_80_818e
-/*unknown_84_88a3:*/ lda $7ed870, X
-/*unknown_84_88a7:*/ ora var_unknown_05e7.w
-/*unknown_84_88aa:*/ sta $7ed870, X
-@unknown_84_88ae: plx
-/*unknown_84_88af:*/ rts
+; TODO: "Instruction - go to [[Y]] if the room argument chozo is set" -- P.JBoy
+unknown_84_8848:
+  phx
+  lda $1dc7.w, X
+  bmi unknown_84_8862
+  jsl unknown_80_818e
+  lda $7ed830, X
+  plx
+  and var_unknown_05e7.w
+  beq @unknown_84_885f
+  jmp $8724.w
+@unknown_84_885f:
+  iny
+  iny
+  rts
 
-/*unknown_84_88b0:*/ lda $0000.w, Y
-/*unknown_84_88b3:*/ ora $09a8.w
-/*unknown_84_88b6:*/ sta $09a8.w
-/*unknown_84_88b9:*/ lda $0000.w, Y
-/*unknown_84_88bc:*/ ora $09a6.w
-/*unknown_84_88bf:*/ sta $09a6.w
-/*unknown_84_88c2:*/ lda $0000.w, Y
-/*unknown_84_88c5:*/ asl A
-/*unknown_84_88c6:*/ and #$0008.w
-/*unknown_84_88c9:*/ trb $09a6.w
-/*unknown_84_88cc:*/ lda $0000.w, Y
-/*unknown_84_88cf:*/ lsr A
-/*unknown_84_88d0:*/ and #$0004.w
-/*unknown_84_88d3:*/ trb $09a6.w
-/*unknown_84_88d6:*/ phx
-/*unknown_84_88d7:*/ phy
-/*unknown_84_88d8:*/ jsl unknown_90_ac8d
-/*unknown_84_88dc:*/ ply
-/*unknown_84_88dd:*/ plx
-/*unknown_84_88de:*/ lda #$0168.w
-/*unknown_84_88e1:*/ jsl unknown_82_e118
-/*unknown_84_88e5:*/ lda $0002.w, Y
-/*unknown_84_88e8:*/ and #$00ff.w
-/*unknown_84_88eb:*/ jsl unknown_85_8080
-/*unknown_84_88ef:*/ iny
-/*unknown_84_88f0:*/ iny
-/*unknown_84_88f1:*/ iny
-/*unknown_84_88f2:*/ rts
+; TODO: "Instruction - set the room argument chozo bit" -- P.JBoy
+unknown_84_8862:
+  plx
+  bra unknown_84_8848@unknown_84_885f
+  phx
+  lda $1dc7.w, X
+  bmi @unknown_84_887a
+  jsl unknown_80_818e
+  lda $7ed830, X
+  ora var_unknown_05e7.w
+  sta $7ed830, X
+@unknown_84_887a:
+  plx
+  rts
 
-/*unknown_84_88f3:*/ lda $09a2.w
-/*unknown_84_88f6:*/ ora $0000.w, Y
-/*unknown_84_88f9:*/ sta $09a2.w
-/*unknown_84_88fc:*/ lda $09a4.w
-/*unknown_84_88ff:*/ ora $0000.w, Y
-/*unknown_84_8902:*/ sta $09a4.w
-/*unknown_84_8905:*/ lda #$0168.w
-/*unknown_84_8908:*/ jsl unknown_82_e118
-/*unknown_84_890c:*/ lda $0002.w, Y
-/*unknown_84_890f:*/ and #$00ff.w
-/*unknown_84_8912:*/ jsl unknown_85_8080
-/*unknown_84_8916:*/ iny
-/*unknown_84_8917:*/ iny
-/*unknown_84_8918:*/ iny
-/*unknown_84_8919:*/ rts
+; TODO: "Instruction - go to [[Y]] if the room argument item is set" -- P.JBoy
+unknown_84_887c:
+  phx
+  lda $1dc7.w, X
+  bmi unknown_84_8896
+  jsl unknown_80_818e
+  lda $7ed870, X
+  plx
+  and var_unknown_05e7.w
+  beq @unknown_84_8893
+  jmp $8724.w
+@unknown_84_8893:
+  iny
+  iny
+  rts
 
-/*unknown_84_891a:*/ lda $09a2.w
-/*unknown_84_891d:*/ ora $0000.w, Y
-/*unknown_84_8920:*/ sta $09a2.w
-/*unknown_84_8923:*/ lda $09a4.w
-/*unknown_84_8926:*/ ora $0000.w, Y
-/*unknown_84_8929:*/ sta $09a4.w
-/*unknown_84_892c:*/ jsl unknown_80_9a2e
-/*unknown_84_8930:*/ lda #$0168.w
-/*unknown_84_8933:*/ jsl unknown_82_e118
-/*unknown_84_8937:*/ lda #$0005.w
-/*unknown_84_893a:*/ jsl unknown_85_8080
-/*unknown_84_893e:*/ iny
-/*unknown_84_893f:*/ iny
-/*unknown_84_8940:*/ rts
+; TODO: "Instruction - set the room argument item" -- P.JBoy
+unknown_84_8896:
+  plx
+  bra unknown_84_887c@unknown_84_8893
+  phx
+  lda $1dc7.w, X
+  bmi @unknown_84_88ae
+  jsl unknown_80_818e
+  lda $7ed870, X
+  ora var_unknown_05e7.w
+  sta $7ed870, X
+@unknown_84_88ae:
+  plx
+  rts
 
-/*unknown_84_8941:*/ lda $09a2.w
-/*unknown_84_8944:*/ ora $0000.w, Y
-/*unknown_84_8947:*/ sta $09a2.w
-/*unknown_84_894a:*/ lda $09a4.w
-/*unknown_84_894d:*/ ora $0000.w, Y
-/*unknown_84_8950:*/ sta $09a4.w
-/*unknown_84_8953:*/ jsl unknown_80_9a3e
-/*unknown_84_8957:*/ lda #$0168.w
-/*unknown_84_895a:*/ jsl unknown_82_e118
-/*unknown_84_895e:*/ lda #$0006.w
-/*unknown_84_8961:*/ jsl unknown_85_8080
-/*unknown_84_8965:*/ iny
-/*unknown_84_8966:*/ iny
-/*unknown_84_8967:*/ rts
+; TODO: "Instruction - pick up beam [[Y]] and display message box [[Y] + 2]"
+; -- P.JBoy
+unknown_84_88b0:
+  lda $0000.w, Y
+  ora $09a8.w
+  sta $09a8.w
+  lda $0000.w, Y
+  ora $09a6.w
+  sta $09a6.w
+  lda $0000.w, Y
+  asl A
+  and #$0008.w
+  trb $09a6.w
+  lda $0000.w, Y
+  lsr A
+  and #$0004.w
+  trb $09a6.w
+  phx
+  phy
+  jsl unknown_90_ac8d
+  ply
+  plx
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda $0002.w, Y
+  and #$00ff.w
+  jsl unknown_85_8080
+  iny
+  iny
+  iny
+  rts
 
-/*unknown_84_8968:*/ lda $09c4.w
-/*unknown_84_896b:*/ clc
-/*unknown_84_896c:*/ adc $0000.w, Y
-/*unknown_84_896f:*/ sta $09c4.w
-/*unknown_84_8972:*/ sta $09c2.w
-/*unknown_84_8975:*/ lda #$0168.w
-/*unknown_84_8978:*/ jsl unknown_82_e118
-/*unknown_84_897c:*/ lda #$0001.w
-/*unknown_84_897f:*/ jsl unknown_85_8080
-/*unknown_84_8983:*/ iny
-/*unknown_84_8984:*/ iny
-/*unknown_84_8985:*/ rts
+; TODO: "Instruction - pick up equipment [[Y]] and display message box
+; [[Y] + 2]" -- P.JBoy
+unknown_84_88f3:
+  lda $09a2.w
+  ora $0000.w, Y
+  sta $09a2.w
+  lda $09a4.w
+  ora $0000.w, Y
+  sta $09a4.w
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda $0002.w, Y
+  and #$00ff.w
+  jsl unknown_85_8080
+  iny
+  iny
+  iny
+  rts
 
-/*unknown_84_8986:*/ lda $09d4.w
-/*unknown_84_8989:*/ clc
-/*unknown_84_898a:*/ adc $0000.w, Y
-/*unknown_84_898d:*/ sta $09d4.w
-/*unknown_84_8990:*/ lda $09c0.w
-/*unknown_84_8993:*/ bne @unknown_84_8998
-/*unknown_84_8995:*/ inc $09c0.w
-@unknown_84_8998: lda #$0168.w
-/*unknown_84_899b:*/ jsl unknown_82_e118
-/*unknown_84_899f:*/ lda #$0019.w
-/*unknown_84_89a2:*/ jsl unknown_85_8080
-/*unknown_84_89a6:*/ iny
-/*unknown_84_89a7:*/ iny
-/*unknown_84_89a8:*/ rts
+; TODO: "Instruction - pick up equipment [[Y]], add grapple to HUD and display 
+; grapple message box" -- P.JBoy
+unknown_84_891a:
+  lda $09a2.w
+  ora $0000.w, Y
+  sta $09a2.w
+  lda $09a4.w
+  ora $0000.w, Y
+  sta $09a4.w
+  jsl unknown_80_9a2e
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0005.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_89a9:*/ lda $09c8.w
-/*unknown_84_89ac:*/ clc
-/*unknown_84_89ad:*/ adc $0000.w, Y
-/*unknown_84_89b0:*/ sta $09c8.w
-/*unknown_84_89b3:*/ lda $09c6.w
-/*unknown_84_89b6:*/ clc
-/*unknown_84_89b7:*/ adc $0000.w, Y
-/*unknown_84_89ba:*/ sta $09c6.w
-/*unknown_84_89bd:*/ jsl unknown_80_99cf
-/*unknown_84_89c1:*/ lda #$0168.w
-/*unknown_84_89c4:*/ jsl unknown_82_e118
-/*unknown_84_89c8:*/ lda #$0002.w
-/*unknown_84_89cb:*/ jsl unknown_85_8080
-/*unknown_84_89cf:*/ iny
-/*unknown_84_89d0:*/ iny
-/*unknown_84_89d1:*/ rts
+; TODO: "Instruction - pick up equipment [[Y]], add x-ray to HUD and display
+; x-ray message box" -- P.JBoy
+unknown_84_8941:
+  lda $09a2.w
+  ora $0000.w, Y
+  sta $09a2.w
+  lda $09a4.w
+  ora $0000.w, Y
+  sta $09a4.w
+  jsl unknown_80_9a3e
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0006.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_89d2:*/ lda $09cc.w
-/*unknown_84_89d5:*/ clc
-/*unknown_84_89d6:*/ adc $0000.w, Y
-/*unknown_84_89d9:*/ sta $09cc.w
-/*unknown_84_89dc:*/ lda $09ca.w
-/*unknown_84_89df:*/ clc
-/*unknown_84_89e0:*/ adc $0000.w, Y
-/*unknown_84_89e3:*/ sta $09ca.w
-/*unknown_84_89e6:*/ jsl unknown_80_9a0e
-/*unknown_84_89ea:*/ lda #$0168.w
-/*unknown_84_89ed:*/ jsl unknown_82_e118
-/*unknown_84_89f1:*/ lda #$0003.w
-/*unknown_84_89f4:*/ jsl unknown_85_8080
-/*unknown_84_89f8:*/ iny
-/*unknown_84_89f9:*/ iny
-/*unknown_84_89fa:*/ rts
+; TODO: "Instruction - collect [[Y]] health energy tank" -- P.JBoy
+unknown_84_8968:
+  lda $09c4.w
+  clc
+  adc $0000.w, Y
+  sta $09c4.w
+  sta $09c2.w
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0001.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_89fb:*/ lda $09d0.w
-/*unknown_84_89fe:*/ clc
-/*unknown_84_89ff:*/ adc $0000.w, Y
-/*unknown_84_8a02:*/ sta $09d0.w
-/*unknown_84_8a05:*/ lda $09ce.w
-/*unknown_84_8a08:*/ clc
-/*unknown_84_8a09:*/ adc $0000.w, Y
-/*unknown_84_8a0c:*/ sta $09ce.w
-/*unknown_84_8a0f:*/ jsl unknown_80_9a1e
-/*unknown_84_8a13:*/ lda #$0168.w
-/*unknown_84_8a16:*/ jsl unknown_82_e118
-/*unknown_84_8a1a:*/ lda #$0004.w
-/*unknown_84_8a1d:*/ jsl unknown_85_8080
-/*unknown_84_8a21:*/ iny
-/*unknown_84_8a22:*/ iny
-/*unknown_84_8a23:*/ rts
+; TODO: "collect [[Y]] health reserve tank" -- P.JBoy
+unknown_84_8986:
+  lda $09d4.w
+  clc
+  adc $0000.w, Y
+  sta $09d4.w
+  lda $09c0.w
+  bne @unknown_84_8998
+  inc $09c0.w
+@unknown_84_8998:
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0019.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_8a24:*/ lda $0000.w, Y
-/*unknown_84_8a27:*/ sta var_plm_instruction_list_pointer.l, X
-/*unknown_84_8a2b:*/ iny
-/*unknown_84_8a2c:*/ iny
-/*unknown_84_8a2d:*/ rts
+; TODO: "Instruction - collect [[Y]] ammo missile tank" -- P.JBoy
+unknown_84_89a9:
+  lda $09c8.w
+  clc
+  adc $0000.w, Y
+  sta $09c8.w
+  lda $09c6.w
+  clc
+  adc $0000.w, Y
+  sta $09c6.w
+  jsl unknown_80_99cf
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0002.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_8a2e:*/ tya
-/*unknown_84_8a2f:*/ inc A
-/*unknown_84_8a30:*/ inc A
-/*unknown_84_8a31:*/ sta var_plm_instruction_list_pointer.l, X
-/*unknown_84_8a35:*/ lda $0000.w, Y
-/*unknown_84_8a38:*/ tay
-/*unknown_84_8a39:*/ rts
+; TODO: "Instruction - collect [[Y]] ammo super missile tank" -- P.JBoy
+unknown_84_89d2:
+  lda $09cc.w
+  clc
+  adc $0000.w, Y
+  sta $09cc.w
+  lda $09ca.w
+  clc
+  adc $0000.w, Y
+  sta $09ca.w
+  jsl unknown_80_9a0e
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0003.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_8a3a:*/ lda var_plm_instruction_list_pointer.l, X
-/*unknown_84_8a3e:*/ tay
-/*unknown_84_8a3f:*/ rts
+; TODO: "Instruction - collect [[Y]] ammo power bomb tank" -- P.JBoy
+unknown_84_89fb:
+  lda $09d0.w
+  clc
+  adc $0000.w, Y
+  sta $09d0.w
+  lda $09ce.w
+  clc
+  adc $0000.w, Y
+  sta $09ce.w
+  jsl unknown_80_9a1e
+  lda #$0168.w
+  jsl unknown_82_e118
+  lda #$0004.w
+  jsl unknown_85_8080
+  iny
+  iny
+  rts
 
-/*unknown_84_8a40:*/ lda $0f86.w
-/*unknown_84_8a43:*/ and #$0200.w
-/*unknown_84_8a46:*/ bne @unknown_84_8a58
-/*unknown_84_8a48:*/ lda $0f78.w
-/*unknown_84_8a4b:*/ cmp #$daff.w
-/*unknown_84_8a4e:*/ beq @unknown_84_8a58
-/*unknown_84_8a50:*/ pla
-/*unknown_84_8a51:*/ lda #$0001.w
-/*unknown_84_8a54:*/ sta var_plm_instruction_timer.l, X
-@unknown_84_8a58: rts
+; TODO: "Instruction - link instruction = [[Y]]" -- P.JBoy
+unknown_84_8a24:
+  lda $0000.w, Y
+  sta var_plm_instruction_list_pointer.l, X
+  iny
+  iny
+  rts
 
-/*unknown_84_8a59:*/ lda $0fc6.w
-/*unknown_84_8a5c:*/ and #$0200.w
-/*unknown_84_8a5f:*/ bne @unknown_84_8a71
-/*unknown_84_8a61:*/ lda $0fb8.w
-/*unknown_84_8a64:*/ cmp #$daff.w
-/*unknown_84_8a67:*/ beq @unknown_84_8a71
-/*unknown_84_8a69:*/ pla
-/*unknown_84_8a6a:*/ lda #$0001.w
-/*unknown_84_8a6d:*/ sta var_plm_instruction_timer.l, X
-@unknown_84_8a71: rts
+; TODO: "Instruction - call [[Y]]" -- P.JBoy
+unknown_84_8a2e:
+  tya
+  inc A
+  inc A
+  sta var_plm_instruction_list_pointer.l, X
+  lda $0000.w, Y
+  tay
+  rts
 
-/*unknown_84_8a72:*/ phx
-/*unknown_84_8a73:*/ lda $1dc7.w, X
-/*unknown_84_8a76:*/ bmi @unknown_84_8a8e
-/*unknown_84_8a78:*/ jsl unknown_80_818e
-/*unknown_84_8a7c:*/ lda $7ed8b0, X
-/*unknown_84_8a80:*/ plx
-/*unknown_84_8a81:*/ and var_unknown_05e7.w
-/*unknown_84_8a84:*/ beq @unknown_84_8a8b
-/*unknown_84_8a86:*/ lda $0000.w, Y
-/*unknown_84_8a89:*/ tay
-/*unknown_84_8a8a:*/ rts
+; TODO: "Instruction - return" -- P.JBoy
+unknown_84_8a3a:
+  lda var_plm_instruction_list_pointer.l, X
+  tay
+  rts
 
-@unknown_84_8a8b: iny
-/*unknown_84_8a8c:*/ iny
-/*unknown_84_8a8d:*/ rts
+; TODO: "Unused. Instruction - wait until enemy 0 is dead" -- P.JBoy
+unknown_84_8a40:
+  lda $0f86.w
+  and #$0200.w
+  bne @unknown_84_8a58
+  lda $0f78.w
+  cmp #$daff.w
+  beq @unknown_84_8a58
+  pla
+  lda #$0001.w
+  sta var_plm_instruction_timer.l, X
+@unknown_84_8a58:
+  rts
 
-@unknown_84_8a8e: plx
-/*unknown_84_8a8f:*/ bra @unknown_84_8a8b
-/*unknown_84_8a91:*/ lda $7edf0c, X
-/*unknown_84_8a95:*/ inc A
-/*unknown_84_8a96:*/ sta $7edf0c, X
-/*unknown_84_8a9a:*/ sep #$20
-/*unknown_84_8a9c:*/ cmp $0000.w, Y
-/*unknown_84_8a9f:*/ rep #$20
-/*unknown_84_8aa1:*/ bcs @unknown_84_8aa7
-/*unknown_84_8aa3:*/ iny
-/*unknown_84_8aa4:*/ iny
-/*unknown_84_8aa5:*/ iny
-/*unknown_84_8aa6:*/ rts
+; TODO: "Unused. Instruction - wait until enemy 1 is dead" -- P.JBoy
+unknown_84_8a59:
+  lda $0fc6.w
+  and #$0200.w
+  bne @unknown_84_8a71
+  lda $0fb8.w
+  cmp #$daff.w
+  beq @unknown_84_8a71
+  pla
+  lda #$0001.w
+  sta var_plm_instruction_timer.l, X
+@unknown_84_8a71:
+  rts
 
-@unknown_84_8aa7: phx
-/*unknown_84_8aa8:*/ lda $1dc7.w, X
-/*unknown_84_8aab:*/ bmi @unknown_84_8abc
-/*unknown_84_8aad:*/ jsl unknown_80_818e
-/*unknown_84_8ab1:*/ lda $7ed8b0, X
-/*unknown_84_8ab5:*/ ora var_unknown_05e7.w
-/*unknown_84_8ab8:*/ sta $7ed8b0, X
-@unknown_84_8abc: plx
-/*unknown_84_8abd:*/ ora #$8000.w
-/*unknown_84_8ac0:*/ sta $1dc7.w, X
-/*unknown_84_8ac3:*/ lda #$8aa6.w
-/*unknown_84_8ac6:*/ sta $1cd7.w, X
-/*unknown_84_8ac9:*/ iny
-/*unknown_84_8aca:*/ jmp $8724.w
-/*unknown_84_8acd:*/ sep #$20
-/*unknown_84_8acf:*/ lda $1dc7.w, X
-/*unknown_84_8ad2:*/ inc A
-/*unknown_84_8ad3:*/ cmp $0000.w, Y
-/*unknown_84_8ad6:*/ rep #$20
-/*unknown_84_8ad8:*/ bcs @unknown_84_8ae1
-/*unknown_84_8ada:*/ sta $1dc7.w, X
-/*unknown_84_8add:*/ iny
-/*unknown_84_8ade:*/ iny
-/*unknown_84_8adf:*/ iny
-/*unknown_84_8ae0:*/ rts
+; TODO: "Instruction - go to [[Y]] if the room argument door is set" -- P.JBoy
+unknown_84_8a72:
+  phx
+  lda $1dc7.w, X
+  bmi @unknown_84_8a8e
+  jsl unknown_80_818e
+  lda $7ed8b0, X
+  plx
+  and var_unknown_05e7.w
+  beq @unknown_84_8a8b
+  lda $0000.w, Y
+  tay
+  rts
+@unknown_84_8a8b:
+  iny
+  iny
+  rts
+@unknown_84_8a8e:
+  plx
+  bra @unknown_84_8a8b
 
-@unknown_84_8ae1: lda #$ffff.w
-/*unknown_84_8ae4:*/ sta $1dc7.w, X
-/*unknown_84_8ae7:*/ lda #$8ae0.w
-/*unknown_84_8aea:*/ sta $1cd7.w, X
-/*unknown_84_8aed:*/ iny
-/*unknown_84_8aee:*/ jmp $8724.w
-/*unknown_84_8af1:*/ phx
-/*unknown_84_8af2:*/ lda $1c87.w, X
-/*unknown_84_8af5:*/ lsr A
-/*unknown_84_8af6:*/ tax
-/*unknown_84_8af7:*/ sep #$20
-/*unknown_84_8af9:*/ lda $0000.w, Y
-/*unknown_84_8afc:*/ sta $7f6402, X
-/*unknown_84_8b00:*/ rep #$20
-/*unknown_84_8b02:*/ plx
-/*unknown_84_8b03:*/ iny
-/*unknown_84_8b04:*/ rts
+; TODO: "Instruction - increment door hit counter; Set room argument door and
+; go to [[Y] + 1] if [door hit counter] >= [[Y]]" -- P.JBoy
+unknown_84_8a91:
+  lda $7edf0c, X
+  inc A
+  sta $7edf0c, X
+  sep #$20
+  cmp $0000.w, Y
+  rep #$20
+  bcs @unknown_84_8aa7
+  iny
+  iny
+  iny
+  rts
+@unknown_84_8aa7:
+  phx
+  lda $1dc7.w, X
+  bmi @unknown_84_8abc
+  jsl unknown_80_818e
+  lda $7ed8b0, X
+  ora var_unknown_05e7.w
+  sta $7ed8b0, X
+@unknown_84_8abc:
+  plx
+  ora #$8000.w
+  sta $1dc7.w, X
+  lda #$8aa6.w
+  sta $1cd7.w, X
+  iny
+  jmp $8724.w
 
-/*unknown_84_8b05:*/ rep #$20
-/*unknown_84_8b07:*/ phx
-/*unknown_84_8b08:*/ phy
-/*unknown_84_8b09:*/ txy
-/*unknown_84_8b0a:*/ ldx $1c87.w, Y
-/*unknown_84_8b0d:*/ lda $1e17.w, Y
-/*unknown_84_8b10:*/ sta $7f0002, X
-/*unknown_84_8b14:*/ jmp @unknown_84_8b26
-/*unknown_84_8b17:*/ rep #$20
-/*unknown_84_8b19:*/ phx
-/*unknown_84_8b1a:*/ phy
-/*unknown_84_8b1b:*/ txy
-/*unknown_84_8b1c:*/ ldx $1c87.w, Y
-/*unknown_84_8b1f:*/ lda $1e17.w, Y
-/*unknown_84_8b22:*/ sta $7f0002, X
-@unknown_84_8b26: sta $1e69.w
-/*unknown_84_8b29:*/ lda #$0001.w
-/*unknown_84_8b2c:*/ sta $1e67.w
-/*unknown_84_8b2f:*/ stz $1e6b.w
-/*unknown_84_8b32:*/ ply
-/*unknown_84_8b33:*/ plx
-/*unknown_84_8b34:*/ lda #$0001.w
-/*unknown_84_8b37:*/ sta var_plm_instruction_timer.l, X
-/*unknown_84_8b3b:*/ lda #$1e67.w
-/*unknown_84_8b3e:*/ sta var_plm_instruction_draw_pointer.l, X
-/*unknown_84_8b42:*/ tya
-/*unknown_84_8b43:*/ sta $1d27.w, X
-/*unknown_84_8b46:*/ jsr unknown_84_861e
-/*unknown_84_8b49:*/ ldx $1c27.w
-/*unknown_84_8b4c:*/ jsl unknown_84_8290
-/*unknown_84_8b50:*/ jsr unknown_84_8daa
-/*unknown_84_8b53:*/ pla
-/*unknown_84_8b54:*/ rts
+; TODO: "Instruction - increment room argument; room argument = FFFFh and go
+; to [[Y] + 1] if [room argument] >= [[Y]]" -- P.JBoy
+unknown_84_8acd:
+  sep #$20
+  lda $1dc7.w, X
+  inc A
+  cmp $0000.w, Y
+  rep #$20
+  bcs @unknown_84_8ae1
+  sta $1dc7.w, X
+  iny
+  iny
+  iny
+  rts
+@unknown_84_8ae1:
+  lda #$ffff.w
+  sta $1dc7.w, X
+  lda #$8ae0.w
+  sta $1cd7.w, X
+  iny
+  jmp $8724.w
 
-/*unknown_84_8b55:*/ phb
-/*unknown_84_8b56:*/ phx
-/*unknown_84_8b57:*/ phy
-/*unknown_84_8b58:*/ stz $1e17.w, X
-/*unknown_84_8b5b:*/ ldy $1dc7.w, X
-/*unknown_84_8b5e:*/ pea $8f00.w
-/*unknown_84_8b61:*/ plb
-/*unknown_84_8b62:*/ plb
-/*unknown_84_8b63:*/ lda #$0000.w
-/*unknown_84_8b66:*/ sep #$20
-@unknown_84_8b68: lda $0000.w, Y
-/*unknown_84_8b6b:*/ bmi @unknown_84_8b79
-/*unknown_84_8b6d:*/ tax
-/*unknown_84_8b6e:*/ lda $0001.w, Y
-/*unknown_84_8b71:*/ sta $7ecd20, X
-/*unknown_84_8b75:*/ iny
-/*unknown_84_8b76:*/ iny
-/*unknown_84_8b77:*/ bra @unknown_84_8b68
-@unknown_84_8b79: rep #$20
-/*unknown_84_8b7b:*/ ply
-/*unknown_84_8b7c:*/ plx
-/*unknown_84_8b7d:*/ plb
-/*unknown_84_8b7e:*/ phx
-/*unknown_84_8b7f:*/ lda $1c87.w, X
-/*unknown_84_8b82:*/ tax
-/*unknown_84_8b83:*/ lda $7f0002, X
-/*unknown_84_8b87:*/ and #$0fff.w
-/*unknown_84_8b8a:*/ ora #$3000.w
-/*unknown_84_8b8d:*/ sta $7f0002, X
-/*unknown_84_8b91:*/ plx
-/*unknown_84_8b92:*/ rts
+; TODO: "Instruction - PLM BTS = [[Y]]" -- P.JBoy
+unknown_84_8af1:
+  phx
+  lda $1c87.w, X
+  lsr A
+  tax
+  sep #$20
+  lda $0000.w, Y
+  sta $7f6402, X
+  rep #$20
+  plx
+  iny
+  rts
 
-/*unknown_84_8b93:*/ phb
-/*unknown_84_8b94:*/ phx
-/*unknown_84_8b95:*/ phy
-/*unknown_84_8b96:*/ stz $1e17.w, X
-/*unknown_84_8b99:*/ ldy $1dc7.w, X
-/*unknown_84_8b9c:*/ pea $8f00.w
-/*unknown_84_8b9f:*/ plb
-/*unknown_84_8ba0:*/ plb
-/*unknown_84_8ba1:*/ lda #$0000.w
-/*unknown_84_8ba4:*/ sep #$20
-@unknown_84_8ba6: lda $0000.w, Y
-/*unknown_84_8ba9:*/ bmi @unknown_84_8bb7
-/*unknown_84_8bab:*/ tax
-/*unknown_84_8bac:*/ lda $0001.w, Y
-/*unknown_84_8baf:*/ sta $7ecd20, X
-/*unknown_84_8bb3:*/ iny
-/*unknown_84_8bb4:*/ iny
-/*unknown_84_8bb5:*/ bra @unknown_84_8ba6
-@unknown_84_8bb7: rep #$20
-/*unknown_84_8bb9:*/ ply
-/*unknown_84_8bba:*/ plx
-/*unknown_84_8bbb:*/ plb
-/*unknown_84_8bbc:*/ phx
-/*unknown_84_8bbd:*/ lda $1c87.w, X
-/*unknown_84_8bc0:*/ tax
-/*unknown_84_8bc1:*/ lda $7f0002, X
-/*unknown_84_8bc5:*/ and #$0fff.w
-/*unknown_84_8bc8:*/ ora #$b000.w
-/*unknown_84_8bcb:*/ sta $7f0002, X
-/*unknown_84_8bcf:*/ plx
-/*unknown_84_8bd0:*/ rts
+; TODO: "Instruction - draw PLM block" -- P.JBoy
+unknown_84_8b05:
+  rep #$20
+  phx
+  phy
+  txy
+  ldx $1c87.w, Y
+  lda $1e17.w, Y
+  sta $7f0002, X
+  jmp unknown_84_8b17@unknown_84_8b26
 
-/*unknown_84_8bd1:*/ lda $0000.w, Y
-/*unknown_84_8bd4:*/ and #$00ff.w
-/*unknown_84_8bd7:*/ jsl unknown_80_8fc1
-/*unknown_84_8bdb:*/ iny
-/*unknown_84_8bdc:*/ rts
+; TODO: "Instruction - draw PLM block" -- P.JBoy
+unknown_84_8b17:
+  rep #$20
+  phx
+  phy
+  txy
+  ldx $1c87.w, Y
+  lda $1e17.w, Y
+  sta $7f0002, X
+@unknown_84_8b26:
+  sta $1e69.w
+  lda #$0001.w
+  sta $1e67.w
+  stz $1e6b.w
+  ply
+  plx
+  lda #$0001.w
+  sta var_plm_instruction_timer.l, X
+  lda #$1e67.w
+  sta var_plm_instruction_draw_pointer.l, X
+  tya
+  sta $1d27.w, X
+  jsr unknown_84_861e
+  ldx $1c27.w
+  jsl unknown_84_8290
+  jsr unknown_84_8daa
+  pla
+  rts
 
-/*unknown_84_8bdd:*/ phx
-/*unknown_84_8bde:*/ ldx #$000e.w
-@unknown_84_8be1: stz $0619.w, X
-/*unknown_84_8be4:*/ stz $0629.w, X
-/*unknown_84_8be7:*/ dex
-/*unknown_84_8be8:*/ dex
-/*unknown_84_8be9:*/ bpl @unknown_84_8be1
-/*unknown_84_8beb:*/ plx
-/*unknown_84_8bec:*/ lda $0639.w
-/*unknown_84_8bef:*/ sta $063b.w
-/*unknown_84_8bf2:*/ lda #$0000.w
-/*unknown_84_8bf5:*/ sta $063f.w
-/*unknown_84_8bf8:*/ sta $063d.w
-/*unknown_84_8bfb:*/ lda $0000.w, Y
-/*unknown_84_8bfe:*/ and #$00ff.w
-/*unknown_84_8c01:*/ jsl unknown_80_8fc1
-/*unknown_84_8c05:*/ iny
-/*unknown_84_8c06:*/ rts
+; TODO: "Instruction - process air scroll update" -- P.JBoy
+unknown_84_8b55:
+  phb
+  phx
+  phy
+  stz $1e17.w, X
+  ldy $1dc7.w, X
+  pea $8f00.w
+  plb
+  plb
+  lda #$0000.w
+  sep #$20
+@unknown_84_8b68:
+  lda $0000.w, Y
+  bmi @unknown_84_8b79
+  tax
+  lda $0001.w, Y
+  sta $7ecd20, X
+  iny
+  iny
+  bra @unknown_84_8b68
+@unknown_84_8b79:
+  rep #$20
+  ply
+  plx
+  plb
+  phx
+  lda $1c87.w, X
+  tax
+  lda $7f0002, X
+  and #$0fff.w
+  ora #$3000.w
+  sta $7f0002, X
+  plx
+  rts
+
+; TODO: "Instruction - process solid scroll update" -- P.JBoy
+unknown_84_8b93:
+  phb
+  phx
+  phy
+  stz $1e17.w, X
+  ldy $1dc7.w, X
+  pea $8f00.w
+  plb
+  plb
+  lda #$0000.w
+  sep #$20
+@unknown_84_8ba6:
+  lda $0000.w, Y
+  bmi @unknown_84_8bb7
+  tax
+  lda $0001.w, Y
+  sta $7ecd20, X
+  iny
+  iny
+  bra @unknown_84_8ba6
+@unknown_84_8bb7:
+  rep #$20
+  ply
+  plx
+  plb
+  phx
+  lda $1c87.w, X
+  tax
+  lda $7f0002, X
+  and #$0fff.w
+  ora #$b000.w
+  sta $7f0002, X
+  plx
+  rts
+
+; TODO: "Unused. Instruction - queue music track [[Y]]" -- P.JBoy
+unknown_84_8bd1:
+  lda $0000.w, Y
+  and #$00ff.w
+  jsl unknown_80_8fc1
+  iny
+  rts
+
+; TODO: "Instruction - clear music queue and queue music track [[Y]]" -- P.JBoy
+unknown_84_8bdd:
+  phx
+  ldx #$000e.w
+@unknown_84_8be1:
+  stz $0619.w, X
+  stz $0629.w, X
+  dex
+  dex
+  bpl @unknown_84_8be1
+  plx
+  lda $0639.w
+  sta $063b.w
+  lda #$0000.w
+  sta $063f.w
+  sta $063d.w
+  lda $0000.w, Y
+  and #$00ff.w
+  jsl unknown_80_8fc1
+  iny
+  rts
 
 /*unknown_84_8c07:*/ lda $0000.w, Y
 /*unknown_84_8c0a:*/ jsl unknown_80_9049
