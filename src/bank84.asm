@@ -2477,3046 +2477,2605 @@ unknown_84_9220:
   rep #$20
   rts
 
-/*unknown_84_924d:*/ ora ($00, X)
-/*unknown_84_924f:*/ ror $0081.w, X
-/*unknown_84_9252:*/ brk $02
-/*unknown_84_9254:*/ brk $ff
-/*unknown_84_9256:*/ brk $ff
-/*unknown_84_9258:*/ brk $00
-/*unknown_84_925a:*/ brk $03
-/*unknown_84_925c:*/ bra $53 ; $92b1.w
-/*unknown_84_925e:*/ bra $53 ; $92b3.w
-/*unknown_84_9260:*/ bra $53 ; $92b5.w
-/*unknown_84_9262:*/ bra @unknown_84_9264
-@unknown_84_9264: brk $03
-/*unknown_84_9266:*/ bra @unknown_84_92bc
-/*unknown_84_9268:*/ bra @unknown_84_92be
-/*unknown_84_926a:*/ bra @unknown_84_92c0
-/*unknown_84_926c:*/ bra @unknown_84_926e
-@unknown_84_926e: brk $03
-/*unknown_84_9270:*/ bra $55 ; $92c7.w
-/*unknown_84_9272:*/ bra $55 ; $92c9.w
-/*unknown_84_9274:*/ bra $55 ; $92cb.w
-/*unknown_84_9276:*/ bra @unknown_84_9278
-@unknown_84_9278: brk $03
-/*unknown_84_927a:*/ bra ($ff - $100) ; $927b.w
-/*unknown_84_927c:*/ bra ($ff - $100) ; $927d.w
-/*unknown_84_927e:*/ bra ($ff - $100) ; $927f.w
-/*unknown_84_9280:*/ bra @unknown_84_9282
-@unknown_84_9282: brk $03
-/*unknown_84_9284:*/ bra ($ff - $100) ; $9285.w
-/*unknown_84_9286:*/ brk $ff
-/*unknown_84_9288:*/ brk $ff
-/*unknown_84_928a:*/ brk $01
-/*unknown_84_928c:*/ brk $03
-/*unknown_84_928e:*/ bra ($ff - $100) ; $928f.w
-/*unknown_84_9290:*/ brk $ff
-/*unknown_84_9292:*/ brk $ff
-/*unknown_84_9294:*/ brk $00
-/*unknown_84_9296:*/ brk $04
-/*unknown_84_9298:*/ brk $ff
-/*unknown_84_929a:*/ brk $ff
-/*unknown_84_929c:*/ brk $ff
-/*unknown_84_929e:*/ brk $ff
-/*unknown_84_92a0:*/ brk $00
-/*unknown_84_92a2:*/ brk $04
-/*unknown_84_92a4:*/ brk $53
-/*unknown_84_92a6:*/ brk $53
-/*unknown_84_92a8:*/ brk $53
-/*unknown_84_92aa:*/ brk $53
-/*unknown_84_92ac:*/ brk $00
-/*unknown_84_92ae:*/ brk $04
-/*unknown_84_92b0:*/ brk $54
-/*unknown_84_92b2:*/ brk $54
-/*unknown_84_92b4:*/ brk $54
-/*unknown_84_92b6:*/ brk $54
-/*unknown_84_92b8:*/ brk $00
-/*unknown_84_92ba:*/ brk $04
-@unknown_84_92bc: brk $55
-@unknown_84_92be: brk $55
-@unknown_84_92c0: brk $55
-/*unknown_84_92c2:*/ brk $55
-/*unknown_84_92c4:*/ brk $00
-/*unknown_84_92c6:*/ brk $04
-/*unknown_84_92c8:*/ brk $ff
-/*unknown_84_92ca:*/ brk $ff
-/*unknown_84_92cc:*/ brk $ff
-/*unknown_84_92ce:*/ brk $ff
-/*unknown_84_92d0:*/ brk $00
-/*unknown_84_92d2:*/ ora ($04, X)
-/*unknown_84_92d4:*/ brk $ff
-/*unknown_84_92d6:*/ brk $ff
-/*unknown_84_92d8:*/ brk $ff
-/*unknown_84_92da:*/ brk $ff
-/*unknown_84_92dc:*/ brk $00
-/*unknown_84_92de:*/ cop $04
-/*unknown_84_92e0:*/ brk $ff
-/*unknown_84_92e2:*/ brk $ff
-/*unknown_84_92e4:*/ brk $ff
-/*unknown_84_92e6:*/ brk $ff
-/*unknown_84_92e8:*/ brk $00
-/*unknown_84_92ea:*/ ora $04, S
-/*unknown_84_92ec:*/ brk $ff
-/*unknown_84_92ee:*/ brk $ff
-/*unknown_84_92f0:*/ brk $ff
-/*unknown_84_92f2:*/ brk $ff
-/*unknown_84_92f4:*/ brk $00
-/*unknown_84_92f6:*/ tsb $04
-/*unknown_84_92f8:*/ brk $ff
-/*unknown_84_92fa:*/ brk $ff
-/*unknown_84_92fc:*/ brk $ff
-/*unknown_84_92fe:*/ brk $ff
-/*unknown_84_9300:*/ brk $00
-/*unknown_84_9302:*/ ora $04
-/*unknown_84_9304:*/ brk $ff
-/*unknown_84_9306:*/ brk $ff
-/*unknown_84_9308:*/ brk $ff
-/*unknown_84_930a:*/ brk $ff
-/*unknown_84_930c:*/ brk $00
-/*unknown_84_930e:*/ brk $09
-/*unknown_84_9310:*/ bra ($ff - $100) ; $9311.w
-/*unknown_84_9312:*/ brk $ff
-/*unknown_84_9314:*/ brk $ff
-/*unknown_84_9316:*/ brk $ff
-/*unknown_84_9318:*/ brk $ff
-/*unknown_84_931a:*/ brk $ff
-/*unknown_84_931c:*/ brk $ff
-/*unknown_84_931e:*/ brk $ff
-/*unknown_84_9320:*/ brk $ff
-/*unknown_84_9322:*/ brk $00
-/*unknown_84_9324:*/ brk $09
-/*unknown_84_9326:*/ bra $53 ; $937b.w
-/*unknown_84_9328:*/ bra $53 ; $937d.w
-/*unknown_84_932a:*/ bra $53 ; $937f.w
-/*unknown_84_932c:*/ bra $53 ; $9381.w
-/*unknown_84_932e:*/ bra $53 ; $9383.w
-/*unknown_84_9330:*/ bra $53 ; $9385.w
-/*unknown_84_9332:*/ bra $53 ; $9387.w
-/*unknown_84_9334:*/ bra $53 ; $9389.w
-/*unknown_84_9336:*/ bra $53 ; $938b.w
-/*unknown_84_9338:*/ bra @unknown_84_933a
-@unknown_84_933a: brk $09
-/*unknown_84_933c:*/ bra @unknown_84_9392
-/*unknown_84_933e:*/ bra @unknown_84_9394
-/*unknown_84_9340:*/ bra @unknown_84_9396
-/*unknown_84_9342:*/ bra @unknown_84_9398
-/*unknown_84_9344:*/ bra @unknown_84_939a
-/*unknown_84_9346:*/ bra @unknown_84_939c
-/*unknown_84_9348:*/ bra @unknown_84_939e
-/*unknown_84_934a:*/ bra @unknown_84_93a0
-/*unknown_84_934c:*/ bra @unknown_84_93a2
-/*unknown_84_934e:*/ bra @unknown_84_9350
-@unknown_84_9350: brk $09
-/*unknown_84_9352:*/ bra $55 ; $93a9.w
-/*unknown_84_9354:*/ brk $55
-/*unknown_84_9356:*/ brk $55
-/*unknown_84_9358:*/ brk $55
-/*unknown_84_935a:*/ brk $55
-/*unknown_84_935c:*/ brk $55
-/*unknown_84_935e:*/ brk $55
-/*unknown_84_9360:*/ brk $55
-/*unknown_84_9362:*/ brk $55
-/*unknown_84_9364:*/ brk $00
-/*unknown_84_9366:*/ brk $01
-/*unknown_84_9368:*/ brk $80
-/*unknown_84_936a:*/ sta ($00, X)
-/*unknown_84_936c:*/ brk $01
-/*unknown_84_936e:*/ brk $81
-/*unknown_84_9370:*/ sta ($00, X)
-/*unknown_84_9372:*/ brk $01
-/*unknown_84_9374:*/ brk $82
-/*unknown_84_9376:*/ ora ($00, X)
-/*unknown_84_9378:*/ brk $01
-/*unknown_84_937a:*/ brk $3c
-/*unknown_84_937c:*/ ora ($00, X)
-/*unknown_84_937e:*/ brk $01
-/*unknown_84_9380:*/ brk $31
-/*unknown_84_9382:*/ ora ($00, X)
-/*unknown_84_9384:*/ brk $01
-/*unknown_84_9386:*/ brk $30
-/*unknown_84_9388:*/ ora ($00, X)
-/*unknown_84_938a:*/ brk $01
-/*unknown_84_938c:*/ brk $1c
-/*unknown_84_938e:*/ ora ($00, X)
-/*unknown_84_9390:*/ brk $01
-@unknown_84_9392: brk $11
-@unknown_84_9394: ora ($00, X)
-@unknown_84_9396: brk $01
-@unknown_84_9398: brk $10
-@unknown_84_939a: ora ($00, X)
-@unknown_84_939c: brk $0f
-@unknown_84_939e: brk $3c
-@unknown_84_93a0: ora ($31, X)
-@unknown_84_93a2: ora ($30, X)
-/*unknown_84_93a4:*/ ora ($31, X)
-/*unknown_84_93a6:*/ ora ($30, X)
-/*unknown_84_93a8:*/ ora ($31, X)
-/*unknown_84_93aa:*/ ora ($30, X)
-/*unknown_84_93ac:*/ ora ($31, X)
-/*unknown_84_93ae:*/ ora ($30, X)
-/*unknown_84_93b0:*/ ora ($31, X)
-/*unknown_84_93b2:*/ ora ($30, X)
-/*unknown_84_93b4:*/ ora ($31, X)
-/*unknown_84_93b6:*/ ora ($30, X)
-/*unknown_84_93b8:*/ ora ($31, X)
-/*unknown_84_93ba:*/ ora ($30, X)
-/*unknown_84_93bc:*/ ora ($00, X)
-/*unknown_84_93be:*/ brk $16
-/*unknown_84_93c0:*/ brk $11
-/*unknown_84_93c2:*/ ora ($10, X)
-/*unknown_84_93c4:*/ ora ($11, X)
-/*unknown_84_93c6:*/ ora ($10, X)
-/*unknown_84_93c8:*/ ora ($11, X)
-/*unknown_84_93ca:*/ ora ($10, X)
-/*unknown_84_93cc:*/ ora ($11, X)
-/*unknown_84_93ce:*/ ora ($10, X)
-/*unknown_84_93d0:*/ ora ($11, X)
-/*unknown_84_93d2:*/ ora ($10, X)
-/*unknown_84_93d4:*/ ora ($11, X)
-/*unknown_84_93d6:*/ ora ($10, X)
-/*unknown_84_93d8:*/ ora ($11, X)
-/*unknown_84_93da:*/ ora ($10, X)
-/*unknown_84_93dc:*/ ora ($11, X)
-/*unknown_84_93de:*/ ora ($10, X)
-/*unknown_84_93e0:*/ ora ($11, X)
-/*unknown_84_93e2:*/ ora ($10, X)
-/*unknown_84_93e4:*/ ora ($11, X)
-/*unknown_84_93e6:*/ ora ($10, X)
-/*unknown_84_93e8:*/ ora ($11, X)
-/*unknown_84_93ea:*/ ora ($10, X)
-/*unknown_84_93ec:*/ ora ($00, X)
-/*unknown_84_93ee:*/ brk $04
-/*unknown_84_93f0:*/ bra ($c1 - $100) ; $93b3.w
-/*unknown_84_93f2:*/ sta $e1, X
-/*unknown_84_93f4:*/ sta $e1, X
-/*unknown_84_93f6:*/ sta $9dc1.w, X
-/*unknown_84_93f9:*/ ora ($00, X)
-/*unknown_84_93fb:*/ tsb $80
-/*unknown_84_93fd:*/ cpy #$e0c5.w
-/*unknown_84_9400:*/ cmp $e0, X
-/*unknown_84_9402:*/ cmp $ddc0.w, X
-/*unknown_84_9405:*/ brk $00
-/*unknown_84_9407:*/ tsb $80
-/*unknown_84_9409:*/ rti
+; TODO: "Draw instructions" -- P.JBoy
+; TODO: "Used: by instruction $d0ec" -- P.JBoy
+unknown_84_924d:
+  .dw $0001, $817e
+  .dw $0000
 
-/*unknown_84_940a:*/ sty $60, X
-/*unknown_84_940c:*/ sty $60, X
-/*unknown_84_940e:*/ stz $9c40.w
-/*unknown_84_9411:*/ brk $00
-/*unknown_84_9413:*/ cop $00
-/*unknown_84_9415:*/ sbc $00ff00.l, X
-/*unknown_84_9419:*/ brk $01
-/*unknown_84_941b:*/ cop $00
-/*unknown_84_941d:*/ sbc $00ff00.l, X
-/*unknown_84_9421:*/ brk $00
-/*unknown_84_9423:*/ cop $00
-/*unknown_84_9425:*/ eor ($00, S), Y
-/*unknown_84_9427:*/ eor ($00, S), Y
-/*unknown_84_9429:*/ brk $01
-/*unknown_84_942b:*/ cop $00
-/*unknown_84_942d:*/ eor ($00, S), Y
-/*unknown_84_942f:*/ eor ($00, S), Y
-/*unknown_84_9431:*/ brk $00
-/*unknown_84_9433:*/ cop $00
-/*unknown_84_9435:*/ mvn $54, $00
-/*unknown_84_9438:*/ brk $00
-/*unknown_84_943a:*/ ora ($02, X)
-/*unknown_84_943c:*/ brk $54
-/*unknown_84_943e:*/ brk $54
-/*unknown_84_9440:*/ brk $00
-/*unknown_84_9442:*/ brk $02
-/*unknown_84_9444:*/ brk $55
-/*unknown_84_9446:*/ brk $55
-/*unknown_84_9448:*/ brk $00
-/*unknown_84_944a:*/ ora ($02, X)
-/*unknown_84_944c:*/ brk $55
-/*unknown_84_944e:*/ brk $55
-/*unknown_84_9450:*/ brk $00
-/*unknown_84_9452:*/ brk $02
-/*unknown_84_9454:*/ bra ($ff - $100) ; $9455.w
-/*unknown_84_9456:*/ brk $fb
-/*unknown_84_9458:*/ ora ($00)
-/*unknown_84_945a:*/ inc $8002.w, X
-/*unknown_84_945d:*/ xce
-/*unknown_84_945e:*/ inc A
-/*unknown_84_945f:*/ sbc $000000.l, X
-/*unknown_84_9463:*/ cop $80
-/*unknown_84_9465:*/ sbc $82fb80, X
-/*unknown_84_9469:*/ brk $fe
-/*unknown_84_946b:*/ cop $80
-/*unknown_84_946d:*/ xce
-/*unknown_84_946e:*/ txa
-/*unknown_84_946f:*/ sbc $000080.l, X
-/*unknown_84_9473:*/ tsb $80
-/*unknown_84_9475:*/ sbc $80ff80, X
-/*unknown_84_9479:*/ sbc $80ff80, X
-/*unknown_84_947d:*/ brk $00
-/*unknown_84_947f:*/ tsb $80
-/*unknown_84_9481:*/ ora $80ff83
-/*unknown_84_9485:*/ sbc $830f80, X
-/*unknown_84_9489:*/ brk $00
-/*unknown_84_948b:*/ tsb $80
-/*unknown_84_948d:*/ ora $8ae883
-/*unknown_84_9491:*/ inx
-/*unknown_84_9492:*/ brl $830f ; $17a4.w
-/*unknown_84_9495:*/ brk $00
-/*unknown_84_9497:*/ ora ($00, X)
-/*unknown_84_9499:*/ sbc $000000.l, X
-/*unknown_84_949d:*/ ora ($00, X)
-/*unknown_84_949f:*/ sbc $000080.l, X
-/*unknown_84_94a3:*/ cop $80
-/*unknown_84_94a5:*/ rti
+; TODO: "Used: by instruction $bb19" -- P.JBoy
+unknown_84_9253:
+  .dw $0002, $00ff, $00ff
+  .dw $0000
 
-/*unknown_84_94a6:*/ sta $0f, S
-/*unknown_84_94a8:*/ sta $00, S
-/*unknown_84_94aa:*/ sbc $0f8001, X
-/*unknown_84_94ae:*/ phb
-/*unknown_84_94af:*/ brk $00
-/*unknown_84_94b1:*/ tsb $80
-/*unknown_84_94b3:*/ jsr $d1af92
-/*unknown_84_94b7:*/ bne ($d1 - $100) ; $948a.w
-/*unknown_84_94b9:*/ jsr $01d2.w
-/*unknown_84_94bc:*/ brk $04
-/*unknown_84_94be:*/ bra $23 ; $94e3.w
-/*unknown_84_94c0:*/ cop $eb
-/*unknown_84_94c2:*/ ora ($d0, X)
-/*unknown_84_94c4:*/ ora ($21, X)
-/*unknown_84_94c6:*/ cop $00
-/*unknown_84_94c8:*/ brk $0d
-/*unknown_84_94ca:*/ brk $44
-/*unknown_84_94cc:*/ bra @unknown_84_9512
-/*unknown_84_94ce:*/ bra @unknown_84_9514
-/*unknown_84_94d0:*/ bra @unknown_84_9516
-/*unknown_84_94d2:*/ bra @unknown_84_9518
-/*unknown_84_94d4:*/ bra @unknown_84_951a
-/*unknown_84_94d6:*/ bra @unknown_84_951c
-/*unknown_84_94d8:*/ bra @unknown_84_951e
-/*unknown_84_94da:*/ bra @unknown_84_9520
-/*unknown_84_94dc:*/ bra @unknown_84_9522
-/*unknown_84_94de:*/ bra @unknown_84_9524
-/*unknown_84_94e0:*/ bra @unknown_84_9526
-/*unknown_84_94e2:*/ bra $44 ; $9528.w
-/*unknown_84_94e4:*/ bra @unknown_84_94e6
-@unknown_84_94e6: brk $0d
-/*unknown_84_94e8:*/ brk $44
-/*unknown_84_94ea:*/ bra $44 ; $9530.w
-/*unknown_84_94ec:*/ bra $44 ; $9532.w
-/*unknown_84_94ee:*/ bra $44 ; $9534.w
-/*unknown_84_94f0:*/ bra $44 ; $9536.w
-/*unknown_84_94f2:*/ bra $44 ; $9538.w
-/*unknown_84_94f4:*/ bra $44 ; $953a.w
-/*unknown_84_94f6:*/ bra $44 ; $953c.w
-/*unknown_84_94f8:*/ bra $44 ; $953e.w
-/*unknown_84_94fa:*/ bra $44 ; $9540.w
-/*unknown_84_94fc:*/ bra $44 ; $9542.w
-/*unknown_84_94fe:*/ bra @unknown_84_9544
-/*unknown_84_9500:*/ bra @unknown_84_9546
-/*unknown_84_9502:*/ bra @unknown_84_9504
-@unknown_84_9504: brk $0d
-/*unknown_84_9506:*/ brk $41
-/*unknown_84_9508:*/ ora ($42)
-/*unknown_84_950a:*/ ora ($fc)
-/*unknown_84_950c:*/ ora ($fc)
-/*unknown_84_950e:*/ ora ($fc)
-/*unknown_84_9510:*/ ora ($43)
-@unknown_84_9512: ora ($44)
-@unknown_84_9514: ora ($fc)
-@unknown_84_9516: ora ($45)
-@unknown_84_9518: ora ($42)
-@unknown_84_951a: asl $41, X
-@unknown_84_951c: ora ($41)
-@unknown_84_951e: ora ($46)
-@unknown_84_9520: ora ($00)
-@unknown_84_9522: brk $0d
-@unknown_84_9524: brk $ef
-@unknown_84_9526: ora #$01b2.w
-/*unknown_84_9529:*/ sbc $01
-/*unknown_84_952b:*/ sbc $01
-/*unknown_84_952d:*/ inc $01
-/*unknown_84_952f:*/ sbc $01
-/*unknown_84_9531:*/ sbc $01
-/*unknown_84_9533:*/ sbc $01
-/*unknown_84_9535:*/ sbc $01
-/*unknown_84_9537:*/ lda ($05)
-/*unknown_84_9539:*/ sbc $09ef09
-/*unknown_84_953d:*/ lda ($01)
-/*unknown_84_953f:*/ brk $00
-/*unknown_84_9541:*/ ora $b100.w
-@unknown_84_9544: ora ($d2, X)
-@unknown_84_9546: ora ($c6, X)
-/*unknown_84_9548:*/ ora ($c7, X)
-/*unknown_84_954a:*/ ora ($ff, X)
-/*unknown_84_954c:*/ brk $06
-/*unknown_84_954e:*/ cop $07
-/*unknown_84_9550:*/ cop $ff
-/*unknown_84_9552:*/ brk $a6
-/*unknown_84_9554:*/ ora ($ca, X)
-/*unknown_84_9556:*/ ora #$060c.w
-/*unknown_84_9559:*/ lda ($05), Y
-/*unknown_84_955b:*/ ora #$000a.w
-/*unknown_84_955e:*/ brk $0d
-/*unknown_84_9560:*/ brk $d1
-/*unknown_84_9562:*/ ora ($f2, X)
-/*unknown_84_9564:*/ ora ($a4, X)
-/*unknown_84_9566:*/ ora ($e7, X)
-/*unknown_84_9568:*/ ora ($a4, X)
-/*unknown_84_956a:*/ ora ($26, X)
-/*unknown_84_956c:*/ cop $27
-/*unknown_84_956e:*/ cop $a5
-/*unknown_84_9570:*/ ora ($a4, X)
-/*unknown_84_9572:*/ ora ($0d, X)
-/*unknown_84_9574:*/ cop $09
-/*unknown_84_9576:*/ asl $01b1.w
-/*unknown_84_9579:*/ plb
-/*unknown_84_957a:*/ ora ($00, X)
-/*unknown_84_957c:*/ brk $0d
-/*unknown_84_957e:*/ brk $b1
-/*unknown_84_9580:*/ ora ($12, X)
-/*unknown_84_9582:*/ cop $c4
-/*unknown_84_9584:*/ ora ($c9, X)
-/*unknown_84_9586:*/ ora ($c4, X)
-/*unknown_84_9588:*/ ora ($06, X)
-/*unknown_84_958a:*/ cop $07
-/*unknown_84_958c:*/ cop $c5
-/*unknown_84_958e:*/ ora ($c4, X)
-/*unknown_84_9590:*/ ora ($28, X)
-/*unknown_84_9592:*/ asl $ac
-/*unknown_84_9594:*/ ora ($ec, X)
-/*unknown_84_9596:*/ ora ($ec, X)
-/*unknown_84_9598:*/ ora ($00, X)
-/*unknown_84_959a:*/ brk $0d
-/*unknown_84_959c:*/ brk $b1
-/*unknown_84_959e:*/ ora ($0c, X)
-/*unknown_84_95a0:*/ asl A
-/*unknown_84_95a1:*/ dex
-/*unknown_84_95a2:*/ ora $c7
-/*unknown_84_95a4:*/ ora $01aa.w
-/*unknown_84_95a7:*/ tay
-/*unknown_84_95a8:*/ ora ($a8, X)
-/*unknown_84_95aa:*/ ora ($a8, X)
-/*unknown_84_95ac:*/ ora ($a8, X)
-/*unknown_84_95ae:*/ ora ($28, X)
-/*unknown_84_95b0:*/ asl $ab
-/*unknown_84_95b2:*/ ora ($cd, X)
-/*unknown_84_95b4:*/ ora ($cd, X)
-/*unknown_84_95b6:*/ ora ($00, X)
-/*unknown_84_95b8:*/ brk $0d
-/*unknown_84_95ba:*/ brk $d1
-/*unknown_84_95bc:*/ ora ($d0, X)
-/*unknown_84_95be:*/ ora ($ea, X)
-/*unknown_84_95c0:*/ ora $ff
-/*unknown_84_95c2:*/ brk $ff
-/*unknown_84_95c4:*/ brk $06
-/*unknown_84_95c6:*/ cop $07
-/*unknown_84_95c8:*/ cop $ff
-/*unknown_84_95ca:*/ brk $a7
-/*unknown_84_95cc:*/ ora ($0d, X)
-/*unknown_84_95ce:*/ asl A
-/*unknown_84_95cf:*/ ora #$eb06.w
-/*unknown_84_95d2:*/ ora ($d0, X)
-/*unknown_84_95d4:*/ ora ($00, X)
-/*unknown_84_95d6:*/ brk $0d
-/*unknown_84_95d8:*/ brk $eb
-/*unknown_84_95da:*/ ora ($eb, X)
-/*unknown_84_95dc:*/ ora ($ea, X)
-/*unknown_84_95de:*/ ora $ff
-/*unknown_84_95e0:*/ brk $ff
-/*unknown_84_95e2:*/ brk $06
-/*unknown_84_95e4:*/ cop $07
-/*unknown_84_95e6:*/ cop $ff
-/*unknown_84_95e8:*/ brk $a6
-/*unknown_84_95ea:*/ ora ($ff, X)
-/*unknown_84_95ec:*/ brk $2c
-/*unknown_84_95ee:*/ asl A
-/*unknown_84_95ef:*/ ora #$ae06.w
-/*unknown_84_95f2:*/ ora ($00, X)
-/*unknown_84_95f4:*/ brk $0d
-/*unknown_84_95f6:*/ brk $ec
-/*unknown_84_95f8:*/ ora ($af, X)
-/*unknown_84_95fa:*/ ora ($ea, X)
-/*unknown_84_95fc:*/ ora $c7
-/*unknown_84_95fe:*/ ora $c6
-/*unknown_84_9600:*/ ora $06
-/*unknown_84_9602:*/ cop $07
-/*unknown_84_9604:*/ cop $a8
-/*unknown_84_9606:*/ ora ($a6, X)
-/*unknown_84_9608:*/ ora ($a8, X)
-/*unknown_84_960a:*/ ora ($a8, X)
-/*unknown_84_960c:*/ ora ($d2, X)
-/*unknown_84_960e:*/ ora $ae
-/*unknown_84_9610:*/ ora ($00, X)
-/*unknown_84_9612:*/ brk $0d
-/*unknown_84_9614:*/ brk $ac
-/*unknown_84_9616:*/ ora ($af, X)
-/*unknown_84_9618:*/ ora ($b2, X)
-/*unknown_84_961a:*/ ora ($e7, X)
-/*unknown_84_961c:*/ ora $e5
-/*unknown_84_961e:*/ ora ($26, X)
-/*unknown_84_9620:*/ cop $27
-/*unknown_84_9622:*/ cop $e5
-/*unknown_84_9624:*/ ora ($a6, X)
-/*unknown_84_9626:*/ ora ($e6, X)
-/*unknown_84_9628:*/ ora ($e5, X)
-/*unknown_84_962a:*/ ora ($b2, X)
-/*unknown_84_962c:*/ ora $cd
-/*unknown_84_962e:*/ ora ($00, X)
-/*unknown_84_9630:*/ brk $0d
-/*unknown_84_9632:*/ brk $0c
-/*unknown_84_9634:*/ asl $ef
-/*unknown_84_9636:*/ ora ($b2, X)
-/*unknown_84_9638:*/ ora ($e5, X)
-/*unknown_84_963a:*/ ora ($e6, X)
-/*unknown_84_963c:*/ ora ($e5, X)
-/*unknown_84_963e:*/ ora ($e5, X)
-/*unknown_84_9640:*/ ora ($e6, X)
-/*unknown_84_9642:*/ ora ($e5, X)
-/*unknown_84_9644:*/ ora ($e5, X)
-/*unknown_84_9646:*/ ora ($e5, X)
-/*unknown_84_9648:*/ ora ($b2, X)
-/*unknown_84_964a:*/ ora $ef
-/*unknown_84_964c:*/ ora ($00, X)
-/*unknown_84_964e:*/ brk $0d
-/*unknown_84_9650:*/ brk $48
-/*unknown_84_9652:*/ ora ($49)
-/*unknown_84_9654:*/ ora ($4a)
-/*unknown_84_9656:*/ ora ($4b)
-/*unknown_84_9658:*/ ora ($39)
-/*unknown_84_965a:*/ ora ($4c, S), Y
-/*unknown_84_965c:*/ ora ($4d)
-/*unknown_84_965e:*/ ora ($39)
-/*unknown_84_9660:*/ ora ($4e, S), Y
-/*unknown_84_9662:*/ ora ($39)
-/*unknown_84_9664:*/ ora ($39, S), Y
-/*unknown_84_9666:*/ ora ($4f, S), Y
-/*unknown_84_9668:*/ ora ($49)
-/*unknown_84_966a:*/ ora ($00)
-/*unknown_84_966c:*/ brk $0d
-/*unknown_84_966e:*/ brk $19
-/*unknown_84_9670:*/ sta $19, S
-/*unknown_84_9672:*/ sta $19, S
-/*unknown_84_9674:*/ sta $19, S
-/*unknown_84_9676:*/ sta $19, S
-/*unknown_84_9678:*/ sta $19, S
-/*unknown_84_967a:*/ sta $19, S
-/*unknown_84_967c:*/ sta $19, S
-/*unknown_84_967e:*/ sta $19, S
-/*unknown_84_9680:*/ sta $19, S
-/*unknown_84_9682:*/ sta $19, S
-/*unknown_84_9684:*/ sta $19, S
-/*unknown_84_9686:*/ sta $19, S
-/*unknown_84_9688:*/ sta $00, S
-/*unknown_84_968a:*/ brk $0d
-/*unknown_84_968c:*/ brk $44
-/*unknown_84_968e:*/ bra @unknown_84_96d4
-/*unknown_84_9690:*/ bra @unknown_84_96d6
-/*unknown_84_9692:*/ bra @unknown_84_96d8
-/*unknown_84_9694:*/ bra @unknown_84_96da
-/*unknown_84_9696:*/ bra @unknown_84_96dc
-/*unknown_84_9698:*/ bra @unknown_84_96de
-/*unknown_84_969a:*/ bra @unknown_84_96e0
-/*unknown_84_969c:*/ bra @unknown_84_96e2
-/*unknown_84_969e:*/ bra @unknown_84_96e4
-/*unknown_84_96a0:*/ bra @unknown_84_96e6
-/*unknown_84_96a2:*/ bra @unknown_84_96e8
-/*unknown_84_96a4:*/ bra @unknown_84_96ea
-/*unknown_84_96a6:*/ bra @unknown_84_96a8
-@unknown_84_96a8: brk $02
-/*unknown_84_96aa:*/ bra @unknown_84_96a8
-/*unknown_84_96ac:*/ ora ($ff)
-/*unknown_84_96ae:*/ brk $00
-@unknown_84_96b0: brk $05
-/*unknown_84_96b2:*/ bra @unknown_84_96b0
-/*unknown_84_96b4:*/ ora ($ff)
-/*unknown_84_96b6:*/ brk $ff
-/*unknown_84_96b8:*/ brk $ff
-/*unknown_84_96ba:*/ brk $ff
-/*unknown_84_96bc:*/ brk $00
-/*unknown_84_96be:*/ brk $04
-/*unknown_84_96c0:*/ bra ($ff - $100) ; $96c1.w
-/*unknown_84_96c2:*/ brk $ff
-/*unknown_84_96c4:*/ brk $ff
-/*unknown_84_96c6:*/ brk $39
-/*unknown_84_96c8:*/ ora ($00, S), Y
-/*unknown_84_96ca:*/ brk $07
-/*unknown_84_96cc:*/ bra ($ff - $100) ; $96cd.w
-/*unknown_84_96ce:*/ brk $ff
-/*unknown_84_96d0:*/ brk $ff
-/*unknown_84_96d2:*/ brk $ff
-@unknown_84_96d4: brk $ff
-@unknown_84_96d6: brk $ff
-@unknown_84_96d8: brk $39
-@unknown_84_96da: ora ($01, S), Y
-@unknown_84_96dc: brk $07
-@unknown_84_96de: bra ($ff - $100) ; $96df.w
-@unknown_84_96e0: brk $ff
-@unknown_84_96e2: brk $ff
-@unknown_84_96e4: brk $ff
-@unknown_84_96e6: brk $ff
-@unknown_84_96e8: brk $ff
-@unknown_84_96ea: brk $39
-/*unknown_84_96ec:*/ ora ($00, S), Y
-/*unknown_84_96ee:*/ brk $05
-/*unknown_84_96f0:*/ bra ($ff - $100) ; $96f1.w
-/*unknown_84_96f2:*/ brk $ff
-/*unknown_84_96f4:*/ brk $ff
-/*unknown_84_96f6:*/ brk $ff
-/*unknown_84_96f8:*/ brk $39
-/*unknown_84_96fa:*/ ora ($01, S), Y
-/*unknown_84_96fc:*/ brk $01
-/*unknown_84_96fe:*/ brk $ff
-/*unknown_84_9700:*/ brk $00
-/*unknown_84_9702:*/ brk $05
-/*unknown_84_9704:*/ bra ($ff - $100) ; $9705.w
-/*unknown_84_9706:*/ brk $ff
-/*unknown_84_9708:*/ brk $ff
-/*unknown_84_970a:*/ brk $ff
-/*unknown_84_970c:*/ brk $39
-/*unknown_84_970e:*/ ora ($ff, S), Y
-/*unknown_84_9710:*/ brk $01
-/*unknown_84_9712:*/ brk $ff
-/*unknown_84_9714:*/ brk $00
-/*unknown_84_9716:*/ brk $01
-/*unknown_84_9718:*/ brk $c0
-/*unknown_84_971a:*/ dec $00
-/*unknown_84_971c:*/ brk $04
-/*unknown_84_971e:*/ bra ($c7 - $100) ; $96e7.w
-/*unknown_84_9720:*/ rep #$c9
-/*unknown_84_9722:*/ cmp ($c9)
-/*unknown_84_9724:*/ phx
-@unknown_84_9725: cmp [$5a]
-/*unknown_84_9727:*/ sbc $800201, X
-/*unknown_84_972b:*/ iny
-@unknown_84_972c: cmp ($c8)
-/*unknown_84_972e:*/ phx
-/*unknown_84_972f:*/ brk $00
-/*unknown_84_9731:*/ tsb $80
-/*unknown_84_9733:*/ cmp [$c2]
-/*unknown_84_9735:*/ wai
-/*unknown_84_9736:*/ cmp ($cb)
-/*unknown_84_9738:*/ phx
-/*unknown_84_9739:*/ cmp [$5a]
-/*unknown_84_973b:*/ sbc $800201, X
-/*unknown_84_973f:*/ dex
-/*unknown_84_9740:*/ cmp ($ca)
-/*unknown_84_9742:*/ phx
-/*unknown_84_9743:*/ brk $00
-/*unknown_84_9745:*/ ora $80, S
-/*unknown_84_9747:*/ cmp [$c2]
-/*unknown_84_9749:*/ cpy $cc02.w
-/*unknown_84_974c:*/ asl A
-/*unknown_84_974d:*/ brk $00
-/*unknown_84_974f:*/ ora ($00, X)
-/*unknown_84_9751:*/ cmp [$c2]
-/*unknown_84_9753:*/ sbc $0400.w, X
-@unknown_84_9756: bra @unknown_84_9725
-/*unknown_84_9758:*/ brl $86c9 ; $1e24.w
-/*unknown_84_975b:*/ cmp #$cd8e.w
-/*unknown_84_975e:*/ txa
-/*unknown_84_975f:*/ inc $0201.w, X
-/*unknown_84_9762:*/ bra @unknown_84_972c
-/*unknown_84_9764:*/ stx $c8
-/*unknown_84_9766:*/ stx $0000.w
-/*unknown_84_9769:*/ ora ($00, X)
-/*unknown_84_976b:*/ cmp [$c2]
-/*unknown_84_976d:*/ sbc $0301.w, X
-/*unknown_84_9770:*/ bra ($cb - $100) ; $973d.w
-/*unknown_84_9772:*/ stx $cb
-/*unknown_84_9774:*/ stx $8acd.w
-/*unknown_84_9777:*/ inc $0201.w, X
-@unknown_84_977a: bra ($ca - $100) ; $9746.w
-/*unknown_84_977c:*/ stx $ca
-/*unknown_84_977e:*/ stx $0000.w
-/*unknown_84_9781:*/ ora ($00, X)
-/*unknown_84_9783:*/ cmp [$c2]
-@unknown_84_9785: sbc $0201.w, X
-/*unknown_84_9788:*/ bra @unknown_84_9756
-/*unknown_84_978a:*/ asl $cc
-/*unknown_84_978c:*/ asl $0000.w
-@unknown_84_978f: tsb $80
-/*unknown_84_9791:*/ dec $cfc2.w
-@unknown_84_9794: cop $cf
-/*unknown_84_9796:*/ asl A
-/*unknown_84_9797:*/ dec $fd5a.w
-/*unknown_84_979a:*/ brk $04
-/*unknown_84_979c:*/ bra ($ce - $100) ; $976c.w
-/*unknown_84_979e:*/ stx $cf
-/*unknown_84_97a0:*/ asl $cf
-/*unknown_84_97a2:*/ asl $8ece.w
-/*unknown_84_97a5:*/ inc $0201.w, X
-/*unknown_84_97a8:*/ bra @unknown_84_977a
-/*unknown_84_97aa:*/ dec $d0, X
-/*unknown_84_97ac:*/ dec $01ff.w, X
-/*unknown_84_97af:*/ cop $80
-/*unknown_84_97b1:*/ bne @unknown_84_9785
-/*unknown_84_97b3:*/ bne @unknown_84_978f
-/*unknown_84_97b5:*/ brk $00
-/*unknown_84_97b7:*/ tsb $80
-/*unknown_84_97b9:*/ dec $ffc2.w
-/*unknown_84_97bc:*/ brk $ff
-/*unknown_84_97be:*/ brk $ce
-/*unknown_84_97c0:*/ phy
-/*unknown_84_97c1:*/ sbc $0400.w, X
-/*unknown_84_97c4:*/ bra @unknown_84_9794
-/*unknown_84_97c6:*/ stx $ff
-/*unknown_84_97c8:*/ brk $ff
-/*unknown_84_97ca:*/ brk $ce
-/*unknown_84_97cc:*/ stx $00fe.w
-/*unknown_84_97cf:*/ tsb $80
-/*unknown_84_97d1:*/ rep #$52
-/*unknown_84_97d3:*/ cmp $d2, S
-/*unknown_84_97d5:*/ cmp $da, S
-/*unknown_84_97d7:*/ cpy $d2
-/*unknown_84_97d9:*/ sbc $800400, X
-/*unknown_84_97dd:*/ rep #$56
-/*unknown_84_97df:*/ cmp $d6, S
-/*unknown_84_97e1:*/ cmp $de, S
-/*unknown_84_97e3:*/ cpy $d6
-/*unknown_84_97e5:*/ brk $00
-/*unknown_84_97e7:*/ tsb $80
-/*unknown_84_97e9:*/ sbc $00ff00.l, X
-/*unknown_84_97ed:*/ sbc $00ff00.l, X
-/*unknown_84_97f1:*/ sbc $0400.w, X
-/*unknown_84_97f4:*/ bra ($ff - $100) ; $97f5.w
-/*unknown_84_97f6:*/ brk $ff
-/*unknown_84_97f8:*/ brk $ff
-/*unknown_84_97fa:*/ brk $ff
-/*unknown_84_97fc:*/ brk $fe
-/*unknown_84_97fe:*/ brk $04
-/*unknown_84_9800:*/ bra ($d2 - $100) ; $97d4.w
-/*unknown_84_9802:*/ cop $d3
-/*unknown_84_9804:*/ cop $d3
-/*unknown_84_9806:*/ asl A
-/*unknown_84_9807:*/ pei ($02)
-/*unknown_84_9809:*/ sbc $800400, X
-/*unknown_84_980d:*/ cmp ($06)
-/*unknown_84_980f:*/ cmp ($06, S), Y
-/*unknown_84_9811:*/ cmp ($0e, S), Y
-/*unknown_84_9813:*/ pei ($06)
-/*unknown_84_9815:*/ brk $00
-/*unknown_84_9817:*/ tsb $80
-/*unknown_84_9819:*/ sbc $00ff00.l, X
-/*unknown_84_981d:*/ sbc $00ff00.l, X
-/*unknown_84_9821:*/ sbc $0400.w, X
-/*unknown_84_9824:*/ bra ($ff - $100) ; $9825.w
-/*unknown_84_9826:*/ brk $ff
-/*unknown_84_9828:*/ brk $ff
-/*unknown_84_982a:*/ brk $ff
-/*unknown_84_982c:*/ brk $fe
-/*unknown_84_982e:*/ brk $04
-/*unknown_84_9830:*/ bra ($ff - $100) ; $9831.w
-/*unknown_84_9832:*/ brk $ff
-/*unknown_84_9834:*/ brk $ff
-/*unknown_84_9836:*/ brk $ff
-/*unknown_84_9838:*/ brk $ff
-/*unknown_84_983a:*/ brk $04
-/*unknown_84_983c:*/ bra ($ff - $100) ; $983d.w
-/*unknown_84_983e:*/ brk $ff
-/*unknown_84_9840:*/ brk $ff
-/*unknown_84_9842:*/ brk $ff
-/*unknown_84_9844:*/ brk $00
-/*unknown_84_9846:*/ brk $04
-/*unknown_84_9848:*/ bra ($ff - $100) ; $9849.w
-/*unknown_84_984a:*/ brk $ff
-/*unknown_84_984c:*/ brk $ff
-/*unknown_84_984e:*/ brk $ff
-/*unknown_84_9850:*/ brk $ff
-/*unknown_84_9852:*/ brk $04
-/*unknown_84_9854:*/ bra @unknown_84_98c8
-/*unknown_84_9856:*/ ora ($73, X)
-/*unknown_84_9858:*/ ora ($73, X)
-/*unknown_84_985a:*/ ora ($72, X)
-/*unknown_84_985c:*/ ora ($fe, X)
-/*unknown_84_985e:*/ brk $04
-/*unknown_84_9860:*/ bra @unknown_84_98d4
-/*unknown_84_9862:*/ ora ($73, X)
-/*unknown_84_9864:*/ ora ($73, X)
-/*unknown_84_9866:*/ ora ($72, X)
-/*unknown_84_9868:*/ ora ($fd, X)
-/*unknown_84_986a:*/ brk $04
-/*unknown_84_986c:*/ bra ($ff - $100) ; $986d.w
-/*unknown_84_986e:*/ brk $ff
-/*unknown_84_9870:*/ brk $ff
-/*unknown_84_9872:*/ brk $ff
-/*unknown_84_9874:*/ brk $00
-/*unknown_84_9876:*/ brk $02
-/*unknown_84_9878:*/ brk $65
-/*unknown_84_987a:*/ bra @unknown_84_98e2
-/*unknown_84_987c:*/ bra ($ff - $100) ; $987d.w
-/*unknown_84_987e:*/ brk $01
-/*unknown_84_9880:*/ brk $64
-/*unknown_84_9882:*/ bra @unknown_84_9884
-@unknown_84_9884: sbc $450002, X
-/*unknown_84_9888:*/ bra @unknown_84_98d0
-/*unknown_84_988a:*/ bra ($ff - $100) ; $988b.w
-/*unknown_84_988c:*/ ora ($03, X)
-/*unknown_84_988e:*/ brk $47
-/*unknown_84_9890:*/ bra @unknown_84_98da
-/*unknown_84_9892:*/ bra $49 ; $98dd.w
-/*unknown_84_9894:*/ bra @unknown_84_9896
-@unknown_84_9896: brk $01
-/*unknown_84_9898:*/ brk $01
-/*unknown_84_989a:*/ brk $00
-/*unknown_84_989c:*/ brk $02
-/*unknown_84_989e:*/ brk $ff
-/*unknown_84_98a0:*/ brk $ff
-/*unknown_84_98a2:*/ brk $fe
-/*unknown_84_98a4:*/ brk $02
-/*unknown_84_98a6:*/ brk $ff
-/*unknown_84_98a8:*/ brk $ff
-/*unknown_84_98aa:*/ brk $fe
-/*unknown_84_98ac:*/ ora ($04, X)
-/*unknown_84_98ae:*/ brk $ff
-/*unknown_84_98b0:*/ brk $ff
-/*unknown_84_98b2:*/ brk $ff
-/*unknown_84_98b4:*/ brk $ff
-/*unknown_84_98b6:*/ brk $fe
-/*unknown_84_98b8:*/ inc $0004.w, X
-/*unknown_84_98bb:*/ sbc $00ff00.l, X
-/*unknown_84_98bf:*/ sbc $00ff00.l, X
-/*unknown_84_98c3:*/ inc $04ff.w, X
-/*unknown_84_98c6:*/ brk $ff
-@unknown_84_98c8: brk $ff
-/*unknown_84_98ca:*/ brk $ff
-/*unknown_84_98cc:*/ brk $ff
-/*unknown_84_98ce:*/ brk $00
-@unknown_84_98d0: brk $01
-/*unknown_84_98d2:*/ brk $40
-@unknown_84_98d4: cmp $00
-/*unknown_84_98d6:*/ brk $01
-/*unknown_84_98d8:*/ brk $40
-@unknown_84_98da: sta $00
-/*unknown_84_98dc:*/ brk $01
-/*unknown_84_98de:*/ brk $41
-/*unknown_84_98e0:*/ sta ($00, X)
-@unknown_84_98e2: brk $0c
-/*unknown_84_98e4:*/ brk $41
-/*unknown_84_98e6:*/ sta ($ff, X)
-/*unknown_84_98e8:*/ brk $ff
-/*unknown_84_98ea:*/ brk $ff
-/*unknown_84_98ec:*/ brk $ff
-/*unknown_84_98ee:*/ brk $ff
-/*unknown_84_98f0:*/ brk $ff
-/*unknown_84_98f2:*/ brk $ff
-/*unknown_84_98f4:*/ brk $ff
-/*unknown_84_98f6:*/ brk $ff
-/*unknown_84_98f8:*/ brk $ff
-/*unknown_84_98fa:*/ brk $41
-/*unknown_84_98fc:*/ sta $00
-/*unknown_84_98fe:*/ ora ($0c, X)
-/*unknown_84_9900:*/ brk $22
-/*unknown_84_9902:*/ ora $ff, S
-/*unknown_84_9904:*/ brk $ff
-/*unknown_84_9906:*/ brk $ff
-/*unknown_84_9908:*/ brk $ff
-/*unknown_84_990a:*/ brk $ff
-/*unknown_84_990c:*/ brk $ff
-/*unknown_84_990e:*/ brk $ff
-/*unknown_84_9910:*/ brk $ff
-/*unknown_84_9912:*/ brk $ff
-/*unknown_84_9914:*/ brk $ff
-/*unknown_84_9916:*/ brk $22
-/*unknown_84_9918:*/ ora [$00]
-/*unknown_84_991a:*/ cop $0c
-/*unknown_84_991c:*/ brk $23
-/*unknown_84_991e:*/ ora $ff, S
-/*unknown_84_9920:*/ brk $ff
-/*unknown_84_9922:*/ brk $ff
-/*unknown_84_9924:*/ brk $ff
-/*unknown_84_9926:*/ brk $ff
-/*unknown_84_9928:*/ brk $ff
-/*unknown_84_992a:*/ brk $ff
-/*unknown_84_992c:*/ brk $ff
-/*unknown_84_992e:*/ brk $ff
-/*unknown_84_9930:*/ brk $ff
-/*unknown_84_9932:*/ brk $23
-/*unknown_84_9934:*/ ora [$00]
-/*unknown_84_9936:*/ ora $0c, S
-/*unknown_84_9938:*/ brk $23
-/*unknown_84_993a:*/ phd
-/*unknown_84_993b:*/ sbc $00ff00.l, X
-/*unknown_84_993f:*/ sbc $00ff00.l, X
-/*unknown_84_9943:*/ sbc $00ff00.l, X
-/*unknown_84_9947:*/ sbc $00ff00.l, X
-/*unknown_84_994b:*/ sbc $00ff00.l, X
-/*unknown_84_994f:*/ and $0f, S
-/*unknown_84_9951:*/ brk $00
-/*unknown_84_9953:*/ ora ($00, X)
-/*unknown_84_9955:*/ eor ($01, X)
-/*unknown_84_9957:*/ brk $04
-/*unknown_84_9959:*/ tsb $2200.w
-/*unknown_84_995c:*/ phd
-/*unknown_84_995d:*/ sbc $00ff00.l, X
-/*unknown_84_9961:*/ sbc $00ff00.l, X
-/*unknown_84_9965:*/ sbc $00ff00.l, X
-/*unknown_84_9969:*/ sbc $00ff00.l, X
-/*unknown_84_996d:*/ sbc $00ff00.l, X
-/*unknown_84_9971:*/ jsr $05000f
-/*unknown_84_9975:*/ tsb $4e00.w
-/*unknown_84_9978:*/ sta ($4f, X)
-/*unknown_84_997a:*/ sta ($ff, X)
-/*unknown_84_997c:*/ brk $ff
-/*unknown_84_997e:*/ brk $ff
-/*unknown_84_9980:*/ brk $ff
-/*unknown_84_9982:*/ brk $ff
-/*unknown_84_9984:*/ brk $ff
-/*unknown_84_9986:*/ brk $ff
-/*unknown_84_9988:*/ brk $ff
-/*unknown_84_998a:*/ brk $4f
-/*unknown_84_998c:*/ sta $4e
-/*unknown_84_998e:*/ sta $00
-/*unknown_84_9990:*/ brk $0c
-/*unknown_84_9992:*/ brk $41
-/*unknown_84_9994:*/ sta ($ff, X)
-/*unknown_84_9996:*/ brk $ff
-/*unknown_84_9998:*/ brk $ff
-/*unknown_84_999a:*/ brk $ff
-/*unknown_84_999c:*/ brk $ff
-/*unknown_84_999e:*/ brk $ff
-/*unknown_84_99a0:*/ brk $ff
-/*unknown_84_99a2:*/ brk $ff
-/*unknown_84_99a4:*/ brk $ff
-/*unknown_84_99a6:*/ brk $ff
-/*unknown_84_99a8:*/ brk $41
-/*unknown_84_99aa:*/ sta $00
-/*unknown_84_99ac:*/ ora ($0c, X)
-/*unknown_84_99ae:*/ brk $22
-/*unknown_84_99b0:*/ ora $ff, S
-/*unknown_84_99b2:*/ brk $ff
-/*unknown_84_99b4:*/ brk $ff
-/*unknown_84_99b6:*/ brk $ff
-/*unknown_84_99b8:*/ brk $ff
-/*unknown_84_99ba:*/ brk $ff
-/*unknown_84_99bc:*/ brk $ff
-/*unknown_84_99be:*/ brk $ff
-/*unknown_84_99c0:*/ brk $ff
-/*unknown_84_99c2:*/ brk $ff
-/*unknown_84_99c4:*/ brk $22
-/*unknown_84_99c6:*/ ora [$00]
-/*unknown_84_99c8:*/ cop $0c
-/*unknown_84_99ca:*/ brk $23
-/*unknown_84_99cc:*/ ora $ff, S
-/*unknown_84_99ce:*/ brk $ff
-/*unknown_84_99d0:*/ brk $ff
-/*unknown_84_99d2:*/ brk $ff
-/*unknown_84_99d4:*/ brk $ff
-/*unknown_84_99d6:*/ brk $ff
-/*unknown_84_99d8:*/ brk $ff
-/*unknown_84_99da:*/ brk $ff
-/*unknown_84_99dc:*/ brk $ff
-/*unknown_84_99de:*/ brk $ff
-/*unknown_84_99e0:*/ brk $23
-/*unknown_84_99e2:*/ ora [$00]
-/*unknown_84_99e4:*/ brk $01
-/*unknown_84_99e6:*/ brk $41
-/*unknown_84_99e8:*/ ora ($00, X)
-/*unknown_84_99ea:*/ ora $0c, S
-/*unknown_84_99ec:*/ brk $23
-/*unknown_84_99ee:*/ phd
-/*unknown_84_99ef:*/ sbc $00ff00.l, X
-/*unknown_84_99f3:*/ sbc $00ff00.l, X
-/*unknown_84_99f7:*/ sbc $00ff00.l, X
-/*unknown_84_99fb:*/ sbc $00ff00.l, X
-/*unknown_84_99ff:*/ sbc $00ff00.l, X
-/*unknown_84_9a03:*/ and $0f, S
-/*unknown_84_9a05:*/ brk $04
-/*unknown_84_9a07:*/ tsb $2200.w
-/*unknown_84_9a0a:*/ phd
-/*unknown_84_9a0b:*/ sbc $00ff00.l, X
-/*unknown_84_9a0f:*/ sbc $00ff00.l, X
-/*unknown_84_9a13:*/ sbc $00ff00.l, X
-/*unknown_84_9a17:*/ sbc $00ff00.l, X
-/*unknown_84_9a1b:*/ sbc $00ff00.l, X
-/*unknown_84_9a1f:*/ jsr $05000f
-/*unknown_84_9a23:*/ tsb $4e00.w
-/*unknown_84_9a26:*/ sta ($4f, X)
-/*unknown_84_9a28:*/ sta ($ff, X)
-/*unknown_84_9a2a:*/ brk $ff
-/*unknown_84_9a2c:*/ brk $ff
-/*unknown_84_9a2e:*/ brk $ff
-/*unknown_84_9a30:*/ brk $ff
-/*unknown_84_9a32:*/ brk $ff
-/*unknown_84_9a34:*/ brk $ff
-/*unknown_84_9a36:*/ brk $ff
-/*unknown_84_9a38:*/ brk $4f
-/*unknown_84_9a3a:*/ sta $4e
-/*unknown_84_9a3c:*/ sta $00
-/*unknown_84_9a3e:*/ brk $02
-/*unknown_84_9a40:*/ brk $59
-/*unknown_84_9a42:*/ clv
-/*unknown_84_9a43:*/ eor $008c.w, Y
-/*unknown_84_9a46:*/ sbc $5b0002, X
-/*unknown_84_9a4a:*/ brk $5b
-/*unknown_84_9a4c:*/ tsb $00
-/*unknown_84_9a4e:*/ inc $0002.w, X
-/*unknown_84_9a51:*/ tcd
-/*unknown_84_9a52:*/ brk $5b
-/*unknown_84_9a54:*/ tsb $00
-/*unknown_84_9a56:*/ sbc $0002.w, X
-/*unknown_84_9a59:*/ tcd
-/*unknown_84_9a5a:*/ brk $5b
-/*unknown_84_9a5c:*/ tsb $00
-/*unknown_84_9a5e:*/ jsr ($0002.w, X)
-/*unknown_84_9a61:*/ tcd
-/*unknown_84_9a62:*/ brk $5b
-/*unknown_84_9a64:*/ tsb $00
-/*unknown_84_9a66:*/ xce
-/*unknown_84_9a67:*/ cop $00
-/*unknown_84_9a69:*/ eor $5980.w, Y
-/*unknown_84_9a6c:*/ sty $00
-/*unknown_84_9a6e:*/ brk $02
-/*unknown_84_9a70:*/ brk $59
-/*unknown_84_9a72:*/ dey
-/*unknown_84_9a73:*/ eor $008c.w, Y
-/*unknown_84_9a76:*/ sbc $5b0002, X
-/*unknown_84_9a7a:*/ brk $5b
-/*unknown_84_9a7c:*/ tsb $00
-/*unknown_84_9a7e:*/ inc $0002.w, X
-/*unknown_84_9a81:*/ tcd
-/*unknown_84_9a82:*/ brk $5b
-/*unknown_84_9a84:*/ tsb $00
-/*unknown_84_9a86:*/ sbc $0002.w, X
-/*unknown_84_9a89:*/ tcd
-/*unknown_84_9a8a:*/ brk $5b
-/*unknown_84_9a8c:*/ tsb $00
-/*unknown_84_9a8e:*/ jsr ($0002.w, X)
-/*unknown_84_9a91:*/ tcd
-/*unknown_84_9a92:*/ brk $5b
-/*unknown_84_9a94:*/ tsb $00
-/*unknown_84_9a96:*/ xce
-/*unknown_84_9a97:*/ cop $00
-/*unknown_84_9a99:*/ eor $5980.w, Y
-/*unknown_84_9a9c:*/ sty $00
-/*unknown_84_9a9e:*/ brk $02
-/*unknown_84_9aa0:*/ brk $5a
-/*unknown_84_9aa2:*/ dey
-/*unknown_84_9aa3:*/ phy
-/*unknown_84_9aa4:*/ sty $ff00.w
-/*unknown_84_9aa7:*/ cop $00
-/*unknown_84_9aa9:*/ jmp $045c00
-/*unknown_84_9aad:*/ brk $fe
-/*unknown_84_9aaf:*/ cop $00
-/*unknown_84_9ab1:*/ jmp $045c00
-/*unknown_84_9ab5:*/ brk $fd
-/*unknown_84_9ab7:*/ cop $00
-/*unknown_84_9ab9:*/ jmp $045c00
-/*unknown_84_9abd:*/ brk $fc
-/*unknown_84_9abf:*/ cop $00
-/*unknown_84_9ac1:*/ jmp $045c00
-/*unknown_84_9ac5:*/ brk $fb
-/*unknown_84_9ac7:*/ cop $00
-/*unknown_84_9ac9:*/ phy
-/*unknown_84_9aca:*/ bra @unknown_84_9b26
-/*unknown_84_9acc:*/ sty $00
-/*unknown_84_9ace:*/ brk $0d
-/*unknown_84_9ad0:*/ brk $ff
-/*unknown_84_9ad2:*/ brk $ff
-/*unknown_84_9ad4:*/ brk $ff
-/*unknown_84_9ad6:*/ brk $ff
-/*unknown_84_9ad8:*/ brk $ff
-/*unknown_84_9ada:*/ brk $ff
-/*unknown_84_9adc:*/ brk $ff
-/*unknown_84_9ade:*/ brk $ff
-/*unknown_84_9ae0:*/ brk $ff
-/*unknown_84_9ae2:*/ brk $ff
-/*unknown_84_9ae4:*/ brk $ff
-/*unknown_84_9ae6:*/ brk $ff
-/*unknown_84_9ae8:*/ brk $ff
-/*unknown_84_9aea:*/ brk $00
-/*unknown_84_9aec:*/ brk $0d
-/*unknown_84_9aee:*/ brk $ff
-/*unknown_84_9af0:*/ bra ($ff - $100) ; $9af1.w
-/*unknown_84_9af2:*/ bra ($ff - $100) ; $9af3.w
-/*unknown_84_9af4:*/ bra ($ff - $100) ; $9af5.w
-/*unknown_84_9af6:*/ bra ($ff - $100) ; $9af7.w
-/*unknown_84_9af8:*/ bra ($ff - $100) ; $9af9.w
-/*unknown_84_9afa:*/ bra ($ff - $100) ; $9afb.w
-/*unknown_84_9afc:*/ bra ($ff - $100) ; $9afd.w
-/*unknown_84_9afe:*/ bra ($ff - $100) ; $9aff.w
-/*unknown_84_9b00:*/ bra ($ff - $100) ; $9b01.w
-@unknown_84_9b02: bra ($ff - $100) ; $9b03.w
-/*unknown_84_9b04:*/ bra ($ff - $100) ; $9b05.w
-/*unknown_84_9b06:*/ bra ($ff - $100) ; $9b07.w
-/*unknown_84_9b08:*/ bra @unknown_84_9b0a
-@unknown_84_9b0a: brk $02
-/*unknown_84_9b0c:*/ brk $4a
-/*unknown_84_9b0e:*/ dec $4a
-/*unknown_84_9b10:*/ eor ($00)
-/*unknown_84_9b12:*/ ora ($02, X)
-/*unknown_84_9b14:*/ brk $6a
-@unknown_84_9b16: dec $6a, X
-/*unknown_84_9b18:*/ cmp ($00)
-/*unknown_84_9b1a:*/ brk $02
-/*unknown_84_9b1c:*/ brk $53
-/*unknown_84_9b1e:*/ bra $53 ; $9b73.w
-/*unknown_84_9b20:*/ bra @unknown_84_9b22
-@unknown_84_9b22: ora ($02, X)
-/*unknown_84_9b24:*/ brk $53
-@unknown_84_9b26: bra $53 ; $9b7b.w
-/*unknown_84_9b28:*/ bra @unknown_84_9b2a
-@unknown_84_9b2a: brk $02
-/*unknown_84_9b2c:*/ brk $54
-/*unknown_84_9b2e:*/ bra @unknown_84_9b84
-/*unknown_84_9b30:*/ bra @unknown_84_9b32
-@unknown_84_9b32: ora ($02, X)
-/*unknown_84_9b34:*/ brk $54
-/*unknown_84_9b36:*/ bra @unknown_84_9b8c
-/*unknown_84_9b38:*/ bra @unknown_84_9b3a
-@unknown_84_9b3a: brk $02
-/*unknown_84_9b3c:*/ brk $55
-@unknown_84_9b3e: brk $55
-/*unknown_84_9b40:*/ brk $00
-/*unknown_84_9b42:*/ ora ($02, X)
-/*unknown_84_9b44:*/ brk $55
-/*unknown_84_9b46:*/ brk $55
-/*unknown_84_9b48:*/ brk $00
-/*unknown_84_9b4a:*/ brk $02
-@unknown_84_9b4c: brk $ff
-/*unknown_84_9b4e:*/ brk $ff
-/*unknown_84_9b50:*/ brk $00
-@unknown_84_9b52: ora ($02, X)
-/*unknown_84_9b54:*/ brk $ff
-/*unknown_84_9b56:*/ brk $ff
-/*unknown_84_9b58:*/ brk $00
-/*unknown_84_9b5a:*/ brk $0a
-/*unknown_84_9b5c:*/ brk $80
-/*unknown_84_9b5e:*/ brk $80
-@unknown_84_9b60: brk $80
-/*unknown_84_9b62:*/ brk $80
-/*unknown_84_9b64:*/ brk $80
-@unknown_84_9b66: brk $80
-/*unknown_84_9b68:*/ brk $80
-/*unknown_84_9b6a:*/ brk $80
-/*unknown_84_9b6c:*/ brk $80
-/*unknown_84_9b6e:*/ brk $80
-/*unknown_84_9b70:*/ brk $00
-/*unknown_84_9b72:*/ brk $01
-@unknown_84_9b74: brk $0b
-/*unknown_84_9b76:*/ sta ($00, X)
-/*unknown_84_9b78:*/ brk $01
-/*unknown_84_9b7a:*/ brk $80
-/*unknown_84_9b7c:*/ brk $00
-/*unknown_84_9b7e:*/ brk $08
-/*unknown_84_9b80:*/ bra @unknown_84_9b02
-/*unknown_84_9b82:*/ brk $07
-@unknown_84_9b84: ora ($27, X)
-/*unknown_84_9b86:*/ ora ($07, X)
-/*unknown_84_9b88:*/ ora ($27, X)
-/*unknown_84_9b8a:*/ ora ($47, X)
-@unknown_84_9b8c: ora ($80, X)
-/*unknown_84_9b8e:*/ brk $80
-/*unknown_84_9b90:*/ brk $01
-/*unknown_84_9b92:*/ brk $08
-/*unknown_84_9b94:*/ bra @unknown_84_9b16
-/*unknown_84_9b96:*/ brk $08
-/*unknown_84_9b98:*/ ora ($28, X)
-/*unknown_84_9b9a:*/ ora ($08, X)
-/*unknown_84_9b9c:*/ ora ($28, X)
-/*unknown_84_9b9e:*/ ora ($48, X)
-/*unknown_84_9ba0:*/ ora ($80, X)
-/*unknown_84_9ba2:*/ brk $80
-@unknown_84_9ba4: brk $02
-/*unknown_84_9ba6:*/ brk $08
-/*unknown_84_9ba8:*/ bra @unknown_84_9b2a
-/*unknown_84_9baa:*/ brk $09
-/*unknown_84_9bac:*/ ora ($29, X)
-/*unknown_84_9bae:*/ ora ($09, X)
-/*unknown_84_9bb0:*/ ora ($29, X)
-/*unknown_84_9bb2:*/ ora ($49, X)
-/*unknown_84_9bb4:*/ ora ($80, X)
-/*unknown_84_9bb6:*/ brk $80
-/*unknown_84_9bb8:*/ brk $00
-/*unknown_84_9bba:*/ brk $08
-/*unknown_84_9bbc:*/ bra @unknown_84_9b3e
-/*unknown_84_9bbe:*/ bra $07 ; $9bc7.w
-/*unknown_84_9bc0:*/ sta ($27, X)
-/*unknown_84_9bc2:*/ sta ($07, X)
-/*unknown_84_9bc4:*/ sta ($27, X)
-/*unknown_84_9bc6:*/ sta ($47, X)
-/*unknown_84_9bc8:*/ sta ($80, X)
-/*unknown_84_9bca:*/ bra @unknown_84_9b4c
-/*unknown_84_9bcc:*/ bra $01 ; $9bcf.w
-/*unknown_84_9bce:*/ brk $08
-/*unknown_84_9bd0:*/ bra @unknown_84_9b52
-/*unknown_84_9bd2:*/ bra @unknown_84_9bdc
-/*unknown_84_9bd4:*/ sta ($28, X)
-/*unknown_84_9bd6:*/ sta ($08, X)
-/*unknown_84_9bd8:*/ sta ($28, X)
-/*unknown_84_9bda:*/ sta ($48, X)
-@unknown_84_9bdc: sta ($80, X)
-/*unknown_84_9bde:*/ bra @unknown_84_9b60
-/*unknown_84_9be0:*/ bra @unknown_84_9be4
-/*unknown_84_9be2:*/ brk $08
-@unknown_84_9be4: bra @unknown_84_9b66
-/*unknown_84_9be6:*/ bra $09 ; $9bf1.w
-/*unknown_84_9be8:*/ sta ($29, X)
-/*unknown_84_9bea:*/ sta ($09, X)
-/*unknown_84_9bec:*/ sta ($29, X)
-/*unknown_84_9bee:*/ sta ($49, X)
-/*unknown_84_9bf0:*/ sta ($80, X)
-/*unknown_84_9bf2:*/ bra @unknown_84_9b74
-/*unknown_84_9bf4:*/ bra @unknown_84_9bf6
-@unknown_84_9bf6: brk $04
-/*unknown_84_9bf8:*/ bra @unknown_84_9ba4
-/*unknown_84_9bfa:*/ sty $cc
-@unknown_84_9bfc: sty $cc
-/*unknown_84_9bfe:*/ sty $8caa.w
-/*unknown_84_9c01:*/ brk $00
-/*unknown_84_9c03:*/ cop $80
-/*unknown_84_9c05:*/ cpy $cc84.w
-/*unknown_84_9c08:*/ sty $0000.w
-/*unknown_84_9c0b:*/ cop $80
-/*unknown_84_9c0d:*/ wai
-/*unknown_84_9c0e:*/ sty $cb
-/*unknown_84_9c10:*/ sty $0000.w
-/*unknown_84_9c13:*/ cop $80
-/*unknown_84_9c15:*/ dex
-/*unknown_84_9c16:*/ cpy $ca
-/*unknown_84_9c18:*/ jmp [$0000]
-/*unknown_84_9c1b:*/ cop $80
-/*unknown_84_9c1d:*/ cmp $cd84.w
-@unknown_84_9c20: sty $0000.w
-/*unknown_84_9c23:*/ cop $80
-/*unknown_84_9c25:*/ dex
-/*unknown_84_9c26:*/ sty $ca
-/*unknown_84_9c28:*/ sty $0000.w
-/*unknown_84_9c2b:*/ ora ($00, X)
-/*unknown_84_9c2d:*/ tax
-/*unknown_84_9c2e:*/ ldy $00
-/*unknown_84_9c30:*/ brk $01
-/*unknown_84_9c32:*/ brk $ab
-/*unknown_84_9c34:*/ ldy $00
-/*unknown_84_9c36:*/ brk $01
-/*unknown_84_9c38:*/ brk $ac
-/*unknown_84_9c3a:*/ ldy $00
-/*unknown_84_9c3c:*/ brk $01
-/*unknown_84_9c3e:*/ brk $aa
-/*unknown_84_9c40:*/ ldy $0000.w
-/*unknown_84_9c43:*/ ora ($00, X)
-/*unknown_84_9c45:*/ plb
-/*unknown_84_9c46:*/ ldy $0000.w
-/*unknown_84_9c49:*/ ora ($00, X)
-/*unknown_84_9c4b:*/ ldy $00ac.w
-/*unknown_84_9c4e:*/ brk $04
-/*unknown_84_9c50:*/ bra @unknown_84_9bfc
-/*unknown_84_9c52:*/ bra @unknown_84_9c20
-/*unknown_84_9c54:*/ bra ($cc - $100) ; $9c22.w
-/*unknown_84_9c56:*/ dey
-/*unknown_84_9c57:*/ tax
-/*unknown_84_9c58:*/ dey
-/*unknown_84_9c59:*/ brk $00
-/*unknown_84_9c5b:*/ cop $80
-/*unknown_84_9c5d:*/ cpy $cc80.w
-/*unknown_84_9c60:*/ dey
-/*unknown_84_9c61:*/ brk $00
-/*unknown_84_9c63:*/ cop $80
-/*unknown_84_9c65:*/ wai
-/*unknown_84_9c66:*/ bra ($cb - $100) ; $9c33.w
-/*unknown_84_9c68:*/ dey
-/*unknown_84_9c69:*/ brk $00
-/*unknown_84_9c6b:*/ cop $80
-/*unknown_84_9c6d:*/ dex
-/*unknown_84_9c6e:*/ cpy #$d8ca.w
-/*unknown_84_9c71:*/ brk $00
-/*unknown_84_9c73:*/ cop $80
-/*unknown_84_9c75:*/ cmp $cd80.w
-/*unknown_84_9c78:*/ dey
-/*unknown_84_9c79:*/ brk $00
-/*unknown_84_9c7b:*/ cop $80
-/*unknown_84_9c7d:*/ dex
-/*unknown_84_9c7e:*/ bra ($ca - $100) ; $9c4a.w
-/*unknown_84_9c80:*/ dey
-/*unknown_84_9c81:*/ brk $00
-/*unknown_84_9c83:*/ ora ($00, X)
-/*unknown_84_9c85:*/ tax
-/*unknown_84_9c86:*/ ldy #$0000.w
-/*unknown_84_9c89:*/ ora ($00, X)
-/*unknown_84_9c8b:*/ plb
-/*unknown_84_9c8c:*/ ldy #$0000.w
-/*unknown_84_9c8f:*/ ora ($00, X)
-/*unknown_84_9c91:*/ ldy $00a0.w
-/*unknown_84_9c94:*/ brk $01
-/*unknown_84_9c96:*/ brk $aa
-/*unknown_84_9c98:*/ tay
-/*unknown_84_9c99:*/ brk $00
-/*unknown_84_9c9b:*/ ora ($00, X)
-/*unknown_84_9c9d:*/ plb
-/*unknown_84_9c9e:*/ tay
-/*unknown_84_9c9f:*/ brk $00
-/*unknown_84_9ca1:*/ ora ($00, X)
-/*unknown_84_9ca3:*/ ldy $00a8.w
-/*unknown_84_9ca6:*/ brk $01
-/*unknown_84_9ca8:*/ brk $ff
-/*unknown_84_9caa:*/ cpy #$0000.w
-/*unknown_84_9cad:*/ ora ($00, X)
-/*unknown_84_9caf:*/ eor ($80, S), Y
-/*unknown_84_9cb1:*/ brk $00
-/*unknown_84_9cb3:*/ ora ($00, X)
-/*unknown_84_9cb5:*/ mvn $00, $80
-/*unknown_84_9cb8:*/ brk $01
-/*unknown_84_9cba:*/ brk $55
-/*unknown_84_9cbc:*/ brk $00
-/*unknown_84_9cbe:*/ brk $01
-/*unknown_84_9cc0:*/ brk $ff
-/*unknown_84_9cc2:*/ brk $00
-/*unknown_84_9cc4:*/ brk $0e
-/*unknown_84_9cc6:*/ brk $2b
-/*unknown_84_9cc8:*/ ora ($2b, X)
-/*unknown_84_9cca:*/ ora ($2b, X)
-/*unknown_84_9ccc:*/ ora ($2b, X)
-/*unknown_84_9cce:*/ ora ($2b, X)
-/*unknown_84_9cd0:*/ ora ($2b, X)
-/*unknown_84_9cd2:*/ ora ($2b, X)
-/*unknown_84_9cd4:*/ ora ($2b, X)
-/*unknown_84_9cd6:*/ ora ($2b, X)
-/*unknown_84_9cd8:*/ ora ($2b, X)
-/*unknown_84_9cda:*/ ora ($2b, X)
-/*unknown_84_9cdc:*/ ora ($2b, X)
-/*unknown_84_9cde:*/ ora ($2b, X)
-/*unknown_84_9ce0:*/ ora ($2b, X)
-/*unknown_84_9ce2:*/ ora ($00), Y
-/*unknown_84_9ce4:*/ ora $09
-/*unknown_84_9ce6:*/ brk $11
-/*unknown_84_9ce8:*/ ora ($11, X)
-/*unknown_84_9cea:*/ ora ($11, X)
-/*unknown_84_9cec:*/ ora ($11, X)
-/*unknown_84_9cee:*/ ora ($11, X)
-/*unknown_84_9cf0:*/ ora ($9b, X)
-/*unknown_84_9cf2:*/ ora ($29, X)
-/*unknown_84_9cf4:*/ ora ($29, X)
-/*unknown_84_9cf6:*/ ora ($29, X)
-/*unknown_84_9cf8:*/ ora ($05), Y
-/*unknown_84_9cfa:*/ asl $02
-/*unknown_84_9cfc:*/ brk $bb
-/*unknown_84_9cfe:*/ ora ($29, X)
-/*unknown_84_9d00:*/ ora ($05, X)
-/*unknown_84_9d02:*/ ora [$01]
-/*unknown_84_9d04:*/ brk $bb
-/*unknown_84_9d06:*/ ora ($05, X)
-/*unknown_84_9d08:*/ php
-/*unknown_84_9d09:*/ ora ($00, X)
-/*unknown_84_9d0b:*/ tyx
-/*unknown_84_9d0c:*/ ora ($00), Y
-/*unknown_84_9d0e:*/ brk $0e
-/*unknown_84_9d10:*/ brk $2b
-/*unknown_84_9d12:*/ lda ($2b, X)
-/*unknown_84_9d14:*/ lda ($2b, X)
-/*unknown_84_9d16:*/ lda ($2b, X)
-/*unknown_84_9d18:*/ lda ($2b, X)
-/*unknown_84_9d1a:*/ lda ($2b, X)
-/*unknown_84_9d1c:*/ lda ($2b, X)
-/*unknown_84_9d1e:*/ lda ($2b, X)
-/*unknown_84_9d20:*/ lda ($2b, X)
-/*unknown_84_9d22:*/ lda ($2b, X)
-/*unknown_84_9d24:*/ lda ($2b, X)
-/*unknown_84_9d26:*/ lda ($2b, X)
-/*unknown_84_9d28:*/ lda ($2b, X)
-/*unknown_84_9d2a:*/ lda ($2b, X)
-/*unknown_84_9d2c:*/ sta ($00, X)
-/*unknown_84_9d2e:*/ ora $09
-/*unknown_84_9d30:*/ brk $11
-/*unknown_84_9d32:*/ sta ($11, X)
-/*unknown_84_9d34:*/ sta ($11, X)
-/*unknown_84_9d36:*/ sta ($11, X)
-/*unknown_84_9d38:*/ sta ($11, X)
-/*unknown_84_9d3a:*/ sta ($9b, X)
-/*unknown_84_9d3c:*/ sta ($29, X)
-/*unknown_84_9d3e:*/ sta ($29, X)
-/*unknown_84_9d40:*/ sta ($29, X)
-/*unknown_84_9d42:*/ sta ($05, X)
-/*unknown_84_9d44:*/ asl $02
-/*unknown_84_9d46:*/ brk $bb
-/*unknown_84_9d48:*/ sta ($29, X)
-/*unknown_84_9d4a:*/ sta ($05, X)
-/*unknown_84_9d4c:*/ ora [$01]
-/*unknown_84_9d4e:*/ brk $bb
-/*unknown_84_9d50:*/ sta ($05, X)
-/*unknown_84_9d52:*/ php
-/*unknown_84_9d53:*/ ora ($00, X)
-/*unknown_84_9d55:*/ tyx
-/*unknown_84_9d56:*/ sta ($00, X)
-/*unknown_84_9d58:*/ brk $04
-/*unknown_84_9d5a:*/ bra $71 ; $9dcd.w
-/*unknown_84_9d5c:*/ cmp ($71, X)
-/*unknown_84_9d5e:*/ cmp ($71), Y
-/*unknown_84_9d60:*/ cmp ($71), Y
-/*unknown_84_9d62:*/ cmp ($ff), Y
-/*unknown_84_9d64:*/ brk $04
-/*unknown_84_9d66:*/ bra @unknown_84_9d6a
-/*unknown_84_9d68:*/ sta ($02, X)
-@unknown_84_9d6a: sta ($02, X)
-/*unknown_84_9d6c:*/ sta ($02, X)
-/*unknown_84_9d6e:*/ sta ($fe, X)
-/*unknown_84_9d70:*/ brk $04
-/*unknown_84_9d72:*/ bra @unknown_84_9dd4
-/*unknown_84_9d74:*/ sta $60
-/*unknown_84_9d76:*/ sta $60
-/*unknown_84_9d78:*/ sta $60
-/*unknown_84_9d7a:*/ sta $00
-/*unknown_84_9d7c:*/ brk $04
-/*unknown_84_9d7e:*/ bra $53 ; $9dd3.w
-/*unknown_84_9d80:*/ bra $53 ; $9dd5.w
-/*unknown_84_9d82:*/ bra $53 ; $9dd7.w
-/*unknown_84_9d84:*/ bra $53 ; $9dd9.w
-/*unknown_84_9d86:*/ bra ($ff - $100) ; $9d87.w
-/*unknown_84_9d88:*/ brk $04
-/*unknown_84_9d8a:*/ bra $53 ; $9ddf.w
-/*unknown_84_9d8c:*/ bra $53 ; $9de1.w
-/*unknown_84_9d8e:*/ bra $53 ; $9de3.w
-/*unknown_84_9d90:*/ bra $53 ; $9de5.w
-@unknown_84_9d92: bra @unknown_84_9d92
-/*unknown_84_9d94:*/ brk $04
-/*unknown_84_9d96:*/ bra $53 ; $9deb.w
-/*unknown_84_9d98:*/ bra $53 ; $9ded.w
-/*unknown_84_9d9a:*/ bra $53 ; $9def.w
-/*unknown_84_9d9c:*/ bra $53 ; $9df1.w
-/*unknown_84_9d9e:*/ bra @unknown_84_9da0
-@unknown_84_9da0: brk $04
-/*unknown_84_9da2:*/ bra @unknown_84_9df8
-/*unknown_84_9da4:*/ brk $54
-/*unknown_84_9da6:*/ brk $54
-/*unknown_84_9da8:*/ brk $54
-/*unknown_84_9daa:*/ brk $ff
-/*unknown_84_9dac:*/ brk $04
-/*unknown_84_9dae:*/ bra @unknown_84_9e04
-/*unknown_84_9db0:*/ brk $54
-/*unknown_84_9db2:*/ brk $54
-/*unknown_84_9db4:*/ brk $54
-/*unknown_84_9db6:*/ brk $fe
-/*unknown_84_9db8:*/ brk $04
-/*unknown_84_9dba:*/ bra @unknown_84_9e10
-/*unknown_84_9dbc:*/ brk $54
-/*unknown_84_9dbe:*/ brk $54
-/*unknown_84_9dc0:*/ brk $54
-/*unknown_84_9dc2:*/ brk $00
-/*unknown_84_9dc4:*/ brk $04
-/*unknown_84_9dc6:*/ bra $55 ; $9e1d.w
-/*unknown_84_9dc8:*/ bra $55 ; $9e1f.w
-/*unknown_84_9dca:*/ bra $55 ; $9e21.w
-/*unknown_84_9dcc:*/ bra $55 ; $9e23.w
-/*unknown_84_9dce:*/ bra ($ff - $100) ; $9dcf.w
-/*unknown_84_9dd0:*/ brk $04
-/*unknown_84_9dd2:*/ bra $55 ; $9e29.w
-@unknown_84_9dd4: bra $55 ; $9e2b.w
-/*unknown_84_9dd6:*/ bra $55 ; $9e2d.w
-/*unknown_84_9dd8:*/ bra $55 ; $9e2f.w
-@unknown_84_9dda: bra @unknown_84_9dda
-/*unknown_84_9ddc:*/ brk $04
-/*unknown_84_9dde:*/ bra $55 ; $9e35.w
-/*unknown_84_9de0:*/ bra $55 ; $9e37.w
-/*unknown_84_9de2:*/ bra $55 ; $9e39.w
-/*unknown_84_9de4:*/ bra $55 ; $9e3b.w
-/*unknown_84_9de6:*/ bra @unknown_84_9de8
-@unknown_84_9de8: brk $04
-/*unknown_84_9dea:*/ bra ($ff - $100) ; $9deb.w
-/*unknown_84_9dec:*/ brk $ff
-/*unknown_84_9dee:*/ brk $ff
-/*unknown_84_9df0:*/ brk $ff
-/*unknown_84_9df2:*/ brk $ff
-/*unknown_84_9df4:*/ brk $04
-/*unknown_84_9df6:*/ bra ($ff - $100) ; $9df7.w
-@unknown_84_9df8: bne ($ff - $100) ; $9df9.w
-/*unknown_84_9dfa:*/ bne ($ff - $100) ; $9dfb.w
-/*unknown_84_9dfc:*/ bne ($ff - $100) ; $9dfd.w
-@unknown_84_9dfe: bmi @unknown_84_9dfe
-/*unknown_84_9e00:*/ brk $04
-/*unknown_84_9e02:*/ bra ($ff - $100) ; $9e03.w
-@unknown_84_9e04: bne ($ff - $100) ; $9e05.w
-/*unknown_84_9e06:*/ bne ($ff - $100) ; $9e07.w
-/*unknown_84_9e08:*/ bne ($ff - $100) ; $9e09.w
-/*unknown_84_9e0a:*/ bmi @unknown_84_9e0c
-@unknown_84_9e0c: brk $02
-/*unknown_84_9e0e:*/ brk $a1
-@unknown_84_9e10: and $a0, X
-/*unknown_84_9e12:*/ sta $fe
-/*unknown_84_9e14:*/ brk $02
-/*unknown_84_9e16:*/ brk $a0
-/*unknown_84_9e18:*/ sta ($a1, X)
-/*unknown_84_9e1a:*/ eor ($fe), Y
-/*unknown_84_9e1c:*/ sbc $800004, X
-/*unknown_84_9e20:*/ and ($81, X)
-/*unknown_84_9e22:*/ and ($81, X)
-/*unknown_84_9e24:*/ and $80
-/*unknown_84_9e26:*/ and $00
-/*unknown_84_9e28:*/ brk $02
-/*unknown_84_9e2a:*/ brk $a1
-/*unknown_84_9e2c:*/ ora $a0
-/*unknown_84_9e2e:*/ sta $fe
-/*unknown_84_9e30:*/ brk $02
-/*unknown_84_9e32:*/ brk $a0
-/*unknown_84_9e34:*/ sta ($a1, X)
-/*unknown_84_9e36:*/ ora ($fe, X)
-/*unknown_84_9e38:*/ sbc $800004, X
-/*unknown_84_9e3c:*/ and ($81, X)
-/*unknown_84_9e3e:*/ and ($81, X)
-/*unknown_84_9e40:*/ and $80
-/*unknown_84_9e42:*/ and $00
-/*unknown_84_9e44:*/ brk $02
-/*unknown_84_9e46:*/ brk $a3
-/*unknown_84_9e48:*/ ora $a2
-/*unknown_84_9e4a:*/ sta $fe
-/*unknown_84_9e4c:*/ brk $02
-/*unknown_84_9e4e:*/ brk $a2
-/*unknown_84_9e50:*/ sta ($a3, X)
-/*unknown_84_9e52:*/ ora ($fe, X)
-/*unknown_84_9e54:*/ sbc $820004, X
-/*unknown_84_9e58:*/ and ($83, X)
-/*unknown_84_9e5a:*/ and ($83, X)
-/*unknown_84_9e5c:*/ and $82
-/*unknown_84_9e5e:*/ and $00
-/*unknown_84_9e60:*/ brk $02
-/*unknown_84_9e62:*/ brk $a5
-/*unknown_84_9e64:*/ ora $a4
-/*unknown_84_9e66:*/ sta $fe
-/*unknown_84_9e68:*/ brk $02
-/*unknown_84_9e6a:*/ brk $a4
-/*unknown_84_9e6c:*/ sta ($a5, X)
-/*unknown_84_9e6e:*/ ora ($fe, X)
-/*unknown_84_9e70:*/ sbc $840004, X
-/*unknown_84_9e74:*/ and ($85, X)
-/*unknown_84_9e76:*/ and ($85, X)
-/*unknown_84_9e78:*/ and $84
-/*unknown_84_9e7a:*/ and $00
-/*unknown_84_9e7c:*/ brk $02
-/*unknown_84_9e7e:*/ brk $a7
-/*unknown_84_9e80:*/ ora $a6
-/*unknown_84_9e82:*/ sta $fe
-/*unknown_84_9e84:*/ brk $02
-/*unknown_84_9e86:*/ brk $a6
-/*unknown_84_9e88:*/ sta ($a7, X)
-/*unknown_84_9e8a:*/ ora ($fe, X)
-/*unknown_84_9e8c:*/ sbc $860004, X
-/*unknown_84_9e90:*/ and ($87, X)
-/*unknown_84_9e92:*/ and ($87, X)
-/*unknown_84_9e94:*/ and $86
-/*unknown_84_9e96:*/ and $00
-/*unknown_84_9e98:*/ brk $02
-/*unknown_84_9e9a:*/ brk $a1
-/*unknown_84_9e9c:*/ and $8da0.w, X
-/*unknown_84_9e9f:*/ inc $0200.w, X
-/*unknown_84_9ea2:*/ brk $a0
-/*unknown_84_9ea4:*/ bit #$59a1.w
-/*unknown_84_9ea7:*/ inc $0401.w, X
-/*unknown_84_9eaa:*/ brk $80
-/*unknown_84_9eac:*/ and #$2981.w
-/*unknown_84_9eaf:*/ sta ($2d, X)
-/*unknown_84_9eb1:*/ bra $2d ; $9ee0.w
-/*unknown_84_9eb3:*/ brk $00
-/*unknown_84_9eb5:*/ cop $00
-/*unknown_84_9eb7:*/ lda ($0d, X)
-/*unknown_84_9eb9:*/ ldy #$fe8d.w
-/*unknown_84_9ebc:*/ brk $02
-/*unknown_84_9ebe:*/ brk $a0
-/*unknown_84_9ec0:*/ bit #$09a1.w
-/*unknown_84_9ec3:*/ inc $0401.w, X
-/*unknown_84_9ec6:*/ brk $80
-/*unknown_84_9ec8:*/ and #$2981.w
-/*unknown_84_9ecb:*/ sta ($2d, X)
-/*unknown_84_9ecd:*/ bra $2d ; $9efc.w
-/*unknown_84_9ecf:*/ brk $00
-/*unknown_84_9ed1:*/ cop $00
-/*unknown_84_9ed3:*/ lda $0d, S
-/*unknown_84_9ed5:*/ ldx #$fe8d.w
-/*unknown_84_9ed8:*/ brk $02
-/*unknown_84_9eda:*/ brk $a2
-/*unknown_84_9edc:*/ bit #$09a3.w
-/*unknown_84_9edf:*/ inc $0401.w, X
-/*unknown_84_9ee2:*/ brk $82
-/*unknown_84_9ee4:*/ and #$2983.w
-/*unknown_84_9ee7:*/ sta $2d, S
-/*unknown_84_9ee9:*/ brl $002d ; $9f19.w
-/*unknown_84_9eec:*/ brk $02
-/*unknown_84_9eee:*/ brk $a5
-/*unknown_84_9ef0:*/ ora $8da4.w
-/*unknown_84_9ef3:*/ inc $0200.w, X
-/*unknown_84_9ef6:*/ brk $a4
-/*unknown_84_9ef8:*/ bit #$09a5.w
-/*unknown_84_9efb:*/ inc $0401.w, X
-/*unknown_84_9efe:*/ brk $84
-/*unknown_84_9f00:*/ and #$2985.w
-/*unknown_84_9f03:*/ sta $2d
-/*unknown_84_9f05:*/ sty $2d
-/*unknown_84_9f07:*/ brk $00
-/*unknown_84_9f09:*/ cop $00
-/*unknown_84_9f0b:*/ lda [$0d]
-/*unknown_84_9f0d:*/ ldx $8d
-/*unknown_84_9f0f:*/ inc $0200.w, X
-/*unknown_84_9f12:*/ brk $a6
-/*unknown_84_9f14:*/ bit #$09a7.w
-/*unknown_84_9f17:*/ inc $0401.w, X
-/*unknown_84_9f1a:*/ brk $86
-/*unknown_84_9f1c:*/ and #$2987.w
-/*unknown_84_9f1f:*/ sta [$2d]
-/*unknown_84_9f21:*/ stx $2d
-/*unknown_84_9f23:*/ brk $00
-/*unknown_84_9f25:*/ ora ($00, X)
-/*unknown_84_9f27:*/ tsb $ff81.w
-/*unknown_84_9f2a:*/ brk $01
-/*unknown_84_9f2c:*/ brk $0b
-/*unknown_84_9f2e:*/ sta ($00, X)
-/*unknown_84_9f30:*/ brk $01
-/*unknown_84_9f32:*/ brk $2c
-/*unknown_84_9f34:*/ sta ($ff, X)
-/*unknown_84_9f36:*/ brk $01
-/*unknown_84_9f38:*/ brk $2b
-/*unknown_84_9f3a:*/ sta ($00, X)
-/*unknown_84_9f3c:*/ brk $01
-/*unknown_84_9f3e:*/ brk $4c
-/*unknown_84_9f40:*/ sta ($ff, X)
-/*unknown_84_9f42:*/ brk $01
-/*unknown_84_9f44:*/ brk $4b
-/*unknown_84_9f46:*/ sta ($00, X)
-/*unknown_84_9f48:*/ brk $01
-/*unknown_84_9f4a:*/ brk $28
-/*unknown_84_9f4c:*/ sta ($fd, X)
-/*unknown_84_9f4e:*/ brk $01
-/*unknown_84_9f50:*/ brk $28
-/*unknown_84_9f52:*/ sta $00
-/*unknown_84_9f54:*/ brk $01
-/*unknown_84_9f56:*/ brk $29
-/*unknown_84_9f58:*/ sta ($00, X)
-/*unknown_84_9f5a:*/ brk $01
-/*unknown_84_9f5c:*/ brk $28
-/*unknown_84_9f5e:*/ sta $03
-/*unknown_84_9f60:*/ brk $01
-/*unknown_84_9f62:*/ brk $28
-/*unknown_84_9f64:*/ sta ($00, X)
-/*unknown_84_9f66:*/ brk $01
-/*unknown_84_9f68:*/ brk $29
-/*unknown_84_9f6a:*/ sta $00
-/*unknown_84_9f6c:*/ brk $01
-/*unknown_84_9f6e:*/ brk $c4
-/*unknown_84_9f70:*/ bra @unknown_84_9f72
-@unknown_84_9f72: sbc $a40001, X
-/*unknown_84_9f76:*/ bpl @unknown_84_9f78
-@unknown_84_9f78: brk $01
-/*unknown_84_9f7a:*/ brk $c5
-/*unknown_84_9f7c:*/ bra @unknown_84_9f7e
-@unknown_84_9f7e: sbc $a50001, X
-/*unknown_84_9f82:*/ bpl @unknown_84_9f84
-@unknown_84_9f84: brk $01
-/*unknown_84_9f86:*/ brk $c6
-/*unknown_84_9f88:*/ bra @unknown_84_9f8a
-@unknown_84_9f8a: sbc $a60001, X
-/*unknown_84_9f8e:*/ bpl @unknown_84_9f90
-@unknown_84_9f90: brk $01
-/*unknown_84_9f92:*/ brk $c7
-/*unknown_84_9f94:*/ bra @unknown_84_9f96
-@unknown_84_9f96: sbc $a70001, X
-/*unknown_84_9f9a:*/ bpl @unknown_84_9f9c
-@unknown_84_9f9c: brk $01
-/*unknown_84_9f9e:*/ brk $c8
-/*unknown_84_9fa0:*/ bra @unknown_84_9fa2
-@unknown_84_9fa2: sbc $a80001, X
-/*unknown_84_9fa6:*/ bpl @unknown_84_9fa8
-@unknown_84_9fa8: brk $01
-/*unknown_84_9faa:*/ brk $c9
-/*unknown_84_9fac:*/ bra @unknown_84_9fae
-@unknown_84_9fae: sbc $a90001, X
-/*unknown_84_9fb2:*/ bpl @unknown_84_9fb4
-@unknown_84_9fb4: brk $01
-/*unknown_84_9fb6:*/ brk $c3
-/*unknown_84_9fb8:*/ ldy $00, X
-/*unknown_84_9fba:*/ brk $01
-/*unknown_84_9fbc:*/ brk $c1
-/*unknown_84_9fbe:*/ sty $00
-/*unknown_84_9fc0:*/ brk $01
-/*unknown_84_9fc2:*/ brk $c3
-/*unknown_84_9fc4:*/ bcs @unknown_84_9fc6
-@unknown_84_9fc6: brk $01
-/*unknown_84_9fc8:*/ brk $c1
-/*unknown_84_9fca:*/ bra @unknown_84_9fcc
-@unknown_84_9fcc: brk $02
-/*unknown_84_9fce:*/ brk $14
-/*unknown_84_9fd0:*/ cmp $13
-/*unknown_84_9fd2:*/ ora $00
-/*unknown_84_9fd4:*/ ora ($02, X)
-@unknown_84_9fd6: brk $34
-/*unknown_84_9fd8:*/ cmp $33, X
-/*unknown_84_9fda:*/ ora $00
-/*unknown_84_9fdc:*/ brk $02
-/*unknown_84_9fde:*/ brk $16
-/*unknown_84_9fe0:*/ cmp $15
-/*unknown_84_9fe2:*/ ora $00
-/*unknown_84_9fe4:*/ ora ($02, X)
-/*unknown_84_9fe6:*/ brk $36
-/*unknown_84_9fe8:*/ cmp $35, X
-/*unknown_84_9fea:*/ ora $00
-/*unknown_84_9fec:*/ brk $02
-/*unknown_84_9fee:*/ brk $10
-/*unknown_84_9ff0:*/ cmp $0f
-/*unknown_84_9ff2:*/ eor $00, X
-/*unknown_84_9ff4:*/ ora ($02, X)
-@unknown_84_9ff6: brk $30
-/*unknown_84_9ff8:*/ cmp $2f, X
-/*unknown_84_9ffa:*/ cmp $00, X
-/*unknown_84_9ffc:*/ brk $02
-/*unknown_84_9ffe:*/ brk $12
-/*unknown_84_a000:*/ cmp $11
-/*unknown_84_a002:*/ eor $00, X
-/*unknown_84_a004:*/ ora ($02, X)
-/*unknown_84_a006:*/ brk $32
-/*unknown_84_a008:*/ cmp $31, X
-/*unknown_84_a00a:*/ cmp $00, X
-/*unknown_84_a00c:*/ brk $02
-/*unknown_84_a00e:*/ brk $30
-/*unknown_84_a010:*/ cmp $5d2f.w
-/*unknown_84_a013:*/ brk $01
-/*unknown_84_a015:*/ cop $00
-/*unknown_84_a017:*/ bpl @unknown_84_9ff6
-/*unknown_84_a019:*/ ora $0000dd.l
-/*unknown_84_a01d:*/ cop $00
-/*unknown_84_a01f:*/ and ($cd)
-/*unknown_84_a021:*/ and ($5d), Y
-/*unknown_84_a023:*/ brk $01
-/*unknown_84_a025:*/ cop $00
-/*unknown_84_a027:*/ ora ($dd)
-/*unknown_84_a029:*/ ora ($dd), Y
-/*unknown_84_a02b:*/ brk $00
-/*unknown_84_a02d:*/ cop $00
-/*unknown_84_a02f:*/ bra @unknown_84_9fd6
-/*unknown_84_a031:*/ sbc $010000, X
-/*unknown_84_a035:*/ cop $00
-/*unknown_84_a037:*/ ldy #$ffa5.w
-/*unknown_84_a03a:*/ brk $00
-/*unknown_84_a03c:*/ brk $02
-/*unknown_84_a03e:*/ brk $81
-/*unknown_84_a040:*/ lda $ff
-/*unknown_84_a042:*/ brk $00
-/*unknown_84_a044:*/ ora ($02, X)
-/*unknown_84_a046:*/ brk $a1
-/*unknown_84_a048:*/ lda $ff
-/*unknown_84_a04a:*/ brk $00
-/*unknown_84_a04c:*/ brk $02
-/*unknown_84_a04e:*/ brk $82
-/*unknown_84_a050:*/ lda $ff
-/*unknown_84_a052:*/ brk $00
-/*unknown_84_a054:*/ ora ($02, X)
-/*unknown_84_a056:*/ brk $a2
-/*unknown_84_a058:*/ lda $ff
-/*unknown_84_a05a:*/ brk $00
-/*unknown_84_a05c:*/ brk $02
-/*unknown_84_a05e:*/ brk $83
-/*unknown_84_a060:*/ lda $ff
-/*unknown_84_a062:*/ brk $00
-/*unknown_84_a064:*/ ora ($02, X)
-/*unknown_84_a066:*/ brk $a3
-/*unknown_84_a068:*/ lda $ff
-/*unknown_84_a06a:*/ brk $00
-/*unknown_84_a06c:*/ brk $02
-/*unknown_84_a06e:*/ brk $a5
-/*unknown_84_a070:*/ lda $a4
-/*unknown_84_a072:*/ lda $00
-/*unknown_84_a074:*/ ora ($02, X)
-/*unknown_84_a076:*/ brk $c5
-/*unknown_84_a078:*/ lda $c4
-/*unknown_84_a07a:*/ ora $00
-/*unknown_84_a07c:*/ brk $02
-/*unknown_84_a07e:*/ brk $a7
-/*unknown_84_a080:*/ lda $a6
-/*unknown_84_a082:*/ lda $00
-/*unknown_84_a084:*/ ora ($02, X)
-/*unknown_84_a086:*/ brk $c7
-/*unknown_84_a088:*/ lda $c6
-/*unknown_84_a08a:*/ ora $00
-/*unknown_84_a08c:*/ brk $02
-/*unknown_84_a08e:*/ brk $a9
-/*unknown_84_a090:*/ lda $a8
-/*unknown_84_a092:*/ lda $00
-/*unknown_84_a094:*/ ora ($02, X)
-/*unknown_84_a096:*/ brk $c9
-/*unknown_84_a098:*/ lda $c8
-/*unknown_84_a09a:*/ ora $00
-/*unknown_84_a09c:*/ brk $02
-/*unknown_84_a09e:*/ brk $ab
-/*unknown_84_a0a0:*/ lda $aa
-/*unknown_84_a0a2:*/ lda $00
-/*unknown_84_a0a4:*/ ora ($02, X)
-/*unknown_84_a0a6:*/ brk $cb
-/*unknown_84_a0a8:*/ lda $ca
-/*unknown_84_a0aa:*/ ora $00
-/*unknown_84_a0ac:*/ brk $02
-/*unknown_84_a0ae:*/ brk $c5
-/*unknown_84_a0b0:*/ lda $0dc4.w
-/*unknown_84_a0b3:*/ brk $01
-/*unknown_84_a0b5:*/ cop $00
-/*unknown_84_a0b7:*/ lda $ad
-/*unknown_84_a0b9:*/ ldy $ad
-/*unknown_84_a0bb:*/ brk $00
-/*unknown_84_a0bd:*/ cop $00
-/*unknown_84_a0bf:*/ cmp [$ad]
-/*unknown_84_a0c1:*/ dec $0d
-/*unknown_84_a0c3:*/ brk $01
-/*unknown_84_a0c5:*/ cop $00
-/*unknown_84_a0c7:*/ lda [$ad]
-/*unknown_84_a0c9:*/ ldx $ad
-/*unknown_84_a0cb:*/ brk $00
-/*unknown_84_a0cd:*/ cop $00
-/*unknown_84_a0cf:*/ cmp #$c8ad.w
-/*unknown_84_a0d2:*/ ora $0100.w
-/*unknown_84_a0d5:*/ cop $00
-/*unknown_84_a0d7:*/ lda #$a8ad.w
-@unknown_84_a0da: lda $0000.w
-/*unknown_84_a0dd:*/ cop $00
-/*unknown_84_a0df:*/ wai
-/*unknown_84_a0e0:*/ lda $0dca.w
-/*unknown_84_a0e3:*/ brk $01
-/*unknown_84_a0e5:*/ cop $00
-/*unknown_84_a0e7:*/ plb
-/*unknown_84_a0e8:*/ lda $adaa.w
-/*unknown_84_a0eb:*/ brk $00
-/*unknown_84_a0ed:*/ ora ($00, X)
-/*unknown_84_a0ef:*/ trb $c1
-/*unknown_84_a0f1:*/ sbc $000100.l, X
-/*unknown_84_a0f5:*/ ora ($01, S), Y
-/*unknown_84_a0f7:*/ sbc $000201.l, X
-/*unknown_84_a0fb:*/ and ($01, S), Y
-/*unknown_84_a0fd:*/ bit $d1, X
-/*unknown_84_a0ff:*/ brk $00
-/*unknown_84_a101:*/ ora ($00, X)
-/*unknown_84_a103:*/ asl $c1, X
-/*unknown_84_a105:*/ sbc $000100.l, X
-/*unknown_84_a109:*/ ora $01, X
-/*unknown_84_a10b:*/ sbc $000201.l, X
-/*unknown_84_a10f:*/ and $01, X
-/*unknown_84_a111:*/ rol $d1, X
-/*unknown_84_a113:*/ brk $00
-/*unknown_84_a115:*/ ora ($00, X)
-/*unknown_84_a117:*/ bpl @unknown_84_a0da
-/*unknown_84_a119:*/ sbc $000100.l, X
-/*unknown_84_a11d:*/ ora $01ff51
-/*unknown_84_a121:*/ cop $00
-/*unknown_84_a123:*/ and $d130d1
-/*unknown_84_a127:*/ brk $00
-/*unknown_84_a129:*/ ora ($00, X)
-/*unknown_84_a12b:*/ ora ($c1)
-/*unknown_84_a12d:*/ sbc $000100.l, X
-/*unknown_84_a131:*/ ora ($51), Y
-/*unknown_84_a133:*/ sbc $000201.l, X
-/*unknown_84_a137:*/ and ($d1), Y
-/*unknown_84_a139:*/ and ($d1)
-/*unknown_84_a13b:*/ brk $00
-/*unknown_84_a13d:*/ ora ($00, X)
-/*unknown_84_a13f:*/ bmi ($c9 - $100) ; $a10a.w
-/*unknown_84_a141:*/ sbc $000100.l, X
-/*unknown_84_a145:*/ and $01ff59
-/*unknown_84_a149:*/ cop $00
-/*unknown_84_a14b:*/ ora $d910d9
-/*unknown_84_a14f:*/ brk $00
-/*unknown_84_a151:*/ ora ($00, X)
-/*unknown_84_a153:*/ and ($c9)
-/*unknown_84_a155:*/ sbc $000100.l, X
-/*unknown_84_a159:*/ and ($59), Y
-/*unknown_84_a15b:*/ sbc $000201.l, X
-/*unknown_84_a15f:*/ ora ($d9), Y
-/*unknown_84_a161:*/ ora ($d9)
-/*unknown_84_a163:*/ brk $00
-/*unknown_84_a165:*/ ora ($00, X)
-/*unknown_84_a167:*/ bra ($a1 - $100) ; $a10a.w
-/*unknown_84_a169:*/ sbc $000100.l, X
-/*unknown_84_a16d:*/ sbc $01ff00, X
-/*unknown_84_a171:*/ cop $00
-/*unknown_84_a173:*/ sbc $a1a000, X
-/*unknown_84_a177:*/ brk $00
-/*unknown_84_a179:*/ ora ($00, X)
-/*unknown_84_a17b:*/ sta ($a1, X)
-/*unknown_84_a17d:*/ sbc $000100.l, X
-/*unknown_84_a181:*/ sbc $01ff00, X
-/*unknown_84_a185:*/ cop $00
-/*unknown_84_a187:*/ sbc $a1a100, X
-/*unknown_84_a18b:*/ brk $00
-/*unknown_84_a18d:*/ ora ($00, X)
-/*unknown_84_a18f:*/ brl $ffa1 ; $a133.w
-/*unknown_84_a192:*/ brk $01
-/*unknown_84_a194:*/ brk $ff
-/*unknown_84_a196:*/ brk $ff
-/*unknown_84_a198:*/ ora ($02, X)
-/*unknown_84_a19a:*/ brk $ff
-/*unknown_84_a19c:*/ brk $a2
-/*unknown_84_a19e:*/ lda ($00, X)
-/*unknown_84_a1a0:*/ brk $01
-/*unknown_84_a1a2:*/ brk $83
-/*unknown_84_a1a4:*/ lda ($ff, X)
-/*unknown_84_a1a6:*/ brk $01
-/*unknown_84_a1a8:*/ brk $ff
-/*unknown_84_a1aa:*/ brk $ff
-/*unknown_84_a1ac:*/ ora ($02, X)
-/*unknown_84_a1ae:*/ brk $ff
-/*unknown_84_a1b0:*/ brk $a3
-/*unknown_84_a1b2:*/ lda ($00, X)
-/*unknown_84_a1b4:*/ brk $01
-/*unknown_84_a1b6:*/ brk $a5
-/*unknown_84_a1b8:*/ lda ($ff, X)
-/*unknown_84_a1ba:*/ brk $01
-/*unknown_84_a1bc:*/ brk $a4
-/*unknown_84_a1be:*/ lda ($ff, X)
-/*unknown_84_a1c0:*/ ora ($02, X)
-/*unknown_84_a1c2:*/ brk $c4
-/*unknown_84_a1c4:*/ ora ($c5, X)
-/*unknown_84_a1c6:*/ lda ($00, X)
-/*unknown_84_a1c8:*/ brk $01
-/*unknown_84_a1ca:*/ brk $a7
-/*unknown_84_a1cc:*/ lda ($ff, X)
-/*unknown_84_a1ce:*/ brk $01
-/*unknown_84_a1d0:*/ brk $a6
-/*unknown_84_a1d2:*/ lda ($ff, X)
-/*unknown_84_a1d4:*/ ora ($02, X)
-/*unknown_84_a1d6:*/ brk $c6
-/*unknown_84_a1d8:*/ ora ($c7, X)
-/*unknown_84_a1da:*/ lda ($00, X)
-/*unknown_84_a1dc:*/ brk $01
-/*unknown_84_a1de:*/ brk $a9
-/*unknown_84_a1e0:*/ lda ($ff, X)
-/*unknown_84_a1e2:*/ brk $01
-/*unknown_84_a1e4:*/ brk $a8
-/*unknown_84_a1e6:*/ lda ($ff, X)
-/*unknown_84_a1e8:*/ ora ($02, X)
-/*unknown_84_a1ea:*/ brk $c8
-/*unknown_84_a1ec:*/ ora ($c9, X)
-/*unknown_84_a1ee:*/ lda ($00, X)
-/*unknown_84_a1f0:*/ brk $01
-/*unknown_84_a1f2:*/ brk $ab
-/*unknown_84_a1f4:*/ lda ($ff, X)
-/*unknown_84_a1f6:*/ brk $01
-/*unknown_84_a1f8:*/ brk $aa
-/*unknown_84_a1fa:*/ lda ($ff, X)
-/*unknown_84_a1fc:*/ ora ($02, X)
-/*unknown_84_a1fe:*/ brk $ca
-/*unknown_84_a200:*/ ora ($cb, X)
-/*unknown_84_a202:*/ lda ($00, X)
-/*unknown_84_a204:*/ brk $01
-/*unknown_84_a206:*/ brk $c5
-/*unknown_84_a208:*/ lda #$00ff.w
-/*unknown_84_a20b:*/ ora ($00, X)
-/*unknown_84_a20d:*/ cpy $09
-/*unknown_84_a20f:*/ sbc $000201.l, X
-/*unknown_84_a213:*/ ldy $a9
-/*unknown_84_a215:*/ lda $a9
-/*unknown_84_a217:*/ brk $00
-/*unknown_84_a219:*/ ora ($00, X)
-/*unknown_84_a21b:*/ cmp [$a9]
-/*unknown_84_a21d:*/ sbc $000100.l, X
-/*unknown_84_a221:*/ dec $09
-/*unknown_84_a223:*/ sbc $000201.l, X
-/*unknown_84_a227:*/ ldx $a9
-/*unknown_84_a229:*/ lda [$a9]
-/*unknown_84_a22b:*/ brk $00
-/*unknown_84_a22d:*/ ora ($00, X)
-/*unknown_84_a22f:*/ cmp #$ffa9.w
-/*unknown_84_a232:*/ brk $01
-/*unknown_84_a234:*/ brk $c8
-/*unknown_84_a236:*/ ora #$01ff.w
-/*unknown_84_a239:*/ cop $00
-/*unknown_84_a23b:*/ tay
-/*unknown_84_a23c:*/ lda #$a9a9.w
-/*unknown_84_a23f:*/ brk $00
-/*unknown_84_a241:*/ ora ($00, X)
-/*unknown_84_a243:*/ wai
-/*unknown_84_a244:*/ lda #$00ff.w
-/*unknown_84_a247:*/ ora ($00, X)
-/*unknown_84_a249:*/ dex
-/*unknown_84_a24a:*/ ora #$01ff.w
-/*unknown_84_a24d:*/ cop $00
-/*unknown_84_a24f:*/ tax
-/*unknown_84_a250:*/ lda #$a9ab.w
-/*unknown_84_a253:*/ brk $00
-/*unknown_84_a255:*/ cop $80
-/*unknown_84_a257:*/ bmi $23 ; $a27c.w
-/*unknown_84_a259:*/ bvc $23 ; $a27e.w
-/*unknown_84_a25b:*/ brk $00
-/*unknown_84_a25d:*/ cop $80
-/*unknown_84_a25f:*/ and ($23), Y
-/*unknown_84_a261:*/ eor ($23), Y
-/*unknown_84_a263:*/ brk $00
-/*unknown_84_a265:*/ cop $80
-/*unknown_84_a267:*/ and ($23)
-/*unknown_84_a269:*/ eor ($23)
-/*unknown_84_a26b:*/ brk $00
-/*unknown_84_a26d:*/ cop $80
-/*unknown_84_a26f:*/ and ($23, S), Y
-/*unknown_84_a271:*/ eor ($23, S), Y
-/*unknown_84_a273:*/ brk $00
-/*unknown_84_a275:*/ cop $80
-/*unknown_84_a277:*/ bmi $23 ; $a29c.w
-/*unknown_84_a279:*/ bvc $23 ; $a29e.w
-/*unknown_84_a27b:*/ sbc $800200, X
-/*unknown_84_a27f:*/ bmi $23 ; $a2a4.w
-/*unknown_84_a281:*/ bvc $23 ; $a2a6.w
-/*unknown_84_a283:*/ brk $00
-/*unknown_84_a285:*/ cop $80
-/*unknown_84_a287:*/ and ($23), Y
-/*unknown_84_a289:*/ eor ($23), Y
-/*unknown_84_a28b:*/ sbc $800200, X
-/*unknown_84_a28f:*/ and ($23), Y
-/*unknown_84_a291:*/ eor ($23), Y
-/*unknown_84_a293:*/ brk $00
-/*unknown_84_a295:*/ cop $80
-/*unknown_84_a297:*/ and ($23)
-/*unknown_84_a299:*/ eor ($23)
-/*unknown_84_a29b:*/ sbc $800200, X
-/*unknown_84_a29f:*/ and ($23)
-/*unknown_84_a2a1:*/ eor ($23)
-/*unknown_84_a2a3:*/ brk $00
-/*unknown_84_a2a5:*/ cop $80
-/*unknown_84_a2a7:*/ and ($23, S), Y
-/*unknown_84_a2a9:*/ eor ($23, S), Y
-/*unknown_84_a2ab:*/ sbc $800200, X
-/*unknown_84_a2af:*/ and ($23, S), Y
-/*unknown_84_a2b1:*/ eor ($23, S), Y
-/*unknown_84_a2b3:*/ brk $00
-/*unknown_84_a2b5:*/ ora ($00, X)
-/*unknown_84_a2b7:*/ sbc $000000.l, X
-/*unknown_84_a2bb:*/ ora ($00, X)
-/*unknown_84_a2bd:*/ eor $0080.w, X
-/*unknown_84_a2c0:*/ brk $01
-/*unknown_84_a2c2:*/ brk $5e
-/*unknown_84_a2c4:*/ bra @unknown_84_a2c6
-@unknown_84_a2c6: brk $01
-/*unknown_84_a2c8:*/ brk $72
-/*unknown_84_a2ca:*/ cpy #$0000.w
-/*unknown_84_a2cd:*/ ora ($00, X)
-/*unknown_84_a2cf:*/ adc ($c0, S), Y
-/*unknown_84_a2d1:*/ brk $00
-/*unknown_84_a2d3:*/ ora ($00, X)
-/*unknown_84_a2d5:*/ stz $c0, X
-/*unknown_84_a2d7:*/ brk $00
-/*unknown_84_a2d9:*/ ora ($00, X)
-/*unknown_84_a2db:*/ adc $80, X
-/*unknown_84_a2dd:*/ brk $00
-/*unknown_84_a2df:*/ ora ($00, X)
-/*unknown_84_a2e1:*/ lsr A
-/*unknown_84_a2e2:*/ bcs @unknown_84_a2e4
-@unknown_84_a2e4: brk $01
-/*unknown_84_a2e6:*/ brk $4b
-/*unknown_84_a2e8:*/ bcs @unknown_84_a2ea
-@unknown_84_a2ea: brk $01
-/*unknown_84_a2ec:*/ brk $4c
-/*unknown_84_a2ee:*/ bcs @unknown_84_a2f0
-@unknown_84_a2f0: brk $01
-/*unknown_84_a2f2:*/ brk $4d
-/*unknown_84_a2f4:*/ bcs @unknown_84_a2f6
-@unknown_84_a2f6: brk $01
-/*unknown_84_a2f8:*/ brk $4e
-/*unknown_84_a2fa:*/ bcs @unknown_84_a2fc
-@unknown_84_a2fc: brk $01
-/*unknown_84_a2fe:*/ brk $4f
-/*unknown_84_a300:*/ bcs @unknown_84_a302
-@unknown_84_a302: brk $01
-/*unknown_84_a304:*/ brk $50
-/*unknown_84_a306:*/ bcs @unknown_84_a308
-@unknown_84_a308: brk $01
-/*unknown_84_a30a:*/ brk $51
-/*unknown_84_a30c:*/ bcs @unknown_84_a30e
-@unknown_84_a30e: brk $01
-/*unknown_84_a310:*/ brk $8e
-/*unknown_84_a312:*/ bcs @unknown_84_a314
-@unknown_84_a314: brk $01
-/*unknown_84_a316:*/ brk $8f
-/*unknown_84_a318:*/ bcs @unknown_84_a31a
-@unknown_84_a31a: brk $01
-/*unknown_84_a31c:*/ brk $90
-/*unknown_84_a31e:*/ bcs @unknown_84_a320
-@unknown_84_a320: brk $01
-/*unknown_84_a322:*/ brk $91
-/*unknown_84_a324:*/ bcs @unknown_84_a326
-@unknown_84_a326: brk $01
-/*unknown_84_a328:*/ brk $92
-/*unknown_84_a32a:*/ bcs @unknown_84_a32c
-@unknown_84_a32c: brk $01
-/*unknown_84_a32e:*/ brk $93
-/*unknown_84_a330:*/ bcs @unknown_84_a332
-@unknown_84_a332: brk $01
-/*unknown_84_a334:*/ brk $94
-/*unknown_84_a336:*/ bcs @unknown_84_a338
-@unknown_84_a338: brk $01
-/*unknown_84_a33a:*/ brk $95
-/*unknown_84_a33c:*/ bcs @unknown_84_a33e
-@unknown_84_a33e: brk $01
-/*unknown_84_a340:*/ brk $52
-/*unknown_84_a342:*/ bra @unknown_84_a344
-@unknown_84_a344: brk $01
-/*unknown_84_a346:*/ brk $53
-/*unknown_84_a348:*/ brk $00
-/*unknown_84_a34a:*/ brk $01
-/*unknown_84_a34c:*/ brk $54
-/*unknown_84_a34e:*/ brk $00
-/*unknown_84_a350:*/ brk $01
-/*unknown_84_a352:*/ brk $55
-/*unknown_84_a354:*/ brk $00
-/*unknown_84_a356:*/ brk $01
-/*unknown_84_a358:*/ brk $ff
-/*unknown_84_a35a:*/ brk $00
-/*unknown_84_a35c:*/ brk $02
-/*unknown_84_a35e:*/ brk $53
-/*unknown_84_a360:*/ brk $53
-/*unknown_84_a362:*/ brk $00
-/*unknown_84_a364:*/ brk $02
-/*unknown_84_a366:*/ brk $54
-/*unknown_84_a368:*/ brk $54
-/*unknown_84_a36a:*/ brk $00
-/*unknown_84_a36c:*/ brk $02
-/*unknown_84_a36e:*/ brk $55
-/*unknown_84_a370:*/ brk $55
-/*unknown_84_a372:*/ brk $00
-/*unknown_84_a374:*/ brk $02
-/*unknown_84_a376:*/ brk $ff
-/*unknown_84_a378:*/ brk $ff
-/*unknown_84_a37a:*/ brk $00
-/*unknown_84_a37c:*/ brk $02
-/*unknown_84_a37e:*/ bra $53 ; $a3d3.w
-/*unknown_84_a380:*/ brk $53
-/*unknown_84_a382:*/ brk $00
-/*unknown_84_a384:*/ brk $02
-/*unknown_84_a386:*/ bra @unknown_84_a3dc
-/*unknown_84_a388:*/ brk $54
-/*unknown_84_a38a:*/ brk $00
-/*unknown_84_a38c:*/ brk $02
-/*unknown_84_a38e:*/ bra $55 ; $a3e5.w
-/*unknown_84_a390:*/ brk $55
-/*unknown_84_a392:*/ brk $00
-/*unknown_84_a394:*/ brk $02
-/*unknown_84_a396:*/ bra ($ff - $100) ; $a397.w
-/*unknown_84_a398:*/ brk $ff
-/*unknown_84_a39a:*/ brk $00
-/*unknown_84_a39c:*/ brk $02
-/*unknown_84_a39e:*/ brk $53
-/*unknown_84_a3a0:*/ brk $53
-/*unknown_84_a3a2:*/ brk $00
-/*unknown_84_a3a4:*/ ora ($02, X)
-/*unknown_84_a3a6:*/ brk $53
-/*unknown_84_a3a8:*/ brk $53
-/*unknown_84_a3aa:*/ brk $00
-/*unknown_84_a3ac:*/ brk $02
-/*unknown_84_a3ae:*/ brk $54
-/*unknown_84_a3b0:*/ brk $54
-/*unknown_84_a3b2:*/ brk $00
-/*unknown_84_a3b4:*/ ora ($02, X)
-/*unknown_84_a3b6:*/ brk $54
-/*unknown_84_a3b8:*/ brk $54
-/*unknown_84_a3ba:*/ brk $00
-/*unknown_84_a3bc:*/ brk $02
-/*unknown_84_a3be:*/ brk $55
-/*unknown_84_a3c0:*/ brk $55
-/*unknown_84_a3c2:*/ brk $00
-/*unknown_84_a3c4:*/ ora ($02, X)
-/*unknown_84_a3c6:*/ brk $55
-/*unknown_84_a3c8:*/ brk $55
-/*unknown_84_a3ca:*/ brk $00
-/*unknown_84_a3cc:*/ brk $02
-/*unknown_84_a3ce:*/ brk $ff
-/*unknown_84_a3d0:*/ brk $ff
-/*unknown_84_a3d2:*/ brk $00
-/*unknown_84_a3d4:*/ ora ($02, X)
-/*unknown_84_a3d6:*/ brk $ff
-/*unknown_84_a3d8:*/ brk $ff
-/*unknown_84_a3da:*/ brk $00
-@unknown_84_a3dc: brk $01
-/*unknown_84_a3de:*/ brk $53
-/*unknown_84_a3e0:*/ bra @unknown_84_a3e2
-@unknown_84_a3e2: brk $01
-/*unknown_84_a3e4:*/ brk $54
-/*unknown_84_a3e6:*/ bra @unknown_84_a3e8
-@unknown_84_a3e8: brk $01
-/*unknown_84_a3ea:*/ brk $55
-/*unknown_84_a3ec:*/ bra @unknown_84_a3ee
-@unknown_84_a3ee: brk $01
-/*unknown_84_a3f0:*/ brk $ff
-/*unknown_84_a3f2:*/ bra @unknown_84_a3f4
-@unknown_84_a3f4: brk $02
-/*unknown_84_a3f6:*/ brk $53
-/*unknown_84_a3f8:*/ bra $53 ; $a44d.w
-/*unknown_84_a3fa:*/ bra @unknown_84_a3fc
-@unknown_84_a3fc: brk $02
-/*unknown_84_a3fe:*/ brk $54
-/*unknown_84_a400:*/ bra @unknown_84_a456
-/*unknown_84_a402:*/ bra @unknown_84_a404
-@unknown_84_a404: brk $02
-/*unknown_84_a406:*/ brk $55
-/*unknown_84_a408:*/ bra $55 ; $a45f.w
-/*unknown_84_a40a:*/ bra @unknown_84_a40c
-@unknown_84_a40c: brk $02
-/*unknown_84_a40e:*/ brk $ff
-/*unknown_84_a410:*/ bra ($ff - $100) ; $a411.w
-/*unknown_84_a412:*/ bra @unknown_84_a414
-@unknown_84_a414: brk $02
-/*unknown_84_a416:*/ bra $53 ; $a46b.w
-/*unknown_84_a418:*/ bra $53 ; $a46d.w
-/*unknown_84_a41a:*/ bra @unknown_84_a41c
-@unknown_84_a41c: brk $02
-/*unknown_84_a41e:*/ bra @unknown_84_a474
-/*unknown_84_a420:*/ bra @unknown_84_a476
-/*unknown_84_a422:*/ bra @unknown_84_a424
-@unknown_84_a424: brk $02
-/*unknown_84_a426:*/ bra @unknown_84_a47d
-/*unknown_84_a428:*/ bra @unknown_84_a47f
-/*unknown_84_a42a:*/ bra @unknown_84_a42c
-@unknown_84_a42c: brk $02
-/*unknown_84_a42e:*/ bra ($ff - $100) ; $a42f.w
-/*unknown_84_a430:*/ bra ($ff - $100) ; $a431.w
-/*unknown_84_a432:*/ bra @unknown_84_a434
-@unknown_84_a434: brk $02
-/*unknown_84_a436:*/ brk $53
-/*unknown_84_a438:*/ bra @unknown_84_a48d
-/*unknown_84_a43a:*/ bra @unknown_84_a43c
-@unknown_84_a43c: ora ($02, X)
-/*unknown_84_a43e:*/ brk $53
-/*unknown_84_a440:*/ bra $53 ; $a495.w
-/*unknown_84_a442:*/ bra @unknown_84_a444
-@unknown_84_a444: brk $02
-/*unknown_84_a446:*/ brk $54
-/*unknown_84_a448:*/ bra @unknown_84_a49e
-/*unknown_84_a44a:*/ bra @unknown_84_a44c
-@unknown_84_a44c: ora ($02, X)
-/*unknown_84_a44e:*/ brk $54
-/*unknown_84_a450:*/ bra @unknown_84_a4a6
-@unknown_84_a452: bra @unknown_84_a454
-@unknown_84_a454: brk $02
-@unknown_84_a456: brk $55
-/*unknown_84_a458:*/ bra $55 ; $a4af.w
-/*unknown_84_a45a:*/ bra @unknown_84_a45c
-@unknown_84_a45c: ora ($02, X)
-/*unknown_84_a45e:*/ brk $55
-/*unknown_84_a460:*/ bra $55 ; $a4b7.w
-@unknown_84_a462: bra @unknown_84_a464
-@unknown_84_a464: brk $02
-/*unknown_84_a466:*/ brk $ff
-@unknown_84_a468: bra ($ff - $100) ; $a469.w
-@unknown_84_a46a: bra @unknown_84_a46c
-@unknown_84_a46c: ora ($02, X)
-/*unknown_84_a46e:*/ brk $ff
-/*unknown_84_a470:*/ bra ($ff - $100) ; $a471.w
-@unknown_84_a472: bra @unknown_84_a474
-@unknown_84_a474: brk $01
-@unknown_84_a476: brk $52
-/*unknown_84_a478:*/ cpy #$0000.w
-/*unknown_84_a47b:*/ cop $00
-@unknown_84_a47d: stx $c0, Y
-@unknown_84_a47f: sta [$50], Y
-/*unknown_84_a481:*/ brk $00
-/*unknown_84_a483:*/ cop $80
-/*unknown_84_a485:*/ tya
-/*unknown_84_a486:*/ cpy #$d0b8.w
-/*unknown_84_a489:*/ brk $00
-/*unknown_84_a48b:*/ cop $00
-@unknown_84_a48d: sta $9ac0.w, Y
-/*unknown_84_a490:*/ bvc @unknown_84_a492
-@unknown_84_a492: ora ($02, X)
-/*unknown_84_a494:*/ brk $b9
-/*unknown_84_a496:*/ bne @unknown_84_a452
-/*unknown_84_a498:*/ bne @unknown_84_a49a
-@unknown_84_a49a: brk $01
-/*unknown_84_a49c:*/ brk $bc
-@unknown_84_a49e: bcs @unknown_84_a4a0
-@unknown_84_a4a0: brk $02
-/*unknown_84_a4a2:*/ brk $bc
-/*unknown_84_a4a4:*/ bcs @unknown_84_a462
-@unknown_84_a4a6: bvc @unknown_84_a4a8
-@unknown_84_a4a8: brk $02
-/*unknown_84_a4aa:*/ bra @unknown_84_a468
-/*unknown_84_a4ac:*/ bcs @unknown_84_a46a
-/*unknown_84_a4ae:*/ bne @unknown_84_a4b0
-@unknown_84_a4b0: brk $02
-/*unknown_84_a4b2:*/ brk $bc
-/*unknown_84_a4b4:*/ bcs @unknown_84_a472
-/*unknown_84_a4b6:*/ bvc @unknown_84_a4b8
-@unknown_84_a4b8: ora ($02, X)
-/*unknown_84_a4ba:*/ brk $bc
-/*unknown_84_a4bc:*/ bne ($bc - $100) ; $a47a.w
-/*unknown_84_a4be:*/ bne @unknown_84_a4c0
-@unknown_84_a4c0: brk $01
-/*unknown_84_a4c2:*/ brk $58
-/*unknown_84_a4c4:*/ beq @unknown_84_a4c6
-@unknown_84_a4c6: brk $02
-/*unknown_84_a4c8:*/ brk $58
-/*unknown_84_a4ca:*/ beq $58 ; $a524.w
-/*unknown_84_a4cc:*/ bvc @unknown_84_a4ce
-@unknown_84_a4ce: brk $02
-/*unknown_84_a4d0:*/ bra $58 ; $a52a.w
-/*unknown_84_a4d2:*/ beq $58 ; $a52c.w
-/*unknown_84_a4d4:*/ bne @unknown_84_a4d6
-@unknown_84_a4d6: brk $02
-/*unknown_84_a4d8:*/ brk $58
-/*unknown_84_a4da:*/ beq $58 ; $a534.w
-/*unknown_84_a4dc:*/ bvc @unknown_84_a4de
-@unknown_84_a4de: ora ($02, X)
-/*unknown_84_a4e0:*/ brk $58
-/*unknown_84_a4e2:*/ bne $58 ; $a53c.w
-/*unknown_84_a4e4:*/ bne @unknown_84_a4e6
-@unknown_84_a4e6: brk $01
-/*unknown_84_a4e8:*/ brk $57
-/*unknown_84_a4ea:*/ cpy #$0000.w
-/*unknown_84_a4ed:*/ ora ($00, X)
-/*unknown_84_a4ef:*/ sta $0000c0.l, X
-/*unknown_84_a4f3:*/ ora ($00, X)
-/*unknown_84_a4f5:*/ ldx $b0, Y
-/*unknown_84_a4f7:*/ brk $00
-/*unknown_84_a4f9:*/ ora ($00, X)
-/*unknown_84_a4fb:*/ lda [$e0], Y
-/*unknown_84_a4fd:*/ brk $00
-/*unknown_84_a4ff:*/ ora ($00, X)
-/*unknown_84_a501:*/ eor ($00, S), Y
-/*unknown_84_a503:*/ brk $00
-/*unknown_84_a505:*/ ora ($00, X)
-/*unknown_84_a507:*/ mvn $00, $00
-/*unknown_84_a50a:*/ brk $01
-/*unknown_84_a50c:*/ brk $55
-/*unknown_84_a50e:*/ brk $00
-/*unknown_84_a510:*/ brk $01
-/*unknown_84_a512:*/ brk $ff
-/*unknown_84_a514:*/ brk $00
-/*unknown_84_a516:*/ brk $05
-/*unknown_84_a518:*/ bra ($d6 - $100) ; $a4f0.w
-/*unknown_84_a51a:*/ cpy #$00ff.w
-/*unknown_84_a51d:*/ sbc $00ff00.l, X
-/*unknown_84_a521:*/ sbc $000000.l, X
-/*unknown_84_a525:*/ ora $80
-/*unknown_84_a527:*/ cmp [$c0], Y
-/*unknown_84_a529:*/ sbc $00ffc0.l, X
-/*unknown_84_a52d:*/ sbc $00ff00.l, X
-/*unknown_84_a531:*/ brk $00
-/*unknown_84_a533:*/ ora $80
-/*unknown_84_a535:*/ cmp [$c0], Y
-/*unknown_84_a537:*/ sbc $c0ffc0, X
-/*unknown_84_a53b:*/ sbc $00ff00.l, X
-/*unknown_84_a53f:*/ brk $00
-/*unknown_84_a541:*/ ora $80
-/*unknown_84_a543:*/ cmp [$c0], Y
-/*unknown_84_a545:*/ sbc $c0ffc0, X
-/*unknown_84_a549:*/ sbc $00ffc0.l, X
-/*unknown_84_a54d:*/ brk $00
-/*unknown_84_a54f:*/ ora $80
-/*unknown_84_a551:*/ cmp [$c0], Y
-/*unknown_84_a553:*/ sbc $c0ffc0, X
-/*unknown_84_a557:*/ sbc $c0ffc0, X
-/*unknown_84_a55b:*/ brk $00
-/*unknown_84_a55d:*/ ora $80
-/*unknown_84_a55f:*/ dec $c0, X
-/*unknown_84_a561:*/ sbc $c0ffc0, X
-/*unknown_84_a565:*/ sbc $c0ffc0, X
-/*unknown_84_a569:*/ brk $00
-/*unknown_84_a56b:*/ ora ($80, X)
-/*unknown_84_a56d:*/ dec $c0, X
-/*unknown_84_a56f:*/ brk $fc
-/*unknown_84_a571:*/ tsb $80
-/*unknown_84_a573:*/ sbc $00ff00.l, X
-/*unknown_84_a577:*/ sbc $00ff00.l, X
-/*unknown_84_a57b:*/ brk $00
-/*unknown_84_a57d:*/ ora ($80, X)
-/*unknown_84_a57f:*/ cmp [$c0], Y
-/*unknown_84_a581:*/ brk $fc
-/*unknown_84_a583:*/ tsb $80
-/*unknown_84_a585:*/ sbc $00ff00.l, X
-/*unknown_84_a589:*/ sbc $80ff00, X
-/*unknown_84_a58d:*/ brk $00
-/*unknown_84_a58f:*/ ora ($80, X)
-/*unknown_84_a591:*/ cmp [$c0], Y
-/*unknown_84_a593:*/ brk $fc
-/*unknown_84_a595:*/ tsb $80
-/*unknown_84_a597:*/ sbc $00ff00.l, X
-/*unknown_84_a59b:*/ sbc $c0ffc0, X
-/*unknown_84_a59f:*/ brk $00
-/*unknown_84_a5a1:*/ ora ($80, X)
-/*unknown_84_a5a3:*/ cmp [$c0], Y
-/*unknown_84_a5a5:*/ brk $fc
-/*unknown_84_a5a7:*/ tsb $80
-/*unknown_84_a5a9:*/ sbc $c0ff00, X
-/*unknown_84_a5ad:*/ sbc $c0ffc0, X
-/*unknown_84_a5b1:*/ brk $00
-/*unknown_84_a5b3:*/ ora ($80, X)
-/*unknown_84_a5b5:*/ cmp [$c0], Y
-/*unknown_84_a5b7:*/ brk $fc
-/*unknown_84_a5b9:*/ tsb $80
-/*unknown_84_a5bb:*/ sbc $c0ffc0, X
-/*unknown_84_a5bf:*/ sbc $c0ffc0, X
-/*unknown_84_a5c3:*/ brk $00
-/*unknown_84_a5c5:*/ ora ($80, X)
-/*unknown_84_a5c7:*/ dec $c0, X
-/*unknown_84_a5c9:*/ brk $fc
-/*unknown_84_a5cb:*/ tsb $80
-/*unknown_84_a5cd:*/ sbc $c0ffc0, X
-/*unknown_84_a5d1:*/ sbc $c0ffc0, X
-/*unknown_84_a5d5:*/ brk $00
-/*unknown_84_a5d7:*/ ora ($00, X)
-/*unknown_84_a5d9:*/ dec $80, X
-/*unknown_84_a5db:*/ sbc $000100.l, X
-/*unknown_84_a5df:*/ stp
-/*unknown_84_a5e0:*/ cpy #$0000.w
-/*unknown_84_a5e3:*/ cop $00
-/*unknown_84_a5e5:*/ dec $80, X
-/*unknown_84_a5e7:*/ stp
-/*unknown_84_a5e8:*/ cpy $00
-/*unknown_84_a5ea:*/ brk $01
-/*unknown_84_a5ec:*/ brk $d6
-/*unknown_84_a5ee:*/ bra ($ff - $100) ; $a5ef.w
-/*unknown_84_a5f0:*/ brk $01
-/*unknown_84_a5f2:*/ brk $da
-/*unknown_84_a5f4:*/ cpy #$0000.w
-/*unknown_84_a5f7:*/ cop $00
-/*unknown_84_a5f9:*/ dec $80, X
-/*unknown_84_a5fb:*/ phx
-/*unknown_84_a5fc:*/ cpy $00
-/*unknown_84_a5fe:*/ brk $01
-/*unknown_84_a600:*/ brk $d6
-/*unknown_84_a602:*/ bra ($ff - $100) ; $a603.w
-/*unknown_84_a604:*/ brk $01
-/*unknown_84_a606:*/ brk $d9
-@unknown_84_a608: cpy #$0000.w
-/*unknown_84_a60b:*/ cop $00
-/*unknown_84_a60d:*/ dec $80, X
-/*unknown_84_a60f:*/ cmp $00c4.w, Y
-/*unknown_84_a612:*/ brk $01
-/*unknown_84_a614:*/ brk $d6
-/*unknown_84_a616:*/ bra ($ff - $100) ; $a617.w
-/*unknown_84_a618:*/ brk $01
-/*unknown_84_a61a:*/ brk $d8
-/*unknown_84_a61c:*/ cpy #$0000.w
-/*unknown_84_a61f:*/ cop $00
-/*unknown_84_a621:*/ dec $80, X
-/*unknown_84_a623:*/ cld
-/*unknown_84_a624:*/ cpy $00
-/*unknown_84_a626:*/ brk $01
-/*unknown_84_a628:*/ brk $d6
-/*unknown_84_a62a:*/ dey
-/*unknown_84_a62b:*/ sbc $000100.l, X
-/*unknown_84_a62f:*/ stp
-/*unknown_84_a630:*/ iny
-/*unknown_84_a631:*/ brk $00
-/*unknown_84_a633:*/ cop $00
-/*unknown_84_a635:*/ dec $88, X
-/*unknown_84_a637:*/ stp
-/*unknown_84_a638:*/ cpy $0000.w
-/*unknown_84_a63b:*/ ora ($00, X)
-/*unknown_84_a63d:*/ dec $88, X
-/*unknown_84_a63f:*/ sbc $000100.l, X
-@unknown_84_a643: phx
-/*unknown_84_a644:*/ iny
-@unknown_84_a645: brk $00
-/*unknown_84_a647:*/ cop $00
-/*unknown_84_a649:*/ dec $88, X
-/*unknown_84_a64b:*/ phx
-/*unknown_84_a64c:*/ cpy $0000.w
-@unknown_84_a64f: ora ($00, X)
-@unknown_84_a651: dec $88, X
-/*unknown_84_a653:*/ sbc $000100.l, X
-/*unknown_84_a657:*/ cmp $00c8.w, Y
-/*unknown_84_a65a:*/ brk $02
-/*unknown_84_a65c:*/ brk $d6
-/*unknown_84_a65e:*/ dey
-/*unknown_84_a65f:*/ cmp $00cc.w, Y
-/*unknown_84_a662:*/ brk $01
-/*unknown_84_a664:*/ brk $d6
-/*unknown_84_a666:*/ dey
-/*unknown_84_a667:*/ sbc $000100.l, X
-/*unknown_84_a66b:*/ cld
-/*unknown_84_a66c:*/ iny
-/*unknown_84_a66d:*/ brk $00
-/*unknown_84_a66f:*/ cop $00
-/*unknown_84_a671:*/ dec $88, X
-/*unknown_84_a673:*/ cld
-/*unknown_84_a674:*/ cpy $0000.w
-@unknown_84_a677: tsb $80
-@unknown_84_a679: brl $a200 ; $487c.w
-@unknown_84_a67c: brk $a2
-/*unknown_84_a67e:*/ php
-/*unknown_84_a67f:*/ brl $0008 ; $a68a.w
-/*unknown_84_a682:*/ brk $04
-/*unknown_84_a684:*/ bra @unknown_84_a608
-/*unknown_84_a686:*/ tsb $a2
-/*unknown_84_a688:*/ tsb $a2
-/*unknown_84_a68a:*/ tsb $0c82.w
-/*unknown_84_a68d:*/ brk $00
-/*unknown_84_a68f:*/ tsb $00
-/*unknown_84_a691:*/ sty $04
-/*unknown_84_a693:*/ sta $04, S
-/*unknown_84_a695:*/ sta $00, S
-/*unknown_84_a697:*/ sty $00
-/*unknown_84_a699:*/ brk $00
-/*unknown_84_a69b:*/ tsb $00
-/*unknown_84_a69d:*/ sty $0c
-/*unknown_84_a69f:*/ sta $0c, S
-/*unknown_84_a6a1:*/ sta $08, S
-/*unknown_84_a6a3:*/ sty $08
-/*unknown_84_a6a5:*/ brk $00
-/*unknown_84_a6a7:*/ tsb $80
-/*unknown_84_a6a9:*/ ldx $cec0.w
-/*unknown_84_a6ac:*/ bne @unknown_84_a67c
-/*unknown_84_a6ae:*/ cld
-/*unknown_84_a6af:*/ ldx $00d8.w
-/*unknown_84_a6b2:*/ brk $04
-/*unknown_84_a6b4:*/ bra ($af - $100) ; $a665.w
-/*unknown_84_a6b6:*/ bra ($cf - $100) ; $a687.w
-/*unknown_84_a6b8:*/ bra ($cf - $100) ; $a689.w
-/*unknown_84_a6ba:*/ dey
-/*unknown_84_a6bb:*/ lda $000088.l
-/*unknown_84_a6bf:*/ tsb $80
-/*unknown_84_a6c1:*/ bcs @unknown_84_a643
-/*unknown_84_a6c3:*/ bne @unknown_84_a645
-/*unknown_84_a6c5:*/ bne @unknown_84_a64f
-/*unknown_84_a6c7:*/ bcs @unknown_84_a651
-/*unknown_84_a6c9:*/ brk $00
-/*unknown_84_a6cb:*/ tsb $80
-/*unknown_84_a6cd:*/ lda ($80), Y
-/*unknown_84_a6cf:*/ cmp ($00), Y
-/*unknown_84_a6d1:*/ cmp ($08), Y
-/*unknown_84_a6d3:*/ lda ($88), Y
-/*unknown_84_a6d5:*/ brk $00
-/*unknown_84_a6d7:*/ tsb $80
-/*unknown_84_a6d9:*/ ldx $cec4.w
-/*unknown_84_a6dc:*/ pei ($ce)
-/*unknown_84_a6de:*/ jmp [$dcae]
-/*unknown_84_a6e1:*/ brk $00
-/*unknown_84_a6e3:*/ tsb $80
-/*unknown_84_a6e5:*/ lda $84cf84
-/*unknown_84_a6e9:*/ cmp $8caf8c
-/*unknown_84_a6ed:*/ brk $00
-/*unknown_84_a6ef:*/ tsb $80
-/*unknown_84_a6f1:*/ bcs @unknown_84_a677
-/*unknown_84_a6f3:*/ bne @unknown_84_a679
-/*unknown_84_a6f5:*/ bne ($8c - $100) ; $a683.w
-/*unknown_84_a6f7:*/ bcs ($8c - $100) ; $a685.w
-/*unknown_84_a6f9:*/ brk $00
-/*unknown_84_a6fb:*/ tsb $80
-/*unknown_84_a6fd:*/ lda ($84), Y
-/*unknown_84_a6ff:*/ cmp ($84), Y
-/*unknown_84_a701:*/ cmp ($8c), Y
-/*unknown_84_a703:*/ lda ($8c), Y
-/*unknown_84_a705:*/ brk $00
-/*unknown_84_a707:*/ tsb $00
-/*unknown_84_a709:*/ lda ($c4, S), Y
-/*unknown_84_a70b:*/ lda ($54)
-/*unknown_84_a70d:*/ lda ($50)
-/*unknown_84_a70f:*/ lda ($50, S), Y
-/*unknown_84_a711:*/ brk $00
-/*unknown_84_a713:*/ tsb $00
-/*unknown_84_a715:*/ cmp ($84, S), Y
-/*unknown_84_a717:*/ cmp ($84)
-/*unknown_84_a719:*/ cmp ($80)
-/*unknown_84_a71b:*/ cmp ($80, S), Y
-/*unknown_84_a71d:*/ brk $00
-/*unknown_84_a71f:*/ tsb $00
-/*unknown_84_a721:*/ lda $84, X
-/*unknown_84_a723:*/ ldy $84, X
-/*unknown_84_a725:*/ ldy $80, X
-/*unknown_84_a727:*/ lda $80, X
-/*unknown_84_a729:*/ brk $00
-/*unknown_84_a72b:*/ tsb $00
-/*unknown_84_a72d:*/ cmp $84, X
-/*unknown_84_a72f:*/ pei ($84)
-/*unknown_84_a731:*/ pei ($80)
-/*unknown_84_a733:*/ cmp $80, X
-/*unknown_84_a735:*/ brk $00
-/*unknown_84_a737:*/ tsb $00
-/*unknown_84_a739:*/ lda ($cc, S), Y
-/*unknown_84_a73b:*/ lda ($5c)
-/*unknown_84_a73d:*/ lda ($58)
-/*unknown_84_a73f:*/ lda ($58, S), Y
-/*unknown_84_a741:*/ brk $00
-/*unknown_84_a743:*/ tsb $00
-/*unknown_84_a745:*/ cmp ($8c, S), Y
-/*unknown_84_a747:*/ cmp ($8c)
-/*unknown_84_a749:*/ cmp ($88)
-/*unknown_84_a74b:*/ cmp ($88, S), Y
-/*unknown_84_a74d:*/ brk $00
-/*unknown_84_a74f:*/ tsb $00
-/*unknown_84_a751:*/ lda $8c, X
-/*unknown_84_a753:*/ ldy $8c, X
-/*unknown_84_a755:*/ ldy $88, X
-/*unknown_84_a757:*/ lda $88, X
-/*unknown_84_a759:*/ brk $00
-@unknown_84_a75b: tsb $00
-@unknown_84_a75d: cmp $8c, X
-/*unknown_84_a75f:*/ pei ($0c)
-/*unknown_84_a761:*/ pei ($08)
-/*unknown_84_a763:*/ cmp $88, X
-/*unknown_84_a765:*/ brk $00
-/*unknown_84_a767:*/ tsb $80
-/*unknown_84_a769:*/ brk $c0
-/*unknown_84_a76b:*/ jsr $20d0.w
-/*unknown_84_a76e:*/ cld
-/*unknown_84_a76f:*/ brk $d8
-/*unknown_84_a771:*/ brk $00
-/*unknown_84_a773:*/ tsb $80
-/*unknown_84_a775:*/ ora ($80, X)
-/*unknown_84_a777:*/ and ($80, X)
-/*unknown_84_a779:*/ and ($88, X)
-/*unknown_84_a77b:*/ ora ($88, X)
-/*unknown_84_a77d:*/ brk $00
-/*unknown_84_a77f:*/ tsb $80
-/*unknown_84_a781:*/ cop $80
-/*unknown_84_a783:*/ jsr $882280
-/*unknown_84_a787:*/ cop $88
-/*unknown_84_a789:*/ brk $00
-/*unknown_84_a78b:*/ tsb $80
-/*unknown_84_a78d:*/ ora $80, S
-/*unknown_84_a78f:*/ and $00, S
-/*unknown_84_a791:*/ and $08, S
-@unknown_84_a793: ora $88, S
-@unknown_84_a795: brk $00
-/*unknown_84_a797:*/ tsb $80
-/*unknown_84_a799:*/ brk $c4
-/*unknown_84_a79b:*/ jsr $20d4.w
-/*unknown_84_a79e:*/ jmp [$dc00]
-/*unknown_84_a7a1:*/ brk $00
-/*unknown_84_a7a3:*/ tsb $80
-/*unknown_84_a7a5:*/ ora ($84, X)
-/*unknown_84_a7a7:*/ and ($84, X)
-/*unknown_84_a7a9:*/ and ($8c, X)
-/*unknown_84_a7ab:*/ ora ($8c, X)
-/*unknown_84_a7ad:*/ brk $00
-/*unknown_84_a7af:*/ tsb $80
-/*unknown_84_a7b1:*/ cop $84
-/*unknown_84_a7b3:*/ jsr $8c2284
-/*unknown_84_a7b7:*/ cop $8c
-/*unknown_84_a7b9:*/ brk $00
-/*unknown_84_a7bb:*/ tsb $80
-/*unknown_84_a7bd:*/ ora $84, S
-/*unknown_84_a7bf:*/ and $84, S
-/*unknown_84_a7c1:*/ and $8c, S
-/*unknown_84_a7c3:*/ ora $8c, S
-/*unknown_84_a7c5:*/ brk $00
-/*unknown_84_a7c7:*/ tsb $00
-/*unknown_84_a7c9:*/ ora ($c4), Y
-/*unknown_84_a7cb:*/ bpl @unknown_84_a821
-/*unknown_84_a7cd:*/ bpl @unknown_84_a81f
-/*unknown_84_a7cf:*/ ora ($50), Y
-/*unknown_84_a7d1:*/ brk $00
-/*unknown_84_a7d3:*/ tsb $00
-/*unknown_84_a7d5:*/ and ($84), Y
-/*unknown_84_a7d7:*/ bmi @unknown_84_a75d
-/*unknown_84_a7d9:*/ bmi @unknown_84_a75b
-/*unknown_84_a7db:*/ and ($80), Y
-/*unknown_84_a7dd:*/ brk $00
-/*unknown_84_a7df:*/ tsb $00
-/*unknown_84_a7e1:*/ ora ($84, S), Y
-/*unknown_84_a7e3:*/ ora ($84)
-/*unknown_84_a7e5:*/ ora ($80)
-/*unknown_84_a7e7:*/ ora ($80, S), Y
-/*unknown_84_a7e9:*/ brk $00
-/*unknown_84_a7eb:*/ tsb $00
-/*unknown_84_a7ed:*/ and ($84, S), Y
-/*unknown_84_a7ef:*/ and ($84)
-/*unknown_84_a7f1:*/ and ($80)
-/*unknown_84_a7f3:*/ and ($80, S), Y
-/*unknown_84_a7f5:*/ brk $00
-/*unknown_84_a7f7:*/ tsb $00
-/*unknown_84_a7f9:*/ ora ($cc), Y
-/*unknown_84_a7fb:*/ bpl @unknown_84_a859
-/*unknown_84_a7fd:*/ bpl @unknown_84_a857
-/*unknown_84_a7ff:*/ ora ($58), Y
-/*unknown_84_a801:*/ brk $00
-/*unknown_84_a803:*/ tsb $00
-/*unknown_84_a805:*/ and ($8c), Y
-/*unknown_84_a807:*/ bmi @unknown_84_a795
-/*unknown_84_a809:*/ bmi @unknown_84_a793
-/*unknown_84_a80b:*/ and ($88), Y
-/*unknown_84_a80d:*/ brk $00
-/*unknown_84_a80f:*/ tsb $00
-/*unknown_84_a811:*/ ora ($8c, S), Y
-/*unknown_84_a813:*/ ora ($8c)
-/*unknown_84_a815:*/ ora ($88)
-/*unknown_84_a817:*/ ora ($88, S), Y
-/*unknown_84_a819:*/ brk $00
-/*unknown_84_a81b:*/ tsb $00
-/*unknown_84_a81d:*/ and ($8c, S), Y
-@unknown_84_a81f: and ($0c)
-@unknown_84_a821: and ($08)
-/*unknown_84_a823:*/ and ($88, S), Y
-/*unknown_84_a825:*/ brk $00
-/*unknown_84_a827:*/ tsb $80
-/*unknown_84_a829:*/ tsb $c0
-/*unknown_84_a82b:*/ bit $d0
-/*unknown_84_a82d:*/ bit $d8
-/*unknown_84_a82f:*/ tsb $d8
-/*unknown_84_a831:*/ brk $00
-/*unknown_84_a833:*/ tsb $80
-/*unknown_84_a835:*/ ora $80
-/*unknown_84_a837:*/ and $80
-/*unknown_84_a839:*/ and $88
-/*unknown_84_a83b:*/ ora $88
-/*unknown_84_a83d:*/ brk $00
-/*unknown_84_a83f:*/ tsb $80
-/*unknown_84_a841:*/ asl $80
-/*unknown_84_a843:*/ rol $80
-/*unknown_84_a845:*/ rol $88
-/*unknown_84_a847:*/ asl $88
-/*unknown_84_a849:*/ brk $00
-/*unknown_84_a84b:*/ tsb $80
-/*unknown_84_a84d:*/ ora [$80]
-/*unknown_84_a84f:*/ and [$00]
-/*unknown_84_a851:*/ and [$08]
-/*unknown_84_a853:*/ ora [$88]
-/*unknown_84_a855:*/ brk $00
-@unknown_84_a857: tsb $80
-@unknown_84_a859: tsb $c4
-/*unknown_84_a85b:*/ bit $d4
-/*unknown_84_a85d:*/ bit $dc
-/*unknown_84_a85f:*/ tsb $dc
-/*unknown_84_a861:*/ brk $00
-/*unknown_84_a863:*/ tsb $80
-/*unknown_84_a865:*/ ora $84
-/*unknown_84_a867:*/ and $84
-/*unknown_84_a869:*/ and $8c
-/*unknown_84_a86b:*/ ora $8c
-/*unknown_84_a86d:*/ brk $00
-/*unknown_84_a86f:*/ tsb $80
-/*unknown_84_a871:*/ asl $84
-/*unknown_84_a873:*/ rol $84
-/*unknown_84_a875:*/ rol $8c
-/*unknown_84_a877:*/ asl $8c
-/*unknown_84_a879:*/ brk $00
-/*unknown_84_a87b:*/ tsb $80
-/*unknown_84_a87d:*/ ora [$84]
-/*unknown_84_a87f:*/ and [$04]
-/*unknown_84_a881:*/ and [$0c]
-/*unknown_84_a883:*/ ora [$8c]
-/*unknown_84_a885:*/ brk $00
-/*unknown_84_a887:*/ tsb $00
-/*unknown_84_a889:*/ ora $c4, X
-/*unknown_84_a88b:*/ trb $54
-/*unknown_84_a88d:*/ trb $50
-/*unknown_84_a88f:*/ ora $50, X
-/*unknown_84_a891:*/ brk $00
-/*unknown_84_a893:*/ tsb $00
-/*unknown_84_a895:*/ and $84, X
-/*unknown_84_a897:*/ bit $84, X
-/*unknown_84_a899:*/ bit $80, X
-/*unknown_84_a89b:*/ and $80, X
-/*unknown_84_a89d:*/ brk $00
-/*unknown_84_a89f:*/ tsb $00
-/*unknown_84_a8a1:*/ ora [$84], Y
-/*unknown_84_a8a3:*/ asl $84, X
-/*unknown_84_a8a5:*/ asl $80, X
-/*unknown_84_a8a7:*/ ora [$80], Y
-/*unknown_84_a8a9:*/ brk $00
-/*unknown_84_a8ab:*/ tsb $00
-/*unknown_84_a8ad:*/ and [$84], Y
-/*unknown_84_a8af:*/ rol $84, X
-/*unknown_84_a8b1:*/ rol $80, X
-/*unknown_84_a8b3:*/ and [$80], Y
-/*unknown_84_a8b5:*/ brk $00
-/*unknown_84_a8b7:*/ tsb $00
-/*unknown_84_a8b9:*/ ora $cc, X
-/*unknown_84_a8bb:*/ trb $5c
-/*unknown_84_a8bd:*/ trb $58
-/*unknown_84_a8bf:*/ ora $58, X
-/*unknown_84_a8c1:*/ brk $00
-/*unknown_84_a8c3:*/ tsb $00
-/*unknown_84_a8c5:*/ and $8c, X
-/*unknown_84_a8c7:*/ bit $8c, X
-/*unknown_84_a8c9:*/ bit $88, X
-/*unknown_84_a8cb:*/ and $88, X
-/*unknown_84_a8cd:*/ brk $00
-/*unknown_84_a8cf:*/ tsb $00
-/*unknown_84_a8d1:*/ ora [$8c], Y
-/*unknown_84_a8d3:*/ asl $8c, X
-/*unknown_84_a8d5:*/ asl $88, X
-/*unknown_84_a8d7:*/ ora [$88], Y
-/*unknown_84_a8d9:*/ brk $00
-/*unknown_84_a8db:*/ tsb $00
-/*unknown_84_a8dd:*/ and [$8c], Y
-/*unknown_84_a8df:*/ rol $8c, X
-/*unknown_84_a8e1:*/ rol $88, X
-/*unknown_84_a8e3:*/ and [$88], Y
-/*unknown_84_a8e5:*/ brk $00
-/*unknown_84_a8e7:*/ tsb $80
-/*unknown_84_a8e9:*/ php
-/*unknown_84_a8ea:*/ cpy #$d028.w
-/*unknown_84_a8ed:*/ plp
-/*unknown_84_a8ee:*/ cld
-/*unknown_84_a8ef:*/ php
-/*unknown_84_a8f0:*/ cld
-/*unknown_84_a8f1:*/ brk $00
-/*unknown_84_a8f3:*/ tsb $80
-/*unknown_84_a8f5:*/ ora #$2980.w
-/*unknown_84_a8f8:*/ bra @unknown_84_a923
-/*unknown_84_a8fa:*/ dey
-/*unknown_84_a8fb:*/ ora #$0088.w
-/*unknown_84_a8fe:*/ brk $04
-/*unknown_84_a900:*/ bra $0a ; $a90c.w
-/*unknown_84_a902:*/ bra $2a ; $a92e.w
-/*unknown_84_a904:*/ bra $2a ; $a930.w
-/*unknown_84_a906:*/ dey
-/*unknown_84_a907:*/ asl A
-/*unknown_84_a908:*/ dey
-/*unknown_84_a909:*/ brk $00
-/*unknown_84_a90b:*/ tsb $80
-/*unknown_84_a90d:*/ phd
-/*unknown_84_a90e:*/ bra @unknown_84_a93b
-/*unknown_84_a910:*/ brk $2b
-/*unknown_84_a912:*/ php
-/*unknown_84_a913:*/ phd
-/*unknown_84_a914:*/ dey
-/*unknown_84_a915:*/ brk $00
-/*unknown_84_a917:*/ tsb $80
-/*unknown_84_a919:*/ php
-/*unknown_84_a91a:*/ cpy $28
-/*unknown_84_a91c:*/ pei ($28)
-/*unknown_84_a91e:*/ jmp [$dc08]
-/*unknown_84_a921:*/ brk $00
-@unknown_84_a923: tsb $80
-/*unknown_84_a925:*/ ora #$2984.w
-/*unknown_84_a928:*/ sty $29
-/*unknown_84_a92a:*/ sty $8c09.w
-/*unknown_84_a92d:*/ brk $00
-/*unknown_84_a92f:*/ tsb $80
-/*unknown_84_a931:*/ asl A
-/*unknown_84_a932:*/ sty $2a
-/*unknown_84_a934:*/ sty $2a
-/*unknown_84_a936:*/ sty $8c0a.w
-/*unknown_84_a939:*/ brk $00
-@unknown_84_a93b: tsb $80
-/*unknown_84_a93d:*/ phd
-/*unknown_84_a93e:*/ sty $2b
-/*unknown_84_a940:*/ tsb $2b
-/*unknown_84_a942:*/ tsb $8c0b.w
-/*unknown_84_a945:*/ brk $00
-/*unknown_84_a947:*/ tsb $00
-/*unknown_84_a949:*/ ora $18c4.w, Y
-/*unknown_84_a94c:*/ mvn $50, $18
-/*unknown_84_a94f:*/ ora $0050.w, Y
-/*unknown_84_a952:*/ brk $04
-/*unknown_84_a954:*/ brk $39
-/*unknown_84_a956:*/ sty $38
-/*unknown_84_a958:*/ sty $38
-/*unknown_84_a95a:*/ bra @unknown_84_a995
-/*unknown_84_a95c:*/ bra @unknown_84_a95e
-@unknown_84_a95e: brk $04
-/*unknown_84_a960:*/ brk $1b
-/*unknown_84_a962:*/ sty $1a
-/*unknown_84_a964:*/ sty $1a
-/*unknown_84_a966:*/ bra $1b ; $a983.w
-/*unknown_84_a968:*/ bra @unknown_84_a96a
-@unknown_84_a96a: brk $04
-/*unknown_84_a96c:*/ brk $3b
-/*unknown_84_a96e:*/ sty $3a
-/*unknown_84_a970:*/ sty $3a
-/*unknown_84_a972:*/ bra @unknown_84_a9af
-/*unknown_84_a974:*/ bra @unknown_84_a976
-@unknown_84_a976: brk $04
-/*unknown_84_a978:*/ brk $19
-/*unknown_84_a97a:*/ cpy $5c18.w
-/*unknown_84_a97d:*/ clc
-/*unknown_84_a97e:*/ cli
-/*unknown_84_a97f:*/ ora $0058.w, Y
-/*unknown_84_a982:*/ brk $04
-/*unknown_84_a984:*/ brk $39
-/*unknown_84_a986:*/ sty $8c38.w
-/*unknown_84_a989:*/ sec
-/*unknown_84_a98a:*/ dey
-/*unknown_84_a98b:*/ and $0088.w, Y
-/*unknown_84_a98e:*/ brk $04
-/*unknown_84_a990:*/ brk $1b
-/*unknown_84_a992:*/ sty $8c1a.w
-@unknown_84_a995: inc A
-/*unknown_84_a996:*/ dey
-/*unknown_84_a997:*/ tcs
-/*unknown_84_a998:*/ dey
-/*unknown_84_a999:*/ brk $00
-/*unknown_84_a99b:*/ tsb $00
-/*unknown_84_a99d:*/ tsc
-/*unknown_84_a99e:*/ sty $8c3a.w
-/*unknown_84_a9a1:*/ dec A
-/*unknown_84_a9a2:*/ dey
-/*unknown_84_a9a3:*/ tsc
-/*unknown_84_a9a4:*/ dey
-/*unknown_84_a9a5:*/ brk $00
-/*unknown_84_a9a7:*/ tsb $80
-/*unknown_84_a9a9:*/ tsb $2c80.w
-/*unknown_84_a9ac:*/ bne @unknown_84_a9da
-/*unknown_84_a9ae:*/ cld
-@unknown_84_a9af: tsb $00d8.w
-/*unknown_84_a9b2:*/ brk $04
-/*unknown_84_a9b4:*/ bra $0c ; $a9c2.w
-/*unknown_84_a9b6:*/ cpy #$d02c.w
-/*unknown_84_a9b9:*/ bit $0cd8.w
-/*unknown_84_a9bc:*/ cld
-/*unknown_84_a9bd:*/ brk $00
-/*unknown_84_a9bf:*/ tsb $80
-/*unknown_84_a9c1:*/ ora $2d80.w
-/*unknown_84_a9c4:*/ bra $2d ; $a9f3.w
-/*unknown_84_a9c6:*/ dey
-/*unknown_84_a9c7:*/ ora $0088.w
-/*unknown_84_a9ca:*/ brk $04
-/*unknown_84_a9cc:*/ bra @unknown_84_a9dc
-/*unknown_84_a9ce:*/ bra $2e ; $a9fe.w
-/*unknown_84_a9d0:*/ bra @unknown_84_aa00
-/*unknown_84_a9d2:*/ dey
-/*unknown_84_a9d3:*/ asl $0088.w
-/*unknown_84_a9d6:*/ brk $04
-/*unknown_84_a9d8:*/ bra $0f ; $a9e9.w
-@unknown_84_a9da: bra $2f ; $aa0b.w
-@unknown_84_a9dc: brk $2f
-/*unknown_84_a9de:*/ php
-/*unknown_84_a9df:*/ ora $000088.l
-/*unknown_84_a9e3:*/ tsb $80
-/*unknown_84_a9e5:*/ tsb $2c84.w
-/*unknown_84_a9e8:*/ pei ($2c)
-/*unknown_84_a9ea:*/ jmp [$dc0c]
-/*unknown_84_a9ed:*/ brk $00
-/*unknown_84_a9ef:*/ tsb $80
-/*unknown_84_a9f1:*/ tsb $2cc4.w
-/*unknown_84_a9f4:*/ pei ($2c)
-/*unknown_84_a9f6:*/ jmp [$dc0c]
-/*unknown_84_a9f9:*/ brk $00
-/*unknown_84_a9fb:*/ tsb $80
-/*unknown_84_a9fd:*/ ora $2d84.w
-@unknown_84_aa00: sty $2d
-/*unknown_84_aa02:*/ sty $8c0d.w
-/*unknown_84_aa05:*/ brk $00
-/*unknown_84_aa07:*/ tsb $80
-/*unknown_84_aa09:*/ asl $2e84.w
-/*unknown_84_aa0c:*/ sty $2e
-/*unknown_84_aa0e:*/ sty $8c0e.w
-/*unknown_84_aa11:*/ brk $00
-/*unknown_84_aa13:*/ tsb $80
-/*unknown_84_aa15:*/ ora $042f84
-/*unknown_84_aa19:*/ and $8c0f0c
-/*unknown_84_aa1d:*/ brk $00
-/*unknown_84_aa1f:*/ tsb $00
-/*unknown_84_aa21:*/ ora $1c84.w, X
-/*unknown_84_aa24:*/ mvn $50, $1c
-/*unknown_84_aa27:*/ ora $0050.w, X
-/*unknown_84_aa2a:*/ brk $04
-/*unknown_84_aa2c:*/ brk $1d
-/*unknown_84_aa2e:*/ cpy $1c
-/*unknown_84_aa30:*/ mvn $50, $1c
-@unknown_84_aa33: ora $0050.w, X
-/*unknown_84_aa36:*/ brk $04
-/*unknown_84_aa38:*/ brk $3d
-/*unknown_84_aa3a:*/ sty $3c
-/*unknown_84_aa3c:*/ sty $3c
-/*unknown_84_aa3e:*/ bra $3d ; $aa7d.w
-/*unknown_84_aa40:*/ bra @unknown_84_aa42
-@unknown_84_aa42: brk $04
-/*unknown_84_aa44:*/ brk $1f
-/*unknown_84_aa46:*/ sty $1e
-/*unknown_84_aa48:*/ sty $1e
-/*unknown_84_aa4a:*/ bra $1f ; $aa6b.w
-/*unknown_84_aa4c:*/ bra @unknown_84_aa4e
-@unknown_84_aa4e: brk $04
-/*unknown_84_aa50:*/ brk $3f
-/*unknown_84_aa52:*/ sty $3e
-/*unknown_84_aa54:*/ sty $3e
-/*unknown_84_aa56:*/ bra @unknown_84_aa97
-/*unknown_84_aa58:*/ bra @unknown_84_aa5a
-@unknown_84_aa5a: brk $04
-/*unknown_84_aa5c:*/ brk $1d
-/*unknown_84_aa5e:*/ sty $5c1c.w
-/*unknown_84_aa61:*/ trb $1d58.w
-/*unknown_84_aa64:*/ cli
-@unknown_84_aa65: brk $00
-@unknown_84_aa67: tsb $00
-/*unknown_84_aa69:*/ ora $1ccc.w, X
-/*unknown_84_aa6c:*/ jmp $1d581c
-/*unknown_84_aa70:*/ cli
-/*unknown_84_aa71:*/ brk $00
-/*unknown_84_aa73:*/ tsb $00
-/*unknown_84_aa75:*/ and $3c8c.w, X
-/*unknown_84_aa78:*/ sty $883c.w
-/*unknown_84_aa7b:*/ and $0088.w, X
-/*unknown_84_aa7e:*/ brk $04
-/*unknown_84_aa80:*/ brk $1f
-/*unknown_84_aa82:*/ sty $8c1e.w
-/*unknown_84_aa85:*/ asl $1f88.w, X
-/*unknown_84_aa88:*/ dey
-/*unknown_84_aa89:*/ brk $00
-/*unknown_84_aa8b:*/ tsb $00
-/*unknown_84_aa8d:*/ and $8c3e8c, X
-/*unknown_84_aa91:*/ rol $3f88.w, X
-/*unknown_84_aa94:*/ dey
-/*unknown_84_aa95:*/ brk $00
-@unknown_84_aa97: ora ($00, X)
-/*unknown_84_aa99:*/ sta $80
-/*unknown_84_aa9b:*/ ora $00, S
-/*unknown_84_aa9d:*/ ora ($00, X)
-/*unknown_84_aa9f:*/ sta $84
-/*unknown_84_aaa1:*/ brk $01
-/*unknown_84_aaa3:*/ tsb $00
-/*unknown_84_aaa5:*/ dey
-/*unknown_84_aaa6:*/ bra ($89 - $100) ; $aa31.w
-/*unknown_84_aaa8:*/ bra @unknown_84_aa33
-/*unknown_84_aaaa:*/ sty $88
-/*unknown_84_aaac:*/ sty $00
-/*unknown_84_aaae:*/ brk $01
-/*unknown_84_aab0:*/ brk $86
-/*unknown_84_aab2:*/ bra $03 ; $aab7.w
-/*unknown_84_aab4:*/ brk $01
-/*unknown_84_aab6:*/ brk $86
-/*unknown_84_aab8:*/ sty $00
-/*unknown_84_aaba:*/ ora ($04, X)
-/*unknown_84_aabc:*/ brk $8a
-/*unknown_84_aabe:*/ bra ($8b - $100) ; $aa4b.w
-/*unknown_84_aac0:*/ bra ($8b - $100) ; $aa4d.w
-/*unknown_84_aac2:*/ sty $8a
-@unknown_84_aac4: sty $00
-/*unknown_84_aac6:*/ brk $01
-/*unknown_84_aac8:*/ brk $87
-/*unknown_84_aaca:*/ bra $03 ; $aacf.w
-/*unknown_84_aacc:*/ brk $01
-/*unknown_84_aace:*/ brk $87
-/*unknown_84_aad0:*/ sty $00
-/*unknown_84_aad2:*/ ora ($04, X)
-/*unknown_84_aad4:*/ brk $8c
-/*unknown_84_aad6:*/ bra @unknown_84_aa65
-/*unknown_84_aad8:*/ bra @unknown_84_aa67
-/*unknown_84_aada:*/ sty $8c
-/*unknown_84_aadc:*/ sty $00
-/*unknown_84_aade:*/ brk $01
-/*unknown_84_aae0:*/ brk $b5
-/*unknown_84_aae2:*/ ldx #$86bc.w
-/*unknown_84_aae5:*/ lsr $0687.w
-/*unknown_84_aae8:*/ tsb $00
-/*unknown_84_aaea:*/ lda $92, S
-/*unknown_84_aaec:*/ tsb $00
-/*unknown_84_aaee:*/ lda $000492.l
-/*unknown_84_aaf2:*/ tyx
-/*unknown_84_aaf3:*/ sta ($04)
-/*unknown_84_aaf5:*/ brk $97
-/*unknown_84_aaf7:*/ sta ($00)
-/*unknown_84_aaf9:*/ plb
-/*unknown_84_aafa:*/ and $aae887, X
-/*unknown_84_aafe:*/ ldy $ad86.w, X
-/*unknown_84_ab01:*/ lda $07
-/*unknown_84_ab03:*/ asl A
-/*unknown_84_ab04:*/ clc
-/*unknown_84_ab05:*/ adc $1c87.w, X
-/*unknown_84_ab08:*/ sta $1c87.w, X
-/*unknown_84_ab0b:*/ rts
+; TODO: "Used: by instruction $b9a2" -- P.JBoy
+unknown_84_925b:
+  .dw $8003, $8053, $8053, $8053
+  .dw $0000
 
-/*unknown_84_ab0c:*/ ora ($00, X)
-/*unknown_84_ab0e:*/ cmp [$92]
-/*unknown_84_ab10:*/ ldy $1086.w, X
-/*unknown_84_ab13:*/ sty $040a.w
-/*unknown_84_ab16:*/ brk $23
-/*unknown_84_ab18:*/ sty $04, X
-/*unknown_84_ab1a:*/ brk $33
-/*unknown_84_ab1c:*/ sty $04, X
-/*unknown_84_ab1e:*/ brk $43
-/*unknown_84_ab20:*/ sty $04, X
-/*unknown_84_ab22:*/ brk $13
-/*unknown_84_ab24:*/ sty $bc, X
-/*unknown_84_ab26:*/ stx $60
-/*unknown_84_ab28:*/ tyx
-/*unknown_84_ab29:*/ lda #$0040.w
-/*unknown_84_ab2c:*/ sta var_plm_instruction_timer.l, X
-/*unknown_84_ab30:*/ rts
+; TODO: "Used: by instruction $b9a2" -- P.JBoy
+unknown_84_9265:
+  .dw $8003, $8054, $8054, $8054
+  .dw $0000
 
-/*unknown_84_ab31:*/ lsr $0987.w
-/*unknown_84_ab34:*/ eor ($ab), Y
-/*unknown_84_ab36:*/ bpl @unknown_84_aac4
-/*unknown_84_ab38:*/ asl A
-/*unknown_84_ab39:*/ tsb $00
-/*unknown_84_ab3b:*/ eor $a3
-/*unknown_84_ab3d:*/ tsb $00
-/*unknown_84_ab3f:*/ phk
-/*unknown_84_ab40:*/ lda $04, S
-/*unknown_84_ab42:*/ brk $51
-/*unknown_84_ab44:*/ lda $04, S
-/*unknown_84_ab46:*/ brk $57
-/*unknown_84_ab48:*/ lda $59, S
-/*unknown_84_ab4a:*/ plb
-/*unknown_84_ab4b:*/ and $ab3687, X
-/*unknown_84_ab4f:*/ ldy $a986.w, X
-/*unknown_84_ab52:*/ ora ($01, X)
+; TODO: "Used: by instruction $b9a2" -- P.JBoy
+unknown_84_926f:
+  .dw $8003, $8055, $8055, $8055
+  .dw $0000
+
+; TODO: "Used: by instruction $b9a2" -- P.JBoy
+unknown_84_9279:
+  .dw $8003, $80ff, $80ff, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction $b919" -- P.JBoy
+unknown_84_9283:
+  .dw $8003, $00ff, $00ff, $00ff
+  .db $01, $00
+  .dw $8003, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $aae5" -- P.JBoy
+unknown_84_9297:
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $aae5" -- P.JBoy
+unknown_84_92a3:
+  .dw $0004, $0053, $0053, $0053, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction $aae5" -- P.JBoy
+unknown_84_92af:
+  .dw $0004, $0054, $0054, $0054, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction $aae5" -- P.JBoy
+unknown_84_92bb:
+  .dw $0004, $0055, $0055, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction $ab0c" -- P.JBoy
+unknown_84_92c7:
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $00, $01
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $00, $02
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $00, $03
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $00, $04
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $00, $05
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $ab67" -- P.JBoy
+unknown_84_930f:
+  .dw $8009, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9325:
+  .dw $8009, $8053, $8053, $8053, $8053, $8053, $8053, $8053, $8053, $8053
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_933b:
+  .dw $8009, $8054, $8054, $8054, $8054, $8054, $8054, $8054, $8054, $8054
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9351:
+  .dw $8009, $0055, $0055, $0055, $0055, $0055, $0055, $0055, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab6d, $$ab7f, $$ab91, $$aba9" -- P.JBoy
+unknown_84_9367:
+  .dw $0001, $8180
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab6d, $$ab7f, $$ab91, $$aba9" -- P.JBoy
+unknown_84_936d:
+  .dw $0001, $8181
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab6d, $$ab7f, $$ab91, $$aba9" -- P.JBoy
+unknown_84_9373:
+  .dw $0001, $0182
+  .dw $0000
+
+; TODO: "Used: by instruction $ab6d" -- P.JBoy
+unknown_84_9379:
+  .dw $0001, $013c
+  .dw $0000
+
+; TODO: "Used: by instruction $ab7f" -- P.JBoy
+unknown_84_937f:
+  .dw $0001, $0131
+  .dw $0000
+
+; TODO: "Used: by instruction $ab91" -- P.JBoy
+unknown_84_9385:
+  .dw $0001, $0130
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_938b:
+  .dw $0001, $011c
+  .dw $0000
+
+; TODO: "Used: by instruction $aba9" -- P.JBoy
+unknown_84_9391:
+  .dw $0001, $0111
+  .dw $0000
+
+; TODO: "Used: by instruction $aba9" -- P.JBoy
+unknown_84_9397:
+  .dw $0001, $0110
+  .dw $0000
+
+; TODO: "Used: by instruction $aba3" -- P.JBoy
+unknown_84_939d:
+  .dw $000f, $013c, $0131, $0130, $0131, $0130, $0131, $0130, $0131, $0130,
+  .dw $0131, $0130, $0131, $0130, $0131, $0130
+  .dw $0000
+
+; TODO: "Used: by instruction $abdd" -- P.JBoy
+unknown_84_93bf:
+  .dw $0016, $0111, $0110, $0111, $0110, $0111, $0110, $0111, $0110, $0111,
+  .dw $0110, $0111, $0110, $0111, $0110, $0111, $0110, $0111, $0110, $0111,
+  .dw $0110, $0111, $0110
+  .dw $0000
+
+; TODO: "Used: by instruction $b77b" -- P.JBoy
+unknown_84_93ef:
+  .dw $8004, $95c1, $95e1, $9de1, $9dc1
+  .db $01, $00
+  .dw $8004, $c5c0, $d5e0, $dde0, $ddc0
+  .dw $0000
+
+; TODO: "Used: by instruction $b785" -- P.JBoy
+unknown_84_9407:
+  .dw $8004, $9440, $9460, $9c60, $9c40
+  .dw $0000
+
+; TODO: "Used: by instruction $ab12" -- P.JBoy
+unknown_84_9413:
+  .dw $0002, $00ff, $00ff
+  .db $00, $01
+  .dw $0002, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $ab12" -- P.JBoy
+unknown_84_9423:
+  .dw $0002, $0053, $0053
+  .db $00, $01
+  .dw $0002, $0053, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction $ab12" -- P.JBoy
+unknown_84_9433:
+  .dw $0002, $0054, $0054
+  .db $00, $01
+  .dw $0002, $0054, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction $ab12" -- P.JBoy
+unknown_84_9443:
+  .dw $0002, $0055, $0055
+  .db $00, $01
+  .dw $0002, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction $abe3" -- P.JBoy
+unknown_84_9453:
+  .dw $8002, $00ff, $12fb
+  .db $00, $fe
+  .dw $8002, $1afb, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $abe9" -- P.JBoy
+unknown_84_9463:
+  .dw $8002, $80ff, $82fb
+  .db $00, $fe
+  .dw $8002, $8afb, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction lists $abef, $$bb3a, $$bb44" -- P.JBoy
+unknown_84_9473:
+  .dw $8004, $80ff, $80ff, $80ff, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction lists $bb3a, $$bb44" -- P.JBoy
+unknown_84_947f:
+  .dw $8004, $830f, $80ff, $80ff, $830f
+  .dw $0000
+
+; TODO: "Used: by instruction lists $abef, $$bb34, $$bb44" -- P.JBoy
+unknown_84_948b:
+  .dw $8004, $830f, $8ae8, $82e8, $830f
+  .dw $0000
+
+; TODO: "Used: by instruction $abf9" -- P.JBoy
+unknown_84_9497:
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $abff" -- P.JBoy
+unknown_84_949d:
+  .dw $0001, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction $ac05" -- P.JBoy
+unknown_84_94a3:
+  .dw $8002, $8340, $830f
+  .db $00, $ff
+  .dw $8001, $8b0f
+  .dw $0000
+
+; TODO: "Used: by instruction $ac0b" -- P.JBoy
+unknown_84_94b1:
+  .dw $8004, $9222, $d1af, $d1d0, $d220
+  .db $01, $00
+  .dw $8004, $0223, $01eb, $01d0, $0221
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_94c9:
+  .dw $000d, $8044, $8044, $8044, $8044, $8044, $8044, $8044, $8044, $8044,
+  .dw $8044, $8044, $8044, $8044
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_94e7:
+  .dw $000d, $8044, $8044, $8044, $8044, $8044, $8044, $8044, $8044, $8044,
+  .dw $8044, $8044, $8044, $8044
+  .dw $0000
+
+; TODO: "Used: by instruction $ac11" -- P.JBoy
+unknown_84_9505:
+  .dw $000d, $1241, $1242, $12fc, $12fc, $12fc, $1243, $1244, $12fc, $1245,
+  .dw $1642, $1241, $1241, $1246
+  .dw $0000
+
+; TODO: "Used: by instruction $ac17" -- P.JBoy
+unknown_84_9523:
+  .dw $000d, $09ef, $01b2, $01e5, $01e5, $01e6, $01e5, $01e5, $01e5, $01e5,
+  .dw $05b2, $09ef, $09ef, $01b2
+  .dw $0000
+
+; TODO: "Used: by instruction $ac1d" -- P.JBoy
+unknown_84_9541:
+  .dw $000d, $01b1, $01d2, $01c6, $01c7, $00ff, $0206, $0207, $00ff, $01a6,
+  .dw $09ca, $060c, $05b1, $0a09
+  .dw $0000
+
+; TODO: "Used: by instruction $ac23" -- P.JBoy
+unknown_84_955f:
+  .dw $000d, $01d1, $01f2, $01a4, $01e7, $01a4, $0226, $0227, $01a5, $01a4,
+  .dw $020d, $0e09, $01b1, $01ab
+  .dw $0000
+
+; TODO: "Used: by instruction $ac29" -- P.JBoy
+unknown_84_957d:
+  .dw $000d, $01b1, $0212, $01c4, $01c9, $01c4, $0206, $0207, $01c5, $01c4,
+  .dw $0628, $01ac, $01ec, $01ec
+  .dw $0000
+
+; TODO: "Used: by instruction $ac2f" -- P.JBoy
+unknown_84_959b:
+  .dw $000d, $01b1, $0a0c, $05ca, $0dc7, $01aa, $01a8, $01a8, $01a8, $01a8,
+  .dw $0628, $01ab, $01cd, $01cd
+  .dw $0000
+
+; TODO: "Used: by instruction $ac35" -- P.JBoy
+unknown_84_95b9:
+  .dw $000d, $01d1, $01d0, $05ea, $00ff, $00ff, $0206, $0207, $00ff, $01a7,
+  .dw $0a0d, $0609, $01eb, $01d0
+  .dw $0000
+
+; TODO: "Used: by instruction $ac3b" -- P.JBoy
+unknown_84_95d7:
+  .dw $000d, $01eb, $01eb, $05ea, $00ff, $00ff, $0206, $0207, $00ff, $01a6,
+  .dw $00ff, $0a2c, $0609, $01ae
+  .dw $0000
+
+; TODO: "Used: by instruction $ac41" -- P.JBoy
+unknown_84_95f5:
+  .dw $000d, $01ec, $01af, $05ea, $05c7, $05c6, $0206, $0207, $01a8, $01a6,
+  .dw $01a8, $01a8, $05d2, $01ae
+  .dw $0000
+
+; TODO: "Used: by instruction $ac47" -- P.JBoy
+unknown_84_9613:
+  .dw $000d, $01ac, $01af, $01b2, $05e7, $01e5, $0226, $0227, $01e5, $01a6,
+  .dw $01e6, $01e5, $05b2, $01cd
+  .dw $0000
+
+; TODO: "Used: by instruction $ac4d" -- P.JBoy
+unknown_84_9631:
+  .dw $000d, $060c, $01ef, $01b2, $01e5, $01e6, $01e5, $01e5, $01e6, $01e5,
+  .dw $01e5, $01e5, $05b2, $01ef
+  .dw $0000
+
+; TODO: "Used: by instruction $ac53" -- P.JBoy
+unknown_84_964f:
+  .dw $000d, $1248, $1249, $124a, $124b, $1339, $124c, $124d, $1339, $124e,
+  .dw $1339, $1339, $124f, $1249
+  .dw $0000
+
+; TODO: "Used: by instruction $ac59" -- P.JBoy
+unknown_84_966d:
+  .dw $000d, $8319, $8319, $8319, $8319, $8319, $8319, $8319, $8319, $8319,
+  .dw $8319, $8319, $8319, $8319
+  .dw $0000
+
+; TODO: "Used: by instruction $ac5f" -- P.JBoy
+unknown_84_968b:
+  .dw $000d, $8044, $8044, $8044, $8044, $8044, $8044, $8044, $8044, $8044,
+  .dw $8044, $8044, $8044, $8044
+  .dw $0000
+
+; TODO: "Used: by instruction $ac68" -- P.JBoy
+unknown_84_96a9:
+  .dw $8002, $12fc, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $ac6b" -- P.JBoy
+unknown_84_96b1:
+  .dw $8005, $12fc, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $ac71" -- P.JBoy
+unknown_84_96bf:
+  .dw $8004, $00ff, $00ff, $00ff, $1339
+  .dw $0000
+
+; TODO: "Used: by instruction $ac77" -- P.JBoy
+unknown_84_96cb:
+  .dw $8007, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $1339
+  .db $01, $00
+  .dw $8007, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $1339
+  .dw $0000
+
+; TODO: "Used: by instruction $ac7d" -- P.JBoy
+unknown_84_96ef:
+  .dw $8005, $00ff, $00ff, $00ff, $00ff, $1339
+  .db $01, $00
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $ac83" -- P.JBoy
+unknown_84_9703:
+  .dw $8005, $00ff, $00ff, $00ff, $00ff, $1339
+  .db $ff, $00
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_9717:
+  .dw $0001, $c6c0
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_971d:
+  .dw $8004, $c2c7, $d2c9, $dac9, $5ac7
+  .db $ff, $01
+  .dw $8002, $d2c8, $dac8
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_9731:
+  .dw $8004, $c2c7, $d2cb, $dacb, $5ac7
+  .db $ff, $01
+  .dw $8002, $d2ca, $daca
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_9745:
+  .dw $8003, $c2c7, $02cc, $0acc
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_974f:
+  .dw $0001, $c2c7
+  .db $fd, $00
+  .dw $8004, $82cd, $86c9, $8ec9, $8acd
+  .db $fe, $01
+  .dw $8002, $86c8, $8ec8
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_9769:
+  .dw $0001, $c2c7
+  .db $fd, $01
+  .dw $8003, $86cb, $8ecb, $8acd
+  .db $fe, $01
+  .dw $8002, $86ca, $8eca
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_9781:
+  .dw $0001, $c2c7
+  .db $fd, $01
+  .dw $8002, $06cc, $0ecc
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_978f:
+  .dw $8004, $c2ce, $02cf, $0acf, $5ace
+  .db $fd, $00
+  .dw $8004, $86ce, $06cf, $0ecf, $8ece
+  .db $fe, $01
+  .dw $8002, $d6d0, $ded0
+  .db $ff, $01
+  .dw $8002, $d2d0, $dad0
+  .dw $0000
+
+; TODO: "Used: by instruction $d202" -- P.JBoy
+unknown_84_97b7:
+  .dw $8004, $c2ce, $00ff, $00ff, $5ace
+  .db $fd, $00
+  .dw $8004, $86ce, $00ff, $00ff, $8ece
+  .db $fe, $00
+  .dw $8004, $52c2, $d2c3, $dac3, $d2c4
+  .db $ff, $00
+  .dw $8004, $56c2, $d6c3, $dec3, $d6c4
+  .dw $0000
+
+; TODO: "Used: by instruction $d202, $$d2f3" -- P.JBoy
+unknown_84_97e7:
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $fd, $00
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $fe, $00
+  .dw $8004, $02d2, $02d3, $0ad3, $02d4
+  .db $ff, $00
+  .dw $8004, $06d2, $06d3, $0ed3, $06d4
+  .dw $0000
+
+; TODO: "Used: by instruction $d2ed" -- P.JBoy
+unknown_84_9817:
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $fd, $00
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $fe, $00
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $ff, $00
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9847:
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $ff, $00
+  .dw $8004, $0172, $0173, $0173, $0172
+  .db $fe, $00
+  .dw $8004, $0172, $0173, $0173, $0172
+  .db $fd, $00
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $d368" -- P.JBoy
+unknown_84_9877:
+  .dw $0002, $8065, $8066
+  .db $ff, $00
+  .dw $0001, $8064
+  .db $00, $ff
+  .dw $0002, $8045, $8046
+  .db $ff, $01
+  .dw $0003, $8047, $8048, $8049
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9897:
+  .dw $0001, $0001
+  .dw $0000
+
+; TODO: "Used: by instruction $d368" -- P.JBoy
+unknown_84_989d:
+  .dw $0002, $00ff, $00ff
+  .db $fe, $00
+  .dw $0002, $00ff, $00ff
+  .db $fe, $01
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $fe, $fe
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .db $fe, $ff
+  .dw $0004, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $d4d4" -- P.JBoy
+unknown_84_98d1:
+  .dw $0001, $c540
+  .dw $0000
+
+; TODO: "Used: by instruction $d4d4" -- P.JBoy
+unknown_84_98d7:
+  .dw $0001, $8540
+  .dw $0000
+
+; TODO: "Used: by instruction $d4d4" -- P.JBoy
+unknown_84_98dd:
+  .dw $0001, $8141
+  .dw $0000
+
+; TODO: "Used: by instruction $d519" -- P.JBoy
+unknown_84_98e3:
+  .dw $000c, $8141, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $8541
+  .db $00, $01
+  .dw $000c, $0322, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0722
+  .db $00, $02
+  .dw $000c, $0323, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0723
+  .db $00, $03
+  .dw $000c, $0b23, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0f23
+  .dw $0000
+
+; TODO: "Used: by instruction $d519" -- P.JBoy
+unknown_84_9953:
+  .dw $0001, $0141
+  .db $00, $04
+  .dw $000c, $0b22, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0f22
+  .db $00, $05
+  .dw $000c, $814e, $814f, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $854f, $854e
+  .dw $0000
+
+; TODO: "Used: by instruction $d4d4" -- P.JBoy
+unknown_84_9991:
+  .dw $000c, $8141, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $8541
+  .db $00, $01
+  .dw $000c, $0322, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0722
+  .db $00, $02
+  .dw $000c, $0323, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0723
+  .dw $0000
+
+; TODO: "Used: by instruction $d4d4" -- P.JBoy
+unknown_84_99e5:
+  .dw $0001, $0141
+  .db $00, $03
+  .dw $000c, $0b23, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0f23
+  .db $00, $04
+  .dw $000c, $0b22, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $0f22
+  .db $00, $05
+  .dw $000c, $814e, $814f, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $854f, $854e
+  .dw $0000
+
+; TODO: "Used: by instruction $afe8" -- P.JBoy
+unknown_84_9a3f:
+  .dw $0002, $b859, $8c59
+  .db $00, $ff
+  .dw $0002, $005b, $045b
+  .db $00, $fe
+  .dw $0002, $005b, $045b
+  .db $00, $fd
+  .dw $0002, $005b, $045b
+  .db $00, $fc
+  .dw $0002, $005b, $045b
+  .db $00, $fb
+  .dw $0002, $8059, $8459
+  .dw $0000
+
+; TODO: "Used: by instruction $afee" -- P.JBoy
+unknown_84_9a6f:
+  .dw $0002, $8859, $8c59
+  .db $00, $ff
+  .dw $0002, $005b, $045b
+  .db $00, $fe
+  .dw $0002, $005b, $045b
+  .db $00, $fd
+  .dw $0002, $005b, $045b
+  .db $00, $fc
+  .dw $0002, $005b, $045b
+  .db $00, $fb
+  .dw $0002, $8059, $8459
+  .dw $0000
+
+; TODO: "Used: by instruction $afee" -- P.JBoy
+unknown_84_9a9f:
+  .dw $0002, $885a, $8c5a
+  .db $00, $ff
+  .dw $0002, $005c, $045c
+  .db $00, $fe
+  .dw $0002, $005c, $045c
+  .db $00, $fd
+  .dw $0002, $005c, $045c
+  .db $00, $fc
+  .dw $0002, $005c, $045c
+  .db $00, $fb
+  .dw $0002, $805a, $845a
+  .dw $0000
+
+; TODO: "Used: by instruction $b03e" -- P.JBoy
+unknown_84_9acf:
+  .dw $000d, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff, $00ff,
+  .dw $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $b044" -- P.JBoy
+unknown_84_9aed:
+  .dw $000d, $80ff, $80ff, $80ff, $80ff, $80ff, $80ff, $80ff, $80ff, $80ff,
+  .dw $80ff, $80ff, $80ff, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction $d490" -- P.JBoy
+unknown_84_9b0b:
+  .dw $0002, $c64a, $524a
+  .db $00, $01
+  .dw $0002, $d66a, $d26a
+  .dw $0000
+
+; TODO: "Used: by instruction $d490" -- P.JBoy
+unknown_84_9b1b:
+  .dw $0002, $8053, $8053
+  .db $00, $01
+  .dw $0002, $8053, $8053
+  .dw $0000
+
+; TODO: "Used: by instruction $d490" -- P.JBoy
+unknown_84_9b2b:
+  .dw $0002, $8054, $8054
+  .db $00, $01
+  .dw $0002, $8054, $8054
+  .dw $0000
+
+; TODO: "Used: by instruction $d490" -- P.JBoy
+unknown_84_9b3b:
+  .dw $0002, $0055, $0055
+  .db $00, $01
+  .dw $0002, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction $d490" -- P.JBoy
+unknown_84_9b4b:
+  .dw $0002, $00ff, $00ff
+  .db $00, $01
+  .dw $0002, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $afca" -- P.JBoy
+unknown_84_9b5b:
+  .dw $000a, $0080, $0080, $0080, $0080, $0080, $0080, $0080, $0080, $0080
+  .dw $0080
+  .dw $0000
+
+; TODO: "Used: by instruction $afd0" -- P.JBoy
+unknown_84_9b73:
+  .dw $0001, $810b
+  .dw $0000
+
+; TODO: "Used: by instruction $afd6" -- P.JBoy
+unknown_84_9b79:
+  .dw $0001, $0080
+  .dw $0000
+
+; TODO: "Used: by instruction $afdc" -- P.JBoy
+unknown_84_9b7f:
+  .dw $8008, $0080, $0107, $0127, $0107, $0127, $0147, $0080, $0080
+  .db $01, $00
+  .dw $8008, $0080, $0108, $0128, $0108, $0128, $0148, $0080, $0080
+  .db $02, $00
+  .dw $8008, $0080, $0109, $0129, $0109, $0129, $0149, $0080, $0080
+  .dw $0000
+
+; TODO: "Used: by instruction $afe2" -- P.JBoy
+unknown_84_9bbb:
+  .dw $8008, $8080, $8107, $8127, $8107, $8127, $8147, $8080, $8080
+  .db $01, $00
+  .dw $8008, $8080, $8108, $8128, $8108, $8128, $8148, $8080, $8080
+  .db $02, $00
+  .dw $8008, $8080, $8109, $8129, $8109, $8129, $8149, $8080, $8080
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9bf7:
+  .dw $8004, $84aa, $84cc, $8ccc, $8caa
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c03:
+  .dw $8002, $84cc, $8ccc
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c0b:
+  .dw $8002, $84cb, $8ccb
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c13:
+  .dw $8002, $c4ca, $dcca
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c1b:
+  .dw $8002, $84cd, $8ccd
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c23:
+  .dw $8002, $84ca, $8cca
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c2b:
+  .dw $0001, $a4aa
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c31:
+  .dw $0001, $a4ab
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c37:
+  .dw $0001, $a4ac
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c3d:
+  .dw $0001, $acaa
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c43:
+  .dw $0001, $acab
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_9c49:
+  .dw $0001, $acac
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c4f:
+  .dw $8004, $80aa, $80cc, $88cc, $88aa
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c5b:
+  .dw $8002, $80cc, $88cc
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c63:
+  .dw $8002, $80cb, $88cb
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c6b:
+  .dw $8002, $c0ca, $d8ca
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c73:
+  .dw $8002, $80cd, $88cd
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c7b:
+  .dw $8002, $80ca, $88ca
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c83:
+  .dw $0001, $a0aa
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c89:
+  .dw $0001, $a0ab
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_9c8f:
+  .dw $0001, $a0ac
+  .dw $0000
+
+; TODO: "Used: by instruction $da56" -- P.JBoy
+unknown_84_9c95:
+  .dw $0001, $a8aa
+  .dw $0000
+
+; TODO: "Used: by instruction $da56" -- P.JBoy
+unknown_84_9c9b:
+  .dw $0001, $a8ab
+  .dw $0000
+
+; TODO: "Used: by instruction $da56" -- P.JBoy
+unknown_84_9ca1:
+  .dw $0001, $a8ac
+  .dw $0000
+
+; TODO: "Used: by instruction $d44e" -- P.JBoy
+unknown_84_9ca7:
+  .dw $0001, $c0ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9cad:
+  .dw $0001, $8053
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9cb3:
+  .dw $0001, $8054
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9cb9:
+  .dw $0001, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction $d44e" -- P.JBoy
+unknown_84_9cbf:
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $d3cf" -- P.JBoy
+unknown_84_9cc5:
+  .dw $000e, $012b, $012b, $012b, $012b, $012b, $012b, $012b, $012b, $012b
+  .dw $012b, $012b, $012b, $012b, $112b
+  .db $00, $05
+  .dw $0009, $0111, $0111, $0111, $0111, $0111, $019b, $0129, $0129, $1129
+  .db $05, $06
+  .dw $0002, $01bb, $0129
+  .db $05, $07
+  .dw $0001, $01bb
+  .db $05, $08
+  .dw $0001, $11bb
+  .dw $0000
+
+; TODO: "Used: by instruction $d3ec" -- P.JBoy
+unknown_84_9d0f:
+  .dw $000e, $a12b, $a12b, $a12b, $a12b, $a12b, $a12b, $a12b, $a12b, $a12b
+  .dw $a12b, $a12b, $a12b, $a12b, $812b
+  .db $00, $05
+  .dw $0009, $8111, $8111, $8111, $8111, $8111, $819b, $8129, $8129, $8129
+  .db $05, $06
+  .dw $0002, $81bb, $8129
+  .db $05, $07
+  .dw $0001, $81bb
+  .db $05, $08
+  .dw $0001, $81bb
+  .dw $0000
+
+; TODO: "Used: by instruction $d426" -- P.JBoy
+unknown_84_9d59:
+  .dw $8004, $c171, $d171, $d171, $d171
+  .db $ff, $00
+  .dw $8004, $8102, $8102, $8102, $8102
+  .db $fe, $00
+  .dw $8004, $8560, $8560, $8560, $8560
+  .dw $0000
+
+; TODO: "Used: by instruction $d426" -- P.JBoy
+unknown_84_9d7d:
+  .dw $8004, $8053, $8053, $8053, $8053
+  .db $ff, $00
+  .dw $8004, $8053, $8053, $8053, $8053
+  .db $fe, $00
+  .dw $8004, $8053, $8053, $8053, $8053
+  .dw $0000
+
+; TODO: "Used: by instruction $d426" -- P.JBoy
+unknown_84_9da1:
+  .dw $8004, $0054, $0054, $0054, $0054
+  .db $ff, $00
+  .dw $8004, $0054, $0054, $0054, $0054
+  .db $fe, $00
+  .dw $8004, $0054, $0054, $0054, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction $d426" -- P.JBoy
+unknown_84_9dc5:
+  .dw $8004, $8055, $8055, $8055, $8055
+  .db $ff, $00
+  .dw $8004, $8055, $8055, $8055, $8055
+  .db $fe, $00
+  .dw $8004, $8055, $8055, $8055, $8055
+  .dw $0000
+
+; TODO: "Used: by instruction $d426" -- P.JBoy
+unknown_84_9de9:
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .db $ff, $00
+  .dw $8004, $d0ff, $d0ff, $d0ff, $30ff
+  .db $fe, $00
+  .dw $8004, $d0ff, $d0ff, $d0ff, $30ff
+  .dw $0000
+
+; TODO: "Used: by instruction $acb8" -- P.JBoy
+unknown_84_9e0d:
+  .dw $0002, $35a1, $85a0
+  .db $fe, $00
+  .dw $0002, $81a0, $51a1
+  .db $fe, $ff
+  .dw $0004, $2180, $2181, $2581, $2580
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9e29:
+  .dw $0002, $05a1, $85a0
+  .db $fe, $00
+  .dw $0002, $81a0, $01a1
+  .db $fe, $ff
+  .dw $0004, $2180, $2181, $2581, $2580
+  .dw $0000
+
+; TODO: "Used: by instruction $acb8" -- P.JBoy
+unknown_84_9e45:
+  .dw $0002, $05a3, $85a2
+  .db $fe, $00
+  .dw $0002, $81a2, $01a3
+  .db $fe, $ff
+  .dw $0004, $2182, $2183, $2583, $2582
+  .dw $0000
+
+; TODO: "Used: by instruction $acb8" -- P.JBoy
+unknown_84_9e61:
+  .dw $0002, $05a5, $85a4
+  .db $fe, $00
+  .dw $0002, $81a4, $01a5
+  .db $fe, $ff
+  .dw $0004, $2184, $2185, $2585, $2584
+  .dw $0000
+
+; TODO: "Used: by instruction $acb8" -- P.JBoy
+unknown_84_9e7d:
+  .dw $0002, $05a7, $85a6
+  .db $fe, $00
+  .dw $0002, $81a6, $01a7
+  .db $fe, $ff
+  .dw $0004, $2186, $2187, $2587, $2586
+  .dw $0000
+
+; TODO: "Used: by instruction $acf8" -- P.JBoy
+unknown_84_9e99:
+  .dw $0002, $3da1, $8da0
+  .db $fe, $00
+  .dw $0002, $89a0, $59a1
+  .db $fe, $01
+  .dw $0004, $2980, $2981, $2d81, $2d80
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_9eb5:
+  .dw $0002, $0da1, $8da0
+  .db $fe, $00
+  .dw $0002, $89a0, $09a1
+  .db $fe, $01
+  .dw $0004, $2980, $2981, $2d81, $2d80
+  .dw $0000
+
+; TODO: "Used: by instruction $acf8" -- P.JBoy
+unknown_84_9ed1:
+  .dw $0002, $0da3, $8da2
+  .db $fe, $00
+  .dw $0002, $89a2, $09a3
+  .db $fe, $01
+  .dw $0004, $2982, $2983, $2d83, $2d82
+  .dw $0000
+
+; TODO: "Used: by instruction $acf8" -- P.JBoy
+unknown_84_9eed:
+  .dw $0002, $0da5, $8da4
+  .db $fe, $00
+  .dw $0002, $89a4, $09a5
+  .db $fe, $01
+  .dw $0004, $2984, $2985, $2d85, $2d84
+  .dw $0000
+
+; TODO: "Used: by instruction $acf8" -- P.JBoy
+unknown_84_9f09:
+  .dw $0002, $0da7, $8da6
+  .db $fe, $00
+  .dw $0002, $89a6, $09a7
+  .db $fe, $01
+  .dw $0004, $2986, $2987, $2d87, $2d86
+  .dw $0000
+
+; TODO: "Used: by instruction $ad62" -- P.JBoy
+unknown_84_9f25:
+  .dw $0001, $810c
+  .db $ff, $00
+  .dw $0001, $810b
+  .dw $0000
+
+; TODO: "Used: by instruction $ad62" -- P.JBoy
+unknown_84_9f31:
+  .dw $0001, $812c
+  .db $ff, $00
+  .dw $0001, $812b
+  .dw $0000
+
+; TODO: "Used: by instruction $ad62" -- P.JBoy
+unknown_84_9f3d:
+  .dw $0001, $814c
+  .db $ff, $00
+  .dw $0001, $814b
+  .dw $0000
+
+; TODO: "Used: by instruction $ad86" -- P.JBoy
+unknown_84_9f49:
+  .dw $0001, $8128
+  .db $fd, $00
+  .dw $0001, $8528
+  .dw $0000
+
+; TODO: "Used: by instruction $ad86" -- P.JBoy
+unknown_84_9f55:
+  .dw $0001, $8129
+  .dw $0000
+
+; TODO: "Used: by instruction $ada4" -- P.JBoy
+unknown_84_9f5b:
+  .dw $0001, $8528
+  .db $03, $00
+  .dw $0001, $8128
+  .dw $0000
+
+; TODO: "Used: by instruction $ada4" -- P.JBoy
+unknown_84_9f67:
+  .dw $0001, $8529
+  .dw $0000
+
+; TODO: "Used: by instruction $adc2" -- P.JBoy
+unknown_84_9f6d:
+  .dw $0001, $80c4
+  .db $00, $ff
+  .dw $0001, $10a4
+  .dw $0000
+
+; TODO: "Used: by instruction $adc2" -- P.JBoy
+unknown_84_9f79:
+  .dw $0001, $80c5
+  .db $00, $ff
+  .dw $0001, $10a5
+  .dw $0000
+
+; TODO: "Used: by instruction $adc2" -- P.JBoy
+unknown_84_9f85:
+  .dw $0001, $80c6
+  .db $00, $ff
+  .dw $0001, $10a6
+  .dw $0000
+
+; TODO: "Used: by instruction $ae4c" -- P.JBoy
+unknown_84_9f91:
+  .dw $0001, $80c7
+  .db $00, $ff
+  .dw $0001, $10a7
+  .dw $0000
+
+; TODO: "Used: by instruction $ae4c" -- P.JBoy
+unknown_84_9f9d:
+  .dw $0001, $80c8
+  .db $00, $ff
+  .dw $0001, $10a8
+  .dw $0000
+
+; TODO: "Used: by instruction $ae4c" -- P.JBoy
+unknown_84_9fa9:
+  .dw $0001, $80c9
+  .db $00, $ff
+  .dw $0001, $10a9
+  .dw $0000
+
+; TODO: "Used: by instruction lists $adf1, $$ae7b" -- P.JBoy
+unknown_84_9fb5:
+  .dw $0001, $b4c3
+  .dw $0000
+
+; TODO: "Used: by instruction lists $adf1, $$ae7b" -- P.JBoy
+unknown_84_9fbb:
+  .dw $0001, $84c1
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ae13, $$ae9d" -- P.JBoy
+unknown_84_9fc1:
+  .dw $0001, $b0c3
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ae13, $$ae9d" -- P.JBoy
+unknown_84_9fc7:
+  .dw $0001, $80c1
+  .dw $0000
+
+; TODO: "Used: by instruction $dcde" -- P.JBoy
+unknown_84_9fcd:
+  .dw $0002, $c514, $0513
+  .db $00, $01
+  .dw $0002, $d534, $0533
+  .dw $0000
+
+; TODO: "Used: by instruction $dcde" -- P.JBoy
+unknown_84_9fdd:
+  .dw $0002, $c516, $0515
+  .db $00, $01
+  .dw $0002, $d536, $0535
+  .dw $0000
+
+; TODO: "Used: by instruction $dd27" -- P.JBoy
+unknown_84_9fed:
+  .dw $0002, $c510, $550f
+  .db $00, $01
+  .dw $0002, $d530, $d52f
+  .dw $0000
+
+; TODO: "Used: by instruction $dd27" -- P.JBoy
+unknown_84_9ffd:
+  .dw $0002, $c512, $5511
+  .db $00, $01
+  .dw $0002, $d532, $d531
+  .dw $0000
+
+; TODO: "Used: by instruction $dd70" -- P.JBoy
+unknown_84_a00d:
+  .dw $0002, $cd30, $5d2f
+  .db $00, $01
+  .dw $0002, $dd10, $dd0f
+  .dw $0000
+
+; TODO: "Used: by instruction $dd70" -- P.JBoy
+unknown_84_a01d:
+  .dw $0002, $cd32, $5d31
+  .db $00, $01
+  .dw $0002, $dd12, $dd11
+  .dw $0000
+
+; TODO: "Used: by instruction $dcde" -- P.JBoy
+unknown_84_a02d:
+  .dw $0002, $a580, $00ff
+  .db $00, $01
+  .dw $0002, $a5a0, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $dcde" -- P.JBoy
+unknown_84_a03d:
+  .dw $0002, $a581, $00ff
+  .db $00, $01
+  .dw $0002, $a5a1, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $dcde" -- P.JBoy
+unknown_84_a04d:
+  .dw $0002, $a582, $00ff
+  .db $00, $01
+  .dw $0002, $a5a2, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $dcde" -- P.JBoy
+unknown_84_a05d:
+  .dw $0002, $a583, $00ff
+  .db $00, $01
+  .dw $0002, $a5a3, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $dd27" -- P.JBoy
+unknown_84_a06d:
+  .dw $0002, $a5a5, $a5a4
+  .db $00, $01
+  .dw $0002, $a5c5, $05c4
+  .dw $0000
+
+; TODO: "Used: by instruction $dd27" -- P.JBoy
+unknown_84_a07d:
+  .dw $0002, $a5a7, $a5a6
+  .db $00, $01
+  .dw $0002, $a5c7, $05c6
+  .dw $0000
+
+; TODO: "Used: by instruction $dd27" -- P.JBoy
+unknown_84_a08d:
+  .dw $0002, $a5a9, $a5a8
+  .db $00, $01
+  .dw $0002, $a5c9, $05c8
+  .dw $0000
+
+; TODO: "Used: by instruction $dd27" -- P.JBoy
+unknown_84_a09d:
+  .dw $0002, $a5ab, $a5aa
+  .db $00, $01
+  .dw $0002, $a5cb, $05ca
+  .dw $0000
+
+; TODO: "Used: by instruction $dd70" -- P.JBoy
+unknown_84_a0ad:
+  .dw $0002, $adc5, $0dc4
+  .db $00, $01
+  .dw $0002, $ada5, $ada4
+  .dw $0000
+
+; TODO: "Used: by instruction $dd70" -- P.JBoy
+unknown_84_a0bd:
+  .dw $0002, $adc7, $0dc6
+  .db $00, $01
+  .dw $0002, $ada7, $ada6
+  .dw $0000
+
+; TODO: "Used: by instruction $dd70" -- P.JBoy
+unknown_84_a0cd:
+  .dw $0002, $adc9, $0dc8
+  .db $00, $01
+  .dw $0002, $ada9, $ada8
+  .dw $0000
+
+; TODO: "Used: by instruction $dd70" -- P.JBoy
+unknown_84_a0dd:
+  .dw $0002, $adcb, $0dca
+  .db $00, $01
+  .dw $0002, $adab, $adaa
+  .dw $0000
+
+; TODO: "Used: by instruction $ddb9" -- P.JBoy
+unknown_84_a0ed:
+  .dw $0001, $c114
+  .db $ff, $00
+  .dw $0001, $0113
+  .db $ff, $01
+  .dw $0002, $0133, $d134
+  .dw $0000
+
+; TODO: "Used: by instruction $ddb9" -- P.JBoy
+unknown_84_a101:
+  .dw $0001, $c116
+  .db $ff, $00
+  .dw $0001, $0115
+  .db $ff, $01
+  .dw $0002, $0135, $d136
+  .dw $0000
+
+; TODO: "Used: by instruction $de02" -- P.JBoy
+unknown_84_a115:
+  .dw $0001, $c110
+  .db $ff, $00
+  .dw $0001, $510f
+  .db $ff, $01
+  .dw $0002, $d12f, $d130
+  .dw $0000
+
+; TODO: "Used: by instruction $de02" -- P.JBoy
+unknown_84_a129:
+  .dw $0001, $c112
+  .db $ff, $00
+  .dw $0001, $5111
+  .db $ff, $01
+  .dw $0002, $d131, $d132
+  .dw $0000
+
+; TODO: "Used: by instruction $de4b" -- P.JBoy
+unknown_84_a13d:
+  .dw $0001, $c930
+  .db $ff, $00
+  .dw $0001, $592f
+  .db $ff, $01
+  .dw $0002, $d90f, $d910
+  .dw $0000
+
+; TODO: "Used: by instruction $de4b" -- P.JBoy
+unknown_84_a151:
+  .dw $0001, $c932
+  .db $ff, $00
+  .dw $0001, $5931
+  .db $ff, $01
+  .dw $0002, $d911, $d912
+  .dw $0000
+
+; TODO: "Used: by instruction $ddb9" -- P.JBoy
+unknown_84_a165:
+  .dw $0001, $a180
+  .db $ff, $00
+  .dw $0001, $00ff
+  .db $ff, $01
+  .dw $0002, $00ff, $a1a0
+  .dw $0000
+
+; TODO: "Used: by instruction $ddb9" -- P.JBoy
+unknown_84_a179:
+  .dw $0001, $a181
+  .db $ff, $00
+  .dw $0001, $00ff
+  .db $ff, $01
+  .dw $0002, $00ff, $a1a1
+  .dw $0000
+
+; TODO: "Used: by instruction $ddb9" -- P.JBoy
+unknown_84_a18d:
+  .dw $0001, $a182
+  .db $ff, $00
+  .dw $0001, $00ff
+  .db $ff, $01
+  .dw $0002, $00ff, $a1a2
+  .dw $0000
+
+; TODO: "Used: by instruction $ddb9" -- P.JBoy
+unknown_84_a1a1:
+  .dw $0001, $a183
+  .db $ff, $00
+  .dw $0001, $00ff
+  .db $ff, $01
+  .dw $0002, $00ff, $a1a3
+  .dw $0000
+
+; TODO: "Used: by instruction $de02" -- P.JBoy
+unknown_84_a1b5:
+  .dw $0001, $a1a5
+  .db $ff, $00
+  .dw $0001, $a1a4
+  .db $ff, $01
+  .dw $0002, $01c4, $a1c5
+  .dw $0000
+
+; TODO: "Used: by instruction $de02" -- P.JBoy
+unknown_84_a1c9:
+  .dw $0001, $a1a7
+  .db $ff, $00
+  .dw $0001, $a1a6
+  .db $ff, $01
+  .dw $0002, $01c6, $a1c7
+  .dw $0000
+
+; TODO: "Used: by instruction $de02" -- P.JBoy
+unknown_84_a1dd:
+  .dw $0001, $a1a9
+  .db $ff, $00
+  .dw $0001, $a1a8
+  .db $ff, $01
+  .dw $0002, $01c8, $a1c9
+  .dw $0000
+
+; TODO: "Used: by instruction $de02" -- P.JBoy
+unknown_84_a1f1:
+  .dw $0001, $a1ab
+  .db $ff, $00
+  .dw $0001, $a1aa
+  .db $ff, $01
+  .dw $0002, $01ca, $a1cb
+  .dw $0000
+
+; TODO: "Used: by instruction $de4b" -- P.JBoy
+unknown_84_a205:
+  .dw $0001, $a9c5
+  .db $ff, $00
+  .dw $0001, $09c4
+  .db $ff, $01
+  .dw $0002, $a9a4, $a9a5
+  .dw $0000
+
+; TODO: "Used: by instruction $de4b" -- P.JBoy
+unknown_84_a219:
+  .dw $0001, $a9c7
+  .db $ff, $00
+  .dw $0001, $09c6
+  .db $ff, $01
+  .dw $0002, $a9a6, $a9a7
+  .dw $0000
+
+; TODO: "Used: by instruction $de4b" -- P.JBoy
+unknown_84_a22d:
+  .dw $0001, $a9c9
+  .db $ff, $00
+  .dw $0001, $09c8
+  .db $ff, $01
+  .dw $0002, $a9a8, $a9a9
+  .dw $0000
+
+; TODO: "Used: by instruction $de4b" -- P.JBoy
+unknown_84_a241:
+  .dw $0001, $a9cb
+  .db $ff, $00
+  .dw $0001, $09ca
+  .db $ff, $01
+  .dw $0002, $a9aa, $a9ab
+  .dw $0000
+
+; TODO: "Used: by instruction $aed8" -- P.JBoy
+unknown_84_a255:
+  .dw $8002, $2330, $2350
+  .dw $0000
+
+; TODO: "Used: by instruction $aed8" -- P.JBoy
+unknown_84_a25d:
+  .dw $8002, $2331, $2351
+  .dw $0000
+
+; TODO: "Used: by instruction $aed8" -- P.JBoy
+unknown_84_a265:
+  .dw $8002, $2332, $2352
+  .dw $0000
+
+; TODO: "Used: by instruction $aed8" -- P.JBoy
+unknown_84_a26d:
+  .dw $8002, $2333, $2353
+  .dw $0000
+
+; TODO: "Used: by instruction $af1e" -- P.JBoy
+unknown_84_a275:
+  .dw $8002, $2330, $2350
+  .db $ff, $00
+  .dw $8002, $2330, $2350
+  .dw $0000
+
+; TODO: "Used: by instruction $af1e" -- P.JBoy
+unknown_84_a285:
+  .dw $8002, $2331, $2351
+  .db $ff, $00
+  .dw $8002, $2331, $2351
+  .dw $0000
+
+; TODO: "Used: by instruction $af1e" -- P.JBoy
+unknown_84_a295:
+  .dw $8002, $2332, $2352
+  .db $ff, $00
+  .dw $8002, $2332, $2352
+  .dw $0000
+
+; TODO: "Used: by instruction $af1e" -- P.JBoy
+unknown_84_a2a5:
+  .dw $8002, $2333, $2353
+  .db $ff, $00
+  .dw $8002, $2333, $2353
+  .dw $0000
+
+; TODO: "Used: by instruction lists $aadf, $$d13f, $$dfa9, $$dfc7, $$dfd7,
+; $$e032, $$a2b5, $$e47c, $$e4ae, $$e4e0, $$e512, $$e54d, $$e588, $$e5c3,
+; $$e5fe, $$e642, $$e67d, $$e6b8, $$e6f3, $$e735, $$e777, $$e7b1, $$e7ec,
+; $$e826, $$e861, $$e89c, $$e8d7" -- P.JBoy
+unknown_84_a2b5:
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a2bb:
+  .dw $0001, $805d
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a2c1:
+  .dw $0001, $805e
+  .dw $0000
+
+; TODO: "Used: by instruction $a2c7" -- P.JBoy
+unknown_84_a2c7:
+  .dw $0001, $c072
+  .dw $0000
+
+; TODO: "Used: by instruction $a2c7" -- P.JBoy
+unknown_84_a2cd:
+  .dw $0001, $c073
+  .dw $0000
+
+; TODO: "Used: by instruction $a2c7" -- P.JBoy
+unknown_84_a2d3:
+  .dw $0001, $c074
+  .dw $0000
+
+; TODO: "Used: by instruction $dfc7" -- P.JBoy
+unknown_84_a2d9:
+  .dw $0001, $8075
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e099, $$e44a, $$e911" -- P.JBoy
+unknown_84_a2df:
+  .dw $0001, $b04a
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e099, $$e44a, $$e911" -- P.JBoy
+unknown_84_a2e5:
+  .dw $0001, $b04b
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e0be, $$a47c, $$e949" -- P.JBoy
+unknown_84_a2eb:
+  .dw $0001, $b04c
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e0be, $$a47c, $$e949" -- P.JBoy
+unknown_84_a2f1:
+  .dw $0001, $b04d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e0e3, $$e4ae, $$e981" -- P.JBoy
+unknown_84_a2f7:
+  .dw $0001, $b04e
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e0e3, $$e4ae, $$e981" -- P.JBoy
+unknown_84_a2fd:
+  .dw $0001, $b04f
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e108, $$e4e0, $$e9b9" -- P.JBoy
+unknown_84_a303:
+  .dw $0001, $b050
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e108, $$e4e0, $$e9b9" -- P.JBoy
+unknown_84_a309:
+  .dw $0001, $b051
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e04f" -- P.JBoy
+unknown_84_a30f:
+  .dw $0001, $b08e
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e067" -- P.JBoy
+unknown_84_a315:
+  .dw $0001, $b08f
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e04f" -- P.JBoy
+unknown_84_a31b:
+  .dw $0001, $b090
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e067" -- P.JBoy
+unknown_84_a321:
+  .dw $0001, $b091
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e04f" -- P.JBoy
+unknown_84_a327:
+  .dw $0001, $b092
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e067" -- P.JBoy
+unknown_84_a32d:
+  .dw $0001, $b093
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e04f" -- P.JBoy
+unknown_84_a333:
+  .dw $0001, $b094
+  .dw $0000
+
+; TODO: "Used: by instruction $Instruction $e067" -- P.JBoy
+unknown_84_a339:
+  .dw $0001, $b095
+  .dw $0000
+
+; TODO: "Used: by instruction $d121" -- P.JBoy
+unknown_84_a33f:
+  .dw $0001, $8052
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab31, $$c92e, $$c951, $$c974, $$c997,
+; $$c9ba, $$c9cf, $$c9e4, $$c9f9, $$ca8b, $$cadf, $$cb71, $$cb94, $$cbb7,
+; $$cc0b, $$cc20, $$cc35, $$cce3, $$cd53, $$d0f6, $$e032" -- P.JBoy
+unknown_84_a345:
+  .dw $0001, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab31, $$c92e, $$c951, $$c974, $$c997,
+; $$c9ba, $$c9cf, $$c9e4, $$c9f9, $$ca8b, $$cadf, $$cb71, $$cb94, $$cbb7,
+; $$cc0b, $$cc20, $$cc35, $$cce3, $$cd53, $$d0f6, $$e032" -- P.JBoy
+unknown_84_a34b:
+  .dw $0001, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab31, $$c92e, $$c951, $$c974, $$c997,
+; $$c9ba, $$c9cf, $$c9e4, $$c9f9, $$ca8b, $$cadf, $$cb71, $$cb94, $$cbb7,
+; $$cc0b, $$cc20, $$cc35, $$cce3, $$cd53, $$d0f6, $$e032" -- P.JBoy
+unknown_84_a351:
+  .dw $0001, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ab31, $$c92e, $$c951, $$c974, $$c997,
+; $$c9ba, $$c9cf, $$c9e4, $$c9f9, $$ca8b, $$cadf, $$cb71, $$cb94, $$cbb7,
+; $$cc0b, $$cc20, $$cc35, $$cce3, $$cd53, $$d0f6, $$e032" -- P.JBoy
+unknown_84_a357:
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca1c, $$ca8b, $$cb02, $$cbcc, $$cc5f,
+; $$ccff" -- P.JBoy
+unknown_84_a35d:
+  .dw $0002, $0053, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca1c, $$ca8b, $$cb02, $$cbcc, $$cc5f,
+; $$ccff" -- P.JBoy
+unknown_84_a365:
+  .dw $0002, $0054, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca1c, $$ca8b, $$cb02, $$cbcc, $$cc5f,
+; $$ccff" -- P.JBoy
+unknown_84_a36d:
+  .dw $0002, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca1c, $$ca8b, $$cb02, $$cbcc, $$cc5f,
+; $$ccff" -- P.JBoy
+unknown_84_a375:
+  .dw $0002, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca41, $$cab5, $$cb27, $$cbe1, $$cc8b,
+; $$cd1b" -- P.JBoy
+unknown_84_a37d:
+  .dw $8002, $0053, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca41, $$cab5, $$cb27, $$cbe1, $$cc8b,
+; $$cd1b" -- P.JBoy
+unknown_84_a385:
+  .dw $8002, $0054, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca41, $$cab5, $$cb27, $$cbe1, $$cc8b,
+; $$cd1b" -- P.JBoy
+unknown_84_a38d:
+  .dw $8002, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca41, $$cab5, $$cb27, $$cbe1, $$cc8b,
+; $$cd1b" -- P.JBoy
+unknown_84_a395:
+  .dw $8002, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca66, $$caca, $$cb4c, $$cbf6, $$ccb7,
+; $$cd37" -- P.JBoy
+unknown_84_a39d:
+  .dw $0002, $0053, $0053
+  .db $00, $01
+  .dw $0002, $0053, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca66, $$caca, $$cb4c, $$cbf6, $$ccb7,
+; $$cd37" -- P.JBoy
+unknown_84_a3ad:
+  .dw $0002, $0054, $0054
+  .db $00, $01
+  .dw $0002, $0054, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca66, $$caca, $$cb4c, $$cbf6, $$ccb7,
+; $$cd37" -- P.JBoy
+unknown_84_a3bd:
+  .dw $0002, $0055, $0055
+  .db $00, $01
+  .dw $0002, $0055, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ca66, $$caca, $$cb4c, $$cbf6, $$ccb7,
+; $$cd37" -- P.JBoy
+unknown_84_a3cd:
+  .dw $0002, $00ff, $00ff
+  .db $00, $01
+  .dw $0002, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e007, $$e020" -- P.JBoy
+unknown_84_a3dd:
+  .dw $0001, $8053
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e007, $$e020" -- P.JBoy
+unknown_84_a3e3:
+  .dw $0001, $8054
+  .dw $0000
+
+; TODO: "Used: by instruction lists $e007, $$e020" -- P.JBoy
+unknown_84_a3e9:
+  .dw $0001, $8055
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a3ef:
+  .dw $0001, $80ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a3f5:
+  .dw $0002, $8053, $8053
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a3fd:
+  .dw $0002, $8054, $8054
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a405:
+  .dw $0002, $8055, $8055
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a40d:
+  .dw $0002, $80ff, $80ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a415:
+  .dw $8002, $8053, $8053
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a41d:
+  .dw $8002, $8054, $8054
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a425:
+  .dw $8002, $8055, $8055
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a42d:
+  .dw $8002, $80ff, $80ff
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a435:
+  .dw $0002, $8053, $8053
+  .db $00, $01
+  .dw $0002, $8053, $8053
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a445:
+  .dw $0002, $8054, $8054
+  .db $00, $01
+  .dw $0002, $8054, $8054
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a455:
+  .dw $0002, $8055, $8055
+  .db $00, $01
+  .dw $0002, $8055, $8055
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_a465:
+  .dw $0002, $80ff, $80ff
+  .db $00, $01
+  .dw $0002, $80ff, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction $c8d4" -- P.JBoy
+unknown_84_a475:
+  .dw $0001, $c052
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c8da, $$cb02" -- P.JBoy
+unknown_84_a47b:
+  .dw $0002, $c096, $5097
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c8e0, $$cb27" -- P.JBoy
+unknown_84_a483:
+  .dw $8002, $c098, $d0b8
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c8e6, $$cb4c" -- P.JBoy
+unknown_84_a48b:
+  .dw $0002, $c099, $509a
+  .db $00, $01
+  .dw $0002, $d0b9, $d0ba
+  .dw $0000
+
+; TODO: "Used: by instruction $c8ec" -- P.JBoy
+unknown_84_a49b:
+  .dw $0001, $b0bc
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c8f2, $$ca1c" -- P.JBoy
+unknown_84_a4a1:
+  .dw $0002, $b0bc, $50bc
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c8f8, $$ca41" -- P.JBoy
+unknown_84_a4a9:
+  .dw $8002, $b0bc, $d0bc
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c8fe, $$ca66" -- P.JBoy
+unknown_84_a4b1:
+  .dw $0002, $b0bc, $50bc
+  .db $00, $01
+  .dw $0002, $d0bc, $d0bc
+  .dw $0000
+
+; TODO: "Used: by instruction $c904" -- P.JBoy
+unknown_84_a4c1:
+  .dw $0001, $f058
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c90a, $$cc5f" -- P.JBoy
+unknown_84_a4c7:
+  .dw $0002, $f058, $5058
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c910, $$cc8b" -- P.JBoy
+unknown_84_a4cf:
+  .dw $8002, $f058, $d058
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c916, $$ccb7" -- P.JBoy
+unknown_84_a4d7:
+  .dw $0002, $f058, $5058
+  .db $00, $01
+  .dw $0002, $d058, $d058
+  .dw $0000
+
+; TODO: "Used: by instruction $c91c" -- P.JBoy
+unknown_84_a4e7:
+  .dw $0001, $c057
+  .dw $0000
+
+; TODO: "Used: by instruction $c922" -- P.JBoy
+unknown_84_a4ed:
+  .dw $0001, $c09f
+  .dw $0000
+
+; TODO: "Used: by instruction $c928" -- P.JBoy
+unknown_84_a4f3:
+  .dw $0001, $b0b6
+  .dw $0000
+
+; TODO: "Used: by instruction lists $cd6a, $$cda9, $$d135" -- P.JBoy
+unknown_84_a4f9:
+  .dw $0001, $e0b7
+  .dw $0000
+
+; TODO: "Used: by instruction lists $cd6a, $$cda9" -- P.JBoy
+unknown_84_a4ff:
+  .dw $0001, $0053
+  .dw $0000
+
+; TODO: "Used: by instruction lists $cd6a, $$cda9" -- P.JBoy
+unknown_84_a505:
+  .dw $0001, $0054
+  .dw $0000
+
+; TODO: "Used: by instruction lists $cd6a, $$cda9" -- P.JBoy
+unknown_84_a50b:
+  .dw $0001, $0055
+  .dw $0000
+
+; TODO: "Used: by instruction lists $cd6a, $$cda9" -- P.JBoy
+unknown_84_a511:
+  .dw $0001, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc13" -- P.JBoy
+unknown_84_a517:
+  .dw $8005, $c0d6, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc13" -- P.JBoy
+unknown_84_a525:
+  .dw $8005, $c0d7, $c0ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc13" -- P.JBoy
+unknown_84_a533:
+  .dw $8005, $c0d7, $c0ff, $c0ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc13" -- P.JBoy
+unknown_84_a541:
+  .dw $8005, $c0d7, $c0ff, $c0ff, $c0ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc13" -- P.JBoy
+unknown_84_a54f:
+  .dw $8005, $c0d7, $c0ff, $c0ff, $c0ff, $c0ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc13" -- P.JBoy
+unknown_84_a55d:
+  .dw $8005, $c0d6, $c0ff, $c0ff, $c0ff, $c0ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc61" -- P.JBoy
+unknown_84_a56b:
+  .dw $8001, $c0d6
+  .db $00, $fc
+  .dw $8004, $00ff, $00ff, $00ff, $00ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc61" -- P.JBoy
+unknown_84_a57d:
+  .dw $8001, $c0d7
+  .db $00, $fc
+  .dw $8004, $00ff, $00ff, $00ff, $80ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc61" -- P.JBoy
+unknown_84_a58f:
+  .dw $8001, $c0d7
+  .db $00, $fc
+  .dw $8004, $00ff, $00ff, $c0ff, $c0ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc61" -- P.JBoy
+unknown_84_a5a1:
+  .dw $8001, $c0d7
+  .db $00, $fc
+  .dw $8004, $00ff, $c0ff, $c0ff, $c0ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc61" -- P.JBoy
+unknown_84_a5b3:
+  .dw $8001, $c0d7
+  .db $00, $fc
+  .dw $8004, $c0ff, $c0ff, $c0ff, $c0ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bc61" -- P.JBoy
+unknown_84_a5c5:
+  .dw $8001, $c0d6
+  .db $00, $fc
+  .dw $8004, $c0ff, $c0ff, $c0ff, $c0ff
+  .dw $0000
+
+; TODO: "Used: by instruction $bcaf" -- P.JBoy
+unknown_84_a5d7:
+  .dw $0001, $80d6
+  .db $ff, $00
+  .dw $0001, $c0db
+  .dw $0000
+
+; TODO: "Used: by instruction $bcb5" -- P.JBoy
+unknown_84_a5e3:
+  .dw $0002, $80d6, $c4db
+  .dw $0000
+
+; TODO: "Used: by instruction $bcbb" -- P.JBoy
+unknown_84_a5eb:
+  .dw $0001, $80d6
+  .db $ff, $00
+  .dw $0001, $c0da
+  .dw $0000
+
+; TODO: "Used: by instruction $bcc1" -- P.JBoy
+unknown_84_a5f7:
+  .dw $0002, $80d6, $c4da
+  .dw $0000
+
+; TODO: "Used: by instruction $bcc7" -- P.JBoy
+unknown_84_a5ff:
+  .dw $0001, $80d6
+  .db $ff, $00
+  .dw $0001, $c0d9
+  .dw $0000
+
+; TODO: "Used: by instruction $bccd" -- P.JBoy
+unknown_84_a60b:
+  .dw $0002, $80d6, $c4d9
+  .dw $0000
+
+; TODO: "Used: by instruction $bcd3" -- P.JBoy
+unknown_84_a613:
+  .dw $0001, $80d6
+  .db $ff, $00
+  .dw $0001, $c0d8
+  .dw $0000
+
+; TODO: "Used: by instruction $bcd9" -- P.JBoy
+unknown_84_a61f:
+  .dw $0002, $80d6, $c4d8
+  .dw $0000
+
+; TODO: "Used: by instruction $bcdf" -- P.JBoy
+unknown_84_a627:
+  .dw $0001, $88d6
+  .db $ff, $00
+  .dw $0001, $c8db
+  .dw $0000
+
+; TODO: "Used: by instruction $bce5" -- P.JBoy
+unknown_84_a633:
+  .dw $0002, $88d6, $ccdb
+  .dw $0000
+
+; TODO: "Used: by instruction $bceb" -- P.JBoy
+unknown_84_a63b:
+  .dw $0001, $88d6
+  .db $ff, $00
+  .dw $0001, $c8da
+  .dw $0000
+
+; TODO: "Used: by instruction $bcf1" -- P.JBoy
+unknown_84_a647:
+  .dw $0002, $88d6, $ccda
+  .dw $0000
+
+; TODO: "Used: by instruction $bcf7" -- P.JBoy
+unknown_84_a64f:
+  .dw $0001, $88d6
+  .db $ff, $00
+  .dw $0001, $c8d9
+  .dw $0000
+
+; TODO: "Used: by instruction $bcfd" -- P.JBoy
+unknown_84_a65b:
+  .dw $0002, $88d6, $ccd9
+  .dw $0000
+
+; TODO: "Used: by instruction $bd03" -- P.JBoy
+unknown_84_a663:
+  .dw $0001, $88d6
+  .db $ff, $00
+  .dw $0001, $c8d8
+  .dw $0000
+
+; TODO: "Used: by instruction $bd09" -- P.JBoy
+unknown_84_a66f:
+  .dw $0002, $88d6, $ccd8
+  .dw $0000
+
+; TODO: "Used: by instruction lists $be59, $$bffd, $$c185, $$c301, $$c489,
+; $$c49e" -- P.JBoy
+unknown_84_a677:
+  .dw $8004, $0082, $00a2, $08a2, $0882
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ba4c, $$ba7f, $$bec2, $$c060, $$c1e4,
+; $$c363, $$c4ba, $$c4cf" -- P.JBoy
+unknown_84_a683:
+  .dw $8004, $0482, $04a2, $0ca2, $0c82
+  .dw $0000
+
+; TODO: "Used: by instruction lists $bf2b, $$c0c3, $$c243, $$a68f, $$c4eb, 
+; $$c500" -- P.JBoy
+unknown_84_a68f:
+  .dw $0004, $0484, $0483, $0083, $0084
+  .dw $0000
+
+; TODO: "Used: by instruction lists $bf94, $$c122, $$c2a2, $$c427, $$c51c,
+; $$c531" -- P.JBoy
+unknown_84_a69b:
+  .dw $0004, $0c84, $0c83, $0883, $0884
+  .dw $0000
+
+; TODO: "Used: by instruction $be59" -- P.JBoy
+unknown_84_a6a7:
+  .dw $8004, $c0ae, $d0ce, $d8ce, $d8ae
+  .dw $0000
+
+; TODO: "Used: by instruction $be59" -- P.JBoy
+unknown_84_a6b3:
+  .dw $8004, $80af, $80cf, $88cf, $88af
+  .dw $0000
+
+; TODO: "Used: by instruction $be59" -- P.JBoy
+unknown_84_a6bf:
+  .dw $8004, $80b0, $80d0, $88d0, $88b0
+  .dw $0000
+
+; TODO: "Used: by instruction $be59" -- P.JBoy
+unknown_84_a6cb:
+  .dw $8004, $80b1, $00d1, $08d1, $88b1
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ba4c, $$ba7f, $$bec2" -- P.JBoy
+unknown_84_a6d7:
+  .dw $8004, $c4ae, $d4ce, $dcce, $dcae
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ba4c, $$ba7f, $$bec2" -- P.JBoy
+unknown_84_a6e3:
+  .dw $8004, $84af, $84cf, $8ccf, $8caf
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ba4c, $$ba7f, $$bec2" -- P.JBoy
+unknown_84_a6ef:
+  .dw $8004, $84b0, $84d0, $8cd0, $8cb0
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ba4c, $$ba7f, $$bec2" -- P.JBoy
+unknown_84_a6fb:
+  .dw $8004, $84b1, $84d1, $8cd1, $8cb1
+  .dw $0000
+
+; TODO: "Used: by instruction $bf2b" -- P.JBoy
+unknown_84_a707:
+  .dw $0004, $c4b3, $54b2, $50b2, $50b3
+  .dw $0000
+
+; TODO: "Used: by instruction $bf2b" -- P.JBoy
+unknown_84_a713:
+  .dw $0004, $84d3, $84d2, $80d2, $80d3
+  .dw $0000
+
+; TODO: "Used: by instruction $bf2b" -- P.JBoy
+unknown_84_a71f:
+  .dw $0004, $84b5, $84b4, $80b4, $80b5
+  .dw $0000
+
+; TODO: "Used: by instruction $bf2b" -- P.JBoy
+unknown_84_a72b:
+  .dw $0004, $84d5, $84d4, $80d4, $80d5
+  .dw $0000
+
+; TODO: "Used: by instruction $bf94" -- P.JBoy
+unknown_84_a737:
+  .dw $0004, $ccb3, $5cb2, $58b2, $58b3
+  .dw $0000
+
+; TODO: "Used: by instruction $bf94" -- P.JBoy
+unknown_84_a743:
+  .dw $0004, $8cd3, $8cd2, $88d2, $88d3
+  .dw $0000
+
+; TODO: "Used: by instruction $bf94" -- P.JBoy
+unknown_84_a74f:
+  .dw $0004, $8cb5, $8cb4, $88b4, $88b5
+  .dw $0000
+
+; TODO: "Used: by instruction $bf94" -- P.JBoy
+unknown_84_a75b:
+  .dw $0004, $8cd5, $0cd4, $08d4, $88d5
+  .dw $0000
+
+; TODO: "Used: by instruction $bffd" -- P.JBoy
+unknown_84_a767:
+  .dw $8004, $c000, $d020, $d820, $d800
+  .dw $0000
+
+; TODO: "Used: by instruction $bffd" -- P.JBoy
+unknown_84_a773:
+  .dw $8004, $8001, $8021, $8821, $8801
+  .dw $0000
+
+; TODO: "Used: by instruction $bffd" -- P.JBoy
+unknown_84_a77f:
+  .dw $8004, $8002, $8022, $8822, $8802
+  .dw $0000
+
+; TODO: "Used: by instruction $bffd" -- P.JBoy
+unknown_84_a78b:
+  .dw $8004, $8003, $0023, $0823, $8803
+  .dw $0000
+
+; TODO: "Used: by instruction $c060" -- P.JBoy
+unknown_84_a797:
+  .dw $8004, $c400, $d420, $dc20, $dc00
+  .dw $0000
+
+; TODO: "Used: by instruction $c060" -- P.JBoy
+unknown_84_a7a3:
+  .dw $8004, $8401, $8421, $8c21, $8c01
+  .dw $0000
+
+; TODO: "Used: by instruction $c060" -- P.JBoy
+unknown_84_a7af:
+  .dw $8004, $8402, $8422, $8c22, $8c02
+  .dw $0000
+
+; TODO: "Used: by instruction $c060" -- P.JBoy
+unknown_84_a7bb:
+  .dw $8004, $8403, $8423, $8c23, $8c03
+  .dw $0000
+
+; TODO: "Used: by instruction $c0c3" -- P.JBoy
+unknown_84_a7c7:
+  .dw $0004, $c411, $5410, $5010, $5011
+  .dw $0000
+
+; TODO: "Used: by instruction $c0c3" -- P.JBoy
+unknown_84_a7d3:
+  .dw $0004, $8431, $8430, $8030, $8031
+  .dw $0000
+
+; TODO: "Used: by instruction $c0c3" -- P.JBoy
+unknown_84_a7df:
+  .dw $0004, $8413, $8412, $8012, $8013
+  .dw $0000
+
+; TODO: "Used: by instruction $c0c3" -- P.JBoy
+unknown_84_a7eb:
+  .dw $0004, $8433, $8432, $8032, $8033
+  .dw $0000
+
+; TODO: "Used: by instruction $c122" -- P.JBoy
+unknown_84_a7f7:
+  .dw $0004, $cc11, $5c10, $5810, $5811
+  .dw $0000
+
+; TODO: "Used: by instruction $c122" -- P.JBoy
+unknown_84_a803:
+  .dw $0004, $8c31, $8c30, $8830, $8831
+  .dw $0000
+
+; TODO: "Used: by instruction $c122" -- P.JBoy
+unknown_84_a80f:
+  .dw $0004, $8c13, $8c12, $8812, $8813
+  .dw $0000
+
+; TODO: "Used: by instruction $c122" -- P.JBoy
+unknown_84_a81b:
+  .dw $0004, $8c33, $0c32, $0832, $8833
+  .dw $0000
+
+; TODO: "Used: by instruction $c185" -- P.JBoy
+unknown_84_a827:
+  .dw $8004, $c004, $d024, $d824, $d804
+  .dw $0000
+
+; TODO: "Used: by instruction $c185" -- P.JBoy
+unknown_84_a833:
+  .dw $8004, $8005, $8025, $8825, $8805
+  .dw $0000
+
+; TODO: "Used: by instruction $c185" -- P.JBoy
+unknown_84_a83f:
+  .dw $8004, $8006, $8026, $8826, $8806
+  .dw $0000
+
+; TODO: "Used: by instruction $c185" -- P.JBoy
+unknown_84_a84b:
+  .dw $8004, $8007, $0027, $0827, $8807
+  .dw $0000
+
+; TODO: "Used: by instruction $c1e4" -- P.JBoy
+unknown_84_a857:
+  .dw $8004, $c404, $d424, $dc24, $dc04
+  .dw $0000
+
+; TODO: "Used: by instruction $c1e4" -- P.JBoy
+unknown_84_a863:
+  .dw $8004, $8405, $8425, $8c25, $8c05
+  .dw $0000
+
+; TODO: "Used: by instruction $c1e4" -- P.JBoy
+unknown_84_a86f:
+  .dw $8004, $8406, $8426, $8c26, $8c06
+  .dw $0000
+
+; TODO: "Used: by instruction $c1e4" -- P.JBoy
+unknown_84_a87b:
+  .dw $8004, $8407, $0427, $0c27, $8c07
+  .dw $0000
+
+; TODO: "Used: by instruction $c243" -- P.JBoy
+unknown_84_a887:
+  .dw $0004, $c415, $5414, $5014, $5015
+  .dw $0000
+
+; TODO: "Used: by instruction $c243" -- P.JBoy
+unknown_84_a893:
+  .dw $0004, $8435, $8434, $8034, $8035
+  .dw $0000
+
+; TODO: "Used: by instruction $c243" -- P.JBoy
+unknown_84_a89f:
+  .dw $0004, $8417, $8416, $8016, $8017
+  .dw $0000
+
+; TODO: "Used: by instruction $c243" -- P.JBoy
+unknown_84_a8ab:
+  .dw $0004, $8437, $8436, $8036, $8037
+  .dw $0000
+
+; TODO: "Used: by instruction $c2a2" -- P.JBoy
+unknown_84_a8b7:
+  .dw $0004, $cc15, $5c14, $5814, $5815
+  .dw $0000
+
+; TODO: "Used: by instruction $c2a2" -- P.JBoy
+unknown_84_a8c3:
+  .dw $0004, $8c35, $8c34, $8834, $8835
+  .dw $0000
+
+; TODO: "Used: by instruction $c2a2" -- P.JBoy
+unknown_84_a8cf:
+  .dw $0004, $8c17, $8c16, $8816, $8817
+  .dw $0000
+
+; TODO: "Used: by instruction $c2a2" -- P.JBoy
+unknown_84_a8db:
+  .dw $0004, $8c37, $8c36, $8836, $8837
+  .dw $0000
+
+; TODO: "Used: by instruction $c301" -- P.JBoy
+unknown_84_a8e7:
+  .dw $8004, $c008, $d028, $d828, $d808
+  .dw $0000
+
+; TODO: "Used: by instruction $c301" -- P.JBoy
+unknown_84_a8f3:
+  .dw $8004, $8009, $8029, $8829, $8809
+  .dw $0000
+
+; TODO: "Used: by instruction $c301" -- P.JBoy
+unknown_84_a8ff:
+  .dw $8004, $800a, $802a, $882a, $880a
+  .dw $0000
+
+; TODO: "Used: by instruction $c301" -- P.JBoy
+unknown_84_a90b:
+  .dw $8004, $800b, $002b, $082b, $880b
+  .dw $0000
+
+; TODO: "Used: by instruction $c363" -- P.JBoy
+unknown_84_a917:
+  .dw $8004, $c408, $d428, $dc28, $dc08
+  .dw $0000
+
+; TODO: "Used: by instruction $c363" -- P.JBoy
+unknown_84_a923:
+  .dw $8004, $8409, $8429, $8c29, $8c09
+  .dw $0000
+
+; TODO: "Used: by instruction $c363" -- P.JBoy
+unknown_84_a92f:
+  .dw $8004, $840a, $842a, $8c2a, $8c0a
+  .dw $0000
+
+; TODO: "Used: by instruction $c363" -- P.JBoy
+unknown_84_a93b:
+  .dw $8004, $840b, $042b, $0c2b, $8c0b
+  .dw $0000
+
+; TODO: "Used: by instruction $c3c5" -- P.JBoy
+unknown_84_a947:
+  .dw $0004, $c419, $5418, $5018, $5019
+  .dw $0000
+
+; TODO: "Used: by instruction $c3c5" -- P.JBoy
+unknown_84_a953:
+  .dw $0004, $8439, $8438, $8038, $8039
+  .dw $0000
+
+; TODO: "Used: by instruction $c3c5" -- P.JBoy
+unknown_84_a95f:
+  .dw $0004, $841b, $841a, $801a, $801b
+  .dw $0000
+
+; TODO: "Used: by instruction $c3c5" -- P.JBoy
+unknown_84_a96b:
+  .dw $0004, $843b, $843a, $803a, $803b
+  .dw $0000
+
+; TODO: "Used: by instruction $c427" -- P.JBoy
+unknown_84_a977:
+  .dw $0004, $cc19, $5c18, $5818, $5819
+  .dw $0000
+
+; TODO: "Used: by instruction $c427" -- P.JBoy
+unknown_84_a983:
+  .dw $0004, $8c39, $8c38, $8838, $8839
+  .dw $0000
+
+; TODO: "Used: by instruction $c427" -- P.JBoy
+unknown_84_a98f:
+  .dw $0004, $8c1b, $8c1a, $881a, $881b
+  .dw $0000
+
+; TODO: "Used: by instruction $c427" -- P.JBoy
+unknown_84_a99b:
+  .dw $0004, $8c3b, $8c3a, $883a, $883b
+  .dw $0000
+
+; TODO: "Used: by instruction $d81e" -- P.JBoy
+unknown_84_a9a7:
+  .dw $8004, $800c, $d02c, $d82c, $d80c
+  .dw $0000
+
+; TODO: "Used: by instruction lists $be59, $$bffd, $$c185, $$c301, $$c49e"
+; -- P.JBoy
+unknown_84_a9b3:
+  .dw $8004, $c00c, $d02c, $d82c, $d80c
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c489, $$c49e" -- P.JBoy
+unknown_84_a9bf:
+  .dw $8004, $800d, $802d, $882d, $880d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c489, $$c49e" -- P.JBoy
+unknown_84_a9cb:
+  .dw $8004, $800e, $802e, $882e, $880e
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c489, $$c49e" -- P.JBoy
+unknown_84_a9d7:
+  .dw $8004, $800f, $002f, $082f, $880f
+  .dw $0000
+
+; TODO: "Used: by instruction $d955" -- P.JBoy
+unknown_84_a9e3:
+  .dw $8004, $840c, $d42c, $dc2c, $dc0c
+  .dw $0000
+
+; TODO: "Used: by instruction lists $ba7f, $$bec2, $$c060, $$c1e4, $$c363"
+; -- P.JBoy
+unknown_84_a9ef:
+  .dw $8004, $c40c, $d42c, $dc2c, $dc0c
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c4ba, $$c4cf" -- P.JBoy
+unknown_84_a9fb:
+  .dw $8004, $840d, $842d, $8c2d, $8c0d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c4ba, $$c4cf" -- P.JBoy
+unknown_84_aa07:
+  .dw $8004, $840e, $842e, $8c2e, $8c0e
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c4ba, $$c4cf" -- P.JBoy
+unknown_84_aa13:
+  .dw $8004, $840f, $042f, $0c2f, $8c0f
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_aa1f:
+  .dw $0004, $841d, $541c, $501c, $501d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $bf2b, $$c0c3, $$c243, $$c3c5, $$c500"
+; -- P.JBoy
+unknown_84_aa2b:
+  .dw $0004, $c41d, $541c, $501c, $501d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c4eb, $$c500" -- P.JBoy
+unknown_84_aa37:
+  .dw $0004, $843d, $843c, $803c, $803d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c4eb, $$c500" -- P.JBoy
+unknown_84_aa43:
+  .dw $0004, $841f, $841e, $801e, $801f
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c4eb, $$c500" -- P.JBoy
+unknown_84_aa4f:
+  .dw $0004, $843f, $843e, $803e, $803f
+  .dw $0000
+
+; TODO: "Unused" -- P.JBoy
+unknown_84_aa5b:
+  .dw $0004, $8c1d, $5c1c, $581c, $581d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $bf94, $$c122, $$c2a2, $$aa67, $$c531"
+; -- P.JBoy
+unknown_84_aa67:
+  .dw $0004, $cc1d, $5c1c, $581c, $581d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c51c, $$c531" -- P.JBoy
+unknown_84_aa73:
+  .dw $0004, $8c3d, $8c3c, $883c, $883d
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c51c, $$c531" -- P.JBoy
+unknown_84_aa7f:
+  .dw $0004, $8c1f, $8c1e, $881e, $881f
+  .dw $0000
+
+; TODO: "Used: by instruction lists $c51c, $$c531" -- P.JBoy
+unknown_84_aa8b:
+  .dw $0004, $8c3f, $8c3e, $883e, $883f
+  .dw $0000
+
+; TODO: "Used: by instruction $afb6" -- P.JBoy
+unknown_84_aa97:
+  .dw $0001, $8085
+  .db $03, $00
+  .dw $0001, $8485
+  .db $00, $01
+  .dw $0004, $8088, $8089, $8489, $8488
+  .dw $0000
+
+; TODO: "Used: by instruction $afb6" -- P.JBoy
+unknown_84_aaaf:
+  .dw $0001, $8086
+  .db $03, $00
+  .dw $0001, $8486
+  .db $00, $01
+  .dw $0004, $808a, $808b, $848b, $848a
+  .dw $0000
+
+; TODO: "Used: by instruction $afb6" -- P.JBoy
+unknown_84_aac7:
+  .dw $0001, $8087
+  .db $03, $00
+  .dw $0001, $8487
+  .db $00, $01
+  .dw $0004, $808c, $808d, $848d, $848c
+  .dw $0000
+
+; TODO: "Instruction lists (mostly)" -- P.JBoy
+; TODO: "Unused. Instruction list - draw empty tile" -- P.JBoy
+unknown_84_aadf:
+  .dw $0001, $a2b5
+
+; TODO: "Instruction list - delete" -- P.JBoy
+unknown_84_aae3:
+  .dw $86bc    ; Delete
+
+; TODO: "Instruction list - PLM $b773 (crumble access to Tourian elevator)"
+; -- P.JBoy
+unknown_84_aae5:
+  .dw $874e
+  .db $06 ; Timer = 06h
+unknown_84_aae8:
+  .dw $0004, $92a3
+  .dw $0004, $92af
+  .dw $0004, $92bb
+  .dw $0004, $9297
+  .dw $ab00 ; Move PLM down one block
+  .dw $873f, $aae8 ; Decrement timer and go to $aae8 if non-zero
+  .dw $86bc ; Delete
+
+; TODO: "Instruction - move PLM down one block" -- P.JBoy
+unknown_84_ab00:
+  lda $07a5
+  asl A
+  clc
+  adc $1c87.w, X
+  sta $1c87.w, X
+  rts
+
+; TODO: "Instruction list - PLM $b777 (clear access to Tourian elevator)
+; -- P.JBoy
+unknown_84_ab0c:
+  .dw $0001, $92c7
+  .dw $86bc ; Delete
+
+; TODO: "Instruction list - PLM $b78f (crumble Spore Spawn ceiling)" -- P.JBoy
+unknown_84_ab12:
+  .dw $8c10
+  .db $0A ; Queue sound Ah, sound library 2, max queued sounds allowed = 6
+  .dw $0004, $9423
+  .dw $0004, $9433
+  .dw $0004, $9443
+
+; TODO: "Instruction list - PLM $b793 (clear Spore Spawn ceiling)" -- P.JBoy
+unknown_84_ab21:
+  .dw $0004, $9413
+  .dw $86bc ; Delete
+
+unknown_84_ab27:
+  rts
+
+; TODO: "Setup - PLM $b79b (crumble Botwoon wall) - wait 40h frames" -- P.JBoy
+unknown_84_ab28:
+  tyx
+  lda #$0040.w
+  sta var_plm_instruction_timer.l, X
+  rts
+
+; TODO: "Instruction list - PLM $b79b (crumble Botwoon wall)" -- P.JBoy
+unknown_84_ab31:
+  .dw $874e
+  .db $09 ; Timer = 9h
+  .dw $ab51 ; Scroll 0..1 = blue
+unknown_84_ab36:
+  .dw $8c10
+  .db $0a ; Queue sound Ah, sound library 2, max queued sounds allowed = 6
+  .dw $0004, $a345
+  .dw $0004, $a34b
+  .dw $0004, $a351
+  .dw $0004, $a357
+  .dw $ab59 ; Move PLM down one block
+  .dw $873f, $ab36 ; Decrement timer and go to $AB36 if non-zero
+  .dw $86bc ; Delete
+
+unknown_84_ab51: lda #$0101
 /*unknown_84_ab54:*/ sta $7ecd20
 /*unknown_84_ab58:*/ rts
 
