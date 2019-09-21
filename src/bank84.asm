@@ -404,7 +404,7 @@ unknown_84_83d7:
   sta $1d27.w, X
   lda #$0001.w
   sta var_plm_instruction_timer.l, X
-  lda #$8da0.w
+  lda #unknown_84_8da0.w
   sta var_plm_instruction_draw_pointer.l, X
   stz $1d77.w, X
   stx var_plm_current_index.w
@@ -468,7 +468,7 @@ unknown_84_846a:
   sta $1d27.w, X
   lda #$0001.w
   sta var_plm_instruction_timer.l, X
-  lda #$8da0.w
+  lda #unknown_84_8da0.w
   sta var_plm_instruction_draw_pointer.l, X
   stz $1d77.w, X
   stx var_plm_current_index.w
@@ -519,7 +519,7 @@ unknown_84_84e7:
   sta $1d27.w, X
   lda #$0001.w
   sta var_plm_instruction_timer.l, X
-  lda #$8da0.w
+  lda #unknown_84_8da0.w
   sta var_plm_instruction_draw_pointer.l, X
   lda #$0000.w
   sta $1d77.w, X
@@ -587,7 +587,7 @@ unknown_84_853e:
   sta $1d27.w, X
   lda #$0001.w
   sta var_plm_instruction_timer.l, X
-  lda #$8da0.w
+  lda #unknown_84_8da0.w
   sta var_plm_instruction_draw_pointer.l, X
   lda #$0000.w
   sta $1d77.w, X
@@ -997,7 +997,7 @@ unknown_84_880e:
   and #$00ff.w
   jsl unknown_80_81dc
   bcc @unknown_84_881e
-  jmp $8724.w
+  jmp unknown_84_8724.w
 @unknown_84_881e:
   iny
   iny
@@ -1018,7 +1018,7 @@ unknown_84_882d:
   iny
   jsl unknown_80_8233
   bcc @unknown_84_883b
-  jmp $8724.w
+  jmp unknown_84_8724.w
 @unknown_84_883b:
   iny
   iny
@@ -1042,7 +1042,7 @@ unknown_84_8848:
   plx
   and var_unknown_05e7.w
   beq @unknown_84_885f
-  jmp $8724.w
+  jmp unknown_84_8724.w
 @unknown_84_885f:
   iny
   iny
@@ -1073,7 +1073,7 @@ unknown_84_887c:
   plx
   and var_unknown_05e7.w
   beq @unknown_84_8893
-  jmp $8724.w
+  jmp unknown_84_8724.w
 @unknown_84_8893:
   iny
   iny
@@ -1373,7 +1373,7 @@ unknown_84_8a91:
   lda #$8aa6.w
   sta $1cd7.w, X
   iny
-  jmp $8724.w
+  jmp unknown_84_8724.w
 
 ; TODO: "Instruction - increment room argument; room argument = FFFFh and go
 ; to [[Y] + 1] if [room argument] >= [[Y]]" -- P.JBoy
@@ -1395,7 +1395,7 @@ unknown_84_8acd:
   lda #$8ae0.w
   sta $1cd7.w, X
   iny
-  jmp $8724.w
+  jmp unknown_84_8724.w
 
 ; TODO: "Instruction - PLM BTS = [[Y]]" -- P.JBoy
 unknown_84_8af1:
@@ -1832,7 +1832,7 @@ unknown_84_8d97:
 
 ; TODO: "Unused. Default PLM instruction list" -- P.JBoy
 unknown_84_8d98:
-  .dw $1000, $8da0, $8724, $8d98
+  .dw $1000, unknown_84_8da0, unknown_84_8724, unknown_84_8d98
 
 ; TODO: "Default PLM draw instruction" -- P.JBoy
 unknown_84_8da0:
@@ -3444,7 +3444,7 @@ unknown_84_9e7d:
 
 ; TODO: "Used: by instruction $acf8" -- P.JBoy
 unknown_84_9e99:
-  .dw $0002, $3da1, $8da0
+  .dw $0002, $3da1, unknown_84_8da0
   .db $fe, $00
   .dw $0002, $89a0, $59a1
   .db $fe, $01
@@ -3453,7 +3453,7 @@ unknown_84_9e99:
 
 ; TODO: "Unused" -- P.JBoy
 unknown_84_9eb5:
-  .dw $0002, $0da1, $8da0
+  .dw $0002, $0da1, unknown_84_8da0
   .db $fe, $00
   .dw $0002, $89a0, $09a1
   .db $fe, $01
@@ -5001,25 +5001,25 @@ unknown_84_aac7:
 ; TODO: "Instruction lists (mostly)" -- P.JBoy
 ; TODO: "Unused. Instruction list - draw empty tile" -- P.JBoy
 unknown_84_aadf:
-  .dw $0001, $a2b5
+  .dw $0001, unknown_84_a2b5
 
 ; TODO: "Instruction list - delete" -- P.JBoy
 unknown_84_aae3:
-  .dw $86bc    ; Delete
+  .dw unknown_84_86bc ; Delete
 
 ; TODO: "Instruction list - PLM $b773 (crumble access to Tourian elevator)"
 ; -- P.JBoy
 unknown_84_aae5:
-  .dw $874e
+  .dw unknown_84_874e
   .db $06 ; Timer = 06h
 unknown_84_aae8:
-  .dw $0004, $92a3
-  .dw $0004, $92af
-  .dw $0004, $92bb
-  .dw $0004, $9297
-  .dw $ab00 ; Move PLM down one block
-  .dw $873f, $aae8 ; Decrement timer and go to $aae8 if non-zero
-  .dw $86bc ; Delete
+  .dw $0004, unknown_84_92a3
+  .dw $0004, unknown_84_92af
+  .dw $0004, unknown_84_92bb
+  .dw $0004, unknown_84_9297
+  .dw unknown_84_ab00 ; Move PLM down one block
+  .dw unknown_84_873f, unknown_84_aae8 ; Decrement timer and go to $aae8 if non-zero
+  .dw unknown_84_86bc ; Delete
 
 ; TODO: "Instruction - move PLM down one block" -- P.JBoy
 unknown_84_ab00:
@@ -5033,21 +5033,21 @@ unknown_84_ab00:
 ; TODO: "Instruction list - PLM $b777 (clear access to Tourian elevator)
 ; -- P.JBoy
 unknown_84_ab0c:
-  .dw $0001, $92c7
-  .dw $86bc ; Delete
+  .dw $0001, unknown_84_92c7
+  .dw unknown_84_86bc ; Delete
 
 ; TODO: "Instruction list - PLM $b78f (crumble Spore Spawn ceiling)" -- P.JBoy
 unknown_84_ab12:
-  .dw $8c10
-  .db $0A ; Queue sound Ah, sound library 2, max queued sounds allowed = 6
-  .dw $0004, $9423
-  .dw $0004, $9433
-  .dw $0004, $9443
+  .dw unknown_84_8c10
+  .db $0a ; Queue sound Ah, sound library 2, max queued sounds allowed = 6
+  .dw $0004, unknown_84_9423
+  .dw $0004, unknown_84_9433
+  .dw $0004, unknown_84_9443
 
 ; TODO: "Instruction list - PLM $b793 (clear Spore Spawn ceiling)" -- P.JBoy
 unknown_84_ab21:
-  .dw $0004, $9413
-  .dw $86bc ; Delete
+  .dw $0004, unknown_84_9413
+  .dw unknown_84_86bc ; Delete
 
 unknown_84_ab27:
   rts
@@ -5061,25 +5061,25 @@ unknown_84_ab28:
 
 ; TODO: "Instruction list - PLM $b79b (crumble Botwoon wall)" -- P.JBoy
 unknown_84_ab31:
-  .dw $874e
+  .dw unknown_84_874e
   .db $09 ; Timer = 9h
-  .dw $ab51 ; Scroll 0..1 = blue
-unknown_84_ab36:
-  .dw $8c10
+  .dw unknown_84_ab51 ; Scroll 0..1 = blue
+@unknown_84_ab36:
+  .dw unknown_84_8c10
   .db $0a ; Queue sound Ah, sound library 2, max queued sounds allowed = 6
-  .dw $0004, $a345
-  .dw $0004, $a34b
-  .dw $0004, $a351
-  .dw $0004, $a357
-  .dw $ab59 ; Move PLM down one block
-  .dw $873f, $ab36 ; Decrement timer and go to $AB36 if non-zero
-  .dw $86bc ; Delete
+  .dw $0004, unknown_84_a345
+  .dw $0004, unknown_84_a34b
+  .dw $0004, unknown_84_a351
+  .dw $0004, unknown_84_a357
+  .dw unknown_84_ab59 ; Move PLM down one block
+  .dw unknown_84_873f, @unknown_84_ab36 ; Decrement timer and go to $AB36 if non-zero
+  .dw unknown_84_86bc ; Delete
 
 unknown_84_ab51: lda #$0101
 /*unknown_84_ab54:*/ sta $7ecd20
 /*unknown_84_ab58:*/ rts
 
-/*unknown_84_ab59:*/ lda $1c87.w, X
+unknown_84_ab59: lda $1c87.w, X
 /*unknown_84_ab5c:*/ clc
 /*unknown_84_ab5d:*/ adc $07a5.w
 /*unknown_84_ab60:*/ adc $07a5.w
