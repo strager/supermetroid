@@ -19,6 +19,8 @@ var_unknown_02: dw ; $7e0002
 var_unknown_12: dw ; $7e0012
 .nextu
 var_temp_12: dw ; $7e0012
+.nextu
+var_temp_center_y: dw ; $7e0012
 .endu
 
 .union
@@ -26,12 +28,25 @@ var_temp_12: dw ; $7e0012
 var_unknown_14: dw ; $7e0014
 .nextu
 var_temp_14: dw ; $7e0014
+.nextu
+var_temp_center_x: dw ; $7e0014
 .endu
 
+.union
 var_unknown_16: dw ; $7e0016
+.nextu
+var_temp_palette: dw ; $7e0016
+.endu
+
+.union
+var_temp_number_of_tiles: dw ; $7e0018
+.nextu
 var_unknown_18: dw ; $7e0018
+.endu
+
 var_unknown_1a: dw ; $7e001a
-var_unknown_1c: dw ; $7e001c
+
+var_temp_unknown_1c: dw ; $7e001c
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $26) export

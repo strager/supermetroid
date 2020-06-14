@@ -1,6 +1,7 @@
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/oam.asm"
+.include "include/ppu.asm"
 .include "include/sprite.asm"
 .include "include/start_dma_copy.asm"
 
@@ -731,8 +732,8 @@ unknown_81_83a1: cop $00
 /*unknown_81_859b:*/ brk $40
 /*unknown_81_859d:*/ brk $80
 
-unknown_81_859f: bvs $05 ; $85a6.w
-unknown_81_85a1: ora $00, S
+unknown_81_859f: .dw $0570
+unknown_81_85a1: .dw $0003
 /*unknown_81_85a3:*/ bvs @unknown_81_85aa
 /*unknown_81_85a5:*/ tsb $7000.w
 /*unknown_81_85a8:*/ ora $30
@@ -978,97 +979,128 @@ unknown_81_85a1: ora $00, S
 ; xxxx xxxx S??? pppX  (9-bit signed X offset, pallete that is almost never
 ; used, Size bit), then Y offset (1 byte), and last 2 bytes are remaining OAM
 ; (flips, priority, pallete that's not used, tile #)" -- Kejardon
+;
+; Inputs:
+; * [var_temp_center_y] X coordinate of the sprite.
+; * [var_temp_center_x] Y coordinate of the sprite.
+; * [var_temp_palette] Palette number of the sprite, shifted left by
+;                      OAM_OBJ_TAA_PALETTE_SHIFT.
+; * [Y]
+;
+; Outputs:
+; * [var_oam_objects]
+; * [var_oam_objects_tail]
+;
+; Clobbers:
+; * [var_temp_number_of_tiles]
+; * A
+; * flags
 unknown_81_879f:
   phx
-  lda $0000.w, Y
-  bne @unknown_81_87aa
+  lda $0, Y ; Read tile count.
+  bne @draw_tiles
   plx
   rtl
-@unknown_81_87a7:
-  jmp @unknown_81_884e
-@unknown_81_87aa:
-  sta var_unknown_18
-  iny
-  iny
+@done_trampoline:
+  jmp @done
+
+@draw_tiles:
+  sta var_temp_number_of_tiles
+  iny ; Skip over tile count.
+  iny ; Skip over tile count.
+  ; If we can't fit any more sprites
+  ; ([var_oam_objects_tail] >= OAM_OBJ_COUNT * oam_obj@size), then stop.
   lda var_oam_objects_tail.w
-  bit #$fe00.w
-  bne @unknown_81_87a7
-  tax
+  bit #((OAM_OBJ_COUNT * oam_obj@size) - 1) ~ $ffff
+  bne @done_trampoline
+
+  tax ; X := [var_oam_objects_tail]
   clc
-@unknown_81_87b8:
-  lda $0000.w, Y
-  adc var_unknown_14
+@draw_next_tile:
+  lda sprite_tile.x_and_flags, Y
+  adc var_temp_center_x
   sta (var_oam_objects.w + oam_obj.x) & $ffff, X
-  and #$0100.w
-  beq @unknown_81_87eb
-  lda $0000.w, Y
-  bpl @unknown_81_87db
+  and #$0100
+  beq @x_less_than_256
+@x_needs_9_bits:
+  lda sprite_tile.x_and_flags, Y
+  bpl @size_bit_set ; Branch if SPRITE_TILE_XAF_SIZE is set.
+
   lda unknown_81_859f.l, X
-  sta var_unknown_1c
-  lda (var_unknown_1c)
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
   ora unknown_81_85a1.l, X
-  sta (var_unknown_1c)
+  sta (var_temp_unknown_1c)
   jmp @unknown_81_87fe
-@unknown_81_87db:
+@size_bit_set:
   lda unknown_81_859f.l, X
-  sta var_unknown_1c
-  lda (var_unknown_1c)
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
   ora unknown_81_839f.l, X
-  sta (var_unknown_1c)
+  sta (var_temp_unknown_1c)
   bra @unknown_81_87fe
-@unknown_81_87eb:
-  lda $0000.w, Y
+
+@x_less_than_256:
+  lda sprite_tile.x_and_flags, Y
   bpl @unknown_81_87fe
   lda unknown_81_859f.l, X
-  sta var_unknown_1c
-  lda (var_unknown_1c)
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
   ora unknown_81_83a1.l, X
-  sta (var_unknown_1c)
+  sta (var_temp_unknown_1c)
+
 @unknown_81_87fe:
   sep #$20
-  lda $0002.w, Y
+  lda sprite_tile.y, Y
   clc
-  bmi @unknown_81_8810
-  adc var_unknown_12
-  bcs @unknown_81_881e
-  cmp #$e0
-  bcc @unknown_81_8823
-  bra @unknown_81_881e
+  bmi @unknown_81_8810 ; Branch if [.y] >= 128.
+  adc var_temp_center_y
+  bcs @tile_if_off_screen_1 ; Branch if [.y] + [var_temp_center_y] >= 256.
+  cmp #PPU_SCREEN_HEIGHT
+  bcc @tile_is_on_screen ; Branch if [.y] + [var_temp_center_y] < PPU_SCREEN_HEIGHT.
+  bra @tile_if_off_screen_1
 @unknown_81_8810:
-  adc var_unknown_12
-  bcs @unknown_81_881a
-  cmp #$e0
-  bcs @unknown_81_8823
-  bra @unknown_81_881e
-@unknown_81_881a:
-  cmp #$e0
-  bcc @unknown_81_8823
-@unknown_81_881e:
+  adc var_temp_center_y
+  bcs @tile_is_off_screen_2 ; Branch if [.y] + [var_temp_center_y] >= 256.
+  cmp #PPU_SCREEN_HEIGHT
+  bcs @tile_is_on_screen
+  bra @tile_if_off_screen_1
+@tile_is_off_screen_2:
+  cmp #PPU_SCREEN_HEIGHT
+  bcc @tile_is_on_screen
+@tile_if_off_screen_1:
   jsr unknown_81_8907
-  lda #$e0
-@unknown_81_8823:
+  lda #PPU_SCREEN_HEIGHT
+
+@tile_is_on_screen:
   sta (var_oam_objects.w + oam_obj.y) & $ffff, X
   rep #$21
   lda sprite_tile.oam_tile_and_attributes, Y
   and #(OAM_OBJ_TAA_PALETTE_MASK ~ $ffff)
-  ora var_unknown_16
+  ora var_temp_palette
   sta (var_oam_objects.w + oam_obj.tile) & $ffff, X
+
   txa
   adc #oam_obj@size
-  bit #$fe00.w
-  bne @unknown_81_884e
+  ; If we can't fit any more sprites
+  ; (A >= OAM_OBJ_COUNT * oam_obj@size), then stop.
+  bit #((OAM_OBJ_COUNT * oam_obj@size) - 1) ~ $ffff
+  bne @done
   tax
+
   tya
   adc #sprite_tile@size
   tay
-  dec var_unknown_18
-  beq @unknown_81_8849
-  jmp @unknown_81_87b8
-@unknown_81_8849:
+
+  dec var_temp_number_of_tiles
+  beq @done_drawing_tiles
+  jmp @draw_next_tile
+
+@done_drawing_tiles:
   stx var_oam_objects_tail.w
   plx
   rtl
-@unknown_81_884e:
+@done:
   sta var_oam_objects_tail.w
   plx
   rtl

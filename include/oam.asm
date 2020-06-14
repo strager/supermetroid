@@ -20,4 +20,5 @@ data: db
 
 ; For oam_obj.tile_and_attributes:
 .define OAM_OBJ_TAA_TILE_MASK $01ff
-.define OAM_OBJ_TAA_PALETTE_MASK $0e00
+.define OAM_OBJ_TAA_PALETTE_SHIFT 9
+.define OAM_OBJ_TAA_PALETTE_MASK $7 << OAM_OBJ_TAA_PALETTE_SHIFT
