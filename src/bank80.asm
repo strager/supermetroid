@@ -1520,6 +1520,7 @@ unknown_80_894d:
 ;
 ; Outputs:
 ; * [var_oam_objects + [var_oam_objects_tail]]
+; * [var_oam_objects_tail]
 hide_unused_objects:
   php
   rep #$30
