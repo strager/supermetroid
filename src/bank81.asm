@@ -1,5 +1,6 @@
 .include "include/common.asm"
 .include "include/io.asm"
+.include "include/oam.asm"
 .include "include/start_dma_copy.asm"
 
 .bank ($81 - $80) slot $0
@@ -456,8 +457,8 @@ unknown_81_834b: phb
 /*unknown_81_839d:*/ plb
 /*unknown_81_839e:*/ rts
 
-/*unknown_81_839f:*/ ora ($00, X)
-/*unknown_81_83a1:*/ cop $00
+unknown_81_839f: ora ($00, X)
+unknown_81_83a1: cop $00
 /*unknown_81_83a3:*/ tsb $00
 /*unknown_81_83a5:*/ php
 /*unknown_81_83a6:*/ brk $10
@@ -728,8 +729,9 @@ unknown_81_834b: phb
 /*unknown_81_8599:*/ brk $20
 /*unknown_81_859b:*/ brk $40
 /*unknown_81_859d:*/ brk $80
-/*unknown_81_859f:*/ bvs $05 ; $85a6.w
-/*unknown_81_85a1:*/ ora $00, S
+
+unknown_81_859f: bvs $05 ; $85a6.w
+unknown_81_85a1: ora $00, S
 /*unknown_81_85a3:*/ bvs @unknown_81_85aa
 /*unknown_81_85a5:*/ tsb $7000.w
 /*unknown_81_85a8:*/ ora $30
@@ -981,84 +983,94 @@ unknown_81_879f:
   bne @unknown_81_87aa
   plx
   rtl
-
-@unknown_81_87a7: jmp $884e.w
-@unknown_81_87aa: sta $18
-/*unknown_81_87ac:*/ iny
-/*unknown_81_87ad:*/ iny
-/*unknown_81_87ae:*/ lda $0590.w
-/*unknown_81_87b1:*/ bit #$fe00.w
-/*unknown_81_87b4:*/ bne @unknown_81_87a7
-/*unknown_81_87b6:*/ tax
-/*unknown_81_87b7:*/ clc
-@unknown_81_87b8: lda $0000.w, Y
-/*unknown_81_87bb:*/ adc $14
-/*unknown_81_87bd:*/ sta $0370.w, X
-/*unknown_81_87c0:*/ and #$0100.w
-/*unknown_81_87c3:*/ beq @unknown_81_87eb
-/*unknown_81_87c5:*/ lda $0000.w, Y
-/*unknown_81_87c8:*/ bpl @unknown_81_87db
-/*unknown_81_87ca:*/ lda $81859f, X
-/*unknown_81_87ce:*/ sta $1c
-/*unknown_81_87d0:*/ lda ($1c)
-/*unknown_81_87d2:*/ ora $8185a1, X
-/*unknown_81_87d6:*/ sta ($1c)
-/*unknown_81_87d8:*/ jmp $87fe.w
-@unknown_81_87db: lda $81859f, X
-/*unknown_81_87df:*/ sta $1c
-/*unknown_81_87e1:*/ lda ($1c)
-/*unknown_81_87e3:*/ ora $81839f, X
-/*unknown_81_87e7:*/ sta ($1c)
-/*unknown_81_87e9:*/ bra @unknown_81_87fe
-@unknown_81_87eb: lda $0000.w, Y
-/*unknown_81_87ee:*/ bpl @unknown_81_87fe
-/*unknown_81_87f0:*/ lda $81859f, X
-/*unknown_81_87f4:*/ sta $1c
-/*unknown_81_87f6:*/ lda ($1c)
-/*unknown_81_87f8:*/ ora $8183a1, X
-/*unknown_81_87fc:*/ sta ($1c)
-@unknown_81_87fe: sep #$20
-/*unknown_81_8800:*/ lda $0002.w, Y
-/*unknown_81_8803:*/ clc
-/*unknown_81_8804:*/ bmi @unknown_81_8810
-/*unknown_81_8806:*/ adc $12
-/*unknown_81_8808:*/ bcs @unknown_81_881e
-/*unknown_81_880a:*/ cmp #$e0
-/*unknown_81_880c:*/ bcc @unknown_81_8823
-/*unknown_81_880e:*/ bra @unknown_81_881e
-@unknown_81_8810: adc $12
-/*unknown_81_8812:*/ bcs @unknown_81_881a
-/*unknown_81_8814:*/ cmp #$e0
-/*unknown_81_8816:*/ bcs @unknown_81_8823
-/*unknown_81_8818:*/ bra @unknown_81_881e
-@unknown_81_881a: cmp #$e0
-/*unknown_81_881c:*/ bcc @unknown_81_8823
-@unknown_81_881e: jsr $8907.w
-/*unknown_81_8821:*/ lda #$e0
-@unknown_81_8823: sta $0371.w, X
-/*unknown_81_8826:*/ rep #$21
-/*unknown_81_8828:*/ lda $0003.w, Y
-/*unknown_81_882b:*/ and #$f1ff.w
-/*unknown_81_882e:*/ ora $16
-/*unknown_81_8830:*/ sta $0372.w, X
-/*unknown_81_8833:*/ txa
-/*unknown_81_8834:*/ adc #$0004.w
-/*unknown_81_8837:*/ bit #$fe00.w
-/*unknown_81_883a:*/ bne @unknown_81_884e
-/*unknown_81_883c:*/ tax
-/*unknown_81_883d:*/ tya
-/*unknown_81_883e:*/ adc #$0005.w
-/*unknown_81_8841:*/ tay
-/*unknown_81_8842:*/ dec $18
-/*unknown_81_8844:*/ beq @unknown_81_8849
-/*unknown_81_8846:*/ jmp @unknown_81_87b8
-@unknown_81_8849: stx $0590.w
-/*unknown_81_884c:*/ plx
-/*unknown_81_884d:*/ rtl
-
-@unknown_81_884e: sta $0590.w
-/*unknown_81_8851:*/ plx
-/*unknown_81_8852:*/ rtl
+@unknown_81_87a7:
+  jmp @unknown_81_884e
+@unknown_81_87aa:
+  sta var_unknown_18
+  iny
+  iny
+  lda var_oam_objects_tail.w
+  bit #$fe00.w
+  bne @unknown_81_87a7
+  tax
+  clc
+@unknown_81_87b8:
+  lda $0000.w, Y
+  adc var_unknown_14
+  sta (var_oam_objects.w + oam_obj.x) & $ffff, X
+  and #$0100.w
+  beq @unknown_81_87eb
+  lda $0000.w, Y
+  bpl @unknown_81_87db
+  lda unknown_81_859f.l, X
+  sta var_unknown_1c
+  lda (var_unknown_1c)
+  ora unknown_81_85a1.l, X
+  sta (var_unknown_1c)
+  jmp @unknown_81_87fe
+@unknown_81_87db:
+  lda unknown_81_859f.l, X
+  sta var_unknown_1c
+  lda (var_unknown_1c)
+  ora unknown_81_839f.l, X
+  sta (var_unknown_1c)
+  bra @unknown_81_87fe
+@unknown_81_87eb:
+  lda $0000.w, Y
+  bpl @unknown_81_87fe
+  lda unknown_81_859f.l, X
+  sta var_unknown_1c
+  lda (var_unknown_1c)
+  ora unknown_81_83a1.l, X
+  sta (var_unknown_1c)
+@unknown_81_87fe:
+  sep #$20
+  lda $0002.w, Y
+  clc
+  bmi @unknown_81_8810
+  adc var_unknown_12
+  bcs @unknown_81_881e
+  cmp #$e0
+  bcc @unknown_81_8823
+  bra @unknown_81_881e
+@unknown_81_8810:
+  adc var_unknown_12
+  bcs @unknown_81_881a
+  cmp #$e0
+  bcs @unknown_81_8823
+  bra @unknown_81_881e
+@unknown_81_881a:
+  cmp #$e0
+  bcc @unknown_81_8823
+@unknown_81_881e:
+  jsr unknown_81_8907
+  lda #$e0
+@unknown_81_8823:
+  sta (var_oam_objects.w + oam_obj.y) & $ffff, X
+  rep #$21
+  lda $0003.w, Y
+  and #$f1ff.w
+  ora var_unknown_16
+  sta (var_oam_objects.w + oam_obj.tile) & $ffff, X
+  txa
+  adc #$0004.w
+  bit #$fe00.w
+  bne @unknown_81_884e
+  tax
+  tya
+  adc #$0005.w
+  tay
+  dec var_unknown_18
+  beq @unknown_81_8849
+  jmp @unknown_81_87b8
+@unknown_81_8849:
+  stx var_oam_objects_tail.w
+  plx
+  rtl
+@unknown_81_884e:
+  sta var_oam_objects_tail.w
+  plx
+  rtl
 
 /*unknown_81_8853:*/ phx
 /*unknown_81_8854:*/ lda $0000.w, Y
@@ -1144,7 +1156,7 @@ unknown_81_879f:
 /*unknown_81_8905:*/ plx
 /*unknown_81_8906:*/ rtl
 
-/*unknown_81_8907:*/ lda #$9d80.w
+unknown_81_8907: lda #$9d80.w
 /*unknown_81_890a:*/ bvs $03 ; $890f.w
 /*unknown_81_890c:*/ rep #$20
 /*unknown_81_890e:*/ lda $81859f, X
