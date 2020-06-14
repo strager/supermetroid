@@ -1,6 +1,7 @@
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/oam.asm"
+.include "include/sprite.asm"
 .include "include/start_dma_copy.asm"
 
 .bank ($81 - $80) slot $0
@@ -1048,17 +1049,17 @@ unknown_81_879f:
 @unknown_81_8823:
   sta (var_oam_objects.w + oam_obj.y) & $ffff, X
   rep #$21
-  lda $0003.w, Y
-  and #$f1ff.w
+  lda sprite_tile.oam_tile_and_attributes, Y
+  and #(OAM_OBJ_TAA_PALETTE_MASK ~ $ffff)
   ora var_unknown_16
   sta (var_oam_objects.w + oam_obj.tile) & $ffff, X
   txa
-  adc #$0004.w
+  adc #oam_obj@size
   bit #$fe00.w
   bne @unknown_81_884e
   tax
   tya
-  adc #$0005.w
+  adc #sprite_tile@size
   tay
   dec var_unknown_18
   beq @unknown_81_8849
