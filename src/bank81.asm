@@ -459,519 +459,27 @@ unknown_81_834b: phb
 /*unknown_81_839d:*/ plb
 /*unknown_81_839e:*/ rts
 
-unknown_81_839f: ora ($00, X)
-unknown_81_83a1: cop $00
-/*unknown_81_83a3:*/ tsb $00
-/*unknown_81_83a5:*/ php
-/*unknown_81_83a6:*/ brk $10
-/*unknown_81_83a8:*/ brk $20
-/*unknown_81_83aa:*/ brk $40
-/*unknown_81_83ac:*/ brk $80
-/*unknown_81_83ae:*/ brk $00
-/*unknown_81_83b0:*/ ora ($00, X)
-/*unknown_81_83b2:*/ cop $00
-/*unknown_81_83b4:*/ tsb $00
-/*unknown_81_83b6:*/ php
-/*unknown_81_83b7:*/ brk $10
-/*unknown_81_83b9:*/ brk $20
-/*unknown_81_83bb:*/ brk $40
-/*unknown_81_83bd:*/ brk $80
-/*unknown_81_83bf:*/ ora ($00, X)
-/*unknown_81_83c1:*/ cop $00
-/*unknown_81_83c3:*/ tsb $00
-/*unknown_81_83c5:*/ php
-/*unknown_81_83c6:*/ brk $10
-/*unknown_81_83c8:*/ brk $20
-/*unknown_81_83ca:*/ brk $40
-/*unknown_81_83cc:*/ brk $80
-/*unknown_81_83ce:*/ brk $00
-/*unknown_81_83d0:*/ ora ($00, X)
-/*unknown_81_83d2:*/ cop $00
-/*unknown_81_83d4:*/ tsb $00
-/*unknown_81_83d6:*/ php
-/*unknown_81_83d7:*/ brk $10
-/*unknown_81_83d9:*/ brk $20
-/*unknown_81_83db:*/ brk $40
-/*unknown_81_83dd:*/ brk $80
-/*unknown_81_83df:*/ ora ($00, X)
-/*unknown_81_83e1:*/ cop $00
-/*unknown_81_83e3:*/ tsb $00
-/*unknown_81_83e5:*/ php
-/*unknown_81_83e6:*/ brk $10
-/*unknown_81_83e8:*/ brk $20
-/*unknown_81_83ea:*/ brk $40
-/*unknown_81_83ec:*/ brk $80
-/*unknown_81_83ee:*/ brk $00
-/*unknown_81_83f0:*/ ora ($00, X)
-/*unknown_81_83f2:*/ cop $00
-/*unknown_81_83f4:*/ tsb $00
-/*unknown_81_83f6:*/ php
-/*unknown_81_83f7:*/ brk $10
-/*unknown_81_83f9:*/ brk $20
-/*unknown_81_83fb:*/ brk $40
-/*unknown_81_83fd:*/ brk $80
-/*unknown_81_83ff:*/ ora ($00, X)
-/*unknown_81_8401:*/ cop $00
-/*unknown_81_8403:*/ tsb $00
-/*unknown_81_8405:*/ php
-/*unknown_81_8406:*/ brk $10
-/*unknown_81_8408:*/ brk $20
-/*unknown_81_840a:*/ brk $40
-/*unknown_81_840c:*/ brk $80
-/*unknown_81_840e:*/ brk $00
-/*unknown_81_8410:*/ ora ($00, X)
-/*unknown_81_8412:*/ cop $00
-/*unknown_81_8414:*/ tsb $00
-/*unknown_81_8416:*/ php
-/*unknown_81_8417:*/ brk $10
-/*unknown_81_8419:*/ brk $20
-/*unknown_81_841b:*/ brk $40
-/*unknown_81_841d:*/ brk $80
-/*unknown_81_841f:*/ ora ($00, X)
-/*unknown_81_8421:*/ cop $00
-/*unknown_81_8423:*/ tsb $00
-/*unknown_81_8425:*/ php
-/*unknown_81_8426:*/ brk $10
-/*unknown_81_8428:*/ brk $20
-/*unknown_81_842a:*/ brk $40
-/*unknown_81_842c:*/ brk $80
-/*unknown_81_842e:*/ brk $00
-/*unknown_81_8430:*/ ora ($00, X)
-/*unknown_81_8432:*/ cop $00
-/*unknown_81_8434:*/ tsb $00
-/*unknown_81_8436:*/ php
-/*unknown_81_8437:*/ brk $10
-/*unknown_81_8439:*/ brk $20
-/*unknown_81_843b:*/ brk $40
-/*unknown_81_843d:*/ brk $80
-/*unknown_81_843f:*/ ora ($00, X)
-/*unknown_81_8441:*/ cop $00
-/*unknown_81_8443:*/ tsb $00
-/*unknown_81_8445:*/ php
-/*unknown_81_8446:*/ brk $10
-/*unknown_81_8448:*/ brk $20
-/*unknown_81_844a:*/ brk $40
-/*unknown_81_844c:*/ brk $80
-/*unknown_81_844e:*/ brk $00
-/*unknown_81_8450:*/ ora ($00, X)
-/*unknown_81_8452:*/ cop $00
-/*unknown_81_8454:*/ tsb $00
-/*unknown_81_8456:*/ php
-/*unknown_81_8457:*/ brk $10
-/*unknown_81_8459:*/ brk $20
-/*unknown_81_845b:*/ brk $40
-/*unknown_81_845d:*/ brk $80
-/*unknown_81_845f:*/ ora ($00, X)
-/*unknown_81_8461:*/ cop $00
-/*unknown_81_8463:*/ tsb $00
-/*unknown_81_8465:*/ php
-/*unknown_81_8466:*/ brk $10
-/*unknown_81_8468:*/ brk $20
-/*unknown_81_846a:*/ brk $40
-/*unknown_81_846c:*/ brk $80
-/*unknown_81_846e:*/ brk $00
-/*unknown_81_8470:*/ ora ($00, X)
-/*unknown_81_8472:*/ cop $00
-/*unknown_81_8474:*/ tsb $00
-/*unknown_81_8476:*/ php
-/*unknown_81_8477:*/ brk $10
-/*unknown_81_8479:*/ brk $20
-/*unknown_81_847b:*/ brk $40
-/*unknown_81_847d:*/ brk $80
-/*unknown_81_847f:*/ ora ($00, X)
-/*unknown_81_8481:*/ cop $00
-/*unknown_81_8483:*/ tsb $00
-/*unknown_81_8485:*/ php
-/*unknown_81_8486:*/ brk $10
-/*unknown_81_8488:*/ brk $20
-/*unknown_81_848a:*/ brk $40
-/*unknown_81_848c:*/ brk $80
-/*unknown_81_848e:*/ brk $00
-/*unknown_81_8490:*/ ora ($00, X)
-/*unknown_81_8492:*/ cop $00
-/*unknown_81_8494:*/ tsb $00
-/*unknown_81_8496:*/ php
-/*unknown_81_8497:*/ brk $10
-/*unknown_81_8499:*/ brk $20
-/*unknown_81_849b:*/ brk $40
-/*unknown_81_849d:*/ brk $80
-/*unknown_81_849f:*/ ora ($00, X)
-/*unknown_81_84a1:*/ cop $00
-/*unknown_81_84a3:*/ tsb $00
-/*unknown_81_84a5:*/ php
-/*unknown_81_84a6:*/ brk $10
-/*unknown_81_84a8:*/ brk $20
-/*unknown_81_84aa:*/ brk $40
-/*unknown_81_84ac:*/ brk $80
-/*unknown_81_84ae:*/ brk $00
-/*unknown_81_84b0:*/ ora ($00, X)
-/*unknown_81_84b2:*/ cop $00
-/*unknown_81_84b4:*/ tsb $00
-/*unknown_81_84b6:*/ php
-/*unknown_81_84b7:*/ brk $10
-/*unknown_81_84b9:*/ brk $20
-/*unknown_81_84bb:*/ brk $40
-/*unknown_81_84bd:*/ brk $80
-/*unknown_81_84bf:*/ ora ($00, X)
-/*unknown_81_84c1:*/ cop $00
-/*unknown_81_84c3:*/ tsb $00
-/*unknown_81_84c5:*/ php
-/*unknown_81_84c6:*/ brk $10
-/*unknown_81_84c8:*/ brk $20
-/*unknown_81_84ca:*/ brk $40
-/*unknown_81_84cc:*/ brk $80
-/*unknown_81_84ce:*/ brk $00
-/*unknown_81_84d0:*/ ora ($00, X)
-/*unknown_81_84d2:*/ cop $00
-/*unknown_81_84d4:*/ tsb $00
-/*unknown_81_84d6:*/ php
-/*unknown_81_84d7:*/ brk $10
-/*unknown_81_84d9:*/ brk $20
-/*unknown_81_84db:*/ brk $40
-/*unknown_81_84dd:*/ brk $80
-/*unknown_81_84df:*/ ora ($00, X)
-/*unknown_81_84e1:*/ cop $00
-/*unknown_81_84e3:*/ tsb $00
-/*unknown_81_84e5:*/ php
-/*unknown_81_84e6:*/ brk $10
-/*unknown_81_84e8:*/ brk $20
-/*unknown_81_84ea:*/ brk $40
-/*unknown_81_84ec:*/ brk $80
-/*unknown_81_84ee:*/ brk $00
-/*unknown_81_84f0:*/ ora ($00, X)
-/*unknown_81_84f2:*/ cop $00
-/*unknown_81_84f4:*/ tsb $00
-/*unknown_81_84f6:*/ php
-/*unknown_81_84f7:*/ brk $10
-/*unknown_81_84f9:*/ brk $20
-/*unknown_81_84fb:*/ brk $40
-/*unknown_81_84fd:*/ brk $80
-/*unknown_81_84ff:*/ ora ($00, X)
-/*unknown_81_8501:*/ cop $00
-/*unknown_81_8503:*/ tsb $00
-/*unknown_81_8505:*/ php
-/*unknown_81_8506:*/ brk $10
-/*unknown_81_8508:*/ brk $20
-/*unknown_81_850a:*/ brk $40
-/*unknown_81_850c:*/ brk $80
-/*unknown_81_850e:*/ brk $00
-/*unknown_81_8510:*/ ora ($00, X)
-/*unknown_81_8512:*/ cop $00
-/*unknown_81_8514:*/ tsb $00
-/*unknown_81_8516:*/ php
-/*unknown_81_8517:*/ brk $10
-/*unknown_81_8519:*/ brk $20
-/*unknown_81_851b:*/ brk $40
-/*unknown_81_851d:*/ brk $80
-/*unknown_81_851f:*/ ora ($00, X)
-/*unknown_81_8521:*/ cop $00
-/*unknown_81_8523:*/ tsb $00
-/*unknown_81_8525:*/ php
-/*unknown_81_8526:*/ brk $10
-/*unknown_81_8528:*/ brk $20
-/*unknown_81_852a:*/ brk $40
-/*unknown_81_852c:*/ brk $80
-/*unknown_81_852e:*/ brk $00
-/*unknown_81_8530:*/ ora ($00, X)
-/*unknown_81_8532:*/ cop $00
-/*unknown_81_8534:*/ tsb $00
-/*unknown_81_8536:*/ php
-/*unknown_81_8537:*/ brk $10
-/*unknown_81_8539:*/ brk $20
-/*unknown_81_853b:*/ brk $40
-/*unknown_81_853d:*/ brk $80
-/*unknown_81_853f:*/ ora ($00, X)
-/*unknown_81_8541:*/ cop $00
-/*unknown_81_8543:*/ tsb $00
-/*unknown_81_8545:*/ php
-/*unknown_81_8546:*/ brk $10
-/*unknown_81_8548:*/ brk $20
-/*unknown_81_854a:*/ brk $40
-/*unknown_81_854c:*/ brk $80
-/*unknown_81_854e:*/ brk $00
-/*unknown_81_8550:*/ ora ($00, X)
-/*unknown_81_8552:*/ cop $00
-/*unknown_81_8554:*/ tsb $00
-/*unknown_81_8556:*/ php
-/*unknown_81_8557:*/ brk $10
-/*unknown_81_8559:*/ brk $20
-/*unknown_81_855b:*/ brk $40
-/*unknown_81_855d:*/ brk $80
-/*unknown_81_855f:*/ ora ($00, X)
-/*unknown_81_8561:*/ cop $00
-/*unknown_81_8563:*/ tsb $00
-/*unknown_81_8565:*/ php
-/*unknown_81_8566:*/ brk $10
-/*unknown_81_8568:*/ brk $20
-/*unknown_81_856a:*/ brk $40
-/*unknown_81_856c:*/ brk $80
-/*unknown_81_856e:*/ brk $00
-/*unknown_81_8570:*/ ora ($00, X)
-/*unknown_81_8572:*/ cop $00
-/*unknown_81_8574:*/ tsb $00
-/*unknown_81_8576:*/ php
-/*unknown_81_8577:*/ brk $10
-/*unknown_81_8579:*/ brk $20
-/*unknown_81_857b:*/ brk $40
-/*unknown_81_857d:*/ brk $80
-/*unknown_81_857f:*/ ora ($00, X)
-/*unknown_81_8581:*/ cop $00
-/*unknown_81_8583:*/ tsb $00
-/*unknown_81_8585:*/ php
-/*unknown_81_8586:*/ brk $10
-/*unknown_81_8588:*/ brk $20
-/*unknown_81_858a:*/ brk $40
-/*unknown_81_858c:*/ brk $80
-/*unknown_81_858e:*/ brk $00
-/*unknown_81_8590:*/ ora ($00, X)
-/*unknown_81_8592:*/ cop $00
-/*unknown_81_8594:*/ tsb $00
-/*unknown_81_8596:*/ php
-/*unknown_81_8597:*/ brk $10
-/*unknown_81_8599:*/ brk $20
-/*unknown_81_859b:*/ brk $40
-/*unknown_81_859d:*/ brk $80
+.repeat OAM_OBJ_COUNT index count
+.if count == 0
+unknown_81_879f@oam_extra_x8_and_small:
+.endif
+  .dw (OAM_OBJ_EXTRA_X8_MASK | OAM_OBJ_EXTRA_SIZE_SMALL) << ((count # 8) * 2)
+.if count == 0
+unknown_81_879f@oam_extra_large:
+.endif
+  .dw OAM_OBJ_EXTRA_SIZE_LARGE << ((count # 8) * 2)
+.endr
 
-unknown_81_859f: .dw $0570
-unknown_81_85a1: .dw $0003
-/*unknown_81_85a3:*/ bvs @unknown_81_85aa
-/*unknown_81_85a5:*/ tsb $7000.w
-/*unknown_81_85a8:*/ ora $30
-@unknown_81_85aa: brk $70
-/*unknown_81_85ac:*/ ora $c0
-/*unknown_81_85ae:*/ brk $70
-/*unknown_81_85b0:*/ ora $00
-/*unknown_81_85b2:*/ ora $70, S
-/*unknown_81_85b4:*/ ora $00
-/*unknown_81_85b6:*/ tsb $0570.w
-/*unknown_81_85b9:*/ brk $30
-/*unknown_81_85bb:*/ bvs $05 ; $85c2.w
-/*unknown_81_85bd:*/ brk $c0
-/*unknown_81_85bf:*/ adc ($05)
-/*unknown_81_85c1:*/ ora $00, S
-/*unknown_81_85c3:*/ adc ($05)
-/*unknown_81_85c5:*/ tsb $7200.w
-/*unknown_81_85c8:*/ ora $30
-/*unknown_81_85ca:*/ brk $72
-/*unknown_81_85cc:*/ ora $c0
-/*unknown_81_85ce:*/ brk $72
-/*unknown_81_85d0:*/ ora $00
-/*unknown_81_85d2:*/ ora $72, S
-/*unknown_81_85d4:*/ ora $00
-/*unknown_81_85d6:*/ tsb $0572.w
-/*unknown_81_85d9:*/ brk $30
-/*unknown_81_85db:*/ adc ($05)
-/*unknown_81_85dd:*/ brk $c0
-/*unknown_81_85df:*/ stz $05, X
-/*unknown_81_85e1:*/ ora $00, S
-/*unknown_81_85e3:*/ stz $05, X
-/*unknown_81_85e5:*/ tsb $7400.w
-/*unknown_81_85e8:*/ ora $30
-/*unknown_81_85ea:*/ brk $74
-/*unknown_81_85ec:*/ ora $c0
-/*unknown_81_85ee:*/ brk $74
-/*unknown_81_85f0:*/ ora $00
-/*unknown_81_85f2:*/ ora $74, S
-/*unknown_81_85f4:*/ ora $00
-/*unknown_81_85f6:*/ tsb $0574.w
-/*unknown_81_85f9:*/ brk $30
-/*unknown_81_85fb:*/ stz $05, X
-/*unknown_81_85fd:*/ brk $c0
-/*unknown_81_85ff:*/ ror $05, X
-/*unknown_81_8601:*/ ora $00, S
-/*unknown_81_8603:*/ ror $05, X
-/*unknown_81_8605:*/ tsb $7600.w
-/*unknown_81_8608:*/ ora $30
-/*unknown_81_860a:*/ brk $76
-/*unknown_81_860c:*/ ora $c0
-/*unknown_81_860e:*/ brk $76
-/*unknown_81_8610:*/ ora $00
-/*unknown_81_8612:*/ ora $76, S
-/*unknown_81_8614:*/ ora $00
-/*unknown_81_8616:*/ tsb $0576.w
-/*unknown_81_8619:*/ brk $30
-/*unknown_81_861b:*/ ror $05, X
-/*unknown_81_861d:*/ brk $c0
-/*unknown_81_861f:*/ sei
-/*unknown_81_8620:*/ ora $03
-/*unknown_81_8622:*/ brk $78
-/*unknown_81_8624:*/ ora $0c
-/*unknown_81_8626:*/ brk $78
-/*unknown_81_8628:*/ ora $30
-/*unknown_81_862a:*/ brk $78
-/*unknown_81_862c:*/ ora $c0
-/*unknown_81_862e:*/ brk $78
-/*unknown_81_8630:*/ ora $00
-/*unknown_81_8632:*/ ora $78, S
-/*unknown_81_8634:*/ ora $00
-/*unknown_81_8636:*/ tsb $0578.w
-/*unknown_81_8639:*/ brk $30
-/*unknown_81_863b:*/ sei
-/*unknown_81_863c:*/ ora $00
-/*unknown_81_863e:*/ cpy #$057a.w
-/*unknown_81_8641:*/ ora $00, S
-/*unknown_81_8643:*/ ply
-/*unknown_81_8644:*/ ora $0c
-/*unknown_81_8646:*/ brk $7a
-/*unknown_81_8648:*/ ora $30
-/*unknown_81_864a:*/ brk $7a
-/*unknown_81_864c:*/ ora $c0
-/*unknown_81_864e:*/ brk $7a
-/*unknown_81_8650:*/ ora $00
-/*unknown_81_8652:*/ ora $7a, S
-/*unknown_81_8654:*/ ora $00
-/*unknown_81_8656:*/ tsb $057a.w
-/*unknown_81_8659:*/ brk $30
-/*unknown_81_865b:*/ ply
-/*unknown_81_865c:*/ ora $00
-/*unknown_81_865e:*/ cpy #$057c.w
-/*unknown_81_8661:*/ ora $00, S
-/*unknown_81_8663:*/ jmp ($0c05.w, X)
-/*unknown_81_8666:*/ brk $7c
-/*unknown_81_8668:*/ ora $30
-/*unknown_81_866a:*/ brk $7c
-/*unknown_81_866c:*/ ora $c0
-/*unknown_81_866e:*/ brk $7c
-/*unknown_81_8670:*/ ora $00
-/*unknown_81_8672:*/ ora $7c, S
-/*unknown_81_8674:*/ ora $00
-/*unknown_81_8676:*/ tsb $057c.w
-/*unknown_81_8679:*/ brk $30
-/*unknown_81_867b:*/ jmp ($0005.w, X)
-/*unknown_81_867e:*/ cpy #$057e.w
-/*unknown_81_8681:*/ ora $00, S
-/*unknown_81_8683:*/ ror $0c05.w, X
-/*unknown_81_8686:*/ brk $7e
-/*unknown_81_8688:*/ ora $30
-/*unknown_81_868a:*/ brk $7e
-/*unknown_81_868c:*/ ora $c0
-/*unknown_81_868e:*/ brk $7e
-/*unknown_81_8690:*/ ora $00
-/*unknown_81_8692:*/ ora $7e, S
-/*unknown_81_8694:*/ ora $00
-/*unknown_81_8696:*/ tsb $057e.w
-/*unknown_81_8699:*/ brk $30
-/*unknown_81_869b:*/ ror $0005.w, X
-/*unknown_81_869e:*/ cpy #$0580.w
-/*unknown_81_86a1:*/ ora $00, S
-/*unknown_81_86a3:*/ bra @unknown_81_86aa
-/*unknown_81_86a5:*/ tsb $8000.w
-/*unknown_81_86a8:*/ ora $30
-@unknown_81_86aa: brk $80
-/*unknown_81_86ac:*/ ora $c0
-/*unknown_81_86ae:*/ brk $80
-/*unknown_81_86b0:*/ ora $00
-/*unknown_81_86b2:*/ ora $80, S
-/*unknown_81_86b4:*/ ora $00
-/*unknown_81_86b6:*/ tsb $0580.w
-/*unknown_81_86b9:*/ brk $30
-/*unknown_81_86bb:*/ bra @unknown_81_86c2
-/*unknown_81_86bd:*/ brk $c0
-/*unknown_81_86bf:*/ brl $0305 ; $89c7.w
-@unknown_81_86c2: brk $82
-/*unknown_81_86c4:*/ ora $0c
-/*unknown_81_86c6:*/ brk $82
-/*unknown_81_86c8:*/ ora $30
-/*unknown_81_86ca:*/ brk $82
-/*unknown_81_86cc:*/ ora $c0
-/*unknown_81_86ce:*/ brk $82
-/*unknown_81_86d0:*/ ora $00
-/*unknown_81_86d2:*/ ora $82, S
-/*unknown_81_86d4:*/ ora $00
-/*unknown_81_86d6:*/ tsb $0582.w
-/*unknown_81_86d9:*/ brk $30
-/*unknown_81_86db:*/ brl $0005 ; $86e3.w
-/*unknown_81_86de:*/ cpy #$0584.w
-/*unknown_81_86e1:*/ ora $00, S
-/*unknown_81_86e3:*/ sty $05
-/*unknown_81_86e5:*/ tsb $8400.w
-/*unknown_81_86e8:*/ ora $30
-/*unknown_81_86ea:*/ brk $84
-/*unknown_81_86ec:*/ ora $c0
-/*unknown_81_86ee:*/ brk $84
-/*unknown_81_86f0:*/ ora $00
-/*unknown_81_86f2:*/ ora $84, S
-/*unknown_81_86f4:*/ ora $00
-/*unknown_81_86f6:*/ tsb $0584.w
-/*unknown_81_86f9:*/ brk $30
-/*unknown_81_86fb:*/ sty $05
-/*unknown_81_86fd:*/ brk $c0
-/*unknown_81_86ff:*/ stx $05
-/*unknown_81_8701:*/ ora $00, S
-/*unknown_81_8703:*/ stx $05
-/*unknown_81_8705:*/ tsb $8600.w
-/*unknown_81_8708:*/ ora $30
-/*unknown_81_870a:*/ brk $86
-/*unknown_81_870c:*/ ora $c0
-/*unknown_81_870e:*/ brk $86
-/*unknown_81_8710:*/ ora $00
-/*unknown_81_8712:*/ ora $86, S
-/*unknown_81_8714:*/ ora $00
-/*unknown_81_8716:*/ tsb $0586.w
-/*unknown_81_8719:*/ brk $30
-/*unknown_81_871b:*/ stx $05
-/*unknown_81_871d:*/ brk $c0
-/*unknown_81_871f:*/ dey
-/*unknown_81_8720:*/ ora $03
-/*unknown_81_8722:*/ brk $88
-/*unknown_81_8724:*/ ora $0c
-/*unknown_81_8726:*/ brk $88
-/*unknown_81_8728:*/ ora $30
-/*unknown_81_872a:*/ brk $88
-/*unknown_81_872c:*/ ora $c0
-/*unknown_81_872e:*/ brk $88
-/*unknown_81_8730:*/ ora $00
-/*unknown_81_8732:*/ ora $88, S
-/*unknown_81_8734:*/ ora $00
-/*unknown_81_8736:*/ tsb $0588.w
-/*unknown_81_8739:*/ brk $30
-/*unknown_81_873b:*/ dey
-/*unknown_81_873c:*/ ora $00
-/*unknown_81_873e:*/ cpy #$058a.w
-/*unknown_81_8741:*/ ora $00, S
-/*unknown_81_8743:*/ txa
-/*unknown_81_8744:*/ ora $0c
-/*unknown_81_8746:*/ brk $8a
-/*unknown_81_8748:*/ ora $30
-/*unknown_81_874a:*/ brk $8a
-/*unknown_81_874c:*/ ora $c0
-/*unknown_81_874e:*/ brk $8a
-/*unknown_81_8750:*/ ora $00
-/*unknown_81_8752:*/ ora $8a, S
-/*unknown_81_8754:*/ ora $00
-/*unknown_81_8756:*/ tsb $058a.w
-/*unknown_81_8759:*/ brk $30
-/*unknown_81_875b:*/ txa
-/*unknown_81_875c:*/ ora $00
-/*unknown_81_875e:*/ cpy #$058c.w
-/*unknown_81_8761:*/ ora $00, S
-/*unknown_81_8763:*/ sty $0c05.w
-/*unknown_81_8766:*/ brk $8c
-/*unknown_81_8768:*/ ora $30
-/*unknown_81_876a:*/ brk $8c
-/*unknown_81_876c:*/ ora $c0
-/*unknown_81_876e:*/ brk $8c
-/*unknown_81_8770:*/ ora $00
-/*unknown_81_8772:*/ ora $8c, S
-/*unknown_81_8774:*/ ora $00
-/*unknown_81_8776:*/ tsb $058c.w
-/*unknown_81_8779:*/ brk $30
-/*unknown_81_877b:*/ sty $0005.w
-/*unknown_81_877e:*/ cpy #$058e.w
-/*unknown_81_8781:*/ ora $00, S
-/*unknown_81_8783:*/ stx $0c05.w
-/*unknown_81_8786:*/ brk $8e
-/*unknown_81_8788:*/ ora $30
-/*unknown_81_878a:*/ brk $8e
-/*unknown_81_878c:*/ ora $c0
-/*unknown_81_878e:*/ brk $8e
-/*unknown_81_8790:*/ ora $00
-/*unknown_81_8792:*/ ora $8e, S
-/*unknown_81_8794:*/ ora $00
-/*unknown_81_8796:*/ tsb $058e.w
-/*unknown_81_8799:*/ brk $30
-/*unknown_81_879b:*/ stx $0005.w
-/*unknown_81_879e:*/ .db $c0
+.repeat OAM_OBJ_COUNT index count
+.if count == 0
+unknown_81_879f@oam_extra_address:
+.endif
+  .dw (var_oam_objects_extra + (count >> 3) * 2) & $ffff
+.if count == 0
+unknown_81_879f@oam_extra_x8_and_large:
+.endif
+  .dw (OAM_OBJ_EXTRA_X8_MASK | OAM_OBJ_EXTRA_SIZE_LARGE) << ((count # 8) * 2)
+.endr
 
 ; TODO: "Main sprite drawing routine. Sprite map starts at (Databank):YYYY. $14
 ; holds X center, $12 holds Y center, $16 holds pallete number * 200. Sprite
@@ -1021,35 +529,46 @@ unknown_81_879f:
   adc var_temp_center_x
   sta (var_oam_objects.w + oam_obj.x) & $ffff, X
   and #$0100
-  beq @x_less_than_256
-@x_needs_9_bits:
+  beq @set_extra_large_or_small
   lda sprite_tile.x_and_flags, Y
-  bpl @size_bit_set ; Branch if SPRITE_TILE_XAF_SIZE is set.
+  bpl @set_extra_x8_and_small ; Branch if SPRITE_TILE_XAF_SIZE is unset.
 
-  lda unknown_81_859f.l, X
+@set_extra_x8_and_large:
+  ; Set OAM_OBJ_EXTRA_SIZE_LARGE | OAM_OBJ_EXTRA_X8_MASK in
+  ; [var_oam_objects_extra + X/2].
+  lda unknown_81_879f@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
-  ora unknown_81_85a1.l, X
+  ora unknown_81_879f@oam_extra_x8_and_large.l, X
   sta (var_temp_unknown_1c)
-  jmp @unknown_81_87fe
-@size_bit_set:
-  lda unknown_81_859f.l, X
+
+  jmp @set_x
+
+@set_extra_x8_and_small:
+  ; Set OAM_OBJ_EXTRA_X8_MASK in [var_oam_objects_extra + X/2].
+  lda unknown_81_879f@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
-  ora unknown_81_839f.l, X
+  ora unknown_81_879f@oam_extra_x8_and_small.l, X
   sta (var_temp_unknown_1c)
-  bra @unknown_81_87fe
+  bra @set_x
 
-@x_less_than_256:
+@set_extra_large_or_small:
   lda sprite_tile.x_and_flags, Y
-  bpl @unknown_81_87fe
-  lda unknown_81_859f.l, X
+  bpl @set_extra_small ; Branch if SPRITE_TILE_XAF_SIZE is unset.
+
+@set_extra_large:
+  lda unknown_81_879f@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
-  ora unknown_81_83a1.l, X
+  ora unknown_81_879f@oam_extra_large.l, X
   sta (var_temp_unknown_1c)
 
-@unknown_81_87fe:
+@set_extra_small:
+  ; Do nothing. var_oam_objects_extra has already been cleared
+  ; (OAM_OBJ_EXTRA_SIZE_SMALL == 0).
+
+@set_x:
   sep #$20
   lda sprite_tile.y, Y
   clc

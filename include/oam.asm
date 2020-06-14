@@ -22,3 +22,8 @@ data: db
 .define OAM_OBJ_TAA_TILE_MASK $01ff
 .define OAM_OBJ_TAA_PALETTE_SHIFT 9
 .define OAM_OBJ_TAA_PALETTE_MASK $7 << OAM_OBJ_TAA_PALETTE_SHIFT
+
+; For oam_obj.oam_obj_extra:
+.define OAM_OBJ_EXTRA_SIZE_LARGE $2
+.define OAM_OBJ_EXTRA_SIZE_SMALL $0
+.define OAM_OBJ_EXTRA_X8_MASK $1
