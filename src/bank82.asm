@@ -5736,7 +5736,7 @@ unknown_82_ae8b:
 @unknown_82_aebb:
   lda var_unknown_3a8e.l, X
   and #$fc00.w
-  ora unknown_82_bf22.l, X
+  ora pause_tiles_manual.l, X
   sta var_unknown_3a8e.l, X
   inx
   inx
@@ -5756,7 +5756,7 @@ unknown_82_ae8b:
 @unknown_82_aee5:
   lda var_unknown_3a8e.l, X
   and #$fc00.w
-  ora unknown_82_bf2a.l, X
+  ora pause_tiles_auto.l, X
   sta var_unknown_3a8e.l, X
   inx
   inx
@@ -7777,44 +7777,79 @@ unknown_82_bdbb: sbc ($06, X)
 @unknown_82_bf02: bra @unknown_82_bf02
 unknown_82_bf04: ora ($00, X)
 
-unknown_82_bf06:
+; "MODE[MANUAL]" for reserve tank
+pause_tiles_mode_manual:
   .dw $2519, $251a, $251b, $3d46, $3d47, $3d48, $3d49
-unknown_82_bf14:
+
+; "RESERVE TANK"
+pause_tiles_reserve_tank:
   .dw $3c80, $3c81, $3c82, $3c83, $3c84, $3c85, $3c86
-unknown_82_bf22:
+
+; "[MANUAL]" for reserve tank
+pause_tiles_manual:
   .dw $3d46, $3d47, $3d48, $3d49
-unknown_82_bf2a:
+
+; "[AUTO]" for reserve tank
+pause_tiles_auto:
   .dw $3d56, $3d57, $3d58, $3d59
-unknown_82_bf32:
+
+; "CHARGE" in BEAM section
+pause_tiles_charge:
   .dw $08ff, $08d8, $08d9, $08da, $08e7
-unknown_82_bf3c:
+
+; "ICE" in BEAM section
+pause_tiles_ice:
   .dw $08ff, $08db, $08dc, $08d4, $08d4
-unknown_82_bf46:
+
+; "WAVE" in BEAM section
+pause_tiles_wave:
   .dw $08ff, $08dd, $08de, $08df, $08d4
-unknown_82_bf50:
+
+; "SPAZER" in BEAM section
+pause_tiles_spazer:
   .dw $08ff, $08e8, $08e9, $08ea, $08eb
-unknown_82_bf5a:
+
+; "PLASMA" in BEAM section
+pause_tiles_plasma:
   .dw $08ff, $08ec, $08ed, $08ee, $08ef
-unknown_82_bf64:
+
+; "VARIA SUIT" in SUIT section
+pause_tiles_varia_suit:
   .dw $08ff, $0900, $0901, $0902, $0903, $0904, $0905, $08d4, $08d4
-unknown_82_bf76:
+
+; "GRAVITY SUIT" in SUIT section
+pause_tiles_gravity_suit:
   .dw $08ff, $08d0, $08d1, $08d2, $08d3, $0903, $0904, $0905, $08d4
-unknown_82_bf88:
+
+; "MORPHING" in MISC. section
+pause_tiles_morphing_ball:
   .dw $08ff, $0920, $0921, $0922, $0923, $0917, $0918, $090f, $091f
-unknown_82_bf9a:
+
+; "BOMB" in MISC. section
+pause_tiles_bomb:
   .dw $08ff, $08d5, $08d6, $08d7, $08d4, $08d4, $08d4, $08d4, $08d4
-unknown_82_bfac:
+
+; "SPRING BALL" in MISC. section
+pause_tiles_spring_ball:
   .dw $08ff, $0910, $0911, $0912, $0913, $0914, $0915, $0916, $08d4, $0000
-unknown_82_bfc0:
+
+; "SCREW ATTACK" in MISC. section
+pause_tiles_screw_attack:
   .dw $08ff, $08e0, $08e1, $08e2, $08e3, $08e4, $08e5, $08e6, $08d4
-unknown_82_bfd2:
+
+; "HI-JUMP BOOTS" in BOOTS section
+pause_tiles_hi_jump_boots:
   .dw $08ff, $0930, $0931, $0932, $0933, $0934, $0935, $0936, $08d4
-unknown_82_bfe4:
+
+; "SPACE JUMP" in BOOTS section
+pause_tiles_space_jump:
   .dw $08ff, $08f0, $08f1, $08f2, $08f3, $08f4, $08f5, $08d4, $08d4
-unknown_82_bff6:
-  .dw $08ff, $0924, $0925, $0926, $0927, $0928, $0929, $092a
-  .dw $092b
-unknown_82_c008:
+
+; "SPEED BOOSTER" in BOOTS section
+pause_tiles_speed_booster:
+  .dw $08ff, $0924, $0925, $0926, $0927, $0928, $0929, $092a, $092b
+
+pause_tiles_hyper:
   .dw $08ff, $0937, $0938, $0939, $092f, $08d4, $08d4
   .dw $08d4, $08d4
 
@@ -7863,35 +7898,35 @@ unknown_82_c082:
 
 ; "Pointers to tilemaps for MODE[MANUAL] and RESERVE TANK" -- Kejardon
 unknown_82_c088:
-  .dw unknown_82_bf06
+  .dw pause_tiles_mode_manual
 unknown_82_c08a:
-  .dw unknown_82_bf14
+  .dw pause_tiles_reserve_tank
 
 ; "Pointers to tilemaps for enabled items" -- Kejardon
 unknown_82_c08c:
-  .dw unknown_82_bf32
-  .dw unknown_82_bf3c
-  .dw unknown_82_bf46
-  .dw unknown_82_bf50
-  .dw unknown_82_bf5a
+  .dw pause_tiles_charge
+  .dw pause_tiles_ice
+  .dw pause_tiles_wave
+  .dw pause_tiles_spazer
+  .dw pause_tiles_plasma
 unknown_82_c096:
-  .dw unknown_82_bf64
-  .dw unknown_82_bf76
-  .dw unknown_82_bf88
-  .dw unknown_82_bf9a
-  .dw unknown_82_bfac
-  .dw unknown_82_bfc0
+  .dw pause_tiles_varia_suit
+  .dw pause_tiles_gravity_suit
+  .dw pause_tiles_morphing_ball
+  .dw pause_tiles_bomb
+  .dw pause_tiles_spring_ball
+  .dw pause_tiles_screw_attack
 unknown_82_c0a2:
-  .dw unknown_82_bfd2
-  .dw unknown_82_bfe4
-  .dw unknown_82_bff6
+  .dw pause_tiles_hi_jump_boots
+  .dw pause_tiles_space_jump
+  .dw pause_tiles_speed_booster
 unknown_82_c0a8:
   .dw zero_tiles
   .dw zero_tiles
 
 ; "Pointer to tilemap for oHYPER" -- Kejardon
 unknown_82_c0ac:
-  .dw unknown_82_c008
+  .dw pause_tiles_hyper
   .dw zero_tiles
   .dw zero_tiles
 
