@@ -28,6 +28,9 @@ var_unknown_05: dw ; $7e0005
 ; TODO: Rename to var_temp_12?
 var_unknown_12: dw ; $7e0012
 .nextu
+var_unknown_12_l: db ; $7e0012
+var_unknown_12_h: db ; $7e0013
+.nextu
 var_temp_12: dw ; $7e0012
 .nextu
 var_temp_center_y: dw ; $7e0012
@@ -461,8 +464,18 @@ var_unknown_0783: dw ; $7e0783
 var_unknown_0789: dw ; $7e0789
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $078d) export
+var_unknown_078d: dw ; $7e078d
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0791) export
 var_unknown_0791: db ; $7e0791
+var_unknown_0792: db ; $7e0792
+var_unknown_0793: db ; $7e0793
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $079b) export
+var_unknown_079b: db ; $7e079b
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $079f) export
@@ -755,6 +768,8 @@ var_unknown_0df4: dw ; $7e0df4
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0e12) export
 var_unknown_0e12: dw ; $7e0e12
+var_unknown_0e14: dw ; $7e0e14
+var_unknown_0e16: dw ; $7e0e16
 .ende
 
 .define unknown_18b4_count 6

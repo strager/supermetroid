@@ -11525,43 +11525,63 @@ unknown_82_ddf1: phb
 /*unknown_82_de11:*/ rts
 
 ; TODO: "Load data from DDB during room transition" -- Kejardon
-unknown_82_de12: pea $8300.w
-/*unknown_82_de15:*/ plb
-/*unknown_82_de16:*/ plb
-/*unknown_82_de17:*/ ldx $078d.w
-/*unknown_82_de1a:*/ lda $0000.w, X
-/*unknown_82_de1d:*/ sta $079b.w
-/*unknown_82_de20:*/ lda $0002.w, X
-/*unknown_82_de23:*/ sta $0793.w
-/*unknown_82_de26:*/ and #$0080.w
-/*unknown_82_de29:*/ sta $0e16.w
-/*unknown_82_de2c:*/ lda $0003.w, X
-/*unknown_82_de2f:*/ and #$00ff.w
-/*unknown_82_de32:*/ sta $0791.w
-/*unknown_82_de35:*/ lda $0006.w, X
-/*unknown_82_de38:*/ and #$00ff.w
-/*unknown_82_de3b:*/ xba
-/*unknown_82_de3c:*/ sta $0927.w
-/*unknown_82_de3f:*/ lda $0007.w, X
-/*unknown_82_de42:*/ and #$00ff.w
-/*unknown_82_de45:*/ xba
-/*unknown_82_de46:*/ sta $0929.w
-/*unknown_82_de49:*/ stz $12
-/*unknown_82_de4b:*/ stz $14
-/*unknown_82_de4d:*/ lda $0008.w, X
-/*unknown_82_de50:*/ bpl @unknown_82_de62
-/*unknown_82_de52:*/ lda $0791.w
-/*unknown_82_de55:*/ bit #$0002.w
-/*unknown_82_de58:*/ bne @unknown_82_de5f
-/*unknown_82_de5a:*/ lda #$00c8.w
-/*unknown_82_de5d:*/ bra @unknown_82_de62
-@unknown_82_de5f: lda #$0180.w
-@unknown_82_de62: sta $13
-/*unknown_82_de64:*/ lda $12
-/*unknown_82_de66:*/ sta $092b.w
-/*unknown_82_de69:*/ lda $14
-/*unknown_82_de6b:*/ sta $092d.w
-/*unknown_82_de6e:*/ rts
+;
+; Inputs:
+; * [$83:[var_unknown_078d]]
+;
+; Outputs:
+; * [var_unknown_0791]
+; * [var_unknown_0793]
+; * [var_unknown_079b]
+; * [var_unknown_0927]
+; * [var_unknown_0929]
+; * [var_unknown_092b]
+; * [var_unknown_0e16]
+;
+; Clobbers:
+; * X
+; * [var_unknown_12]
+; * [var_unknown_14]
+unknown_82_de12:
+  pea $83 << 8
+  plb
+  plb
+  ldx var_unknown_078d.w
+  lda $0.w, X
+  sta var_unknown_079b.w
+  lda $2.w, X
+  sta var_unknown_0793.w
+  and #$0080
+  sta var_unknown_0e16.w
+  lda $3.w, X
+  and #$00ff.w
+  sta var_unknown_0791.w
+  lda $6.w, X
+  and #$00ff.w
+  xba
+  sta var_unknown_0927.w
+  lda $7.w, X
+  and #$00ff.w
+  xba
+  sta var_unknown_0929.w
+  stz var_unknown_12
+  stz var_unknown_14
+  lda $8.w, X
+  bpl @unknown_82_de62
+  lda var_unknown_0791.w
+  bit #$0002.w
+  bne @unknown_82_de5f
+  lda #$00c8.w
+  bra @unknown_82_de62
+@unknown_82_de5f:
+  lda #$0180.w
+@unknown_82_de62:
+  sta var_unknown_12_h
+  lda var_unknown_12
+  sta var_unknown_092b.w
+  lda var_unknown_14
+  sta var_unknown_092d.w
+  rts
 
 unknown_82_de6f: pea $8f00.w
 /*unknown_82_de72:*/ plb
