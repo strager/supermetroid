@@ -461,22 +461,22 @@ unknown_81_834b: phb
 
 .repeat OAM_OBJ_COUNT index count
 .if count == 0
-unknown_81_879f@oam_extra_x8_and_small:
+draw_sprite_tiles@oam_extra_x8_and_small:
 .endif
   .dw (OAM_OBJ_EXTRA_X8_MASK | OAM_OBJ_EXTRA_SIZE_SMALL) << ((count # 8) * 2)
 .if count == 0
-unknown_81_879f@oam_extra_large:
+draw_sprite_tiles@oam_extra_large:
 .endif
   .dw OAM_OBJ_EXTRA_SIZE_LARGE << ((count # 8) * 2)
 .endr
 
 .repeat OAM_OBJ_COUNT index count
 .if count == 0
-unknown_81_879f@oam_extra_address:
+draw_sprite_tiles@oam_extra_address:
 .endif
   .dw (var_oam_objects_extra + (count >> 3) * 2) & $ffff
 .if count == 0
-unknown_81_879f@oam_extra_x8_and_large:
+draw_sprite_tiles@oam_extra_x8_and_large:
 .endif
   .dw (OAM_OBJ_EXTRA_X8_MASK | OAM_OBJ_EXTRA_SIZE_LARGE) << ((count # 8) * 2)
 .endr
@@ -503,7 +503,7 @@ unknown_81_879f@oam_extra_x8_and_large:
 ; * [var_temp_number_of_tiles]
 ; * A
 ; * flags
-unknown_81_879f:
+draw_sprite_tiles:
   phx
   lda $0, Y ; Read tile count.
   bne @draw_tiles
@@ -536,20 +536,20 @@ unknown_81_879f:
 @set_extra_x8_and_large:
   ; Set OAM_OBJ_EXTRA_SIZE_LARGE | OAM_OBJ_EXTRA_X8_MASK in
   ; [var_oam_objects_extra + X/2].
-  lda unknown_81_879f@oam_extra_address.l, X
+  lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
-  ora unknown_81_879f@oam_extra_x8_and_large.l, X
+  ora draw_sprite_tiles@oam_extra_x8_and_large.l, X
   sta (var_temp_unknown_1c)
 
   jmp @set_x
 
 @set_extra_x8_and_small:
   ; Set OAM_OBJ_EXTRA_X8_MASK in [var_oam_objects_extra + X/2].
-  lda unknown_81_879f@oam_extra_address.l, X
+  lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
-  ora unknown_81_879f@oam_extra_x8_and_small.l, X
+  ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
   sta (var_temp_unknown_1c)
   bra @set_x
 
@@ -558,10 +558,10 @@ unknown_81_879f:
   bpl @set_extra_small ; Branch if SPRITE_TILE_XAF_SIZE is unset.
 
 @set_extra_large:
-  lda unknown_81_879f@oam_extra_address.l, X
+  lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
-  ora unknown_81_879f@oam_extra_large.l, X
+  ora draw_sprite_tiles@oam_extra_large.l, X
   sta (var_temp_unknown_1c)
 
 @set_extra_small:
