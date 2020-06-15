@@ -7776,153 +7776,71 @@ unknown_82_bdbb: sbc ($06, X)
 /*unknown_82_bf00:*/ bmi @unknown_82_bec6
 @unknown_82_bf02: bra @unknown_82_bf02
 unknown_82_bf04: ora ($00, X)
-/*unknown_82_bf06:*/ ora $1a25.w, Y
-/*unknown_82_bf09:*/ and $1b
-/*unknown_82_bf0b:*/ and $46
-/*unknown_82_bf0d:*/ and $3d47.w, X
-/*unknown_82_bf10:*/ pha
-/*unknown_82_bf11:*/ and $3d49.w, X
-/*unknown_82_bf14:*/ bra $3c ; $bf52.w
-/*unknown_82_bf16:*/ sta ($3c, X)
-/*unknown_82_bf18:*/ brl $833c ; $4257.w
-/*unknown_82_bf1b:*/ bit $3c84.w, X
-/*unknown_82_bf1e:*/ sta $3c
-/*unknown_82_bf20:*/ stx $3c
-unknown_82_bf22: lsr $3d
-/*unknown_82_bf24:*/ eor [$3d]
-/*unknown_82_bf26:*/ pha
-/*unknown_82_bf27:*/ and $3d49.w, X
-unknown_82_bf2a: lsr $3d, X
-/*unknown_82_bf2c:*/ eor [$3d], Y
-/*unknown_82_bf2e:*/ cli
-/*unknown_82_bf2f:*/ and $3d59.w, X
-/*unknown_82_bf32:*/ sbc $08d808, X
-/*unknown_82_bf36:*/ cmp $da08.w, Y
-/*unknown_82_bf39:*/ php
-/*unknown_82_bf3a:*/ sbc [$08]
-/*unknown_82_bf3c:*/ sbc $08db08, X
-/*unknown_82_bf40:*/ jmp [$d408]
-/*unknown_82_bf43:*/ php
-/*unknown_82_bf44:*/ pei ($08)
-/*unknown_82_bf46:*/ sbc $08dd08, X
-/*unknown_82_bf4a:*/ dec $df08.w, X
-/*unknown_82_bf4d:*/ php
-/*unknown_82_bf4e:*/ pei ($08)
-/*unknown_82_bf50:*/ sbc $08e808, X
-/*unknown_82_bf54:*/ sbc #$08
-/*unknown_82_bf56:*/ nop
-/*unknown_82_bf57:*/ php
-/*unknown_82_bf58:*/ xba
-/*unknown_82_bf59:*/ php
-/*unknown_82_bf5a:*/ sbc $08ec08, X
-/*unknown_82_bf5e:*/ sbc $ee08.w
-/*unknown_82_bf61:*/ php
-/*unknown_82_bf62:*/ sbc $08ff08
-/*unknown_82_bf66:*/ brk $09
-/*unknown_82_bf68:*/ ora ($09, X)
-/*unknown_82_bf6a:*/ cop $09
-/*unknown_82_bf6c:*/ ora $09, S
-/*unknown_82_bf6e:*/ tsb $09
-/*unknown_82_bf70:*/ ora $09
-/*unknown_82_bf72:*/ pei ($08)
-/*unknown_82_bf74:*/ pei ($08)
-/*unknown_82_bf76:*/ sbc $08d008, X
-/*unknown_82_bf7a:*/ cmp ($08), Y
-/*unknown_82_bf7c:*/ cmp ($08)
-/*unknown_82_bf7e:*/ cmp ($08, S), Y
-/*unknown_82_bf80:*/ ora $09, S
-/*unknown_82_bf82:*/ tsb $09
-/*unknown_82_bf84:*/ ora $09
-/*unknown_82_bf86:*/ pei ($08)
-/*unknown_82_bf88:*/ sbc $092008, X
-/*unknown_82_bf8c:*/ and ($09, X)
-/*unknown_82_bf8e:*/ jsr $092309
-/*unknown_82_bf92:*/ ora [$09], Y
-/*unknown_82_bf94:*/ clc
-/*unknown_82_bf95:*/ ora #$0f
-/*unknown_82_bf97:*/ ora #$1f
-/*unknown_82_bf99:*/ ora #$ff
-/*unknown_82_bf9b:*/ php
-/*unknown_82_bf9c:*/ cmp $08, X
-/*unknown_82_bf9e:*/ dec $08, X
-/*unknown_82_bfa0:*/ cmp [$08], Y
-/*unknown_82_bfa2:*/ pei ($08)
-/*unknown_82_bfa4:*/ pei ($08)
-/*unknown_82_bfa6:*/ pei ($08)
-/*unknown_82_bfa8:*/ pei ($08)
-/*unknown_82_bfaa:*/ pei ($08)
-/*unknown_82_bfac:*/ sbc $091008, X
-/*unknown_82_bfb0:*/ ora ($09), Y
-/*unknown_82_bfb2:*/ ora ($09)
-/*unknown_82_bfb4:*/ ora ($09, S), Y
-/*unknown_82_bfb6:*/ trb $09
-/*unknown_82_bfb8:*/ ora $09, X
-/*unknown_82_bfba:*/ asl $09, X
-/*unknown_82_bfbc:*/ pei ($08)
-/*unknown_82_bfbe:*/ brk $00
-/*unknown_82_bfc0:*/ sbc $08e008, X
-/*unknown_82_bfc4:*/ sbc ($08, X)
-/*unknown_82_bfc6:*/ sep #$08
-/*unknown_82_bfc8:*/ sbc $08, S
-/*unknown_82_bfca:*/ cpx $08
-/*unknown_82_bfcc:*/ sbc $08
-/*unknown_82_bfce:*/ inc $08
-/*unknown_82_bfd0:*/ pei ($08)
-/*unknown_82_bfd2:*/ sbc $093008, X
-/*unknown_82_bfd6:*/ and ($09), Y
-/*unknown_82_bfd8:*/ and ($09)
-/*unknown_82_bfda:*/ and ($09, S), Y
-/*unknown_82_bfdc:*/ bit $09, X
-/*unknown_82_bfde:*/ and $09, X
-/*unknown_82_bfe0:*/ rol $09, X
-/*unknown_82_bfe2:*/ pei ($08)
-/*unknown_82_bfe4:*/ sbc $08f008, X
-/*unknown_82_bfe8:*/ sbc ($08), Y
-/*unknown_82_bfea:*/ sbc ($08)
-/*unknown_82_bfec:*/ sbc ($08, S), Y
-/*unknown_82_bfee:*/ pea $f508.w
-/*unknown_82_bff1:*/ php
-/*unknown_82_bff2:*/ pei ($08)
-/*unknown_82_bff4:*/ pei ($08)
-/*unknown_82_bff6:*/ sbc $092408, X
-/*unknown_82_bffa:*/ and $09
-/*unknown_82_bffc:*/ rol $09
-/*unknown_82_bffe:*/ and [$09]
-/*unknown_82_c000:*/ plp
-/*unknown_82_c001:*/ ora #$29
-/*unknown_82_c003:*/ ora #$2a
-/*unknown_82_c005:*/ ora #$2b
-/*unknown_82_c007:*/ ora #$ff
-/*unknown_82_c009:*/ php
-/*unknown_82_c00a:*/ and [$09], Y
-/*unknown_82_c00c:*/ sec
-/*unknown_82_c00d:*/ ora #$39
-/*unknown_82_c00f:*/ ora #$2f
-/*unknown_82_c011:*/ ora #$d4
-/*unknown_82_c013:*/ php
-/*unknown_82_c014:*/ pei ($08)
-/*unknown_82_c016:*/ pei ($08)
-/*unknown_82_c018:*/ pei ($08)
+
+unknown_82_bf06:
+  .dw $2519, $251a, $251b, $3d46, $3d47, $3d48, $3d49
+unknown_82_bf14:
+  .dw $3c80, $3c81, $3c82, $3c83, $3c84, $3c85, $3c86
+unknown_82_bf22:
+  .dw $3d46, $3d47, $3d48, $3d49
+unknown_82_bf2a:
+  .dw $3d56, $3d57, $3d58, $3d59
+unknown_82_bf32:
+  .dw $08ff, $08d8, $08d9, $08da, $08e7
+unknown_82_bf3c:
+  .dw $08ff, $08db, $08dc, $08d4, $08d4
+unknown_82_bf46:
+  .dw $08ff, $08dd, $08de, $08df, $08d4
+unknown_82_bf50:
+  .dw $08ff, $08e8, $08e9, $08ea, $08eb
+unknown_82_bf5a:
+  .dw $08ff, $08ec, $08ed, $08ee, $08ef
+unknown_82_bf64:
+  .dw $08ff, $0900, $0901, $0902, $0903, $0904, $0905, $08d4, $08d4
+unknown_82_bf76:
+  .dw $08ff, $08d0, $08d1, $08d2, $08d3, $0903, $0904, $0905, $08d4
+unknown_82_bf88:
+  .dw $08ff, $0920, $0921, $0922, $0923, $0917, $0918, $090f, $091f
+unknown_82_bf9a:
+  .dw $08ff, $08d5, $08d6, $08d7, $08d4, $08d4, $08d4, $08d4, $08d4
+unknown_82_bfac:
+  .dw $08ff, $0910, $0911, $0912, $0913, $0914, $0915, $0916, $08d4, $0000
+unknown_82_bfc0:
+  .dw $08ff, $08e0, $08e1, $08e2, $08e3, $08e4, $08e5, $08e6, $08d4
+unknown_82_bfd2:
+  .dw $08ff, $0930, $0931, $0932, $0933, $0934, $0935, $0936, $08d4
+unknown_82_bfe4:
+  .dw $08ff, $08f0, $08f1, $08f2, $08f3, $08f4, $08f5, $08d4, $08d4
+unknown_82_bff6:
+  .dw $08ff, $0924, $0925, $0926, $0927, $0928, $0929, $092a
+  .dw $092b
+unknown_82_c008:
+  .dw $08ff, $0937, $0938, $0939, $092f, $08d4, $08d4
+  .dw $08d4, $08d4
 
 zero_tiles:
   .dsb 18, $00
 
-unknown_82_c02c: .dw $c068
-unknown_82_c02e: .dw $c06c
-unknown_82_c030: .dw $c076
-unknown_82_c032: .dw $c082
-unknown_82_c034: .dw $0000
-unknown_82_c036: .dw $c04c
-unknown_82_c038: .dw $c056
-unknown_82_c03a: .dw $c062
-unknown_82_c03c: .dw $0000
-unknown_82_c03e: .dw $09a6
-unknown_82_c040: .dw $09a2
-unknown_82_c042: .dw $09a2
-unknown_82_c044: .dw $0000
-unknown_82_c046: .dw $c08c
-unknown_82_c048: .dw $c096
-unknown_82_c04a: .dw $c0a2
+unknown_82_c02c:
+  .dw unknown_82_c068
+  .dw unknown_82_c06c
+  .dw unknown_82_c076
+  .dw unknown_82_c082
+unknown_82_c034:
+  .dw $0000
+  .dw unknown_82_c04c
+  .dw unknown_82_c056
+  .dw unknown_82_c062
+unknown_82_c03c:
+  .dw $0000
+  .dw $09a6
+  .dw $09a2
+  .dw $09a2
+unknown_82_c044:
+  .dw $0000
+  .dw unknown_82_c08c
+  .dw unknown_82_c096
+  .dw unknown_82_c0a2
 
 ; "Bit checklist: 5 beams, 6 suits/misc, 3 boots" -- Kejardon
 unknown_82_c04c:
@@ -7937,31 +7855,45 @@ unknown_82_c062:
 unknown_82_c068:
   .dw $3a88, $3ac8
 unknown_82_c06c:
-  .dw $3c08, $3c48, $3c88, $3cc8, $3d08, $3a6a
-  .dw $3aaa, $3b6a, $3baa, $3bea, $3c2a, $3cea, $3d2a, $3d6a
+  .dw $3c08, $3c48, $3c88, $3cc8, $3d08
+unknown_82_c076:
+  .dw $3a6a, $3aaa, $3b6a, $3baa, $3bea, $3c2a
+unknown_82_c082:
+  .dw $3cea, $3d2a, $3d6a
 
 ; "Pointers to tilemaps for MODE[MANUAL] and RESERVE TANK" -- Kejardon
 unknown_82_c088:
-  .dw $bf06
+  .dw unknown_82_bf06
 unknown_82_c08a:
-  .dw $bf14
+  .dw unknown_82_bf14
 
 ; "Pointers to tilemaps for enabled items" -- Kejardon
 unknown_82_c08c:
-  .dw $bf32
-  .dw $bf3c, $bf46, $bf50, $bf5a
+  .dw unknown_82_bf32
+  .dw unknown_82_bf3c
+  .dw unknown_82_bf46
+  .dw unknown_82_bf50
+  .dw unknown_82_bf5a
 unknown_82_c096:
-  .dw $bf64
-  .dw $bf76, $bf88, $bf9a, $bfac, $bfc0
+  .dw unknown_82_bf64
+  .dw unknown_82_bf76
+  .dw unknown_82_bf88
+  .dw unknown_82_bf9a
+  .dw unknown_82_bfac
+  .dw unknown_82_bfc0
 unknown_82_c0a2:
-  .dw $bfd2, $bfe4, $bff6
+  .dw unknown_82_bfd2
+  .dw unknown_82_bfe4
+  .dw unknown_82_bff6
 unknown_82_c0a8:
-  .dw $c01a, $c01a
+  .dw zero_tiles
+  .dw zero_tiles
+
 ; "Pointer to tilemap for oHYPER" -- Kejardon
 unknown_82_c0ac:
-  .dw $c008
-
-  .dw zero_tiles, zero_tiles
+  .dw unknown_82_c008
+  .dw zero_tiles
+  .dw zero_tiles
 
 /*unknown_82_c0b2:*/ .db $29, $07
 /*unknown_82_c0b4:*/ pld
