@@ -1934,7 +1934,7 @@ unknown_82_9009: php
 /*unknown_82_900c:*/ plb
 /*unknown_82_900d:*/ jsr unknown_82_a09a
 /*unknown_82_9010:*/ jsr unknown_82_a0f7
-/*unknown_82_9013:*/ jsr unknown_82_a12b
+/*unknown_82_9013:*/ jsr draw_pause_equipment
 /*unknown_82_9016:*/ jsr unknown_82_a796
 /*unknown_82_9019:*/ jsr unknown_82_a84d
 /*unknown_82_901c:*/ jsr unknown_82_9ec4
@@ -4054,10 +4054,18 @@ unknown_82_a0f7: rep #$30
 /*unknown_82_a127:*/ sta $074f.w
 /*unknown_82_a12a:*/ rts
 
+; Number of tile bytes in each power-up entry on the right side of the pause
+; screen (SUIT, MISC., and BOOTS sections).
+.define pause_tiles_right_entry_size _sizeof_pause_tiles_varia_suit
+
+; Number of tile bytes in each beam entry on the left side of the pause screen
+; (BEAM section).
+.define pause_tiles_beam_entry_size _sizeof_pause_tiles_plasma
+
 ; TODO: "Sets the equipment screen up (reserve tank tiles, clears uncollected
 ; items, greys unequipped items, oranges equipped items). Runs when the game is
 ; paused" -- Kejardon
-unknown_82_a12b:
+draw_pause_equipment:
   rep #$30
   lda var_player_max_reserve_tanks.w
   beq @unknown_82_a16a
@@ -4071,7 +4079,7 @@ unknown_82_a12b:
   lda [var_unknown_03], Y
   sta0 var_unknown_00
   ldx unknown_82_c088.w
-  lda #$000e.w
+  lda #_sizeof_pause_tiles_mode_manual
   sta0 var_unknown_16
   jsr unknown_82_a27e
 
@@ -4098,37 +4106,41 @@ unknown_82_a12b:
   lda var_unknown_0a76.w
   bne @unknown_82_a1c2
 
-@unknown_82_a180:
+@draw_beam_entries:
   lda unknown_82_c04c.w, Y
   bit $09a8
-  bne @player_has_beams
-  ldx #zero_tiles
-  lda #$000a.w
-  sta var_unknown_16
-  jsr unknown_82_a27e ; "Clear beam item" -- Kejardon
-  bra @unknown_82_a1b5
+  bne @draw_beam_entry
 
-@player_has_beams:
-  ldx unknown_82_c08c.w, Y ; "Get tilemap to draw" -- Kejardon
-  lda #$000a.w
+@clear_beam_entry:
+  ldx #zero_tiles
+  lda #pause_tiles_beam_entry_size
   sta var_unknown_16
-  jsr unknown_82_a27e ; "Draw beam item" -- Kejardon
+  jsr unknown_82_a27e
+  bra @next_beam_entry
+
+@draw_beam_entry:
+  ldx pause_beam_tiles.w, Y
+  lda #pause_tiles_beam_entry_size
+  sta var_unknown_16
+  jsr unknown_82_a27e
+
   lda unknown_82_c04c.w, Y
   bit $09a6
-  bne @unknown_82_a1b5
+  bne @next_beam_entry
+@draw_beam_entry_disabled:
   lda #$0c00.w ; "Disabled pallete" -- Kejardon
-  sta $12
-  lda #$000a.w
+  sta var_unknown_12
+  lda #pause_tiles_beam_entry_size
   sta var_unknown_16
   jsr unknown_82_a29d ; "Set pallete to disabled" -- Kejardon
 
-@unknown_82_a1b5:
+@next_beam_entry:
   iny
   iny
   lda [var_unknown_03], Y
   sta var_unknown_00
-  cpy #$000c.w
-  bmi @unknown_82_a180
+  cpy #_sizeof_unknown_82_c04c + 2 ; FIXME(strager): Why +2?
+  bmi @draw_beam_entries
   bra @unknown_82_a1db
 
 @unknown_82_a1c2:
@@ -4138,91 +4150,106 @@ unknown_82_a12b:
   lda #$000a.w
   sta var_unknown_16
   jsr unknown_82_a27e ; "Clear other beams, draw hyper beam" -- Kejardon
+
   iny
   iny
   lda [var_unknown_03], Y
   sta var_unknown_00
   cpy #$000c.w
   bmi @unknown_82_a1c5
+
 @unknown_82_a1db:
   ldy #$0000.w
-  lda #$c076.w ; "Pointers to RAM offsets" -- Kejardon
+  lda #unknown_82_c076.w ; "Pointers to RAM offsets" -- Kejardon
   sta var_unknown_03
-  lda #$0082.w
+  lda #:unknown_82_c076
   sta var_unknown_05
   lda [var_unknown_03], Y
   sta var_unknown_00
-@unknown_82_a1ec:
+
+@draw_suit_and_misc_entries:
   lda unknown_82_c056.w, Y ; "Equipment bit checklist" -- Kejardon
   bit $09a4.w
-  bne @unknown_82_a201
+  bne @draw_suit_and_misc_entry
+
+@clear_suit_and_misc_entry:
   ldx #zero_tiles
-  lda #$0012.w
+  lda #pause_tiles_right_entry_size
   sta var_unknown_16
   jsr unknown_82_a27e ; "Clear tiles" -- Kejardon
-  bra @unknown_82_a221
+  bra @next_suit_and_misc_entry
 
-@unknown_82_a201:
+@draw_suit_and_misc_entry:
   ldx unknown_82_c096.w, Y ; "Pointer to equipment tiles" -- Kejardon
-  lda #$0012.w
+  lda #pause_tiles_right_entry_size
   sta var_unknown_16
   jsr unknown_82_a27e
+
   lda unknown_82_c056.w, Y
   bit var_unknown_09a2.w ; "Check if currently equipped" -- Kejardon
-  bne @unknown_82_a221
+  bne @next_suit_and_misc_entry
+@draw_suit_and_misc_entry_disabled:
   lda #$0c00.w ; "Disabled pallete" -- Kejardon
   sta var_unknown_12
-  lda #$0012.w
+  lda #pause_tiles_right_entry_size
   sta var_unknown_16
   jsr unknown_82_a29d
-@unknown_82_a221:
+
+@next_suit_and_misc_entry:
   iny
   iny
   lda [var_unknown_03], Y
   sta var_unknown_00
-  cpy #$000c.w ; "Only handles suits and misc" -- Kejardon
-  bmi @unknown_82_a1ec
+  cpy #_sizeof_unknown_82_c056
+  bmi @draw_suit_and_misc_entries
+
   ldy #$0000.w
-  lda #$c082.w ; "Pointers to ram offsets" -- Kejardon
+  lda #unknown_82_c082 ; "Pointers to ram offsets" -- Kejardon
   sta var_unknown_03
   lda #$0082.w
   sta var_unknown_05
   lda [var_unknown_03], Y
   sta var_unknown_00
-@unknown_82_a23d:
+
+@draw_boot_entries:
   lda unknown_82_c062.w, Y ; "Boot bit checklist" -- Kejardon
   bit $09a4.w ; "Currently collected boots" -- Kejardon
-  bne @unknown_82_a252
+  bne @draw_boot_entry
+
+@clear_boot_entry:
   ldx #zero_tiles
-  lda #$0012.w
+  lda #pause_tiles_right_entry_size
   sta var_unknown_16
   jsr unknown_82_a27e
-  bra @unknown_82_a272
+  bra @next_boot_entry
 
-@unknown_82_a252:
-  lda #$0012.w
+@draw_boot_entry:
+  lda #pause_tiles_right_entry_size
   sta var_unknown_16
   ldx unknown_82_c0a2.w, Y ; "Pointer to boot tiles in ROM" -- Kejardon
   jsr unknown_82_a27e
+
   lda unknown_82_c062.w, Y
   bit var_unknown_09a2.w ; "Check if currently equipped"
-  bne @unknown_82_a272
+  bne @next_boot_entry
+@draw_boot_entry_disabled:
   lda #$0c00.w
   sta var_unknown_12
-  lda #$0012.w
+  lda #pause_tiles_right_entry_size
   sta var_unknown_16
   jsr unknown_82_a29d
-@unknown_82_a272:
+
+@next_boot_entry:
   iny
   iny
   lda [var_unknown_03], Y
   sta var_unknown_00
-  cpy #$0006.w
-  bmi @unknown_82_a23d
+  cpy #_sizeof_unknown_82_c062
+  bmi @draw_boot_entries
   rts
 
 ; TODO: "Draw Tiles (Copy 82:BF06, E bytes, to 7E:3A88)" -- Kejardon, on call
-; from unknown_82_a12b
+; from draw_pause_equipment
 ; ";MAIN --> SPECIFIC_LIST --> BUTTON_RESPONSE --> SET_TILES (X = pointer to
 ; tilemap in ROM, [$00] = RAM tilemap offset, $16 = 2x number of tiles)"
 ; -- Kejardon
@@ -7821,7 +7848,7 @@ pause_tiles_varia_suit:
 pause_tiles_gravity_suit:
   .dw $08ff, $08d0, $08d1, $08d2, $08d3, $0903, $0904, $0905, $08d4
 
-; "MORPHING" in MISC. section
+; "MORPHING BALL" in MISC. section
 pause_tiles_morphing_ball:
   .dw $08ff, $0920, $0921, $0922, $0923, $0917, $0918, $090f, $091f
 
@@ -7831,7 +7858,9 @@ pause_tiles_bomb:
 
 ; "SPRING BALL" in MISC. section
 pause_tiles_spring_ball:
-  .dw $08ff, $0910, $0911, $0912, $0913, $0914, $0915, $0916, $08d4, $0000
+  .dw $08ff, $0910, $0911, $0912, $0913, $0914, $0915, $0916, $08d4
+
+  .dw $0000
 
 ; "SCREW ATTACK" in MISC. section
 pause_tiles_screw_attack:
@@ -7873,18 +7902,28 @@ unknown_82_c03c:
   .dw $09a2
 unknown_82_c044:
   .dw $0000
-  .dw unknown_82_c08c
+  .dw pause_beam_tiles
   .dw unknown_82_c096
   .dw unknown_82_c0a2
 
 ; "Bit checklist: 5 beams, 6 suits/misc, 3 boots" -- Kejardon
 unknown_82_c04c:
-  .dw $1000, $0002, $0001, $0004, $0008
+  .dw $1000 ; Charge beam
+  .dw $0002 ; Ice beam
+  .dw $0001 ; Wave beam
+  .dw $0004 ; Spazer beam
+  .dw $0008 ; Plasma beam
 unknown_82_c056:
-  .dw $0001, $0020, $0004
-  .dw $1000, $0002, $0008
+  .dw $0001 ; Varia suit
+  .dw $0020 ; Gravity suit
+  .dw $0004 ; Morphing ball
+  .dw $1000 ; Bomb
+  .dw $0002 ; Spring ball
+  .dw $0008 ; Screw attack
 unknown_82_c062:
-  .dw $0100, $0200, $2000
+  .dw $0100 ; Hi-jump boots
+  .dw $0200 ; Space jump
+  .dw $2000 ; Speed booster
 
 ; "RAM offsets for specific tilemaps" -- Kejardon
 unknown_82_c068:
@@ -7903,7 +7942,7 @@ unknown_82_c08a:
   .dw pause_tiles_reserve_tank
 
 ; "Pointers to tilemaps for enabled items" -- Kejardon
-unknown_82_c08c:
+pause_beam_tiles:
   .dw pause_tiles_charge
   .dw pause_tiles_ice
   .dw pause_tiles_wave
