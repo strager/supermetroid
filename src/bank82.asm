@@ -4059,158 +4059,173 @@ unknown_82_a0f7: rep #$30
 ; paused" -- Kejardon
 unknown_82_a12b:
   rep #$30
-  lda $09d4.w
+  lda var_player_max_reserve_tanks.w
   beq @unknown_82_a16a
-  ldy #$0000.w
-  lda #$c068.w
-  sta $03
-  lda #$0082.w
-  sta $05
-  lda [$03], Y
-  sta $00
-  ldx $c088.w
+
+@draw_reserve_tanks:
+  ldy #0
+  lda #unknown_82_c068.w
+  sta0 var_unknown_03
+  lda #var_unknown_82.w
+  sta0 var_unknown_05
+  lda [var_unknown_03], Y
+  sta0 var_unknown_00
+  ldx unknown_82_c088.w
   lda #$000e.w
-  sta $16
-  jsr $a27e.w
-  ldy #$0002.w
-  lda #$c068.w
-  sta $03
-  lda #$0082.w
-  sta $05
-  lda [$03], Y
-  sta $00
-  ldx $c08a.w
+  sta0 var_unknown_16
+  jsr unknown_82_a27e
+
+  ldy #2
+  lda #unknown_82_c068.w
+  sta0 var_unknown_03
+  lda #var_unknown_82.w
+  sta0 var_unknown_05
+  lda [var_unknown_03], Y
+  sta0 var_unknown_00
+  ldx unknown_82_c08a.w
   lda #$000e.w
-  sta $16
-  jsr $a27e.w
+  sta var_unknown_16
+  jsr unknown_82_a27e
+
 @unknown_82_a16a:
-  ldy #$0000.w
-  lda #$c06c.w
-  sta $03
-  lda #$0082.w
-  sta $05
-  lda [$03], Y
-  sta $00
-  lda $0a76.w
+  ldy #0
+  lda #unknown_82_c06c.w
+  sta var_unknown_03
+  lda #var_unknown_82.w
+  sta var_unknown_05
+  lda [var_unknown_03], Y
+  sta var_unknown_00
+  lda var_unknown_0a76.w
   bne @unknown_82_a1c2
+
 @unknown_82_a180:
-  lda $c04c.w, Y
-  bit $09a8.w
-  bne @unknown_82_a195
-  ldx #$c01a.w
+  lda unknown_82_c04c.w, Y
+  bit $09a8
+  bne @player_has_beams
+  ldx #zero_tiles
   lda #$000a.w
-  sta $16
-  jsr $a27e.w
+  sta var_unknown_16
+  jsr unknown_82_a27e ; "Clear beam item" -- Kejardon
   bra @unknown_82_a1b5
-@unknown_82_a195:
-  ldx $c08c.w, Y
+
+@player_has_beams:
+  ldx unknown_82_c08c.w, Y ; "Get tilemap to draw" -- Kejardon
   lda #$000a.w
-  sta $16
-  jsr $a27e.w
-  lda $c04c.w, Y
-  bit $09a6.w
+  sta var_unknown_16
+  jsr unknown_82_a27e ; "Draw beam item" -- Kejardon
+  lda unknown_82_c04c.w, Y
+  bit $09a6
   bne @unknown_82_a1b5
-  lda #$0c00.w
+  lda #$0c00.w ; "Disabled pallete" -- Kejardon
   sta $12
   lda #$000a.w
-  sta $16
-  jsr $a29d.w
+  sta var_unknown_16
+  jsr unknown_82_a29d ; "Set pallete to disabled" -- Kejardon
+
 @unknown_82_a1b5:
   iny
   iny
-  lda [$03], Y
-  sta $00
+  lda [var_unknown_03], Y
+  sta var_unknown_00
   cpy #$000c.w
   bmi @unknown_82_a180
   bra @unknown_82_a1db
+
 @unknown_82_a1c2:
   ldy #$0000.w
 @unknown_82_a1c5:
-  ldx $c0a8.w, Y
+  ldx unknown_82_c0a8.w, Y ; "Hyper beam pointers" -- Kejardon
   lda #$000a.w
-  sta $16
-  jsr $a27e.w
+  sta var_unknown_16
+  jsr unknown_82_a27e ; "Clear other beams, draw hyper beam" -- Kejardon
   iny
   iny
-  lda [$03], Y
-  sta $00
+  lda [var_unknown_03], Y
+  sta var_unknown_00
   cpy #$000c.w
   bmi @unknown_82_a1c5
 @unknown_82_a1db:
   ldy #$0000.w
-  lda #$c076.w
-  sta $03
+  lda #$c076.w ; "Pointers to RAM offsets" -- Kejardon
+  sta var_unknown_03
   lda #$0082.w
-  sta $05
-  lda [$03], Y
-  sta $00
+  sta var_unknown_05
+  lda [var_unknown_03], Y
+  sta var_unknown_00
 @unknown_82_a1ec:
-  lda $c056.w, Y
+  lda unknown_82_c056.w, Y ; "Equipment bit checklist" -- Kejardon
   bit $09a4.w
   bne @unknown_82_a201
-  ldx #$c01a.w
+  ldx #zero_tiles
   lda #$0012.w
-  sta $16
-  jsr $a27e.w
+  sta var_unknown_16
+  jsr unknown_82_a27e ; "Clear tiles" -- Kejardon
   bra @unknown_82_a221
+
 @unknown_82_a201:
-  ldx $c096.w, Y
+  ldx unknown_82_c096.w, Y ; "Pointer to equipment tiles" -- Kejardon
   lda #$0012.w
-  sta $16
-  jsr $a27e.w
-  lda $c056.w, Y
-  bit $09a2.w
+  sta var_unknown_16
+  jsr unknown_82_a27e
+  lda unknown_82_c056.w, Y
+  bit var_unknown_09a2.w ; "Check if currently equipped" -- Kejardon
   bne @unknown_82_a221
-  lda #$0c00.w
-  sta $12
+  lda #$0c00.w ; "Disabled pallete" -- Kejardon
+  sta var_unknown_12
   lda #$0012.w
-  sta $16
-  jsr $a29d.w
+  sta var_unknown_16
+  jsr unknown_82_a29d
 @unknown_82_a221:
   iny
   iny
-  lda [$03], Y
-  sta $00
-  cpy #$000c.w
+  lda [var_unknown_03], Y
+  sta var_unknown_00
+  cpy #$000c.w ; "Only handles suits and misc" -- Kejardon
   bmi @unknown_82_a1ec
   ldy #$0000.w
-  lda #$c082.w
-  sta $03
+  lda #$c082.w ; "Pointers to ram offsets" -- Kejardon
+  sta var_unknown_03
   lda #$0082.w
-  sta $05
-  lda [$03], Y
-  sta $00
+  sta var_unknown_05
+  lda [var_unknown_03], Y
+  sta var_unknown_00
 @unknown_82_a23d:
-  lda $c062.w, Y
-  bit $09a4.w
+  lda unknown_82_c062.w, Y ; "Boot bit checklist" -- Kejardon
+  bit $09a4.w ; "Currently collected boots" -- Kejardon
   bne @unknown_82_a252
-  ldx #$c01a.w
+  ldx #zero_tiles
   lda #$0012.w
-  sta $16
-  jsr $a27e.w
+  sta var_unknown_16
+  jsr unknown_82_a27e
   bra @unknown_82_a272
+
 @unknown_82_a252:
   lda #$0012.w
-  sta $16
-  ldx $c0a2.w, Y
-  jsr $a27e.w
-  lda $c062.w, Y
-  bit $09a2.w
+  sta var_unknown_16
+  ldx unknown_82_c0a2.w, Y ; "Pointer to boot tiles in ROM" -- Kejardon
+  jsr unknown_82_a27e
+  lda unknown_82_c062.w, Y
+  bit var_unknown_09a2.w ; "Check if currently equipped"
   bne @unknown_82_a272
   lda #$0c00.w
-  sta $12
+  sta var_unknown_12
   lda #$0012.w
-  sta $16
-  jsr $a29d.w
+  sta var_unknown_16
+  jsr unknown_82_a29d
 @unknown_82_a272:
   iny
   iny
-  lda [$03], Y
-  sta $00
+  lda [var_unknown_03], Y
+  sta var_unknown_00
   cpy #$0006.w
   bmi @unknown_82_a23d
   rts
 
+; TODO: "Draw Tiles (Copy 82:BF06, E bytes, to 7E:3A88)" -- Kejardon, on call
+; from unknown_82_a12b
+; ";MAIN --> SPECIFIC_LIST --> BUTTON_RESPONSE --> SET_TILES (X = pointer to
+; tilemap in ROM, [$00] = RAM tilemap offset, $16 = 2x number of tiles)"
+; -- Kejardon
 unknown_82_a27e: php
 /*unknown_82_a27f:*/ phy
 /*unknown_82_a280:*/ sep #$20
@@ -7888,15 +7903,10 @@ unknown_82_bf2a: lsr $3d, X
 /*unknown_82_c014:*/ pei ($08)
 /*unknown_82_c016:*/ pei ($08)
 /*unknown_82_c018:*/ pei ($08)
-/*unknown_82_c01a:*/ brk $00
-/*unknown_82_c01c:*/ brk $00
-/*unknown_82_c01e:*/ brk $00
-/*unknown_82_c020:*/ brk $00
-/*unknown_82_c022:*/ brk $00
-/*unknown_82_c024:*/ brk $00
-/*unknown_82_c026:*/ brk $00
-/*unknown_82_c028:*/ brk $00
-/*unknown_82_c02a:*/ brk $00
+
+zero_tiles:
+  .dsb 18, $00
+
 unknown_82_c02c: .dw $c068
 unknown_82_c02e: .dw $c06c
 unknown_82_c030: .dw $c076
@@ -7913,57 +7923,47 @@ unknown_82_c044: .dw $0000
 unknown_82_c046: .dw $c08c
 unknown_82_c048: .dw $c096
 unknown_82_c04a: .dw $c0a2
-unknown_82_c04c: .db $00
 
-/*unknown_82_c04d:*/ bpl @unknown_82_c051
-/*unknown_82_c04f:*/ brk $01
-@unknown_82_c051: brk $04
-/*unknown_82_c053:*/ brk $08
-/*unknown_82_c055:*/ brk $01
-/*unknown_82_c057:*/ brk $20
-/*unknown_82_c059:*/ brk $04
-/*unknown_82_c05b:*/ brk $00
-/*unknown_82_c05d:*/ bpl @unknown_82_c061
-/*unknown_82_c05f:*/ brk $08
-@unknown_82_c061: brk $00
-/*unknown_82_c063:*/ ora ($00, X)
-/*unknown_82_c065:*/ cop $00
-/*unknown_82_c067:*/ jsr $3a88.w
-/*unknown_82_c06a:*/ iny
-/*unknown_82_c06b:*/ dec A
-/*unknown_82_c06c:*/ php
-/*unknown_82_c06d:*/ bit $3c48.w, X
-/*unknown_82_c070:*/ dey
-/*unknown_82_c071:*/ bit $3cc8.w, X
-/*unknown_82_c074:*/ php
-/*unknown_82_c075:*/ and $3a6a.w, X
-/*unknown_82_c078:*/ tax
-/*unknown_82_c079:*/ dec A
-/*unknown_82_c07a:*/ ror A
-/*unknown_82_c07b:*/ tsc
-/*unknown_82_c07c:*/ tax
-/*unknown_82_c07d:*/ tsc
-/*unknown_82_c07e:*/ nop
-/*unknown_82_c07f:*/ tsc
-/*unknown_82_c080:*/ rol A
-/*unknown_82_c081:*/ bit $3cea.w, X
-/*unknown_82_c084:*/ rol A
-/*unknown_82_c085:*/ and $3d6a.w, X
-/*unknown_82_c088:*/ asl $bf
-/*unknown_82_c08a:*/ trb $bf
-/*unknown_82_c08c:*/ and ($bf)
-/*unknown_82_c08e:*/ bit $46bf.w, X
-/*unknown_82_c091:*/ lda $5abf50, X
-/*unknown_82_c095:*/ lda $76bf64, X
-/*unknown_82_c099:*/ lda $9abf88, X
-/*unknown_82_c09d:*/ lda $c0bfac, X
-/*unknown_82_c0a1:*/ lda $e4bfd2, X
-/*unknown_82_c0a5:*/ lda $1abff6, X
-/*unknown_82_c0a9:*/ cpy #$c01a.w
-/*unknown_82_c0ac:*/ php
-/*unknown_82_c0ad:*/ cpy #$c01a.w
-/*unknown_82_c0b0:*/ inc A
-/*unknown_82_c0b1:*/ cpy #$0729.w
+; "Bit checklist: 5 beams, 6 suits/misc, 3 boots" -- Kejardon
+unknown_82_c04c:
+  .dw $1000, $0002, $0001, $0004, $0008
+unknown_82_c056:
+  .dw $0001, $0020, $0004
+  .dw $1000, $0002, $0008
+unknown_82_c062:
+  .dw $0100, $0200, $2000
+
+; "RAM offsets for specific tilemaps" -- Kejardon
+unknown_82_c068:
+  .dw $3a88, $3ac8
+unknown_82_c06c:
+  .dw $3c08, $3c48, $3c88, $3cc8, $3d08, $3a6a
+  .dw $3aaa, $3b6a, $3baa, $3bea, $3c2a, $3cea, $3d2a, $3d6a
+
+; "Pointers to tilemaps for MODE[MANUAL] and RESERVE TANK" -- Kejardon
+unknown_82_c088:
+  .dw $bf06
+unknown_82_c08a:
+  .dw $bf14
+
+; "Pointers to tilemaps for enabled items" -- Kejardon
+unknown_82_c08c:
+  .dw $bf32
+  .dw $bf3c, $bf46, $bf50, $bf5a
+unknown_82_c096:
+  .dw $bf64
+  .dw $bf76, $bf88, $bf9a, $bfac, $bfc0
+unknown_82_c0a2:
+  .dw $bfd2, $bfe4, $bff6
+unknown_82_c0a8:
+  .dw $c01a, $c01a
+; "Pointer to tilemap for oHYPER" -- Kejardon
+unknown_82_c0ac:
+  .dw $c008
+
+  .dw zero_tiles, zero_tiles
+
+/*unknown_82_c0b2:*/ .db $29, $07
 /*unknown_82_c0b4:*/ pld
 /*unknown_82_c0b5:*/ ora [$2d]
 /*unknown_82_c0b7:*/ ora [$2f]

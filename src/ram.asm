@@ -10,7 +10,13 @@ var_unknown_00: dw ; $7e0000
 var_unknown_00_l: db ; $7e0000
 var_unknown_00_h: db ; $7e0001
 .endu
+.union
 var_unknown_02: dw ; $7e0002
+.nextu
+var_unknown_02_l: db ; $7e0002
+var_unknown_03: dw ; $7e0003
+var_unknown_05: dw ; $7e0005
+.endu
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $12) export
