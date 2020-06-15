@@ -1210,7 +1210,7 @@ unknown_90_88ba: php
 /*unknown_90_89fe:*/ plp
 /*unknown_90_89ff:*/ rtl
 
-/*unknown_90_8a00:*/ php
+unknown_90_8a00: php
 /*unknown_90_8a01:*/ phb
 /*unknown_90_8a02:*/ sep #$20
 /*unknown_90_8a04:*/ lda #$92

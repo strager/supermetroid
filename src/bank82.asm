@@ -11725,10 +11725,10 @@ unknown_82_dfb6: ldx $078d.w
 
 ; TODO: "Ensures that Samus is drawn every frame?" -- Kejardon
 unknown_82_dfc7:
-  lda $0e16.w
-  bne @unknown_82_dfd0
-  jsr $908a00
-@unknown_82_dfd0:
+  lda var_unknown_0e16.w
+  bne @skip
+  jsr unknown_90_8a00.l
+@skip:
   rts
 
 unknown_82_dfd1: lda #$7000.w
