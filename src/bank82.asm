@@ -11001,38 +11001,38 @@ unknown_82_c0ac:
 ; -- Kejardon
 unknown_82_da02:
   rep #$30
-  lda $7ec402
+  lda var_unknown_c402.l
   inc A
-  cmp $7ec400
+  cmp var_unknown_c400.l
   bcs @unknown_82_da18
-  lda #$0000.w
-  sta $7ec400
+  lda #0
+  sta var_unknown_c400.l
   sec
   rts
 @unknown_82_da18:
   phb
-  pea $7e7e.w
+  pea MEM_LOW_HIGH_RAM_BANK | (MEM_LOW_HIGH_RAM_BANK << 8)
   plb
   plb
-  ldx #$0000.w
+  ldx #0
 @unknown_82_da21:
-  stx $c404.w
-  lda $c200.w, X
-  cmp $c000.w, X
+  stx var_unknown_c404.w
+  lda var_unknown_c200.w, X
+  cmp var_color_palette.w, X
   beq @unknown_82_da3d
   tay
-  lda $c000.w, X
+  lda var_color_palette.w, X
   tax
-  lda $c400.w
+  lda var_unknown_c400.w
   jsr unknown_82_da4a
-  ldx $c404.w
-  sta $c000.w, X
+  ldx var_unknown_c404.w
+  sta var_color_palette.w, X
 @unknown_82_da3d:
   inx
   inx
-  cpx #$0200.w
+  cpx #var_color_palette@size
   bcc @unknown_82_da21
-  inc $c400.w
+  inc var_unknown_c400.w
   plb
   clc
   rts

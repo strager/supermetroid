@@ -848,6 +848,16 @@ var_color_palette_end: db
 .define var_color_palette@size _sizeof_var_color_palette
 .export var_color_palette@size
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c200) export
+var_unknown_c200: dw ; $7ec400
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c400) export
+var_unknown_c400: dw ; $7ec400
+var_unknown_c402: dw ; $7ec402
+var_unknown_c404: dw ; $7ec404
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c8c8) export
 var_unknown_c8c8: ds 1 ; $7ec8c8
 .ende
