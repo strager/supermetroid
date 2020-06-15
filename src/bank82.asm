@@ -1,8 +1,9 @@
 .include "include/asm.asm"
 .include "include/common.asm"
-.include "include/io.asm"
-.include "include/start_dma_copy.asm"
 .include "include/decompress_to.asm"
+.include "include/io.asm"
+.include "include/memory.asm"
+.include "include/start_dma_copy.asm"
 
 .bank ($82 - $80) slot $0
 .org $0
@@ -4077,11 +4078,11 @@ draw_pause_equipment:
   lda #var_unknown_82.w
   sta0 var_unknown_05
   lda [var_unknown_03], Y
-  sta0 var_unknown_00
+  sta0 var_temp_copy_tiles_destination
   ldx unknown_82_c088.w
   lda #_sizeof_pause_tiles_mode_manual
-  sta0 var_unknown_16
-  jsr unknown_82_a27e
+  sta0 var_temp_copy_tiles_size
+  jsr copy_tiles
 
   ldy #2
   lda #unknown_82_c068.w
@@ -4089,11 +4090,11 @@ draw_pause_equipment:
   lda #var_unknown_82.w
   sta0 var_unknown_05
   lda [var_unknown_03], Y
-  sta0 var_unknown_00
+  sta0 var_temp_copy_tiles_destination
   ldx unknown_82_c08a.w
   lda #$000e.w
-  sta var_unknown_16
-  jsr unknown_82_a27e
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles
 
 @unknown_82_a16a:
   ldy #0
@@ -4102,7 +4103,7 @@ draw_pause_equipment:
   lda #var_unknown_82.w
   sta var_unknown_05
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
   lda var_unknown_0a76.w
   bne @unknown_82_a1c2
 
@@ -4114,15 +4115,15 @@ draw_pause_equipment:
 @clear_beam_entry:
   ldx #zero_tiles
   lda #pause_tiles_beam_entry_size
-  sta var_unknown_16
-  jsr unknown_82_a27e
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles
   bra @next_beam_entry
 
 @draw_beam_entry:
   ldx pause_beam_tiles.w, Y
   lda #pause_tiles_beam_entry_size
-  sta var_unknown_16
-  jsr unknown_82_a27e
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles
 
   lda unknown_82_c04c.w, Y
   bit $09a6
@@ -4131,14 +4132,14 @@ draw_pause_equipment:
   lda #$0c00.w ; "Disabled pallete" -- Kejardon
   sta var_unknown_12
   lda #pause_tiles_beam_entry_size
-  sta var_unknown_16
+  sta var_temp_copy_tiles_size
   jsr unknown_82_a29d ; "Set pallete to disabled" -- Kejardon
 
 @next_beam_entry:
   iny
   iny
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
   cpy #_sizeof_unknown_82_c04c + 2 ; FIXME(strager): Why +2?
   bmi @draw_beam_entries
   bra @unknown_82_a1db
@@ -4148,13 +4149,13 @@ draw_pause_equipment:
 @unknown_82_a1c5:
   ldx unknown_82_c0a8.w, Y ; "Hyper beam pointers" -- Kejardon
   lda #$000a.w
-  sta var_unknown_16
-  jsr unknown_82_a27e ; "Clear other beams, draw hyper beam" -- Kejardon
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles ; "Clear other beams, draw hyper beam" -- Kejardon
 
   iny
   iny
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
   cpy #$000c.w
   bmi @unknown_82_a1c5
 
@@ -4165,7 +4166,7 @@ draw_pause_equipment:
   lda #:unknown_82_c076
   sta var_unknown_05
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
 
 @draw_suit_and_misc_entries:
   lda unknown_82_c056.w, Y ; "Equipment bit checklist" -- Kejardon
@@ -4175,15 +4176,15 @@ draw_pause_equipment:
 @clear_suit_and_misc_entry:
   ldx #zero_tiles
   lda #pause_tiles_right_entry_size
-  sta var_unknown_16
-  jsr unknown_82_a27e ; "Clear tiles" -- Kejardon
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles ; "Clear tiles" -- Kejardon
   bra @next_suit_and_misc_entry
 
 @draw_suit_and_misc_entry:
   ldx unknown_82_c096.w, Y ; "Pointer to equipment tiles" -- Kejardon
   lda #pause_tiles_right_entry_size
-  sta var_unknown_16
-  jsr unknown_82_a27e
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles
 
   lda unknown_82_c056.w, Y
   bit var_unknown_09a2.w ; "Check if currently equipped" -- Kejardon
@@ -4192,14 +4193,14 @@ draw_pause_equipment:
   lda #$0c00.w ; "Disabled pallete" -- Kejardon
   sta var_unknown_12
   lda #pause_tiles_right_entry_size
-  sta var_unknown_16
+  sta var_temp_copy_tiles_size
   jsr unknown_82_a29d
 
 @next_suit_and_misc_entry:
   iny
   iny
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
   cpy #_sizeof_unknown_82_c056
   bmi @draw_suit_and_misc_entries
 
@@ -4209,7 +4210,7 @@ draw_pause_equipment:
   lda #$0082.w
   sta var_unknown_05
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
 
 @draw_boot_entries:
   lda unknown_82_c062.w, Y ; "Boot bit checklist" -- Kejardon
@@ -4219,15 +4220,15 @@ draw_pause_equipment:
 @clear_boot_entry:
   ldx #zero_tiles
   lda #pause_tiles_right_entry_size
-  sta var_unknown_16
-  jsr unknown_82_a27e
+  sta var_temp_copy_tiles_size
+  jsr copy_tiles
   bra @next_boot_entry
 
 @draw_boot_entry:
   lda #pause_tiles_right_entry_size
-  sta var_unknown_16
+  sta var_temp_copy_tiles_size
   ldx unknown_82_c0a2.w, Y ; "Pointer to boot tiles in ROM" -- Kejardon
-  jsr unknown_82_a27e
+  jsr copy_tiles
 
   lda unknown_82_c062.w, Y
   bit var_unknown_09a2.w ; "Check if currently equipped"
@@ -4236,42 +4237,54 @@ draw_pause_equipment:
   lda #$0c00.w
   sta var_unknown_12
   lda #pause_tiles_right_entry_size
-  sta var_unknown_16
+  sta var_temp_copy_tiles_size
   jsr unknown_82_a29d
 
 @next_boot_entry:
   iny
   iny
   lda [var_unknown_03], Y
-  sta var_unknown_00
+  sta var_temp_copy_tiles_destination
   cpy #_sizeof_unknown_82_c062
   bmi @draw_boot_entries
   rts
 
-; TODO: "Draw Tiles (Copy 82:BF06, E bytes, to 7E:3A88)" -- Kejardon, on call
-; from draw_pause_equipment
-; ";MAIN --> SPECIFIC_LIST --> BUTTON_RESPONSE --> SET_TILES (X = pointer to
-; tilemap in ROM, [$00] = RAM tilemap offset, $16 = 2x number of tiles)"
-; -- Kejardon
-unknown_82_a27e: php
-/*unknown_82_a27f:*/ phy
-/*unknown_82_a280:*/ sep #$20
-/*unknown_82_a282:*/ lda #$7e
-/*unknown_82_a284:*/ sta $02
-/*unknown_82_a286:*/ rep #$30
-/*unknown_82_a288:*/ ldy #$0000.w
-@unknown_82_a28b: lda $0000.w, X
-/*unknown_82_a28e:*/ sta [$00], Y
-/*unknown_82_a290:*/ inx
-/*unknown_82_a291:*/ inx
-/*unknown_82_a292:*/ iny
-/*unknown_82_a293:*/ iny
-/*unknown_82_a294:*/ dec $16
-/*unknown_82_a296:*/ dec $16
-/*unknown_82_a298:*/ bne @unknown_82_a28b
-/*unknown_82_a29a:*/ ply
-/*unknown_82_a29b:*/ plp
-/*unknown_82_a29c:*/ rts
+; Copy tiles from ROM into tile RAM.
+;
+; Inputs:
+; * [var_temp_copy_tiles_destination] - Destination address
+; * [var_temp_copy_tiles_size] - Number of bytes to copy
+; * X - Source address in ROM
+;
+; Outputs:
+; * [[var_temp_copy_tiles_destination]]
+;
+; Clobbers:
+; * [var_temp_copy_tiles_destination_bank]
+; * [var_temp_copy_tiles_size] - $0000
+; * A
+; * X
+copy_tiles:
+  php
+  phy
+  sep #$20
+  lda #MEM_LOW_HIGH_RAM_BANK
+  sta var_temp_copy_tiles_destination_bank
+  rep #$30
+  ldy #0
+@loop:
+  lda $0.w, X
+  sta [var_temp_copy_tiles_destination], Y
+  inx
+  inx
+  iny
+  iny
+  dec var_temp_copy_tiles_size
+  dec var_temp_copy_tiles_size
+  bne @loop
+  ply
+  plp
+  rts
 
 unknown_82_a29d: php
 /*unknown_82_a29e:*/ phy
@@ -6644,7 +6657,7 @@ unknown_82_b568:
   tay
   lda $0000.w, Y
   tax
-  jsr unknown_82_a27e
+  jsr copy_tiles
   bra @unknown_82_b5e6
 @unknown_82_b5ca:
   lda $0000.w, X

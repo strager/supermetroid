@@ -9,9 +9,13 @@ var_unknown_00: dw ; $7e0000
 .nextu
 var_unknown_00_l: db ; $7e0000
 var_unknown_00_h: db ; $7e0001
+.nextu
+var_temp_copy_tiles_destination: dw ; $7e0000
 .endu
 .union
 var_unknown_02: dw ; $7e0002
+.nextu
+var_temp_copy_tiles_destination_bank: dw ; $7e0003
 .nextu
 var_unknown_02_l: db ; $7e0002
 var_unknown_03: dw ; $7e0003
@@ -40,6 +44,8 @@ var_temp_center_x: dw ; $7e0014
 
 .union
 var_unknown_16: dw ; $7e0016
+.nextu
+var_temp_copy_tiles_size: dw ; $7e0016
 .nextu
 var_temp_palette: dw ; $7e0016
 .endu
