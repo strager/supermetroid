@@ -939,21 +939,21 @@ unknown_90_8790:
 unknown_90_87bd:
   php
   rep #$30
-  lda $0aae.w
+  lda var_unknown_0aae.w
   bmi @unknown_90_87ea
-  lda $0b3e.w
+  lda var_unknown_0b3e.w
   and #$ff00.w
   cmp #$0400.w
   beq @unknown_90_87d2
   plp
   rts
 @unknown_90_87d2:
-  lda $0ab2.w
+  lda var_unknown_0ab2.w
   beq @unknown_90_87dd
   ldy #$0002.w
   jsr unknown_90_8855
 @unknown_90_87dd:
-  lda $0ab0.w
+  lda var_unknown_0ab0.w
   beq @unknown_90_87e8
   ldy #$0000.w
   jsr unknown_90_8855
@@ -963,53 +963,53 @@ unknown_90_87bd:
 @unknown_90_87ea:
   ldy #$0002.w
 @unknown_90_87ed:
-  lda $0ab0.w, Y
+  lda var_unknown_0ab0.w, Y
   beq @unknown_90_8842
-  lda $0ab8.w, Y
-  cmp $0afa.w
+  lda var_unknown_0ab8.w, Y
+  cmp var_unknown_0afa.w
   beq @unknown_90_880c
   bmi @unknown_90_8805
   sec
   sbc #$0002.w
-  sta $0ab8.w, Y
+  sta var_unknown_0ab8.w, Y
   bra @unknown_90_880c
 @unknown_90_8805:
   clc
   adc #$0002.w
-  sta $0ab8.w, Y
+  sta var_unknown_0ab8.w, Y
 @unknown_90_880c:
-  lda $0ac0.w, Y
+  lda var_unknown_0ac0.w, Y
   bmi @unknown_90_8828
-  lda $0ab0.w, Y
+  lda var_unknown_0ab0.w, Y
   clc
-  adc $0ac0.w, Y
-  sta $0ab0.w, Y
-  cmp $0af6.w
+  adc var_unknown_0ac0.w, Y
+  sta var_unknown_0ab0.w, Y
+  cmp var_unknown_0af6.w
   bmi @unknown_90_883f
   lda #$0000.w
-  sta $0ab0.w, Y
+  sta var_unknown_0ab0.w, Y
   bra @unknown_90_8842
 @unknown_90_8828:
-  lda $0ab0.w, Y
+  lda var_unknown_0ab0.w, Y
   clc
-  adc $0ac0.w, Y
-  sta $0ab0.w, Y
-  cmp $0af6.w
+  adc var_unknown_0ac0.w, Y
+  sta var_unknown_0ab0.w, Y
+  cmp var_unknown_0af6.w
   bpl @unknown_90_883f
   lda #$0000.w
-  sta $0ab0.w, Y
+  sta var_unknown_0ab0.w, Y
   bra @unknown_90_8842
 @unknown_90_883f:
-  jsr $8855.w
+  jsr unknown_90_8855
 @unknown_90_8842:
   dey
   dey
   bpl @unknown_90_87ed
-  lda $0ab2.w
+  lda var_unknown_0ab2.w
   bne @unknown_90_8853
-  lda $0ab0.w
+  lda var_unknown_0ab0.w
   bne @unknown_90_8853
-  stz $0aae.w
+  stz var_unknown_0aae.w
 @unknown_90_8853:
   plp
   rts
