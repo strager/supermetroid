@@ -523,24 +523,22 @@ var_unknown_0907: dw ; $7e0907
 var_unknown_0909: dw ; $7e0909
 var_unknown_090b: dw ; $7e090b
 var_unknown_090d: dw ; $7e090d
-var_unknown_090f: dw ; $7e090f
-.ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0911) export
+; Screen's position.
+screen_subx: dw ; $7e090f
 .union
-var_unknown_0911: db ; $7e0911
+screen_x: db ; $7e0911
 .nextu
-var_unknown_0911_l: db ; $7e0911
-var_unknown_0911_h: db ; $7e0912
+screen_x_l: db ; $7e0911
+screen_x_h: db ; $7e0912
 .endu
 
-var_unknown_0913: dw ; $7e0913
-
+screen_suby: dw ; $7e0913
 .union
-var_unknown_0915: dw ; $7e0915
+screen_y: dw ; $7e0915
 .nextu
-var_unknown_0915_l: db ; $7e0915
-var_unknown_0915_h: db ; $7e0916
+screen_y_l: db ; $7e0915
+screen_y_h: db ; $7e0916
 .endu
 
 var_unknown_0917: dw ; $7e0917
@@ -739,17 +737,20 @@ var_unknown_0a96: dw ; $7e0a96
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0aae) export
-var_unknown_0aae: dw ; $7e0aae
-var_unknown_0ab0: dw ; $7e0ab0
-var_unknown_0ab2: dw ; $7e0ab2
+; 0 means samus_echo_0 is in effect.
+; 2 means samus_echo_1 is in effect.
+samus_echo_index: dw ; $7e0aae
+
+samus_echo_0_x: dw ; $7e0ab0
+samus_echo_1_x: dw ; $7e0ab2
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0ab8) export
-var_unknown_0ab8: dw ; $7e0ab8
+samus_echo_0_y: dw ; $7e0ab8
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0ac0) export
-var_unknown_0ac0: dw ; $7e0ac0
+samus_echo_0_x_speed: dw ; $7e0ac0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0ac8) export
@@ -761,17 +762,17 @@ var_unknown_0aca: dw ; $7e0aca
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0af6) export
-var_unknown_0af6: dw ; $7e0af6
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0afa) export
-var_unknown_0afa: dw ; $7e0afa
-var_unknown_0afc: dw ; $7e0afc
+; Samus' position.
+samus_x: dw ; $7e0af6
+samus_subx: dw ; $7e0af8
+samus_y: dw ; $7e0afa
+samus_suby: dw ; $7e0afc
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0b04) export
-var_unknown_0b04: dw ; $7e0b04
-var_unknown_0b06: dw ; $7e0b06
+; Samus' position on screen.
+samus_screen_x: dw ; $7e0b04
+samus_screen_y: dw ; $7e0b06
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0b0a) export

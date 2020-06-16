@@ -4573,7 +4573,7 @@ unknown_80_a29c:
 ; and Layer 2's X scroll percent (091B)" -- Kejardon
 unknown_80_a2f9:
   php
-  ldy var_unknown_0911.w
+  ldy screen_x.w
   sep #$20
   lda var_unknown_091b.w
   beq @unknown_80_a32e
@@ -4581,14 +4581,14 @@ unknown_80_a2f9:
   beq @unknown_80_a337
   and #$fe
   sta IO_WRMPYA
-  lda var_unknown_0911_l.w
+  lda screen_x_l.w
   sta IO_WRMPYB
   stz var_unknown_0933_h.w
   pha
   pla
   lda IO_RDMPYH
   sta var_unknown_0933_l.w
-  lda var_unknown_0911_h.w
+  lda screen_x_h.w
   sta IO_WRMPYB
   rep #$20
   lda var_unknown_0933.w
@@ -4611,7 +4611,7 @@ unknown_80_a2f9:
 ; and Layer 2's Y scroll percent (091C)" -- Kejardon
 unknown_80_a33a:
   php
-  ldy var_unknown_0915.w
+  ldy screen_y.w
   sep #$20
   lda var_unknown_091c.w
   beq @unknown_80_a36f
@@ -4619,14 +4619,14 @@ unknown_80_a33a:
   beq @unknown_80_a378
   and #$fe
   sta IO_WRMPYA
-  lda var_unknown_0915_l.w
+  lda screen_y_l.w
   sta IO_WRMPYB
   stz var_unknown_0933_h.w
   pha
   pla
   lda IO_RDMPYH
   sta var_unknown_0933_l.w
-  lda var_unknown_0915_h.w
+  lda screen_y_h.w
   sta IO_WRMPYB
   rep #$20
   lda var_unknown_0933.w
@@ -4648,11 +4648,11 @@ unknown_80_a33a:
 ; TODO: "Translates Layer 1 and Layer 2 scroll positions to BG1 and BG2 scroll
 ; positions" -- Kejardon
 unknown_80_a37b:
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc var_unknown_091d.w
   sta var_unknown_b1
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc var_unknown_091f.w
   sta var_unknown_b3
@@ -4687,11 +4687,11 @@ unknown_80_a3a0:
   phk
   plb
   rep #$30
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc var_unknown_091d.w
   sta var_unknown_b1
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc var_unknown_091f.w
   sta var_unknown_b3
@@ -4822,7 +4822,7 @@ unknown_80_a4bb:
   lsr A
   lsr A
   sta var_unknown_090b.w
-  lda var_unknown_0911.w
+  lda screen_x.w
   lsr A
   lsr A
   lsr A
@@ -4854,7 +4854,7 @@ unknown_80_a4bb:
   lsr A
   lsr A
   sta var_unknown_090d.w
-  lda var_unknown_0915.w
+  lda screen_y.w
   lsr A
   lsr A
   lsr A
@@ -4891,19 +4891,19 @@ unknown_80_a528:
   pha
   plb
   rep #$30
-  lda var_unknown_0911.w
+  lda screen_x.w
   sta var_unknown_0939.w
   bpl @unknown_80_a548
-  stz var_unknown_0911.w
+  stz screen_x.w
 @unknown_80_a548:
   lda var_unknown_07a9.w
   dec A
   xba
-  cmp var_unknown_0911.w
+  cmp screen_x.w
   bcs @unknown_80_a555
-  sta var_unknown_0911.w
+  sta screen_x.w
 @unknown_80_a555:
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc #$0080.w
   xba
@@ -4912,7 +4912,7 @@ unknown_80_a528:
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911_h.w
+  lda screen_x_h.w
   and #$00ff.w
   clc
   adc IO_RDMPY
@@ -4920,7 +4920,7 @@ unknown_80_a528:
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a5d9
-  lda var_unknown_0911.w
+  lda screen_x.w
   and #$ff00.w
   clc
   adc #$0100.w
@@ -4932,7 +4932,7 @@ unknown_80_a528:
   cmp var_unknown_0933.w
   bcs @unknown_80_a5d4
   sta var_unknown_0939.w
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc #$0080.w
   xba
@@ -4964,7 +4964,7 @@ unknown_80_a528:
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a63e
-  lda var_unknown_0911.w
+  lda screen_x.w
   and #$ff00.w
   sta var_unknown_0933.w
   lda var_unknown_0939.w
@@ -4974,7 +4974,7 @@ unknown_80_a528:
   cmp var_unknown_0933.w
   bmi @unknown_80_a638
   sta var_unknown_0939.w
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc #$0080.w
   xba
@@ -5002,7 +5002,7 @@ unknown_80_a528:
 @unknown_80_a638:
   lda var_unknown_0933.w
 @unknown_80_a63b:
-  sta var_unknown_0911.w
+  sta screen_x.w
 @unknown_80_a63e:
   plb
   plp
@@ -5018,24 +5018,24 @@ unknown_80_a641:
   pha
   plb
   rep #$30
-  lda var_unknown_0911.w
+  lda screen_x.w
   sta var_unknown_0939.w
   lda var_unknown_0b0a.w
-  cmp var_unknown_0911.w
+  cmp screen_x.w
   bpl @unknown_80_a662
   lda var_unknown_0b0a.w
-  sta var_unknown_0911.w
-  stz var_unknown_090f.w
+  sta screen_x.w
+  stz screen_subx.w
 @unknown_80_a662:
   lda var_unknown_07a9.w
   dec A
   xba
-  cmp var_unknown_0911.w
+  cmp screen_x.w
   bcs @unknown_80_a671
-  sta var_unknown_0911.w
+  sta screen_x.w
   bra @unknown_80_a6b8
 @unknown_80_a671:
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc #$0080.w
   xba
@@ -5044,15 +5044,15 @@ unknown_80_a641:
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda (var_unknown_0911.w + 1) & $ffff
-  and #$00ff.w ; [var_unknown_0911] >> 8
+  lda (screen_x.w + 1) & $ffff
+  and #$00ff.w ; [screen_x] >> 8
   sec
   adc IO_RDMPY
   tax
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a6b8
-  lda var_unknown_0911.w
+  lda screen_x.w
   and #$ff00.w
   sta var_unknown_0933.w
   lda var_unknown_0939.w
@@ -5063,7 +5063,7 @@ unknown_80_a641:
   bpl @unknown_80_a6b5
   lda var_unknown_0933.w
 @unknown_80_a6b5:
-  sta var_unknown_0911.w
+  sta screen_x.w
 @unknown_80_a6b8:
   plb
   plp
@@ -5079,20 +5079,20 @@ unknown_80_a6bb:
   pha
   plb
   rep #$30
-  lda var_unknown_0911.w
+  lda screen_x.w
   sta var_unknown_0939.w
   cmp var_unknown_0b0a.w
   bpl @unknown_80_a6d9
   lda var_unknown_0b0a.w
-  sta var_unknown_0911.w
-  stz var_unknown_090f.w
+  sta screen_x.w
+  stz screen_subx.w
 @unknown_80_a6d9:
-  lda var_unknown_0911.w
+  lda screen_x.w
   bpl @unknown_80_a6e3
-  stz var_unknown_0911.w
+  stz screen_x.w
   bra @unknown_80_a72e
 @unknown_80_a6e3:
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc #$0080.w
   xba
@@ -5101,15 +5101,15 @@ unknown_80_a6bb:
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda (var_unknown_0911.w + 1) & $ffff
-  and #$00ff.w ; [var_unknown_0911] >> 8
+  lda (screen_x.w + 1) & $ffff
+  and #$00ff.w ; [screen_x] >> 8
   clc
   adc IO_RDMPY
   tax
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a72e
-  lda var_unknown_0911.w
+  lda screen_x.w
   and #$ff00.w
   clc
   adc #$0100.w
@@ -5122,7 +5122,7 @@ unknown_80_a6bb:
   bcc @unknown_80_a72b
   lda var_unknown_0933.w
 @unknown_80_a72b:
-  sta var_unknown_0911.w
+  sta screen_x.w
 @unknown_80_a72e:
   plb
   plp
@@ -5143,12 +5143,12 @@ unknown_80_a731:
   rep #$30
   ldy #$0000.w
   sep #$20
-  lda var_unknown_0915_h.w
+  lda screen_y_h.w
   sta IO_WRMPYA
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc #$0080.w
   xba
@@ -5164,27 +5164,27 @@ unknown_80_a731:
   ldy #$001f.w
 @unknown_80_a77a:
   sty var_unknown_0933.w
-  lda var_unknown_0915.w
+  lda screen_y.w
   sta var_unknown_0939.w
   bpl @unknown_80_a788
-  stz var_unknown_0915.w
+  stz screen_y.w
 @unknown_80_a788:
   lda var_unknown_07ab.w
   dec A
   xba
   clc
   adc var_unknown_0933.w
-  cmp var_unknown_0915.w
+  cmp screen_y.w
   bcs @unknown_80_a799
-  sta var_unknown_0915.w
+  sta screen_y.w
 @unknown_80_a799:
   sep #$20
-  lda var_unknown_0915_h.w
+  lda screen_y_h.w
   sta IO_WRMPYA
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc #$0080.w
   xba
@@ -5195,7 +5195,7 @@ unknown_80_a731:
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a81d
-  lda var_unknown_0915.w
+  lda screen_y.w
   and #$ff00.w
   clc
   adc #$0100.w
@@ -5214,7 +5214,7 @@ unknown_80_a731:
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc #$0080.w
   xba
@@ -5242,12 +5242,12 @@ unknown_80_a731:
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a890
-  lda var_unknown_0915.w
+  lda screen_y.w
   and #$ff00.w
   clc
   adc var_unknown_0933.w
   sta var_unknown_0937.w
-  cmp var_unknown_0915.w
+  cmp screen_y.w
   bcs @unknown_80_a890
   lda var_unknown_0939.w
   sec
@@ -5262,7 +5262,7 @@ unknown_80_a731:
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc #$0080.w
   xba
@@ -5284,7 +5284,7 @@ unknown_80_a731:
 @unknown_80_a88a:
   lda var_unknown_0937.w
 @unknown_80_a88d:
-  sta var_unknown_0915.w
+  sta screen_y.w
 @unknown_80_a890:
   plb
   plp
@@ -5298,16 +5298,16 @@ unknown_80_a893:
   pha
   plb
   rep #$30
-  lda var_unknown_0915.w
+  lda screen_y.w
   sta var_unknown_0939.w
   ldy #$0000.w
   sep #$20
-  lda var_unknown_0915_h.w
+  lda screen_y_h.w
   sta IO_WRMPYA
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc #$0080.w
   xba
@@ -5324,11 +5324,11 @@ unknown_80_a893:
 @unknown_80_a8d7:
   sty var_unknown_0933.w
   lda var_unknown_0b0e.w
-  cmp var_unknown_0915.w
+  cmp screen_y.w
   bpl @unknown_80_a8eb
   lda var_unknown_0b0e.w
-  sta var_unknown_0915.w
-  stz var_unknown_0913.w
+  sta screen_y.w
+  stz screen_suby.w
 @unknown_80_a8eb:
   lda var_unknown_07ab.w
   dec A
@@ -5336,7 +5336,7 @@ unknown_80_a893:
   clc
   adc var_unknown_0933.w
   sta var_unknown_0937.w
-  cmp var_unknown_0915.w
+  cmp screen_y.w
   bcc @unknown_80_a91e
   lda var_unknown_14
   clc
@@ -5345,12 +5345,12 @@ unknown_80_a893:
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a933
-  lda var_unknown_0915.w
+  lda screen_y.w
   and #$ff00.w
   clc
   adc var_unknown_0933.w
   sta var_unknown_0937.w
-  cmp var_unknown_0915.w
+  cmp screen_y.w
   bcs @unknown_80_a933
 @unknown_80_a91e:
   lda var_unknown_0939.w
@@ -5361,7 +5361,7 @@ unknown_80_a893:
   bpl @unknown_80_a930
   lda var_unknown_0937.w
 @unknown_80_a930:
-  sta var_unknown_0915.w
+  sta screen_y.w
 @unknown_80_a933:
   plb
   plp
@@ -5375,26 +5375,26 @@ unknown_80_a936:
   pha
   plb
   rep #$30
-  lda var_unknown_0915.w
+  lda screen_y.w
   sta var_unknown_0939.w
   cmp var_unknown_0b0e.w
   bpl @unknown_80_a954
   lda var_unknown_0b0e.w
-  sta var_unknown_0915.w
-  stz var_unknown_0913.w
+  sta screen_y.w
+  stz screen_suby.w
 @unknown_80_a954:
-  lda var_unknown_0915.w
+  lda screen_y.w
   bpl @unknown_80_a95e
-  stz var_unknown_0915.w
+  stz screen_y.w
   bra @unknown_80_a9a9
 @unknown_80_a95e:
   sep #$20
-  lda var_unknown_0915_h.w
+  lda screen_y_h.w
   sta IO_WRMPYA
   lda var_unknown_07a9.w
   sta IO_WRMPYB
   rep #$20
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc #$0080.w
   xba
@@ -5405,7 +5405,7 @@ unknown_80_a936:
   lda var_unknown_cd20.l, X
   and #$00ff.w
   bne @unknown_80_a9a9
-  lda var_unknown_0915.w
+  lda screen_y.w
   and #$ff00.w
   clc
   adc #$0100.w
@@ -5418,7 +5418,7 @@ unknown_80_a936:
   bcc @unknown_80_a9a6
   lda var_unknown_0933.w
 @unknown_80_a9a6:
-  sta var_unknown_0915.w
+  sta screen_y.w
 @unknown_80_a9a9:
   plb
   plp
@@ -5435,14 +5435,14 @@ unknown_80_a9ac:
   lsr A
   bcc @unknown_80_a9c9
   lda var_unknown_05d5.w
-  sta var_unknown_0911.w
+  sta screen_x.w
   lda var_unknown_05d7.w
-  sta var_unknown_0915.w
+  sta screen_y.w
   rtl
 @unknown_80_a9c9:
-  lda var_unknown_0911.w
+  lda screen_x.w
   sta var_unknown_05d5.w
-  lda var_unknown_0915.w
+  lda screen_y.w
   sta var_unknown_05d7.w
   rtl
 
@@ -5842,9 +5842,9 @@ unknown_80_ad1d:
 unknown_80_ad30:
   rep #$30
   lda var_unknown_0927.w
-  sta var_unknown_0911.w
+  sta screen_x.w
   lda var_unknown_0929.w
-  sta var_unknown_0915.w
+  sta screen_y.w
   lda var_unknown_0791.w
   and #$0003.w
   asl A
@@ -6130,11 +6130,11 @@ unknown_80_af89:
   pha
   lda var_unknown_b7
   pha
-  lda var_unknown_0915.w
+  lda screen_y.w
   pha
   sec
   sbc #$0010.w
-  sta var_unknown_0915.w
+  sta screen_y.w
   lda var_unknown_0919.w
   pha
   sec
@@ -6148,36 +6148,36 @@ unknown_80_af89:
   pla
   sta var_unknown_0919.w
   pla
-  sta var_unknown_0915.w
+  sta screen_y.w
   pla
   sta var_unknown_b7
   pla
   sta var_unknown_b3
   bra @unknown_80_b024
 @unknown_80_afcb:
-  lda var_unknown_0afc.w
+  lda samus_suby.w
   sec
   sbc var_unknown_092b.w
-  sta var_unknown_0afc.w
-  lda var_unknown_0afa.w
+  sta samus_suby.w
+  lda samus_y.w
   sbc var_unknown_092d.w
-  sta var_unknown_0afa.w
+  sta samus_y.w
   sta var_unknown_0b14.w
-  lda var_unknown_0915.w
+  lda screen_y.w
   sec
   sbc #$0004.w
-  sta var_unknown_0915.w
+  sta screen_y.w
   lda var_unknown_0919.w
   sec
   sbc #$0004.w
   sta var_unknown_0919.w
   cpx #$0005.w
   bcs @unknown_80_b020
-  lda var_unknown_0911.w
+  lda screen_x.w
   clc
   adc var_unknown_091d.w
   sta var_unknown_b1
-  lda var_unknown_0915.w
+  lda screen_y.w
   clc
   adc var_unknown_091f.w
   sta var_unknown_b3

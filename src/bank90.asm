@@ -770,17 +770,17 @@ unknown_90_868d:
   rts
 @unknown_90_8697:
   ldx var_oam_objects_tail.w
-  lda var_unknown_0af6.w
+  lda samus_x.w
   sec
   sbc #$0007.w
   sec
-  sbc var_unknown_0911.w
+  sbc screen_x.w
   sta (var_oam_objects.w + oam_obj.x) & $ffff, X
-  lda var_unknown_0afa.w
+  lda samus_y.w
   sec
   sbc #$0011.w
   sec
-  sbc var_unknown_0915.w
+  sbc screen_y.w
   sta (var_oam_objects.w + oam_obj.y) & $ffff, X
   lda #$3821.w
   sta (var_oam_objects.w + oam_obj.tile) & $ffff, X
@@ -939,7 +939,7 @@ unknown_90_8790:
 unknown_90_87bd:
   php
   rep #$30
-  lda var_unknown_0aae.w
+  lda samus_echo_index.w
   bmi @unknown_90_87ea
   lda var_unknown_0b3e.w
   and #$ff00.w
@@ -948,12 +948,12 @@ unknown_90_87bd:
   plp
   rts
 @unknown_90_87d2:
-  lda var_unknown_0ab2.w
+  lda samus_echo_1_x.w
   beq @unknown_90_87dd
   ldy #$0002.w
   jsr unknown_90_8855
 @unknown_90_87dd:
-  lda var_unknown_0ab0.w
+  lda samus_echo_0_x.w
   beq @unknown_90_87e8
   ldy #$0000.w
   jsr unknown_90_8855
@@ -963,41 +963,41 @@ unknown_90_87bd:
 @unknown_90_87ea:
   ldy #$0002.w
 @unknown_90_87ed:
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   beq @unknown_90_8842
-  lda var_unknown_0ab8.w, Y
-  cmp var_unknown_0afa.w
+  lda samus_echo_0_y.w, Y
+  cmp samus_y.w
   beq @unknown_90_880c
   bmi @unknown_90_8805
   sec
   sbc #$0002.w
-  sta var_unknown_0ab8.w, Y
+  sta samus_echo_0_y.w, Y
   bra @unknown_90_880c
 @unknown_90_8805:
   clc
   adc #$0002.w
-  sta var_unknown_0ab8.w, Y
+  sta samus_echo_0_y.w, Y
 @unknown_90_880c:
-  lda var_unknown_0ac0.w, Y
+  lda samus_echo_0_x_speed.w, Y
   bmi @unknown_90_8828
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   clc
-  adc var_unknown_0ac0.w, Y
-  sta var_unknown_0ab0.w, Y
-  cmp var_unknown_0af6.w
+  adc samus_echo_0_x_speed.w, Y
+  sta samus_echo_0_x.w, Y
+  cmp samus_x.w
   bmi @unknown_90_883f
   lda #$0000.w
-  sta var_unknown_0ab0.w, Y
+  sta samus_echo_0_x.w, Y
   bra @unknown_90_8842
 @unknown_90_8828:
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   clc
-  adc var_unknown_0ac0.w, Y
-  sta var_unknown_0ab0.w, Y
-  cmp var_unknown_0af6.w
+  adc samus_echo_0_x_speed.w, Y
+  sta samus_echo_0_x.w, Y
+  cmp samus_x.w
   bpl @unknown_90_883f
   lda #$0000.w
-  sta var_unknown_0ab0.w, Y
+  sta samus_echo_0_x.w, Y
   bra @unknown_90_8842
 @unknown_90_883f:
   jsr unknown_90_8855
@@ -1005,11 +1005,11 @@ unknown_90_87bd:
   dey
   dey
   bpl @unknown_90_87ed
-  lda var_unknown_0ab2.w
+  lda samus_echo_1_x.w
   bne @unknown_90_8853
-  lda var_unknown_0ab0.w
+  lda samus_echo_0_x.w
   bne @unknown_90_8853
-  stz var_unknown_0aae.w
+  stz samus_echo_index.w
 @unknown_90_8853:
   plp
   rts
@@ -1024,14 +1024,14 @@ unknown_90_8855:
   lda unknown_91_b62d.l, X
   and #$00ff.w
   sta var_unknown_12
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   sec
-  sbc var_unknown_0911.w
+  sbc screen_x.w
   tax
-  lda var_unknown_0ab8.w, Y
+  lda samus_echo_0_y.w, Y
   sec
   sbc var_unknown_12
-  sbc var_unknown_0915.w
+  sbc screen_y.w
   bmi @unknown_90_887e
   cmp #$00f8.w
   bmi @unknown_90_8880
@@ -1054,14 +1054,14 @@ unknown_90_8855:
   and #$00ff.w
   sta var_unknown_12
   phy
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   sec
-  sbc var_unknown_0911.w
+  sbc screen_x.w
   tax
-  lda var_unknown_0ab8.w, Y
+  lda samus_echo_0_y.w, Y
   sec
   sbc var_unknown_12
-  sbc var_unknown_0915.w
+  sbc screen_y.w
   tay
   lda var_unknown_0aca.w
   jsr unknown_81_89ae.l
@@ -1099,14 +1099,14 @@ unknown_90_88ba:
   lda unknown_91_b62d.l, X
   and #$00ff.w
   sta var_unknown_12
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   sec
-  sbc var_unknown_0911.w
+  sbc screen_x.w
   tax
-  lda var_unknown_0ab8.w, Y
+  lda samus_echo_0_y.w, Y
   sec
   sbc var_unknown_12
-  sbc var_unknown_0915.w
+  sbc screen_y.w
   bmi @unknown_90_8905
   cmp #$00f8.w
   bmi @unknown_90_890a
@@ -1140,14 +1140,14 @@ unknown_90_88ba:
   lda unknown_91_b62d.l, X
   and #$00ff.w
   sta var_unknown_12
-  lda var_unknown_0ab0.w, Y
+  lda samus_echo_0_x.w, Y
   sec
-  sbc var_unknown_0911.w
+  sbc screen_x.w
   tax
-  lda var_unknown_0ab8.w, Y
+  lda samus_echo_0_y.w, Y
   sec
   sbc var_unknown_12
-  sbc var_unknown_0915.w
+  sbc screen_y.w
   tay
   pla
   jsr unknown_81_89ae.l
@@ -1276,8 +1276,8 @@ unknown_90_8a00:
   lda unknown_92_945d.l, X
   clc
   adc var_unknown_0a96.w
-  ldx var_unknown_0b04.w
-  ldy var_unknown_0b06.w
+  ldx samus_screen_x.w
+  ldy samus_screen_y.w
   jsr unknown_81_89ae.l
 @unknown_90_8a45:
   jsr unknown_92_8000.l
