@@ -13498,35 +13498,40 @@ unknown_90_f125:
 ; "Check GrappleFire pointer. If not #$C4FC, just set it to #$C8C5. Else if spin
 ; jumping or wall jumping, set to standing (facing current direction), JSL
 ; $91F433 and $91FB08, JSR $F0EE, SEC and RTS" -- Kejardon
-unknown_90_f152: lda $0d32.w
-/*unknown_90_f155:*/ cmp #$c4f0.w
-/*unknown_90_f158:*/ beq @unknown_90_f162
-/*unknown_90_f15a:*/ lda #$c8c5.w
-/*unknown_90_f15d:*/ sta $0d32.w
-@unknown_90_f160: clc
-/*unknown_90_f161:*/ rts
-
-@unknown_90_f162: lda $0a1f.w
-/*unknown_90_f165:*/ and #$00ff.w
-/*unknown_90_f168:*/ cmp #$0003.w
-/*unknown_90_f16b:*/ beq @unknown_90_f172
-/*unknown_90_f16d:*/ cmp #$0014.w
-/*unknown_90_f170:*/ bne @unknown_90_f160
-@unknown_90_f172: lda $0a1e.w
-/*unknown_90_f175:*/ and #$00ff.w
-/*unknown_90_f178:*/ cmp #$0004.w
-/*unknown_90_f17b:*/ beq @unknown_90_f185
-/*unknown_90_f17d:*/ lda #$0001.w
-/*unknown_90_f180:*/ sta $0a1c.w
-/*unknown_90_f183:*/ bra @unknown_90_f18b
-@unknown_90_f185: lda #$0002.w
-/*unknown_90_f188:*/ sta $0a1c.w
-@unknown_90_f18b: stz $0a9a.w
-/*unknown_90_f18e:*/ jsr $91f433
-/*unknown_90_f192:*/ jsr $91fb08
-/*unknown_90_f196:*/ jsr unknown_90_f0ee
-/*unknown_90_f199:*/ sec
-/*unknown_90_f19a:*/ rts
+unknown_90_f152:
+  lda var_unknown_0d32.w
+  cmp #$c4f0
+  beq @unknown_90_f162
+  lda #$c8c5
+  sta var_unknown_0d32.w
+@unknown_90_f160:
+  clc
+  rts
+@unknown_90_f162:
+  lda var_unknown_0a1f.w
+  and #$00ff
+  cmp #3
+  beq @unknown_90_f172
+  cmp #$0014
+  bne @unknown_90_f160
+@unknown_90_f172:
+  lda var_unknown_0a1e.w
+  and #$00ff
+  cmp #4
+  beq @unknown_90_f185
+  lda #1
+  sta var_unknown_0a1c.w
+  bra @unknown_90_f18b
+@unknown_90_f185:
+  lda #2
+  sta var_unknown_0a1c.w
+@unknown_90_f18b:
+  stz var_unknown_0a9a.w
+  jsr unknown_91_f433.l
+  jsr unknown_91_fb08.l
+  jsr unknown_90_f0ee
+  sec
+  rts
 
 ; "Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA." -- Kejardon
 unknown_90_f19b: stz $0b62.w
