@@ -12465,7 +12465,7 @@ unknown_91_e3f6: php
 /*unknown_91_e4ab:*/ plp
 /*unknown_91_e4ac:*/ rtl
 
-/*unknown_91_e4ad:*/ php
+unknown_91_e4ad: php
 /*unknown_91_e4ae:*/ phb
 /*unknown_91_e4af:*/ phk
 /*unknown_91_e4b0:*/ plb

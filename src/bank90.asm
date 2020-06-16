@@ -14018,110 +14018,114 @@ unknown_90_f535:
 @unknown_90_f54b:
   rts
 
-/*unknown_90_f54c:*/ lda $91
-/*unknown_90_f54e:*/ bit #$4000.w
-/*unknown_90_f551:*/ beq @unknown_90_f560
-/*unknown_90_f553:*/ lda #$0017.w
-/*unknown_90_f556:*/ jsr $90f084
-/*unknown_90_f55a:*/ lda #$f534.w
-/*unknown_90_f55d:*/ sta $0a5e.w
-@unknown_90_f560: rts
+unknown_90_f54c:
+  lda var_new_pressed_buttons_p2
+  bit #$4000.w
+  beq @unknown_90_f560
+  lda #$0017.w
+  jsr unknown_90_f084.l
+  lda #$f534.w
+  sta var_unknown_0a5e.w
+@unknown_90_f560:
+  rts
 
-/*unknown_90_f561:*/ lda $8f
-/*unknown_90_f563:*/ bit #$4000.w
-/*unknown_90_f566:*/ beq @unknown_90_f575
-/*unknown_90_f568:*/ lda #$f534.w
-/*unknown_90_f56b:*/ sta $0a5e.w
-/*unknown_90_f56e:*/ lda #$0002.w
-/*unknown_90_f571:*/ jsr $91e4ad
-@unknown_90_f575: rts
+unknown_90_f561:
+  lda var_new_pressed_buttons
+  bit #$4000.w
+  beq @unknown_90_f575
+  lda #$f534.w
+  sta var_unknown_0a5e.w
+  lda #$0002.w
+  jsr unknown_91_e4ad.l
+@unknown_90_f575:
+  rts
 
 ; TODO: "Checks to play sounds: Continue charge sound, end(?) blue suit sound,
 ; end spin jump, and game over if escaping Zebes and 0A5A = E114?" -- Kejardon
 unknown_90_f576:
   php
   rep #$30
-  lda $0dc0.w
+  lda var_unknown_0dc0.w
   bmi @unknown_90_f5de
   beq @unknown_90_f591
-  lda $8b
+  lda var_pressed_buttons
   bit $09b2.w
   beq @unknown_90_f58e
   lda #$0041.w
-  jsr $80902b
+  jsr unknown_80_902b.l
 @unknown_90_f58e:
-  stz $0dc0.w
+  stz var_unknown_0dc0.w
 @unknown_90_f591:
-  lda $0b40.w
+  lda var_unknown_0b40.w
   beq @unknown_90_f5a8
-  lda $0b3e.w
+  lda var_unknown_0b3e.w
   bit #$0400.w
   bne @unknown_90_f5a8
-  stz $0b40.w
+  stz var_unknown_0b40.w
   lda #$0025.w
-  jsr $809125
+  jsr unknown_80_9125.l
 @unknown_90_f5a8:
-  lda $0a11.w
+  lda var_unknown_0a11.w
   and #$00ff.w
   cmp #$0003.w
   beq @unknown_90_f5b8
   cmp #$0014.w
   bne @unknown_90_f5e4
 @unknown_90_f5b8:
-  lda $0a1f.w
+  lda var_unknown_0a1f.w
   and #$00ff.w
   cmp #$0003.w
   beq @unknown_90_f5e4
   cmp #$0014.w
   beq @unknown_90_f5e4
   lda #$0032.w
-  jsr $809021
-  lda $0cd0.w
+  jsr unknown_80_9021.l
+  lda var_unknown_0cd0.w
   cmp #$0010.w
   bmi @unknown_90_f5e4
-  lda $8b
+  lda var_pressed_buttons
   bit $09b2.w
   beq @unknown_90_f5e4
 @unknown_90_f5de:
   lda #$0001.w
-  sta $0dc0.w
+  sta var_unknown_0dc0.w
 @unknown_90_f5e4:
-  lda $05d1.w
+  lda var_unknown_05d1.w
   beq @unknown_90_f619
-  lda $0a1c.w
+  lda var_unknown_0a1c.w
   beq @unknown_90_f5fd
   cmp #$009b.w
   beq @unknown_90_f5fd
-  lda $0de0.w
+  lda var_unknown_0de0.w
   cmp #$0007.w
   bmi @unknown_90_f616
   plp
   rts
 @unknown_90_f5fd:
-  lda $8d
+  lda var_pressed_buttons_p2
   and #$0030.w
   cmp #$0030.w
   bne @unknown_90_f619
-  lda $91
+  lda var_new_pressed_buttons_p2
   bit #$0080.w
   beq @unknown_90_f619
   lda #$0007.w
-  sta $0de0.w
+  sta var_unknown_0de0.w
   bra @unknown_90_f619
 @unknown_90_f616:
-  stz $0de0.w
+  stz var_unknown_0de0.w
 @unknown_90_f619:
   lda #$000e.w
-  jsr $808233
+  jsr unknown_80_8233.l
   bcc @unknown_90_f638
-  lda $0a5a.w
+  lda var_unknown_0a5a.w
   cmp #$e114.w
   bne @unknown_90_f638
-  lda $0998.w
+  lda var_game_state.w
   cmp #$0023.w
   beq @unknown_90_f638
   lda #$0023.w
-  sta $0998.w
+  sta var_game_state.w
 @unknown_90_f638:
   plp
   rts

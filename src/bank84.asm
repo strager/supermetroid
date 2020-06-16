@@ -1597,7 +1597,7 @@ unknown_84_8c2b:
 ; max queued sounds allowed = 15" -- P.JBoy
 unknown_84_8c34:
   lda $0000.w, Y
-  jsl unknown_80_9049@unknown_80_9125
+  jsl unknown_80_9125
   iny
   rts
 
@@ -1645,7 +1645,7 @@ unknown_84_8c61:
 ; max queued sounds allowed = 9" -- P.JBoy
 unknown_84_8c6a:
   lda $0000.w, Y
-  jsl unknown_80_9049@unknown_80_912f
+  jsl unknown_80_912f
   iny
   rts
 
@@ -9773,7 +9773,7 @@ unknown_84_d0ae: sbc $ce83cc, X
 /*unknown_84_d30a:*/ rts
 
 /*unknown_84_d30b:*/ lda #$002e.w
-/*unknown_84_d30e:*/ jsl unknown_80_9049@unknown_80_9125
+/*unknown_84_d30e:*/ jsl unknown_80_9125
 /*unknown_84_d312:*/ lda $0000.w, Y
 /*unknown_84_d315:*/ jsr unknown_84_d331
 /*unknown_84_d318:*/ lda $0002.w, Y

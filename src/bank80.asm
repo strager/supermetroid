@@ -2385,7 +2385,8 @@ unknown_80_9049:
   bcs @unknown_80_9114
   sta var_unknown_0666.w, Y
   bra @unknown_80_9114
-@unknown_80_9125:
+
+unknown_80_9125:
   phx
   phy
   php
@@ -2393,7 +2394,8 @@ unknown_80_9049:
   xba
   lda #$0f
   bra unknown_80_914d@unknown_80_9155
-@unknown_80_912f:
+
+unknown_80_912f:
   phx
   phy
   php
