@@ -15016,7 +15016,8 @@ unknown_91_f468: php
 /*unknown_91_fb01:*/ bne ($ab - $100) ; $faae.w
 /*unknown_91_fb03:*/ bne ($d7 - $100) ; $fadc.w
 /*unknown_91_fb05:*/ bne @unknown_91_fade
-/*unknown_91_fb07:*/ bne @unknown_91_fb11
+/*unknown_91_fb07:*/ .db $d0
+unknown_91_fb08: php
 /*unknown_91_fb09:*/ phb
 /*unknown_91_fb0a:*/ phk
 /*unknown_91_fb0b:*/ plb

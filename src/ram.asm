@@ -757,6 +757,11 @@ var_unknown_0a78_h: db ; $7e0a79
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0a96) export
 var_unknown_0a96: dw ; $7e0a96
+var_unknown_0a98: dw ; $7e0a98
+var_unknown_0a9a: dw ; $7e0a9a
+var_unknown_0a9c: dw ; $7e0a9c
+var_unknown_0a9e: dw ; $7e0a9e
+var_unknown_0aa0: dw ; $7e0aa0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0aae) export

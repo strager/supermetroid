@@ -13476,21 +13476,24 @@ unknown_90_f117:
 
 ; "Set Samus to standing (facing current direction). JSL to $91F433 and $91FB08,
 ; then go to 00" -- Kejardon
-unknown_90_f125: lda $0a1e.w
-/*unknown_90_f128:*/ and #$00ff.w
-/*unknown_90_f12b:*/ cmp #$0004.w
-/*unknown_90_f12e:*/ beq @unknown_90_f138
-/*unknown_90_f130:*/ lda #$0001.w
-/*unknown_90_f133:*/ sta $0a1c.w
-/*unknown_90_f136:*/ bra @unknown_90_f13e
-@unknown_90_f138: lda #$0002.w
-/*unknown_90_f13b:*/ sta $0a1c.w
-@unknown_90_f13e: stz $0a9a.w
-/*unknown_90_f141:*/ jsr $91f433
-/*unknown_90_f145:*/ jsr $91fb08
-/*unknown_90_f149:*/ lda #$003c.w
-/*unknown_90_f14c:*/ sta $0aa0.w
-/*unknown_90_f14f:*/ jmp unknown_90_f109
+unknown_90_f125:
+  lda var_unknown_0a1e.w
+  and #$ff
+  cmp #4
+  beq @unknown_90_f138
+  lda #1
+  sta var_unknown_0a1c.w
+  bra @unknown_90_f13e
+@unknown_90_f138:
+  lda #2
+  sta var_unknown_0a1c.w
+@unknown_90_f13e:
+  stz var_unknown_0a9a.w
+  jsr unknown_91_f433.l
+  jsr unknown_91_fb08.l
+  lda #$3c
+  sta var_unknown_0aa0.w
+  jmp unknown_90_f109
 
 ; "Check GrappleFire pointer. If not #$C4FC, just set it to #$C8C5. Else if spin
 ; jumping or wall jumping, set to standing (facing current direction), JSL
