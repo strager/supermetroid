@@ -1014,57 +1014,60 @@ unknown_90_87bd:
   plp
   rts
 
-unknown_90_8855: phy
-/*unknown_90_8856:*/ lda $0a1c.w
-/*unknown_90_8859:*/ asl A
-/*unknown_90_885a:*/ asl A
-/*unknown_90_885b:*/ asl A
-/*unknown_90_885c:*/ tax
-/*unknown_90_885d:*/ lda $91b62d, X
-/*unknown_90_8861:*/ and #$00ff.w
-/*unknown_90_8864:*/ sta $12
-/*unknown_90_8866:*/ lda $0ab0.w, Y
-/*unknown_90_8869:*/ sec
-/*unknown_90_886a:*/ sbc $0911.w
-/*unknown_90_886d:*/ tax
-/*unknown_90_886e:*/ lda $0ab8.w, Y
-/*unknown_90_8871:*/ sec
-/*unknown_90_8872:*/ sbc $12
-/*unknown_90_8874:*/ sbc $0915.w
-/*unknown_90_8877:*/ bmi @unknown_90_887e
-/*unknown_90_8879:*/ cmp #$00f8.w
-/*unknown_90_887c:*/ bmi @unknown_90_8880
-@unknown_90_887e: ply
-/*unknown_90_887f:*/ rts
-
-@unknown_90_8880: tay
-/*unknown_90_8881:*/ lda $0ac8.w
-/*unknown_90_8884:*/ jsr $8189ae
-/*unknown_90_8888:*/ ply
-/*unknown_90_8889:*/ lda $0aca.w
-/*unknown_90_888c:*/ beq @unknown_90_88b9
-/*unknown_90_888e:*/ lda $0a1c.w
-/*unknown_90_8891:*/ asl A
-/*unknown_90_8892:*/ asl A
-/*unknown_90_8893:*/ asl A
-/*unknown_90_8894:*/ tax
-/*unknown_90_8895:*/ lda $91b62d, X
-/*unknown_90_8899:*/ and #$00ff.w
-/*unknown_90_889c:*/ sta $12
-/*unknown_90_889e:*/ phy
-/*unknown_90_889f:*/ lda $0ab0.w, Y
-/*unknown_90_88a2:*/ sec
-/*unknown_90_88a3:*/ sbc $0911.w
-/*unknown_90_88a6:*/ tax
-/*unknown_90_88a7:*/ lda $0ab8.w, Y
-/*unknown_90_88aa:*/ sec
-/*unknown_90_88ab:*/ sbc $12
-/*unknown_90_88ad:*/ sbc $0915.w
-/*unknown_90_88b0:*/ tay
-/*unknown_90_88b1:*/ lda $0aca.w
-/*unknown_90_88b4:*/ jsr $8189ae
-/*unknown_90_88b8:*/ ply
-@unknown_90_88b9: rts
+unknown_90_8855:
+  phy
+  lda var_unknown_0a1c.w
+  asl A
+  asl A
+  asl A
+  tax
+  lda unknown_91_b62d.l, X
+  and #$00ff.w
+  sta var_unknown_12
+  lda var_unknown_0ab0.w, Y
+  sec
+  sbc var_unknown_0911.w
+  tax
+  lda var_unknown_0ab8.w, Y
+  sec
+  sbc var_unknown_12
+  sbc var_unknown_0915.w
+  bmi @unknown_90_887e
+  cmp #$00f8.w
+  bmi @unknown_90_8880
+@unknown_90_887e:
+  ply
+  rts
+@unknown_90_8880:
+  tay
+  lda var_unknown_0ac8.w
+  jsr unknown_81_89ae.l
+  ply
+  lda var_unknown_0aca.w
+  beq @unknown_90_88b9
+  lda var_unknown_0a1c.w
+  asl A
+  asl A
+  asl A
+  tax
+  lda unknown_91_b62d.l, X
+  and #$00ff.w
+  sta var_unknown_12
+  phy
+  lda var_unknown_0ab0.w, Y
+  sec
+  sbc var_unknown_0911.w
+  tax
+  lda var_unknown_0ab8.w, Y
+  sec
+  sbc var_unknown_12
+  sbc var_unknown_0915.w
+  tay
+  lda var_unknown_0aca.w
+  jsr unknown_81_89ae.l
+  ply
+@unknown_90_88b9:
+  rts
 
 unknown_90_88ba: php
 /*unknown_90_88bb:*/ phb

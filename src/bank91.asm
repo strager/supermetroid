@@ -6769,7 +6769,8 @@ unknown_91_852f: lda $0e20.w
 /*unknown_91_b625:*/ ora ($00, X)
 /*unknown_91_b627:*/ cop $00
 /*unknown_91_b629:*/ brk $00
-/*unknown_91_b62b:*/ sbc $0008ff.l, X
+/*unknown_91_b62b:*/ .dw $ffff
+unknown_91_b62d: .dw $0008
 /*unknown_91_b62f:*/ clc
 /*unknown_91_b630:*/ brk $08
 /*unknown_91_b632:*/ brk $ff
