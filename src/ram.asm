@@ -802,6 +802,9 @@ var_unknown_0ac8: dw ; $7e0ac8
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0aca) export
 var_unknown_0aca: dw ; $7e0aca
+var_unknown_0acc: dw ; $7e0acc
+var_unknown_0ace: dw ; $7e0ace
+var_unknown_0ad0: dw ; $7e0ad0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0af6) export
