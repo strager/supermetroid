@@ -13723,11 +13723,13 @@ unknown_90_f2fc:
   sec
   rts
 
-unknown_90_f310: jsr unknown_90_f0ee
-/*unknown_90_f313:*/ stz $0cd0.w
-/*unknown_90_f316:*/ jsr unknown_90_bcbe
-/*unknown_90_f319:*/ jsr $91deba
-/*unknown_90_f31d:*/ jmp unknown_90_f2fc
+unknown_90_f310:
+  jsr unknown_90_f0ee
+  stz var_unknown_0cd0.w
+  jsr unknown_90_bcbe
+  jsr unknown_91_deba.l
+  jmp unknown_90_f2fc
+
 unknown_90_f320: lda #$0001.w
 /*unknown_90_f323:*/ sta $0a4a.w
 /*unknown_90_f326:*/ clc
