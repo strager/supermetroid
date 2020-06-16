@@ -13380,49 +13380,7 @@ unknown_90_eee7:
 /*unknown_90_f080:*/ sta $0a58.w
 @unknown_90_f083: rts
 
-; TODO: "Very general use routines, depending on A. Can range from 0 to 1F.
-;   00:F109 Put #$E713 into $0A42, #$E8DC into $0A44
-;   01:F117 Put #$E695 into $0A42, #$E725 into $0A44
-;   02:F125 Set Samus to standing (facing current direction). JSL to $91F433 and
-;           $91FB08, then go to 00
-;   03:F152 Check GrappleFire pointer. If not #$C4FC, just set it to #$C8C5.
-;           Else if spin jumping or wall jumping, set to standing (facing
-;           current direction), JSL $91F433 and $91FB08, JSR $F0EE, SEC and RTS
-;   04:F19B Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA.
-;   05:F38E
-;   06:F1AA Put #$E713 into $0A42, #$E8DC into $0A44, play a sound if charge is
-;           under F, goto 04
-;   07:F1C8 JSL $91E3F6, #$E8EC into $0A44, #$A337 into $0A58, #$EC14 into
-;           $0A5C, #$E913 into $0A60
-;   08:F1E9 #$E8CD into $0A42, #$E8DC into $0A44, Samus facing forward, JSL
-;           $91F433, $91FB08, $91DEBA. #$EB52 into $0A5C, update $0A20 - $0A27, JSL
-;   $868027 with Y = #$A387 then Y = #$A39D, JSL 82E118.
-;   09:F23C JSL $8DC4E9, Y = #$E1F4 (no suits), #$E1F8 (varia), or #$E1FC
-;           (grav). Samus facing forward. JSL $91DEBA, $91F433. Set Samus's
-;           animation to frame 2, delay 3
-;   0A:F28D #$E90E into $0A5C, CLC and RTS. Short.
-;   0B:F295 #$EB52 into $0A5C, goto 01
-;   0C:F29E JSL $91E633, if $0A44 is #$E8D6, #$E695 into $0A42 and #$E725 into
-;           $0A44. Run when unpausing.
-;   0D:F2B8 If GrappleFire pointer is #$C4F0, A = 0. Else A = 1.
-;   0E:F2CA
-;   0F:F2D8
-;   10:F2E0
-;   11:F2F8
-;   12:F320
-;   13:F328
-;   14:F331
-;   15:F310
-;   16:F3C9
-;   17:F3DD
-;   18:F3C0
-;   19:F3FB
-;   1A:F409
-;   1B:F411
-;   1C:F41E
-;   1D:F471
-;   1E:F4A2
-;   1F:F4D0"
+; TODO: "Very general use routines, depending on A. Can range from 0 to 1F."
 ; -- Kejardon
 unknown_90_f084: php
 /*unknown_90_f085:*/ phb
@@ -13493,6 +13451,7 @@ unknown_90_f0ee:
 /*unknown_90_f107:*/ clc
 /*unknown_90_f108:*/ rts
 
+; "Put #$E713 into $0A42, #$E8DC into $0A44" -- Kejardon
 @unknown_90_f109: lda #$e713.w
 /*unknown_90_f10c:*/ sta $0a42.w
 /*unknown_90_f10f:*/ lda #$e8dc.w
@@ -13500,6 +13459,7 @@ unknown_90_f0ee:
 /*unknown_90_f115:*/ sec
 /*unknown_90_f116:*/ rts
 
+; "Put #$E695 into $0A42, #$E725 into $0A44" -- Kejardon
 @unknown_90_f117: lda #$e695.w
 /*unknown_90_f11a:*/ sta $0a42.w
 /*unknown_90_f11d:*/ lda #$e725.w
@@ -13507,6 +13467,8 @@ unknown_90_f0ee:
 /*unknown_90_f123:*/ sec
 /*unknown_90_f124:*/ rts
 
+; "Set Samus to standing (facing current direction). JSL to $91F433 and $91FB08,
+; then go to 00" -- Kejardon
 /*unknown_90_f125:*/ lda $0a1e.w
 /*unknown_90_f128:*/ and #$00ff.w
 /*unknown_90_f12b:*/ cmp #$0004.w
@@ -13522,6 +13484,10 @@ unknown_90_f0ee:
 /*unknown_90_f149:*/ lda #$003c.w
 /*unknown_90_f14c:*/ sta $0aa0.w
 /*unknown_90_f14f:*/ jmp @unknown_90_f109
+
+; "Check GrappleFire pointer. If not #$C4FC, just set it to #$C8C5. Else if spin
+; jumping or wall jumping, set to standing (facing current direction), JSL
+; $91F433 and $91FB08, JSR $F0EE, SEC and RTS" -- Kejardon
 /*unknown_90_f152:*/ lda $0d32.w
 /*unknown_90_f155:*/ cmp #$c4f0.w
 /*unknown_90_f158:*/ beq @unknown_90_f162
@@ -13552,6 +13518,7 @@ unknown_90_f0ee:
 /*unknown_90_f199:*/ sec
 /*unknown_90_f19a:*/ rts
 
+; "Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA." -- Kejardon
 /*unknown_90_f19b:*/ stz $0b62.w
 /*unknown_90_f19e:*/ stz $0cd0.w
 /*unknown_90_f1a1:*/ jsr unknown_90_bcbe
@@ -13559,6 +13526,8 @@ unknown_90_f0ee:
 /*unknown_90_f1a8:*/ clc
 /*unknown_90_f1a9:*/ rts
 
+; "Put #$E713 into $0A42, #$E8DC into $0A44, play a sound if charge is under F,
+; goto 04" -- Kejardon
 /*unknown_90_f1aa:*/ lda #$e713.w
 /*unknown_90_f1ad:*/ sta $0a42.w
 /*unknown_90_f1b0:*/ lda #$e8d6.w
@@ -13569,6 +13538,9 @@ unknown_90_f0ee:
 /*unknown_90_f1be:*/ lda #$0002.w
 /*unknown_90_f1c1:*/ jsr $809021
 @unknown_90_f1c5: jmp $f19e.w
+
+; "JSL $91E3F6, #$E8EC into $0A44, #$A337 into $0A58, #$EC14 into $0A5C, #$E913
+; into $0A60" -- Kejardon
 /*unknown_90_f1c8:*/ jsr $91e3f6
 /*unknown_90_f1cc:*/ lda #$e8ec.w
 /*unknown_90_f1cf:*/ sta $0a44.w
@@ -13582,6 +13554,9 @@ unknown_90_f0ee:
 /*unknown_90_f1e7:*/ sec
 /*unknown_90_f1e8:*/ rts
 
+; "#$E8CD into $0A42, #$E8DC into $0A44, Samus facing forward, JSL $91F433,
+; $91FB08, $91DEBA. #$EB52 into $0A5C, update $0A20 - $0A27, JSL $868027 with Y
+; = #$A387 then Y = #$A39D, JSL 82E118." -- Kejardon
 /*unknown_90_f1e9:*/ lda #$e8cd.w
 /*unknown_90_f1ec:*/ sta $0a42.w
 /*unknown_90_f1ef:*/ lda #$e8dc.w
@@ -13610,6 +13585,9 @@ unknown_90_f0ee:
 /*unknown_90_f23a:*/ sec
 /*unknown_90_f23b:*/ rts
 
+; "JSL $8DC4E9, Y = #$E1F4 (no suits), #$E1F8 (varia), or #$E1FC (grav). Samus
+; facing forward. JSL $91DEBA, $91F433. Set Samus's animation to frame 2, delay
+; 3" -- Kejardon
 /*unknown_90_f23c:*/ lda $09a2.w
 /*unknown_90_f23f:*/ bit #$0020.w
 /*unknown_90_f242:*/ bne @unknown_90_f267
@@ -13639,14 +13617,19 @@ unknown_90_f0ee:
 /*unknown_90_f28b:*/ sec
 /*unknown_90_f28c:*/ rts
 
+; "#$E90E into $0A5C, CLC and RTS. Short." -- Kejardon
 /*unknown_90_f28d:*/ lda #$e90e.w
 /*unknown_90_f290:*/ sta $0a5c.w
 /*unknown_90_f293:*/ clc
 /*unknown_90_f294:*/ rts
 
+; "#$EB52 into $0A5C, goto 01" -- Kejardon
 /*unknown_90_f295:*/ lda #$eb52.w
 /*unknown_90_f298:*/ sta $0a5c.w
 /*unknown_90_f29b:*/ jmp @unknown_90_f117
+
+; "JSL $91E633, if $0A44 is #$E8D6, #$E695 into $0A42 and #$E725 into $0A44. Run
+; when unpausing." -- Kejardon
 /*unknown_90_f29e:*/ jsr $91e633
 /*unknown_90_f2a2:*/ lda $0a44.w
 /*unknown_90_f2a5:*/ cmp #$e8d6.w
@@ -13658,6 +13641,7 @@ unknown_90_f0ee:
 @unknown_90_f2b6: sec
 /*unknown_90_f2b7:*/ rts
 
+; "If GrappleFire pointer is #$C4F0, A = 0. Else A = 1." -- Kejardon
 /*unknown_90_f2b8:*/ lda $0d32.w
 /*unknown_90_f2bb:*/ cmp #$c4f0.w
 /*unknown_90_f2be:*/ bne @unknown_90_f2c5
