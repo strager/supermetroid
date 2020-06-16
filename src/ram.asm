@@ -660,6 +660,8 @@ var_game_state: db ; $7e0998
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09a2) export
 var_unknown_09a2: dw ; $7e09a2
+var_unknown_09a4: dw ; $7e09a4
+var_unknown_09a6: dw ; $7e09a6
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c0) export
@@ -758,6 +760,10 @@ var_unknown_0a5e: dw ; $7e0a5e
 var_unknown_0a60: dw ; $7e0a60
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0a68) export
+var_unknown_0a68: dw ; $7e0a68
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0a76) export
 var_unknown_0a76: dw ; $7e0a76
 
@@ -843,6 +849,12 @@ var_unknown_0b62: dw ; $7e0b62
 var_unknown_0cd0: dw ; $7e0cd0
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0cf4) export
+var_unknown_0cf4: dw ; $7e0cf4
+var_unknown_0cf6: dw ; $7e0cf6
+var_unknown_0cf8: dw ; $7e0cf8
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0d02) export
 var_grapple_offset_x: dw ; $7e0d02
 var_grapple_offset_y: dw ; $7e0d04
@@ -852,8 +864,15 @@ var_grapple_subpixel_y: dw ; $7e0d0a
 var_grapple_position_y: dw ; $7e0d0c
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0d1e) export
+var_unknown_0d1e: dw ; $7e0d1e
+var_unknown_0d20: dw ; $7e0d20
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0d32) export
 var_unknown_0d32: dw ; $7e0d32
+var_unknown_0d34: dw ; $7e0d34
+var_unknown_0d36: dw ; $7e0d36
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0da2) export
