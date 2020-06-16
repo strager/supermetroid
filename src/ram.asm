@@ -827,6 +827,7 @@ var_unknown_0ae8: dw ; $7e0ae8
 var_unknown_0aea: dw ; $7e0aea
 var_unknown_0aec: dw ; $7e0aec
 var_unknown_0aee: dw ; $7e0aee
+var_unknown_0af0: dw ; $7e0af0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0af6) export
@@ -835,9 +836,11 @@ samus_x: dw ; $7e0af6
 samus_subx: dw ; $7e0af8
 samus_y: dw ; $7e0afa
 samus_suby: dw ; $7e0afc
-.ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0b04) export
+var_unknown_0afe: dw ; $7e0afe
+var_unknown_0b00: dw ; $7e0b00
+var_unknown_0b02: dw ; $7e0b02
+
 ; Samus' position on screen.
 samus_screen_x: dw ; $7e0b04
 samus_screen_y: dw ; $7e0b06
