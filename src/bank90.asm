@@ -13536,6 +13536,7 @@ unknown_90_f152:
 ; "Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA." -- Kejardon
 unknown_90_f19b:
   stz var_unknown_0b62.w
+@unknown_90_f19e:
   stz var_unknown_0cd0.w
   jsr unknown_90_bcbe
   jsr unknown_91_deba.l
@@ -13544,16 +13545,18 @@ unknown_90_f19b:
 
 ; "Put #$E713 into $0A42, #$E8DC into $0A44, play a sound if charge is under F,
 ; goto 04" -- Kejardon
-unknown_90_f1aa: lda #$e713.w
-/*unknown_90_f1ad:*/ sta $0a42.w
-/*unknown_90_f1b0:*/ lda #$e8d6.w
-/*unknown_90_f1b3:*/ sta $0a44.w
-/*unknown_90_f1b6:*/ lda $0cd0.w
-/*unknown_90_f1b9:*/ cmp #$000f.w
-/*unknown_90_f1bc:*/ bmi @unknown_90_f1c5
-/*unknown_90_f1be:*/ lda #$0002.w
-/*unknown_90_f1c1:*/ jsr $809021
-@unknown_90_f1c5: jmp $f19e.w
+unknown_90_f1aa:
+  lda #$e713.w
+  sta var_unknown_0a42.w
+  lda #$e8d6.w
+  sta var_unknown_0a44.w
+  lda var_unknown_0cd0.w
+  cmp #$000f.w
+  bmi @unknown_90_f1c5
+  lda #$0002.w
+  jsr unknown_80_9021.l
+@unknown_90_f1c5:
+  jmp unknown_90_f19b@unknown_90_f19e
 
 ; "JSL $91E3F6, #$E8EC into $0A44, #$A337 into $0A58, #$EC14 into $0A5C, #$E913
 ; into $0A60" -- Kejardon
