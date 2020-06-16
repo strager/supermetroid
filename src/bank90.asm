@@ -203,20 +203,22 @@ unknown_90_813e:
 @unknown_90_81a3:
   rts
 
-unknown_90_81a4: ora ($00, X)
-/*unknown_90_81a6:*/ brk $00
-/*unknown_90_81a8:*/ ora ($01, X)
-/*unknown_90_81aa:*/ brk $00
-/*unknown_90_81ac:*/ brk $00
-/*unknown_90_81ae:*/ brk $00
-/*unknown_90_81b0:*/ brk $00
-/*unknown_90_81b2:*/ ora ($01, X)
-/*unknown_90_81b4:*/ ora ($01, X)
-/*unknown_90_81b6:*/ brk $00
-/*unknown_90_81b8:*/ brk $01
-/*unknown_90_81ba:*/ brk $00
-/*unknown_90_81bc:*/ brk $00
-/*unknown_90_81be:*/ brk $00
+unknown_90_81a4:
+  .dw $0001
+  .dw $0000
+  .dw $0101
+  .dw $0000
+  .dw $0000
+  .dw $0000
+  .dw $0000
+  .dw $0101
+  .dw $0101
+  .dw $0000
+  .dw $0100
+  .dw $0000
+  .dw $0000
+  .dw $0000
+
 unknown_90_81c0: lda $1962.w
 /*unknown_90_81c3:*/ bmi unknown_90_820c
 /*unknown_90_81c5:*/ cmp $12
