@@ -786,7 +786,7 @@ unknown_81_8907: lda #$9d80.w
 @unknown_81_89ac: plb
 /*unknown_81_89ad:*/ rtl
 
-/*unknown_81_89ae:*/ phb
+unknown_81_89ae: phb
 /*unknown_81_89af:*/ pea $9200.w
 /*unknown_81_89b2:*/ plb
 /*unknown_81_89b3:*/ plb

@@ -721,7 +721,7 @@ unknown_90_85e2:
   plp
   rts
 
-/*unknown_90_864e:*/ sta $8686.w
+unknown_90_864e: sta $8686.w
 /*unknown_90_8651:*/ stx $86
 /*unknown_90_8653:*/ stx $c6
 /*unknown_90_8655:*/ stx $88
@@ -1210,43 +1210,45 @@ unknown_90_88ba: php
 /*unknown_90_89fe:*/ plp
 /*unknown_90_89ff:*/ rtl
 
-unknown_90_8a00: php
-/*unknown_90_8a01:*/ phb
-/*unknown_90_8a02:*/ sep #$20
-/*unknown_90_8a04:*/ lda #$92
-/*unknown_90_8a06:*/ pha
-/*unknown_90_8a07:*/ plb
-/*unknown_90_8a08:*/ rep #$30
-/*unknown_90_8a0a:*/ lda $0a1c.w
-/*unknown_90_8a0d:*/ asl A
-/*unknown_90_8a0e:*/ tax
-/*unknown_90_8a0f:*/ phx
-/*unknown_90_8a10:*/ lda $929263, X
-/*unknown_90_8a14:*/ clc
-/*unknown_90_8a15:*/ adc $0a96.w
-/*unknown_90_8a18:*/ pha
-/*unknown_90_8a19:*/ jsr unknown_90_8c1f
-/*unknown_90_8a1c:*/ pla
-/*unknown_90_8a1d:*/ jsr $8189ae
-/*unknown_90_8a21:*/ plx
-/*unknown_90_8a22:*/ stx $24
-/*unknown_90_8a24:*/ lda $0a1f.w
-/*unknown_90_8a27:*/ and #$00ff.w
-/*unknown_90_8a2a:*/ asl A
-/*unknown_90_8a2b:*/ tax
-/*unknown_90_8a2c:*/ jsr ($864e.w, X)
-/*unknown_90_8a2f:*/ bcc @unknown_90_8a45
-/*unknown_90_8a31:*/ ldx $24
-/*unknown_90_8a33:*/ lda $92945d, X
-/*unknown_90_8a37:*/ clc
-/*unknown_90_8a38:*/ adc $0a96.w
-/*unknown_90_8a3b:*/ ldx $0b04.w
-/*unknown_90_8a3e:*/ ldy $0b06.w
-/*unknown_90_8a41:*/ jsr $8189ae
-@unknown_90_8a45: jsr $928000
-/*unknown_90_8a49:*/ plb
-/*unknown_90_8a4a:*/ plp
-/*unknown_90_8a4b:*/ rtl
+unknown_90_8a00:
+  php
+  phb
+  sep #$20
+  lda #:unknown_92_9263
+  pha
+  plb
+  rep #$30
+  lda var_unknown_0a1c.w
+  asl A
+  tax
+  phx
+  lda unknown_92_9263.l, X
+  clc
+  adc var_unknown_0a96.w
+  pha
+  jsr unknown_90_8c1f
+  pla
+  jsr unknown_81_89ae.l
+  plx
+  stx var_unknown_24
+  lda var_unknown_0a1f.w
+  and #$00ff
+  asl A
+  tax
+  jsr (unknown_90_864e, X)
+  bcc @unknown_90_8a45
+  ldx var_unknown_24
+  lda unknown_92_945d.l, X
+  clc
+  adc var_unknown_0a96.w
+  ldx var_unknown_0b04.w
+  ldy var_unknown_0b06.w
+  jsr unknown_81_89ae.l
+@unknown_90_8a45:
+  jsr unknown_92_8000.l
+  plb
+  plp
+  rtl
 
 ; TODO: "Atmospheric effects (water splash, air bubbles, footsteps)" -- Kejardon
 unknown_90_8a4c:

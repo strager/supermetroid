@@ -3,7 +3,7 @@
 .bank ($92 - $80) slot $0
 .org $0
 
-/*unknown_92_8000:*/ php
+unknown_92_8000: php
 /*unknown_92_8001:*/ phb
 /*unknown_92_8002:*/ phk
 /*unknown_92_8003:*/ plb
@@ -2297,7 +2297,8 @@
 /*unknown_92_925a:*/ ora ($00, X)
 /*unknown_92_925c:*/ and ($3a, X)
 /*unknown_92_925e:*/ cpx #$0001.w
-/*unknown_92_9261:*/ jsr $023a.w
+/*unknown_92_9261:*/ .db $20, $3A
+unknown_92_9263: .db $02
 /*unknown_92_9264:*/ brk $9a
 /*unknown_92_9266:*/ ora ($a3, X)
 /*unknown_92_9268:*/ ora ($ad, X)
@@ -2550,7 +2551,9 @@
 /*unknown_92_9456:*/ ora ($b3, X)
 /*unknown_92_9458:*/ ora ($b5, X)
 /*unknown_92_945a:*/ ora ($b7, X)
-/*unknown_92_945c:*/ ora ($62, X)
+
+/*unknown_92_945c:*/ .db $01
+unknown_92_945d: .db $62
 /*unknown_92_945e:*/ brk $aa
 /*unknown_92_9460:*/ tsb $b3
 /*unknown_92_9462:*/ tsb $c0
