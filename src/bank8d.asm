@@ -9049,7 +9049,7 @@
 /*unknown_8d_c4cb:*/ plp
 /*unknown_8d_c4cc:*/ rtl
 
-/*unknown_8d_c4cd:*/ php
+unknown_8d_c4cd: php
 /*unknown_8d_c4ce:*/ rep #$20
 /*unknown_8d_c4d0:*/ lda #$8000.w
 /*unknown_8d_c4d3:*/ trb $1e79.w

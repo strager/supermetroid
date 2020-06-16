@@ -13711,15 +13711,17 @@ unknown_90_f2e0:
   sec
   rts
 
-unknown_90_f2f8: jsr $8dc4cd
-unknown_90_f2fc: lda #$e713.w
-/*unknown_90_f2ff:*/ sta $0a42.w
-/*unknown_90_f302:*/ lda #$e8cd.w
-/*unknown_90_f305:*/ sta $0a44.w
-/*unknown_90_f308:*/ lda #$ec1d.w
-/*unknown_90_f30b:*/ sta $0a5c.w
-/*unknown_90_f30e:*/ sec
-/*unknown_90_f30f:*/ rts
+unknown_90_f2f8:
+  jsr unknown_8d_c4cd.l
+unknown_90_f2fc:
+  lda #$e713.w
+  sta var_unknown_0a42.w
+  lda #$e8cd.w
+  sta var_unknown_0a44.w
+  lda #$ec1d.w
+  sta var_unknown_0a5c.w
+  sec
+  rts
 
 unknown_90_f310: jsr unknown_90_f0ee
 /*unknown_90_f313:*/ stz $0cd0.w
