@@ -219,35 +219,39 @@ unknown_90_81a4:
   .dw $0000
   .dw $0000
 
-unknown_90_81c0: lda $1962.w
-/*unknown_90_81c3:*/ bmi unknown_90_820c
-/*unknown_90_81c5:*/ cmp $12
-/*unknown_90_81c7:*/ bpl unknown_90_820c
-/*unknown_90_81c9:*/ lda $0b3e.w
-/*unknown_90_81cc:*/ beq @unknown_90_81d8
-/*unknown_90_81ce:*/ jsr $91de53
-/*unknown_90_81d2:*/ stz $0b42.w
-/*unknown_90_81d5:*/ stz $0b44.w
-@unknown_90_81d8: lda $09a2.w
-/*unknown_90_81db:*/ bit #$0020.w
-/*unknown_90_81de:*/ bne unknown_90_820f
-/*unknown_90_81e0:*/ lda $09da.w
-/*unknown_90_81e3:*/ bit #$0007.w
-/*unknown_90_81e6:*/ bne @unknown_90_81f7
-/*unknown_90_81e8:*/ lda $09c2.w
-/*unknown_90_81eb:*/ cmp #$0047.w
-/*unknown_90_81ee:*/ bmi @unknown_90_81f7
-/*unknown_90_81f0:*/ lda #$002d.w
-/*unknown_90_81f3:*/ jsr $809139
-@unknown_90_81f7: lda $0a4e.w
-/*unknown_90_81fa:*/ clc
-/*unknown_90_81fb:*/ adc $9e8b.w
-/*unknown_90_81fe:*/ sta $0a4e.w
-/*unknown_90_8201:*/ lda $0a50.w
-/*unknown_90_8204:*/ adc $9e8d.w
-/*unknown_90_8207:*/ sta $0a50.w
-/*unknown_90_820a:*/ bra unknown_90_824c
-unknown_90_820c: jmp $8078.w
+unknown_90_81c0:
+  lda var_unknown_1962.w
+  bmi unknown_90_820c
+  cmp $12
+  bpl unknown_90_820c
+  lda var_unknown_0b3e.w
+  beq @unknown_90_81d8
+  jsr unknown_91_de53.l
+  stz var_unknown_0b42.w
+  stz var_unknown_0b44.w
+@unknown_90_81d8:
+  lda var_unknown_09a2.w
+  bit #$0020.w
+  bne unknown_90_820f
+  lda var_game_time_frames.w
+  bit #$0007.w
+  bne @unknown_90_81f7
+  lda var_player_cur_health.w
+  cmp #$0047.w
+  bmi @unknown_90_81f7
+  lda #$002d.w
+  jsr unknown_80_9139.l
+@unknown_90_81f7:
+  lda var_unknown_0a4e.w
+  clc
+  adc unknown_90_9e8b.w
+  sta var_unknown_0a4e.w
+  lda var_unknown_0a50.w
+  adc unknown_90_9e8d.w
+  sta var_unknown_0a50.w
+  bra unknown_90_824c
+unknown_90_820c:
+  jmp unknown_90_8078
 
 unknown_90_820f: stz $0a9c.w
 /*unknown_90_8212:*/ lda #$0002.w
@@ -3798,8 +3802,8 @@ unknown_90_9d35: php
 /*unknown_90_9e89:*/ clc
 /*unknown_90_9e8a:*/ rts
 
-/*unknown_90_9e8b:*/ brk $80
-/*unknown_90_9e8d:*/ brk $00
+unknown_90_9e8b: brk $80
+unknown_90_9e8d: brk $00
 /*unknown_90_9e8f:*/ brk $80
 /*unknown_90_9e91:*/ ora ($00, X)
 /*unknown_90_9e93:*/ ora $00, S
