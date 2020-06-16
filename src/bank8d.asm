@@ -9068,7 +9068,7 @@
 /*unknown_8d_c4e7:*/ plp
 /*unknown_8d_c4e8:*/ rtl
 
-/*unknown_8d_c4e9:*/ php
+unknown_8d_c4e9: php
 /*unknown_8d_c4ea:*/ phb
 /*unknown_8d_c4eb:*/ phx
 /*unknown_8d_c4ec:*/ phk

@@ -13616,29 +13616,29 @@ unknown_90_f23c:
   bit #$0001.w
   bne @unknown_90_f258
   ldy #$e1f4.w
-  jsr $8dc4e9
+  jsr unknown_8d_c4e9.l
   lda #$0000.w
   sta var_unknown_0a1c.w
   bra @unknown_90_f274
 @unknown_90_f258:
   ldy #$e1f8.w
-  jsr $8dc4e9
+  jsr unknown_8d_c4e9.l
   lda #$009b.w
   sta var_unknown_0a1c.w
   bra @unknown_90_f274
 @unknown_90_f267:
   ldy #$e1fc.w
-  jsr $8dc4e9
+  jsr unknown_8d_c4e9.l
   lda #$009b.w
   sta var_unknown_0a1c.w
 @unknown_90_f274:
-  jsr $91deba
-  jsr $91f433
+  jsr unknown_91_deba.l
+  jsr unknown_91_f433.l
   lda #$0003.w
-  sta $0a94.w
+  sta var_unknown_0a94.w
   lda #$0002.w
   sta var_unknown_0a96.w
-  stz $0dec.w
+  stz var_unknown_0dec.w
   sec
   rts
 
