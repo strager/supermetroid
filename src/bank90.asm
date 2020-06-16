@@ -13736,10 +13736,11 @@ unknown_90_f320:
   clc
   rts
 
-unknown_90_f328: stz $0a4a.w
-/*unknown_90_f32b:*/ jsr $91deba
-/*unknown_90_f32f:*/ clc
-/*unknown_90_f330:*/ rts
+unknown_90_f328:
+  stz var_unknown_0a4a.w
+  jsr unknown_91_deba.l
+  clc
+  rts
 
 unknown_90_f331: lda $09c2.w
 /*unknown_90_f334:*/ cmp #$001f.w
