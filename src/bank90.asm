@@ -13457,20 +13457,22 @@ unknown_90_f107:
   rts
 
 ; "Put #$E713 into $0A42, #$E8DC into $0A44" -- Kejardon
-unknown_90_f109: lda #$e713.w
-/*unknown_90_f10c:*/ sta $0a42.w
-/*unknown_90_f10f:*/ lda #$e8dc.w
-/*unknown_90_f112:*/ sta $0a44.w
-/*unknown_90_f115:*/ sec
-/*unknown_90_f116:*/ rts
+unknown_90_f109:
+  lda #$e713.w
+  sta var_unknown_0a42.w
+  lda #$e8dc.w
+  sta var_unknown_0a44.w
+  sec
+  rts
 
 ; "Put #$E695 into $0A42, #$E725 into $0A44" -- Kejardon
-unknown_90_f117: lda #$e695.w
-/*unknown_90_f11a:*/ sta $0a42.w
-/*unknown_90_f11d:*/ lda #$e725.w
-/*unknown_90_f120:*/ sta $0a44.w
-/*unknown_90_f123:*/ sec
-/*unknown_90_f124:*/ rts
+unknown_90_f117:
+  lda #$e695.w
+  sta var_unknown_0a42.w
+  lda #$e725.w
+  sta var_unknown_0a44.w
+  sec
+  rts
 
 ; "Set Samus to standing (facing current direction). JSL to $91F433 and $91FB08,
 ; then go to 00" -- Kejardon
