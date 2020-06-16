@@ -13671,16 +13671,17 @@ unknown_90_f29e:
   rts
 
 ; "If GrappleFire pointer is #$C4F0, A = 0. Else A = 1." -- Kejardon
-unknown_90_f2b8: lda $0d32.w
-/*unknown_90_f2bb:*/ cmp #$c4f0.w
-/*unknown_90_f2be:*/ bne @unknown_90_f2c5
-/*unknown_90_f2c0:*/ lda #$0000.w
-/*unknown_90_f2c3:*/ clc
-/*unknown_90_f2c4:*/ rts
-
-@unknown_90_f2c5: lda #$0001.w
-/*unknown_90_f2c8:*/ clc
-/*unknown_90_f2c9:*/ rts
+unknown_90_f2b8:
+  lda var_unknown_0d32.w
+  cmp #$c4f0.w
+  bne @unknown_90_f2c5
+  lda #$0000.w
+  clc
+  rts
+@unknown_90_f2c5:
+  lda #$0001.w
+  clc
+  rts
 
 unknown_90_f2ca: lda #$e695.w
 /*unknown_90_f2cd:*/ sta $0a42.w
