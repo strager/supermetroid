@@ -2312,7 +2312,7 @@ unknown_80_9049:
   sep #$30
   xba
   lda #$0f
-  bra @unknown_80_90d3
+  bra unknown_80_90d3
 @unknown_80_90ad:
   phx
   phy
@@ -2320,7 +2320,7 @@ unknown_80_9049:
   sep #$30
   xba
   lda #$09
-  bra @unknown_80_90d3
+  bra unknown_80_90d3
 @unknown_80_90b7:
   phx
   phy
@@ -2328,7 +2328,7 @@ unknown_80_9049:
   sep #$30
   xba
   lda #$03
-  bra @unknown_80_90d3
+  bra unknown_80_90d3
 @unknown_80_90c1:
   phx
   phy
@@ -2336,15 +2336,18 @@ unknown_80_9049:
   sep #$30
   xba
   lda #$01
-  bra @unknown_80_90d3
-@unknown_80_90cb:
+  bra unknown_80_90d3
+
+unknown_80_90cb:
   phx
   phy
   php
   sep #$30
   xba
   lda #$06
-@unknown_80_90d3:
+  ; Fall through.
+
+unknown_80_90d3:
   sta var_unknown_0654.w
   lda var_unknown_0647.w
   sec

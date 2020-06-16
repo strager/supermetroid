@@ -1565,7 +1565,7 @@ unknown_84_8c07:
 ; max queued sounds allowed = 6" -- P.JBoy
 unknown_84_8c10:
   lda $0000.w, Y
-  jsl unknown_80_9049@unknown_80_90cb
+  jsl unknown_80_90cb
   iny
   rts
 
@@ -7192,7 +7192,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bd44:*/ rts
 
 @unknown_84_bd45: lda #$0057.w
-/*unknown_84_bd48:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_bd48:*/ jsl unknown_80_90cb
 @unknown_84_bd4c: stz $1d77.w, X
 /*unknown_84_bd4f:*/ rts
 
@@ -7211,7 +7211,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bd73:*/ rts
 
 @unknown_84_bd74: lda #$0057.w
-/*unknown_84_bd77:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_bd77:*/ jsl unknown_80_90cb
 @unknown_84_bd7b: stz $1d77.w, X
 /*unknown_84_bd7e:*/ rts
 
@@ -7231,7 +7231,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_bda6:*/ rts
 
 @unknown_84_bda7: lda #$0057.w
-/*unknown_84_bdaa:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_bdaa:*/ jsl unknown_80_90cb
 @unknown_84_bdae: stz $1d77.w, X
 /*unknown_84_bdb1:*/ rts
 
@@ -7245,7 +7245,7 @@ unknown_84_b8fd: lda $12
 @unknown_84_bdc4: lda $1d77.w, X
 /*unknown_84_bdc7:*/ beq @unknown_84_bdd0
 /*unknown_84_bdc9:*/ lda #$0057.w
-/*unknown_84_bdcc:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_bdcc:*/ jsl unknown_80_90cb
 @unknown_84_bdd0: stz $1d77.w, X
 /*unknown_84_bdd3:*/ rts
 
@@ -8152,7 +8152,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_c559:*/ bne @unknown_84_c55e
 /*unknown_84_c55b:*/ jmp @unknown_84_c63f
 @unknown_84_c55e: lda #$0057.w
-/*unknown_84_c561:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_c561:*/ jsl unknown_80_90cb
 /*unknown_84_c565:*/ lda #$0000.w
 /*unknown_84_c568:*/ sta $1c37.w, Y
 /*unknown_84_c56b:*/ rts
@@ -8164,7 +8164,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_c578:*/ bne @unknown_84_c57d
 /*unknown_84_c57a:*/ jmp @unknown_84_c647
 @unknown_84_c57d: lda #$0057.w
-/*unknown_84_c580:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_c580:*/ jsl unknown_80_90cb
 /*unknown_84_c584:*/ lda #$0000.w
 /*unknown_84_c587:*/ sta $1c37.w, Y
 /*unknown_84_c58a:*/ rts
@@ -8178,7 +8178,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_c59c:*/ bne @unknown_84_c5a1
 @unknown_84_c59e: jmp $c63f.w
 @unknown_84_c5a1: lda #$0057.w
-/*unknown_84_c5a4:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_c5a4:*/ jsl unknown_80_90cb
 /*unknown_84_c5a8:*/ lda #$0000.w
 /*unknown_84_c5ab:*/ sta $1c37.w, Y
 /*unknown_84_c5ae:*/ rts
@@ -8192,7 +8192,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_c5c0:*/ bne @unknown_84_c5c5
 @unknown_84_c5c2: jmp $c647.w
 @unknown_84_c5c5: lda #$0057.w
-/*unknown_84_c5c8:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_c5c8:*/ jsl unknown_80_90cb
 /*unknown_84_c5cc:*/ lda #$0000.w
 /*unknown_84_c5cf:*/ sta $1c37.w, Y
 /*unknown_84_c5d2:*/ rts
@@ -8204,7 +8204,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_c5df:*/ bne @unknown_84_c5e4
 /*unknown_84_c5e1:*/ jmp @unknown_84_c63f
 @unknown_84_c5e4: lda #$0057.w
-/*unknown_84_c5e7:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_c5e7:*/ jsl unknown_80_90cb
 /*unknown_84_c5eb:*/ lda #$0000.w
 /*unknown_84_c5ee:*/ sta $1c37.w, Y
 /*unknown_84_c5f1:*/ ldx $0dde.w
@@ -8214,7 +8214,7 @@ unknown_84_b8fd: lda $12
 /*unknown_84_c5fd:*/ bne @unknown_84_c602
 /*unknown_84_c5ff:*/ jmp @unknown_84_c647
 @unknown_84_c602: lda #$0057.w
-/*unknown_84_c605:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_c605:*/ jsl unknown_80_90cb
 /*unknown_84_c609:*/ lda #$0000.w
 /*unknown_84_c60c:*/ sta $1c37.w, Y
 /*unknown_84_c60f:*/ rts
@@ -10294,7 +10294,7 @@ unknown_84_d331: phy
 /*unknown_84_d77e:*/ ldy #$b743.w
 /*unknown_84_d781:*/ jsl unknown_86_8097
 /*unknown_84_d785:*/ lda #$004c.w
-/*unknown_84_d788:*/ jsl unknown_80_9049@unknown_80_90cb
+/*unknown_84_d788:*/ jsl unknown_80_90cb
 /*unknown_84_d78c:*/ ply
 /*unknown_84_d78d:*/ iny
 /*unknown_84_d78e:*/ iny
