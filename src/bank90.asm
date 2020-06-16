@@ -13730,10 +13730,11 @@ unknown_90_f310:
   jsr unknown_91_deba.l
   jmp unknown_90_f2fc
 
-unknown_90_f320: lda #$0001.w
-/*unknown_90_f323:*/ sta $0a4a.w
-/*unknown_90_f326:*/ clc
-/*unknown_90_f327:*/ rts
+unknown_90_f320:
+  lda #$0001.w
+  sta var_unknown_0a4a.w
+  clc
+  rts
 
 unknown_90_f328: stz $0a4a.w
 /*unknown_90_f32b:*/ jsr $91deba
