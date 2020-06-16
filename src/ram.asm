@@ -817,6 +817,14 @@ var_unknown_0b14: dw ; $7e0b14
 var_unknown_0b3e: dw ; $7e0b3e
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0b62) export
+var_unknown_0b62: dw ; $7e0b62
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0cd0) export
+var_unknown_0cd0: dw ; $7e0cd0
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0d02) export
 var_grapple_offset_x: dw ; $7e0d02
 var_grapple_offset_y: dw ; $7e0d04

@@ -13534,12 +13534,13 @@ unknown_90_f152:
   rts
 
 ; "Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA." -- Kejardon
-unknown_90_f19b: stz $0b62.w
-/*unknown_90_f19e:*/ stz $0cd0.w
-/*unknown_90_f1a1:*/ jsr unknown_90_bcbe
-/*unknown_90_f1a4:*/ jsr $91deba
-/*unknown_90_f1a8:*/ clc
-/*unknown_90_f1a9:*/ rts
+unknown_90_f19b:
+  stz var_unknown_0b62.w
+  stz var_unknown_0cd0.w
+  jsr unknown_90_bcbe
+  jsr unknown_91_deba.l
+  clc
+  rts
 
 ; "Put #$E713 into $0A42, #$E8DC into $0A44, play a sound if charge is under F,
 ; goto 04" -- Kejardon
