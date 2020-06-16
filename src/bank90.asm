@@ -13650,9 +13650,10 @@ unknown_90_f28d:
   rts
 
 ; "#$EB52 into $0A5C, goto 01" -- Kejardon
-unknown_90_f295: lda #$eb52.w
-/*unknown_90_f298:*/ sta $0a5c.w
-/*unknown_90_f29b:*/ jmp unknown_90_f117
+unknown_90_f295:
+  lda #$eb52.w
+  sta var_unknown_0a5c.w
+  jmp unknown_90_f117
 
 ; "JSL $91E633, if $0A44 is #$E8D6, #$E695 into $0A42 and #$E725 into $0A44. Run
 ; when unpausing." -- Kejardon
