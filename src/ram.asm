@@ -372,6 +372,7 @@ var_unknown_05ef: db ; $7e05ef
 var_unknown_05f0: db ; $7e05f0
 var_buggy_multiply_16_output: ds 4 ; $7e05f1
 var_unknown_05f5: dw ; $7e05f5
+var_unknown_05f7: dw ; $7e05f7
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0617) export

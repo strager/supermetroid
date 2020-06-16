@@ -13577,33 +13577,34 @@ unknown_90_f1c8:
 ; "#$E8CD into $0A42, #$E8DC into $0A44, Samus facing forward, JSL $91F433,
 ; $91FB08, $91DEBA. #$EB52 into $0A5C, update $0A20 - $0A27, JSL $868027 with Y
 ; = #$A387 then Y = #$A39D, JSL 82E118." -- Kejardon
-unknown_90_f1e9: lda #$e8cd.w
-/*unknown_90_f1ec:*/ sta $0a42.w
-/*unknown_90_f1ef:*/ lda #$e8dc.w
-/*unknown_90_f1f2:*/ sta $0a44.w
-/*unknown_90_f1f5:*/ lda #$0000.w
-/*unknown_90_f1f8:*/ sta $0a1c.w
-/*unknown_90_f1fb:*/ stz $0a9a.w
-/*unknown_90_f1fe:*/ jsr $91f433
-/*unknown_90_f202:*/ jsr $91fb08
-/*unknown_90_f206:*/ jsr $91deba
-/*unknown_90_f20a:*/ lda #$eb52.w
-/*unknown_90_f20d:*/ sta $0a5c.w
-/*unknown_90_f210:*/ lda $0a1c.w
-/*unknown_90_f213:*/ sta $0a20.w
-/*unknown_90_f216:*/ sta $0a24.w
-/*unknown_90_f219:*/ lda $0a1e.w
-/*unknown_90_f21c:*/ sta $0a22.w
-/*unknown_90_f21f:*/ sta $0a26.w
-/*unknown_90_f222:*/ stz $0afa.w
-/*unknown_90_f225:*/ ldy #$a387.w
-/*unknown_90_f228:*/ jsr $868027
-/*unknown_90_f22c:*/ ldy #$a395.w
-/*unknown_90_f22f:*/ jsr $868027
-/*unknown_90_f233:*/ stz $05f7.w
-/*unknown_90_f236:*/ jsr $82e118
-/*unknown_90_f23a:*/ sec
-/*unknown_90_f23b:*/ rts
+unknown_90_f1e9:
+  lda #$e8cd.w
+  sta var_unknown_0a42.w
+  lda #$e8dc.w
+  sta var_unknown_0a44.w
+  lda #$0000.w
+  sta var_unknown_0a1c.w
+  stz var_unknown_0a9a.w
+  jsr unknown_91_f433.l
+  jsr unknown_91_fb08.l
+  jsr unknown_91_deba.l
+  lda #$eb52.w
+  sta var_unknown_0a5c.w
+  lda var_unknown_0a1c.w
+  sta var_unknown_0a20.w
+  sta var_unknown_0a24.w
+  lda var_unknown_0a1e.w
+  sta var_unknown_0a22.w
+  sta var_unknown_0a26.w
+  stz samus_y.w
+  ldy #$a387.w
+  jsr unknown_86_8027.l
+  ldy #$a395.w
+  jsr unknown_86_8027.l
+  stz var_unknown_05f7.w
+  jsr unknown_82_e118.l
+  sec
+  rts
 
 ; "JSL $8DC4E9, Y = #$E1F4 (no suits), #$E1F8 (varia), or #$E1FC (grav). Samus
 ; facing forward. JSL $91DEBA, $91F433. Set Samus's animation to frame 2, delay
