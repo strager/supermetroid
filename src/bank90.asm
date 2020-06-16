@@ -13441,16 +13441,15 @@ unknown_90_f0ae:
   .dw unknown_90_f4a2
   .dw unknown_90_f4d0
 
-; TODO: "Update $0A20 through $0A27" -- Kejardon
 unknown_90_f0ee:
-  lda $0a20.w
-  sta $0a24.w
-  lda $0a22.w
-  sta $0a26.w
-  lda $0a1c.w
-  sta $0a20.w
-  lda $0a1e.w
-  sta $0a22.w
+  lda var_unknown_0a20.w
+  sta var_unknown_0a24.w
+  lda var_unknown_0a22.w
+  sta var_unknown_0a26.w
+  lda var_unknown_0a1c.w
+  sta var_unknown_0a20.w
+  lda var_unknown_0a1e.w
+  sta var_unknown_0a22.w
   rts
 
 unknown_90_f107:
