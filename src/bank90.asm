@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/oam.asm"
 
 .bank ($90 - $80) slot $0
 .org $0
@@ -756,155 +757,183 @@ unknown_90_8686:
   rts
 
 unknown_90_8688:
-  stz $0aca.w
+  stz var_unknown_0aca.w
   clc
   rts
 
-unknown_90_868d: lda $0a1c.w
-/*unknown_90_8690:*/ cmp #$0000.w
-/*unknown_90_8693:*/ beq @unknown_90_8697
-@unknown_90_8695: sec
-/*unknown_90_8696:*/ rts
-@unknown_90_8697: ldx $0590.w
-/*unknown_90_869a:*/ lda $0af6.w
-/*unknown_90_869d:*/ sec
-/*unknown_90_869e:*/ sbc #$0007.w
-/*unknown_90_86a1:*/ sec
-/*unknown_90_86a2:*/ sbc $0911.w
-/*unknown_90_86a5:*/ sta $0370.w, X
-/*unknown_90_86a8:*/ lda $0afa.w
-/*unknown_90_86ab:*/ sec
-/*unknown_90_86ac:*/ sbc #$0011.w
-/*unknown_90_86af:*/ sec
-/*unknown_90_86b0:*/ sbc $0915.w
-/*unknown_90_86b3:*/ sta $0371.w, X
-/*unknown_90_86b6:*/ lda #$3821.w
-/*unknown_90_86b9:*/ sta $0372.w, X
-/*unknown_90_86bc:*/ txa
-/*unknown_90_86bd:*/ clc
-/*unknown_90_86be:*/ adc #$0004.w
-/*unknown_90_86c1:*/ sta $0590.w
-/*unknown_90_86c4:*/ bra @unknown_90_8695
-unknown_90_868d@unknown_90_86c6: lda $0a1c.w
-/*unknown_90_86c9:*/ cmp #$0081.w
-/*unknown_90_86cc:*/ beq @unknown_90_86e2
-/*unknown_90_86ce:*/ cmp #$0082.w
-/*unknown_90_86d1:*/ beq @unknown_90_86e2
-/*unknown_90_86d3:*/ cmp #$001b.w
-/*unknown_90_86d6:*/ beq @unknown_90_86e2
-/*unknown_90_86d8:*/ cmp #$001c.w
-/*unknown_90_86db:*/ beq @unknown_90_86e2
-/*unknown_90_86dd:*/ lda $0a96.w
-/*unknown_90_86e0:*/ bne @unknown_90_86e4
-@unknown_90_86e2: sec
-/*unknown_90_86e3:*/ rts
-@unknown_90_86e4: cmp #$000b.w
-/*unknown_90_86e7:*/ bpl @unknown_90_86e2
-/*unknown_90_86e9:*/ stz $0aca.w
-/*unknown_90_86ec:*/ clc
-/*unknown_90_86ed:*/ rts
+unknown_90_868d:
+  lda var_unknown_0a1c.w
+  cmp #$0000.w
+  beq @unknown_90_8697
+@unknown_90_8695:
+  sec
+  rts
+@unknown_90_8697:
+  ldx var_oam_objects_tail.w
+  lda var_unknown_0af6.w
+  sec
+  sbc #$0007.w
+  sec
+  sbc var_unknown_0911.w
+  sta (var_oam_objects.w + oam_obj.x) & $ffff, X
+  lda var_unknown_0afa.w
+  sec
+  sbc #$0011.w
+  sec
+  sbc var_unknown_0915.w
+  sta (var_oam_objects.w + oam_obj.y) & $ffff, X
+  lda #$3821.w
+  sta (var_oam_objects.w + oam_obj.tile) & $ffff, X
+  txa
+  clc
+  adc #oam_obj@size
+  sta var_oam_objects_tail.w
+  bra @unknown_90_8695
+unknown_90_868d@unknown_90_86c6: lda var_unknown_0a1c.w
+  cmp #var_unknown_81.w
+  beq @unknown_90_86e2
+  cmp #var_unknown_82.w
+  beq @unknown_90_86e2
+  cmp #$001b.w
+  beq @unknown_90_86e2
+  cmp #var_temp_unknown_1c.w
+  beq @unknown_90_86e2
+  lda var_unknown_0a96.w
+  bne @unknown_90_86e4
+@unknown_90_86e2:
+  sec
+  rts
+@unknown_90_86e4:
+  cmp #$000b.w
+  bpl @unknown_90_86e2
+  stz var_unknown_0aca.w
+  clc
+  rts
 
-unknown_90_86ee: lda $0a1c.w
-/*unknown_90_86f1:*/ cmp #$00d7.w
-/*unknown_90_86f4:*/ beq @unknown_90_86fd
-/*unknown_90_86f6:*/ cmp #$00d8.w
-/*unknown_90_86f9:*/ beq @unknown_90_86fd
-/*unknown_90_86fb:*/ bra @unknown_90_8705
-@unknown_90_86fd: lda $0a96.w
-/*unknown_90_8700:*/ cmp #$0003.w
-/*unknown_90_8703:*/ bmi @unknown_90_8707
-@unknown_90_8705: sec
-/*unknown_90_8706:*/ rts
-@unknown_90_8707: stz $0aca.w
-/*unknown_90_870a:*/ clc
-/*unknown_90_870b:*/ rts
+unknown_90_86ee:
+  lda var_unknown_0a1c.w
+  cmp #$00d7.w
+  beq @unknown_90_86fd
+  cmp #$00d8.w
+  beq @unknown_90_86fd
+  bra @unknown_90_8705
+@unknown_90_86fd:
+  lda var_unknown_0a96.w
+  cmp #$0003.w
+  bmi @unknown_90_8707
+@unknown_90_8705:
+  sec
+  rts
+@unknown_90_8707:
+  stz var_unknown_0aca.w
+  clc
+  rts
 
-unknown_90_870c: lda $0a1c.w
-/*unknown_90_870f:*/ cmp #$00f1.w
-/*unknown_90_8712:*/ bpl @unknown_90_872f
-/*unknown_90_8714:*/ cmp #$00db.w
-/*unknown_90_8717:*/ bpl @unknown_90_8736
-/*unknown_90_8719:*/ cmp #$0035.w
-/*unknown_90_871c:*/ beq @unknown_90_872f
-/*unknown_90_871e:*/ cmp #$0036.w
-/*unknown_90_8721:*/ beq @unknown_90_872f
-/*unknown_90_8723:*/ cmp #$003b.w
-/*unknown_90_8726:*/ beq @unknown_90_872f
-/*unknown_90_8728:*/ cmp #$003c.w
-/*unknown_90_872b:*/ beq @unknown_90_872f
-/*unknown_90_872d:*/ bra @unknown_90_8731
-@unknown_90_872f: sec
-/*unknown_90_8730:*/ rts
-@unknown_90_8731: stz $0aca.w
-/*unknown_90_8734:*/ clc
-/*unknown_90_8735:*/ rts
-@unknown_90_8736: cmp #$00dd.w
-/*unknown_90_8739:*/ bpl @unknown_90_8742
-/*unknown_90_873b:*/ lda $0a96.w
-/*unknown_90_873e:*/ beq @unknown_90_872f
-/*unknown_90_8740:*/ bra @unknown_90_8731
-@unknown_90_8742: lda $0a96.w
-/*unknown_90_8745:*/ cmp #$0002.w
-/*unknown_90_8748:*/ beq @unknown_90_872f
-/*unknown_90_874a:*/ bra @unknown_90_8731
+unknown_90_870c:
+  lda var_unknown_0a1c.w
+  cmp #$00f1.w
+  bpl @unknown_90_872f
+  cmp #$00db.w
+  bpl @unknown_90_8736
+  cmp #$0035.w
+  beq @unknown_90_872f
+  cmp #var_unknown_36.w
+  beq @unknown_90_872f
+  cmp #$003b.w
+  beq @unknown_90_872f
+  cmp #var_temp_3c.w
+  beq @unknown_90_872f
+  bra @unknown_90_8731
+@unknown_90_872f:
+  sec
+  rts
+@unknown_90_8731:
+  stz var_unknown_0aca.w
+  clc
+  rts
+@unknown_90_8736:
+  cmp #$00dd.w
+  bpl @unknown_90_8742
+  lda var_unknown_0a96.w
+  beq @unknown_90_872f
+  bra @unknown_90_8731
+@unknown_90_8742:
+  lda var_unknown_0a96.w
+  cmp #$0002.w
+  beq @unknown_90_872f
+  bra @unknown_90_8731
 
-unknown_90_870c@unknown_90_874c: lda $0a1c.w
-/*unknown_90_874f:*/ cmp #$0065.w
-/*unknown_90_8752:*/ beq @unknown_90_8759
-/*unknown_90_8754:*/ cmp #$0066.w
-/*unknown_90_8757:*/ bne @unknown_90_8761
-@unknown_90_8759: lda $0a96.w
-/*unknown_90_875c:*/ cmp #$0001.w
-/*unknown_90_875f:*/ bpl @unknown_90_8763
-@unknown_90_8761: sec
-/*unknown_90_8762:*/ rts
-@unknown_90_8763: stz $0aca.w
-/*unknown_90_8766:*/ clc
-/*unknown_90_8767:*/ rts
+unknown_90_870c@unknown_90_874c:
+  lda var_unknown_0a1c.w
+  cmp #var_unknown_65.w
+  beq @unknown_90_8759
+  cmp #var_unknown_66.w
+  bne @unknown_90_8761
+@unknown_90_8759:
+  lda var_unknown_0a96.w
+  cmp #var_unknown_00_h.w
+  bpl @unknown_90_8763
+@unknown_90_8761:
+  sec
+  rts
+@unknown_90_8763:
+  stz var_unknown_0aca.w
+  clc
+  rts
 
-unknown_90_8768: lda $0a96.w
-/*unknown_90_876b:*/ cmp #$0003.w
-/*unknown_90_876e:*/ bpl @unknown_90_8772
-@unknown_90_8770: sec
-/*unknown_90_8771:*/ rts
-@unknown_90_8772: cmp #$000d.w
-/*unknown_90_8775:*/ bpl @unknown_90_8770
-/*unknown_90_8777:*/ stz $0aca.w
-/*unknown_90_877a:*/ clc
-/*unknown_90_877b:*/ rts
+unknown_90_8768:
+  lda var_unknown_0a96.w
+  cmp #$0003.w
+  bpl @unknown_90_8772
+@unknown_90_8770:
+  sec
+  rts
+@unknown_90_8772:
+  cmp #$000d.w
+  bpl @unknown_90_8770
+  stz var_unknown_0aca.w
+  clc
+  rts
 
-unknown_90_877c: lda $0a96.w
-/*unknown_90_877f:*/ cmp #$0002.w
-/*unknown_90_8782:*/ bpl @unknown_90_8786
-@unknown_90_8784: sec
-/*unknown_90_8785:*/ rts
-@unknown_90_8786: cmp #$0009.w
-/*unknown_90_8789:*/ bpl @unknown_90_8784
-/*unknown_90_878b:*/ stz $0aca.w
-/*unknown_90_878e:*/ clc
-/*unknown_90_878f:*/ rts
+unknown_90_877c:
+  lda var_unknown_0a96.w
+  cmp #$0002.w
+  bpl @unknown_90_8786
+@unknown_90_8784:
+  sec
+  rts
+@unknown_90_8786:
+  cmp #$0009.w
+  bpl @unknown_90_8784
+  stz var_unknown_0aca.w
+  clc
+  rts
 
-unknown_90_8790: lda $0a1c.w
-/*unknown_90_8793:*/ cmp #$00cf.w
-/*unknown_90_8796:*/ bpl @unknown_90_87a4
-/*unknown_90_8798:*/ cmp #$00cb.w
-/*unknown_90_879b:*/ beq @unknown_90_87b8
-/*unknown_90_879d:*/ cmp #$00cc.w
-/*unknown_90_87a0:*/ beq @unknown_90_87b8
-/*unknown_90_87a2:*/ bra @unknown_90_87b6
-@unknown_90_87a4: cmp #$00e8.w
-/*unknown_90_87a7:*/ beq @unknown_90_87ae
-/*unknown_90_87a9:*/ cmp #$00e9.w
-/*unknown_90_87ac:*/ bne @unknown_90_87b6
-@unknown_90_87ae: lda $0a96.w
-/*unknown_90_87b1:*/ cmp #$0002.w
-/*unknown_90_87b4:*/ bmi @unknown_90_87b8
-@unknown_90_87b6: sec
-/*unknown_90_87b7:*/ rts
-
-@unknown_90_87b8: stz $0aca.w
-/*unknown_90_87bb:*/ clc
-/*unknown_90_87bc:*/ rts
+unknown_90_8790:
+  lda var_unknown_0a1c.w
+  cmp #$00cf.w
+  bpl @unknown_90_87a4
+  cmp #$00cb.w
+  beq @unknown_90_87b8
+  cmp #$00cc.w
+  beq @unknown_90_87b8
+  bra @unknown_90_87b6
+@unknown_90_87a4:
+  cmp #$00e8.w
+  beq @unknown_90_87ae
+  cmp #$00e9.w
+  bne @unknown_90_87b6
+@unknown_90_87ae:
+  lda var_unknown_0a96.w
+  cmp #$0002.w
+  bmi @unknown_90_87b8
+@unknown_90_87b6:
+  sec
+  rts
+@unknown_90_87b8:
+  stz var_unknown_0aca.w
+  clc
+  rts
 
 ; TODO: "Draw Samus's echoes" -- Kejardon
 unknown_90_87bd:
