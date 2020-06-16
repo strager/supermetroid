@@ -13382,59 +13382,64 @@ unknown_90_eee7:
 
 ; TODO: "Very general use routines, depending on A. Can range from 0 to 1F."
 ; -- Kejardon
-unknown_90_f084: php
-/*unknown_90_f085:*/ phb
-/*unknown_90_f086:*/ phk
-/*unknown_90_f087:*/ plb
-/*unknown_90_f088:*/ rep #$30
-/*unknown_90_f08a:*/ phx
-/*unknown_90_f08b:*/ and #$001f.w
-/*unknown_90_f08e:*/ asl A
-/*unknown_90_f08f:*/ tax
-/*unknown_90_f090:*/ jsr ($f0ae.w, X)
-/*unknown_90_f093:*/ bcc @unknown_90_f0aa
-/*unknown_90_f095:*/ lda #$ffff.w
-/*unknown_90_f098:*/ sta $0a28.w
-/*unknown_90_f09b:*/ sta $0a2a.w
-/*unknown_90_f09e:*/ sta $0a2c.w
-/*unknown_90_f0a1:*/ stz $0a2e.w
-/*unknown_90_f0a4:*/ stz $0a30.w
-/*unknown_90_f0a7:*/ stz $0a32.w
-@unknown_90_f0aa: plx
-/*unknown_90_f0ab:*/ plb
-/*unknown_90_f0ac:*/ plp
-/*unknown_90_f0ad:*/ rtl
+unknown_90_f084:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  phx
+  and #$001f.w
+  asl A
+  tax
+  jsr (unknown_90_f0ae, X)
+  bcc @unknown_90_f0aa
+  lda #$ffff.w
+  sta var_unknown_0a28.w
+  sta var_unknown_0a2a.w
+  sta var_unknown_0a2c.w
+  stz var_unknown_0a2e.w
+  stz var_unknown_0a30.w
+  stz var_unknown_0a32.w
+@unknown_90_f0aa:
+  plx
+  plb
+  plp
+  rtl
 
-/*unknown_90_f0ae:*/ ora #$17f1.w
-/*unknown_90_f0b1:*/ sbc ($25), Y
-/*unknown_90_f0b3:*/ sbc ($52), Y
-/*unknown_90_f0b5:*/ sbc ($9b), Y
-/*unknown_90_f0b7:*/ sbc ($8e), Y
-/*unknown_90_f0b9:*/ sbc ($aa, S), Y
-/*unknown_90_f0bb:*/ sbc ($c8), Y
-/*unknown_90_f0bd:*/ sbc ($e9), Y
-/*unknown_90_f0bf:*/ sbc ($3c), Y
-/*unknown_90_f0c1:*/ sbc ($8d)
-/*unknown_90_f0c3:*/ sbc ($95)
-/*unknown_90_f0c5:*/ sbc ($9e)
-/*unknown_90_f0c7:*/ sbc ($b8)
-/*unknown_90_f0c9:*/ sbc ($ca)
-/*unknown_90_f0cb:*/ sbc ($d8)
-/*unknown_90_f0cd:*/ sbc ($e0)
-/*unknown_90_f0cf:*/ sbc ($f8)
-/*unknown_90_f0d1:*/ sbc ($20)
-/*unknown_90_f0d3:*/ sbc ($28, S), Y
-/*unknown_90_f0d5:*/ sbc ($31, S), Y
-/*unknown_90_f0d7:*/ sbc ($10, S), Y
-/*unknown_90_f0d9:*/ sbc ($c9, S), Y
-/*unknown_90_f0db:*/ sbc ($dd, S), Y
-/*unknown_90_f0dd:*/ sbc ($c0, S), Y
-/*unknown_90_f0df:*/ sbc ($fb, S), Y
-/*unknown_90_f0e1:*/ sbc ($09, S), Y
-/*unknown_90_f0e3:*/ pea $f411.w
-/*unknown_90_f0e6:*/ asl $71f4.w, X
-/*unknown_90_f0e9:*/ pea $f4a2.w
-/*unknown_90_f0ec:*/ bne ($f4 - $100) ; $f0e2.w
+unknown_90_f0ae:
+  .dw unknown_90_f109
+  .dw unknown_90_f117
+  .dw unknown_90_f125
+  .dw unknown_90_f152
+  .dw unknown_90_f19b
+  .dw unknown_90_f38e
+  .dw unknown_90_f1aa
+  .dw unknown_90_f1c8
+  .dw unknown_90_f1e9
+  .dw unknown_90_f23c
+  .dw unknown_90_f28d
+  .dw unknown_90_f295
+  .dw unknown_90_f29e
+  .dw unknown_90_f2b8
+  .dw unknown_90_f2ca
+  .dw unknown_90_f2d8
+  .dw unknown_90_f2e0
+  .dw unknown_90_f2f8
+  .dw unknown_90_f320
+  .dw unknown_90_f328
+  .dw unknown_90_f331
+  .dw unknown_90_f310
+  .dw unknown_90_f3c9
+  .dw unknown_90_f3dd
+  .dw unknown_90_f3c0
+  .dw unknown_90_f3fb
+  .dw unknown_90_f409
+  .dw unknown_90_f411
+  .dw unknown_90_f41e
+  .dw unknown_90_f471
+  .dw unknown_90_f4a2
+  .dw unknown_90_f4d0
 
 ; TODO: "Update $0A20 through $0A27" -- Kejardon
 unknown_90_f0ee:
@@ -13448,11 +13453,12 @@ unknown_90_f0ee:
   sta $0a22.w
   rts
 
-/*unknown_90_f107:*/ clc
-/*unknown_90_f108:*/ rts
+unknown_90_f107:
+  clc
+  rts
 
 ; "Put #$E713 into $0A42, #$E8DC into $0A44" -- Kejardon
-@unknown_90_f109: lda #$e713.w
+unknown_90_f109: lda #$e713.w
 /*unknown_90_f10c:*/ sta $0a42.w
 /*unknown_90_f10f:*/ lda #$e8dc.w
 /*unknown_90_f112:*/ sta $0a44.w
@@ -13460,7 +13466,7 @@ unknown_90_f0ee:
 /*unknown_90_f116:*/ rts
 
 ; "Put #$E695 into $0A42, #$E725 into $0A44" -- Kejardon
-@unknown_90_f117: lda #$e695.w
+unknown_90_f117: lda #$e695.w
 /*unknown_90_f11a:*/ sta $0a42.w
 /*unknown_90_f11d:*/ lda #$e725.w
 /*unknown_90_f120:*/ sta $0a44.w
@@ -13469,7 +13475,7 @@ unknown_90_f0ee:
 
 ; "Set Samus to standing (facing current direction). JSL to $91F433 and $91FB08,
 ; then go to 00" -- Kejardon
-/*unknown_90_f125:*/ lda $0a1e.w
+unknown_90_f125: lda $0a1e.w
 /*unknown_90_f128:*/ and #$00ff.w
 /*unknown_90_f12b:*/ cmp #$0004.w
 /*unknown_90_f12e:*/ beq @unknown_90_f138
@@ -13483,12 +13489,12 @@ unknown_90_f0ee:
 /*unknown_90_f145:*/ jsr $91fb08
 /*unknown_90_f149:*/ lda #$003c.w
 /*unknown_90_f14c:*/ sta $0aa0.w
-/*unknown_90_f14f:*/ jmp @unknown_90_f109
+/*unknown_90_f14f:*/ jmp unknown_90_f109
 
 ; "Check GrappleFire pointer. If not #$C4FC, just set it to #$C8C5. Else if spin
 ; jumping or wall jumping, set to standing (facing current direction), JSL
 ; $91F433 and $91FB08, JSR $F0EE, SEC and RTS" -- Kejardon
-/*unknown_90_f152:*/ lda $0d32.w
+unknown_90_f152: lda $0d32.w
 /*unknown_90_f155:*/ cmp #$c4f0.w
 /*unknown_90_f158:*/ beq @unknown_90_f162
 /*unknown_90_f15a:*/ lda #$c8c5.w
@@ -13519,7 +13525,7 @@ unknown_90_f0ee:
 /*unknown_90_f19a:*/ rts
 
 ; "Clear charge beam pallete, charge beam, JSR $BCBE, JSL $91DEBA." -- Kejardon
-/*unknown_90_f19b:*/ stz $0b62.w
+unknown_90_f19b: stz $0b62.w
 /*unknown_90_f19e:*/ stz $0cd0.w
 /*unknown_90_f1a1:*/ jsr unknown_90_bcbe
 /*unknown_90_f1a4:*/ jsr $91deba
@@ -13528,7 +13534,7 @@ unknown_90_f0ee:
 
 ; "Put #$E713 into $0A42, #$E8DC into $0A44, play a sound if charge is under F,
 ; goto 04" -- Kejardon
-/*unknown_90_f1aa:*/ lda #$e713.w
+unknown_90_f1aa: lda #$e713.w
 /*unknown_90_f1ad:*/ sta $0a42.w
 /*unknown_90_f1b0:*/ lda #$e8d6.w
 /*unknown_90_f1b3:*/ sta $0a44.w
@@ -13541,7 +13547,7 @@ unknown_90_f0ee:
 
 ; "JSL $91E3F6, #$E8EC into $0A44, #$A337 into $0A58, #$EC14 into $0A5C, #$E913
 ; into $0A60" -- Kejardon
-/*unknown_90_f1c8:*/ jsr $91e3f6
+unknown_90_f1c8: jsr $91e3f6
 /*unknown_90_f1cc:*/ lda #$e8ec.w
 /*unknown_90_f1cf:*/ sta $0a44.w
 /*unknown_90_f1d2:*/ lda #$a337.w
@@ -13557,7 +13563,7 @@ unknown_90_f0ee:
 ; "#$E8CD into $0A42, #$E8DC into $0A44, Samus facing forward, JSL $91F433,
 ; $91FB08, $91DEBA. #$EB52 into $0A5C, update $0A20 - $0A27, JSL $868027 with Y
 ; = #$A387 then Y = #$A39D, JSL 82E118." -- Kejardon
-/*unknown_90_f1e9:*/ lda #$e8cd.w
+unknown_90_f1e9: lda #$e8cd.w
 /*unknown_90_f1ec:*/ sta $0a42.w
 /*unknown_90_f1ef:*/ lda #$e8dc.w
 /*unknown_90_f1f2:*/ sta $0a44.w
@@ -13588,7 +13594,7 @@ unknown_90_f0ee:
 ; "JSL $8DC4E9, Y = #$E1F4 (no suits), #$E1F8 (varia), or #$E1FC (grav). Samus
 ; facing forward. JSL $91DEBA, $91F433. Set Samus's animation to frame 2, delay
 ; 3" -- Kejardon
-/*unknown_90_f23c:*/ lda $09a2.w
+unknown_90_f23c: lda $09a2.w
 /*unknown_90_f23f:*/ bit #$0020.w
 /*unknown_90_f242:*/ bne @unknown_90_f267
 /*unknown_90_f244:*/ bit #$0001.w
@@ -13618,19 +13624,19 @@ unknown_90_f0ee:
 /*unknown_90_f28c:*/ rts
 
 ; "#$E90E into $0A5C, CLC and RTS. Short." -- Kejardon
-/*unknown_90_f28d:*/ lda #$e90e.w
+unknown_90_f28d: lda #$e90e.w
 /*unknown_90_f290:*/ sta $0a5c.w
 /*unknown_90_f293:*/ clc
 /*unknown_90_f294:*/ rts
 
 ; "#$EB52 into $0A5C, goto 01" -- Kejardon
-/*unknown_90_f295:*/ lda #$eb52.w
+unknown_90_f295: lda #$eb52.w
 /*unknown_90_f298:*/ sta $0a5c.w
-/*unknown_90_f29b:*/ jmp @unknown_90_f117
+/*unknown_90_f29b:*/ jmp unknown_90_f117
 
 ; "JSL $91E633, if $0A44 is #$E8D6, #$E695 into $0A42 and #$E725 into $0A44. Run
 ; when unpausing." -- Kejardon
-/*unknown_90_f29e:*/ jsr $91e633
+unknown_90_f29e: jsr $91e633
 /*unknown_90_f2a2:*/ lda $0a44.w
 /*unknown_90_f2a5:*/ cmp #$e8d6.w
 /*unknown_90_f2a8:*/ bne @unknown_90_f2b6
@@ -13642,7 +13648,7 @@ unknown_90_f0ee:
 /*unknown_90_f2b7:*/ rts
 
 ; "If GrappleFire pointer is #$C4F0, A = 0. Else A = 1." -- Kejardon
-/*unknown_90_f2b8:*/ lda $0d32.w
+unknown_90_f2b8: lda $0d32.w
 /*unknown_90_f2bb:*/ cmp #$c4f0.w
 /*unknown_90_f2be:*/ bne @unknown_90_f2c5
 /*unknown_90_f2c0:*/ lda #$0000.w
@@ -13653,19 +13659,19 @@ unknown_90_f0ee:
 /*unknown_90_f2c8:*/ clc
 /*unknown_90_f2c9:*/ rts
 
-/*unknown_90_f2ca:*/ lda #$e695.w
+unknown_90_f2ca: lda #$e695.w
 /*unknown_90_f2cd:*/ sta $0a42.w
 /*unknown_90_f2d0:*/ lda #$e8aa.w
 /*unknown_90_f2d3:*/ sta $0a44.w
 /*unknown_90_f2d6:*/ sec
 /*unknown_90_f2d7:*/ rts
 
-/*unknown_90_f2d8:*/ lda #$e0e6.w
+unknown_90_f2d8: lda #$e0e6.w
 /*unknown_90_f2db:*/ sta $0a5a.w
 /*unknown_90_f2de:*/ clc
 /*unknown_90_f2df:*/ rts
 
-/*unknown_90_f2e0:*/ lda $0a44.w
+unknown_90_f2e0: lda $0a44.w
 /*unknown_90_f2e3:*/ cmp #$e8d9.w
 /*unknown_90_f2e6:*/ bne @unknown_90_f2ea
 /*unknown_90_f2e8:*/ sec
@@ -13678,8 +13684,8 @@ unknown_90_f0ee:
 /*unknown_90_f2f6:*/ sec
 /*unknown_90_f2f7:*/ rts
 
-/*unknown_90_f2f8:*/ jsr $8dc4cd
-@unknown_90_f2fc: lda #$e713.w
+unknown_90_f2f8: jsr $8dc4cd
+unknown_90_f2fc: lda #$e713.w
 /*unknown_90_f2ff:*/ sta $0a42.w
 /*unknown_90_f302:*/ lda #$e8cd.w
 /*unknown_90_f305:*/ sta $0a44.w
@@ -13688,22 +13694,22 @@ unknown_90_f0ee:
 /*unknown_90_f30e:*/ sec
 /*unknown_90_f30f:*/ rts
 
-/*unknown_90_f310:*/ jsr unknown_90_f0ee
+unknown_90_f310: jsr unknown_90_f0ee
 /*unknown_90_f313:*/ stz $0cd0.w
 /*unknown_90_f316:*/ jsr unknown_90_bcbe
 /*unknown_90_f319:*/ jsr $91deba
-/*unknown_90_f31d:*/ jmp @unknown_90_f2fc
-/*unknown_90_f320:*/ lda #$0001.w
+/*unknown_90_f31d:*/ jmp unknown_90_f2fc
+unknown_90_f320: lda #$0001.w
 /*unknown_90_f323:*/ sta $0a4a.w
 /*unknown_90_f326:*/ clc
 /*unknown_90_f327:*/ rts
 
-/*unknown_90_f328:*/ stz $0a4a.w
+unknown_90_f328: stz $0a4a.w
 /*unknown_90_f32b:*/ jsr $91deba
 /*unknown_90_f32f:*/ clc
 /*unknown_90_f330:*/ rts
 
-/*unknown_90_f331:*/ lda $09c2.w
+unknown_90_f331: lda $09c2.w
 /*unknown_90_f334:*/ cmp #$001f.w
 /*unknown_90_f337:*/ bpl @unknown_90_f340
 /*unknown_90_f339:*/ lda #$0002.w
@@ -13747,9 +13753,9 @@ unknown_90_f0ee:
 /*unknown_90_f38c:*/ clc
 /*unknown_90_f38d:*/ rts
 
-/*unknown_90_f38e:*/ lda #$e09b.w
+unknown_90_f38e: lda #$e09b.w
 /*unknown_90_f391:*/ sta $0a5a.w
-@unknown_90_f394: lda #$0054.w
+unknown_90_f394: lda #$0054.w
 /*unknown_90_f397:*/ sta $0a1c.w
 /*unknown_90_f39a:*/ stz $0a9a.w
 /*unknown_90_f39d:*/ jsr $91f433
@@ -13765,10 +13771,10 @@ unknown_90_f0ee:
 /*unknown_90_f3be:*/ sec
 /*unknown_90_f3bf:*/ rts
 
-/*unknown_90_f3c0:*/ lda #$e0c5.w
+unknown_90_f3c0: lda #$e0c5.w
 /*unknown_90_f3c3:*/ sta $0a5a.w
-/*unknown_90_f3c6:*/ jmp @unknown_90_f394
-/*unknown_90_f3c9:*/ lda #$8000.w
+/*unknown_90_f3c6:*/ jmp unknown_90_f394
+unknown_90_f3c9: lda #$8000.w
 /*unknown_90_f3cc:*/ sta $0a4a.w
 /*unknown_90_f3cf:*/ lda #$0001.w
 /*unknown_90_f3d2:*/ sta $0ace.w
@@ -13777,7 +13783,7 @@ unknown_90_f0ee:
 /*unknown_90_f3db:*/ clc
 /*unknown_90_f3dc:*/ rts
 
-/*unknown_90_f3dd:*/ stz $0a4a.w
+unknown_90_f3dd: stz $0a4a.w
 /*unknown_90_f3e0:*/ stz $0ace.w
 /*unknown_90_f3e3:*/ stz $0ad0.w
 /*unknown_90_f3e6:*/ stz $0b62.w
@@ -13789,26 +13795,26 @@ unknown_90_f0ee:
 /*unknown_90_f3f9:*/ clc
 /*unknown_90_f3fa:*/ rts
 
-/*unknown_90_f3fb:*/ lda #$0001.w
+unknown_90_f3fb: lda #$0001.w
 /*unknown_90_f3fe:*/ sta $0a94.w
 /*unknown_90_f401:*/ lda #$001c.w
 /*unknown_90_f404:*/ sta $0a96.w
 /*unknown_90_f407:*/ sec
 /*unknown_90_f408:*/ rts
 
-/*unknown_90_f409:*/ lda #$e902.w
+unknown_90_f409: lda #$e902.w
 /*unknown_90_f40c:*/ sta $0a44.w
 /*unknown_90_f40f:*/ clc
 /*unknown_90_f410:*/ rts
 
-/*unknown_90_f411:*/ lda $0a44.w
+unknown_90_f411: lda $0a44.w
 /*unknown_90_f414:*/ cmp #$e8d9.w
 /*unknown_90_f417:*/ beq @unknown_90_f41c
-/*unknown_90_f419:*/ jmp @unknown_90_f109
+/*unknown_90_f419:*/ jmp unknown_90_f109
 @unknown_90_f41c: sec
 /*unknown_90_f41d:*/ rts
 
-/*unknown_90_f41e:*/ lda $0a1f.w
+unknown_90_f41e: lda $0a1f.w
 /*unknown_90_f421:*/ and #$00ff.w
 /*unknown_90_f424:*/ cmp #$0014.w
 /*unknown_90_f427:*/ beq @unknown_90_f449
@@ -13847,7 +13853,7 @@ unknown_90_f0ee:
 /*unknown_90_f46f:*/ clc
 /*unknown_90_f470:*/ rts
 
-/*unknown_90_f471:*/ lda $0a1f.w
+unknown_90_f471: lda $0a1f.w
 /*unknown_90_f474:*/ and #$00ff.w
 /*unknown_90_f477:*/ cmp #$0003.w
 /*unknown_90_f47a:*/ beq @unknown_90_f481
@@ -13869,7 +13875,7 @@ unknown_90_f0ee:
 @unknown_90_f4a0: clc
 /*unknown_90_f4a1:*/ rts
 
-/*unknown_90_f4a2:*/ lda $0998.w
+unknown_90_f4a2: lda $0998.w
 /*unknown_90_f4a5:*/ cmp #$0008.w
 /*unknown_90_f4a8:*/ bne @unknown_90_f4ce
 /*unknown_90_f4aa:*/ lda $0a1f.w
@@ -13890,7 +13896,7 @@ unknown_90_f0ee:
 @unknown_90_f4ce: clc
 /*unknown_90_f4cf:*/ rts
 
-/*unknown_90_f4d0:*/ lda $0d32.w
+unknown_90_f4d0: lda $0d32.w
 /*unknown_90_f4d3:*/ cmp #$c4f0.w
 /*unknown_90_f4d6:*/ bne @unknown_90_f4da
 /*unknown_90_f4d8:*/ clc
