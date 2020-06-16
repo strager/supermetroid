@@ -1,8 +1,15 @@
-language: nix
+language: minimal
 
 os:
   - linux
   - osx
 
 script:
+  - set -e
+
+  - wget --retry-connrefused --waitretry=1 -O nix-install https://nixos.org/releases/nix/nix-2.3.6/install
+  - yes | sh nix-install
+  - . ~/.nix-profile/etc/profile.d/nix.sh
+  - nix-env --version
+
   - nix-shell --run 'phases="buildPhase checkPhase" ; genericBuild'
