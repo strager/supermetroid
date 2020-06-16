@@ -808,14 +808,25 @@ samus_echo_0_x_speed: dw ; $7e0ac0
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0ac8) export
 var_unknown_0ac8: dw ; $7e0ac8
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0aca) export
 var_unknown_0aca: dw ; $7e0aca
 var_unknown_0acc: dw ; $7e0acc
 var_unknown_0ace: dw ; $7e0ace
 var_unknown_0ad0: dw ; $7e0ad0
 var_unknown_0ad2: dw ; $7e0ad2
+var_unknown_0ad4: dw ; $7e0ad4
+var_unknown_0ad6: dw ; $7e0ad6
+var_unknown_0ad8: dw ; $7e0ad8
+var_unknown_0ada: dw ; $7e0ada
+var_unknown_0adc: dw ; $7e0adc
+var_unknown_0ade: dw ; $7e0ade
+var_unknown_0ae0: dw ; $7e0ae0
+var_unknown_0ae2: dw ; $7e0ae2
+var_unknown_0ae4: dw ; $7e0ae4
+var_unknown_0ae6: dw ; $7e0ae6
+var_unknown_0ae8: dw ; $7e0ae8
+var_unknown_0aea: dw ; $7e0aea
+var_unknown_0aec: dw ; $7e0aec
+var_unknown_0aee: dw ; $7e0aee
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0af6) export
@@ -929,8 +940,16 @@ var_unknown_18c0: dsb unknown_18b4_count ; $7e18c0
 var_unknown_18d8: dsb unknown_18b4_count ; $7e18d8
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $195e) export
+var_unknown_195e: dw ; $7e195e
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $196e) export
 var_unknown_196e: dw ; $7e196e
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $197e) export
+var_unknown_197e: dw ; $7e197e
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $1c25) export

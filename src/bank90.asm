@@ -99,56 +99,64 @@ unknown_90_8078:
 @unknown_90_80b7:
   rts
 
-unknown_90_80b8: lda $195e.w
-/*unknown_90_80bb:*/ bmi unknown_90_8078
-/*unknown_90_80bd:*/ cmp $12
-/*unknown_90_80bf:*/ bmi @unknown_90_80c3
-/*unknown_90_80c1:*/ bra unknown_90_8078
-@unknown_90_80c3: lda $197e.w
-/*unknown_90_80c6:*/ bit #$0004.w
-/*unknown_90_80c9:*/ bne unknown_90_8078
-/*unknown_90_80cb:*/ lda $9e93.w
-/*unknown_90_80ce:*/ sta $0a9c.w
-/*unknown_90_80d1:*/ lda $0ad2.w
-/*unknown_90_80d4:*/ cmp #$0001.w
-/*unknown_90_80d7:*/ beq unknown_90_813e
-/*unknown_90_80d9:*/ lda #$0001.w
-/*unknown_90_80dc:*/ sta $0ad2.w
-/*unknown_90_80df:*/ lda #$000d.w
-/*unknown_90_80e2:*/ jsr $8090cb
-unknown_90_80e6: lda $0a1f.w
-/*unknown_90_80e9:*/ and #$00ff.w
-/*unknown_90_80ec:*/ tax
-/*unknown_90_80ed:*/ lda $81a4.w, X
-/*unknown_90_80f0:*/ and #$00ff.w
-/*unknown_90_80f3:*/ bne @unknown_90_810f
-/*unknown_90_80f5:*/ lda #$0300.w
-/*unknown_90_80f8:*/ sta $0aec.w
-/*unknown_90_80fb:*/ lda #$0002.w
-/*unknown_90_80fe:*/ sta $0ad4.w
-/*unknown_90_8101:*/ lda $0af6.w
-/*unknown_90_8104:*/ sta $0adc.w
-/*unknown_90_8107:*/ lda $195e.w
-/*unknown_90_810a:*/ sta $0ae4.w
-/*unknown_90_810d:*/ bra unknown_90_813e
-@unknown_90_810f: lda #$0100.w
-/*unknown_90_8112:*/ sta $0aec.w
-/*unknown_90_8115:*/ sta $0aee.w
-/*unknown_90_8118:*/ lda #$0003.w
-/*unknown_90_811b:*/ sta $0ad4.w
-/*unknown_90_811e:*/ sta $0ad6.w
-/*unknown_90_8121:*/ lda $0af6.w
-/*unknown_90_8124:*/ clc
-/*unknown_90_8125:*/ adc #$0004.w
-/*unknown_90_8128:*/ sta $0adc.w
-/*unknown_90_812b:*/ sec
-/*unknown_90_812c:*/ sbc #$0007.w
-/*unknown_90_812f:*/ sta $0ade.w
-/*unknown_90_8132:*/ lda $12
-/*unknown_90_8134:*/ sec
-/*unknown_90_8135:*/ sbc #$0004.w
-/*unknown_90_8138:*/ sta $0ae4.w
-/*unknown_90_813b:*/ sta $0ae6.w
+unknown_90_80b8:
+  lda var_unknown_195e.w
+  bmi unknown_90_8078
+  cmp $12
+  bmi @unknown_90_80c3
+  bra unknown_90_8078
+@unknown_90_80c3:
+  lda var_unknown_197e.w
+  bit #$0004.w
+  bne unknown_90_8078
+  lda $9e93.w
+  sta var_unknown_0a9c.w
+  lda var_unknown_0ad2.w
+  cmp #$0001.w
+  beq unknown_90_813e
+  lda #$0001.w
+  sta var_unknown_0ad2.w
+  lda #$000d.w
+  jsr unknown_80_90cb.l
+  ; Fall through.
+
+unknown_90_80e6:
+  lda var_unknown_0a1f.w
+  and #$00ff.w
+  tax
+  lda unknown_90_81a4.w, X
+  and #$00ff.w
+  bne @unknown_90_810f
+  lda #$0300.w
+  sta var_unknown_0aec.w
+  lda #$0002.w
+  sta var_unknown_0ad4.w
+  lda samus_x.w
+  sta var_unknown_0adc.w
+  lda var_unknown_195e.w
+  sta var_unknown_0ae4.w
+  bra unknown_90_813e
+@unknown_90_810f:
+  lda #$0100.w
+  sta var_unknown_0aec.w
+  sta var_unknown_0aee.w
+  lda #$0003.w
+  sta var_unknown_0ad4.w
+  sta var_unknown_0ad6.w
+  lda samus_x.w
+  clc
+  adc #$0004.w
+  sta var_unknown_0adc.w
+  sec
+  sbc #$0007.w
+  sta var_unknown_0ade.w
+  lda var_unknown_12
+  sec
+  sbc #$0004.w
+  sta var_unknown_0ae4.w
+  sta var_unknown_0ae6.w
+  ; Fall through.
+
 unknown_90_813e: lda $14
 /*unknown_90_8140:*/ sec
 /*unknown_90_8141:*/ sbc #$0018.w
@@ -189,7 +197,7 @@ unknown_90_813e: lda $14
 @unknown_90_81a0: stz $0a9c.w
 @unknown_90_81a3: rts
 
-/*unknown_90_81a4:*/ ora ($00, X)
+unknown_90_81a4: ora ($00, X)
 /*unknown_90_81a6:*/ brk $00
 /*unknown_90_81a8:*/ ora ($01, X)
 /*unknown_90_81aa:*/ brk $00
