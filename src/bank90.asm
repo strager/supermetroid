@@ -13643,10 +13643,11 @@ unknown_90_f23c:
   rts
 
 ; "#$E90E into $0A5C, CLC and RTS. Short." -- Kejardon
-unknown_90_f28d: lda #$e90e.w
-/*unknown_90_f290:*/ sta $0a5c.w
-/*unknown_90_f293:*/ clc
-/*unknown_90_f294:*/ rts
+unknown_90_f28d:
+  lda #$e90e.w
+  sta var_unknown_0a5c.w
+  clc
+  rts
 
 ; "#$EB52 into $0A5C, goto 01" -- Kejardon
 unknown_90_f295: lda #$eb52.w
