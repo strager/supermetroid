@@ -674,51 +674,51 @@ unknown_90_85e2:
   php
   phb
   sep #$20
-  lda #$92
+  lda #:unknown_92_9263
   pha
   plb
   rep #$30
-  lda $18aa.w
+  lda var_unknown_18aa.w
   bne @unknown_90_8606
-  lda $18a8.w
+  lda var_unknown_18a8.w
   beq @unknown_90_8606
-  lda $0a68.w
+  lda var_unknown_0a68.w
   bne @unknown_90_8606
-  lda $05b6.w
+  lda var_unknown_05b6.w
   bit #$0001.w
   beq @unknown_90_8606
   jmp @unknown_90_8647
 @unknown_90_8606:
-  lda $0a1c.w
+  lda var_unknown_0a1c.w
   asl A
   tax
   phx
-  lda $929263, X
+  lda unknown_92_9263.l, X
   clc
-  adc $0a96.w
-  sta $0ac8.w
+  adc var_unknown_0a96.w
+  sta var_unknown_0ac8.w
   pha
   jsr unknown_90_8c1f
   pla
-  jsr $8189ae
+  jsr unknown_81_89ae.l
   plx
-  stx $24
-  lda $0a1f.w
+  stx var_unknown_24
+  lda var_unknown_0a1f.w
   and #$00ff.w
   asl A
   tax
-  jsr ($864e.w, X)
+  jsr (unknown_90_864e, X)
   bcc @unknown_90_8647
-  ldx $24
-  lda $92945d, X
+  ldx var_unknown_24
+  lda unknown_92_945d.l, X
   clc
-  adc $0a96.w
-  sta $0aca.w
-  ldx $0b04.w
-  ldy $0b06.w
-  jsr $8189ae
+  adc var_unknown_0a96.w
+  sta var_unknown_0aca.w
+  ldx samus_screen_x.w
+  ldy samus_screen_y.w
+  jsr unknown_81_89ae.l
 @unknown_90_8647:
-  jsr $928000
+  jsr unknown_92_8000.l
   plb
   plp
   rts
