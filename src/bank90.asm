@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/io.asm"
 .include "include/oam.asm"
 
 .bank ($90 - $80) slot $0
@@ -13918,7 +13919,7 @@ unknown_90_f471:
 
 @unknown_90_f48a:
   lda var_pressed_buttons
-  bit $09b2.w
+  bit IO_JOY_UP | IO_JOY_RIGHT | IO_JOY_R | IO_JOY_L | IO_JOY_A | $2
   bne @unknown_90_f4a0
   lda var_unknown_0cd0.w
   cmp #$0010.w
@@ -13985,7 +13986,7 @@ unknown_90_f507:
   cmp #$0014.w
   beq @unknown_90_f52d
   lda var_pressed_buttons
-  bit $09b2.w
+  bit IO_JOY_UP | IO_JOY_RIGHT | IO_JOY_R | IO_JOY_L | IO_JOY_A | $2
   beq @unknown_90_f52d
   lda var_unknown_0cd0.w
   cmp #$0010.w
@@ -14008,36 +14009,36 @@ unknown_90_f534:
 
 unknown_90_f535:
   lda var_new_pressed_buttons
-  bit #$4000.w
-  beq @unknown_90_f54b
+  bit #IO_JOY_Y
+  beq @y_not_pressed
   lda #$00b4.w
   sta var_unknown_0a68.w
   lda #$0001.w
   sta var_unknown_0acc.w
   stz var_unknown_0ace.w
-@unknown_90_f54b:
+@y_not_pressed:
   rts
 
 unknown_90_f54c:
   lda var_new_pressed_buttons_p2
-  bit #$4000.w
-  beq @unknown_90_f560
+  bit #IO_JOY_Y
+  beq @y_not_pressed
   lda #$0017.w
   jsr unknown_90_f084.l
   lda #$f534.w
   sta var_unknown_0a5e.w
-@unknown_90_f560:
+@y_not_pressed:
   rts
 
 unknown_90_f561:
   lda var_new_pressed_buttons
-  bit #$4000.w
-  beq @unknown_90_f575
+  bit #IO_JOY_Y
+  beq @y_not_pressed
   lda #$f534.w
   sta var_unknown_0a5e.w
   lda #$0002.w
   jsr unknown_91_e4ad.l
-@unknown_90_f575:
+@y_not_pressed:
   rts
 
 ; TODO: "Checks to play sounds: Continue charge sound, end(?) blue suit sound,
@@ -14049,7 +14050,7 @@ unknown_90_f576:
   bmi @unknown_90_f5de
   beq @unknown_90_f591
   lda var_pressed_buttons
-  bit $09b2.w
+  bit IO_JOY_UP | IO_JOY_RIGHT | IO_JOY_R | IO_JOY_L | IO_JOY_A | $2
   beq @unknown_90_f58e
   lda #$0041.w
   jsr unknown_80_902b.l
@@ -14084,7 +14085,7 @@ unknown_90_f576:
   cmp #$0010.w
   bmi @unknown_90_f5e4
   lda var_pressed_buttons
-  bit $09b2.w
+  bit IO_JOY_UP | IO_JOY_RIGHT | IO_JOY_R | IO_JOY_L | IO_JOY_A | $2
   beq @unknown_90_f5e4
 @unknown_90_f5de:
   lda #$0001.w
@@ -14103,12 +14104,12 @@ unknown_90_f576:
   rts
 @unknown_90_f5fd:
   lda var_pressed_buttons_p2
-  and #$0030.w
-  cmp #$0030.w
-  bne @unknown_90_f619
+  and #IO_JOY_L | IO_JOY_R
+  cmp #IO_JOY_L | IO_JOY_R
+  bne @unknown_90_f619 ; Branch if L or R unpressed.
   lda var_new_pressed_buttons_p2
-  bit #$0080.w
-  beq @unknown_90_f619
+  bit #IO_JOY_A
+  beq @unknown_90_f619 ; Branch if A unpressed.
   lda #$0007.w
   sta var_unknown_0de0.w
   bra @unknown_90_f619
