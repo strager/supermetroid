@@ -12631,7 +12631,7 @@ unknown_91_e3f6: php
 /*unknown_91_e631:*/ sec
 /*unknown_91_e632:*/ rts
 
-/*unknown_91_e633:*/ php
+unknown_91_e633: php
 /*unknown_91_e634:*/ phb
 /*unknown_91_e635:*/ phk
 /*unknown_91_e636:*/ plb

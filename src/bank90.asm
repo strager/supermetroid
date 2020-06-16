@@ -13657,16 +13657,18 @@ unknown_90_f295:
 
 ; "JSL $91E633, if $0A44 is #$E8D6, #$E695 into $0A42 and #$E725 into $0A44. Run
 ; when unpausing." -- Kejardon
-unknown_90_f29e: jsr $91e633
-/*unknown_90_f2a2:*/ lda $0a44.w
-/*unknown_90_f2a5:*/ cmp #$e8d6.w
-/*unknown_90_f2a8:*/ bne @unknown_90_f2b6
-/*unknown_90_f2aa:*/ lda #$e695.w
-/*unknown_90_f2ad:*/ sta $0a42.w
-/*unknown_90_f2b0:*/ lda #$e725.w
-/*unknown_90_f2b3:*/ sta $0a44.w
-@unknown_90_f2b6: sec
-/*unknown_90_f2b7:*/ rts
+unknown_90_f29e:
+  jsr unknown_91_e633.l
+  lda var_unknown_0a44.w
+  cmp #$e8d6.w
+  bne @unknown_90_f2b6
+  lda #$e695.w
+  sta var_unknown_0a42.w
+  lda #$e725.w
+  sta var_unknown_0a44.w
+@unknown_90_f2b6:
+  sec
+  rts
 
 ; "If GrappleFire pointer is #$C4F0, A = 0. Else A = 1." -- Kejardon
 unknown_90_f2b8: lda $0d32.w
