@@ -13560,18 +13560,19 @@ unknown_90_f1aa:
 
 ; "JSL $91E3F6, #$E8EC into $0A44, #$A337 into $0A58, #$EC14 into $0A5C, #$E913
 ; into $0A60" -- Kejardon
-unknown_90_f1c8: jsr $91e3f6
-/*unknown_90_f1cc:*/ lda #$e8ec.w
-/*unknown_90_f1cf:*/ sta $0a44.w
-/*unknown_90_f1d2:*/ lda #$a337.w
-/*unknown_90_f1d5:*/ sta $0a58.w
-/*unknown_90_f1d8:*/ lda #$ec14.w
-/*unknown_90_f1db:*/ sta $0a5c.w
-/*unknown_90_f1de:*/ lda #$e913.w
-/*unknown_90_f1e1:*/ sta $0a60.w
-/*unknown_90_f1e4:*/ stz $0a56.w
-/*unknown_90_f1e7:*/ sec
-/*unknown_90_f1e8:*/ rts
+unknown_90_f1c8:
+  jsr unknown_91_e3f6.l
+  lda #$e8ec.w
+  sta var_unknown_0a44.w
+  lda #$a337.w
+  sta var_unknown_0a58.w
+  lda #$ec14.w
+  sta var_unknown_0a5c.w
+  lda #$e913.w
+  sta var_unknown_0a60.w
+  stz var_unknown_0a56.w
+  sec
+  rts
 
 ; "#$E8CD into $0A42, #$E8DC into $0A44, Samus facing forward, JSL $91F433,
 ; $91FB08, $91DEBA. #$EB52 into $0A5C, update $0A20 - $0A27, JSL $868027 with Y
