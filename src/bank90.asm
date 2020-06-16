@@ -13742,49 +13742,51 @@ unknown_90_f328:
   clc
   rts
 
-unknown_90_f331: lda $09c2.w
-/*unknown_90_f334:*/ cmp #$001f.w
-/*unknown_90_f337:*/ bpl @unknown_90_f340
-/*unknown_90_f339:*/ lda #$0002.w
-/*unknown_90_f33c:*/ jsr $80914d
-@unknown_90_f340: jsr $f2b8.w
-/*unknown_90_f343:*/ tay
-/*unknown_90_f344:*/ beq @unknown_90_f34f
-/*unknown_90_f346:*/ lda #$0006.w
-/*unknown_90_f349:*/ jsr $809049
-/*unknown_90_f34d:*/ clc
-/*unknown_90_f34e:*/ rts
-
-@unknown_90_f34f: lda $0a1e.w
-/*unknown_90_f352:*/ and #$00ff.w
-/*unknown_90_f355:*/ cmp #$0003.w
-/*unknown_90_f358:*/ beq @unknown_90_f35c
-/*unknown_90_f35a:*/ clc
-/*unknown_90_f35b:*/ rts
-
-@unknown_90_f35c: lda $0a1c.w
-/*unknown_90_f35f:*/ cmp #$0081.w
-/*unknown_90_f362:*/ beq @unknown_90_f385
-/*unknown_90_f364:*/ cmp #$0082.w
-/*unknown_90_f367:*/ beq @unknown_90_f385
-/*unknown_90_f369:*/ cmp #$001b.w
-/*unknown_90_f36c:*/ beq @unknown_90_f37c
-/*unknown_90_f36e:*/ cmp #$001c.w
-/*unknown_90_f371:*/ beq @unknown_90_f37c
-/*unknown_90_f373:*/ lda #$0031.w
-/*unknown_90_f376:*/ jsr $809049
-/*unknown_90_f37a:*/ clc
-/*unknown_90_f37b:*/ rts
-
-@unknown_90_f37c: lda #$003e.w
-/*unknown_90_f37f:*/ jsr $809049
-/*unknown_90_f383:*/ clc
-/*unknown_90_f384:*/ rts
-
-@unknown_90_f385: lda #$0033.w
-/*unknown_90_f388:*/ jsr $809049
-/*unknown_90_f38c:*/ clc
-/*unknown_90_f38d:*/ rts
+unknown_90_f331:
+  lda var_player_cur_health.w
+  cmp #$001f.w
+  bpl @unknown_90_f340
+  lda #$0002.w
+  jsr unknown_80_914d.l
+@unknown_90_f340:
+  jsr unknown_90_f2b8
+  tay
+  beq @unknown_90_f34f
+  lda #$0006.w
+  jsr unknown_80_9049.l
+  clc
+  rts
+@unknown_90_f34f:
+  lda var_unknown_0a1e.w
+  and #$00ff.w
+  cmp #$0003.w
+  beq @unknown_90_f35c
+  clc
+  rts
+@unknown_90_f35c:
+  lda var_unknown_0a1c.w
+  cmp #$0081.w
+  beq @unknown_90_f385
+  cmp #$0082.w
+  beq @unknown_90_f385
+  cmp #$001b.w
+  beq @unknown_90_f37c
+  cmp #$001c.w
+  beq @unknown_90_f37c
+  lda #$0031.w
+  jsr unknown_80_9049.l
+  clc
+  rts
+@unknown_90_f37c:
+  lda #$003e.w
+  jsr unknown_80_9049.l
+  clc
+  rts
+@unknown_90_f385:
+  lda #$0033.w
+  jsr unknown_80_9049.l
+  clc
+  rts
 
 unknown_90_f38e: lda #$e09b.w
 /*unknown_90_f391:*/ sta $0a5a.w
