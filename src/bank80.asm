@@ -4148,83 +4148,100 @@ unknown_80_9de7:
   rtl
 
 unknown_80_9dfb:
-  .dw $9e1a
-  .dw $9e09
-  .dw $9e1c
-  .dw $9e2f
-  .dw $9e41
+  .dw unknown_80_9e1a
+  .dw unknown_80_9e09
+  .dw unknown_80_9e1c
+  .dw unknown_80_9e2f
+  .dw unknown_80_9e41
+  .dw unknown_80_9e58
+  .dw unknown_80_9e89
 
-/*unknown_80_9e05:*/ cli
-/*unknown_80_9e06:*/ stz $9e89.w, X
-/*unknown_80_9e09:*/ jsr $809e93
-/*unknown_80_9e0d:*/ lda #$0100.w
-/*unknown_80_9e10:*/ jsr $809e8c
-/*unknown_80_9e14:*/ lda #$8003.w
-/*unknown_80_9e17:*/ sta $0943.w
-/*unknown_80_9e1a:*/ clc
-/*unknown_80_9e1b:*/ rts
+unknown_80_9e09:
+  jsr unknown_80_9e93.l
+  lda #$0100.w
+  jsr unknown_80_9e8c.l
+  lda #$8003.w
+  sta var_unknown_0943.w
 
-unknown_80_9e1c: jsr $809e93
-/*unknown_80_9e20:*/ lda #$0300.w
-/*unknown_80_9e23:*/ jsr $809e8c
-/*unknown_80_9e27:*/ lda #$8003.w
-/*unknown_80_9e2a:*/ sta $0943.w
-/*unknown_80_9e2d:*/ clc
-/*unknown_80_9e2e:*/ rts
+unknown_80_9e1a:
+  clc
+  rts
 
-unknown_80_9e2f: sep #$20
-/*unknown_80_9e31:*/ inc $0948.w
-/*unknown_80_9e34:*/ lda $0948.w
-/*unknown_80_9e37:*/ cmp #$10
-/*unknown_80_9e39:*/ bcc @unknown_80_9e3e
-/*unknown_80_9e3b:*/ inc $0943.w
-@unknown_80_9e3e: rep #$21
-/*unknown_80_9e40:*/ rts
+unknown_80_9e1c:
+  jsr unknown_80_9e93.l
+  lda #$0300.w
+  jsr unknown_80_9e8c.l
+  lda #$8003.w
+  sta var_unknown_0943.w
+  clc
+  rts
 
-/*unknown_80_9e41:*/ sep #$20
-/*unknown_80_9e43:*/ inc $0948.w
-/*unknown_80_9e46:*/ lda $0948.w
-/*unknown_80_9e49:*/ cmp #$60
-/*unknown_80_9e4b:*/ bcc @unknown_80_9e53
-/*unknown_80_9e4d:*/ stz $0948.w
-/*unknown_80_9e50:*/ inc $0943.w
-@unknown_80_9e53: rep #$20
-/*unknown_80_9e55:*/ jmp @unknown_80_9ea9
-/*unknown_80_9e58:*/ ldy #$0000.w
-/*unknown_80_9e5b:*/ lda #$00e0.w
-/*unknown_80_9e5e:*/ clc
-/*unknown_80_9e5f:*/ adc $0948.w
-/*unknown_80_9e62:*/ cmp #$dc00.w
-/*unknown_80_9e65:*/ bcc @unknown_80_9e6b
-/*unknown_80_9e67:*/ iny
-/*unknown_80_9e68:*/ lda #$dc00.w
-@unknown_80_9e6b: sta $0948.w
-/*unknown_80_9e6e:*/ lda #$ff3f.w
-/*unknown_80_9e71:*/ clc
-/*unknown_80_9e72:*/ adc $094a.w
-/*unknown_80_9e75:*/ cmp #$3000.w
-/*unknown_80_9e78:*/ bcs @unknown_80_9e7e
-/*unknown_80_9e7a:*/ iny
-/*unknown_80_9e7b:*/ lda #$3000.w
-@unknown_80_9e7e: sta $094a.w
-/*unknown_80_9e81:*/ cpy #$0002.w
-/*unknown_80_9e84:*/ bne @unknown_80_9e89
-/*unknown_80_9e86:*/ inc $0943.w
-@unknown_80_9e89: jmp $9ea9.w
-/*unknown_80_9e8c:*/ stz $0945.w
-/*unknown_80_9e8f:*/ sta $0946.w
-/*unknown_80_9e92:*/ rtl
+unknown_80_9e2f:
+  sep #$20
+  inc var_unknown_0948.w
+  lda var_unknown_0948.w
+  cmp #$10
+  bcc @unknown_80_9e3e
+  inc var_unknown_0943.w
+@unknown_80_9e3e:
+  rep #$21
+  rts
 
-/*unknown_80_9e93:*/ lda #$8000.w
-/*unknown_80_9e96:*/ sta $0948.w
-/*unknown_80_9e99:*/ lda #$8000.w
-/*unknown_80_9e9c:*/ sta $094a.w
-/*unknown_80_9e9f:*/ stz $0945.w
-/*unknown_80_9ea2:*/ stz $0946.w
-/*unknown_80_9ea5:*/ stz $0943.w
-/*unknown_80_9ea8:*/ rtl
+unknown_80_9e41:
+  sep #$20
+  inc var_unknown_0948.w
+  lda var_unknown_0948.w
+  cmp #$60
+  bcc @unknown_80_9e53
+  stz var_unknown_0948.w
+  inc var_unknown_0943.w
+@unknown_80_9e53:
+  rep #$20
+  jmp unknown_80_9ea9
 
-@unknown_80_9ea9: sep #$39
+unknown_80_9e58:
+  ldy #$0000.w
+  lda #$00e0.w
+  clc
+  adc var_unknown_0948.w
+  cmp #$dc00.w
+  bcc @unknown_80_9e6b
+  iny
+  lda #$dc00.w
+@unknown_80_9e6b:
+  sta var_unknown_0948.w
+  lda #$ff3f.w
+  clc
+  adc var_unknown_094a.w
+  cmp #$3000.w
+  bcs @unknown_80_9e7e
+  iny
+  lda #$3000.w
+@unknown_80_9e7e:
+  sta var_unknown_094a.w
+  cpy #$0002.w
+  bne unknown_80_9e89
+  inc var_unknown_0943.w
+
+unknown_80_9e89:
+  jmp unknown_80_9ea9
+
+unknown_80_9e8c:
+  stz var_unknown_0945_l.w
+  sta var_unknown_0945_h.w
+  rtl
+
+unknown_80_9e93:
+  lda #$8000.w
+  sta var_unknown_0948.w
+  lda #$8000.w
+  sta var_unknown_094a.w
+  stz var_unknown_0945_l.w
+  stz var_unknown_0945_h.w
+  stz var_unknown_0943.w
+  rtl
+
+unknown_80_9ea9: sep #$39
 /*unknown_80_9eab:*/ lda $05b6.w
 /*unknown_80_9eae:*/ and #$7f
 /*unknown_80_9eb0:*/ tax
