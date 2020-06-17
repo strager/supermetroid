@@ -371,9 +371,9 @@ unknown_80_8212:
   lda var_unknown_05e7.w
   eor #$ffff.w
   sta var_unknown_05e7.w
-  lda $7ed820, X
+  lda var_unknown_d820.l, X
   and var_unknown_05e7.w
-  sta $7ed820, X
+  sta var_unknown_d820.l, X
   plp
   ply
   plx
