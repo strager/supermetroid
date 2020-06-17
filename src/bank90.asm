@@ -668,81 +668,89 @@ unknown_90_84e3:
   plp
   rts
 
-unknown_90_852c: php
-/*unknown_90_852d:*/ sep #$20
-/*unknown_90_852f:*/ phb
-/*unknown_90_8530:*/ lda #$91
-/*unknown_90_8532:*/ sta $02
-/*unknown_90_8534:*/ pha
-/*unknown_90_8535:*/ plb
-/*unknown_90_8536:*/ rep #$30
-/*unknown_90_8538:*/ lda $0b3c.w
-/*unknown_90_853b:*/ bne @unknown_90_8540
-/*unknown_90_853d:*/ jmp $85da.w
-@unknown_90_8540: lda $8b
-/*unknown_90_8542:*/ bit $09b6.w
-/*unknown_90_8545:*/ bne @unknown_90_854a
-/*unknown_90_8547:*/ jmp $85da.w
-@unknown_90_854a: lda $0a1f.w
-/*unknown_90_854d:*/ and #$00ff.w
-/*unknown_90_8550:*/ cmp #$0001.w
-/*unknown_90_8553:*/ beq @unknown_90_8558
-/*unknown_90_8555:*/ jmp $85da.w
-@unknown_90_8558: lda $09a2.w
-/*unknown_90_855b:*/ bit #$2000.w
-/*unknown_90_855e:*/ bne @unknown_90_857d
-/*unknown_90_8560:*/ ldy #$0000.w
-/*unknown_90_8563:*/ sty $0a96.w
-/*unknown_90_8566:*/ lda $91b5d1
-/*unknown_90_856a:*/ sta $00
-/*unknown_90_856c:*/ lda [$00], Y
-/*unknown_90_856e:*/ and #$00ff.w
-/*unknown_90_8571:*/ clc
-/*unknown_90_8572:*/ adc $0a9c.w
-/*unknown_90_8575:*/ sta $0a94.w
-/*unknown_90_8578:*/ lda #$0000.w
-/*unknown_90_857b:*/ bra @unknown_90_85df
-@unknown_90_857d: lda $0b3e.w
-/*unknown_90_8580:*/ dec A
-/*unknown_90_8581:*/ sta $0b3e.w
-/*unknown_90_8584:*/ bit #$00ff.w
-/*unknown_90_8587:*/ bne @unknown_90_85da
-/*unknown_90_8589:*/ lda $0b3e.w
-/*unknown_90_858c:*/ bit #$0400.w
-/*unknown_90_858f:*/ bne @unknown_90_85aa
-/*unknown_90_8591:*/ clc
-/*unknown_90_8592:*/ adc #$0100.w
-/*unknown_90_8595:*/ sta $0b3e.w
-/*unknown_90_8598:*/ bit #$0400.w
-/*unknown_90_859b:*/ beq @unknown_90_85aa
-/*unknown_90_859d:*/ lda #$0001.w
-/*unknown_90_85a0:*/ sta $0b40.w
-/*unknown_90_85a3:*/ lda #$0003.w
-/*unknown_90_85a6:*/ jsr $80914d
-@unknown_90_85aa: xba
-/*unknown_90_85ab:*/ and #$00ff.w
-/*unknown_90_85ae:*/ asl A
-/*unknown_90_85af:*/ tax
-/*unknown_90_85b0:*/ lda $0b3e.w
-/*unknown_90_85b3:*/ and #$ff00.w
-/*unknown_90_85b6:*/ ora $91b61f, X
-/*unknown_90_85ba:*/ sta $0b3e.w
-/*unknown_90_85bd:*/ ldy #$0000.w
-/*unknown_90_85c0:*/ sty $0a96.w
-/*unknown_90_85c3:*/ lda $91b5de, X
-/*unknown_90_85c7:*/ sta $00
-/*unknown_90_85c9:*/ lda [$00], Y
-/*unknown_90_85cb:*/ and #$00ff.w
-/*unknown_90_85ce:*/ clc
-/*unknown_90_85cf:*/ adc $0a9c.w
-/*unknown_90_85d2:*/ sta $0a94.w
-/*unknown_90_85d5:*/ lda #$0000.w
-/*unknown_90_85d8:*/ bra @unknown_90_85df
-@unknown_90_85da: lda [$00], Y
-/*unknown_90_85dc:*/ and #$00ff.w
-@unknown_90_85df: plb
-/*unknown_90_85e0:*/ plp
-/*unknown_90_85e1:*/ rts
+unknown_90_852c:
+  php
+  sep #$20
+  phb
+  lda #:unknown_91_b5d1
+  sta var_unknown_02_l
+  pha
+  plb
+  rep #$30
+  lda var_unknown_0b3c.w
+  bne @unknown_90_8540
+  jmp unknown_90_852c@unknown_90_85da
+@unknown_90_8540:
+  lda var_pressed_buttons
+  bit $09b6.w
+  bne @unknown_90_854a
+  jmp unknown_90_852c@unknown_90_85da
+@unknown_90_854a:
+  lda var_unknown_0a1f.w
+  and #$00ff.w
+  cmp #$0001.w
+  beq @unknown_90_8558
+  jmp unknown_90_852c@unknown_90_85da
+@unknown_90_8558:
+  lda var_unknown_09a2.w
+  bit #$2000.w
+  bne @unknown_90_857d
+  ldy #$0000.w
+  sty var_unknown_0a96.w
+  lda unknown_91_b5d1.l
+  sta var_unknown_00
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  clc
+  adc var_unknown_0a9c.w
+  sta var_unknown_0a94.w
+  lda #$0000.w
+  bra @unknown_90_85df
+@unknown_90_857d:
+  lda var_unknown_0b3e.w
+  dec A
+  sta var_unknown_0b3e.w
+  bit #$00ff.w
+  bne @unknown_90_85da
+  lda var_unknown_0b3e.w
+  bit #$0400.w
+  bne @unknown_90_85aa
+  clc
+  adc #$0100.w
+  sta var_unknown_0b3e.w
+  bit #$0400.w
+  beq @unknown_90_85aa
+  lda #$0001.w
+  sta var_unknown_0b40.w
+  lda #$0003.w
+  jsr unknown_80_914d.l
+@unknown_90_85aa:
+  xba
+  and #$00ff.w
+  asl A
+  tax
+  lda var_unknown_0b3e.w
+  and #$ff00.w
+  ora unknown_91_b61f.l, X
+  sta var_unknown_0b3e.w
+  ldy #$0000.w
+  sty var_unknown_0a96.w
+  lda unknown_91_b5de.l, X
+  sta var_unknown_00
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  clc
+  adc var_unknown_0a9c.w
+  sta var_unknown_0a94.w
+  lda #$0000.w
+  bra @unknown_90_85df
+@unknown_90_85da:
+  lda [var_unknown_00], Y
+  and #$00ff.w
+@unknown_90_85df:
+  plb
+  plp
+  rts
 
 ; TODO: "Draws Samus" -- Kejardon
 unknown_90_85e2:

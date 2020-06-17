@@ -6765,7 +6765,7 @@ unknown_91_b5de: inx
 /*unknown_91_b619:*/ ora ($01, X)
 /*unknown_91_b61b:*/ ora ($01, X)
 /*unknown_91_b61d:*/ ora ($ff, X)
-/*unknown_91_b61f:*/ ora ($00, X)
+unknown_91_b61f: ora ($00, X)
 /*unknown_91_b621:*/ ora ($00, X)
 /*unknown_91_b623:*/ ora ($00, X)
 /*unknown_91_b625:*/ ora ($00, X)
