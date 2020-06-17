@@ -6335,27 +6335,27 @@ unknown_80_af89:
 
 unknown_80_b032:
   lda #$0001.w
-  sta $0783.w
-  lda $0783.w
+  sta var_unknown_0783.w
+  lda var_unknown_0783.w
   bne @unknown_80_b03f
   sec
   rtl
 @unknown_80_b03f:
-  jsr $80836f
+  jsr unknown_80_836f.l
   lda #IO_VMAIN_INCREMENT_1 | IO_VMAIN_INCREMENT_HIGH
   sta IO_VMAIN
   stz IO_VMADD
-  lda #$1900.w
-  sta $4310.w
-  lda #$8000.w
-  sta $4312.w
+  lda #(IO_VMDATAH - IO_BBAD_BASE) << 8
+  sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
+  lda #unknown_98_8000
+  sta IO_A1T1
   lda #$4000.w
-  sta $4315.w
+  sta IO_DAS1
   sep #$20
-  lda #$98
-  sta $4314.w
-  lda #$02
-  sta $420b.w
+  lda #:unknown_98_8000
+  sta IO_A1B1
+  lda #IO_MDMAEN_1
+  sta IO_MDMAEN
   stz IO_VMAIN
   stz IO_VMADDL
   stz IO_VMADDH
@@ -6371,7 +6371,7 @@ unknown_80_b032:
   phy
   ldy #$0020.w
 @unknown_80_b087:
-  lda $98c000, X
+  lda unknown_98_c000.l, X
   sta IO_VMDATA
   inx
   dey
@@ -6385,18 +6385,18 @@ unknown_80_b032:
   cpx #$0400.w
   bne @unknown_80_b080
   lda #$07
-  sta $55
+  sta var_unknown_55
   rep #$20
   lda #$0100.w
-  sta $78
-  stz $7a
-  stz $7c
-  sta $7e
+  sta var_unknown_78
+  stz var_unknown_7a
+  stz var_unknown_7c
+  sta var_unknown_7e
   lda #$0080.w
-  sta $80
-  sta $82
-  stz $0785.w
-  jsr $808382
+  sta var_unknown_80
+  sta var_unknown_82
+  stz var_unknown_0785.w
+  jsr unknown_80_8382.l
   sec
   rtl
 
