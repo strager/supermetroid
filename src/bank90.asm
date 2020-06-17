@@ -2695,72 +2695,72 @@ unknown_90_94ec:
   phk
   plb
   rep #$30
-  lda $0cf8.w
+  lda var_unknown_0cf8.w
   beq @unknown_90_9557
-  lda $0af6.w
+  lda samus_x.w
   bmi @unknown_90_954d
   sec
-  sbc $0911.w
+  sbc screen_x.w
   bcc @unknown_90_9518
   cmp #$00a0.w
   bcc @unknown_90_9513
-  lda $0911.w
+  lda screen_x.w
   clc
   adc #$0003.w
-  sta $0911.w
+  sta screen_x.w
   bra @unknown_90_9522
 @unknown_90_9513:
   cmp #$0060.w
   bcs @unknown_90_9522
 @unknown_90_9518:
-  lda $0911.w
+  lda screen_x.w
   sec
   sbc #$0003.w
-  sta $0911.w
+  sta screen_x.w
 @unknown_90_9522:
-  lda $0afa.w
+  lda samus_y.w
   bmi @unknown_90_954d
   sec
-  sbc $0915.w
+  sbc screen_y.w
   bcc @unknown_90_9543
   cmp #$0090.w
   bcc @unknown_90_953e
-  lda $0915.w
+  lda screen_y.w
   clc
   adc #$0003.w
-  sta $0915.w
+  sta screen_y.w
   bra @unknown_90_954d
 @unknown_90_953e:
-  cmp #$0070.w
+  cmp #$70
   bcs @unknown_90_954d
 @unknown_90_9543:
-  lda $0915.w
+  lda screen_y.w
   sec
   sbc #$0003.w
-  sta $0915.w
+  sta screen_y.w
 @unknown_90_954d:
-  jsr $80a528
-  jsr $80a731
+  jsr unknown_80_a528.l
+  jsr unknown_80_a731.l
   bra @unknown_90_9563
 @unknown_90_9557:
-  jsr $96c0.w
+  jsr unknown_90_96c0
   jsr unknown_90_95a0
   jsr unknown_90_96ff
-  jsr $964f.w
+  jsr unknown_90_964f
 @unknown_90_9563:
-  ldx $07e9.w
+  ldx var_unknown_07e9.w
   beq @unknown_90_956e
   ldx #$0000.w
-  jsr ($07e9.w, X)
+  jsr (var_unknown_07e9.w, X)
 @unknown_90_956e:
-  lda $0af6.w
-  sta $0b10.w
-  lda $0af8.w
-  sta $0b12.w
-  lda $0afa.w
-  sta $0b14.w
-  lda $0afc.w
-  sta $0b16.w
+  lda samus_x.w
+  sta var_unknown_0b10.w
+  lda samus_subx.w
+  sta var_unknown_0b12.w
+  lda samus_y.w
+  sta var_unknown_0b14.w
+  lda samus_suby.w
+  sta var_unknown_0b16.w
   plb
   plp
   rtl
@@ -2861,7 +2861,8 @@ unknown_90_95a0:
 /*unknown_90_9648:*/ brk $50
 /*unknown_90_964a:*/ brk $20
 /*unknown_90_964c:*/ brk $e0
-/*unknown_90_964e:*/ brk $08
+/*unknown_90_964e:*/ .db $00
+unknown_90_964f: php
 /*unknown_90_9650:*/ rep #$30
 /*unknown_90_9652:*/ lda $0b14.w
 /*unknown_90_9655:*/ cmp $0afa.w

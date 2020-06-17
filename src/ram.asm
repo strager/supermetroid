@@ -503,6 +503,10 @@ var_unknown_07b1: dw ; $7e07b1
 var_unknown_07b3: dw ; $7e07b3
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $07e9) export
+var_unknown_07e9: db ; $7e07e9
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $07ec) export
 var_unknown_07ec: db ; $7e07ec
 .ende
@@ -859,10 +863,10 @@ samus_screen_y: dw ; $7e0b06
 var_unknown_0b0a: dw ; $7e0b0a
 var_unknown_0b0c: dw ; $7e0b0c
 var_unknown_0b0e: dw ; $7e0b0e
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0b14) export
+var_unknown_0b10: dw ; $7e0b10
+var_unknown_0b12: dw ; $7e0b12
 var_unknown_0b14: dw ; $7e0b14
+var_unknown_0b16: dw ; $7e0b16
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0b2c) export
