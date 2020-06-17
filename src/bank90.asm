@@ -3551,43 +3551,43 @@ unknown_90_9b1f: php
 unknown_90_9bd1:
   php
   rep #$30
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$0020.w
   bne @unknown_90_9bf4
-  jsr $90ec3e
-  lda $195e.w
+  jsr unknown_90_ec3e.l
+  lda var_unknown_195e.w
   bmi @unknown_90_9beb
   cmp $12
   bmi @unknown_90_9bf6
   bra @unknown_90_9bf4
 @unknown_90_9beb:
-  lda $1962.w
+  lda var_unknown_1962.w
   bmi @unknown_90_9bf4
   cmp $12
   bmi @unknown_90_9c06
 @unknown_90_9bf4:
   bra @unknown_90_9c0c
 @unknown_90_9bf6:
-  lda $197e.w
+  lda var_unknown_197e.w
   bit #$0004.w
   bne @unknown_90_9bf4
   lda #$a08d.w
-  sta $0a6c.w
+  sta var_unknown_0a6c.w
   bra @unknown_90_9c0c
 @unknown_90_9c06:
   lda #$a1dd.w
-  sta $0a6c.w
+  sta var_unknown_0a6c.w
 @unknown_90_9c0c:
-  lda $0a1f.w
+  lda var_unknown_0a1f.w
   and #$00ff.w
-  sta $14
+  sta var_unknown_14
   asl A
   clc
-  adc $14
+  adc var_unknown_14
   asl A
   asl A
   clc
-  adc $0a6c.w
+  adc var_unknown_0a6c.w
   tax
   plp
   rts
