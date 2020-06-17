@@ -5975,7 +5975,8 @@ unknown_91_852f: lda $0e20.w
 /*unknown_91_b009:*/ brk $00
 /*unknown_91_b00b:*/ ora ($c4, X)
 /*unknown_91_b00d:*/ brk $ff
-/*unknown_91_b00f:*/ sbc $98b56f, X
+/*unknown_91_b00f:*/ .db $FF
+unknown_91_b010: .db $6F, $B5, $98
 /*unknown_91_b013:*/ lda ($98)
 /*unknown_91_b015:*/ lda ($22)
 /*unknown_91_b017:*/ lda ($22)
