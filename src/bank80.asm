@@ -4103,27 +4103,32 @@ number_to_decimal_2:
 
   rts
 
-unknown_80_9dbf: ora #$002c.w
-/*unknown_80_9dc2:*/ bit $2c01.w
-/*unknown_80_9dc5:*/ cop $2c
-/*unknown_80_9dc7:*/ ora $2c, S
-/*unknown_80_9dc9:*/ tsb $2c
-/*unknown_80_9dcb:*/ ora $2c
-/*unknown_80_9dcd:*/ asl $2c
-/*unknown_80_9dcf:*/ ora [$2c]
-/*unknown_80_9dd1:*/ php
-/*unknown_80_9dd2:*/ .db $2c
-unknown_80_9dd3: .db $09, $2c
-/*unknown_80_9dd5:*/ brk $2c
-/*unknown_80_9dd7:*/ ora ($2c, X)
-/*unknown_80_9dd9:*/ cop $2c
-/*unknown_80_9ddb:*/ ora $2c, S
-/*unknown_80_9ddd:*/ tsb $2c
-/*unknown_80_9ddf:*/ ora $2c
-/*unknown_80_9de1:*/ asl $2c
-/*unknown_80_9de3:*/ ora [$2c]
-/*unknown_80_9de5:*/ php
-/*unknown_80_9de6:*/ bit $4b8b.w
+unknown_80_9dbf:
+  .dw $2c09
+  .dw $2c00
+  .dw $2c01
+  .dw $2c02
+  .dw $2c03
+  .dw $2c04
+  .dw $2c05
+  .dw $2c06
+  .dw $2c07
+  .dw $2c08
+
+unknown_80_9dd3:
+  .dw $2c09
+  .dw $2c00
+  .dw $2c01
+  .dw $2c02
+  .dw $2c03
+  .dw $2c04
+  .dw $2c05
+  .dw $2c06
+  .dw $2c07
+  .dw $2c08
+
+/*unknown_80_9de7:*/ phb
+/*unknown_80_9de8:*/ phk
 /*unknown_80_9de9:*/ plb
 /*unknown_80_9dea:*/ phx
 /*unknown_80_9deb:*/ phy
