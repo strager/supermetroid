@@ -5581,14 +5581,15 @@ unknown_90_ac04:
   .db $02
   .db $01
 
-/*unknown_90_ac0c:*/ .db $00
-/*unknown_90_ac0d:*/ jsr ($7e00.w, X)
-/*unknown_90_ac10:*/ brk $3f
-/*unknown_90_ac12:*/ bra $1f ; $ac33.w
-/*unknown_90_ac14:*/ cpy #$e00f.w
-/*unknown_90_ac17:*/ ora [$f0]
-/*unknown_90_ac19:*/ ora $f8, S
-/*unknown_90_ac1b:*/ .db $01
+unknown_90_ac0c:
+  .dw $fc00
+  .dw $7e00
+  .dw $3f00
+  .dw $1f80
+  .dw $0fc0
+  .dw $07e0
+  .dw $03f0
+  .dw $01f8
 
 unknown_90_ac1c: lda $0a78.w
 /*unknown_90_ac1f:*/ bne @unknown_90_ac32
