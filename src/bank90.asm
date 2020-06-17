@@ -2917,31 +2917,31 @@ unknown_90_964f: php
 unknown_90_96c0:
   php
   rep #$30
-  lda $0af6.w
-  cmp $0b10.w
+  lda samus_x.w
+  cmp var_unknown_0b10.w
   bmi @unknown_90_96cd
   bra @unknown_90_96e6
 @unknown_90_96cd:
-  lda $0b12.w
+  lda var_unknown_0b12.w
   sec
-  sbc $0af8.w
-  sta $0da4.w
-  lda $0b10.w
-  sbc $0af6.w
+  sbc samus_subx.w
+  sta var_unknown_0da4.w
+  lda var_unknown_0b10.w
+  sbc samus_x.w
   clc
-  adc $9ead.w
-  sta $0da2.w
+  adc unknown_90_9ead.w
+  sta var_unknown_0da2.w
   bra @unknown_90_96fd
 @unknown_90_96e6:
-  lda $0af8.w
+  lda samus_subx.w
   sec
-  sbc $0b12.w
-  sta $0da4.w
-  lda $0af6.w
-  sbc $0b10.w
+  sbc var_unknown_0b12.w
+  sta var_unknown_0da4.w
+  lda samus_x.w
+  sbc var_unknown_0b10.w
   clc
-  adc $9ead.w
-  sta $0da2.w
+  adc unknown_90_9ead.w
+  sta var_unknown_0da2.w
 @unknown_90_96fd:
   plp
   rts
@@ -2951,31 +2951,31 @@ unknown_90_96c0:
 unknown_90_96ff:
   php
   rep #$30
-  lda $0afa.w
-  cmp $0b14.w
+  lda samus_y.w
+  cmp var_unknown_0b14.w
   bmi @unknown_90_970c
   bra @unknown_90_9725
 @unknown_90_970c:
-  lda $0b16.w
+  lda var_unknown_0b16.w
   sec
-  sbc $0afc.w
-  sta $0da8.w
-  lda $0b14.w
-  sbc $0afa.w
+  sbc samus_suby.w
+  sta var_unknown_0da8.w
+  lda var_unknown_0b14.w
+  sbc samus_y.w
   clc
-  adc $9ead.w
-  sta $0da6.w
+  adc unknown_90_9ead.w
+  sta var_unknown_0da6.w
   bra @unknown_90_973c
 @unknown_90_9725:
-  lda $0afc.w
+  lda samus_suby.w
   sec
-  sbc $0b16.w
-  sta $0da8.w
-  lda $0afa.w
-  sbc $0b14.w
+  sbc var_unknown_0b16.w
+  sta var_unknown_0da8.w
+  lda samus_y.w
+  sbc var_unknown_0b14.w
   clc
-  adc $9ead.w
-  sta $0da6.w
+  adc unknown_90_9ead.w
+  sta var_unknown_0da6.w
 @unknown_90_973c:
   plp
   rts
@@ -3888,7 +3888,7 @@ unknown_90_9e9d: brk $05
 /*unknown_90_9ea7:*/ brk $00
 /*unknown_90_9ea9:*/ brk $00
 /*unknown_90_9eab:*/ brk $00
-/*unknown_90_9ead:*/ ora ($00, X)
+unknown_90_9ead: ora ($00, X)
 /*unknown_90_9eaf:*/ brk $00
 /*unknown_90_9eb1:*/ ora ($00, X)
 /*unknown_90_9eb3:*/ brk $00
