@@ -6184,67 +6184,70 @@ unknown_80_aec2:
   clc
   rts
 
-unknown_80_af02: ldx $0925.w
-/*unknown_80_af05:*/ phx
-/*unknown_80_af06:*/ bne @unknown_80_af44
-/*unknown_80_af08:*/ lda $b3
-/*unknown_80_af0a:*/ pha
-/*unknown_80_af0b:*/ lda $b7
-/*unknown_80_af0d:*/ pha
-/*unknown_80_af0e:*/ lda $0915.w
-/*unknown_80_af11:*/ pha
-/*unknown_80_af12:*/ sec
-/*unknown_80_af13:*/ sbc #$000f.w
-/*unknown_80_af16:*/ sta $0915.w
-/*unknown_80_af19:*/ lda $0919.w
-/*unknown_80_af1c:*/ pha
-/*unknown_80_af1d:*/ sec
-/*unknown_80_af1e:*/ sbc #$000f.w
-/*unknown_80_af21:*/ sta $0919.w
-/*unknown_80_af24:*/ jsr unknown_80_a4bb
-/*unknown_80_af27:*/ jsr $ae10.w
-/*unknown_80_af2a:*/ dec $0901.w
-/*unknown_80_af2d:*/ dec $0905.w
-/*unknown_80_af30:*/ jsr $80a3a0
-/*unknown_80_af34:*/ pla
-/*unknown_80_af35:*/ sta $0919.w
-/*unknown_80_af38:*/ pla
-/*unknown_80_af39:*/ sta $0915.w
-/*unknown_80_af3c:*/ pla
-/*unknown_80_af3d:*/ sta $b7
-/*unknown_80_af3f:*/ pla
-/*unknown_80_af40:*/ sta $b3
-/*unknown_80_af42:*/ bra @unknown_80_af77
-@unknown_80_af44: cpx #$0039.w
-/*unknown_80_af47:*/ bcs @unknown_80_af77
-/*unknown_80_af49:*/ lda $0afc.w
-/*unknown_80_af4c:*/ clc
-/*unknown_80_af4d:*/ adc $092b.w
-/*unknown_80_af50:*/ sta $0afc.w
-/*unknown_80_af53:*/ lda $0afa.w
-/*unknown_80_af56:*/ adc $092d.w
-/*unknown_80_af59:*/ sta $0afa.w
-/*unknown_80_af5c:*/ sta $0b14.w
-/*unknown_80_af5f:*/ lda $0915.w
-/*unknown_80_af62:*/ clc
-/*unknown_80_af63:*/ adc #$0004.w
-/*unknown_80_af66:*/ sta $0915.w
-/*unknown_80_af69:*/ lda $0919.w
-/*unknown_80_af6c:*/ clc
-/*unknown_80_af6d:*/ adc #$0004.w
-/*unknown_80_af70:*/ sta $0919.w
-/*unknown_80_af73:*/ jsr $80a3a0
-@unknown_80_af77: plx
-/*unknown_80_af78:*/ inx
-/*unknown_80_af79:*/ stx $0925.w
-/*unknown_80_af7c:*/ cpx #$0039.w
-/*unknown_80_af7f:*/ bcc @unknown_80_af87
-/*unknown_80_af81:*/ jsr $80a3a0
-/*unknown_80_af85:*/ sec
-/*unknown_80_af86:*/ rts
-
-@unknown_80_af87: clc
-/*unknown_80_af88:*/ rts
+unknown_80_af02:
+  ldx var_unknown_0925.w
+  phx
+  bne @unknown_80_af44
+  lda var_unknown_b3
+  pha
+  lda var_unknown_b7
+  pha
+  lda screen_y.w
+  pha
+  sec
+  sbc #$000f.w
+  sta screen_y.w
+  lda var_unknown_0919.w
+  pha
+  sec
+  sbc #$000f.w
+  sta var_unknown_0919.w
+  jsr unknown_80_a4bb
+  jsr unknown_80_ae10
+  dec var_unknown_0901.w
+  dec var_unknown_0905.w
+  jsr unknown_80_a3a0.l
+  pla
+  sta var_unknown_0919.w
+  pla
+  sta screen_y.w
+  pla
+  sta var_unknown_b7
+  pla
+  sta var_unknown_b3
+  bra @unknown_80_af77
+@unknown_80_af44:
+  cpx #$0039.w
+  bcs @unknown_80_af77
+  lda samus_suby.w
+  clc
+  adc var_unknown_092b.w
+  sta samus_suby.w
+  lda samus_y.w
+  adc var_unknown_092d.w
+  sta samus_y.w
+  sta var_unknown_0b14.w
+  lda screen_y.w
+  clc
+  adc #$0004.w
+  sta screen_y.w
+  lda var_unknown_0919.w
+  clc
+  adc #$0004.w
+  sta var_unknown_0919.w
+  jsr unknown_80_a3a0.l
+@unknown_80_af77:
+  plx
+  inx
+  stx var_unknown_0925.w
+  cpx #$0039.w
+  bcc @unknown_80_af87
+  jsr unknown_80_a3a0.l
+  sec
+  rts
+@unknown_80_af87:
+  clc
+  rts
 
 ; TODO: "Scrolling routine for doors moving up. First time run is actually a fix
 ; to redraw top row of blocks." -- Kejardon
