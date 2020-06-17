@@ -3182,25 +3182,25 @@ unknown_90_98bc:
   phk
   plb
   rep #$30
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$0020.w
   bne @unknown_90_98e2
-  jsr $90ec3e
-  lda $195e.w
+  jsr unknown_90_ec3e.l
+  lda var_unknown_195e.w
   bmi @unknown_90_98d9
-  cmp $12
+  cmp var_unknown_12
   bmi @unknown_90_98e7
   bra @unknown_90_98e2
 @unknown_90_98d9:
-  lda $1962.w
+  lda var_unknown_1962.w
   bmi @unknown_90_98e2
-  cmp $12
+  cmp var_unknown_12
   bmi @unknown_90_98f4
 @unknown_90_98e2:
   ldx #$0000.w
   bra @unknown_90_98f7
 @unknown_90_98e7:
-  lda $197e.w
+  lda var_unknown_197e.w
   bit #$0004.w
   bne @unknown_90_98e2
   ldx #$0002.w
@@ -3208,39 +3208,39 @@ unknown_90_98bc:
 @unknown_90_98f4:
   ldx #$0004.w
 @unknown_90_98f7:
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$0100.w
   bne @unknown_90_990d
-  lda $9ebf.w, X
-  sta $0b2c.w
-  lda $9eb9.w, X
-  sta $0b2e.w
+  lda unknown_90_9ebf.w, X
+  sta var_unknown_0b2c.w
+  lda unknown_90_9eb9.w, X
+  sta var_unknown_0b2e.w
   bra @unknown_90_9919
 @unknown_90_990d:
-  lda $9ecb.w, X
-  sta $0b2c.w
-  lda $9ec5.w, X
-  sta $0b2e.w
+  lda unknown_90_9ecb.w, X
+  sta var_unknown_0b2c.w
+  lda unknown_90_9ec5.w, X
+  sta var_unknown_0b2e.w
 @unknown_90_9919:
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$2000.w
   beq @unknown_90_993a
-  lda $0b42.w
+  lda var_unknown_0b42.w
   lsr A
-  sta $12
-  lda $0b2c.w
+  sta var_unknown_12
+  lda var_unknown_0b2c.w
   clc
-  adc $0b44.w
-  sta $0b2c.w
-  lda $0b2e.w
+  adc var_unknown_0b44.w
+  sta var_unknown_0b2c.w
+  lda var_unknown_0b2e.w
   clc
-  adc $12
-  sta $0b2e.w
+  adc var_unknown_12
+  sta var_unknown_0b2e.w
 @unknown_90_993a:
-  stz $0a9e.w
-  stz $0aa0.w
+  stz var_unknown_0a9e.w
+  stz var_unknown_0aa0.w
   lda #$0001.w
-  sta $0b36.w
+  sta var_unknown_0b36.w
   plb
   plp
   rtl
@@ -3894,16 +3894,16 @@ unknown_90_9ead: ora ($00, X)
 /*unknown_90_9eb3:*/ brk $00
 /*unknown_90_9eb5:*/ ora ($00, X)
 /*unknown_90_9eb7:*/ brk $00
-/*unknown_90_9eb9:*/ tsb $00
+unknown_90_9eb9: tsb $00
 /*unknown_90_9ebb:*/ ora ($00, X)
 /*unknown_90_9ebd:*/ cop $00
-/*unknown_90_9ebf:*/ brk $e0
+unknown_90_9ebf: brk $e0
 /*unknown_90_9ec1:*/ brk $c0
 /*unknown_90_9ec3:*/ brk $c0
-/*unknown_90_9ec5:*/ asl $00
+unknown_90_9ec5: asl $00
 /*unknown_90_9ec7:*/ cop $00
 /*unknown_90_9ec9:*/ ora $00, S
-/*unknown_90_9ecb:*/ brk $00
+unknown_90_9ecb: brk $00
 /*unknown_90_9ecd:*/ brk $80
 /*unknown_90_9ecf:*/ brk $80
 /*unknown_90_9ed1:*/ tsb $00
