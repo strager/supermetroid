@@ -1058,7 +1058,7 @@ unknown_80_85c7:
   ldy #var_unknown_00.w
 @unknown_80_85d1:
   lda var_unknown_07f7.w, Y
-  sta $7ecd52, X
+  sta var_unknown_cd52.l, X
   inx
   inx
   iny
