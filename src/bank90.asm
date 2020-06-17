@@ -399,213 +399,236 @@ unknown_90_8344:
   clc
   rts
 
-unknown_90_8346: lda $09c2.w
-/*unknown_90_8349:*/ cmp #$001e.w
-/*unknown_90_834c:*/ bmi @unknown_90_8356
-/*unknown_90_834e:*/ ldy #$0000.w
-/*unknown_90_8351:*/ sty $0a96.w
-/*unknown_90_8354:*/ sec
-/*unknown_90_8355:*/ rts
+unknown_90_8346:
+  lda var_player_cur_health.w
+  cmp #$001e.w
+  bmi @unknown_90_8356
+  ldy #$0000.w
+  sty var_unknown_0a96.w
+  sec
+  rts
+@unknown_90_8356:
+  lda var_unknown_0a96.w
+  inc A
+  sta var_unknown_0a96.w
+  tay
+  sec
+  rts
 
-@unknown_90_8356: lda $0a96.w
-/*unknown_90_8359:*/ inc A
-/*unknown_90_835a:*/ sta $0a96.w
-/*unknown_90_835d:*/ tay
-/*unknown_90_835e:*/ sec
-/*unknown_90_835f:*/ rts
+unknown_90_8360:
+  lda #$94cb.w
+  sta var_unknown_0a58.w
+  lda var_unknown_0a96.w
+  inc A
+  sta var_unknown_0a96.w
+  tay
+  sec
+  rts
 
-unknown_90_8360: lda #$94cb.w
-/*unknown_90_8363:*/ sta $0a58.w
-/*unknown_90_8366:*/ lda $0a96.w
-/*unknown_90_8369:*/ inc A
-/*unknown_90_836a:*/ sta $0a96.w
-/*unknown_90_836d:*/ tay
-/*unknown_90_836e:*/ sec
-/*unknown_90_836f:*/ rts
+unknown_90_8370:
+  lda var_unknown_0a60.w
+  cmp #$e91d.w
+  beq @unknown_90_8395
+  lda var_unknown_0a28.w
+  cmp #$004b.w
+  beq @unknown_90_8398
+  cmp #$004c.w
+  beq @unknown_90_8398
+  cmp #$0019.w
+  beq @unknown_90_8398
+  cmp #$001a.w
+  beq @unknown_90_8398
+  lda #$e926.w
+  sta var_unknown_0a60.w
+@unknown_90_8395:
+  jmp unknown_90_84b6
+@unknown_90_8398:
+  clc
+  rts
 
-unknown_90_8370: lda $0a60.w
-/*unknown_90_8373:*/ cmp #$e91d.w
-/*unknown_90_8376:*/ beq @unknown_90_8395
-/*unknown_90_8378:*/ lda $0a28.w
-/*unknown_90_837b:*/ cmp #$004b.w
-/*unknown_90_837e:*/ beq @unknown_90_8398
-/*unknown_90_8380:*/ cmp #$004c.w
-/*unknown_90_8383:*/ beq @unknown_90_8398
-/*unknown_90_8385:*/ cmp #$0019.w
-/*unknown_90_8388:*/ beq @unknown_90_8398
-/*unknown_90_838a:*/ cmp #$001a.w
-/*unknown_90_838d:*/ beq @unknown_90_8398
-/*unknown_90_838f:*/ lda #$e926.w
-/*unknown_90_8392:*/ sta $0a60.w
-@unknown_90_8395: jmp $84b6.w
-@unknown_90_8398: clc
-/*unknown_90_8399:*/ rts
+unknown_90_839a:
+  iny
+  lda [var_unknown_00], Y
+  sta var_unknown_12
+  lda var_unknown_09a2.w
+  bit $12
+  bne @unknown_90_83c9
+  lda var_unknown_0b2e.w
+  bne @unknown_90_83bc
+  lda var_unknown_0b2c.w
+  bne @unknown_90_83bc
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+  bra @unknown_90_83ee
+@unknown_90_83bc:
+  iny
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+  bra @unknown_90_83ee
+@unknown_90_83c9:
+  lda var_unknown_0b2e.w
+  bne @unknown_90_83e1
+  lda var_unknown_0b2c.w
+  bne @unknown_90_83e1
+  iny
+  iny
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+  bra @unknown_90_83ee
+@unknown_90_83e1:
+  iny
+  iny
+  iny
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+@unknown_90_83ee:
+  lda #$0003.w
+  sta var_unknown_0a32.w
+  clc
+  rts
 
-unknown_90_839a: iny
-/*unknown_90_839b:*/ lda [$00], Y
-/*unknown_90_839d:*/ sta $12
-/*unknown_90_839f:*/ lda $09a2.w
-/*unknown_90_83a2:*/ bit $12
-/*unknown_90_83a4:*/ bne @unknown_90_83c9
-/*unknown_90_83a6:*/ lda $0b2e.w
-/*unknown_90_83a9:*/ bne @unknown_90_83bc
-/*unknown_90_83ab:*/ lda $0b2c.w
-/*unknown_90_83ae:*/ bne @unknown_90_83bc
-/*unknown_90_83b0:*/ iny
-/*unknown_90_83b1:*/ iny
-/*unknown_90_83b2:*/ lda [$00], Y
-/*unknown_90_83b4:*/ and #$00ff.w
-/*unknown_90_83b7:*/ sta $0a2c.w
-/*unknown_90_83ba:*/ bra @unknown_90_83ee
-@unknown_90_83bc: iny
-/*unknown_90_83bd:*/ iny
-/*unknown_90_83be:*/ iny
-/*unknown_90_83bf:*/ lda [$00], Y
-/*unknown_90_83c1:*/ and #$00ff.w
-/*unknown_90_83c4:*/ sta $0a2c.w
-/*unknown_90_83c7:*/ bra @unknown_90_83ee
-@unknown_90_83c9: lda $0b2e.w
-/*unknown_90_83cc:*/ bne @unknown_90_83e1
-/*unknown_90_83ce:*/ lda $0b2c.w
-/*unknown_90_83d1:*/ bne @unknown_90_83e1
-/*unknown_90_83d3:*/ iny
-/*unknown_90_83d4:*/ iny
-/*unknown_90_83d5:*/ iny
-/*unknown_90_83d6:*/ iny
-/*unknown_90_83d7:*/ lda [$00], Y
-/*unknown_90_83d9:*/ and #$00ff.w
-/*unknown_90_83dc:*/ sta $0a2c.w
-/*unknown_90_83df:*/ bra @unknown_90_83ee
-@unknown_90_83e1: iny
-/*unknown_90_83e2:*/ iny
-/*unknown_90_83e3:*/ iny
-/*unknown_90_83e4:*/ iny
-/*unknown_90_83e5:*/ iny
-/*unknown_90_83e6:*/ lda [$00], Y
-/*unknown_90_83e8:*/ and #$00ff.w
-/*unknown_90_83eb:*/ sta $0a2c.w
-@unknown_90_83ee: lda #$0003.w
-/*unknown_90_83f1:*/ sta $0a32.w
-/*unknown_90_83f4:*/ clc
-/*unknown_90_83f5:*/ rts
+unknown_90_83f6:
+  lda var_unknown_0b2e.w
+  bne @unknown_90_840b
+  lda var_unknown_0b2c.w
+  bne @unknown_90_840b
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+  bra @unknown_90_8415
+@unknown_90_840b:
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+@unknown_90_8415:
+  lda #$0003.w
+  sta var_unknown_0a32.w
+  clc
+  rts
 
-unknown_90_83f6: lda $0b2e.w
-/*unknown_90_83f9:*/ bne @unknown_90_840b
-/*unknown_90_83fb:*/ lda $0b2c.w
-/*unknown_90_83fe:*/ bne @unknown_90_840b
-/*unknown_90_8400:*/ iny
-/*unknown_90_8401:*/ lda [$00], Y
-/*unknown_90_8403:*/ and #$00ff.w
-/*unknown_90_8406:*/ sta $0a2c.w
-/*unknown_90_8409:*/ bra @unknown_90_8415
-@unknown_90_840b: iny
-/*unknown_90_840c:*/ iny
-/*unknown_90_840d:*/ lda [$00], Y
-/*unknown_90_840f:*/ and #$00ff.w
-/*unknown_90_8412:*/ sta $0a2c.w
-@unknown_90_8415: lda #$0003.w
-/*unknown_90_8418:*/ sta $0a32.w
-/*unknown_90_841b:*/ clc
-/*unknown_90_841c:*/ rts
+unknown_90_841d:
+  lda var_unknown_09a2.w
+  bit #$0020.w
+  bne @unknown_90_8445
+  jsr unknown_90_ec58.l
+  lda var_unknown_195e.w
+  bmi @unknown_90_843c
+  cmp $14
+  bpl @unknown_90_8445
+  lda var_unknown_197e.w
+  bit #$0004.w
+  bne @unknown_90_8445
+  bra @unknown_90_8452
+@unknown_90_843c:
+  lda var_unknown_1962.w
+  bmi @unknown_90_8445
+  cmp $14
+  bmi @unknown_90_8452
+@unknown_90_8445:
+  lda var_unknown_09a2.w
+  bit #$0008.w
+  bne @unknown_90_8477
+  bit #$0200.w
+  bne @unknown_90_8463
+@unknown_90_8452:
+  lda #$0031.w
+  jsr unknown_80_9049.l
+  lda var_unknown_0a96.w
+  inc A
+  sta var_unknown_0a96.w
+  tay
+  sec
+  rts
+@unknown_90_8463:
+  lda #$003e.w
+  jsr unknown_80_9049.l
+  lda var_unknown_0a96.w
+  clc
+  adc #$000b.w
+  sta var_unknown_0a96.w
+  tay
+  sec
+  rts
+@unknown_90_8477:
+  lda #$0033.w
+  jsr unknown_80_9049.l
+  lda var_unknown_0a96.w
+  clc
+  adc #$0015.w
+  sta var_unknown_0a96.w
+  tay
+  sec
+  rts
 
-unknown_90_841d: lda $09a2.w
-/*unknown_90_8420:*/ bit #$0020.w
-/*unknown_90_8423:*/ bne @unknown_90_8445
-/*unknown_90_8425:*/ jsr $90ec58
-/*unknown_90_8429:*/ lda $195e.w
-/*unknown_90_842c:*/ bmi @unknown_90_843c
-/*unknown_90_842e:*/ cmp $14
-/*unknown_90_8430:*/ bpl @unknown_90_8445
-/*unknown_90_8432:*/ lda $197e.w
-/*unknown_90_8435:*/ bit #$0004.w
-/*unknown_90_8438:*/ bne @unknown_90_8445
-/*unknown_90_843a:*/ bra @unknown_90_8452
-@unknown_90_843c: lda $1962.w
-/*unknown_90_843f:*/ bmi @unknown_90_8445
-/*unknown_90_8441:*/ cmp $14
-/*unknown_90_8443:*/ bmi @unknown_90_8452
-@unknown_90_8445: lda $09a2.w
-/*unknown_90_8448:*/ bit #$0008.w
-/*unknown_90_844b:*/ bne @unknown_90_8477
-/*unknown_90_844d:*/ bit #$0200.w
-/*unknown_90_8450:*/ bne @unknown_90_8463
-@unknown_90_8452: lda #$0031.w
-/*unknown_90_8455:*/ jsr $809049
-/*unknown_90_8459:*/ lda $0a96.w
-/*unknown_90_845c:*/ inc A
-/*unknown_90_845d:*/ sta $0a96.w
-/*unknown_90_8460:*/ tay
-/*unknown_90_8461:*/ sec
-/*unknown_90_8462:*/ rts
+unknown_90_848b:
+  iny
+  lda [var_unknown_00], Y
+  sta var_unknown_12
+  lda var_unknown_09a2.w
+  bit $12
+  bne @unknown_90_84a3
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+  bra @unknown_90_84ae
+@unknown_90_84a3:
+  iny
+  iny
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+@unknown_90_84ae:
+  lda #$0003.w
+  sta var_unknown_0a32.w
+  clc
+  rts
 
-@unknown_90_8463: lda #$003e.w
-/*unknown_90_8466:*/ jsr $809049
-/*unknown_90_846a:*/ lda $0a96.w
-/*unknown_90_846d:*/ clc
-/*unknown_90_846e:*/ adc #$000b.w
-/*unknown_90_8471:*/ sta $0a96.w
-/*unknown_90_8474:*/ tay
-/*unknown_90_8475:*/ sec
-/*unknown_90_8476:*/ rts
+unknown_90_84b6:
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_0a2c.w
+  lda #$0003.w
+  sta var_unknown_0a32.w
+  clc
+  rts
 
-@unknown_90_8477: lda #$0033.w
-/*unknown_90_847a:*/ jsr $809049
-/*unknown_90_847e:*/ lda $0a96.w
-/*unknown_90_8481:*/ clc
-/*unknown_90_8482:*/ adc #$0015.w
-/*unknown_90_8485:*/ sta $0a96.w
-/*unknown_90_8488:*/ tay
-/*unknown_90_8489:*/ sec
-/*unknown_90_848a:*/ rts
+unknown_90_84c7:
+  iny
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  sta var_unknown_12
+  lda var_unknown_0a96.w
+  sec
+  sbc $12
+  sta var_unknown_0a96.w
+  tay
+  sec
+  rts
 
-unknown_90_848b: iny
-/*unknown_90_848c:*/ lda [$00], Y
-/*unknown_90_848e:*/ sta $12
-/*unknown_90_8490:*/ lda $09a2.w
-/*unknown_90_8493:*/ bit $12
-/*unknown_90_8495:*/ bne @unknown_90_84a3
-/*unknown_90_8497:*/ iny
-/*unknown_90_8498:*/ iny
-/*unknown_90_8499:*/ lda [$00], Y
-/*unknown_90_849b:*/ and #$00ff.w
-/*unknown_90_849e:*/ sta $0a2c.w
-/*unknown_90_84a1:*/ bra @unknown_90_84ae
-@unknown_90_84a3: iny
-/*unknown_90_84a4:*/ iny
-/*unknown_90_84a5:*/ iny
-/*unknown_90_84a6:*/ lda [$00], Y
-/*unknown_90_84a8:*/ and #$00ff.w
-/*unknown_90_84ab:*/ sta $0a2c.w
-@unknown_90_84ae: lda #$0003.w
-/*unknown_90_84b1:*/ sta $0a32.w
-/*unknown_90_84b4:*/ clc
-/*unknown_90_84b5:*/ rts
-
-unknown_90_84b6: iny
-/*unknown_90_84b7:*/ lda [$00], Y
-/*unknown_90_84b9:*/ and #$00ff.w
-/*unknown_90_84bc:*/ sta $0a2c.w
-/*unknown_90_84bf:*/ lda #$0003.w
-/*unknown_90_84c2:*/ sta $0a32.w
-/*unknown_90_84c5:*/ clc
-/*unknown_90_84c6:*/ rts
-
-unknown_90_84c7: iny
-/*unknown_90_84c8:*/ lda [$00], Y
-/*unknown_90_84ca:*/ and #$00ff.w
-/*unknown_90_84cd:*/ sta $12
-/*unknown_90_84cf:*/ lda $0a96.w
-/*unknown_90_84d2:*/ sec
-/*unknown_90_84d3:*/ sbc $12
-/*unknown_90_84d5:*/ sta $0a96.w
-/*unknown_90_84d8:*/ tay
-/*unknown_90_84d9:*/ sec
-/*unknown_90_84da:*/ rts
-
-unknown_90_84db: ldy #$0000.w
-/*unknown_90_84de:*/ sty $0a96.w
-/*unknown_90_84e1:*/ sec
-/*unknown_90_84e2:*/ rts
+unknown_90_84db:
+  ldy #$0000.w
+  sty var_unknown_0a96.w
+  sec
+  rts
 
 unknown_90_84e3: php
 /*unknown_90_84e4:*/ sep #$20
