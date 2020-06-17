@@ -4292,23 +4292,24 @@ unknown_80_9eec:
   .db $01, $02, $02, $01, $02, $02, $01, $02
   .db $02, $01, $02, $02, $02, $01, $02, $02
 
-/*unknown_80_9f6c:*/ phb
-/*unknown_80_9f6d:*/ phk
-/*unknown_80_9f6e:*/ plb
-/*unknown_80_9f6f:*/ ldy #$a060.w
-/*unknown_80_9f72:*/ lda #$0000.w
-/*unknown_80_9f75:*/ jsr unknown_80_9fb3
-/*unknown_80_9f78:*/ lda $0947.w
-/*unknown_80_9f7b:*/ ldx #$ffe4.w
-/*unknown_80_9f7e:*/ jsr unknown_80_9f95
-/*unknown_80_9f81:*/ lda $0946.w
-/*unknown_80_9f84:*/ ldx #$fffc.w
-/*unknown_80_9f87:*/ jsr unknown_80_9f95
-/*unknown_80_9f8a:*/ lda $0945.w
-/*unknown_80_9f8d:*/ ldx #$0014.w
-/*unknown_80_9f90:*/ jsr unknown_80_9f95
-/*unknown_80_9f93:*/ plb
-/*unknown_80_9f94:*/ rtl
+unknown_80_9f6c:
+  phb
+  phk
+  plb
+  ldy #$a060.w
+  lda #$0000.w
+  jsr unknown_80_9fb3
+  lda var_unknown_0945_bank.w
+  ldx #$ffe4.w
+  jsr unknown_80_9f95
+  lda var_unknown_0945_h.w
+  ldx #$fffc.w
+  jsr unknown_80_9f95
+  lda var_unknown_0945_l.w
+  ldx #$0014.w
+  jsr unknown_80_9f95
+  plb
+  rtl
 
 unknown_80_9f95:
   phx
