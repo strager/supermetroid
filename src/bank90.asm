@@ -3373,80 +3373,95 @@ unknown_90_98bc:
 
 ; TODO: "Modifies momentum according to $0B4A (add or subtract) and X (entry
 ; start). X is usually a start pointer indexed by $0A1F *#$0C" -- Kejardon
+.struct unknown_90_9a7e_entry
+unknown_0: dw ; $0
+unknown_2: dw ; $2
+unknown_4: dw ; $4
+unknown_6: dw ; $6
+unknown_8: db ; $8
+unknown_9: db ; $9
+.union
+unknown_a: dw ; $a
+.nextu
+unknown_a_l: db ; $a
+unknown_a_h: db ; $b
+.endu
+.endst
+
 unknown_90_9a7e:
   php
   rep #$30
-  lda $0b4a.w
+  lda var_unknown_0b4a.w
   bne @unknown_90_9aba
-  lda $0b48.w
+  lda var_unknown_0b48.w
   clc
-  adc $0002.w, X
-  sta $0b48.w
-  lda $0b46.w
-  adc $0000.w, X
-  sta $0b46.w
-  cmp $0004.w, X
+  adc unknown_90_9a7e_entry.unknown_2.w, X
+  sta var_unknown_0b48.w
+  lda var_unknown_0b46.w
+  adc unknown_90_9a7e_entry.unknown_0.w, X
+  sta var_unknown_0b46.w
+  cmp unknown_90_9a7e_entry.unknown_4.w, X
   bmi @unknown_90_9b13
   beq @unknown_90_9aae
 @unknown_90_9aa0:
-  lda $0004.w, X
-  sta $0b46.w
-  lda $0006.w, X
-  sta $0b48.w
+  lda unknown_90_9a7e_entry.unknown_4.w, X
+  sta var_unknown_0b46.w
+  lda unknown_90_9a7e_entry.unknown_6.w, X
+  sta var_unknown_0b48.w
   bra @unknown_90_9b13
 @unknown_90_9aae:
-  lda $0b48.w
-  cmp $0006.w, X
+  lda var_unknown_0b48.w
+  cmp unknown_90_9a7e_entry.unknown_6.w, X
   bmi @unknown_90_9b13
   beq @unknown_90_9b13
   bra @unknown_90_9aa0
 @unknown_90_9aba:
   sep #$20
-  lda $0b4c.w
+  lda var_unknown_0b4c.w
   beq @unknown_90_9aeb
-  sta $4202.w
-  lda $000b.w, X
-  sta $4203.w
+  sta IO_WRMPYA
+  lda unknown_90_9a7e_entry.unknown_a_h.w, X
+  sta IO_WRMPYB
   nop
   nop
   nop
   rep #$20
-  lda $4216.w
-  sta $14
+  lda IO_RDMPY
+  sta var_unknown_14
   sep #$20
-  lda $0008.w, X
-  sta $4203.w
+  lda unknown_90_9a7e_entry.unknown_8.w, X
+  sta IO_WRMPYB
   nop
   nop
   nop
   rep #$20
-  lda $4217.w
+  lda IO_RDMPYH
   and #$00ff.w
-  sta $12
+  sta var_unknown_12
   bra @unknown_90_9af7
 @unknown_90_9aeb:
   rep #$20
-  lda $000a.w, X
-  sta $14
-  lda $0008.w, X
-  sta $12
+  lda unknown_90_9a7e_entry.unknown_a.w, X
+  sta var_unknown_14
+  lda unknown_90_9a7e_entry.unknown_8.w, X
+  sta var_unknown_12
 @unknown_90_9af7:
-  lda $0b48.w
+  lda var_unknown_0b48.w
   sec
-  sbc $14
-  sta $0b48.w
-  lda $0b46.w
-  sbc $12
-  sta $0b46.w
+  sbc var_unknown_14
+  sta var_unknown_0b48.w
+  lda var_unknown_0b46.w
+  sbc var_unknown_12
+  sta var_unknown_0b46.w
   bpl @unknown_90_9b13
-  stz $0b46.w
-  stz $0b48.w
-  stz $0b4a.w
+  stz var_unknown_0b46.w
+  stz var_unknown_0b48.w
+  stz var_unknown_0b4a.w
 @unknown_90_9b13:
-  lda $0b46.w
-  sta $12
-  lda $0b48.w
-  sta $14
+  lda var_unknown_0b46.w
+  sta var_unknown_12
+  lda var_unknown_0b48.w
+  sta var_unknown_14
   plp
   rts
 
