@@ -5060,57 +5060,69 @@ unknown_90_a7e2:
   plp
   rtl
 
-unknown_90_a83a: ora $00, S
-unknown_90_a83c: eor ($a8)
-/*unknown_90_a83e:*/ asl $00
-/*unknown_90_a840:*/ stz $a8
-/*unknown_90_a842:*/ ora [$00]
-/*unknown_90_a844:*/ adc ($a8)
-/*unknown_90_a846:*/ php
-/*unknown_90_a847:*/ brk $78
-/*unknown_90_a849:*/ tay
-/*unknown_90_a84a:*/ asl A
-/*unknown_90_a84b:*/ brk $8a
-/*unknown_90_a84d:*/ tay
-/*unknown_90_a84e:*/ ora $00
-/*unknown_90_a850:*/ stz $00a8.w
-/*unknown_90_a853:*/ brk $00
-/*unknown_90_a855:*/ brk $00
-/*unknown_90_a857:*/ ora ($00, X)
-/*unknown_90_a859:*/ brk $00
-/*unknown_90_a85b:*/ brk $00
-/*unknown_90_a85d:*/ ora ($00, X)
-/*unknown_90_a85f:*/ ora ($00, X)
-/*unknown_90_a861:*/ ora ($ff, X)
-/*unknown_90_a863:*/ sbc $000300.l, X
-/*unknown_90_a867:*/ brk $00
-/*unknown_90_a869:*/ tsb $00
-/*unknown_90_a86b:*/ brk $00
-/*unknown_90_a86d:*/ ora $00
-/*unknown_90_a86f:*/ brk $ff
-/*unknown_90_a871:*/ sbc $000000.l, X
-/*unknown_90_a875:*/ brk $ff
-/*unknown_90_a877:*/ sbc $000000.l, X
-/*unknown_90_a87b:*/ brk $00
-/*unknown_90_a87d:*/ ora ($00, X)
-/*unknown_90_a87f:*/ brk $00
-/*unknown_90_a881:*/ brk $00
-/*unknown_90_a883:*/ ora ($00, X)
-/*unknown_90_a885:*/ ora ($00, X)
-/*unknown_90_a887:*/ ora ($ff, X)
-/*unknown_90_a889:*/ sbc $000000.l, X
-/*unknown_90_a88d:*/ brk $00
-/*unknown_90_a88f:*/ ora ($00, X)
-/*unknown_90_a891:*/ brk $00
-/*unknown_90_a893:*/ cop $00
-/*unknown_90_a895:*/ brk $00
-/*unknown_90_a897:*/ ora $00, S
-/*unknown_90_a899:*/ brk $ff
-/*unknown_90_a89b:*/ sbc $000000.l, X
-/*unknown_90_a89f:*/ brk $00
-/*unknown_90_a8a1:*/ brk $00
-/*unknown_90_a8a3:*/ ora ($ff, X)
-/*unknown_90_a8a5:*/ .db $ff
+unknown_90_a83a:
+  .dw $0003
+unknown_90_a83c:
+  .dw @unknown_90_a852
+  .dw $0006
+  .dw @unknown_90_a864
+  .dw $0007
+  .dw @unknown_90_a872
+  .dw $0008
+  .dw @unknown_90_a878
+  .dw $000a
+  .dw @unknown_90_a88a
+  .dw $0005
+  .dw @unknown_90_a89c
+@unknown_90_a852:
+  .dw $0000
+  .dw $0000
+  .dw $0100
+  .dw $0000
+  .dw $0000
+  .dw $0100
+  .dw $0100
+  .dw $0100
+  .dw $ffff
+@unknown_90_a864:
+  .dw $0300
+  .dw $0000
+  .dw $0400
+  .dw $0000
+  .dw $0500
+  .dw $0000
+  .dw $ffff
+@unknown_90_a872:
+  .dw $0000
+  .dw $0000
+  .dw $ffff
+@unknown_90_a878:
+  .dw $0000
+  .dw $0000
+  .dw $0100
+  .dw $0000
+  .dw $0000
+  .dw $0100
+  .dw $0100
+  .dw $0100
+  .dw $ffff
+@unknown_90_a88a:
+  .dw $0000
+  .dw $0000
+  .dw $0100
+  .dw $0000
+  .dw $0200
+  .dw $0000
+  .dw $0300
+  .dw $0000
+  .dw $ffff
+@unknown_90_a89c:
+  .dw $0000
+  .dw $0000
+  .dw $0000
+  .dw $0100
+  .dw $ffff
+
 unknown_90_a8a6: .db $08, $da, $5a
 /*unknown_90_a8a9:*/ lda $12
 /*unknown_90_a8ab:*/ and #$ff00.w
