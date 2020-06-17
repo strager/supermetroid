@@ -4241,99 +4241,57 @@ unknown_80_9e93:
   stz var_unknown_0943.w
   rtl
 
-unknown_80_9ea9: sep #$39
-/*unknown_80_9eab:*/ lda $05b6.w
-/*unknown_80_9eae:*/ and #$7f
-/*unknown_80_9eb0:*/ tax
-/*unknown_80_9eb1:*/ lda $0945.w
-/*unknown_80_9eb4:*/ sbc $9eec.w, X
-/*unknown_80_9eb7:*/ sta $0945.w
-/*unknown_80_9eba:*/ bcs @unknown_80_9ee0
-/*unknown_80_9ebc:*/ lda $0946.w
-/*unknown_80_9ebf:*/ sbc #$00
-/*unknown_80_9ec1:*/ sta $0946.w
-/*unknown_80_9ec4:*/ bcs @unknown_80_9ee0
-/*unknown_80_9ec6:*/ lda $0947.w
-/*unknown_80_9ec9:*/ sbc #$00
-/*unknown_80_9ecb:*/ sta $0947.w
-/*unknown_80_9ece:*/ bcc @unknown_80_9ed7
-/*unknown_80_9ed0:*/ lda #$59
-/*unknown_80_9ed2:*/ sta $0946.w
-/*unknown_80_9ed5:*/ bra @unknown_80_9ee0
-@unknown_80_9ed7: stz $0945.w
-/*unknown_80_9eda:*/ stz $0946.w
-/*unknown_80_9edd:*/ stz $0947.w
-@unknown_80_9ee0: rep #$39
-/*unknown_80_9ee2:*/ lda $0945.w
-/*unknown_80_9ee5:*/ ora $0946.w
-/*unknown_80_9ee8:*/ bne @unknown_80_9eeb
-/*unknown_80_9eea:*/ sec
-@unknown_80_9eeb: rts
+unknown_80_9ea9:
+  sep #$39
+  lda var_unknown_05b6.w
+  and #$7f
+  tax
+  lda var_unknown_0945_l.w
+  sbc unknown_80_9eec.w, X
+  sta var_unknown_0945_l.w
+  bcs @unknown_80_9ee0
+  lda var_unknown_0945_h.w
+  sbc #$00
+  sta var_unknown_0945_h.w
+  bcs @unknown_80_9ee0
+  lda var_unknown_0945_bank.w
+  sbc #$00
+  sta var_unknown_0945_bank.w
+  bcc @unknown_80_9ed7
+  lda #$59
+  sta var_unknown_0945_h.w
+  bra @unknown_80_9ee0
+@unknown_80_9ed7:
+  stz var_unknown_0945_l.w
+  stz var_unknown_0945_h.w
+  stz var_unknown_0945_bank.w
+@unknown_80_9ee0:
+  rep #$39
+  lda var_unknown_0945_l.w
+  ora var_unknown_0945_h.w
+  bne @unknown_80_9eeb
+  sec
+@unknown_80_9eeb:
+  rts
 
-/*unknown_80_9eec:*/ ora ($02, X)
-/*unknown_80_9eee:*/ cop $01
-/*unknown_80_9ef0:*/ cop $02
-/*unknown_80_9ef2:*/ ora ($02, X)
-/*unknown_80_9ef4:*/ cop $01
-/*unknown_80_9ef6:*/ cop $02
-/*unknown_80_9ef8:*/ cop $01
-/*unknown_80_9efa:*/ cop $02
-/*unknown_80_9efc:*/ ora ($02, X)
-/*unknown_80_9efe:*/ cop $01
-/*unknown_80_9f00:*/ cop $02
-/*unknown_80_9f02:*/ ora ($02, X)
-/*unknown_80_9f04:*/ ora ($02, X)
-/*unknown_80_9f06:*/ cop $01
-/*unknown_80_9f08:*/ cop $02
-/*unknown_80_9f0a:*/ ora ($02, X)
-/*unknown_80_9f0c:*/ ora ($02, X)
-/*unknown_80_9f0e:*/ cop $01
-/*unknown_80_9f10:*/ cop $02
-/*unknown_80_9f12:*/ ora ($02, X)
-/*unknown_80_9f14:*/ cop $01
-/*unknown_80_9f16:*/ cop $02
-/*unknown_80_9f18:*/ cop $01
-/*unknown_80_9f1a:*/ cop $02
-/*unknown_80_9f1c:*/ ora ($02, X)
-/*unknown_80_9f1e:*/ cop $01
-/*unknown_80_9f20:*/ cop $02
-/*unknown_80_9f22:*/ ora ($02, X)
-/*unknown_80_9f24:*/ ora ($02, X)
-/*unknown_80_9f26:*/ cop $01
-/*unknown_80_9f28:*/ cop $02
-/*unknown_80_9f2a:*/ ora ($02, X)
-/*unknown_80_9f2c:*/ ora ($02, X)
-/*unknown_80_9f2e:*/ cop $01
-/*unknown_80_9f30:*/ cop $02
-/*unknown_80_9f32:*/ ora ($02, X)
-/*unknown_80_9f34:*/ cop $01
-/*unknown_80_9f36:*/ cop $02
-/*unknown_80_9f38:*/ cop $01
-/*unknown_80_9f3a:*/ cop $02
-/*unknown_80_9f3c:*/ ora ($02, X)
-/*unknown_80_9f3e:*/ cop $01
-/*unknown_80_9f40:*/ cop $02
-/*unknown_80_9f42:*/ ora ($02, X)
-/*unknown_80_9f44:*/ ora ($02, X)
-/*unknown_80_9f46:*/ cop $01
-/*unknown_80_9f48:*/ cop $02
-/*unknown_80_9f4a:*/ ora ($02, X)
-/*unknown_80_9f4c:*/ ora ($02, X)
-/*unknown_80_9f4e:*/ cop $01
-/*unknown_80_9f50:*/ cop $02
-/*unknown_80_9f52:*/ ora ($02, X)
-/*unknown_80_9f54:*/ cop $01
-/*unknown_80_9f56:*/ cop $02
-/*unknown_80_9f58:*/ cop $01
-/*unknown_80_9f5a:*/ cop $02
-/*unknown_80_9f5c:*/ ora ($02, X)
-/*unknown_80_9f5e:*/ cop $01
-/*unknown_80_9f60:*/ cop $02
-/*unknown_80_9f62:*/ ora ($02, X)
-/*unknown_80_9f64:*/ cop $01
-/*unknown_80_9f66:*/ cop $02
-/*unknown_80_9f68:*/ cop $01
-/*unknown_80_9f6a:*/ cop $02
+unknown_80_9eec:
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $02, $01, $02, $02, $02, $01, $02, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $02, $01, $02, $02, $02, $01, $02, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $02, $01, $02, $02, $02, $01, $02, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $02, $01, $02, $02, $02, $01, $02, $02
+  .db $01, $02, $02, $01, $02, $02, $01, $02
+  .db $02, $01, $02, $02, $02, $01, $02, $02
+
 /*unknown_80_9f6c:*/ phb
 /*unknown_80_9f6d:*/ phk
 /*unknown_80_9f6e:*/ plb
