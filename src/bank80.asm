@@ -5977,35 +5977,35 @@ unknown_80_ad4a:
   jsr unknown_80_a2f9
   sec
   sbc #$0100.w
-  sta $0917.w
+  sta var_unknown_0917.w
   jsr unknown_80_a33a
-  lda $0911.w
+  lda screen_x.w
   sec
   sbc #$0100.w
-  sta $0911.w
+  sta screen_x.w
   jsr unknown_80_ae29
   jsr unknown_80_a4bb
-  jsr $ae10.w
-  dec $08ff.w
-  dec $0903.w
-  jsr $ae7e.w
+  jsr unknown_80_ae10
+  dec var_unknown_08ff.w
+  dec var_unknown_0903.w
+  jsr unknown_80_ae7e
   rts
 
 unknown_80_ad74:
   jsr unknown_80_a2f9
   clc
   adc #$0100.w
-  sta $0917.w
+  sta var_unknown_0917.w
   jsr unknown_80_a33a
-  lda $0911.w
+  lda screen_x.w
   clc
   adc #$0100.w
-  sta $0911.w
+  sta screen_x.w
   jsr unknown_80_ae29
   jsr unknown_80_a4bb
-  jsr $ae10.w
-  inc $08ff.w
-  inc $0903.w
+  jsr unknown_80_ae10
+  inc var_unknown_08ff.w
+  inc var_unknown_0903.w
   jsr unknown_80_aec2
   rts
 
@@ -6014,44 +6014,44 @@ unknown_80_ad9e:
   jsr unknown_80_a33a
   sec
   sbc #$00e0.w
-  sta $0919.w
-  lda $0915.w
+  sta var_unknown_0919.w
+  lda screen_y.w
   sec
   sbc #$00e0.w
-  sta $0915.w
+  sta screen_y.w
   jsr unknown_80_ae29
   jsr unknown_80_a4bb
-  jsr $ae10.w
-  dec $0901.w
-  dec $0905.w
+  jsr unknown_80_ae10
+  dec var_unknown_0901.w
+  dec var_unknown_0905.w
   jsr unknown_80_af02
   rts
 
 unknown_80_adc8:
   jsr unknown_80_a2f9
-  lda $0915.w
+  lda screen_y.w
   pha
   clc
   adc #$001f.w
-  sta $0915.w
+  sta screen_y.w
   jsr unknown_80_a33a
   clc
   adc #$00e0.w
-  sta $0919.w
+  sta var_unknown_0919.w
   pla
   clc
   adc #$0100.w
-  sta $0915.w
+  sta screen_y.w
   jsr unknown_80_ae29
-  lda $0929.w
+  lda var_unknown_0929.w
   clc
   adc #$0020.w
-  sta $0929.w
+  sta var_unknown_0929.w
   jsr unknown_80_a4bb
-  jsr $ae10.w
-  inc $0901.w
-  inc $0905.w
-  dec $0915.w
+  jsr unknown_80_ae10
+  inc var_unknown_0901.w
+  inc var_unknown_0905.w
+  dec screen_y.w
   jsr unknown_80_af89
   rts
 
@@ -6115,10 +6115,13 @@ unknown_80_ae4e:
   plp
   rtl
 
-/*unknown_80_ae76:*/ ror $c2ae.w, X
-/*unknown_80_ae79:*/ ldx $af02.w
-/*unknown_80_ae7c:*/ bit #$aeaf.w
-/*unknown_80_ae7f:*/ and $09
+unknown_80_ae76:
+  .dw $ae7e
+  .dw $aec2
+  .dw $af02
+  .dw $af89
+
+unknown_80_ae7e: ldx $0925.w
 /*unknown_80_ae81:*/ phx
 /*unknown_80_ae82:*/ lda $0af8.w
 /*unknown_80_ae85:*/ clc
