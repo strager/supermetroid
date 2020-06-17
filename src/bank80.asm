@@ -4131,25 +4131,29 @@ unknown_80_9dd3:
   .dw $2c07
   .dw $2c08
 
-/*unknown_80_9de7:*/ phb
-/*unknown_80_9de8:*/ phk
-/*unknown_80_9de9:*/ plb
-/*unknown_80_9dea:*/ phx
-/*unknown_80_9deb:*/ phy
-/*unknown_80_9dec:*/ lda $0943.w
-/*unknown_80_9def:*/ and #$00ff.w
-/*unknown_80_9df2:*/ asl A
-/*unknown_80_9df3:*/ tax
-/*unknown_80_9df4:*/ jsr ($9dfb.w, X)
-/*unknown_80_9df7:*/ ply
-/*unknown_80_9df8:*/ plx
-/*unknown_80_9df9:*/ plb
-/*unknown_80_9dfa:*/ rtl
+unknown_80_9de7:
+  phb
+  phk
+  plb
+  phx
+  phy
+  lda var_unknown_0943.w
+  and #$00ff.w
+  asl A
+  tax
+  jsr (unknown_80_9dfb, X)
+  ply
+  plx
+  plb
+  rtl
 
-/*unknown_80_9dfb:*/ inc A
-/*unknown_80_9dfc:*/ stz $9e09.w, X
-/*unknown_80_9dff:*/ trb $2f9e.w
-/*unknown_80_9e02:*/ stz $9e41.w, X
+unknown_80_9dfb:
+  .dw $9e1a
+  .dw $9e09
+  .dw $9e1c
+  .dw $9e2f
+  .dw $9e41
+
 /*unknown_80_9e05:*/ cli
 /*unknown_80_9e06:*/ stz $9e89.w, X
 /*unknown_80_9e09:*/ jsr $809e93
