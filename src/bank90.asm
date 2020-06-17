@@ -2765,11 +2765,13 @@ unknown_90_94ec:
   plp
   rtl
 
-/*unknown_90_9589:*/ lda #$01d0.w
-/*unknown_90_958c:*/ cmp $0915.w
-/*unknown_90_958f:*/ bcc @unknown_90_9594
-/*unknown_90_9591:*/ sta $0915.w
-@unknown_90_9594: rts
+unknown_90_9589:
+  lda #$01d0.w
+  cmp screen_y.w
+  bcc @do_not_update_screen_y
+  sta screen_y.w
+@do_not_update_screen_y:
+  rts
 
 /*unknown_90_9595:*/ php
 /*unknown_90_9596:*/ rep #$30
