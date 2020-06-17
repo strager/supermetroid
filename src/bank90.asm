@@ -2773,12 +2773,13 @@ unknown_90_9589:
 @do_not_update_screen_y:
   rts
 
-/*unknown_90_9595:*/ php
-/*unknown_90_9596:*/ rep #$30
-/*unknown_90_9598:*/ stz $0da4.w
-/*unknown_90_959b:*/ stz $0da2.w
-/*unknown_90_959e:*/ plp
-/*unknown_90_959f:*/ rts
+unknown_90_9595:
+  php
+  rep #$30
+  stz var_unknown_0da4.w
+  stz var_unknown_0da2.w
+  plp
+  rts
 
 ; TODO: "Handles horizontal scrolling. If Samus didn't move, JSL $80A528 and do
 ; nothing else. Calculates ideal position, adjusts by how much Samus moved, and
