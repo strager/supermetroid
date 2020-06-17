@@ -4024,44 +4024,48 @@ unknown_80_9d6e: trb $00
 /*unknown_80_9d73:*/ brk $28
 /*unknown_80_9d75:*/ brk $2e
 /*unknown_80_9d77:*/ .db $00
-unknown_80_9d78: .db $8d
-/*unknown_80_9d79:*/ tsb $42
-/*unknown_80_9d7b:*/ sep #$20
-/*unknown_80_9d7d:*/ lda #$64
-/*unknown_80_9d7f:*/ sta $4206.w
-/*unknown_80_9d82:*/ pha
-/*unknown_80_9d83:*/ pla
-/*unknown_80_9d84:*/ pha
-/*unknown_80_9d85:*/ pla
-/*unknown_80_9d86:*/ rep #$20
-/*unknown_80_9d88:*/ lda $4214.w
-/*unknown_80_9d8b:*/ asl A
-/*unknown_80_9d8c:*/ tay
-/*unknown_80_9d8d:*/ lda [$00], Y
-/*unknown_80_9d8f:*/ sta $7ec608, X
-/*unknown_80_9d93:*/ inx
-/*unknown_80_9d94:*/ inx
-/*unknown_80_9d95:*/ lda $4216.w
-unknown_80_9d98: sta $4204.w
-/*unknown_80_9d9b:*/ sep #$20
-/*unknown_80_9d9d:*/ lda #$0a
-/*unknown_80_9d9f:*/ sta $4206.w
-/*unknown_80_9da2:*/ pha
-/*unknown_80_9da3:*/ pla
-/*unknown_80_9da4:*/ pha
-/*unknown_80_9da5:*/ pla
-/*unknown_80_9da6:*/ rep #$20
-/*unknown_80_9da8:*/ lda $4214.w
-/*unknown_80_9dab:*/ asl A
-/*unknown_80_9dac:*/ tay
-/*unknown_80_9dad:*/ lda [$00], Y
-/*unknown_80_9daf:*/ sta $7ec608, X
-/*unknown_80_9db3:*/ lda $4216.w
-/*unknown_80_9db6:*/ asl A
-/*unknown_80_9db7:*/ tay
-/*unknown_80_9db8:*/ lda [$00], Y
-/*unknown_80_9dba:*/ sta $7ec60a, X
-/*unknown_80_9dbe:*/ rts
+
+unknown_80_9d78:
+  sta IO_WRDIV
+  sep #$20
+  lda #$64
+  sta IO_WRDIVB
+  pha
+  pla
+  pha
+  pla
+  rep #$20
+  lda IO_RDDIV
+  asl A
+  tay
+  lda [var_unknown_00], Y
+  sta var_unknown_c608.l, X
+  inx
+  inx
+  lda IO_RDMPY
+  ; Fall through.
+
+unknown_80_9d98:
+  sta IO_WRDIV
+  sep #$20
+  lda #$0a
+  sta IO_WRDIVB
+  pha
+  pla
+  pha
+  pla
+  rep #$20
+  lda IO_RDDIV
+  asl A
+  tay
+  lda [var_unknown_00], Y
+  sta var_unknown_c608.l, X
+  lda IO_RDMPY
+  asl A
+  tay
+  lda [var_unknown_00], Y
+  sta var_unknown_c60a.l, X
+  rts
 
 unknown_80_9dbf: ora #$002c.w
 /*unknown_80_9dc2:*/ bit $2c01.w
