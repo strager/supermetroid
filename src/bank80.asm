@@ -3572,30 +3572,32 @@ unknown_80_99c7:
   .dw $343b
   .dw $743b
 
-unknown_80_99cf: php
-/*unknown_80_99d0:*/ phb
-/*unknown_80_99d1:*/ phk
-/*unknown_80_99d2:*/ plb
-/*unknown_80_99d3:*/ rep #$30
-/*unknown_80_99d5:*/ lda $7ec61c
-/*unknown_80_99d9:*/ and #$03ff.w
-/*unknown_80_99dc:*/ cmp #$000f.w
-/*unknown_80_99df:*/ bne @unknown_80_9a0b
-/*unknown_80_99e1:*/ lda $99a3.w
-/*unknown_80_99e4:*/ sta $7ec61c
-/*unknown_80_99e8:*/ lda $99a5.w
-/*unknown_80_99eb:*/ sta $7ec61e
-/*unknown_80_99ef:*/ lda $99a7.w
-/*unknown_80_99f2:*/ sta $7ec620
-/*unknown_80_99f6:*/ lda $99a9.w
-/*unknown_80_99f9:*/ sta $7ec65c
-/*unknown_80_99fd:*/ lda $99ab.w
-/*unknown_80_9a00:*/ sta $7ec65e
-/*unknown_80_9a04:*/ lda $99ad.w
-/*unknown_80_9a07:*/ sta $7ec660
-@unknown_80_9a0b: plb
-/*unknown_80_9a0c:*/ plp
-/*unknown_80_9a0d:*/ rtl
+unknown_80_99cf:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  lda $7ec61c
+  and #$03ff.w
+  cmp #$000f.w
+  bne @unknown_80_9a0b
+  lda $99a3.w
+  sta $7ec61c
+  lda $99a5.w
+  sta $7ec61e
+  lda $99a7.w
+  sta $7ec620
+  lda $99a9.w
+  sta $7ec65c
+  lda $99ab.w
+  sta $7ec65e
+  lda $99ad.w
+  sta $7ec660
+@unknown_80_9a0b:
+  plb
+  plp
+  rtl
 
 unknown_80_9a0e:
   php
