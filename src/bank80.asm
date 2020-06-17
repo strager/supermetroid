@@ -3963,55 +3963,63 @@ unknown_80_9cce: .db $42, $00
 /*unknown_80_9ce5:*/ brk $0c
 /*unknown_80_9ce7:*/ brk $0e
 /*unknown_80_9ce9:*/ .db $00
-unknown_80_9cea: .db $8e
-/*unknown_80_9ceb:*/ jmp ($3a07.w, X)
-/*unknown_80_9cee:*/ bmi @unknown_80_9d6d
-/*unknown_80_9cf0:*/ asl A
-/*unknown_80_9cf1:*/ tay
-/*unknown_80_9cf2:*/ ldx $9d6e.w, Y
-/*unknown_80_9cf5:*/ lda $7ec608, X
-/*unknown_80_9cf9:*/ cmp #$2c0f.w
-/*unknown_80_9cfc:*/ beq @unknown_80_9d08
-/*unknown_80_9cfe:*/ and #$e3ff.w
-/*unknown_80_9d01:*/ ora $077c.w
-/*unknown_80_9d04:*/ sta $7ec608, X
-@unknown_80_9d08: lda $7ec60a, X
-/*unknown_80_9d0c:*/ cmp #$2c0f.w
-/*unknown_80_9d0f:*/ beq @unknown_80_9d1b
-/*unknown_80_9d11:*/ and #$e3ff.w
-/*unknown_80_9d14:*/ ora $077c.w
-/*unknown_80_9d17:*/ sta $7ec60a, X
-@unknown_80_9d1b: lda $7ec648, X
-/*unknown_80_9d1f:*/ cmp #$2c0f.w
-/*unknown_80_9d22:*/ beq @unknown_80_9d2e
-/*unknown_80_9d24:*/ and #$e3ff.w
-/*unknown_80_9d27:*/ ora $077c.w
-/*unknown_80_9d2a:*/ sta $7ec648, X
-@unknown_80_9d2e: lda $7ec64a, X
-/*unknown_80_9d32:*/ cmp #$2c0f.w
-/*unknown_80_9d35:*/ beq @unknown_80_9d41
-/*unknown_80_9d37:*/ and #$e3ff.w
-/*unknown_80_9d3a:*/ ora $077c.w
-/*unknown_80_9d3d:*/ sta $7ec64a, X
-@unknown_80_9d41: cpy #$0000.w
-/*unknown_80_9d44:*/ beq @unknown_80_9d47
-/*unknown_80_9d46:*/ rts
 
-@unknown_80_9d47: lda $7ec60c, X
-/*unknown_80_9d4b:*/ cmp #$2c0f.w
-/*unknown_80_9d4e:*/ beq @unknown_80_9d5a
-/*unknown_80_9d50:*/ and #$e3ff.w
-/*unknown_80_9d53:*/ ora $077c.w
-/*unknown_80_9d56:*/ sta $7ec60c, X
-@unknown_80_9d5a: lda $7ec64c, X
-/*unknown_80_9d5e:*/ cmp #$2c0f.w
-/*unknown_80_9d61:*/ beq @unknown_80_9d6d
-/*unknown_80_9d63:*/ and #$e3ff.w
-/*unknown_80_9d66:*/ ora $077c.w
-/*unknown_80_9d69:*/ sta $7ec64c, X
-@unknown_80_9d6d: rts
+unknown_80_9cea:
+  stx var_unknown_077c.w
+  dec A
+  bmi @unknown_80_9d6d
+  asl A
+  tay
+  ldx unknown_80_9d6e.w, Y
+  lda var_unknown_c608.l, X
+  cmp #$2c0f.w
+  beq @unknown_80_9d08
+  and #$e3ff.w
+  ora var_unknown_077c.w
+  sta var_unknown_c608.l, X
+@unknown_80_9d08:
+  lda var_unknown_c60a.l, X
+  cmp #$2c0f.w
+  beq @unknown_80_9d1b
+  and #$e3ff.w
+  ora var_unknown_077c.w
+  sta var_unknown_c60a.l, X
+@unknown_80_9d1b:
+  lda var_unknown_c648.l, X
+  cmp #$2c0f.w
+  beq @unknown_80_9d2e
+  and #$e3ff.w
+  ora var_unknown_077c.w
+  sta var_unknown_c648.l, X
+@unknown_80_9d2e:
+  lda var_unknown_c64a.l, X
+  cmp #$2c0f.w
+  beq @unknown_80_9d41
+  and #$e3ff.w
+  ora var_unknown_077c.w
+  sta var_unknown_c64a.l, X
+@unknown_80_9d41:
+  cpy #$0000.w
+  beq @unknown_80_9d47
+  rts
+@unknown_80_9d47:
+  lda var_unknown_c60c.l, X
+  cmp #$2c0f.w
+  beq @unknown_80_9d5a
+  and #$e3ff.w
+  ora var_unknown_077c.w
+  sta var_unknown_c60c.l, X
+@unknown_80_9d5a:
+  lda var_unknown_c64c.l, X
+  cmp #$2c0f.w
+  beq @unknown_80_9d6d
+  and #$e3ff.w
+  ora var_unknown_077c.w
+  sta var_unknown_c64c.l, X
+@unknown_80_9d6d:
+  rts
 
-/*unknown_80_9d6e:*/ trb $00
+unknown_80_9d6e: trb $00
 /*unknown_80_9d70:*/ trb $2200.w
 /*unknown_80_9d73:*/ brk $28
 /*unknown_80_9d75:*/ brk $2e

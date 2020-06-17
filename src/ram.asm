@@ -466,6 +466,10 @@ var_pause_weapons_selected_item: db ; $7e0756
 var_reserve_tank_timer: dw ; $7e0757
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $077c) export
+var_unknown_077c: dw ; $7e077c
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0783) export
 var_unknown_0783: dw ; $7e0783
 .ende
@@ -1080,8 +1084,13 @@ var_unknown_c404: dw ; $7ec404
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c608) export
 var_unknown_c608: dsw 24 ; $7ec608
-; TODO: var_unknown_c608 overflows into var_unknown_c618. Are these two part of
-; the same array?
+; TODO: var_unknown_c608 overflows into var_unknown_c60a and var_unknown_c618.
+; Are these two part of the same array?
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c60a) export
+var_unknown_c60a: dsw 1 ; $7ec60a
+var_unknown_c60c: dsw 1 ; $7ec60c
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c618) export
@@ -1094,8 +1103,13 @@ var_unknown_c620: dw ; $7ec620
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c648) export
 var_unknown_c648: dsw 24 ; $7ec648
-; TODO: var_unknown_c648 overflows into var_unknown_c658. Are these two part of
-; the same array?
+; TODO: var_unknown_c648 overflows into var_unknown_c64a and var_unknown_c658.
+; Are these two part of the same array?
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c64a) export
+var_unknown_c64a: dw ; $7ec64a
+var_unknown_c64c: dw ; $7ec64c
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c658) export
