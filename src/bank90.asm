@@ -3133,17 +3133,17 @@ unknown_90_9842:
 ; TODO: "Move Samus $12.$14 pixels down and put $12 and $14 into $0DB6 and
 ; $0DB8" -- Kejardon
 unknown_90_9871:
-  lda $0afc.w
+  lda samus_suby.w
   clc
-  adc $14
-  sta $0afc.w
-  lda $0afa.w
-  adc $12
-  sta $0afa.w
-  lda $14
-  sta $0db8.w
-  lda $12
-  sta $0db6.w
+  adc var_unknown_14
+  sta samus_suby.w
+  lda samus_y.w
+  adc var_unknown_12
+  sta samus_y.w
+  lda var_unknown_14
+  sta var_unknown_0db8.w
+  lda var_unknown_12
+  sta var_unknown_0db6.w
   rts
 
 ; TODO: "Move Samus $12.$14 pixels up and put -$12 and -$14 into $0DB2 and
