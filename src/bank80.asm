@@ -6403,30 +6403,30 @@ unknown_80_b032:
 unknown_80_b0c2:
   php
   rep #$30
-  lda $0783.w
+  lda var_unknown_0783.w
   beq @unknown_80_b0fd
-  lda $05b6.w
+  lda var_unknown_05b6.w
   and #$0007.w
   bne @unknown_80_b0fd
-  lda $0785.w
+  lda var_unknown_0785.w
   and #sine_table@mask >> 1
   asl A
   tax
   lda sine_table.l, X
-  sta $7a
+  sta var_unknown_7a
   eor #$ffff.w
   inc A
-  sta $7c
-  lda $0785.w
+  sta var_unknown_7c
+  lda var_unknown_0785.w
   clc
   adc #sine_table@count / 4
   and #sine_table@mask >> 1
   asl A
   tax
   lda sine_table.l, X
-  sta $78
-  sta $7e
-  inc $0785.w
+  sta var_unknown_78
+  sta var_unknown_7e
+  inc var_unknown_0785.w
 @unknown_80_b0fd:
   plp
   rtl
