@@ -2987,103 +2987,103 @@ unknown_90_96ff:
 unknown_90_973e:
   php
   rep #$30
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$0020.w
   bne @unknown_90_9761
-  jsr $90ec3e
-  lda $195e.w
+  jsr unknown_90_ec3e.l
+  lda var_unknown_195e.w
   bmi @unknown_90_9758
-  cmp $12
+  cmp var_unknown_12
   bmi @unknown_90_9766
   bra @unknown_90_9761
 @unknown_90_9758:
-  lda $1962.w
+  lda var_unknown_1962.w
   bmi @unknown_90_9761
-  cmp $12
+  cmp var_unknown_12
   bmi @unknown_90_976e
 @unknown_90_9761:
   ldx #$0000.w
   bra @unknown_90_9771
 @unknown_90_9766:
-  lda $197e.w
+  lda var_unknown_197e.w
   bit #$0004.w
   bne @unknown_90_9761
 @unknown_90_976e:
-  jmp $9808.w
+  jmp @unknown_90_9808
 @unknown_90_9771:
-  lda $0a1f.w
+  lda var_unknown_0a1f.w
   and #$00ff.w
   cmp #$0001.w
   beq @unknown_90_977f
   jmp @unknown_90_9808
 @unknown_90_977f:
-  lda $8b
-  and $09b6.w
+  lda var_pressed_buttons
+  and var_unknown_09b6.w
   bne @unknown_90_9789
   jmp @unknown_90_9808
 @unknown_90_9789:
-  lda $09a2.w
+  lda var_unknown_09a2.w
   bit #$2000.w
   beq @unknown_90_97c7
-  lda $0b3c.w
+  lda var_unknown_0b3c.w
   bne @unknown_90_97a9
   lda #$0001.w
-  sta $0b3c.w
-  sta $0ad0.w
-  stz $0ace.w
-  lda $91b61f
-  sta $0b3e.w
+  sta var_unknown_0b3c.w
+  sta var_unknown_0ad0.w
+  stz var_unknown_0ace.w
+  lda unknown_91_b61f.l
+  sta var_unknown_0b3e.w
 @unknown_90_97a9:
-  lda $0b42.w
-  cmp $9f0d.w, X
+  lda var_unknown_0b42.w
+  cmp unknown_90_9f0d.w, X
   bmi @unknown_90_97f3
-  lda $0b44.w
-  cmp $9f13.w, X
+  lda var_unknown_0b44.w
+  cmp unknown_90_9f13.w, X
   bmi @unknown_90_97f3
-  lda $9f0d.w, X
-  sta $0b42.w
-  lda $9f13.w, X
-  sta $0b44.w
+  lda unknown_90_9f0d.w, X
+  sta var_unknown_0b42.w
+  lda unknown_90_9f13.w, X
+  sta var_unknown_0b44.w
   bra @unknown_90_9813
 @unknown_90_97c7:
-  lda $0b3c.w
+  lda var_unknown_0b3c.w
   bne @unknown_90_97d5
   lda #$0001.w
-  sta $0b3c.w
-  stz $0b3e.w
+  sta var_unknown_0b3c.w
+  stz var_unknown_0b3e.w
 @unknown_90_97d5:
-  lda $0b42.w
-  cmp $9f19.w, X
+  lda var_unknown_0b42.w
+  cmp unknown_90_9f19.w, X
   bmi @unknown_90_97f3
-  lda $0b44.w
-  cmp $9f1f.w, X
+  lda var_unknown_0b44.w
+  cmp unknown_90_9f1f.w, X
   bmi @unknown_90_97f3
-  lda $9f19.w, X
-  sta $0b42.w
-  lda $9f1f.w, X
-  sta $0b44.w
+  lda unknown_90_9f19.w, X
+  sta var_unknown_0b42.w
+  lda unknown_90_9f1f.w, X
+  sta var_unknown_0b44.w
   bra @unknown_90_9813
 @unknown_90_97f3:
-  lda $0b44.w
+  lda var_unknown_0b44.w
   clc
-  adc $9f07.w, X
-  sta $0b44.w
-  lda $0b42.w
-  adc $9f01.w, X
-  sta $0b42.w
+  adc unknown_90_9f07.w, X
+  sta var_unknown_0b44.w
+  lda var_unknown_0b42.w
+  adc unknown_90_9f01.w, X
+  sta var_unknown_0b42.w
   bra @unknown_90_9813
 @unknown_90_9808:
-  lda $0b3c.w
+  lda var_unknown_0b3c.w
   bne @unknown_90_9813
-  stz $0b42.w
-  stz $0b44.w
+  stz var_unknown_0b42.w
+  stz var_unknown_0b44.w
 @unknown_90_9813:
-  lda $0b3e.w
+  lda var_unknown_0b3e.w
   and #$ff00.w
   cmp #$0400.w
   bne @unknown_90_9824
   lda #$0001.w
-  sta $0a6e.w
+  sta var_unknown_0a6e.w
 @unknown_90_9824:
   plp
   rts
@@ -3930,22 +3930,22 @@ unknown_90_9ead: ora ($00, X)
 /*unknown_90_9efb:*/ brk $c0
 /*unknown_90_9efd:*/ brk $10
 /*unknown_90_9eff:*/ brk $10
-/*unknown_90_9f01:*/ brk $00
+unknown_90_9f01: brk $00
 /*unknown_90_9f03:*/ brk $00
 /*unknown_90_9f05:*/ brk $00
-/*unknown_90_9f07:*/ brk $10
+unknown_90_9f07: brk $10
 /*unknown_90_9f09:*/ brk $04
 /*unknown_90_9f0b:*/ brk $04
-/*unknown_90_9f0d:*/ ora [$00]
+unknown_90_9f0d: ora [$00]
 /*unknown_90_9f0f:*/ tsb $00
 /*unknown_90_9f11:*/ tsb $00
-/*unknown_90_9f13:*/ brk $00
+unknown_90_9f13: brk $00
 /*unknown_90_9f15:*/ brk $00
 /*unknown_90_9f17:*/ brk $00
-/*unknown_90_9f19:*/ cop $00
+unknown_90_9f19: cop $00
 /*unknown_90_9f1b:*/ ora ($00, X)
 /*unknown_90_9f1d:*/ brk $00
-/*unknown_90_9f1f:*/ brk $00
+unknown_90_9f1f: brk $00
 /*unknown_90_9f21:*/ brk $00
 /*unknown_90_9f23:*/ brk $00
 /*unknown_90_9f25:*/ brk $00
