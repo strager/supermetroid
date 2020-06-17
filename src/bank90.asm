@@ -5572,24 +5572,14 @@ unknown_90_ab75: php
 /*unknown_90_ac03:*/ rts
 
 unknown_90_ac04:
-  .db $80
-  .db $40
-  .db $20
-  .db $10
-  .db $08
-  .db $04
-  .db $02
-  .db $01
+.repeat 8 index i
+  .db $80 >> i
+.endr
 
 unknown_90_ac0c:
-  .dw $fc00
-  .dw $7e00
-  .dw $3f00
-  .dw $1f80
-  .dw $0fc0
-  .dw $07e0
-  .dw $03f0
-  .dw $01f8
+.repeat 8 index i
+  .dw $fc00 >> i
+.endr
 
 unknown_90_ac1c: lda $0a78.w
 /*unknown_90_ac1f:*/ bne @unknown_90_ac32
