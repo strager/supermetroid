@@ -6121,36 +6121,37 @@ unknown_80_ae76:
   .dw unknown_80_af02
   .dw unknown_80_af89
 
-unknown_80_ae7e: ldx $0925.w
-/*unknown_80_ae81:*/ phx
-/*unknown_80_ae82:*/ lda $0af8.w
-/*unknown_80_ae85:*/ clc
-/*unknown_80_ae86:*/ adc $092b.w
-/*unknown_80_ae89:*/ sta $0af8.w
-/*unknown_80_ae8c:*/ lda $0af6.w
-/*unknown_80_ae8f:*/ adc $092d.w
-/*unknown_80_ae92:*/ sta $0af6.w
-/*unknown_80_ae95:*/ sta $0b10.w
-/*unknown_80_ae98:*/ lda $0911.w
-/*unknown_80_ae9b:*/ clc
-/*unknown_80_ae9c:*/ adc #$0004.w
-/*unknown_80_ae9f:*/ sta $0911.w
-/*unknown_80_aea2:*/ lda $0917.w
-/*unknown_80_aea5:*/ clc
-/*unknown_80_aea6:*/ adc #$0004.w
-/*unknown_80_aea9:*/ sta $0917.w
-/*unknown_80_aeac:*/ jsr $80a3a0
-/*unknown_80_aeb0:*/ plx
-/*unknown_80_aeb1:*/ inx
-/*unknown_80_aeb2:*/ stx $0925.w
-/*unknown_80_aeb5:*/ cpx #$0040.w
-/*unknown_80_aeb8:*/ bne @unknown_80_aec0
-/*unknown_80_aeba:*/ jsr $80a3a0
-/*unknown_80_aebe:*/ sec
-/*unknown_80_aebf:*/ rts
-
-@unknown_80_aec0: clc
-/*unknown_80_aec1:*/ rts
+unknown_80_ae7e:
+  ldx var_unknown_0925.w
+  phx
+  lda samus_subx.w
+  clc
+  adc var_unknown_092b.w
+  sta samus_subx.w
+  lda samus_x.w
+  adc var_unknown_092d.w
+  sta samus_x.w
+  sta var_unknown_0b10.w
+  lda screen_x.w
+  clc
+  adc #$0004.w
+  sta screen_x.w
+  lda var_unknown_0917.w
+  clc
+  adc #$0004.w
+  sta var_unknown_0917.w
+  jsr unknown_80_a3a0.l
+  plx
+  inx
+  stx var_unknown_0925.w
+  cpx #$0040.w
+  bne @unknown_80_aec0
+  jsr unknown_80_a3a0.l
+  sec
+  rts
+@unknown_80_aec0:
+  clc
+  rts
 
 unknown_80_aec2: ldx $0925.w
 /*unknown_80_aec5:*/ phx
