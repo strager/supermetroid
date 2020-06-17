@@ -2787,84 +2787,86 @@ unknown_90_9595:
 unknown_90_95a0:
   php
   rep #$30
-  lda $0b10.w
-  cmp $0af6.w
+  lda var_unknown_0b10.w
+  cmp samus_x.w
   bne @unknown_90_95b2
-  jsr $80a528
-  jmp $963d.w
+  jsr unknown_80_a528.l
+  jmp @unknown_90_963d
 @unknown_90_95b2:
-  lda $0911.w
-  sta $12
-  lda $0a52.w
+  lda screen_x.w
+  sta var_unknown_12
+  lda var_unknown_0a52.w
   bne @unknown_90_95c7
-  lda $0a1f.w
+  lda var_unknown_0a1f.w
   and #$00ff.w
   cmp #$0010.w
   bne @unknown_90_95d4
 @unknown_90_95c7:
-  lda $0a1e.w
+  lda var_unknown_0a1e.w
   and #$00ff.w
   cmp #$0004.w
   beq @unknown_90_95e7
   bra @unknown_90_95f6
 @unknown_90_95d4:
-  lda $0b4a.w
+  lda var_unknown_0b4a.w
   cmp #$0001.w
   beq @unknown_90_95c7
-  lda $0a1e.w
+  lda var_unknown_0a1e.w
   and #$00ff.w
   cmp #$0004.w
   beq @unknown_90_95f6
 @unknown_90_95e7:
-  ldx $0941.w
-  lda $0af6.w
+  ldx var_unknown_0941.w
+  lda samus_x.w
   sec
-  sbc $963f.w, X
-  sta $0b0a.w
+  sbc unknown_90_963f.w, X
+  sta var_unknown_0b0a.w
   bra @unknown_90_9603
 @unknown_90_95f6:
-  ldx $0941.w
-  lda $0af6.w
+  ldx var_unknown_0941.w
+  lda samus_x.w
   sec
-  sbc $9647.w, X
-  sta $0b0a.w
+  sbc unknown_90_9647.w, X
+  sta var_unknown_0b0a.w
 @unknown_90_9603:
-  lda $0b0a.w
-  cmp $0911.w
+  lda var_unknown_0b0a.w
+  cmp screen_x.w
   beq @unknown_90_963d
   bmi @unknown_90_9626
-  lda $090f.w
+  lda screen_subx.w
   clc
-  adc $0da4.w
-  sta $090f.w
-  lda $0911.w
-  adc $0da2.w
-  sta $0911.w
-  jsr $80a641
+  adc var_unknown_0da4.w
+  sta screen_subx.w
+  lda screen_x.w
+  adc var_unknown_0da2.w
+  sta screen_x.w
+  jsr unknown_80_a641.l
   bra @unknown_90_963d
 @unknown_90_9626:
-  lda $090f.w
+  lda screen_subx.w
   sec
-  sbc $0da4.w
-  sta $090f.w
-  lda $0911.w
-  sbc $0da2.w
-  sta $0911.w
-  jsr $80a6bb
+  sbc var_unknown_0da4.w
+  sta screen_subx.w
+  lda screen_x.w
+  sbc var_unknown_0da2.w
+  sta screen_x.w
+  jsr unknown_80_a6bb.l
 @unknown_90_963d:
   plp
   rts
 
-/*unknown_90_963f:*/ rts
+unknown_90_963f:
+  .dw $0060
+  .dw $0040
+  .dw $0020
+  .dw $00e0
 
-/*unknown_90_9640:*/ brk $40
-/*unknown_90_9642:*/ brk $20
-/*unknown_90_9644:*/ brk $e0
-/*unknown_90_9646:*/ brk $a0
-/*unknown_90_9648:*/ brk $50
-/*unknown_90_964a:*/ brk $20
-/*unknown_90_964c:*/ brk $e0
-/*unknown_90_964e:*/ .db $00
+unknown_90_9647:
+  .dw $00a0
+  .dw $0050
+  .dw $0020
+  .dw $00e0
+
 unknown_90_964f: php
 /*unknown_90_9650:*/ rep #$30
 /*unknown_90_9652:*/ lda $0b14.w
