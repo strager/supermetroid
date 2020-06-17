@@ -1061,6 +1061,23 @@ var_unknown_3a8e: dsw $8 ; $7e3a8e
 var_unknown_a000: dsw 1 ; $7ea000
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c000) export
+var_color_palette: dsw $100 ; $7ec000
+var_color_palette_end: db
+.ende
+.define var_color_palette@size _sizeof_var_color_palette
+.export var_color_palette@size
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c200) export
+var_unknown_c200: dw ; $7ec400
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $c400) export
+var_unknown_c400: dw ; $7ec400
+var_unknown_c402: dw ; $7ec402
+var_unknown_c404: dw ; $7ec404
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c608) export
 var_unknown_c608: dsw 24 ; $7ec608
 ; TODO: var_unknown_c608 overflows into var_unknown_c618. Are these two part of
@@ -1086,23 +1103,6 @@ var_unknown_c65a: dw ; $7ec65a
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c698) export
 var_unknown_c698: dw ; $7ec698
 var_unknown_c69a: dw ; $7ec69a
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $c000) export
-var_color_palette: dsw $100 ; $7ec000
-var_color_palette_end: db
-.ende
-.define var_color_palette@size _sizeof_var_color_palette
-.export var_color_palette@size
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $c200) export
-var_unknown_c200: dw ; $7ec400
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $c400) export
-var_unknown_c400: dw ; $7ec400
-var_unknown_c402: dw ; $7ec402
-var_unknown_c404: dw ; $7ec404
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $c63c) export
