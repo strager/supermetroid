@@ -6098,28 +6098,28 @@ unknown_80_ae4e:
   phk
   plb
   rep #$30
-  lda $0791.w
+  lda var_unknown_0791.w
   and #$0003.w
   asl A
   tax
   jsr ($ae76.w, X)
   bcc @unknown_80_ae73
-  lda $0927.w
-  sta $0911.w
-  lda $0929.w
-  sta $0915.w
+  lda var_unknown_0927.w
+  sta screen_x.w
+  lda var_unknown_0929.w
+  sta screen_y.w
   lda #$8000.w
-  tsb $0931.w
+  tsb var_unknown_0931.w
 @unknown_80_ae73:
   plb
   plp
   rtl
 
 unknown_80_ae76:
-  .dw $ae7e
-  .dw $aec2
-  .dw $af02
-  .dw $af89
+  .dw unknown_80_ae7e
+  .dw unknown_80_aec2
+  .dw unknown_80_af02
+  .dw unknown_80_af89
 
 unknown_80_ae7e: ldx $0925.w
 /*unknown_80_ae81:*/ phx
