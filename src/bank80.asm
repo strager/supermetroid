@@ -6074,22 +6074,22 @@ unknown_80_ae10:
   rts
 
 unknown_80_ae29:
-  lda $b1
+  lda var_unknown_b1
   sec
-  sbc $0911.w
-  sta $091d.w
-  lda $b3
+  sbc screen_x.w
+  sta var_unknown_091d.w
+  lda var_unknown_b3
   sec
-  sbc $0915.w
-  sta $091f.w
-  lda $b5
+  sbc screen_y.w
+  sta var_unknown_091f.w
+  lda var_unknown_b5
   sec
-  sbc $0911.w
-  sta $0921.w
-  lda $b7
+  sbc screen_x.w
+  sta var_unknown_0921.w
+  lda var_unknown_b7
   sec
-  sbc $0915.w
-  sta $0923.w
+  sbc screen_y.w
+  sta var_unknown_0923.w
   rts
 
 unknown_80_ae4e:
