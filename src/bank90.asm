@@ -3091,17 +3091,17 @@ unknown_90_973e:
 ; TODO: "Move Samus $12.$14 pixels right and put $12 and $14 into $0DAE and
 ; $0DB0" -- Kejardon
 unknown_90_9826:
-  lda $0af8.w
+  lda samus_subx.w
   clc
-  adc $14
-  sta $0af8.w
-  lda $0af6.w
-  adc $12
-  sta $0af6.w
-  lda $14
-  sta $0db0.w
-  lda $12
-  sta $0dae.w
+  adc var_unknown_14
+  sta samus_subx.w
+  lda samus_x.w
+  adc var_unknown_12
+  sta samus_x.w
+  lda var_unknown_14
+  sta var_unknown_0db0.w
+  lda var_unknown_12
+  sta var_unknown_0dae.w
   rts
 
 ; TODO: "Move Samus $12.$14 pixels left and put -$12 and -$14 into $0DAA and
