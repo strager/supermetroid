@@ -3426,74 +3426,120 @@ unknown_80_988b:
   .incbin "graphics/unknown_80_988b.bin" fsize unknown_80_988b@size
 .export unknown_80_988b@size
 
-unknown_80_98cb: ora $2c0f2c
-/*unknown_80_98cf:*/ ora $2c0f2c
-/*unknown_80_98d3:*/ ora $2c0f2c
-/*unknown_80_98d7:*/ ora $2c0f2c
-/*unknown_80_98db:*/ ora $2c0f2c
-/*unknown_80_98df:*/ ora $2c0f2c
-/*unknown_80_98e3:*/ ora $2c0f2c
-/*unknown_80_98e7:*/ ora $2c0f2c
-/*unknown_80_98eb:*/ ora $2c0f2c
-/*unknown_80_98ef:*/ ora $2c0f2c
-/*unknown_80_98f3:*/ ora $2c0f2c
-/*unknown_80_98f7:*/ ora $2c0f2c
-/*unknown_80_98fb:*/ ora $2c0f2c
-/*unknown_80_98ff:*/ ora ($2c)
-/*unknown_80_9901:*/ ora ($2c)
-/*unknown_80_9903:*/ and $2c, S
-/*unknown_80_9905:*/ ora ($2c)
-/*unknown_80_9907:*/ ora ($2c)
-/*unknown_80_9909:*/ asl $0f2c.w, X
-/*unknown_80_990c:*/ bit $2c0f.w
-/*unknown_80_990f:*/ ora $2c0f2c
-/*unknown_80_9913:*/ ora $2c0f2c
-/*unknown_80_9917:*/ ora $2c0f2c
-/*unknown_80_991b:*/ ora $2c0f2c
-/*unknown_80_991f:*/ ora $2c0f2c
-/*unknown_80_9923:*/ ora $2c0f2c
-/*unknown_80_9927:*/ ora $2c0f2c
-/*unknown_80_992b:*/ ora $2c0f2c
-/*unknown_80_992f:*/ ora $2c0f2c
-/*unknown_80_9933:*/ ora $2c0f2c
-/*unknown_80_9937:*/ ora $2c0f2c
-/*unknown_80_993b:*/ ora $2c0f2c
-/*unknown_80_993f:*/ jsr $282228
-/*unknown_80_9943:*/ and $28, S
-/*unknown_80_9945:*/ ora ($28, S), Y
-/*unknown_80_9947:*/ trb $2c
-/*unknown_80_9949:*/ asl $0f2c.w, X
-/*unknown_80_994c:*/ bit $2c0b.w
-/*unknown_80_994f:*/ tsb $0d2c.w
-/*unknown_80_9952:*/ bit $2c32.w
-/*unknown_80_9955:*/ ora $2c092c
-/*unknown_80_9959:*/ ora $2c0f2c
-/*unknown_80_995d:*/ ora $2c0f2c
-/*unknown_80_9961:*/ ora $2c0f2c
-/*unknown_80_9965:*/ ora $2c0f2c
-/*unknown_80_9969:*/ ora $2c0f2c
-/*unknown_80_996d:*/ ora $2c0f2c
-/*unknown_80_9971:*/ ora $2c0f2c
-/*unknown_80_9975:*/ ora $2c0f2c
-/*unknown_80_9979:*/ ora $2c0f2c
-/*unknown_80_997d:*/ ora $2c122c
-/*unknown_80_9981:*/ ora ($2c)
-/*unknown_80_9983:*/ bit $a8
-/*unknown_80_9985:*/ ora $28, X
-/*unknown_80_9987:*/ asl $2c, X
-/*unknown_80_9989:*/ .db $1e, $2c
-unknown_80_998b: .db $33
-/*unknown_80_998c:*/ bit $3c46.w, X
-/*unknown_80_998f:*/ eor [$3c]
-/*unknown_80_9991:*/ pha
-/*unknown_80_9992:*/ bit $bc33.w, X
-/*unknown_80_9995:*/ lsr $bc
-unknown_80_9997: and ($2c, S), Y
-/*unknown_80_9999:*/ lsr $2c
-/*unknown_80_999b:*/ eor [$2c]
-/*unknown_80_999d:*/ pha
-/*unknown_80_999e:*/ bit $ac33.w
-/*unknown_80_99a1:*/ lsr $ac
+unknown_80_98cb:
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c12
+  .dw $2c12
+  .dw $2c23
+  .dw $2c12
+  .dw $2c12
+  .dw $2c1e
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2822
+  .dw $2822
+  .dw $2823
+  .dw $2813
+  .dw $2c14
+  .dw $2c1e
+  .dw $2c0f
+  .dw $2c0b
+  .dw $2c0c
+  .dw $2c0d
+  .dw $2c32
+  .dw $2c0f
+  .dw $2c09
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c0f
+  .dw $2c12
+  .dw $2c12
+  .dw $a824
+  .dw $2815
+  .dw $2c16
+  .dw $2c1e
+
+unknown_80_998b:
+  .dw $3c33
+  .dw $3c46
+  .dw $3c47
+  .dw $3c48
+  .dw $bc33
+  .dw $bc46
+
+unknown_80_9997:
+  .dw $2c33
+  .dw $2c46
+  .dw $2c47
+  .dw $2c48
+  .dw $ac33
+  .dw $ac46
+
 /*unknown_80_99a3:*/ phk
 /*unknown_80_99a4:*/ bit $49, X
 /*unknown_80_99a6:*/ bit $4b, X
@@ -3501,26 +3547,31 @@ unknown_80_9997: and ($2c, S), Y
 /*unknown_80_99aa:*/ bit $4a, X
 /*unknown_80_99ac:*/ bit $4c, X
 /*unknown_80_99ae:*/ .db $74
-unknown_80_99af: .db $34
-/*unknown_80_99b0:*/ bit $34, X
-/*unknown_80_99b2:*/ stz $35, X
-/*unknown_80_99b4:*/ bit $35, X
-/*unknown_80_99b6:*/ .db $74
-unknown_80_99b7: .db $36
-/*unknown_80_99b8:*/ bit $36, X
-/*unknown_80_99ba:*/ stz $37, X
-/*unknown_80_99bc:*/ bit $37, X
-/*unknown_80_99be:*/ .db $74
-unknown_80_99bf: .db $38
-/*unknown_80_99c0:*/ bit $38, X
-/*unknown_80_99c2:*/ stz $39, X
-/*unknown_80_99c4:*/ bit $39, X
-/*unknown_80_99c6:*/ .db $74
-unknown_80_99c7: .db $3a
-/*unknown_80_99c8:*/ bit $3a, X
-/*unknown_80_99ca:*/ stz $3b, X
-/*unknown_80_99cc:*/ bit $3b, X
-/*unknown_80_99ce:*/ .db $74
+
+unknown_80_99af:
+  .dw $3434
+  .dw $7434
+  .dw $3435
+  .dw $7435
+
+unknown_80_99b7:
+  .dw $3436
+  .dw $7436
+  .dw $3437
+  .dw $7437
+
+unknown_80_99bf:
+  .dw $3438
+  .dw $7438
+  .dw $3439
+  .dw $7439
+
+unknown_80_99c7:
+  .dw $343a
+  .dw $743a
+  .dw $343b
+  .dw $743b
+
 unknown_80_99cf: php
 /*unknown_80_99d0:*/ phb
 /*unknown_80_99d1:*/ phk
