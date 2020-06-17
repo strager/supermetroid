@@ -253,10 +253,11 @@ unknown_90_81c0:
 unknown_90_820c:
   jmp unknown_90_8078
 
-unknown_90_820f: stz $0a9c.w
-/*unknown_90_8212:*/ lda #$0002.w
-/*unknown_90_8215:*/ sta $0ad2.w
-/*unknown_90_8218:*/ rts
+unknown_90_820f:
+  stz var_unknown_0a9c.w
+  lda #2
+  sta var_unknown_0ad2.w
+  rts
 
 unknown_90_8219: lda $1962.w
 /*unknown_90_821c:*/ bmi unknown_90_820c
