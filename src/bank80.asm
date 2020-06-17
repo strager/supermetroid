@@ -4621,7 +4621,7 @@ unknown_80_a23f:
   sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
   lda #@unknown_80_a29a
   sta IO_A1T1
-  lda #$80 ; TODO: Why doesn't (@unknown_80_a29a >> 16) work?
+  lda #:@unknown_80_a29a
   sta IO_A1B1 ; Address: IO_A1B1 and IO_DAS1L
   lda #$0800.w
   sta IO_DAS1
@@ -4637,7 +4637,7 @@ unknown_80_a23f:
   sta IO_DMAP1 ; Address: IO_DMAP1 and IO_BBAD1
   lda #@unknown_80_a29a
   sta IO_A1T1
-  lda #$80 ; TODO: Why doesn't (@unknown_80_a29a >> 16) work?
+  lda #:@unknown_80_a29a
   sta IO_A1B1 ; Address: IO_A1B1 and IO_DAS1L
   lda #$0800.w
   sta IO_DAS1
@@ -4660,7 +4660,7 @@ unknown_80_a29c:
   sta IO_DMAP1
   lda #@unknown_80_a2f7
   sta IO_A1T1
-  lda #$80 ; TODO: Why doesn't (@unknown_80_a2f7 >> 16) work?
+  lda #:@unknown_80_a2f7
   sta IO_A1B1
   lda #$0780.w
   sta IO_DAS1
@@ -4676,7 +4676,7 @@ unknown_80_a29c:
   sta IO_DMAP1
   lda #@unknown_80_a2f7 + 1
   sta IO_A1T1
-  lda #$80 ; TODO: Why doesn't ((@unknown_80_a2f7 + 1) >> 16) work?
+  lda #:@unknown_80_a2f7
   sta IO_A1B1
   lda #$0780.w
   sta IO_DAS1
