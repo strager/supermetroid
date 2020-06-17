@@ -5123,47 +5123,50 @@ unknown_90_a83c:
   .dw $0100
   .dw $ffff
 
-unknown_90_a8a6: .db $08, $da, $5a
-/*unknown_90_a8a9:*/ lda $12
-/*unknown_90_a8ab:*/ and #$ff00.w
-/*unknown_90_a8ae:*/ xba
-/*unknown_90_a8af:*/ clc
-/*unknown_90_a8b0:*/ adc $07a1.w
-/*unknown_90_a8b3:*/ pha
-/*unknown_90_a8b4:*/ and #$0020.w
-/*unknown_90_a8b7:*/ sta $22
-/*unknown_90_a8b9:*/ pla
-/*unknown_90_a8ba:*/ and #$001f.w
-/*unknown_90_a8bd:*/ sta $12
-/*unknown_90_a8bf:*/ and #$0007.w
-/*unknown_90_a8c2:*/ tay
-/*unknown_90_a8c3:*/ lda $12
-/*unknown_90_a8c5:*/ lsr A
-/*unknown_90_a8c6:*/ lsr A
-/*unknown_90_a8c7:*/ lsr A
-/*unknown_90_a8c8:*/ sta $14
-/*unknown_90_a8ca:*/ lda $18
-/*unknown_90_a8cc:*/ and #$ff00.w
-/*unknown_90_a8cf:*/ xba
-/*unknown_90_a8d0:*/ clc
-/*unknown_90_a8d1:*/ adc $07a3.w
-/*unknown_90_a8d4:*/ inc A
-/*unknown_90_a8d5:*/ sta $16
-/*unknown_90_a8d7:*/ clc
-/*unknown_90_a8d8:*/ adc $22
-/*unknown_90_a8da:*/ asl A
-/*unknown_90_a8db:*/ asl A
-/*unknown_90_a8dc:*/ clc
-/*unknown_90_a8dd:*/ adc $14
-/*unknown_90_a8df:*/ tax
-/*unknown_90_a8e0:*/ sep #$20
-/*unknown_90_a8e2:*/ lda $07f7.w, X
-/*unknown_90_a8e5:*/ ora $ac04.w, Y
-/*unknown_90_a8e8:*/ sta $07f7.w, X
-/*unknown_90_a8eb:*/ ply
-/*unknown_90_a8ec:*/ plx
-/*unknown_90_a8ed:*/ plp
-/*unknown_90_a8ee:*/ rts
+unknown_90_a8a6:
+  php
+  phx
+  phy
+  lda var_unknown_12
+  and #$ff00.w
+  xba
+  clc
+  adc var_unknown_07a1.w
+  pha
+  and #$0020.w
+  sta var_unknown_22
+  pla
+  and #$001f.w
+  sta var_unknown_12
+  and #$0007.w
+  tay
+  lda var_unknown_12
+  lsr A
+  lsr A
+  lsr A
+  sta var_unknown_14
+  lda var_unknown_18
+  and #$ff00.w
+  xba
+  clc
+  adc var_unknown_07a3.w
+  inc A
+  sta var_unknown_16
+  clc
+  adc var_unknown_22
+  asl A
+  asl A
+  clc
+  adc var_unknown_14
+  tax
+  sep #$20
+  lda var_unknown_07f7.w, X
+  ora unknown_90_ac04.w, Y
+  sta var_unknown_07f7.w, X
+  ply
+  plx
+  plp
+  rts
 
 unknown_90_a8ef: php
 /*unknown_90_a8f0:*/ rep #$30
@@ -5568,7 +5571,7 @@ unknown_90_ab75: php
 /*unknown_90_ac02:*/ plp
 /*unknown_90_ac03:*/ rts
 
-/*unknown_90_ac04:*/ bra $40 ; $ac46.w
+unknown_90_ac04: bra $40 ; $ac46.w
 /*unknown_90_ac06:*/ jsr $0810.w
 /*unknown_90_ac09:*/ tsb $02
 /*unknown_90_ac0b:*/ ora ($00, X)
