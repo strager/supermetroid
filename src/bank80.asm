@@ -6704,22 +6704,22 @@ unknown_80_b271:
   phb
   rep #$10
   sep #$20
-  lda $49
+  lda var_decompress_input_address_bank
   pha
-  plb
-  stz $50
-  ldy $4c
+  plb ; B := [var_decompress_input_address_bank]
+  stz var_unknown_50
+  ldy var_decompress_output_address
 @unknown_80_b27f:
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b28b
   jsr unknown_80_b266
 @unknown_80_b28b:
-  stx $47
+  stx var_decompress_input_address
   plx
-  sta $4a
+  sta var_unknown_4a
   cmp #$ff
   bne @unknown_80_b297
   plb
@@ -6729,30 +6729,30 @@ unknown_80_b271:
   and #$e0
   cmp #$e0
   bne @unknown_80_b2bb
-  lda $4a
+  lda var_unknown_4a
   asl A
   asl A
   asl A
   and #$e0
   pha
-  lda $4a
+  lda var_unknown_4a
   and #$03
   xba
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b2b6
   jsr unknown_80_b266
 @unknown_80_b2b6:
-  stx $47
+  stx var_decompress_input_address
   plx
   bra @unknown_80_b2c3
 @unknown_80_b2bb:
   pha
   lda #$00
   xba
-  lda $4a
+  lda var_unknown_4a
   and #$1f
 @unknown_80_b2c3:
   tax
@@ -6771,23 +6771,23 @@ unknown_80_b271:
   jmp @unknown_80_b379
 @unknown_80_b2dc:
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b2e8
   jsr unknown_80_b266
 @unknown_80_b2e8:
-  stx $47
+  stx var_decompress_input_address
   plx
   pha
   tya
   lsr A
   pla
   bcs @unknown_80_b2f7
-  sta $002118.l
+  sta IO_VMDATAL.l
   bra @unknown_80_b2fb
 @unknown_80_b2f7:
-  sta $002119.l
+  sta IO_VMDATAH.l
 @unknown_80_b2fb:
   iny
   dex
@@ -6795,13 +6795,13 @@ unknown_80_b271:
   jmp @unknown_80_b27f
 @unknown_80_b302:
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b30e
   jsr unknown_80_b266
 @unknown_80_b30e:
-  stx $47
+  stx var_decompress_input_address
   plx
 @unknown_80_b311:
   pha
@@ -6809,10 +6809,10 @@ unknown_80_b271:
   lsr A
   pla
   bcs @unknown_80_b31d
-  sta $002118.l
+  sta IO_VMDATAL.l
   bra @unknown_80_b321
 @unknown_80_b31d:
-  sta $002119.l
+  sta IO_VMDATAH.l
 @unknown_80_b321:
   iny
   dex
@@ -6820,50 +6820,50 @@ unknown_80_b271:
   jmp @unknown_80_b27f
 @unknown_80_b328:
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b334
   jsr unknown_80_b266
 @unknown_80_b334:
-  stx $47
+  stx var_decompress_input_address
   plx
-  sta $4a
+  sta var_unknown_4a
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b345
   jsr unknown_80_b266
 @unknown_80_b345:
-  stx $47
+  stx var_decompress_input_address
   plx
-  sta $4b
+  sta var_unknown_4b
 @unknown_80_b34a:
-  lda $4a
+  lda var_unknown_4a
   pha
   tya
   lsr A
   pla
   bcs @unknown_80_b358
-  sta $002118.l
+  sta IO_VMDATAL.l
   bra @unknown_80_b35c
 @unknown_80_b358:
-  sta $002119.l
+  sta IO_VMDATAH.l
 @unknown_80_b35c:
   iny
   dex
   beq @unknown_80_b376
-  lda $4b
+  lda var_unknown_4b
   pha
   tya
   lsr A
   pla
   bcs @unknown_80_b36e
-  sta $002118.l
+  sta IO_VMDATAL.l
   bra @unknown_80_b372
 @unknown_80_b36e:
-  sta $002119.l
+  sta IO_VMDATAH.l
 @unknown_80_b372:
   iny
   dex
@@ -6872,13 +6872,13 @@ unknown_80_b271:
   jmp $b27f.w
 @unknown_80_b379:
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b385
   jsr unknown_80_b266
 @unknown_80_b385:
-  stx $47
+  stx var_decompress_input_address
   plx
 @unknown_80_b388:
   pha
@@ -6886,10 +6886,10 @@ unknown_80_b271:
   lsr A
   pla
   bcs @unknown_80_b394
-  sta $002118.l
+  sta IO_VMDATAL.l
   bra @unknown_80_b398
 @unknown_80_b394:
-  sta $002119.l
+  sta IO_VMDATAH.l
 @unknown_80_b398:
   iny
   inc A
@@ -6900,46 +6900,46 @@ unknown_80_b271:
   cmp #$c0
   bcs @unknown_80_b416
   and #$20
-  sta $4f
+  sta var_unknown_4f
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b3b4
   jsr unknown_80_b266
 @unknown_80_b3b4:
-  stx $47
+  stx var_decompress_input_address
   plx
-  sta $4a
+  sta var_unknown_4a
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b3c5
   jsr unknown_80_b266
 @unknown_80_b3c5:
-  stx $47
+  stx var_decompress_input_address
   plx
-  sta $4b
+  sta var_unknown_4b
   rep #$20
-  lda $4c
+  lda var_decompress_output_address
   clc
-  adc $4a
-  sta $4a
+  adc var_unknown_4a
+  sta var_unknown_4a
 @unknown_80_b3d3:
   phx
   rep #$20
-  lda $4a
+  lda var_unknown_4a
   lsr A
-  sta $002116.l
-  lda $002139.l
-  lda $002139.l
+  sta IO_VMADD.l
+  lda IO_RDVRAM.l
+  lda IO_RDVRAM.l
   bcc @unknown_80_b3e8
   xba
 @unknown_80_b3e8:
-  inc $4a
+  inc var_unknown_4a
   sep #$20
-  ldx $4f
+  ldx var_unknown_4f
   beq @unknown_80_b3f2
   eor #$ff
 @unknown_80_b3f2:
@@ -6947,7 +6947,7 @@ unknown_80_b271:
   rep #$20
   tya
   lsr A
-  sta $002116.l
+  sta IO_VMADD.l
   sep #$20
   pla
   pha
@@ -6955,10 +6955,10 @@ unknown_80_b271:
   lsr A
   pla
   bcs @unknown_80_b40a
-  sta $002118.l
+  sta IO_VMDATAL.l
   bra @unknown_80_b40e
 @unknown_80_b40a:
-  sta $002119.l
+  sta IO_VMDATAH.l
 @unknown_80_b40e:
   iny
   plx
@@ -6967,23 +6967,23 @@ unknown_80_b271:
   jmp @unknown_80_b27f
 @unknown_80_b416:
   and #$20
-  sta $4f
+  sta var_unknown_4f
   phx
-  ldx $47
-  lda $0000.w, X
+  ldx var_decompress_input_address
+  lda $0.w, X
   inx
   bne @unknown_80_b426
   jsr unknown_80_b266
 @unknown_80_b426:
-  stx $47
+  stx var_decompress_input_address
   plx
-  sta $4a
-  stz $4b
+  sta var_unknown_4a
+  stz var_unknown_4b
   rep #$20
   tya
   sec
-  sbc $4a
-  sta $4a
+  sbc var_unknown_4a
+  sta var_unknown_4a
   bra @unknown_80_b3d3
 
 unknown_80_b437:

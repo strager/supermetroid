@@ -96,10 +96,22 @@ var_temp_3c: dw ; $7e003c
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $44) export
 var_decompress_output_address_temp: dl ; $7e0044
+.union
 var_decompress_input_address: dl ; $7e0047
+.nextu
+var_decompress_input_address_l: db ; $7e0047
+var_decompress_input_address_h: db ; $7e0048
+var_decompress_input_address_bank: db ; $7e0049
+.endu
 var_unknown_4a: db ; $7e004a
 var_unknown_4b: db ; $7e004b
+.union
 var_decompress_output_address: dl ; $7e004c
+.nextu
+var_decompress_output_address_l: db ; $7e004c
+var_decompress_output_address_h: db ; $7e004d
+var_decompress_output_address_bank: db ; $7e004e
+.endu
 var_unknown_4f: db ; $7e004f
 var_unknown_50: db ; $7e0050
 .ende
