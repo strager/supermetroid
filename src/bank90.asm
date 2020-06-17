@@ -5588,9 +5588,9 @@ unknown_90_ac04:
 /*unknown_90_ac14:*/ cpy #$e00f.w
 /*unknown_90_ac17:*/ ora [$f0]
 /*unknown_90_ac19:*/ ora $f8, S
-/*unknown_90_ac1b:*/ ora ($ad, X)
-/*unknown_90_ac1d:*/ sei
-/*unknown_90_ac1e:*/ asl A
+/*unknown_90_ac1b:*/ .db $01
+
+unknown_90_ac1c: lda $0a78.w
 /*unknown_90_ac1f:*/ bne @unknown_90_ac32
 /*unknown_90_ac21:*/ lda $0ccc.w
 /*unknown_90_ac24:*/ beq @unknown_90_ac31
