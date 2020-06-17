@@ -4025,14 +4025,16 @@ unknown_80_9d6e: trb $00
 /*unknown_80_9d75:*/ brk $2e
 /*unknown_80_9d77:*/ .db $00
 
-; Convert a number into a 3-digit decimal string.
+; Convert a number into a 3-digit decimal string of tiles.
 ;
 ; Inputs:
 ; * A: The number to stringify
 ;
 ; Outputs:
-; * [[var_unknown_00]+0] through [[var_unknown_00]+9]
-; * [var_unknown_c608+X] to [var_unknown_c608+X+5]
+; * [[var_unknown_00]+0] through [[var_unknown_00]+19]: Tile set of digits 0
+;                                                       through 9 (two bytes per
+;                                                       tile).
+; * [var_unknown_c608+X] to [var_unknown_c608+X+5]: Written tiles.
 ; * X: Incremented by 6
 ;
 ; Clobbers:
@@ -4062,14 +4064,16 @@ number_to_decimal_3:
   lda IO_RDMPY
   ; Fall through.
 
-; Convert a number into a 2-digit decimal string.
+; Convert a number into a 2-digit decimal string of tiles.
 ;
 ; Inputs:
 ; * A: The number to stringify
 ;
 ; Outputs:
-; * [[var_unknown_00]+0] through [[var_unknown_00]+9]
-; * [var_unknown_c608+X] through [var_unknown_c608+X+3]
+; * [[var_unknown_00]+0] through [[var_unknown_00]+19]: Tile set of digits 0
+;                                                       through 9 (two bytes per
+;                                                       tile).
+; * [var_unknown_c608+X] through [var_unknown_c608+X+3]: Written tiles.
 ; * X: Incremented by 4
 ;
 ; Clobbers:
