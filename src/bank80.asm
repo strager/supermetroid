@@ -1080,7 +1080,7 @@ unknown_80_85f6:
   sep #$30
   lda unknown_80_8000.l
   beq @unknown_80_8602
-  jmp @unknown_80_86e1
+  jmp @done
 @unknown_80_8602:
   lda $00ffd9.l
   cmp #$00
@@ -1089,11 +1089,11 @@ unknown_80_85f6:
   lda IO_STAT78
   bit #IO_STAT78_PAL
   beq @unknown_80_861b
-  jmp @unknown_80_8693
+  jmp @test_sram
 @unknown_80_8614:
   lda IO_STAT78
   bit #IO_STAT78_PAL
-  beq @unknown_80_8693
+  beq @test_sram
 @unknown_80_861b:
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
   sta IO_INIDISP
@@ -1156,51 +1156,74 @@ das: .dw unknown_8e_e400@size
   sta IO_BG1SC
 @unknown_80_8691:
   bra @unknown_80_8691
-@unknown_80_8693:
+
+; Test the cartridge's SRAM.
+;
+; This routine is possibly designed to check for hardware defects or for
+; piracy (wrong SRAM chip used).
+;
+; There's a small time window in which this routine might corrupt SRAM if the
+; console resets.
+@test_sram:
+  ; Copy from MEM_SRAM_BEGIN to MEM_HIGH_RAM_BEGIN.
+@copy_sram_to_high_ram:
   rep #$30
-  ldx #$1ffe.w
-@unknown_80_8698:
-  lda $700000, X
-  sta $7f0000, X
+  ldx #MEM_SRAM_SIZE - 2
+@@loop:
+  lda MEM_SRAM_BEGIN, X
+  sta MEM_HIGH_RAM_BEGIN, X
   dex
   dex
-  bpl @unknown_80_8698
-  lda #$0000.w
-  ldx #$1ffe.w
-@unknown_80_86aa:
-  sta $700000, X
+  bpl @@loop
+
+  ; Write 0 to MEM_SRAM_BEGIN.
+@clear_sram:
+  lda #0
+  ldx #MEM_SRAM_SIZE  - 2
+@@loop:
+  sta MEM_SRAM_BEGIN, X
   dex
   dex
-  bpl @unknown_80_86aa
-  lda #$0000.w
-  ldx #$1ffe.w
-@unknown_80_86b8:
-  sta $702000, X
+  bpl @@loop
+
+  ; Write $1fff, $1ffe, $1ffd, $1ffc, $1ffb, etc. to MEM_SRAM_MIRROR_BEGIN.
+@scribble_sram_mirror:
+  lda #0
+  ldx #MEM_SRAM_SIZE - 2
+@@loop:
+  sta MEM_SRAM_MIRROR_BEGIN, X
   inc A
   dex
   dex
-  bpl @unknown_80_86b8
-  lda #$0000.w
-  ldx #$1ffe.w
-@unknown_80_86c7:
-  cmp $700000, X
-  bne @unknown_80_86e3
+  bpl @@loop
+
+  ; Compare MEM_SRAM_BEGIN to $1fff, $1ffe, $1ffd, etc. (MEM_SRAM_MIRROR_BEGIN).
+@check_sram_scribble:
+  lda #0
+  ldx #MEM_SRAM_SIZE - 2
+@@loop:
+  cmp MEM_SRAM_BEGIN, X
+  bne @sram_test_failed
   inc A
   dex
   dex
-  bpl @unknown_80_86c7
-@unknown_80_86d2:
-  ldx #$1ffe.w
-@unknown_80_86d5:
-  lda $7f0000, X
-  sta $700000, X
+  bpl @@loop
+
+  ; Copy from MEM_HIGH_RAM_BEGIN to MEM_SRAM_BEGIN.
+@restore_sram:
+  ldx #MEM_SRAM_SIZE - 2
+@@loop:
+  lda MEM_HIGH_RAM_BEGIN, X
+  sta MEM_SRAM_BEGIN, X
   dex
   dex
-  bpl @unknown_80_86d5
-@unknown_80_86e1:
+  bpl @@loop
+
+@done:
   plp
   rts
-@unknown_80_86e3:
+
+@sram_test_failed:
   sep #$20
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
   sta IO_INIDISP
