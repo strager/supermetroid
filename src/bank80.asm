@@ -313,9 +313,9 @@ unknown_80_81c0:
   eor #$ff
   sta var_unknown_05e7.w
   ldx var_unknown_079f.w
-  lda $7ed828, X
+  lda var_unknown_d828.l, X
   and var_unknown_05e7.w
-  sta $7ed828, X
+  sta var_unknown_d828.l, X
   plp
   ply
   plx
