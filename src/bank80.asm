@@ -236,32 +236,32 @@ unknown_80_8146:
   phx
   phk
   plb
-  sta $05dd.w
-  lda $8b
-  sta $12
-  lda $8f
-  trb $12
-  lda $12
-  cmp $05d9.w
-  sta $05d9.w
+  sta var_unknown_05dd.w
+  lda var_pressed_buttons
+  sta var_unknown_12
+  lda var_new_pressed_buttons
+  trb var_unknown_12
+  lda var_unknown_12
+  cmp var_unknown_05d9.w
+  sta var_unknown_05d9.w
   bne @unknown_80_8175
-  dec $05db.w
+  dec var_unknown_05db.w
   bpl @unknown_80_817b
-  stz $05db.w
-  ldx $05df.w
-  stx $05e3.w
-  sta $05df.w
+  stz var_unknown_05db.w
+  ldx var_unknown_05df.w
+  stx var_unknown_05e3.w
+  sta var_unknown_05df.w
   bra @unknown_80_817e
 @unknown_80_8175:
-  lda $05dd.w
-  sta $05db.w
+  lda var_unknown_05dd.w
+  sta var_unknown_05db.w
 @unknown_80_817b:
-  stz $05df.w
+  stz var_unknown_05df.w
 @unknown_80_817e:
-  lda $05df.w
-  eor $05e3.w
-  and $05df.w
-  sta $05e1.w
+  lda var_unknown_05df.w
+  eor var_unknown_05e3.w
+  and var_unknown_05df.w
+  sta var_unknown_05e1.w
   plx
   plb
   plp
