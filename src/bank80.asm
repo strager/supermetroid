@@ -402,12 +402,14 @@ unknown_80_8233:
   sec
   rtl
 
+.define madadameyohn@size _sizeof_madadameyohn
+
 unknown_80_824f:
   phx
-  ldx #$000a.w
+  ldx #madadameyohn@size - 2
 @unknown_80_8253:
   lda unknown_80_82b9.l, X
-  sta $701fe0, X
+  sta sram_madadameyohn.l, X
   dex
   dex
   bpl @unknown_80_8253
@@ -427,10 +429,10 @@ unknown_80_8261:
   lda #$0002.w
   jsl unknown_81_8085
   bcc unknown_80_8294
-  ldx #$000a.w
+  ldx #madadameyohn@size - 2
 @unknown_80_8286:
-  lda unknown_80_82ad.l, X
-  sta $701fe0, X
+  lda madadameyohn.l, X
+  sta sram_madadameyohn.l, X
   dex
   dex
   bpl @unknown_80_8286
@@ -438,9 +440,9 @@ unknown_80_8261:
   rtl
 
 unknown_80_8294:
-  ldx #$000a.w
+  ldx #madadameyohn@size - 2
 @unknown_80_8297:
-  lda $701fe0, X
+  lda sram_madadameyohn.l, X
   cmp unknown_80_82b9.l, X
   bne @unknown_80_82ab
   dex
@@ -452,7 +454,7 @@ unknown_80_8294:
   plx
   rtl
 
-unknown_80_82ad:
+madadameyohn:
   .db "madadameyohn"
 unknown_80_82b9:
   .db "supermetroid"
