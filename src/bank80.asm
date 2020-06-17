@@ -3740,19 +3740,19 @@ das:
   beq @unknown_80_9b0f
   lda var_unknown_09c6.w
   ldx #$0094.w
-  jsr unknown_80_9d78
+  jsr number_to_decimal_3
 @unknown_80_9b0f:
   lda var_unknown_09cc.w
   beq @unknown_80_9b1d
   ldx #$009c.w
   lda var_unknown_09ca.w
-  jsr unknown_80_9d98
+  jsr number_to_decimal_2
 @unknown_80_9b1d:
   lda var_unknown_09d0.w
   beq @unknown_80_9b2b
   lda var_unknown_09ce.w
   ldx #$00a2.w
-  jsr unknown_80_9d98
+  jsr number_to_decimal_2
 @unknown_80_9b2b:
   lda var_unknown_09d2.w
   ldx #$1000.w
@@ -3852,7 +3852,7 @@ unknown_80_9b44:
   sta var_unknown_00
   ldx #$008c.w
   lda var_unknown_12
-  jsr unknown_80_9d98
+  jsr number_to_decimal_2
 @unknown_80_9bfb:
   lda #unknown_80_9dd3
   sta var_unknown_00
@@ -3863,7 +3863,7 @@ unknown_80_9b44:
   beq @unknown_80_9c16
   sta var_unknown_0a08.w
   ldx #$0094.w
-  jsr unknown_80_9d78
+  jsr number_to_decimal_3
 @unknown_80_9c16:
   lda var_unknown_09cc.w
   beq @unknown_80_9c3f
@@ -3876,11 +3876,11 @@ unknown_80_9b44:
   bit #$1f40.w
   bne @unknown_80_9c39
   lda var_unknown_0a0a.w
-  jsr unknown_80_9d98
+  jsr number_to_decimal_2
   bra @unknown_80_9c3f
 @unknown_80_9c39:
   lda var_unknown_0a0a.w
-  jsr unknown_80_9d78.w
+  jsr number_to_decimal_3.w
 @unknown_80_9c3f:
   lda var_unknown_09d0.w
   beq @unknown_80_9c55
@@ -3889,7 +3889,7 @@ unknown_80_9b44:
   beq @unknown_80_9c55
   sta var_unknown_0a0c.w
   ldx #$00a2.w
-  jsr unknown_80_9d98
+  jsr number_to_decimal_2
 @unknown_80_9c55:
   lda var_unknown_09d2.w
   cmp var_unknown_0a0e.w
@@ -4025,10 +4025,24 @@ unknown_80_9d6e: trb $00
 /*unknown_80_9d75:*/ brk $2e
 /*unknown_80_9d77:*/ .db $00
 
-unknown_80_9d78:
+; Convert a number into a 3-digit decimal string.
+;
+; Inputs:
+; * A: The number to stringify
+;
+; Outputs:
+; * [[var_unknown_00]+0] through [[var_unknown_00]+9]
+; * [var_unknown_c608+X] to [var_unknown_c608+X+5]
+; * X: Incremented by 6
+;
+; Clobbers:
+; * A
+; * Y
+number_to_decimal_3:
+  ; A := A / 100
   sta IO_WRDIV
   sep #$20
-  lda #$64
+  lda #100
   sta IO_WRDIVB
   pha
   pla
@@ -4036,19 +4050,36 @@ unknown_80_9d78:
   pla
   rep #$20
   lda IO_RDDIV
+
+@output_first_digit:
   asl A
   tay
   lda [var_unknown_00], Y
   sta var_unknown_c608.l, X
   inx
   inx
+
   lda IO_RDMPY
   ; Fall through.
 
-unknown_80_9d98:
+; Convert a number into a 2-digit decimal string.
+;
+; Inputs:
+; * A: The number to stringify
+;
+; Outputs:
+; * [[var_unknown_00]+0] through [[var_unknown_00]+9]
+; * [var_unknown_c608+X] through [var_unknown_c608+X+3]
+; * X: Incremented by 4
+;
+; Clobbers:
+; * A
+; * Y
+number_to_decimal_2:
+  ; A := A / 100
   sta IO_WRDIV
   sep #$20
-  lda #$0a
+  lda #10
   sta IO_WRDIVB
   pha
   pla
@@ -4056,15 +4087,20 @@ unknown_80_9d98:
   pla
   rep #$20
   lda IO_RDDIV
+
+@output_next_to_last_digit:
   asl A
   tay
   lda [var_unknown_00], Y
   sta var_unknown_c608.l, X
+
+@output_last_digit:
   lda IO_RDMPY
   asl A
   tay
   lda [var_unknown_00], Y
-  sta var_unknown_c60a.l, X
+  sta var_unknown_c608.l + 2, X
+
   rts
 
 unknown_80_9dbf: ora #$002c.w
