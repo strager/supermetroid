@@ -630,40 +630,43 @@ unknown_90_84db:
   sec
   rts
 
-unknown_90_84e3: php
-/*unknown_90_84e4:*/ sep #$20
-/*unknown_90_84e6:*/ phb
-/*unknown_90_84e7:*/ lda #$91
-/*unknown_90_84e9:*/ sta $02
-/*unknown_90_84eb:*/ pha
-/*unknown_90_84ec:*/ plb
-/*unknown_90_84ed:*/ rep #$30
-/*unknown_90_84ef:*/ lda $0b3c.w
-/*unknown_90_84f2:*/ beq @unknown_90_851d
-/*unknown_90_84f4:*/ lda $0a1f.w
-/*unknown_90_84f7:*/ and #$00ff.w
-/*unknown_90_84fa:*/ cmp #$0001.w
-/*unknown_90_84fd:*/ bne @unknown_90_851d
-/*unknown_90_84ff:*/ lda $09a2.w
-/*unknown_90_8502:*/ bit #$2000.w
-/*unknown_90_8505:*/ beq @unknown_90_8517
-/*unknown_90_8507:*/ lda $0b3f.w
-/*unknown_90_850a:*/ and #$00ff.w
-/*unknown_90_850d:*/ asl A
-/*unknown_90_850e:*/ tax
-/*unknown_90_850f:*/ lda $91b5de, X
-/*unknown_90_8513:*/ sta $00
-/*unknown_90_8515:*/ bra @unknown_90_851d
-@unknown_90_8517: lda $91b5d1
-/*unknown_90_851b:*/ sta $00
-@unknown_90_851d: lda [$00], Y
-/*unknown_90_851f:*/ and #$00ff.w
-/*unknown_90_8522:*/ clc
-/*unknown_90_8523:*/ adc $0a9c.w
-/*unknown_90_8526:*/ sta $0a94.w
-/*unknown_90_8529:*/ plb
-/*unknown_90_852a:*/ plp
-/*unknown_90_852b:*/ rts
+unknown_90_84e3:
+  php
+  sep #$20
+  phb
+  lda #:unknown_91_b5d1
+  sta var_unknown_02_l
+  pha
+  plb
+  rep #$30
+  lda $0b3c.w
+  beq @unknown_90_851d
+  lda var_unknown_0a1f.w
+  and #$00ff.w
+  cmp #$0001.w
+  bne @unknown_90_851d
+  lda var_unknown_09a2.w
+  bit #$2000.w
+  beq @unknown_90_8517
+  lda var_unknown_0b3e_h.w
+  and #$00ff.w
+  asl A
+  tax
+  lda unknown_91_b5de.l, X
+  sta var_unknown_00
+  bra @unknown_90_851d
+@unknown_90_8517:
+  lda unknown_91_b5d1.l
+  sta var_unknown_00
+@unknown_90_851d:
+  lda [var_unknown_00], Y
+  and #$00ff.w
+  clc
+  adc var_unknown_0a9c.w
+  sta var_unknown_0a94.w
+  plb
+  plp
+  rts
 
 unknown_90_852c: php
 /*unknown_90_852d:*/ sep #$20

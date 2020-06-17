@@ -6726,14 +6726,15 @@ unknown_91_b010: .db $6F, $B5, $98
 /*unknown_91_b5ca:*/ and ($02, S), Y
 /*unknown_91_b5cc:*/ cop $02
 @unknown_91_b5ce: bmi @unknown_91_b5ce
-/*unknown_91_b5d0:*/ ora ($d3, X)
+/*unknown_91_b5d0:*/ .db $01
+unknown_91_b5d1: .db $d3
 /*unknown_91_b5d2:*/ lda $02, X
 /*unknown_91_b5d4:*/ cop $02
 /*unknown_91_b5d6:*/ cop $02
 /*unknown_91_b5d8:*/ cop $02
 /*unknown_91_b5da:*/ cop $02
 /*unknown_91_b5dc:*/ cop $ff
-/*unknown_91_b5de:*/ inx
+unknown_91_b5de: inx
 /*unknown_91_b5df:*/ lda $f3, X
 /*unknown_91_b5e1:*/ lda $fe, X
 /*unknown_91_b5e3:*/ lda $09, X
