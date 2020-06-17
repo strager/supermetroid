@@ -5571,10 +5571,17 @@ unknown_90_ab75: php
 /*unknown_90_ac02:*/ plp
 /*unknown_90_ac03:*/ rts
 
-unknown_90_ac04: bra $40 ; $ac46.w
-/*unknown_90_ac06:*/ jsr $0810.w
-/*unknown_90_ac09:*/ tsb $02
-/*unknown_90_ac0b:*/ ora ($00, X)
+unknown_90_ac04:
+  .db $80
+  .db $40
+  .db $20
+  .db $10
+  .db $08
+  .db $04
+  .db $02
+  .db $01
+
+/*unknown_90_ac0c:*/ .db $00
 /*unknown_90_ac0d:*/ jsr ($7e00.w, X)
 /*unknown_90_ac10:*/ brk $3f
 /*unknown_90_ac12:*/ bra $1f ; $ac33.w
