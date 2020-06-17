@@ -3540,13 +3540,14 @@ unknown_80_9997:
   .dw $ac33
   .dw $ac46
 
-/*unknown_80_99a3:*/ phk
-/*unknown_80_99a4:*/ bit $49, X
-/*unknown_80_99a6:*/ bit $4b, X
-/*unknown_80_99a8:*/ stz $4c, X
-/*unknown_80_99aa:*/ bit $4a, X
-/*unknown_80_99ac:*/ bit $4c, X
-/*unknown_80_99ae:*/ .db $74
+unknown_80_99a3:
+  .dw $344b
+  .dw $3449
+  .dw $744b
+  .dw $344c
+  .dw $344a
+  .dw $744c
+
 
 unknown_80_99af:
   .dw $3434
@@ -3576,24 +3577,24 @@ unknown_80_99cf:
   php
   phb
   phk
-  plb
+  plb ; B := :unknown_80_99a3
   rep #$30
-  lda $7ec61c
+  lda var_unknown_c61c.l
   and #$03ff.w
   cmp #$000f.w
   bne @unknown_80_9a0b
-  lda $99a3.w
-  sta $7ec61c
-  lda $99a5.w
-  sta $7ec61e
-  lda $99a7.w
-  sta $7ec620
-  lda $99a9.w
-  sta $7ec65c
-  lda $99ab.w
-  sta $7ec65e
-  lda $99ad.w
-  sta $7ec660
+  lda unknown_80_99a3.w + 0
+  sta var_unknown_c61c.l
+  lda unknown_80_99a3.w + 2
+  sta var_unknown_c61e.l
+  lda unknown_80_99a3.w + 4
+  sta var_unknown_c620.l
+  lda unknown_80_99a3.w + 6
+  sta var_unknown_c65c.l
+  lda unknown_80_99a3.w + 8
+  sta var_unknown_c65e.l
+  lda unknown_80_99a3.w + 10
+  sta var_unknown_c660.l
 @unknown_80_9a0b:
   plb
   plp
