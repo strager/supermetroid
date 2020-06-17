@@ -5013,24 +5013,24 @@ unknown_90_a7e2:
   phb
   rep #$30
   phk
-  plb
+  plb ; B := :unknown_90_a83a
   lda #$0001.w
-  sta $05f7.w
+  sta var_unknown_05f7.w
   lda #$001f.w
   ora #$2c00.w
-  ldx #$0000.w
+  ldx #0
 @unknown_90_a7f7:
-  sta $7ec63c, X
-  sta $7ec67c, X
-  sta $7ec6bc, X
+  sta var_unknown_c63c.l, X
+  sta var_unknown_c67c.l, X
+  sta var_unknown_c6bc.l, X
   inx
   inx
-  cpx #$000a.w
+  cpx #10
   bmi @unknown_90_a7f7
-  lda $179c.w
+  lda var_unknown_179c.w
   ldx #$0014.w
 @unknown_90_a810:
-  cmp $a83a.w, X
+  cmp unknown_90_a83a.w, X
   beq @unknown_90_a81e
   dex
   dex
@@ -5040,26 +5040,28 @@ unknown_90_a7e2:
   plb
   plp
   rtl
+@unknown_90_a81e:
+  lda unknown_90_a83c.w, X
+  tax
+@unknown_90_a822:
+  lda $0000.w, X
+  bmi @unknown_90_a837
+  sta var_unknown_12
+  lda $0002.w, X
+  sta var_unknown_18
+  jsr unknown_90_a8a6
+  inx
+  inx
+  inx
+  inx
+  bra @unknown_90_a822
+@unknown_90_a837:
+  plb
+  plp
+  rtl
 
-@unknown_90_a81e: lda $a83c.w, X
-/*unknown_90_a821:*/ tax
-@unknown_90_a822: lda $0000.w, X
-/*unknown_90_a825:*/ bmi @unknown_90_a837
-/*unknown_90_a827:*/ sta $12
-/*unknown_90_a829:*/ lda $0002.w, X
-/*unknown_90_a82c:*/ sta $18
-/*unknown_90_a82e:*/ jsr $a8a6.w
-/*unknown_90_a831:*/ inx
-/*unknown_90_a832:*/ inx
-/*unknown_90_a833:*/ inx
-/*unknown_90_a834:*/ inx
-/*unknown_90_a835:*/ bra @unknown_90_a822
-@unknown_90_a837: plb
-/*unknown_90_a838:*/ plp
-/*unknown_90_a839:*/ rtl
-
-/*unknown_90_a83a:*/ ora $00, S
-/*unknown_90_a83c:*/ eor ($a8)
+unknown_90_a83a: ora $00, S
+unknown_90_a83c: eor ($a8)
 /*unknown_90_a83e:*/ asl $00
 /*unknown_90_a840:*/ stz $a8
 /*unknown_90_a842:*/ ora [$00]
@@ -5108,7 +5110,8 @@ unknown_90_a7e2:
 /*unknown_90_a89f:*/ brk $00
 /*unknown_90_a8a1:*/ brk $00
 /*unknown_90_a8a3:*/ ora ($ff, X)
-/*unknown_90_a8a5:*/ sbc $5ada08, X
+/*unknown_90_a8a5:*/ .db $ff
+unknown_90_a8a6: .db $08, $da, $5a
 /*unknown_90_a8a9:*/ lda $12
 /*unknown_90_a8ab:*/ and #$ff00.w
 /*unknown_90_a8ae:*/ xba
