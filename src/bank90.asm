@@ -3149,27 +3149,27 @@ unknown_90_9871:
 ; TODO: "Move Samus $12.$14 pixels up and put -$12 and -$14 into $0DB2 and
 ; $0DB4" -- Kejardon
 unknown_90_988d:
-  lda $0afc.w
+  lda samus_suby.w
   sec
-  sbc $14
-  sta $0afc.w
-  lda $0afa.w
-  sbc $12
-  sta $0afa.w
-  lda $12
+  sbc var_unknown_14
+  sta samus_suby.w
+  lda samus_y.w
+  sbc var_unknown_12
+  sta samus_y.w
+  lda var_unknown_12
   eor #$ffff.w
-  sta $12
-  lda $14
+  sta var_unknown_12
+  lda var_unknown_14
   eor #$ffff.w
   inc A
-  sta $14
+  sta var_unknown_14
   bne @unknown_90_98b1
-  inc $12
+  inc var_unknown_12
 @unknown_90_98b1:
-  lda $14
-  sta $0db4.w
-  lda $12
-  sta $0db2.w
+  lda var_unknown_14
+  sta var_unknown_0db4.w
+  lda var_unknown_12
+  sta var_unknown_0db2.w
   rts
 
 ; TODO: "Load Samus's vertical speeds(+2 for water, +4 for lava): Highjump:
