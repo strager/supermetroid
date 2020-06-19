@@ -4020,11 +4020,12 @@ unknown_80_9cea:
 @unknown_80_9d6d:
   rts
 
-unknown_80_9d6e: trb $00
-/*unknown_80_9d70:*/ trb $2200.w
-/*unknown_80_9d73:*/ brk $28
-/*unknown_80_9d75:*/ brk $2e
-/*unknown_80_9d77:*/ .db $00
+unknown_80_9d6e:
+  .dw $0014
+  .dw $001c
+  .dw $0022
+  .dw $0028
+  .dw $002e
 
 ; Convert a number into a 3-digit decimal string of tiles.
 ;
