@@ -4599,26 +4599,28 @@ unknown_80_a1e3:
   sta var_vram_write_queue_tail.w
   rtl
 
-unknown_80_a211: ldx #$0efe.w
-/*unknown_80_a214:*/ lda #$184e.w
-@unknown_80_a217: sta $7e4000, X
-/*unknown_80_a21b:*/ dex
-/*unknown_80_a21c:*/ dex
-/*unknown_80_a21d:*/ bpl @unknown_80_a217
-/*unknown_80_a21f:*/ ldx $0330.w
-/*unknown_80_a222:*/ lda #$0f00.w
-/*unknown_80_a225:*/ sta $d0, X
-/*unknown_80_a227:*/ lda #$4000.w
-/*unknown_80_a22a:*/ sta $d2, X
-/*unknown_80_a22c:*/ lda #$007e.w
-/*unknown_80_a22f:*/ sta $d4, X
-/*unknown_80_a231:*/ lda #$5880.w
-/*unknown_80_a234:*/ sta $d5, X
-/*unknown_80_a236:*/ txa
-/*unknown_80_a237:*/ clc
-/*unknown_80_a238:*/ adc #$0007.w
-/*unknown_80_a23b:*/ sta $0330.w
-/*unknown_80_a23e:*/ rtl
+unknown_80_a211:
+  ldx #$0f00 - 2
+  lda #$184e.w
+@unknown_80_a217:
+  sta var_unknown_4000.l, X
+  dex
+  dex
+  bpl @unknown_80_a217
+  ldx var_vram_write_queue_tail.w
+  lda #_sizeof_var_unknown_5880
+  sta (var_vram_write_queue + vram_write_queue@entry.copy_size) & $ffff, X
+  lda #$4000.w
+  sta (var_vram_write_queue + vram_write_queue@entry.source_address_l) & $ffff, X
+  lda #var_unknown_5880 >> 16
+  sta (var_vram_write_queue + vram_write_queue@entry.source_address_bank) & $ffff, X
+  lda #var_unknown_5880
+  sta (var_vram_write_queue + vram_write_queue@entry.vram_address) & $ffff, X
+  txa
+  clc
+  adc #$0007.w
+  sta var_vram_write_queue_tail.w
+  rtl
 
 unknown_80_a23f:
   php
