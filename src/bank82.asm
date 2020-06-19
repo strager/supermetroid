@@ -1573,7 +1573,7 @@ unknown_82_8cef: php
 /*unknown_82_8d3e:*/ sta $073b.w
 /*unknown_82_8d41:*/ stz $05fd.w
 /*unknown_82_8d44:*/ stz $05ff.w
-/*unknown_82_8d47:*/ jsr $80a211
+/*unknown_82_8d47:*/ jsr unknown_80_a211.l
 /*unknown_82_8d4b:*/ inc var_game_state.w
 /*unknown_82_8d4e:*/ plb
 /*unknown_82_8d4f:*/ plp

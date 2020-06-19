@@ -4577,7 +4577,7 @@ unknown_80_a176:
   rtl
 
 unknown_80_a1e3:
-  ldx #_sizeof_var_unknown_4000 - 2
+  ldx #$1000 - 2
   lda #$0338.w
 @unknown_80_a1e9:
   sta var_unknown_4000.l, X
@@ -4599,7 +4599,7 @@ unknown_80_a1e3:
   sta var_vram_write_queue_tail.w
   rtl
 
-/*unknown_80_a211:*/ ldx #$0efe.w
+unknown_80_a211: ldx #$0efe.w
 /*unknown_80_a214:*/ lda #$184e.w
 @unknown_80_a217: sta $7e4000, X
 /*unknown_80_a21b:*/ dex
