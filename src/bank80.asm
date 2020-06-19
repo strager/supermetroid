@@ -817,7 +817,7 @@ interrupt_reset:
   sep #$20
   lda #IO_MEMSEL_FASTROM
   sta IO_MEMSEL
-  sta $86
+  sta var_unknown_86
   rep #$30
 
   ; TODO(strager): The following code is duplicated in unknown_80_8462.
