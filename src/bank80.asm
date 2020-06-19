@@ -3949,20 +3949,21 @@ unknown_80_9b44:
   plp
   rtl
 
-unknown_80_9cce: .db $42, $00
-/*unknown_80_9cd0:*/ mvp $46, $00
-/*unknown_80_9cd3:*/ brk $48
-/*unknown_80_9cd5:*/ brk $4a
-/*unknown_80_9cd7:*/ brk $4c
-/*unknown_80_9cd9:*/ brk $4e
-/*unknown_80_9cdb:*/ brk $02
-/*unknown_80_9cdd:*/ brk $04
-/*unknown_80_9cdf:*/ brk $06
-/*unknown_80_9ce1:*/ brk $08
-/*unknown_80_9ce3:*/ brk $0a
-/*unknown_80_9ce5:*/ brk $0c
-/*unknown_80_9ce7:*/ brk $0e
-/*unknown_80_9ce9:*/ .db $00
+unknown_80_9cce:
+  .dw $0042
+  .dw $0044
+  .dw $0046
+  .dw $0048
+  .dw $004a
+  .dw $004c
+  .dw $004e
+  .dw $0002
+  .dw $0004
+  .dw $0006
+  .dw $0008
+  .dw $000a
+  .dw $000c
+  .dw $000e
 
 unknown_80_9cea:
   stx var_unknown_077c.w
