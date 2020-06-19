@@ -22,6 +22,17 @@ licenseecode $01 ; Nintendo
 version $00
 .endsnes
 
+.enum $00ffc0
+snesheader_name: dsb 21
+snesheader_romtype: db
+snesheader_cartridgetype: db
+snesheader_romsize: db
+snesheader_sramsize: db
+snesheader_country: db
+snesheader_licenseecode: db
+snesheader_version: db
+.ende
+
 .emptyfill $ff
 
 .base $80

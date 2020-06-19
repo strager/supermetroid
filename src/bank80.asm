@@ -1082,7 +1082,7 @@ unknown_80_85f6:
   beq @unknown_80_8602
   jmp @done
 @unknown_80_8602:
-  lda $00ffd9.l
+  lda snesheader_country.l
   cmp #$00
 @unknown_80_8608:
   beq @unknown_80_8614
