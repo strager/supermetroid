@@ -19,7 +19,7 @@
 /*unknown_86_8014:*/ plp
 /*unknown_86_8015:*/ rtl
 
-/*unknown_86_8016:*/ php
+unknown_86_8016: php
 /*unknown_86_8017:*/ rep #$30
 /*unknown_86_8019:*/ phx
 /*unknown_86_801a:*/ ldx #$0022.w

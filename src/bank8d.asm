@@ -9056,7 +9056,7 @@ unknown_8d_c4cd: php
 /*unknown_8d_c4d6:*/ plp
 /*unknown_8d_c4d7:*/ rtl
 
-/*unknown_8d_c4d8:*/ php
+unknown_8d_c4d8: php
 /*unknown_8d_c4d9:*/ rep #$30
 /*unknown_8d_c4db:*/ phx
 /*unknown_8d_c4dc:*/ ldx #$000e.w

@@ -1205,7 +1205,7 @@ unknown_a0_884d: phb
 /*unknown_a0_8a1b:*/ bra @unknown_a0_89b1
 @unknown_a0_8a1d: rtl
 
-/*unknown_a0_8a1e:*/ php
+unknown_a0_8a1e: php
 /*unknown_a0_8a1f:*/ phb
 /*unknown_a0_8a20:*/ pea $a000.w
 /*unknown_a0_8a23:*/ plb

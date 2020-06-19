@@ -5267,7 +5267,7 @@ unknown_89_80f4: asl $fe10.w, X
 /*unknown_89_ab80:*/ plp
 /*unknown_89_ab81:*/ rtl
 
-/*unknown_89_ab82:*/ php
+unknown_89_ab82: php
 /*unknown_89_ab83:*/ phb
 /*unknown_89_ab84:*/ rep #$30
 /*unknown_89_ab86:*/ pea $8300.w

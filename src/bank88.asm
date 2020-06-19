@@ -377,7 +377,7 @@ unknown_88_81fe: rep #$30
 /*unknown_88_829c:*/ plp
 /*unknown_88_829d:*/ rtl
 
-/*unknown_88_829e:*/ php
+unknown_88_829e: php
 /*unknown_88_829f:*/ sep #$20
 /*unknown_88_82a1:*/ jsr wait_until_end_of_next_vblank.l
 /*unknown_88_82a5:*/ stz $420b.w
@@ -397,7 +397,7 @@ unknown_88_81fe: rep #$30
 /*unknown_88_82bf:*/ plp
 /*unknown_88_82c0:*/ rtl
 
-/*unknown_88_82c1:*/ php
+unknown_88_82c1: php
 /*unknown_88_82c2:*/ rep #$20
 /*unknown_88_82c4:*/ stz $0607.w
 /*unknown_88_82c7:*/ stz $0609.w
