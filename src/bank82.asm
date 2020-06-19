@@ -11708,7 +11708,7 @@ unknown_82_df80: php
 unknown_82_df99: lda $0793.w
 /*unknown_82_df9c:*/ and #$000f.w
 /*unknown_82_df9f:*/ beq @unknown_82_dfa5
-/*unknown_82_dfa1:*/ jsr $80cd07
+/*unknown_82_dfa1:*/ jsr unknown_80_cd07.l
 @unknown_82_dfa5: ldx $078d.w
 /*unknown_82_dfa8:*/ lda $830002, X
 /*unknown_82_dfac:*/ bit #$0040.w

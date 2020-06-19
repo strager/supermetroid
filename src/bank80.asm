@@ -7100,44 +7100,48 @@ unknown_80_cc37: .db $c4
 /*unknown_80_cd01:*/ brk $00
 /*unknown_80_cd03:*/ bcs @unknown_80_cd05
 @unknown_80_cd05: brk $00
-/*unknown_80_cd07:*/ php
-/*unknown_80_cd08:*/ phb
-/*unknown_80_cd09:*/ phk
-/*unknown_80_cd0a:*/ plb
-/*unknown_80_cd0b:*/ rep #$30
-/*unknown_80_cd0d:*/ lda $079f.w
-/*unknown_80_cd10:*/ asl A
-/*unknown_80_cd11:*/ tax
-/*unknown_80_cd12:*/ lda $0793.w
-/*unknown_80_cd15:*/ and #$000f.w
-/*unknown_80_cd18:*/ dec A
-/*unknown_80_cd19:*/ asl A
-/*unknown_80_cd1a:*/ asl A
-/*unknown_80_cd1b:*/ clc
-/*unknown_80_cd1c:*/ adc $cd46.w, X
-/*unknown_80_cd1f:*/ tay
-/*unknown_80_cd20:*/ lda #$0000.w
-/*unknown_80_cd23:*/ sep #$20
-/*unknown_80_cd25:*/ lda $0000.w, Y
-/*unknown_80_cd28:*/ tax
-/*unknown_80_cd29:*/ lda $0001.w, Y
-/*unknown_80_cd2c:*/ ora $7ed8f8, X
-/*unknown_80_cd30:*/ sta $7ed8f8, X
-/*unknown_80_cd34:*/ lda $0002.w, Y
-/*unknown_80_cd37:*/ tax
-/*unknown_80_cd38:*/ lda $0003.w, Y
-/*unknown_80_cd3b:*/ ora $7ed8f8, X
-/*unknown_80_cd3f:*/ sta $7ed8f8, X
-/*unknown_80_cd43:*/ plb
-/*unknown_80_cd44:*/ plp
-/*unknown_80_cd45:*/ rtl
 
-/*unknown_80_cd46:*/ eor ($cd)
-/*unknown_80_cd48:*/ ror $cd
-/*unknown_80_cd4a:*/ ror $cd, X
-/*unknown_80_cd4c:*/ txa
-/*unknown_80_cd4d:*/ cmp $cd82.w
-/*unknown_80_cd50:*/ stx $cd
+unknown_80_cd07:
+  php
+  phb
+  phk
+  plb
+  rep #$30
+  lda var_unknown_079f.w
+  asl A
+  tax
+  lda var_unknown_0793.w
+  and #$000f.w
+  dec A
+  asl A
+  asl A
+  clc
+  adc unknown_80_cd46.w, X
+  tay
+  lda #$0000.w
+  sep #$20
+  lda $0, Y
+  tax
+  lda var_unknown_00_h.w, Y
+  ora var_unknown_d8f8.l, X
+  sta var_unknown_d8f8.l, X
+  lda $2, Y
+  tax
+  lda $3, Y
+  ora var_unknown_d8f8.l, X
+  sta var_unknown_d8f8.l, X
+  plb
+  plp
+  rtl
+
+unknown_80_cd46:
+  .dw var_unknown_cd52
+  .dw var_unknown_cd66
+  .dw var_unknown_cd76
+  .dw var_unknown_cd8a
+  .dw var_unknown_cd82
+  .dw var_unknown_cd86
+
 /*unknown_80_cd52:*/ ora ($01, X)
 /*unknown_80_cd54:*/ ora #$01
 /*unknown_80_cd56:*/ ora ($02, X)
