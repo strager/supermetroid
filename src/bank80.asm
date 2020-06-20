@@ -12,7 +12,11 @@
 .bank ($80 - $80) slot $0
 .org $0
 
-unknown_80_8000: .db $00
+; If zero, perform NTSC/PAL and SRAM checks on startup (after the NINTENDO
+; logo). If non-zero, skip the checks.
+disable_rom_console_and_sram_checks:
+  .db 0
+
 unknown_80_8001: .db $00
 unknown_80_8002: .db $00
 unknown_80_8003: .db $00
@@ -990,7 +994,7 @@ unknown_80_8482:
   sta var_unknown_0637.w
   lda unknown_80_8004.l
   sta var_unknown_05d1.w
-  jsr unknown_80_85f6
+  jsr check_rom_console_and_sram
   rep #$30
   jsl unknown_80_8261
   stz var_unknown_05f5.w
@@ -1075,26 +1079,32 @@ unknown_80_85c7:
   plp
   rtl
 
-unknown_80_85f6:
+check_rom_console_and_sram:
   php
   sep #$30
-  lda unknown_80_8000.l
-  beq @unknown_80_8602
+  lda disable_rom_console_and_sram_checks.l
+  beq @check_country_code
   jmp @done
-@unknown_80_8602:
+
+@check_country_code:
   lda snesheader_country.l
   cmp #$00
-@unknown_80_8608:
-  beq @unknown_80_8614
+  beq @rom_is_ntsc
+
+@rom_is_pal:
   lda IO_STAT78
   bit #IO_STAT78_PAL
-  beq @unknown_80_861b
+  beq @rom_console_mismatch ; Branch if ROM is PAL but console is NTSC.
   jmp @test_sram
-@unknown_80_8614:
+
+@rom_is_ntsc:
   lda IO_STAT78
   bit #IO_STAT78_PAL
-  beq @test_sram
-@unknown_80_861b:
+  beq @test_sram ; Branch if ROM and console are both NTSC.
+
+  ; Show the message "this game pak is not desigined for your SUPER FAMICOM or
+  ; SUPER NES. nintendo" [sic].
+@rom_console_mismatch:
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
   sta IO_INIDISP
   stz IO_NMITIMEN
@@ -1154,13 +1164,13 @@ das: .dw unknown_8e_e400@size
   sta IO_BG12NBA
   lda #$40
   sta IO_BG1SC
-@unknown_80_8691:
-  bra @unknown_80_8691
+@hang:
+  bra @hang
 
 ; Test the cartridge's SRAM.
 ;
-; This routine is possibly designed to check for hardware defects or for
-; piracy (wrong SRAM chip used).
+; This routine is designed to check for piracy (wrong SRAM chip used) or for
+; hardware defects.
 ;
 ; There's a small time window in which this routine might corrupt SRAM if the
 ; console resets.
@@ -1223,6 +1233,9 @@ das: .dw unknown_8e_e400@size
   plp
   rts
 
+  ; Show the message "WARNING it is a serious crime to copy video games. 18 USC
+  ; 2319. please refer to your nintendo game instruction booklet for further
+  ; information."
 @sram_test_failed:
   sep #$20
   lda #IO_INIDISP_FORCE_BLANK | IO_INIDISP_MAX_BRIGHTNESS
@@ -1284,8 +1297,8 @@ das: .dw unknown_8e_e400@size
   sta IO_BG12NBA
   lda #$40
   sta IO_BG1SC
-@unknown_80_875b:
-  bra @unknown_80_875b
+@hang_sram:
+  bra @hang_sram
 
 unknown_80_875d:
   lda #IO_NMITIMEN_ENABLE_JOYPAD
