@@ -1740,17 +1740,17 @@ unknown_84_8cf1:
   ldx var_plm_current_index.w
   ldy #$e6d2.w
   jsl unknown_86_8097
-  lda $1dc7.w, X
+  lda var_unknown_1dc7.w, X
   and #$0007.w
-  sta $078b.w
+  sta var_unknown_078b.w
   jsl unknown_80_818e
-  lda $079f.w
+  lda var_unknown_079f.w
   asl A
   tax
-  lda $7ed8f8, X
+  lda var_unknown_d8f8.l, X
   ora var_unknown_05e7.w
-  sta $7ed8f8, X
-  lda $0952.w
+  sta var_unknown_d8f8.l, X
+  lda var_unknown_0952.w
   jsl unknown_81_8000
   ply
   plx
@@ -1760,7 +1760,7 @@ unknown_84_8cf1:
 @unknown_84_8d32:
   ply
   plx
-  lda $0000.w, Y
+  lda $0, Y
   tay
   rts
 
