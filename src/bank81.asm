@@ -1,5 +1,6 @@
 .include "include/common.asm"
 .include "include/io.asm"
+.include "include/memory.asm"
 .include "include/oam.asm"
 .include "include/ppu.asm"
 .include "include/sprite.asm"
@@ -8,70 +9,74 @@
 .bank ($81 - $80) slot $0
 .org $0
 
-unknown_81_8000: php
-/*unknown_81_8001:*/ rep #$30
-/*unknown_81_8003:*/ phb
-/*unknown_81_8004:*/ phx
-/*unknown_81_8005:*/ phy
-/*unknown_81_8006:*/ pea $7e00.w
-/*unknown_81_8009:*/ plb
-/*unknown_81_800a:*/ plb
-/*unknown_81_800b:*/ stz $14
-/*unknown_81_800d:*/ and #$0003.w
-/*unknown_81_8010:*/ asl A
-/*unknown_81_8011:*/ sta $12
-/*unknown_81_8013:*/ ldy #$005e.w
-@unknown_81_8016: lda $09a2.w, Y
-/*unknown_81_8019:*/ sta $d7c0.w, Y
-/*unknown_81_801c:*/ dey
-/*unknown_81_801d:*/ dey
-/*unknown_81_801e:*/ bpl @unknown_81_8016
-/*unknown_81_8020:*/ ldx #$0000.w
-/*unknown_81_8023:*/ lda $079f.w
-/*unknown_81_8026:*/ xba
-/*unknown_81_8027:*/ tax
-/*unknown_81_8028:*/ ldy #$0000.w
-@unknown_81_802b: lda $07f7.w, Y
-/*unknown_81_802e:*/ sta $cd52.w, X
-/*unknown_81_8031:*/ iny
-/*unknown_81_8032:*/ iny
-/*unknown_81_8033:*/ inx
-/*unknown_81_8034:*/ inx
-/*unknown_81_8035:*/ cpy #$0100.w
-/*unknown_81_8038:*/ bmi @unknown_81_802b
-/*unknown_81_803a:*/ jsr unknown_81_834b
-/*unknown_81_803d:*/ lda $078b.w
-/*unknown_81_8040:*/ sta $d916.w
-/*unknown_81_8043:*/ lda $079f.w
-/*unknown_81_8046:*/ sta $d918.w
-/*unknown_81_8049:*/ ldx $12
-/*unknown_81_804b:*/ lda $81812b, X
-/*unknown_81_804f:*/ tax
-/*unknown_81_8050:*/ ldy #$d7c0.w
-@unknown_81_8053: lda $0000.w, Y
-/*unknown_81_8056:*/ sta $700000, X
-/*unknown_81_805a:*/ clc
-/*unknown_81_805b:*/ adc $14
-/*unknown_81_805d:*/ sta $14
-/*unknown_81_805f:*/ inx
-/*unknown_81_8060:*/ inx
-/*unknown_81_8061:*/ iny
-/*unknown_81_8062:*/ iny
-/*unknown_81_8063:*/ cpy #$de1c.w
-/*unknown_81_8066:*/ bne @unknown_81_8053
-/*unknown_81_8068:*/ ldx $12
-/*unknown_81_806a:*/ lda $14
-/*unknown_81_806c:*/ sta $700000, X
-/*unknown_81_8070:*/ sta $701ff0, X
-/*unknown_81_8074:*/ eor #$ffff.w
-/*unknown_81_8077:*/ sta $700008, X
-/*unknown_81_807b:*/ sta $701ff8, X
-/*unknown_81_807f:*/ ply
-/*unknown_81_8080:*/ plx
-/*unknown_81_8081:*/ clc
-/*unknown_81_8082:*/ plb
-/*unknown_81_8083:*/ plp
-/*unknown_81_8084:*/ rtl
+unknown_81_8000:
+  php
+  rep #$30
+  phb
+  phx
+  phy
+  pea (var_unknown_d7c0 >> 16) << 8
+  plb
+  plb ; B := :var_unknown_d7c0
+  stz var_unknown_14
+  and #$0003.w
+  asl A
+  sta var_unknown_12
+  ldy #$005e.w
+@unknown_81_8016:
+  lda var_unknown_09a2.w, Y
+  sta var_unknown_d7c0.w, Y
+  dey
+  dey
+  bpl @unknown_81_8016
+  ldx #$0000.w
+  lda var_unknown_079f.w
+  xba
+  tax
+  ldy #$0000.w
+@unknown_81_802b:
+  lda var_unknown_07f7.w, Y
+  sta var_unknown_cd52.w, X
+  iny
+  iny
+  inx
+  inx
+  cpy #$0100.w
+  bmi @unknown_81_802b
+  jsr unknown_81_834b
+  lda var_unknown_078b.w
+  sta var_unknown_d916.w
+  lda var_unknown_079f.w
+  sta var_unknown_d918.w
+  ldx var_unknown_12
+  lda unknown_81_812b.l, X
+  tax
+  ldy #var_unknown_d7c0
+@unknown_81_8053:
+  lda $0, Y
+  sta MEM_SRAM_BEGIN, X
+  clc
+  adc var_unknown_14
+  sta var_unknown_14
+  inx
+  inx
+  iny
+  iny
+  cpy #(var_unknown_de1a + 2) & $ffff
+  bne @unknown_81_8053
+  ldx var_unknown_12
+  lda var_unknown_14
+  sta MEM_SRAM_BEGIN, X
+  sta MEM_SRAM_MIRROR_BEGIN - 16, X
+  eor #$ffff.w
+  sta MEM_SRAM_BEGIN + 8, X
+  sta MEM_SRAM_MIRROR_BEGIN - 16 + 8, X
+  ply
+  plx
+  clc
+  plb
+  plp
+  rtl
 
 unknown_81_8085: rep #$30
 /*unknown_81_8087:*/ phb
@@ -155,7 +160,7 @@ unknown_81_8085: rep #$30
 /*unknown_81_8129:*/ plb
 /*unknown_81_812a:*/ rtl
 
-/*unknown_81_812b:*/ bpl @unknown_81_812d
+unknown_81_812b: bpl @unknown_81_812d
 @unknown_81_812d: jmp ($c806)
 /*unknown_81_8130:*/ tsb $484a.w
 /*unknown_81_8133:*/ jmp $4212.w

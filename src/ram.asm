@@ -1230,6 +1230,12 @@ var_unknown_cd86: dw ; $7ecd86
 var_unknown_cd8a: dw ; $7ecd8a
 .ende
 
+; Variables between var_unknown_d7c0 and var_unknown_de1a (inclusive) must be
+; contiguous. See unknown_81_8000 for details.
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $d7c0) export
+var_unknown_d7c0: dw ; $7ed7c0
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d820) export
 var_unknown_d820: dsb $8 ; $7ed820
 var_unknown_d828: dsw $8 ; $7ed828
@@ -1241,6 +1247,15 @@ var_unknown_d8f8: dsb 1 ; $7ed8f8
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d908) export
 var_unknown_d908: dw ; $7ed908
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $d916) export
+var_unknown_d916: dw ; $7ed916
+var_unknown_d918: dw ; $7ed918
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $de1a) export
+var_unknown_de1a: dw ; $7ede1a
 .ende
 
 .define plm_instruction_count $28
