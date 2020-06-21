@@ -383,18 +383,42 @@ draw_sprite_tiles@oam_extra_x8_and_large:
   .dw (OAM_OBJ_EXTRA_X8_MASK | OAM_OBJ_EXTRA_SIZE_LARGE) << ((count # 8) * 2)
 .endr
 
-; TODO: "Main sprite drawing routine. Sprite map starts at (Databank):YYYY. $14
-; holds X center, $12 holds Y center, $16 holds pallete number * 200. Sprite
-; maps start with 2 bytes for # of tiles, each tile is 5 bytes: First 2 bytes
+; Copy sprite tiles to OAM.
+;
+; "Main sprite drawing routine. Sprite map starts at (Databank):YYYY. $14 holds
+; X center, $12 holds Y center, $16 holds pallete number * 200. Sprite maps
+; start with 2 bytes for # of tiles, each tile is 5 bytes: First 2 bytes
 ; xxxx xxxx S??? pppX  (9-bit signed X offset, pallete that is almost never
 ; used, Size bit), then Y offset (1 byte), and last 2 bytes are remaining OAM
 ; (flips, priority, pallete that's not used, tile #)" -- Kejardon
 ;
-; See also draw_sprite_tiles_2.
+; "Spritemap format is roughly:
+;     nnnn         ; Number of entries (2 bytes)
+;     xxxx yy attt ; Entry 0 (5 bytes)
+;     ...          ; Entry 1...
+; Where:
+;     n = number of entries
+;     x = X offset of sprite from centre
+;     y = Y offset of sprite from centre
+;     a = attributes
+;     t = tile number
+;
+; More specifically, a spritemap entry is:
+;     s000000xxxxxxxxx yyyyyyyy YXpp000ttttttttt
+; Where:
+;     s = size bit
+;     x = X offset of sprite from centre
+;     y = Y offset of sprite from centre
+;     Y = Y flip
+;     X = X flip
+;     p = priority (relative to background)
+;     t = tile number" -- P.JBoy
+;
+; See also draw_sprite_tiles_off_screen.
 ;
 ; Inputs:
-; * [var_temp_center_y] X coordinate of the sprite.
-; * [var_temp_center_x] Y coordinate of the sprite.
+; * [var_temp_center_y] X coordinate of the sprite's center.
+; * [var_temp_center_x] Y coordinate of the sprite's center.
 ; * [var_temp_palette] Palette number of the sprite, shifted left by
 ;                      OAM_OBJ_TAA_PALETTE_SHIFT.
 ; * [Y]
@@ -407,7 +431,7 @@ draw_sprite_tiles@oam_extra_x8_and_large:
 ; * [var_temp_number_of_tiles]
 ; * A
 ; * flags
-draw_sprite_tiles_1:
+draw_sprite_tiles:
   phx
   lda 0, Y ; Read tile count.
   bne @draw_tiles
@@ -549,24 +573,14 @@ draw_sprite_tiles_1:
   plx
   rtl
 
-; See also draw_sprite_tiles_1.
+; Copy sprite tiles to OAM off-screen.
 ;
-; Inputs:
-; * [var_temp_center_y] X coordinate of the sprite.
-; * [var_temp_center_x] Y coordinate of the sprite.
-; * [var_temp_palette] Palette number of the sprite, shifted left by
-;                      OAM_OBJ_TAA_PALETTE_SHIFT.
-; * [Y]
+; See also draw_sprite_tiles.
 ;
-; Outputs:
-; * [var_oam_objects]
-; * [var_oam_objects_tail]
-;
-; Clobbers:
-; * [var_temp_number_of_tiles]
-; * A
-; * flags
-draw_sprite_tiles_2:
+; Inputs: Same as draw_sprite_tiles.
+; Outputs: Same as draw_sprite_tiles.
+; Clobbers: Same as draw_sprite_tiles.
+draw_sprite_tiles_off_screen:
   phx
   lda 0, Y ; Read tile count.
   bne @draw_tiles
