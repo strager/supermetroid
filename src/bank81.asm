@@ -78,87 +78,93 @@ unknown_81_8000:
   plp
   rtl
 
-unknown_81_8085: rep #$30
-/*unknown_81_8087:*/ phb
-/*unknown_81_8088:*/ phx
-/*unknown_81_8089:*/ phy
-/*unknown_81_808a:*/ pea $7e00.w
-/*unknown_81_808d:*/ plb
-/*unknown_81_808e:*/ plb
-/*unknown_81_808f:*/ stz $14
-/*unknown_81_8091:*/ and #$0003.w
-/*unknown_81_8094:*/ asl A
-/*unknown_81_8095:*/ sta $12
-/*unknown_81_8097:*/ tax
-/*unknown_81_8098:*/ lda $81812b, X
-/*unknown_81_809c:*/ tax
-/*unknown_81_809d:*/ ldy #$d7c0.w
-@unknown_81_80a0: lda $700000, X
-/*unknown_81_80a4:*/ sta $0000.w, Y
-/*unknown_81_80a7:*/ clc
-/*unknown_81_80a8:*/ adc $14
-/*unknown_81_80aa:*/ sta $14
-/*unknown_81_80ac:*/ inx
-/*unknown_81_80ad:*/ inx
-/*unknown_81_80ae:*/ iny
-/*unknown_81_80af:*/ iny
-/*unknown_81_80b0:*/ cpy #$de1c.w
-/*unknown_81_80b3:*/ bne @unknown_81_80a0
-/*unknown_81_80b5:*/ ldx $12
-/*unknown_81_80b7:*/ lda $14
-/*unknown_81_80b9:*/ cmp $700000, X
-/*unknown_81_80bd:*/ bne @unknown_81_80ca
-/*unknown_81_80bf:*/ eor #$ffff.w
-/*unknown_81_80c2:*/ cmp $700008, X
-/*unknown_81_80c6:*/ bne @unknown_81_80ca
-/*unknown_81_80c8:*/ bra @unknown_81_80db
-@unknown_81_80ca: lda $14
-/*unknown_81_80cc:*/ cmp $701ff0, X
-/*unknown_81_80d0:*/ bne @unknown_81_80fc
-/*unknown_81_80d2:*/ eor #$ffff.w
-/*unknown_81_80d5:*/ cmp $701ff8, X
-/*unknown_81_80d9:*/ bne @unknown_81_80fc
-@unknown_81_80db: ldy #$005e.w
-@unknown_81_80de: lda $d7c0.w, Y
-/*unknown_81_80e1:*/ sta $09a2.w, Y
-/*unknown_81_80e4:*/ dey
-/*unknown_81_80e5:*/ dey
-/*unknown_81_80e6:*/ bpl @unknown_81_80de
-/*unknown_81_80e8:*/ jsr unknown_81_82e4
-/*unknown_81_80eb:*/ lda $d916.w
-/*unknown_81_80ee:*/ sta $078b.w
-/*unknown_81_80f1:*/ lda $d918.w
-/*unknown_81_80f4:*/ sta $079f.w
-/*unknown_81_80f7:*/ ply
-/*unknown_81_80f8:*/ plx
-/*unknown_81_80f9:*/ clc
-/*unknown_81_80fa:*/ plb
-/*unknown_81_80fb:*/ rtl
-
-@unknown_81_80fc: stz $14
-/*unknown_81_80fe:*/ ldx $12
-/*unknown_81_8100:*/ lda $81812b, X
-/*unknown_81_8104:*/ tax
-/*unknown_81_8105:*/ ldy #$d7c0.w
-/*unknown_81_8108:*/ lda #$0000.w
-@unknown_81_810b: sta $700000, X
-/*unknown_81_810f:*/ clc
-/*unknown_81_8110:*/ adc $14
-/*unknown_81_8112:*/ sta $14
-/*unknown_81_8114:*/ inx
-/*unknown_81_8115:*/ inx
-/*unknown_81_8116:*/ iny
-/*unknown_81_8117:*/ iny
-/*unknown_81_8118:*/ cpy #$de1c.w
-/*unknown_81_811b:*/ bne @unknown_81_810b
-/*unknown_81_811d:*/ lda #$0000.w
-/*unknown_81_8120:*/ sta $078b.w
-/*unknown_81_8123:*/ sta $079f.w
-/*unknown_81_8126:*/ ply
-/*unknown_81_8127:*/ plx
-/*unknown_81_8128:*/ sec
-/*unknown_81_8129:*/ plb
-/*unknown_81_812a:*/ rtl
+unknown_81_8085:
+  rep #$30
+  phb
+  phx
+  phy
+  pea (var_unknown_d916 >> 16) << 8
+  plb
+  plb ; B := :var_unknown_d916
+  stz var_unknown_14
+  and #$0003.w
+  asl A
+  sta var_unknown_12
+  tax
+  lda unknown_81_812b.l, X
+  tax
+  ldy #var_unknown_d7c0
+@unknown_81_80a0:
+  lda MEM_SRAM_BEGIN, X
+  sta $0, Y
+  clc
+  adc var_unknown_14
+  sta var_unknown_14
+  inx
+  inx
+  iny
+  iny
+  cpy #(var_unknown_de1a + 2) & $ffff
+  bne @unknown_81_80a0
+  ldx var_unknown_12
+  lda var_unknown_14
+  cmp MEM_SRAM_BEGIN, X
+  bne @unknown_81_80ca
+  eor #$ffff.w
+  cmp MEM_SRAM_BEGIN + 8, X
+  bne @unknown_81_80ca
+  bra @unknown_81_80db
+@unknown_81_80ca:
+  lda var_unknown_14
+  cmp MEM_SRAM_MIRROR_BEGIN - 16, X
+  bne @unknown_81_80fc
+  eor #$ffff.w
+  cmp MEM_SRAM_MIRROR_BEGIN - 16 + 8, X
+  bne @unknown_81_80fc
+@unknown_81_80db:
+  ldy #$005e.w
+@unknown_81_80de:
+  lda unknown_81_d7c0.w, Y
+  sta var_unknown_09a2.w, Y
+  dey
+  dey
+  bpl @unknown_81_80de
+  jsr unknown_81_82e4
+  lda var_unknown_d916.w
+  sta var_unknown_078b.w
+  lda var_unknown_d918.w
+  sta var_unknown_079f.w
+  ply
+  plx
+  clc
+  plb
+  rtl
+@unknown_81_80fc:
+  stz var_unknown_14
+  ldx var_unknown_12
+  lda unknown_81_812b.l, X
+  tax
+  ldy #var_unknown_d7c0
+  lda #0
+@unknown_81_810b:
+  sta MEM_SRAM_BEGIN, X
+  clc
+  adc var_unknown_14
+  sta var_unknown_14
+  inx
+  inx
+  iny
+  iny
+  cpy #(var_unknown_de1a + 2) & $ffff
+  bne @unknown_81_810b
+  lda #0
+  sta var_unknown_078b.w
+  sta var_unknown_079f.w
+  ply
+  plx
+  sec
+  plb
+  rtl
 
 unknown_81_812b: bpl @unknown_81_812d
 @unknown_81_812d: jmp ($c806)
@@ -8509,7 +8515,7 @@ unknown_81_c046: eor $4e1c.w
 /*unknown_81_d7b7:*/ jmp $4d1c53
 /*unknown_81_d7bb:*/ trb $1c4e.w
 /*unknown_81_d7be:*/ eor ($5c), Y
-/*unknown_81_d7c0:*/ ora $000f00.l
+unknown_81_d7c0: ora $000f00.l
 /*unknown_81_d7c4:*/ ora $000f00.l
 /*unknown_81_d7c8:*/ ora $000f00.l
 /*unknown_81_d7cc:*/ ora $000f00.l
