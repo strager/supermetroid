@@ -734,70 +734,76 @@ unknown_81_8907:
   rts
 .accu 16
 
-/*unknown_81_891f:*/ phb
-/*unknown_81_8920:*/ pea $8200.w
-/*unknown_81_8923:*/ plb
-/*unknown_81_8924:*/ plb
-/*unknown_81_8925:*/ sty $12
-/*unknown_81_8927:*/ stx $14
-/*unknown_81_8929:*/ asl A
-/*unknown_81_892a:*/ tax
-/*unknown_81_892b:*/ ldy $c569.w, X
-/*unknown_81_892e:*/ lda $0000.w, Y
-/*unknown_81_8931:*/ beq @unknown_81_89ac
-/*unknown_81_8933:*/ sta $18
-/*unknown_81_8935:*/ iny
-/*unknown_81_8936:*/ iny
-/*unknown_81_8937:*/ ldx $0590.w
-/*unknown_81_893a:*/ clc
-@unknown_81_893b: lda $0000.w, Y
-/*unknown_81_893e:*/ adc $14
-/*unknown_81_8940:*/ sta $0370.w, X
-/*unknown_81_8943:*/ and #$0100.w
-/*unknown_81_8946:*/ beq @unknown_81_896f
-/*unknown_81_8948:*/ lda $0000.w, Y
-/*unknown_81_894b:*/ bpl @unknown_81_895e
-/*unknown_81_894d:*/ lda $81859f, X
-/*unknown_81_8951:*/ sta $16
-/*unknown_81_8953:*/ lda ($16)
-/*unknown_81_8955:*/ ora $8185a1, X
-/*unknown_81_8959:*/ sta ($16)
-/*unknown_81_895b:*/ jmp @unknown_81_8982
-@unknown_81_895e: lda $81859f, X
-/*unknown_81_8962:*/ sta $16
-/*unknown_81_8964:*/ lda ($16)
-/*unknown_81_8966:*/ ora $81839f, X
-/*unknown_81_896a:*/ sta ($16)
-/*unknown_81_896c:*/ jmp @unknown_81_8982
-@unknown_81_896f: lda $0000.w, Y
-/*unknown_81_8972:*/ bpl @unknown_81_8982
-/*unknown_81_8974:*/ lda $81859f, X
-/*unknown_81_8978:*/ sta $16
-/*unknown_81_897a:*/ lda ($16)
-/*unknown_81_897c:*/ ora $8183a1, X
-/*unknown_81_8980:*/ sta ($16)
-@unknown_81_8982: lda $0002.w, Y
-/*unknown_81_8985:*/ clc
-/*unknown_81_8986:*/ adc $12
-/*unknown_81_8988:*/ sta $0371.w, X
-/*unknown_81_898b:*/ lda $0003.w, Y
-/*unknown_81_898e:*/ and #$f1ff.w
-/*unknown_81_8991:*/ ora $03
-/*unknown_81_8993:*/ sta $0372.w, X
-/*unknown_81_8996:*/ tya
-/*unknown_81_8997:*/ clc
-/*unknown_81_8998:*/ adc #$0005.w
-/*unknown_81_899b:*/ tay
-/*unknown_81_899c:*/ txa
-/*unknown_81_899d:*/ clc
-/*unknown_81_899e:*/ adc #$0004.w
-/*unknown_81_89a1:*/ and #$01ff.w
-/*unknown_81_89a4:*/ tax
-/*unknown_81_89a5:*/ dec $18
-/*unknown_81_89a7:*/ bne @unknown_81_893b
-/*unknown_81_89a9:*/ stx $0590.w
-@unknown_81_89ac: plb
-/*unknown_81_89ad:*/ rtl
+unknown_81_891f:
+  phb
+  pea :unknown_82_c569 << 8
+  plb
+  plb ; B := :unknown_82_c569
+  sty var_unknown_12
+  stx var_unknown_14
+  asl A
+  tax
+  ldy unknown_82_c569.w, X
+  lda 0, Y
+  beq @unknown_81_89ac
+  sta var_unknown_18
+  iny
+  iny
+  ldx var_oam_objects_tail.w
+  clc
+@unknown_81_893b:
+  lda 0, Y
+  adc var_unknown_14
+  sta var_oam_objects.x.w, X
+  and #$0100.w
+  beq @unknown_81_896f
+  lda 0, Y
+  bpl @unknown_81_895e
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_unknown_16
+  lda (var_unknown_16)
+  ora draw_sprite_tiles@oam_extra_x8_and_large.l, X
+  sta (var_unknown_16)
+  jmp @unknown_81_8982
+@unknown_81_895e:
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_unknown_16
+  lda (var_unknown_16)
+  ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
+  sta (var_unknown_16)
+  jmp @unknown_81_8982
+@unknown_81_896f:
+  lda 0, Y
+  bpl @unknown_81_8982
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_unknown_16
+  lda (var_unknown_16)
+  ora draw_sprite_tiles@oam_extra_large.l, X
+  sta (var_unknown_16)
+@unknown_81_8982:
+  lda 2, Y
+  clc
+  adc var_unknown_12
+  sta var_oam_objects.y.w, X
+  lda 3, Y
+  and #$f1ff.w
+  ora var_unknown_03
+  sta var_oam_objects.tile_and_attributes.w, X
+  tya
+  clc
+  adc #$0005.w
+  tay
+  txa
+  clc
+  adc #oam_obj@size
+  and #(OAM_OBJ_COUNT * oam_obj@size) - 1
+  tax
+  dec var_unknown_18
+  bne @unknown_81_893b
+  stx var_oam_objects_tail.w
+@unknown_81_89ac:
+  plb
+  rtl
 
 unknown_81_89ae: phb
 /*unknown_81_89af:*/ pea $9200.w
@@ -3090,7 +3096,7 @@ unknown_81_9de4: phx
 /*unknown_81_9e20:*/ lda $19a1.w, X
 /*unknown_81_9e23:*/ tax
 /*unknown_81_9e24:*/ pla
-/*unknown_81_9e25:*/ jsr $81891f
+/*unknown_81_9e25:*/ jsl unknown_81_891f
 /*unknown_81_9e29:*/ plb
 /*unknown_81_9e2a:*/ plx
 /*unknown_81_9e2b:*/ rts
@@ -4342,7 +4348,7 @@ unknown_81_a97e: stz $03
 /*unknown_81_a980:*/ ldx #$0080.w
 /*unknown_81_a983:*/ ldy #$0010.w
 /*unknown_81_a986:*/ lda $82c749
-/*unknown_81_a98a:*/ jsr $81891f
+/*unknown_81_a98a:*/ jsl unknown_81_891f
 /*unknown_81_a98e:*/ stz $1c
 @unknown_81_a990: ldx #$0200.w
 /*unknown_81_a993:*/ lda $1c
@@ -4405,7 +4411,7 @@ unknown_81_a97e: stz $03
 /*unknown_81_aa02:*/ adc $82c749
 /*unknown_81_aa06:*/ inc A
 /*unknown_81_aa07:*/ plx
-/*unknown_81_aa08:*/ jsr $81891f
+/*unknown_81_aa08:*/ jsl unknown_81_891f
 @unknown_81_aa0c: inc $1c
 /*unknown_81_aa0e:*/ lda $1c
 /*unknown_81_aa10:*/ cmp #$0006.w
