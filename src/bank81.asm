@@ -431,50 +431,53 @@ unknown_81_82e4:
   plb
   rts
 
-unknown_81_834b: phb
-/*unknown_81_834c:*/ php
-/*unknown_81_834d:*/ phk
-/*unknown_81_834e:*/ plb
-/*unknown_81_834f:*/ rep #$30
-/*unknown_81_8351:*/ stz $1a
-@unknown_81_8353: ldx $1a
-/*unknown_81_8355:*/ lda $8131.w, X
-/*unknown_81_8358:*/ and #$00ff.w
-/*unknown_81_835b:*/ sta $16
-/*unknown_81_835d:*/ lda $1a
-/*unknown_81_835f:*/ asl A
-/*unknown_81_8360:*/ tax
-/*unknown_81_8361:*/ lda $82d6.w, X
-/*unknown_81_8364:*/ sta $00
-/*unknown_81_8366:*/ lda $8138.w, X
-/*unknown_81_8369:*/ tax
-/*unknown_81_836a:*/ lda $1a
-/*unknown_81_836c:*/ xba
-/*unknown_81_836d:*/ sta $18
-/*unknown_81_836f:*/ lda #$cd52.w
-/*unknown_81_8372:*/ sta $03
-/*unknown_81_8374:*/ lda #$007e.w
-/*unknown_81_8377:*/ sta $05
-@unknown_81_8379: lda ($00)
-/*unknown_81_837b:*/ and #$00ff.w
-/*unknown_81_837e:*/ clc
-/*unknown_81_837f:*/ adc $18
-/*unknown_81_8381:*/ tay
-/*unknown_81_8382:*/ sep #$20
-/*unknown_81_8384:*/ lda [$03], Y
-/*unknown_81_8386:*/ sta $7ed91c, X
-/*unknown_81_838a:*/ rep #$20
-/*unknown_81_838c:*/ inc $00
-/*unknown_81_838e:*/ inx
-/*unknown_81_838f:*/ dec $16
-/*unknown_81_8391:*/ bne @unknown_81_8379
-/*unknown_81_8393:*/ inc $1a
-/*unknown_81_8395:*/ lda $1a
-/*unknown_81_8397:*/ cmp #$0006.w
-/*unknown_81_839a:*/ bmi @unknown_81_8353
-/*unknown_81_839c:*/ plp
-/*unknown_81_839d:*/ plb
-/*unknown_81_839e:*/ rts
+unknown_81_834b:
+  phb
+  php
+  phk
+  plb
+  rep #$30
+  stz var_unknown_1a
+@unknown_81_8353:
+  ldx var_unknown_1a
+  lda unknown_81_8131.w, X
+  and #$00ff.w
+  sta var_unknown_16
+  lda var_unknown_1a
+  asl A
+  tax
+  lda unknown_81_82d6.w, X
+  sta var_unknown_00
+  lda unknown_81_8138.w, X
+  tax
+  lda var_unknown_1a
+  xba
+  sta var_unknown_18
+  lda #var_unknown_cd52
+  sta var_unknown_03
+  lda #var_unknown_cd52 >> 16
+  sta var_unknown_05
+@unknown_81_8379:
+  lda (var_unknown_00)
+  and #$00ff.w
+  clc
+  adc var_unknown_18
+  tay
+  sep #$20
+  lda [var_unknown_03], Y
+  sta var_unknown_d91c.l, X
+  rep #$20
+  inc var_unknown_00
+  inx
+  dec var_unknown_16
+  bne @unknown_81_8379
+  inc var_unknown_1a
+  lda var_unknown_1a
+  cmp #$0006.w
+  bmi @unknown_81_8353
+  plp
+  plb
+  rts
 
 .repeat OAM_OBJ_COUNT index count
 .if count == 0
