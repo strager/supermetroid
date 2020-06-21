@@ -526,89 +526,100 @@ draw_sprite_tiles:
   plx
   rtl
 
-/*unknown_81_8853:*/ phx
-/*unknown_81_8854:*/ lda $0000.w, Y
-/*unknown_81_8857:*/ bne @unknown_81_885e
-/*unknown_81_8859:*/ plx
-/*unknown_81_885a:*/ rtl
-
-@unknown_81_885b: jmp $8902.w
-@unknown_81_885e: sta $18
-/*unknown_81_8860:*/ iny
-/*unknown_81_8861:*/ iny
-/*unknown_81_8862:*/ lda $0590.w
-/*unknown_81_8865:*/ bit #$fe00.w
-/*unknown_81_8868:*/ bne @unknown_81_885b
-/*unknown_81_886a:*/ tax
-/*unknown_81_886b:*/ clc
-@unknown_81_886c: lda $0000.w, Y
-/*unknown_81_886f:*/ adc $14
-/*unknown_81_8871:*/ sta $0370.w, X
-/*unknown_81_8874:*/ and #$0100.w
-/*unknown_81_8877:*/ beq @unknown_81_889f
-/*unknown_81_8879:*/ lda $0000.w, Y
-/*unknown_81_887c:*/ bpl @unknown_81_888f
-/*unknown_81_887e:*/ lda $81859f, X
-/*unknown_81_8882:*/ sta $1c
-/*unknown_81_8884:*/ lda ($1c)
-/*unknown_81_8886:*/ ora $8185a1, X
-/*unknown_81_888a:*/ sta ($1c)
-/*unknown_81_888c:*/ jmp $88b2.w
-@unknown_81_888f: lda $81859f, X
-/*unknown_81_8893:*/ sta $1c
-/*unknown_81_8895:*/ lda ($1c)
-/*unknown_81_8897:*/ ora $81839f, X
-/*unknown_81_889b:*/ sta ($1c)
-/*unknown_81_889d:*/ bra @unknown_81_88b2
-@unknown_81_889f: lda $0000.w, Y
-/*unknown_81_88a2:*/ bpl @unknown_81_88b2
-/*unknown_81_88a4:*/ lda $81859f, X
-/*unknown_81_88a8:*/ sta $1c
-/*unknown_81_88aa:*/ lda ($1c)
-/*unknown_81_88ac:*/ ora $8183a1, X
-/*unknown_81_88b0:*/ sta ($1c)
-@unknown_81_88b2: sep #$20
-/*unknown_81_88b4:*/ lda $0002.w, Y
-/*unknown_81_88b7:*/ clc
-/*unknown_81_88b8:*/ bmi @unknown_81_88c4
-/*unknown_81_88ba:*/ adc $12
-/*unknown_81_88bc:*/ bcs @unknown_81_88d7
-/*unknown_81_88be:*/ cmp #$e0
-/*unknown_81_88c0:*/ bcs @unknown_81_88d7
-/*unknown_81_88c2:*/ bra @unknown_81_88d2
-@unknown_81_88c4: adc $12
-/*unknown_81_88c6:*/ bcs @unknown_81_88ce
-/*unknown_81_88c8:*/ cmp #$e0
-/*unknown_81_88ca:*/ bcc @unknown_81_88d7
-/*unknown_81_88cc:*/ bra @unknown_81_88d2
-@unknown_81_88ce: cmp #$e0
-/*unknown_81_88d0:*/ bcs @unknown_81_88d7
-@unknown_81_88d2: jsr $8907.w
-/*unknown_81_88d5:*/ lda #$e0
-@unknown_81_88d7: sta $0371.w, X
-/*unknown_81_88da:*/ rep #$21
-/*unknown_81_88dc:*/ lda $0003.w, Y
-/*unknown_81_88df:*/ and #$f1ff.w
-/*unknown_81_88e2:*/ ora $16
-/*unknown_81_88e4:*/ sta $0372.w, X
-/*unknown_81_88e7:*/ txa
-/*unknown_81_88e8:*/ adc #$0004.w
-/*unknown_81_88eb:*/ bit #$fe00.w
-/*unknown_81_88ee:*/ bne @unknown_81_8902
-/*unknown_81_88f0:*/ tax
-/*unknown_81_88f1:*/ tya
-/*unknown_81_88f2:*/ adc #$0005.w
-/*unknown_81_88f5:*/ tay
-/*unknown_81_88f6:*/ dec $18
-/*unknown_81_88f8:*/ beq @unknown_81_88fd
-/*unknown_81_88fa:*/ jmp @unknown_81_886c
-@unknown_81_88fd: stx $0590.w
-/*unknown_81_8900:*/ plx
-/*unknown_81_8901:*/ rtl
-
-@unknown_81_8902: sta $0590.w
-/*unknown_81_8905:*/ plx
-/*unknown_81_8906:*/ rtl
+unknown_81_8853:
+  phx
+  lda 0, Y
+  bne @unknown_81_885e
+  plx
+  rtl
+@unknown_81_885b:
+  jmp @unknown_81_8902
+@unknown_81_885e:
+  sta var_unknown_18
+  iny
+  iny
+  lda var_oam_objects_tail.w
+  bit #$fe00.w
+  bne @unknown_81_885b
+  tax
+  clc
+@unknown_81_886c:
+  lda sprite_tile.x_and_flags, Y
+  adc var_unknown_14
+  sta var_oam_objects.x.w, X
+  and #$0100.w
+  beq @unknown_81_889f
+  lda sprite_tile.x_and_flags, Y
+  bpl @unknown_81_888f
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
+  ora draw_sprite_tiles@oam_extra_x8_and_large.l, X
+  sta (var_temp_unknown_1c)
+  jmp unknown_81_8853@unknown_81_88b2
+@unknown_81_888f:
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
+  ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
+  sta (var_temp_unknown_1c)
+  bra @unknown_81_88b2
+@unknown_81_889f:
+  lda sprite_tile.x_and_flags, Y
+  bpl @unknown_81_88b2
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
+  ora draw_sprite_tiles@oam_extra_large.l, X
+  sta (var_temp_unknown_1c)
+@unknown_81_88b2:
+  sep #$20
+  lda sprite_tile.y, Y
+  clc
+  bmi @unknown_81_88c4
+  adc var_unknown_12
+  bcs @unknown_81_88d7
+  cmp #PPU_SCREEN_HEIGHT
+  bcs @unknown_81_88d7
+  bra @unknown_81_88d2
+@unknown_81_88c4:
+  adc var_unknown_12
+  bcs @unknown_81_88ce
+  cmp #PPU_SCREEN_HEIGHT
+  bcc @unknown_81_88d7
+  bra @unknown_81_88d2
+@unknown_81_88ce:
+  cmp #PPU_SCREEN_HEIGHT
+  bcs @unknown_81_88d7
+@unknown_81_88d2:
+  jsr unknown_81_8907
+  lda #PPU_SCREEN_HEIGHT
+@unknown_81_88d7:
+  sta var_oam_objects.y.w, X
+  rep #$21
+  lda sprite_tile.oam_tile_and_attributes, Y
+  and #$f1ff.w
+  ora var_unknown_16
+  sta var_oam_objects.tile_and_attributes.w, X
+  txa
+  adc #oam_obj@size
+  bit #$fe00.w
+  bne @unknown_81_8902
+  tax
+  tya
+  adc #sprite_tile@size
+  tay
+  dec var_unknown_18
+  beq @unknown_81_88fd
+  jmp @unknown_81_886c
+@unknown_81_88fd:
+  stx var_oam_objects_tail.w
+  plx
+  rtl
+@unknown_81_8902:
+  sta var_oam_objects_tail.w
+  plx
+  rtl
 
 unknown_81_8907: lda #$9d80.w
 /*unknown_81_890a:*/ bvs $03 ; $890f.w
