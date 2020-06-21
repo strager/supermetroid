@@ -168,10 +168,11 @@ unknown_81_8085:
 
 unknown_81_812b: bpl @unknown_81_812d
 @unknown_81_812d: jmp ($c806)
-/*unknown_81_8130:*/ tsb $484a.w
+/*unknown_81_8130:*/ .db $0c
+unknown_81_8131: .db $4a, $48
 /*unknown_81_8133:*/ jmp $4212.w
 /*unknown_81_8136:*/ ora $08, X
-/*unknown_81_8138:*/ brk $00
+unknown_81_8138: brk $00
 /*unknown_81_813a:*/ lsr A
 /*unknown_81_813b:*/ brk $92
 /*unknown_81_813d:*/ brk $de
@@ -365,65 +366,70 @@ unknown_81_812b: bpl @unknown_81_812d
 /*unknown_81_82d0:*/ brk $00
 /*unknown_81_82d2:*/ brk $00
 /*unknown_81_82d4:*/ brk $00
-/*unknown_81_82d6:*/ lsr $81
+unknown_81_82d6: lsr $81
 /*unknown_81_82d8:*/ stx $81, Y
 /*unknown_81_82da:*/ inc $81
 /*unknown_81_82dc:*/ rol $82, X
 /*unknown_81_82de:*/ lsr $82, X
 /*unknown_81_82e0:*/ ldx $82
 /*unknown_81_82e2:*/ dec $82
-unknown_81_82e4: phb
-/*unknown_81_82e5:*/ php
-/*unknown_81_82e6:*/ phk
-/*unknown_81_82e7:*/ plb
-/*unknown_81_82e8:*/ rep #$30
-/*unknown_81_82ea:*/ ldx #$0700.w
-/*unknown_81_82ed:*/ lda #$0000.w
-@unknown_81_82f0: sta $7ecd52, X
-/*unknown_81_82f4:*/ dex
-/*unknown_81_82f5:*/ dex
-/*unknown_81_82f6:*/ bpl @unknown_81_82f0
-/*unknown_81_82f8:*/ stz $16
-@unknown_81_82fa: lda $16
-/*unknown_81_82fc:*/ xba
-/*unknown_81_82fd:*/ sta $14
-/*unknown_81_82ff:*/ ldx $16
-/*unknown_81_8301:*/ lda $8131.w, X
-/*unknown_81_8304:*/ and #$00ff.w
-/*unknown_81_8307:*/ sta $12
-/*unknown_81_8309:*/ lda $16
-/*unknown_81_830b:*/ asl A
-/*unknown_81_830c:*/ tax
-/*unknown_81_830d:*/ lda $82d6.w, X
-/*unknown_81_8310:*/ sta $00
-/*unknown_81_8312:*/ lda #$0081.w
-/*unknown_81_8315:*/ sta $02
-/*unknown_81_8317:*/ lda $8138.w, X
-/*unknown_81_831a:*/ tax
-/*unknown_81_831b:*/ lda #$cd52.w
-/*unknown_81_831e:*/ sta $03
-/*unknown_81_8320:*/ lda #$007e.w
-/*unknown_81_8323:*/ sta $05
-@unknown_81_8325: lda ($00)
-/*unknown_81_8327:*/ and #$00ff.w
-/*unknown_81_832a:*/ clc
-/*unknown_81_832b:*/ adc $14
-/*unknown_81_832d:*/ tay
-/*unknown_81_832e:*/ sep #$20
-/*unknown_81_8330:*/ lda $7ed91c, X
-/*unknown_81_8334:*/ sta [$03], Y
-/*unknown_81_8336:*/ rep #$20
-/*unknown_81_8338:*/ inc $00
-/*unknown_81_833a:*/ inx
-/*unknown_81_833b:*/ dec $12
-/*unknown_81_833d:*/ bne @unknown_81_8325
-/*unknown_81_833f:*/ inc $16
-/*unknown_81_8341:*/ lda $16
-/*unknown_81_8343:*/ cmp #$0006.w
-/*unknown_81_8346:*/ bmi @unknown_81_82fa
-/*unknown_81_8348:*/ plp
-/*unknown_81_8349:*/ plb
-/*unknown_81_834a:*/ rts
+
+unknown_81_82e4:
+  phb
+  php
+  phk
+  plb ; B := :unknown_81_8131
+  rep #$30
+  ldx #$0700.w
+  lda #$0000.w
+@unknown_81_82f0:
+  sta var_unknown_cd52.l, X
+  dex
+  dex
+  bpl @unknown_81_82f0
+  stz var_unknown_16
+@unknown_81_82fa:
+  lda var_unknown_16
+  xba
+  sta var_unknown_14
+  ldx var_unknown_16
+  lda unknown_81_8131.w, X
+  and #$00ff.w
+  sta var_unknown_12
+  lda var_unknown_16
+  asl A
+  tax
+  lda unknown_81_82d6.w, X
+  sta var_unknown_00
+  lda #:unknown_81_82d6
+  sta var_unknown_02
+  lda unknown_81_8138.w, X
+  tax
+  lda #var_unknown_cd52
+  sta var_unknown_03
+  lda #var_unknown_cd52 >> 16
+  sta var_unknown_05
+@unknown_81_8325:
+  lda (var_unknown_00)
+  and #$00ff.w
+  clc
+  adc var_unknown_14
+  tay
+  sep #$20
+  lda var_unknown_d91c.l, X
+  sta [var_unknown_03], Y
+  rep #$20
+  inc var_unknown_00
+  inx
+  dec var_unknown_12
+  bne @unknown_81_8325
+  inc var_unknown_16
+  lda var_unknown_16
+  cmp #$0006.w
+  bmi @unknown_81_82fa
+  plp
+  plb
+  rts
 
 unknown_81_834b: phb
 /*unknown_81_834c:*/ php
