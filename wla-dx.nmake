@@ -1,0 +1,20 @@
+# This file defines rules for nmake on Windows.
+# For GNU make on other platforms, see wla-dx.gnumake.
+
+include common.mk
+
+WLA_DX_BUILD = $(BUILD)\wla-dx
+WLA_DX_CONFIG = Release
+WLA_65816 = $(WLA_DX_BUILD)\binaries\$(WLA_DX_CONFIG)\wla-65816.exe
+WLALINK = $(WLA_DX_BUILD)\binaries\$(WLA_DX_CONFIG)\wlalink.exe
+
+# TODO(strager): Fix the performance of wla-65816's and wlalink's incremental
+# builds, then always re-make wla-dx by depending on $(BUILD)\wla-dx-rebuilt.
+$(WLA_65816): $(WLA_DX_BUILD)\WLA-DX.sln
+	cmake --build $(WLA_DX_BUILD) --config $(WLA_DX_CONFIG) --target wla-65816
+
+$(WLALINK): $(WLA_DX_BUILD)\WLA-DX.sln
+	cmake --build $(WLA_DX_BUILD) --config $(WLA_DX_CONFIG) --target wlalink
+
+$(WLA_DX_BUILD)\WLA-DX.sln:
+	cmake -Hvendor\wla-dx -B$(WLA_DX_BUILD) -DCMAKE_BUILD_TYPE=$(WLA_DX_CONFIG)

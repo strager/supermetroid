@@ -39,7 +39,18 @@ Instructions:
 
 ### Windows
 
-Building on Windows is not yet supported.
+Prerequisites:
+
+* [CMake][cmake-download] version 2.8.9 or newer
+* nmake (included in [Visual Studio][visual-studio-download])
+* MSVC (included in [Visual Studio][visual-studio-download])
+* msbuild (included in [Visual Studio][visual-studio-download])
+
+Instructions:
+
+1. Open x64 Native Tools Command Prompt for VS.
+2. Navigate to this project's directory.
+3. Run `nmake`.
 
 ### Nix
 
@@ -52,3 +63,4 @@ Instructions:
 
 [cmake-download]: https://cmake.org/download/
 [nix-download]: https://nixos.org/nix/download.html
+[visual-studio-download]: https://visualstudio.microsoft.com/downloads/

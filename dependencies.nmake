@@ -1,0 +1,3 @@
+# This file defines rules for nmake on Windows. This file is
+# only used for clean builds. For incremental builds, this
+# file is shadowed by $(BUILD)\dependencies.nmake.

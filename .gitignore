@@ -1,3 +1,7 @@
 /build/
 /supermetroid-ntsc.sfc
 /supermetroid-ntsc.sym
+
+# For nmake-based builds on Windows:
+/src/*.o
+/src/*.o.d

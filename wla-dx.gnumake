@@ -1,3 +1,6 @@
+# This file defines rules for GNU make on Linux and macOS.
+# For nmake on Windows, see wla-dx.nmake.
+
 include common.mk
 
 WLA_DX_BUILD = $(BUILD)/wla-dx
