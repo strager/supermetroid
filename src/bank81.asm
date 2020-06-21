@@ -720,16 +720,18 @@ draw_sprite_tiles_off_screen:
   plx
   rtl
 
-unknown_81_8907: lda #$9d80.w
-/*unknown_81_890a:*/ bvs $03 ; $890f.w
-/*unknown_81_890c:*/ rep #$20
-/*unknown_81_890e:*/ lda $81859f, X
-/*unknown_81_8912:*/ sta $1c
-/*unknown_81_8914:*/ lda ($1c)
-/*unknown_81_8916:*/ ora $81839f, X
-/*unknown_81_891a:*/ sta ($1c)
-/*unknown_81_891c:*/ sep #$20
-/*unknown_81_891e:*/ rts
+unknown_81_8907:
+.accu 8
+  lda #$80
+  sta var_oam_objects.x.w, X
+  rep #$20
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_temp_unknown_1c
+  lda (var_temp_unknown_1c)
+  ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
+  sta (var_temp_unknown_1c)
+  sep #$20
+  rts
 
 /*unknown_81_891f:*/ phb
 /*unknown_81_8920:*/ pea $8200.w
