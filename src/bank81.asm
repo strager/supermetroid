@@ -732,6 +732,7 @@ unknown_81_8907:
   sta (var_temp_unknown_1c)
   sep #$20
   rts
+.accu 16
 
 /*unknown_81_891f:*/ phb
 /*unknown_81_8920:*/ pea $8200.w
@@ -752,24 +753,23 @@ unknown_81_8907:
 @unknown_81_893b: lda $0000.w, Y
 /*unknown_81_893e:*/ adc $14
 /*unknown_81_8940:*/ sta $0370.w, X
-/*unknown_81_8943:*/ and #$00
-/*unknown_81_8945:*/ ora ($f0, X)
-/*unknown_81_8947:*/ and [$b9]
-/*unknown_81_8949:*/ brk $00
+/*unknown_81_8943:*/ and #$0100.w
+/*unknown_81_8946:*/ beq @unknown_81_896f
+/*unknown_81_8948:*/ lda $0000.w, Y
 /*unknown_81_894b:*/ bpl @unknown_81_895e
 /*unknown_81_894d:*/ lda $81859f, X
 /*unknown_81_8951:*/ sta $16
 /*unknown_81_8953:*/ lda ($16)
 /*unknown_81_8955:*/ ora $8185a1, X
 /*unknown_81_8959:*/ sta ($16)
-/*unknown_81_895b:*/ jmp $8982.w
+/*unknown_81_895b:*/ jmp @unknown_81_8982
 @unknown_81_895e: lda $81859f, X
 /*unknown_81_8962:*/ sta $16
 /*unknown_81_8964:*/ lda ($16)
 /*unknown_81_8966:*/ ora $81839f, X
 /*unknown_81_896a:*/ sta ($16)
-/*unknown_81_896c:*/ jmp $8982.w
-/*unknown_81_896f:*/ lda $0000.w, Y
+/*unknown_81_896c:*/ jmp @unknown_81_8982
+@unknown_81_896f: lda $0000.w, Y
 /*unknown_81_8972:*/ bpl @unknown_81_8982
 /*unknown_81_8974:*/ lda $81859f, X
 /*unknown_81_8978:*/ sta $16
@@ -781,20 +781,19 @@ unknown_81_8907:
 /*unknown_81_8986:*/ adc $12
 /*unknown_81_8988:*/ sta $0371.w, X
 /*unknown_81_898b:*/ lda $0003.w, Y
-/*unknown_81_898e:*/ and #$ff
-/*unknown_81_8990:*/ sbc ($05), Y
-/*unknown_81_8992:*/ ora $9d, S
-/*unknown_81_8994:*/ adc ($03)
+/*unknown_81_898e:*/ and #$f1ff.w
+/*unknown_81_8991:*/ ora $03
+/*unknown_81_8993:*/ sta $0372.w, X
 /*unknown_81_8996:*/ tya
 /*unknown_81_8997:*/ clc
-/*unknown_81_8998:*/ adc #$05
-/*unknown_81_899a:*/ brk $a8
+/*unknown_81_8998:*/ adc #$0005.w
+/*unknown_81_899b:*/ tay
 /*unknown_81_899c:*/ txa
 /*unknown_81_899d:*/ clc
-/*unknown_81_899e:*/ adc #$04
-/*unknown_81_89a0:*/ brk $29
-/*unknown_81_89a2:*/ sbc $c6aa01, X
-/*unknown_81_89a6:*/ clc
+/*unknown_81_899e:*/ adc #$0004.w
+/*unknown_81_89a1:*/ and #$01ff.w
+/*unknown_81_89a4:*/ tax
+/*unknown_81_89a5:*/ dec $18
 /*unknown_81_89a7:*/ bne @unknown_81_893b
 /*unknown_81_89a9:*/ stx $0590.w
 @unknown_81_89ac: plb
@@ -819,24 +818,23 @@ unknown_81_89ae: phb
 @unknown_81_89ca: lda $0000.w, Y
 /*unknown_81_89cd:*/ adc $14
 /*unknown_81_89cf:*/ sta $0370.w, X
-/*unknown_81_89d2:*/ and #$00
-/*unknown_81_89d4:*/ ora ($f0, X)
-/*unknown_81_89d6:*/ and [$b9]
-/*unknown_81_89d8:*/ brk $00
+/*unknown_81_89d2:*/ and #$0100.w
+/*unknown_81_89d5:*/ beq @unknown_81_89fe
+/*unknown_81_89d7:*/ lda $0000.w, Y
 /*unknown_81_89da:*/ bpl @unknown_81_89ed
 /*unknown_81_89dc:*/ lda $81859f, X
 /*unknown_81_89e0:*/ sta $16
 /*unknown_81_89e2:*/ lda ($16)
 /*unknown_81_89e4:*/ ora $8185a1, X
 /*unknown_81_89e8:*/ sta ($16)
-/*unknown_81_89ea:*/ jmp $8a11.w
+/*unknown_81_89ea:*/ jmp @unknown_81_8a11
 @unknown_81_89ed: lda $81859f, X
 /*unknown_81_89f1:*/ sta $16
 /*unknown_81_89f3:*/ lda ($16)
 /*unknown_81_89f5:*/ ora $81839f, X
 /*unknown_81_89f9:*/ sta ($16)
-/*unknown_81_89fb:*/ jmp $8a11.w
-/*unknown_81_89fe:*/ lda $0000.w, Y
+/*unknown_81_89fb:*/ jmp @unknown_81_8a11
+@unknown_81_89fe: lda $0000.w, Y
 /*unknown_81_8a01:*/ bpl @unknown_81_8a11
 /*unknown_81_8a03:*/ lda $81859f, X
 /*unknown_81_8a07:*/ sta $16
@@ -851,13 +849,13 @@ unknown_81_89ae: phb
 /*unknown_81_8a1d:*/ sta $0372.w, X
 /*unknown_81_8a20:*/ tya
 /*unknown_81_8a21:*/ clc
-/*unknown_81_8a22:*/ adc #$05
-/*unknown_81_8a24:*/ brk $a8
+/*unknown_81_8a22:*/ adc #$0005.w
+/*unknown_81_8a25:*/ tay
 /*unknown_81_8a26:*/ txa
-/*unknown_81_8a27:*/ adc #$04
-/*unknown_81_8a29:*/ brk $29
-/*unknown_81_8a2b:*/ sbc $c6aa01, X
-/*unknown_81_8a2f:*/ clc
+/*unknown_81_8a27:*/ adc #$0004.w
+/*unknown_81_8a2a:*/ and #$01ff.w
+/*unknown_81_8a2d:*/ tax
+/*unknown_81_8a2e:*/ dec $18
 /*unknown_81_8a30:*/ bne @unknown_81_89ca
 /*unknown_81_8a32:*/ stx $0590.w
 @unknown_81_8a35: plb
@@ -884,7 +882,6 @@ unknown_81_89ae: phb
 /*unknown_81_8a57:*/ bne @unknown_81_8a5b
 /*unknown_81_8a59:*/ plb
 /*unknown_81_8a5a:*/ rtl
-
 @unknown_81_8a5b: sta $18
 /*unknown_81_8a5d:*/ iny
 /*unknown_81_8a5e:*/ iny
@@ -893,15 +890,14 @@ unknown_81_89ae: phb
 @unknown_81_8a63: lda $0000.w, Y
 /*unknown_81_8a66:*/ adc $14
 /*unknown_81_8a68:*/ sta $0370.w, X
-/*unknown_81_8a6b:*/ and #$00
-/*unknown_81_8a6d:*/ ora ($f0, X)
-/*unknown_81_8a6f:*/ asl $9fbf.w
-/*unknown_81_8a72:*/ sta $81
+/*unknown_81_8a6b:*/ and #$0100.w
+/*unknown_81_8a6e:*/ beq @unknown_81_8a7e
+/*unknown_81_8a70:*/ lda $81859f, X
 /*unknown_81_8a74:*/ sta $16
 /*unknown_81_8a76:*/ lda ($16)
 /*unknown_81_8a78:*/ ora $81839f, X
 /*unknown_81_8a7c:*/ sta ($16)
-/*unknown_81_8a7e:*/ lda $0000.w, Y
+@unknown_81_8a7e: lda $0000.w, Y
 /*unknown_81_8a81:*/ bpl @unknown_81_8a91
 /*unknown_81_8a83:*/ lda $81859f, X
 /*unknown_81_8a87:*/ sta $16
@@ -916,13 +912,13 @@ unknown_81_89ae: phb
 /*unknown_81_8a9d:*/ sta $0372.w, X
 /*unknown_81_8aa0:*/ tya
 /*unknown_81_8aa1:*/ clc
-/*unknown_81_8aa2:*/ adc #$05
-/*unknown_81_8aa4:*/ brk $a8
+/*unknown_81_8aa2:*/ adc #$0005.w
+/*unknown_81_8aa5:*/ tay
 /*unknown_81_8aa6:*/ txa
-/*unknown_81_8aa7:*/ adc #$04
-/*unknown_81_8aa9:*/ brk $29
-/*unknown_81_8aab:*/ sbc $c6aa01, X
-/*unknown_81_8aaf:*/ clc
+/*unknown_81_8aa7:*/ adc #$0004.w
+/*unknown_81_8aaa:*/ and #$01ff.w
+/*unknown_81_8aad:*/ tax
+/*unknown_81_8aae:*/ dec $18
 /*unknown_81_8ab0:*/ bne @unknown_81_8a63
 /*unknown_81_8ab2:*/ stx $0590.w
 /*unknown_81_8ab5:*/ plb
@@ -941,15 +937,14 @@ unknown_81_89ae: phb
 @unknown_81_8ac6: lda $0000.w, Y
 /*unknown_81_8ac9:*/ adc $14
 /*unknown_81_8acb:*/ sta $0370.w, X
-/*unknown_81_8ace:*/ and #$00
-/*unknown_81_8ad0:*/ ora ($f0, X)
-/*unknown_81_8ad2:*/ asl $9fbf.w
-/*unknown_81_8ad5:*/ sta $81
+/*unknown_81_8ace:*/ and #$0100.w
+/*unknown_81_8ad1:*/ beq @unknown_81_8ae1
+/*unknown_81_8ad3:*/ lda $81859f, X
 /*unknown_81_8ad7:*/ sta $16
 /*unknown_81_8ad9:*/ lda ($16)
 /*unknown_81_8adb:*/ ora $81839f, X
 /*unknown_81_8adf:*/ sta ($16)
-/*unknown_81_8ae1:*/ lda $0000.w, Y
+@unknown_81_8ae1: lda $0000.w, Y
 /*unknown_81_8ae4:*/ bpl @unknown_81_8af4
 /*unknown_81_8ae6:*/ lda $81859f, X
 /*unknown_81_8aea:*/ sta $16
