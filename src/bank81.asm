@@ -476,24 +476,45 @@ draw_sprite_tiles_1:
   sep #$20
   lda sprite_tile.y, Y
   clc
-  bmi @unknown_81_8810 ; Branch if [.y] >= 128.
+  bmi @y_is_negative ; Branch if [.y] < 0 (signed).
+
+  ; Assumption: [.y] >= 0
+  ; Branch to @tile_is_on_screen if [var_temp_center_y] >= 0
+  ; and [.y] + [var_temp_center_y] < PPU_SCREEN_HEIGHT. Otherwise, branch to
+  ; @tile_is_off_screen.
   adc var_temp_center_y
-  bcs @tile_if_off_screen_1 ; Branch if [.y] + [var_temp_center_y] >= 256.
+  bcs @tile_is_off_screen ; Branch if [var_temp_center_y] < 0
+                          ; or [.y] + [var_temp_center_y] >= 256.
+  ; Assumption: [var_temp_center_y] >= 0
+  ; Assumption: [.y] + [var_temp_center_y] < 256
   cmp #PPU_SCREEN_HEIGHT
-  bcc @tile_is_on_screen ; Branch if [.y] + [var_temp_center_y] < PPU_SCREEN_HEIGHT.
-  bra @tile_if_off_screen_1
-@unknown_81_8810:
+  bcc @tile_is_on_screen ; Branch if
+                         ; [.y] + [var_temp_center_y] < PPU_SCREEN_HEIGHT.
+  bra @tile_is_off_screen ; Branch if
+                          ; [.y] + [var_temp_center_y] >= PPU_SCREEN_HEIGHT.
+
+@y_is_negative:
+  ; Assumption: [.y] < 0
+  ; Branch to @tile_is_on_screen if [var_temp_center_y] >= 0
+  ; and -32 <= [.y] + [var_temp_center_y] < 244.
   adc var_temp_center_y
-  bcs @tile_is_off_screen_2 ; Branch if [.y] + [var_temp_center_y] >= 256.
+  bcs @screen_y_is_non_negative ; Branch if [var_temp_center_y] < 0
+                                ; or [.y] + [var_temp_center_y] >= 0.
+  ; Assumption: [var_temp_center_y] >= 0
+  ; Assumption: [.y] + [var_temp_center_y] < 0
+  cmp #-32
+  bcs @tile_is_on_screen ; Branch if [.y] + [var_temp_center_y] >= -32.
+  bra @tile_is_off_screen ; Branch if [.y] + [var_temp_center_y] < -32.
+@screen_y_is_non_negative:
+  ; Assumption: [.y] < 0
+  ; Assumption: [var_temp_center_y] < 0 or [.y] + [var_temp_center_y] >= 0
   cmp #PPU_SCREEN_HEIGHT
-  bcs @tile_is_on_screen
-  bra @tile_if_off_screen_1
-@tile_is_off_screen_2:
-  cmp #PPU_SCREEN_HEIGHT
-  bcc @tile_is_on_screen
-@tile_if_off_screen_1:
-  jsr unknown_81_8907
-  lda #PPU_SCREEN_HEIGHT
+  bcc @tile_is_on_screen ; Branch if [.y] + [var_temp_center_y] < 224.
+
+@tile_is_off_screen:
+  jsr unknown_81_8907 ; "OAM entry X position = 80h, set OAM entry high X
+                      ; position bit" -- P.JBoy
+  lda #PPU_SCREEN_HEIGHT ; Draw at .y=PPU_SCREEN_HEIGHT.
 
 @tile_is_on_screen:
   sta var_oam_objects.y.w, X
@@ -614,26 +635,45 @@ draw_sprite_tiles_2:
   sep #$20
   lda sprite_tile.y, Y
   clc
-  bmi @unknown_81_88c4 ; Branch if [.y] >= 128.
-  adc var_temp_center_y
-  bcs @unknown_81_88d7 ; Branch if [.y] + [var_temp_center_y] >= 256.
-  cmp #PPU_SCREEN_HEIGHT
-  bcs @unknown_81_88d7 ; Branch if [.y] + [var_temp_center_y] >= 244.
-  bra @unknown_81_88d2
-@unknown_81_88c4:
-  adc var_temp_center_y
-  bcs @unknown_81_88ce ; Branch if [.y] + [var_temp_center_y] >= 256.
-  cmp #PPU_SCREEN_HEIGHT
-  bcc @unknown_81_88d7 ; Branch if [.y] + [var_temp_center_y] < 244.
-  bra @unknown_81_88d2
-@unknown_81_88ce:
-  cmp #PPU_SCREEN_HEIGHT
-  bcs @unknown_81_88d7 ; Branch if [.y] + [var_temp_center_y] >= 244.
-@unknown_81_88d2:
-  jsr unknown_81_8907
-  lda #PPU_SCREEN_HEIGHT
+  bmi @y_is_negative ; Branch if [.y] < 0 (signed).
 
-@unknown_81_88d7:
+  ; Assumption: [.y] >= 0
+  ; Branch to @tile_is_off_screen if [var_temp_center_y] < 0
+  ; or [.y] + [var_temp_center_y] >= PPU_SCREEN_HEIGHT. Otherwise, branch to
+  ; @tile_is_on_screen.
+  adc var_temp_center_y
+  bcs @tile_is_off_screen ; Branch if [var_temp_center_y] < 0
+                          ; or [.y] + [var_temp_center_y] >= 256.
+  ; Assumption: [var_temp_center_y] >= 0
+  ; Assumption: [.y] + [var_temp_center_y] < 256
+  cmp #PPU_SCREEN_HEIGHT
+  bcs @tile_is_off_screen ; Branch if [.y] + [var_temp_center_y] >= PPU_SCREEN_HEIGHT.
+  bra @tile_is_on_screen ; Branch if [.y] + [var_temp_center_y] < PPU_SCREEN_HEIGHT.
+
+@y_is_negative:
+  ; Assumption: [.y] < 0
+  ; Branch to @tile_is_on_screen if -32 <= [var_temp_center_y] + [.y] < 244.
+  ; Otherwise, branch to @tile_is_off_screen.
+  adc var_temp_center_y
+  bcs @screen_y_is_non_negative ; Branch if [var_temp_center_y] < 0
+                                ; or [.y] + [var_temp_center_y] >= 0.
+  ; Assumption: [var_temp_center_y] >= 0
+  ; Assumption: [.y] + [var_temp_center_y] < 0
+  cmp #-32
+  bcc @tile_is_off_screen ; Branch if [.y] + [var_temp_center_y] < -32.
+  bra @tile_is_on_screen ; Branch if [.y] + [var_temp_center_y] >= -32.
+@screen_y_is_non_negative:
+  ; Assumption: [.y] < 0
+  ; Assumption: [var_temp_center_y] < 0 or [.y] + [var_temp_center_y] >= 0
+  cmp #PPU_SCREEN_HEIGHT
+  bcs @tile_is_off_screen ; Branch if [.y] + [var_temp_center_y] >= 244.
+
+@tile_is_on_screen:
+  jsr unknown_81_8907 ; "OAM entry X position = 80h, set OAM entry high X
+                      ; position bit" -- P.JBoy
+  lda #PPU_SCREEN_HEIGHT ; Draw at .y=PPU_SCREEN_HEIGHT.
+
+@tile_is_off_screen:
   sta var_oam_objects.y.w, X
   rep #$21
   lda sprite_tile.oam_tile_and_attributes, Y
