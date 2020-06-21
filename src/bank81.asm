@@ -407,7 +407,7 @@ draw_sprite_tiles@oam_extra_x8_and_large:
 ; * flags
 draw_sprite_tiles:
   phx
-  lda $0, Y ; Read tile count.
+  lda 0, Y ; Read tile count.
   bne @draw_tiles
   plx
   rtl
@@ -429,7 +429,7 @@ draw_sprite_tiles:
 @draw_next_tile:
   lda sprite_tile.x_and_flags, Y
   adc var_temp_center_x
-  sta (var_oam_objects.w + oam_obj.x) & $ffff, X
+  sta var_oam_objects.x.w, X
   and #$0100
   beq @set_extra_large_or_small
   lda sprite_tile.x_and_flags, Y
@@ -494,12 +494,12 @@ draw_sprite_tiles:
   lda #PPU_SCREEN_HEIGHT
 
 @tile_is_on_screen:
-  sta (var_oam_objects.w + oam_obj.y) & $ffff, X
+  sta var_oam_objects.y.w, X
   rep #$21
   lda sprite_tile.oam_tile_and_attributes, Y
   and #(OAM_OBJ_TAA_PALETTE_MASK ~ $ffff)
   ora var_temp_palette
-  sta (var_oam_objects.w + oam_obj.tile) & $ffff, X
+  sta var_oam_objects.tile_and_attributes.w, X
 
   txa
   adc #oam_obj@size
