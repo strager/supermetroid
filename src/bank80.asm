@@ -4359,7 +4359,7 @@ unknown_80_9fb3:
   sta var_unknown_12
   lda #$0a00.w
   sta var_unknown_16
-  jsl draw_sprite_tiles
+  jsl draw_sprite_tiles_1
   rts
 
 unknown_80_9fd4: inx

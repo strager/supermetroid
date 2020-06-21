@@ -2866,7 +2866,7 @@ unknown_8b_9746: php
 /*unknown_8b_9786:*/ adc #$0080.w
 /*unknown_8b_9789:*/ cmp #$01ff.w
 /*unknown_8b_978c:*/ bcs @unknown_8b_9792
-/*unknown_8b_978e:*/ jsr unknown_81_8853.l
+/*unknown_8b_978e:*/ jsr draw_sprite_tiles_2.l
 @unknown_8b_9792: dex
 /*unknown_8b_9793:*/ dex
 /*unknown_8b_9794:*/ bpl @unknown_8b_974d
@@ -2906,7 +2906,7 @@ unknown_8b_9799: php
 /*unknown_8b_97d9:*/ adc #$0080.w
 /*unknown_8b_97dc:*/ cmp #$01ff.w
 /*unknown_8b_97df:*/ bcs @unknown_8b_97e5
-/*unknown_8b_97e1:*/ jsr unknown_81_8853.l
+/*unknown_8b_97e1:*/ jsr draw_sprite_tiles_2.l
 @unknown_8b_97e5: dex
 /*unknown_8b_97e6:*/ dex
 /*unknown_8b_97e7:*/ bpl @unknown_8b_97a0
