@@ -9,5 +9,5 @@ oam_tile_and_attributes: dw ; oam_obj.tile_and_attributes
 .define sprite_tile@size _sizeof_sprite_tile
 
 ; For sprite_tile.x_and_flags
-;
+.define SPRITE_TILE_XAF_X_MASK $1ff
 .define SPRITE_TILE_XAF_SIZE 1 << 15
