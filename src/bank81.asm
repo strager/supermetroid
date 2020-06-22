@@ -486,11 +486,13 @@ draw_sprite_tiles:
   bpl @set_extra_small ; Branch if SPRITE_TILE_XAF_SIZE is unset.
 
 @set_extra_large:
+  ; Set OAM_OBJ_EXTRA_SIZE_LARGE in [var_oam_objects_extra + X/2].
   lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
   ora draw_sprite_tiles@oam_extra_large.l, X
   sta (var_temp_unknown_1c)
+  ; Fall through to @set_y.
 
 @set_extra_small:
   ; Do nothing. var_oam_objects_extra has already been cleared
@@ -635,11 +637,13 @@ draw_sprite_tiles_off_screen:
   bpl @set_extra_small ; Branch if SPRITE_TILE_XAF_SIZE is unset.
 
 @set_extra_large:
+  ; Set OAM_OBJ_EXTRA_SIZE_LARGE in [var_oam_objects_extra + X/2].
   lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_temp_unknown_1c
   lda (var_temp_unknown_1c)
   ora draw_sprite_tiles@oam_extra_large.l, X
   sta (var_temp_unknown_1c)
+  ; Fall through to @set_y.
 
 @set_extra_small:
   ; Do nothing. var_oam_objects_extra has already been cleared
