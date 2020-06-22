@@ -1035,7 +1035,7 @@ unknown_81_8a4b:
   plb ; B := $93
   ldy var_unknown_0cb8.w, X
   lda 0, Y ; Read tile count.
-  bne @load_tiles_pointer ; Branch if tile count >= 0.
+  bne @load_tiles_pointer ; Branch if tile count > 0.
 @done:
   plb
   rtl
