@@ -470,7 +470,7 @@ draw_sprite_tiles:
   ora draw_sprite_tiles@oam_extra_x8_and_large.l, X
   sta (var_temp_unknown_1c)
 
-  jmp @set_x
+  jmp @set_y
 
 @set_extra_x8_and_small:
   ; Set OAM_OBJ_EXTRA_X8_MASK in [var_oam_objects_extra + X/2].
@@ -479,7 +479,7 @@ draw_sprite_tiles:
   lda (var_temp_unknown_1c)
   ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
   sta (var_temp_unknown_1c)
-  bra @set_x
+  bra @set_y
 
 @set_extra_large_or_small:
   lda sprite_tile.x_and_flags, Y
@@ -496,7 +496,7 @@ draw_sprite_tiles:
   ; Do nothing. var_oam_objects_extra has already been cleared
   ; (OAM_OBJ_EXTRA_SIZE_SMALL == 0).
 
-@set_x:
+@set_y:
   sep #$20
   lda sprite_tile.y, Y
   clc
@@ -619,7 +619,7 @@ draw_sprite_tiles_off_screen:
   ora draw_sprite_tiles@oam_extra_x8_and_large.l, X
   sta (var_temp_unknown_1c)
 
-  jmp @set_x
+  jmp @set_y
 
 @set_extra_x8_and_small:
   ; Set OAM_OBJ_EXTRA_X8_MASK in [var_oam_objects_extra + X/2].
@@ -628,7 +628,7 @@ draw_sprite_tiles_off_screen:
   lda (var_temp_unknown_1c)
   ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
   sta (var_temp_unknown_1c)
-  bra @set_x
+  bra @set_y
 
 @set_extra_large_or_small:
   lda sprite_tile.x_and_flags, Y
@@ -645,7 +645,7 @@ draw_sprite_tiles_off_screen:
   ; Do nothing. var_oam_objects_extra has already been cleared
   ; (OAM_OBJ_EXTRA_SIZE_SMALL == 0).
 
-@set_x:
+@set_y:
   sep #$20
   lda sprite_tile.y, Y
   clc
