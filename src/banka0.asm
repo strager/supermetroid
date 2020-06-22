@@ -2361,7 +2361,7 @@ unknown_a0_9423: phx
 /*unknown_a0_94e4:*/ lda #$0001.w
 /*unknown_a0_94e7:*/ sta $7ef378
 /*unknown_a0_94eb:*/ ldy $0f8e.w, X
-/*unknown_a0_94ee:*/ jsr $818ab8
+/*unknown_a0_94ee:*/ jsr unknown_81_8ab8.l
 /*unknown_a0_94f2:*/ plb
 /*unknown_a0_94f3:*/ rts
 

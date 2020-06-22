@@ -6748,7 +6748,7 @@ unknown_b4_bc26: phx
 /*unknown_b4_bd83:*/ tax
 /*unknown_b4_bd84:*/ lda $b40002, X
 /*unknown_b4_bd88:*/ tay
-/*unknown_b4_bd89:*/ jsr $818ab8
+/*unknown_b4_bd89:*/ jsr unknown_81_8ab8.l
 /*unknown_b4_bd8d:*/ plx
 @unknown_b4_bd8e: dex
 /*unknown_b4_bd8f:*/ dex
