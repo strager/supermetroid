@@ -80,7 +80,7 @@ unknown_92_8000: php
 /*unknown_92_808b:*/ plp
 /*unknown_92_808c:*/ rtl
 
-/*unknown_92_808d:*/ sbc $f490.w
+unknown_92_808d: sbc $f490.w
 /*unknown_92_8090:*/ bcc $6f ; $8101.w
 /*unknown_92_8092:*/ txs
 /*unknown_92_8093:*/ brk $00
