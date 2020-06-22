@@ -1213,58 +1213,66 @@ unknown_81_8ab8:
 
 /*unknown_81_8b21:*/ rtl
 
-/*unknown_81_8b22:*/ phy
-/*unknown_81_8b23:*/ lda $0000.w, Y
-/*unknown_81_8b26:*/ beq @unknown_81_8b94
-/*unknown_81_8b28:*/ iny
-/*unknown_81_8b29:*/ iny
-/*unknown_81_8b2a:*/ sta $18
-/*unknown_81_8b2c:*/ ldx $0590.w
-/*unknown_81_8b2f:*/ clc
-@unknown_81_8b30: lda $0000.w, Y
-/*unknown_81_8b33:*/ adc $14
-/*unknown_81_8b35:*/ sta $0370.w, X
-/*unknown_81_8b38:*/ and #$0100.w
-/*unknown_81_8b3b:*/ beq @unknown_81_8b4b
-/*unknown_81_8b3d:*/ lda $81859f, X
-/*unknown_81_8b41:*/ sta $16
-/*unknown_81_8b43:*/ lda ($16)
-/*unknown_81_8b45:*/ ora $81839f, X
-/*unknown_81_8b49:*/ sta ($16)
-@unknown_81_8b4b: lda $0000.w, Y
-/*unknown_81_8b4e:*/ bpl @unknown_81_8b5e
-/*unknown_81_8b50:*/ lda $81859f, X
-/*unknown_81_8b54:*/ sta $16
-/*unknown_81_8b56:*/ lda ($16)
-/*unknown_81_8b58:*/ ora $8183a1, X
-/*unknown_81_8b5c:*/ sta ($16)
-@unknown_81_8b5e: sep #$20
-/*unknown_81_8b60:*/ lda $0002.w, Y
-/*unknown_81_8b63:*/ bmi @unknown_81_8b6b
-/*unknown_81_8b65:*/ adc $12
-/*unknown_81_8b67:*/ bcc @unknown_81_8b71
-/*unknown_81_8b69:*/ bcs @unknown_81_8b6f
-@unknown_81_8b6b: adc $12
-/*unknown_81_8b6d:*/ bcs @unknown_81_8b71
-@unknown_81_8b6f: lda #$f0
-@unknown_81_8b71: sta $0371.w, X
-/*unknown_81_8b74:*/ rep #$21
-/*unknown_81_8b76:*/ lda $0003.w, Y
-/*unknown_81_8b79:*/ adc $00
-/*unknown_81_8b7b:*/ ora $03
-/*unknown_81_8b7d:*/ sta $0372.w, X
-/*unknown_81_8b80:*/ tya
-/*unknown_81_8b81:*/ adc #$0005.w
-/*unknown_81_8b84:*/ tay
-/*unknown_81_8b85:*/ txa
-/*unknown_81_8b86:*/ adc #$0004.w
-/*unknown_81_8b89:*/ and #$01ff.w
-/*unknown_81_8b8c:*/ tax
-/*unknown_81_8b8d:*/ dec $18
-/*unknown_81_8b8f:*/ bne @unknown_81_8b30
-/*unknown_81_8b91:*/ stx $0590.w
-@unknown_81_8b94: ply
-/*unknown_81_8b95:*/ rtl
+unknown_81_8b22:
+  phy
+  lda 0, Y
+  beq @unknown_81_8b94
+  iny
+  iny
+  sta var_unknown_18
+  ldx var_oam_objects_tail.w
+  clc
+@unknown_81_8b30:
+  lda 0, Y
+  adc var_unknown_14
+  sta var_oam_objects.x.w, X
+  and #$0100
+  beq @unknown_81_8b4b
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_unknown_16
+  lda (var_unknown_16)
+  ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
+  sta (var_unknown_16)
+@unknown_81_8b4b:
+  lda 0, Y
+  bpl @unknown_81_8b5e
+  lda draw_sprite_tiles@oam_extra_address.l, X
+  sta var_unknown_16
+  lda (var_unknown_16)
+  ora draw_sprite_tiles@oam_extra_large.l, X
+  sta (var_unknown_16)
+@unknown_81_8b5e:
+  sep #$20
+  lda 2, Y
+  bmi @unknown_81_8b6b
+  adc var_unknown_12
+  bcc @unknown_81_8b71
+  bcs @unknown_81_8b6f
+@unknown_81_8b6b:
+  adc var_unknown_12
+  bcs @unknown_81_8b71
+@unknown_81_8b6f:
+  lda #$f0
+@unknown_81_8b71:
+  sta var_oam_objects.y.w, X
+  rep #$21
+  lda 3, Y
+  adc 0
+  ora var_unknown_03
+  sta var_oam_objects.tile_and_attributes.w, X
+  tya
+  adc #$0005.w
+  tay
+  txa
+  adc #$0004.w
+  and #$01ff.w
+  tax
+  dec var_unknown_18
+  bne @unknown_81_8b30
+  stx var_oam_objects_tail.w
+@unknown_81_8b94:
+  ply
+  rtl
 
 /*unknown_81_8b96:*/ phy
 /*unknown_81_8b97:*/ lda $0000.w, Y

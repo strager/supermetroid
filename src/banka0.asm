@@ -2413,7 +2413,7 @@ unknown_a0_9423: phx
 /*unknown_a0_955d:*/ bit #$ff00.w
 /*unknown_a0_9560:*/ bne @unknown_a0_956a
 /*unknown_a0_9562:*/ ldy $16
-/*unknown_a0_9564:*/ jsr $818b22
+/*unknown_a0_9564:*/ jsr unknown_81_8b22.l
 /*unknown_a0_9568:*/ bra @unknown_a0_9570
 @unknown_a0_956a: ldy $16
 /*unknown_a0_956c:*/ jsr $818b96
