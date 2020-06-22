@@ -1,0 +1,15 @@
+name: build and test
+on: [push]
+
+jobs:
+  build:
+    name: Windows
+    runs-on: windows-2019
+    steps:
+      - name: check out
+        uses: actions/checkout@v1
+      - name: build and test
+        # Unset PSModulePath to work around Get-FileHash not being defined. For
+        # more details, see:
+        # https://github.com/PowerShell/PowerShell/issues/8635#issuecomment-454028787
+        run: cmd /c 'set PSModulePath= && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" && nmake'
