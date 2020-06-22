@@ -2416,7 +2416,7 @@ unknown_a0_9423: phx
 /*unknown_a0_9564:*/ jsr unknown_81_8b22.l
 /*unknown_a0_9568:*/ bra @unknown_a0_9570
 @unknown_a0_956a: ldy $16
-/*unknown_a0_956c:*/ jsr $818b96
+/*unknown_a0_956c:*/ jsr unknown_81_8b96.l
 @unknown_a0_9570: ply
 @unknown_a0_9571: tya
 /*unknown_a0_9572:*/ clc
