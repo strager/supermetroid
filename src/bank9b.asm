@@ -7990,7 +7990,7 @@
 /*unknown_9b_c0c5:*/ and #$ff00.w
 /*unknown_9b_c0c8:*/ bne @unknown_9b_c0d2
 /*unknown_9b_c0ca:*/ lda $16
-/*unknown_9b_c0cc:*/ jsr $818a37
+/*unknown_9b_c0cc:*/ jsr unknown_81_8a37.l
 /*unknown_9b_c0d0:*/ bra @unknown_9b_c0d8
 @unknown_9b_c0d2: lda $16
 /*unknown_9b_c0d4:*/ jsr $818ab7

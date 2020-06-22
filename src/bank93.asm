@@ -14061,7 +14061,7 @@ unknown_93_80cf: php
 /*unknown_93_f60f:*/ lda #$003c.w
 /*unknown_93_f612:*/ clc
 /*unknown_93_f613:*/ adc #$0002.w
-/*unknown_93_f616:*/ jsr $818a37
+/*unknown_93_f616:*/ jsr unknown_81_8a37.l
 @unknown_93_f61a: plb
 /*unknown_93_f61b:*/ plp
 /*unknown_93_f61c:*/ rtl

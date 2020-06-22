@@ -7559,7 +7559,7 @@ unknown_90_bbe1: php
 @unknown_90_bc98: and #$ff00.w
 /*unknown_90_bc9b:*/ bne @unknown_90_bca5
 /*unknown_90_bc9d:*/ lda $16
-/*unknown_90_bc9f:*/ jsr $818a37
+/*unknown_90_bc9f:*/ jsr unknown_81_8a37.l
 /*unknown_90_bca3:*/ bra @unknown_90_bcab
 @unknown_90_bca5: lda $16
 /*unknown_90_bca7:*/ jsr $818ab7
