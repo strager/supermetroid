@@ -980,68 +980,71 @@ unknown_81_89ae:
 
 unknown_81_8a37:
   phb
-  pea $9300.w
+  pea :unknown_93_a1a1 << 8
   plb
-  plb
+  plb ; B := :unknown_93_a1a1
   asl A
   tax
-  ldy $a1a1.w, X
-  lda $0000.w, Y
-  sta $18
+  ldy unknown_93_a1a1.w, X
+  lda 0, Y
+  sta var_temp_number_of_tiles
   iny
   iny
-  bra @unknown_81_8a5f
+  bra unknown_81_8a4b@unknown_81_8a5f
+
+unknown_81_8a4b:
   phb
-  pea $9300.w
+  pea $93 << 8
   plb
-  plb
-  ldy $0cb8.w, X
-  lda $0000.w, Y
+  plb ; B := $93
+  ldy var_unknown_0cb8.w, X
+  lda 0, Y
   bne @unknown_81_8a5b
   plb
   rtl
 @unknown_81_8a5b:
-  sta $18
+  sta var_temp_number_of_tiles
   iny
   iny
+
 @unknown_81_8a5f:
   ldx var_oam_objects_tail.w
   clc
 @unknown_81_8a63:
-  lda $0000.w, Y
-  adc $14
-  sta var_oam_objects.w, X
-  and #$0100.w
+  lda sprite_tile.x_and_flags, Y
+  adc var_unknown_14
+  sta var_oam_objects.x.w, X
+  and #$0100
   beq @unknown_81_8a7e
   lda draw_sprite_tiles@oam_extra_address.l, X
-  sta $16
-  lda ($16)
+  sta var_unknown_16
+  lda (var_unknown_16)
   ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
-  sta ($16)
+  sta (var_unknown_16)
 @unknown_81_8a7e:
-  lda $0000.w, Y
+  lda sprite_tile.x_and_flags, Y
   bpl @unknown_81_8a91
   lda draw_sprite_tiles@oam_extra_address.l, X
-  sta $16
-  lda ($16)
+  sta var_unknown_16
+  lda (var_unknown_16)
   ora draw_sprite_tiles@oam_extra_large.l, X
-  sta ($16)
+  sta (var_unknown_16)
 @unknown_81_8a91:
-  lda $0002.w, Y
+  lda sprite_tile.y, Y
   clc
-  adc $12
-  sta $0371.w, X
-  lda var_unknown_03.w, Y
-  sta $0372.w, X
+  adc var_unknown_12
+  sta var_oam_objects.y.w, X
+  lda sprite_tile.oam_tile_and_attributes, Y
+  sta var_oam_objects.tile_and_attributes.w, X
   tya
   clc
-  adc #$0005.w
+  adc #sprite_tile@size
   tay
   txa
-  adc #$0004.w
-  and #$01ff.w
+  adc #oam_obj@size
+  and #(OAM_OBJ_COUNT * oam_obj@size) - 1
   tax
-  dec $18
+  dec var_temp_number_of_tiles
   bne @unknown_81_8a63
   stx var_oam_objects_tail.w
   plb

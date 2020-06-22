@@ -361,7 +361,7 @@ unknown_93_80cf: php
 /*unknown_93_82d0:*/ bne @unknown_93_82dd
 /*unknown_93_82d2:*/ lda $0cb8.w, X
 /*unknown_93_82d5:*/ bpl @unknown_93_82e6
-/*unknown_93_82d7:*/ jsr $818a4b
+/*unknown_93_82d7:*/ jsr unknown_81_8a4b.l
 /*unknown_93_82db:*/ bra @unknown_93_82e6
 @unknown_93_82dd: lda $0cb8.w, X
 /*unknown_93_82e0:*/ bpl @unknown_93_82e6
@@ -397,7 +397,7 @@ unknown_93_80cf: php
 /*unknown_93_8324:*/ bne @unknown_93_8331
 /*unknown_93_8326:*/ lda $0cb8.w, X
 /*unknown_93_8329:*/ bpl @unknown_93_833a
-/*unknown_93_832b:*/ jsr $818a4b
+/*unknown_93_832b:*/ jsr unknown_81_8a4b.l
 /*unknown_93_832f:*/ bra @unknown_93_833a
 @unknown_93_8331: lda $0cb8.w, X
 /*unknown_93_8334:*/ bpl @unknown_93_833a
@@ -447,7 +447,7 @@ unknown_93_80cf: php
 @unknown_93_839b: and #$ff00.w
 /*unknown_93_839e:*/ bne @unknown_93_83ac
 /*unknown_93_83a0:*/ lda $0cb8.w, X
-/*unknown_93_83a3:*/ jsr $818a4b
+/*unknown_93_83a3:*/ jsr unknown_81_8a4b.l
 /*unknown_93_83a7:*/ ldx $0dde.w
 /*unknown_93_83aa:*/ bra @unknown_93_83b6
 @unknown_93_83ac: lda $0cb8.w, X
@@ -4088,7 +4088,8 @@ unknown_93_80cf: php
 /*unknown_93_a198:*/ ldy $0000.w
 /*unknown_93_a19b:*/ brk $00
 /*unknown_93_a19d:*/ and $6d82.w, Y
-/*unknown_93_a1a0:*/ lda ($6c, X)
+/*unknown_93_a1a0:*/ .db $a1
+unknown_93_a1a1: .db $6c
 /*unknown_93_a1a2:*/ plb
 /*unknown_93_a1a3:*/ adc ($ab, S), Y
 /*unknown_93_a1a5:*/ jmp ($73ab)
