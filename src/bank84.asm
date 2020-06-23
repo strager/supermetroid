@@ -1742,16 +1742,16 @@ unknown_84_8cf1:
   jsl unknown_86_8097
   lda var_unknown_1dc7.w, X
   and #$0007.w
-  sta var_unknown_078b.w
+  sta var_save_station_index.w
   jsl unknown_80_818e
-  lda var_unknown_079f.w
+  lda var_area_index.w
   asl A
   tax
   lda var_unknown_d8f8.l, X
   ora var_unknown_05e7.w
   sta var_unknown_d8f8.l, X
   lda var_unknown_0952.w
-  jsl unknown_81_8000
+  jsl save_to_sram
   ply
   plx
   iny

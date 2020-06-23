@@ -33,6 +33,8 @@ var_unknown_12_h: db ; $7e0013
 .nextu
 var_temp_12: dw ; $7e0012
 .nextu
+var_temp_sram_slot_offset: dw ; $7e0012
+.nextu
 var_temp_center_y: dw ; $7e0012
 .endu
 
@@ -41,6 +43,8 @@ var_temp_center_y: dw ; $7e0012
 var_unknown_14: dw ; $7e0014
 .nextu
 var_temp_14: dw ; $7e0014
+.nextu
+var_temp_checksum: dw ; $7e0014
 .nextu
 var_temp_center_x: dw ; $7e0014
 .endu
@@ -494,7 +498,7 @@ var_unknown_0785: dw ; $7e0785
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $0789) export
 var_unknown_0789: dw ; $7e0789
-var_unknown_078b: dw ; $7e078b
+var_save_station_index: dw ; $7e078b
 var_unknown_078d: dw ; $7e078d
 .ende
 
@@ -509,7 +513,8 @@ var_unknown_079b: db ; $7e079b
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $079f) export
-var_unknown_079f: db ; $7e079f
+var_area_index: db ; $7e079f
+var_unknown_07a0: db ; $7e07a0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $07a1) export
@@ -544,7 +549,8 @@ var_unknown_07f6: db ; $7e07f6
 var_unknown_07f7: dw ; $7e07f7
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $08f7) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $08f5) export
+var_unknown_08f5: dw ; $7e08f7
 var_unknown_08f7: dw ; $7e08f7
 var_unknown_08f9: dw ; $7e08f9
 var_unknown_08fb: dw ; $7e08fb
@@ -758,7 +764,9 @@ var_game_time_hours: dw ; $7e09e0
 .define game_time_hours_overflow 99.b
 .export game_time_hours_overflow
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0a04) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0a00) export
+var_unknown_0a00: dw ; $7e0a00
+var_unknown_0a02: dw ; $7e0a02
 var_unknown_0a04: dw ; $7e0a04
 var_unknown_0a06: dw ; $7e0a06
 var_unknown_0a08: dw ; $7e0a08
@@ -1235,7 +1243,7 @@ var_unknown_cd8a: dw ; $7ecd8a
 .ende
 
 ; Variables between var_unknown_d7c0 and var_unknown_de1a (inclusive) must be
-; contiguous. See unknown_81_8000 for details.
+; contiguous. See save_to_sram for details.
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d7c0) export
 var_unknown_d7c0: dw ; $7ed7c0
 .ende
@@ -1254,8 +1262,8 @@ var_unknown_d908: dw ; $7ed908
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d916) export
-var_unknown_d916: dw ; $7ed916
-var_unknown_d918: dw ; $7ed918
+var_sram_save_station_index: dw ; $7ed916
+var_sram_area_index: dw ; $7ed918
 var_unknown_d91a: dw ; $7ed91a
 var_unknown_d91c: dsb 1 ; $7ed91c
 .ende

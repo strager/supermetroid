@@ -300,7 +300,7 @@ unknown_80_81a6:
   php
   sep #$20
   sta var_unknown_05e7.w
-  ldx var_unknown_079f.w
+  ldx var_area_index.w
   lda var_unknown_d828.l, X
   ora var_unknown_05e7.w
   sta var_unknown_d828.l, X
@@ -316,7 +316,7 @@ unknown_80_81c0:
   sep #$20
   eor #$ff
   sta var_unknown_05e7.w
-  ldx var_unknown_079f.w
+  ldx var_area_index.w
   lda var_unknown_d828.l, X
   and var_unknown_05e7.w
   sta var_unknown_d828.l, X
@@ -334,7 +334,7 @@ unknown_80_81dc:
   php
   sep #$20
   sta var_unknown_05e7.w
-  ldx var_unknown_079f.w
+  ldx var_area_index.w
   lda var_unknown_d828.l, X
   and var_unknown_05e7.w
   bne @unknown_80_81f5
@@ -1024,7 +1024,7 @@ unknown_80_8577:
 unknown_80_858c:
   php
   rep #$30
-  lda var_unknown_079f.w
+  lda var_area_index.w
   xba
   tax
   ldy #var_unknown_00.w
@@ -1037,7 +1037,7 @@ unknown_80_858c:
   iny
   cpy #$0100.w
   bmi @unknown_80_8597
-  ldx var_unknown_079f.w
+  ldx var_area_index.w
   lda var_unknown_d908.l, X
   and #$00ff.w
   sta var_unknown_0789.w
@@ -1056,7 +1056,7 @@ unknown_80_858c:
 
 unknown_80_85c7:
   rep #$30
-  lda var_unknown_079f.w
+  lda var_area_index.w
   xba
   tax
   ldy #var_unknown_00.w
@@ -1071,7 +1071,7 @@ unknown_80_85c7:
   bmi @unknown_80_85d1
   lda var_unknown_0789.w
   beq @unknown_80_85f4
-  ldx var_unknown_079f.w
+  ldx var_area_index.w
   lda var_unknown_d908.l, X
   ora #$00ff.w
   sta var_unknown_d908.l, X
@@ -7130,7 +7130,7 @@ unknown_80_cd07:
   phk
   plb
   rep #$30
-  lda var_unknown_079f.w
+  lda var_area_index.w
   asl A
   tax
   lda var_unknown_0793.w

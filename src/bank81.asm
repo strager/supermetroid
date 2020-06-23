@@ -9,7 +9,18 @@
 .bank ($81 - $80) slot $0
 .org $0
 
-unknown_81_8000:
+; Save the player's progress.
+;
+; Inputs:
+; * A: SRAM slot: 0, 1, or 2.
+;
+; Outputs:
+; * SRAM
+;
+; Clobbers:
+; * A
+; * flags
+save_to_sram:
   php
   rep #$30
   phb
@@ -18,59 +29,81 @@ unknown_81_8000:
   pea (var_unknown_d7c0 >> 16) << 8
   plb
   plb ; B := :var_unknown_d7c0
-  stz var_unknown_14
-  and #$0003.w
+  stz var_temp_checksum
+
+  ; [var_temp_sram_slot_offset] := ([A] & 3) * 2
+  and #3
   asl A
-  sta var_unknown_12
-  ldy #$005e.w
-@unknown_81_8016:
+  sta var_temp_sram_slot_offset
+
+  ; Copy var_unknown_09a2 through var_unknown_0a00 into var_unknown_d7c0.
+  ldy #(var_unknown_0a00 - var_unknown_09a2 + 2) - 2
+@copy_loop_09a2:
   lda var_unknown_09a2.w, Y
   sta var_unknown_d7c0.w, Y
   dey
   dey
-  bpl @unknown_81_8016
-  ldx #$0000.w
-  lda var_unknown_079f.w
+  bpl @copy_loop_09a2
+
+  ; X := [var_unknown_07a0] | ([var_area_index] << 8)
+  ; TODO: Is [var_unknown_07a0] always 0? If so, then this is merely:
+  ; X := [var_area_index] * (var_unknown_08f5 - var_unknown_07f7 + 2)
+  ldx #0 ; Dead store.
+  lda var_area_index.w
   xba
   tax
-  ldy #$0000.w
-@unknown_81_802b:
+
+  ; Copy var_unknown_08f5 through var_unknown_07f7 to
+  ; (var_unknown_cd52 + [area_index]*256)
+  ldy #0
+@copy_loop_07f7:
   lda var_unknown_07f7.w, Y
   sta var_unknown_cd52.w, X
   iny
   iny
   inx
   inx
-  cpy #$0100.w
-  bmi @unknown_81_802b
+  cpy #var_unknown_08f5 - var_unknown_07f7 + 2
+  bmi @copy_loop_07f7
+
   jsr unknown_81_834b
-  lda var_unknown_078b.w
-  sta var_unknown_d916.w
-  lda var_unknown_079f.w
-  sta var_unknown_d918.w
-  ldx var_unknown_12
+
+  lda var_save_station_index.w
+  sta var_sram_save_station_index.w
+
+  lda var_area_index.w
+  sta var_sram_area_index.w
+
+  ; X := [unknown_81_812b + [var_temp_sram_slot_offset]]
+  ldx var_temp_sram_slot_offset
   lda unknown_81_812b.l, X
   tax
+
+  ; Copy var_unknown_d7c0 through var_unknown_de1a to SRAM, and compute a
+  ; checksum.
   ldy #var_unknown_d7c0
-@unknown_81_8053:
-  lda $0, Y
+@loop_checksum:
+  lda 0, Y
   sta MEM_SRAM_BEGIN, X
   clc
-  adc var_unknown_14
-  sta var_unknown_14
+  adc var_temp_checksum
+  sta var_temp_checksum
   inx
   inx
   iny
   iny
   cpy #(var_unknown_de1a + 2) & $ffff
-  bne @unknown_81_8053
-  ldx var_unknown_12
-  lda var_unknown_14
-  sta MEM_SRAM_BEGIN, X
-  sta MEM_SRAM_MIRROR_BEGIN - 16, X
-  eor #$ffff.w
-  sta MEM_SRAM_BEGIN + 8, X
-  sta MEM_SRAM_MIRROR_BEGIN - 16 + 8, X
+  bne @loop_checksum
+
+@store_checksums:
+  ldx var_temp_sram_slot_offset
+  lda var_temp_checksum
+  sta sram_checksums.l, X
+  sta sram_checksums_copy.l, X
+  eor #$ffff
+  sta sram_inverse_checksums.l, X
+  sta sram_inverse_checksums_copy.l, X
+
   ply
   plx
   clc
@@ -83,9 +116,9 @@ unknown_81_8085:
   phb
   phx
   phy
-  pea (var_unknown_d916 >> 16) << 8
+  pea (var_sram_save_station_index >> 16) << 8
   plb
-  plb ; B := :var_unknown_d916
+  plb ; B := :var_sram_save_station_index
   stz var_unknown_14
   and #$0003.w
   asl A
@@ -130,10 +163,10 @@ unknown_81_8085:
   dey
   bpl @unknown_81_80de
   jsr unknown_81_82e4
-  lda var_unknown_d916.w
-  sta var_unknown_078b.w
-  lda var_unknown_d918.w
-  sta var_unknown_079f.w
+  lda var_sram_save_station_index.w
+  sta var_save_station_index.w
+  lda var_sram_area_index.w
+  sta var_area_index.w
   ply
   plx
   clc
@@ -158,8 +191,8 @@ unknown_81_8085:
   cpy #(var_unknown_de1a + 2) & $ffff
   bne @unknown_81_810b
   lda #0
-  sta var_unknown_078b.w
-  sta var_unknown_079f.w
+  sta var_save_station_index.w
+  sta var_area_index.w
   ply
   plx
   sec
