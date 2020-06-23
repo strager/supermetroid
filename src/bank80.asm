@@ -301,9 +301,9 @@ unknown_80_81a6:
   sep #$20
   sta var_unknown_05e7.w
   ldx var_area_index.w
-  lda var_unknown_d828.l, X
+  lda var_save.unknown_0068.l, X
   ora var_unknown_05e7.w
-  sta var_unknown_d828.l, X
+  sta var_save.unknown_0068.l, X
   plp
   ply
   plx
@@ -317,9 +317,9 @@ unknown_80_81c0:
   eor #$ff
   sta var_unknown_05e7.w
   ldx var_area_index.w
-  lda var_unknown_d828.l, X
+  lda var_save.unknown_0068.l, X
   and var_unknown_05e7.w
-  sta var_unknown_d828.l, X
+  sta var_save.unknown_0068.l, X
   plp
   ply
   plx
@@ -335,7 +335,7 @@ unknown_80_81dc:
   sep #$20
   sta var_unknown_05e7.w
   ldx var_area_index.w
-  lda var_unknown_d828.l, X
+  lda var_save.unknown_0068.l, X
   and var_unknown_05e7.w
   bne @unknown_80_81f5
   plp
@@ -358,9 +358,9 @@ unknown_80_81fa:
   php
   rep #$30
   jsl unknown_80_818e
-  lda var_unknown_d820.l, X
+  lda var_save.unknown_0060.l, X
   ora var_unknown_05e7.w
-  sta var_unknown_d820.l, X
+  sta var_save.unknown_0060.l, X
   plp
   ply
   plx
@@ -375,9 +375,9 @@ unknown_80_8212:
   lda var_unknown_05e7.w
   eor #$ffff.w
   sta var_unknown_05e7.w
-  lda var_unknown_d820.l, X
+  lda var_save.unknown_0060.l, X
   and var_unknown_05e7.w
-  sta var_unknown_d820.l, X
+  sta var_save.unknown_0060.l, X
   plp
   ply
   plx
@@ -391,7 +391,7 @@ unknown_80_8233:
   php
   rep #$30
   jsl unknown_80_818e
-  lda var_unknown_d820.l, X
+  lda var_save.unknown_0060.l, X
   and var_unknown_05e7.w
   bne @unknown_80_824a
   plp
@@ -1038,7 +1038,7 @@ unknown_80_858c:
   cpy #$0100.w
   bmi @unknown_80_8597
   ldx var_area_index.w
-  lda var_unknown_d908.l, X
+  lda var_save.unknown_0148.l, X
   and #$00ff.w
   sta var_unknown_0789.w
   plp
@@ -1072,9 +1072,9 @@ unknown_80_85c7:
   lda var_unknown_0789.w
   beq @unknown_80_85f4
   ldx var_area_index.w
-  lda var_unknown_d908.l, X
+  lda var_save.unknown_0148.l, X
   ora #$00ff.w
-  sta var_unknown_d908.l, X
+  sta var_save.unknown_0148.l, X
 @unknown_80_85f4:
   plp
   rtl
@@ -7146,13 +7146,13 @@ unknown_80_cd07:
   lda $0, Y
   tax
   lda var_unknown_00_h.w, Y
-  ora var_unknown_d8f8.l, X
-  sta var_unknown_d8f8.l, X
+  ora var_save.unknown_0138.l, X
+  sta var_save.unknown_0138.l, X
   lda $2, Y
   tax
   lda $3, Y
-  ora var_unknown_d8f8.l, X
-  sta var_unknown_d8f8.l, X
+  ora var_save.unknown_0138.l, X
+  sta var_save.unknown_0138.l, X
   plb
   plp
   rtl

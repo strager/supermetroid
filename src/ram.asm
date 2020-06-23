@@ -1,6 +1,7 @@
 .include "include/common.asm"
 .include "include/memory.asm"
 .include "include/oam.asm"
+.include "include/save_slot.asm"
 .include "include/vram_write_queue.asm"
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00) export
@@ -1242,34 +1243,8 @@ var_unknown_cd86: dw ; $7ecd86
 var_unknown_cd8a: dw ; $7ecd8a
 .ende
 
-; Variables between var_unknown_d7c0 and var_unknown_de1a (inclusive) must be
-; contiguous. See save_to_sram for details.
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $d7c0) export
-var_unknown_d7c0: dw ; $7ed7c0
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $d820) export
-var_unknown_d820: dsb $8 ; $7ed820
-var_unknown_d828: dsw $8 ; $7ed828
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $d8f8) export
-var_unknown_d8f8: dsb 1 ; $7ed8f8
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $d908) export
-var_unknown_d908: dw ; $7ed908
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $d916) export
-var_sram_save_station_index: dw ; $7ed916
-var_sram_area_index: dw ; $7ed918
-var_unknown_d91a: dw ; $7ed91a
-var_unknown_d91c: dsb 1 ; $7ed91c
-.ende
-
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $de1a) export
-var_unknown_de1a: dw ; $7ede1a
+var_save: instanceof save_slot ; $7ed7c0
 .ende
 
 .define plm_instruction_count $28

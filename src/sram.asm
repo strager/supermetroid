@@ -1,9 +1,16 @@
 .include "include/common.asm"
 .include "include/memory.asm"
+.include "include/save_slot.asm"
 
 .enum (MEM_SRAM_BEGIN + $0000) export
 sram_checksums: dsw 4 ; $700000
 sram_inverse_checksums: dsw 4 ; $700008
+.ende
+
+.enum (MEM_SRAM_BEGIN + $0010) export
+sram_save_slot_0: instanceof save_slot ; $700010
+sram_save_slot_1: instanceof save_slot ; $70066c
+sram_save_slot_2: instanceof save_slot ; $700cc8
 .ende
 
 .enum (MEM_SRAM_BEGIN + $1fe0) export

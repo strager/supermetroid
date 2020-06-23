@@ -1747,9 +1747,9 @@ unknown_84_8cf1:
   lda var_area_index.w
   asl A
   tax
-  lda var_unknown_d8f8.l, X
+  lda var_save.unknown_0138.l, X
   ora var_unknown_05e7.w
-  sta var_unknown_d8f8.l, X
+  sta var_save.unknown_0138.l, X
   lda var_unknown_0952.w
   jsl save_to_sram
   ply
