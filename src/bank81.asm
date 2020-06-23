@@ -2576,8 +2576,10 @@ unknown_81_90ae: rep #$30
 /*unknown_81_93e1:*/ brk $6e
 /*unknown_81_93e3:*/ brk $8b
 /*unknown_81_93e5:*/ brk $ff
-/*unknown_81_93e7:*/ sbc $2230c2, X
-/*unknown_81_93eb:*/ pea $808e.w
+/*unknown_81_93e7:*/ .db $ff
+
+unknown_81_93e8: rep #$30
+/*unknown_81_93ea:*/ jsr $808ef4
 /*unknown_81_93ee:*/ bcs @unknown_81_93fa
 /*unknown_81_93f0:*/ inc $0727.w
 /*unknown_81_93f3:*/ lda #$0004.w
