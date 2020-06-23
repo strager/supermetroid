@@ -579,7 +579,7 @@ unknown_86_83d6: ldy $1b6b.w, X
 /*unknown_86_841b:*/ bit #$fe00.w
 /*unknown_86_841e:*/ bne @unknown_86_8426
 /*unknown_86_8420:*/ phx
-/*unknown_86_8421:*/ jsr $818c7f
+/*unknown_86_8421:*/ jsr unknown_81_8c7f.l
 /*unknown_86_8425:*/ plx
 @unknown_86_8426: rts
 
