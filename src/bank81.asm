@@ -75,9 +75,9 @@ save_to_sram:
   lda var_area_index.w
   sta var_save.area_index.w
 
-  ; X := [unknown_81_812b + [var_temp_sram_slot_offset]]
+  ; X := [sram_save_slot_addresses + [var_temp_sram_slot_offset]]
   ldx var_temp_sram_slot_offset
-  lda unknown_81_812b.l, X
+  lda sram_save_slot_addresses.l, X
   tax
 
   ; Copy var_save to SRAM, and compute a checksum.
@@ -111,7 +111,19 @@ save_to_sram:
   plp
   rtl
 
-unknown_81_8085:
+; Load the player's progress.
+;
+; Inputs:
+; * A: SRAM slot: 0, 1, or 2.
+;
+; Outputs:
+; * various
+; * carry flag: set if SRAM is corrupt
+;
+; Clobbers:
+; * A
+; * flags
+load_from_sram:
   rep #$30
   phb
   phx
@@ -119,87 +131,110 @@ unknown_81_8085:
   pea (var_save.save_station_index >> 16) << 8
   plb
   plb ; B := :var_save.save_station_index
-  stz var_unknown_14
-  and #$0003.w
+  stz var_temp_checksum
+
+  ; [var_temp_sram_slot_offset] := [A] & 3) * 2
+  and #3
   asl A
-  sta var_unknown_12
+  sta var_temp_sram_slot_offset
+
+  ; X := [sram_save_slot_addresses + [var_temp_sram_slot_offset]]
   tax
-  lda unknown_81_812b.l, X
+  lda sram_save_slot_addresses.l, X
   tax
+
+  ; Copy SRAM to var_save, and compute a checksum.
   ldy #var_save
-@unknown_81_80a0:
+@copy_sram_loop:
   lda MEM_SRAM_BEGIN, X
-  sta $0, Y
+  sta 0, Y
   clc
-  adc var_unknown_14
-  sta var_unknown_14
+  adc var_temp_checksum
+  sta var_temp_checksum
   inx
   inx
   iny
   iny
   cpy #(var_save + save_slot@size) & $ffff
-  bne @unknown_81_80a0
-  ldx var_unknown_12
-  lda var_unknown_14
-  cmp MEM_SRAM_BEGIN, X
-  bne @unknown_81_80ca
-  eor #$ffff.w
-  cmp MEM_SRAM_BEGIN + 8, X
-  bne @unknown_81_80ca
-  bra @unknown_81_80db
-@unknown_81_80ca:
-  lda var_unknown_14
-  cmp MEM_SRAM_MIRROR_BEGIN - 16, X
-  bne @unknown_81_80fc
-  eor #$ffff.w
-  cmp MEM_SRAM_MIRROR_BEGIN - 16 + 8, X
-  bne @unknown_81_80fc
-@unknown_81_80db:
-  ldy #$005e.w
-@unknown_81_80de:
+  bne @copy_sram_loop
+
+@check_checksum:
+  ; Branch to @first_checksum_mismatch if computed checksum doesn't match
+  ; sram_checksums or sram_inverse_checksums. Otherwise, branch to @checksum_ok.
+  ldx var_temp_sram_slot_offset
+  lda var_temp_checksum
+  cmp sram_checksums.l, X
+  bne @first_checksum_mismatch
+  eor #$ffff
+  cmp sram_inverse_checksums.l, X
+  bne @first_checksum_mismatch
+  bra @checksum_ok
+
+@first_checksum_mismatch:
+  ; Branch to @clear_save_in_sram if computed checksum doesn't match
+  ; sram_checksums or sram_inverse_checksums. Otherwise, branch to @checksum_ok.
+  lda var_temp_checksum
+  cmp sram_checksums_copy.l, X
+  bne @clear_save_in_sram
+  eor #$ffff
+  cmp sram_inverse_checksums_copy.l, X
+  bne @clear_save_in_sram
+@first_checksum_is_no_bueno:
+
+@checksum_ok:
+  ; Copy var_save into var_unknown_09a2 through var_unknown_0a00.
+  ldy #(var_unknown_0a00 - var_unknown_09a2 + 2) - 2
+@copy_save_loop:
   lda unknown_81_d7c0.w, Y
   sta var_unknown_09a2.w, Y
   dey
   dey
-  bpl @unknown_81_80de
+  bpl @copy_save_loop
+
   jsr unknown_81_82e4
+
   lda var_save.save_station_index.w
   sta var_save_station_index.w
+
   lda var_save.area_index.w
   sta var_area_index.w
+
   ply
   plx
   clc
   plb
   rtl
-@unknown_81_80fc:
-  stz var_unknown_14
-  ldx var_unknown_12
-  lda unknown_81_812b.l, X
+
+@clear_save_in_sram:
+  stz var_temp_checksum
+  ldx var_temp_sram_slot_offset
+  lda sram_save_slot_addresses.l, X
   tax
   ldy #var_save
   lda #0
-@unknown_81_810b:
+@clear_sram_loop:
   sta MEM_SRAM_BEGIN, X
   clc
-  adc var_unknown_14
-  sta var_unknown_14
+  adc var_temp_checksum
+  sta var_temp_checksum
   inx
   inx
   iny
   iny
   cpy #(var_save + save_slot@size) & $ffff
-  bne @unknown_81_810b
+  bne @clear_sram_loop
+
   lda #0
   sta var_save_station_index.w
   sta var_area_index.w
+
   ply
   plx
   sec
   plb
   rtl
 
-unknown_81_812b:
+sram_save_slot_addresses:
   .dw sram_save_slot_0
   .dw sram_save_slot_1
   .dw sram_save_slot_2

@@ -425,13 +425,13 @@ unknown_80_8261:
   lda #$0003.w
   sta var_unknown_1f59.w
   lda #$0000.w
-  jsl unknown_81_8085
+  jsl load_from_sram
   bcc unknown_80_8294
   lda #$0001.w
-  jsl unknown_81_8085
+  jsl load_from_sram
   bcc unknown_80_8294
   lda #$0002.w
-  jsl unknown_81_8085
+  jsl load_from_sram
   bcc unknown_80_8294
   ldx #madadameyohn@size - 2
 @unknown_80_8286:
