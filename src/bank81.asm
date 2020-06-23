@@ -2450,133 +2450,37 @@ unknown_81_90ae: rep #$30
 /*unknown_81_92d9:*/ brk $00
 /*unknown_81_92db:*/ rtl
 
-/*unknown_81_92dc:*/ tsb $0a00.w
-/*unknown_81_92df:*/ brk $26
-/*unknown_81_92e1:*/ brk $0e
-/*unknown_81_92e3:*/ brk $0f
-/*unknown_81_92e5:*/ brk $00
-/*unknown_81_92e7:*/ brk $2d
-/*unknown_81_92e9:*/ brk $0e
-/*unknown_81_92eb:*/ brk $0d
-/*unknown_81_92ed:*/ brk $fe
-/*unknown_81_92ef:*/ sbc $1a0030, X
-/*unknown_81_92f3:*/ brk $36
-/*unknown_81_92f5:*/ brk $1e
-/*unknown_81_92f7:*/ brk $0f
-/*unknown_81_92f9:*/ brk $10
-/*unknown_81_92fb:*/ brk $3e
-/*unknown_81_92fd:*/ brk $1e
-/*unknown_81_92ff:*/ brk $3a
-/*unknown_81_9301:*/ brk $ff
-/*unknown_81_9303:*/ sbc $72006f, X
-/*unknown_81_9307:*/ brk $77
-/*unknown_81_9309:*/ brk $6d
-/*unknown_81_930b:*/ brk $0f
-/*unknown_81_930d:*/ brk $7d
-/*unknown_81_930f:*/ brk $71
-/*unknown_81_9311:*/ brk $6e
-/*unknown_81_9313:*/ brk $0f
-/*unknown_81_9315:*/ brk $76
-/*unknown_81_9317:*/ brk $6e
-/*unknown_81_9319:*/ brk $7d
-/*unknown_81_931b:*/ brk $7b
-/*unknown_81_931d:*/ brk $78
-/*unknown_81_931f:*/ brk $72
-/*unknown_81_9321:*/ brk $6d
-/*unknown_81_9323:*/ brk $0f
-/*unknown_81_9325:*/ brk $75
-/*unknown_81_9327:*/ brk $6a
-/*unknown_81_9329:*/ brk $7b
-/*unknown_81_932b:*/ brk $7f
-/*unknown_81_932d:*/ brk $6a
-/*unknown_81_932f:*/ brk $84
-/*unknown_81_9331:*/ brk $ff
-/*unknown_81_9333:*/ sbc $7b007d, X
-/*unknown_81_9337:*/ brk $82
-/*unknown_81_9339:*/ brk $0f
-/*unknown_81_933b:*/ brk $6a
-/*unknown_81_933d:*/ brk $70
-/*unknown_81_933f:*/ brk $6a
-/*unknown_81_9341:*/ brk $72
-/*unknown_81_9343:*/ brk $77
-/*unknown_81_9345:*/ brk $0f
-/*unknown_81_9347:*/ brk $85
-/*unknown_81_9349:*/ brk $ff
-/*unknown_81_934b:*/ sbc $0e0041, X
-/*unknown_81_934f:*/ brk $2b
-/*unknown_81_9351:*/ brk $0f
-/*unknown_81_9353:*/ brk $0f
-/*unknown_81_9355:*/ brk $0f
-/*unknown_81_9357:*/ brk $0f
-/*unknown_81_9359:*/ brk $0f
-/*unknown_81_935b:*/ brk $0f
-/*unknown_81_935d:*/ brk $0f
-/*unknown_81_935f:*/ brk $0f
-/*unknown_81_9361:*/ brk $0f
-/*unknown_81_9363:*/ brk $0f
-/*unknown_81_9365:*/ brk $0f
-/*unknown_81_9367:*/ brk $0f
-/*unknown_81_9369:*/ brk $0f
-/*unknown_81_936b:*/ brk $0f
-/*unknown_81_936d:*/ brk $0f
-/*unknown_81_936f:*/ brk $0f
-/*unknown_81_9371:*/ brk $0f
-/*unknown_81_9373:*/ brk $fe
-/*unknown_81_9375:*/ sbc $1e0017, X
-/*unknown_81_9379:*/ brk $3b
-/*unknown_81_937b:*/ brk $0f
-/*unknown_81_937d:*/ brk $8a
-/*unknown_81_937f:*/ brk $7b
-/*unknown_81_9381:*/ brk $6e
-/*unknown_81_9383:*/ brk $7d
-/*unknown_81_9385:*/ brk $7e
-/*unknown_81_9387:*/ brk $7b
-/*unknown_81_9389:*/ brk $77
-/*unknown_81_938b:*/ brk $0f
-/*unknown_81_938d:*/ brk $7d
-/*unknown_81_938f:*/ brk $78
-/*unknown_81_9391:*/ brk $0f
-/*unknown_81_9393:*/ brk $70
-/*unknown_81_9395:*/ brk $6a
-/*unknown_81_9397:*/ brk $76
-/*unknown_81_9399:*/ brk $6e
-/*unknown_81_939b:*/ brk $8b
-/*unknown_81_939d:*/ brk $ff
-/*unknown_81_939f:*/ sbc $0f0027, X
-/*unknown_81_93a3:*/ brk $00
-/*unknown_81_93a5:*/ brk $0f
-/*unknown_81_93a7:*/ brk $0f
-/*unknown_81_93a9:*/ brk $0f
-/*unknown_81_93ab:*/ brk $0f
-/*unknown_81_93ad:*/ brk $0f
-/*unknown_81_93af:*/ brk $0f
-/*unknown_81_93b1:*/ brk $0f
-/*unknown_81_93b3:*/ brk $0f
-/*unknown_81_93b5:*/ brk $0f
-/*unknown_81_93b7:*/ brk $0f
-/*unknown_81_93b9:*/ brk $0f
-/*unknown_81_93bb:*/ brk $0f
-/*unknown_81_93bd:*/ brk $0f
-/*unknown_81_93bf:*/ brk $0f
-/*unknown_81_93c1:*/ brk $fe
-/*unknown_81_93c3:*/ sbc $0f0037, X
-/*unknown_81_93c7:*/ brk $10
-/*unknown_81_93c9:*/ brk $0f
-/*unknown_81_93cb:*/ brk $8a
-/*unknown_81_93cd:*/ brk $70
-/*unknown_81_93cf:*/ brk $78
-/*unknown_81_93d1:*/ brk $0f
-/*unknown_81_93d3:*/ brk $7d
-/*unknown_81_93d5:*/ brk $78
-/*unknown_81_93d7:*/ brk $0f
-/*unknown_81_93d9:*/ brk $7d
-/*unknown_81_93db:*/ brk $72
-/*unknown_81_93dd:*/ brk $7d
-/*unknown_81_93df:*/ brk $75
-/*unknown_81_93e1:*/ brk $6e
-/*unknown_81_93e3:*/ brk $8b
-/*unknown_81_93e5:*/ brk $ff
-/*unknown_81_93e7:*/ .db $ff
+; "GAME OVER" for game over screen.
+unknown_81_92dc:
+  .dw $000c, $000a, $0026, $000e, $000f, $0000, $002d, $000e, $000d, $fffe
+  .dw $0030, $001a, $0036, $001e, $000f, $0010, $003e, $001e, $003a, $ffff
+
+; "find the metroid larva!" for game over screen.
+unknown_81_9304:
+  .dw $006f, $0072, $0077, $006d, $000f, $007d, $0071, $006e
+  .dw $000f, $0076, $006e, $007d, $007b, $0078, $0072, $006d
+  .dw $000f, $0075, $006a, $007b, $007f, $006a, $0084, $ffff
+
+; "try again?" for game over screen.
+unknown_81_9334:
+  .dw $007d, $007b, $0082, $000f, $006a, $0070, $006a, $0072
+  .dw $0077, $000f, $0085, $ffff
+
+; "YES (return to game)" for game over screen.
+unknown_81_934c:
+  .dw $0041, $000e, $002b, $000f, $000f, $000f, $000f, $000f
+  .dw $000f, $000f, $000f, $000f, $000f, $000f, $000f, $000f
+  .dw $000f, $000f, $000f, $000f, $fffe
+  .dw $0017, $001e, $003b, $000f, $008a, $007b, $006e, $007d
+  .dw $007e, $007b, $0077, $000f, $007d, $0078, $000f, $0070
+  .dw $006a, $0076, $006e, $008b, $ffff
+
+; "N O (go to title)" for game over screen.
+unknown_81_93a0:
+  .dw $0027, $000f, $0000, $000f, $000f, $000f, $000f, $000f
+  .dw $000f, $000f, $000f, $000f, $000f, $000f, $000f, $000f, $000f, $fffe
+  .dw $0037, $000f, $0010, $000f, $008a, $0070, $0078, $000f
+  .dw $007d, $0078, $000f, $007d, $0072, $007d, $0075, $006e, $008b, $ffff
 
 unknown_81_93e8: rep #$30
 /*unknown_81_93ea:*/ jsr $808ef4
