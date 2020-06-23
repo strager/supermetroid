@@ -1436,65 +1436,119 @@ unknown_81_8b96:
   ply
   rtl
 
+; Copy sprite tiles to OAM.
+;
+; See also draw_sprite_tiles.
+;
+; Inputs:
+; * [Y]
+; * [var_temp_center_x]: X coordinate of the sprite's center.
+; * [var_temp_center_y]: Y coordinate of the sprite's center.
+; * [var_temp_unknown_1c]
+; * [var_unknown_03]
+; * [var_unknown_1a]
+;
+; Outputs:
+; * [var_oam_objects]
+; * [var_oam_objects_tail]
+;
+; Clobbers:
+; * A
+; * X
+; * Y
+; * flags
 unknown_81_8c0a:
-  lda 0, Y
-  bne @unknown_81_8c10
+  lda 0, Y ; Read tile count.
+  bne @draw_tiles ; Branch if tile count > 0.
   rtl
-@unknown_81_8c10:
-  sta var_unknown_18
-  iny
-  iny
+@draw_tiles:
+  sta var_temp_number_of_tiles
+  iny ; Skip over tile count.
+  iny ; Skip over tile count.
   ldx var_oam_objects_tail.w
   clc
-@unknown_81_8c18:
-  lda 0, Y
+
+@draw_next_tile:
+  ; [X.x] := [Y.x_and_flags] + [var_temp_center_x]
+  lda sprite_tile.x_and_flags, Y
   clc
-  adc var_unknown_14
+  adc var_temp_center_x
   sta var_oam_objects.x.w, X
+
+  ; Branch to @set_y if
+  ; ([.x_and_flags] + [var_temp_center_x]) & SPRITE_TILE_XAF_X_MASK <= $ff.
   bit #$0100
-  beq @unknown_81_8c34
+  beq @set_y
+
+@set_extra_x8:
+  ; Set OAM_OBJ_EXTRA_X8_MASK in [var_oam_objects_extra + X/2].
   lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_unknown_16
   lda (var_unknown_16)
   ora draw_sprite_tiles@oam_extra_x8_and_small.l, X
   sta (var_unknown_16)
-@unknown_81_8c34:
+
+@set_y:
   sep #$20
   clc
-  lda 2, Y
-  bmi @unknown_81_8c42
-  adc var_unknown_12
-  bcc @unknown_81_8c48
-  bcs @unknown_81_8c46
-@unknown_81_8c42:
-  adc var_unknown_12
-  bcs @unknown_81_8c48
-@unknown_81_8c46:
-  lda #$f0
-@unknown_81_8c48:
+  lda sprite_tile.y, Y
+  bmi @y_is_negative ; Branch if [.y] < 0 (signed).
+
+  ; Assumption: [.y] >= 0
+  ; Branch to @tile_is_off_screen if [var_temp_center_y] < 0
+  ; or [.y] + [var_temp_center_y] >= 256. Otherwise, branch to @show_tile.
+  adc var_temp_center_y
+  bcc @show_tile
+  bcs @tile_is_off_screen
+
+@y_is_negative:
+  ; Assumption: [.y] < 0
+  ; Branch if [.y] + [var_temp_center_y] >= 0.
+  adc var_temp_center_y
+  bcs @show_tile
+
+@tile_is_off_screen:
+  lda #$f0 ; Put the tile off-screen.
+@show_tile:
+  ; [X.y] := [Y.y] + [var_temp_center_y] or $f0
   sta var_oam_objects.y.w, X
   rep #$21
-  lda 0, Y
-  bpl @unknown_81_8c60
+
+  lda sprite_tile.x_and_flags, Y
+  bpl @set_extra_small ; Branch if SPRITE_TILE_XAF_SIZE is unset.
+
+@set_extra_large:
+  ; Set OAM_OBJ_EXTRA_SIZE_LARGE in [var_oam_objects_extra + X/2].
   lda draw_sprite_tiles@oam_extra_address.l, X
   sta var_unknown_16
   lda (var_unknown_16)
   ora draw_sprite_tiles@oam_extra_large.l, X
   sta (var_unknown_16)
-@unknown_81_8c60:
-  lda 3, Y
+  ; Fall through to @set_tile_and_attributes.
+
+@set_extra_small:
+  ; Do nothing. var_oam_objects_extra has already been cleared
+  ; (OAM_OBJ_EXTRA_SIZE_SMALL == 0).
+
+@set_tile_and_attributes:
+  ; [X.tile_and_attributes] := ([Y.oam_tile_and_attributes] + [var_unknown_1a])
+  ;                            | [var_temp_unknown_1c]
+  lda sprite_tile.oam_tile_and_attributes, Y
   adc var_unknown_1a
   ora var_temp_unknown_1c
   sta var_oam_objects.tile_and_attributes.w, X
+
   txa
-  adc #$0004.w
-  and #$01ff.w
+  adc #oam_obj@size
+  and #(OAM_OBJ_COUNT * oam_obj@size) - 1
   tax
+
   tya
-  adc #$0005.w
+  adc #sprite_tile@size
   tay
-  dec var_unknown_18
-  bne @unknown_81_8c18
+
+  dec var_temp_number_of_tiles
+  bne @draw_next_tile
   stx var_oam_objects_tail.w
   rtl
 
