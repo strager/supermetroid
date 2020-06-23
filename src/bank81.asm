@@ -239,10 +239,17 @@ sram_save_slot_addresses:
   .dw sram_save_slot_1
   .dw sram_save_slot_2
 
-unknown_81_8131:
-  .db $4a, $48, $4c, $12, $42, $15, $08
+area_rooms:
+@sizes:
+  .db @crateria@end - @crateria
+  .db @brinstar@end - @brinstar
+  .db @norfair@end - @norfair
+  .db @wrecked_ship@end - @wrecked_ship
+  .db @maridia@end - @maridia
+  .db @tourian@end - @tourian
+  .db @ceres_station@end - @ceres_station
 
-unknown_81_8138:
+@offsets:
   .dw $0000
   .dw $004a
   .dw $0092
@@ -251,7 +258,7 @@ unknown_81_8138:
   .dw $0132
   .dw $0147
 
-unknown_81_8146:
+@crateria:
   .db $07, $0b, $0d, $0e, $0f, $11, $13, $15
   .db $16, $17, $19, $1a, $1d, $1e, $1f, $21
   .db $22, $24, $25, $26, $28, $2a, $2b, $2c
@@ -261,9 +268,11 @@ unknown_81_8146:
   .db $8d, $90, $91, $94, $95, $96, $97, $98
   .db $99, $9a, $9b, $9c, $9f, $a0, $a3, $a4
   .db $a6, $a7, $a8, $aa, $ab, $ac, $ae, $b2
-  .db $b6, $ba, $00, $00, $00, $00, $00, $00
+  .db $b6, $ba
+@@end:
+  .db $00, $00, $00, $00, $00, $00
 
-unknown_81_8196:
+@brinstar:
   .db $05, $09, $0a, $0b, $0d, $0e, $0f, $11
   .db $12, $13, $14, $15, $16, $17, $19, $1a
   .db $1b, $1c, $1d, $1e, $1f, $20, $21, $22
@@ -273,9 +282,10 @@ unknown_81_8196:
   .db $90, $94, $98, $9c, $a0, $a4, $a8, $ac
   .db $b0, $b4, $b8, $bc, $c0, $c4, $c8, $cc
   .db $cd, $ce, $cf, $d1, $d2, $d3, $d5, $d9
+@@end:
   .db $00, $00, $00, $00, $00, $00, $00, $00
 
-unknown_81_81e6:
+@norfair:
   .db $05, $08, $09, $0b, $0c, $0d, $0e, $0f
   .db $10, $11, $12, $13, $14, $15, $16, $17
   .db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f
@@ -285,15 +295,19 @@ unknown_81_81e6:
   .db $3b, $3c, $3d, $3e, $3f, $40, $41, $42
   .db $44, $45, $46, $47, $48, $49, $4a, $8c
   .db $98, $9c, $a0, $a4, $a8, $ac, $b0, $b4
-  .db $b8, $bc, $c0, $c4, $00, $00, $00, $00
+  .db $b8, $bc, $c0, $c4
+@@end:
+  .db $00, $00, $00, $00
 
-unknown_81_8236:
+@wrecked_ship:
   .db $2d, $2e, $31, $32, $35, $36, $39, $3a
   .db $3d, $3e, $42, $45, $46, $49, $4a, $4e
-  .db $51, $52, $00, $00, $00, $00, $00, $00
+  .db $51, $52
+@@end:
   .db $00, $00, $00, $00, $00, $00, $00, $00
+  .db $00, $00, $00, $00, $00, $00
 
-unknown_81_8256:
+@maridia:
   .db $07, $0b, $0e, $0f, $12, $13, $15, $16
   .db $17, $19, $1a, $1b, $1d, $1e, $1f, $21
   .db $22, $23, $25, $26, $27, $29, $2a, $2b
@@ -302,33 +316,38 @@ unknown_81_8256:
   .db $43, $45, $46, $47, $49, $4a, $4d, $51
   .db $84, $88, $8c, $90, $94, $98, $9c, $9d
   .db $a0, $a1, $a4, $a5, $a8, $a9, $ac, $ad
-  .db $c0, $c4, $00, $00, $00, $00, $00, $00
+  .db $c0, $c4
+@@end:
   .db $00, $00, $00, $00, $00, $00, $00, $00
+  .db $00, $00, $00, $00, $00, $00
 
-unknown_81_82a6:
+@tourian:
   .db $26, $2a, $2e, $32, $35, $36, $39, $3a
   .db $3e, $41, $42, $45, $46, $4a, $4d, $4e
-  .db $51, $52, $55, $56, $5a, $00, $00, $00
+  .db $51, $52, $55, $56, $5a
+@@end:
   .db $00, $00, $00, $00, $00, $00, $00, $00
+  .db $00, $00, $00
 
-unknown_81_82c6:
+@ceres_station:
   .db $2d, $31, $35, $39, $3d, $41, $45, $46
+@@end:
   .db $00, $00, $00, $00, $00, $00, $00, $00
 
-unknown_81_82d6:
-  .dw unknown_81_8146
-  .dw unknown_81_8196
-  .dw unknown_81_81e6
-  .dw unknown_81_8236
-  .dw unknown_81_8256
-  .dw unknown_81_82a6
-  .dw unknown_81_82c6
+@unknown_81_82d6:
+  .dw @crateria
+  .dw @brinstar
+  .dw @norfair
+  .dw @wrecked_ship
+  .dw @maridia
+  .dw @tourian
+  .dw @ceres_station
 
 unknown_81_82e4:
   phb
   php
   phk
-  plb ; B := :unknown_81_8131
+  plb ; B := :maps
   rep #$30
   ldx #$0700.w
   lda #$0000.w
@@ -343,17 +362,17 @@ unknown_81_82e4:
   xba
   sta var_unknown_14
   ldx var_unknown_16
-  lda unknown_81_8131.w, X
+  lda area_rooms@sizes.w, X
   and #$00ff.w
   sta var_unknown_12
   lda var_unknown_16
   asl A
   tax
-  lda unknown_81_82d6.w, X
+  lda area_rooms@unknown_81_82d6.w, X
   sta var_unknown_00
-  lda #:unknown_81_82d6
+  lda #:area_rooms@unknown_81_82d6
   sta var_unknown_02
-  lda unknown_81_8138.w, X
+  lda area_rooms@offsets.w, X
   tax
   lda #var_unknown_cd52
   sta var_unknown_03
@@ -390,15 +409,15 @@ unknown_81_834b:
   stz var_unknown_1a
 @unknown_81_8353:
   ldx var_unknown_1a
-  lda unknown_81_8131.w, X
+  lda area_rooms@sizes.w, X
   and #$00ff.w
   sta var_unknown_16
   lda var_unknown_1a
   asl A
   tax
-  lda unknown_81_82d6.w, X
+  lda area_rooms@unknown_81_82d6.w, X
   sta var_unknown_00
-  lda unknown_81_8138.w, X
+  lda area_rooms@offsets.w, X
   tax
   lda var_unknown_1a
   xba
