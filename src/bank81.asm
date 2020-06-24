@@ -4250,7 +4250,7 @@ unknown_81_a3e3: lda $a4e6.w, Y
 /*unknown_81_a45e:*/ ora $0738.w
 /*unknown_81_a461:*/ jsr $0802.w
 /*unknown_81_a464:*/ bra @unknown_81_a4b8
-/*unknown_81_a466:*/ jsr unknown_81_c046
+/*unknown_81_a466:*/ jsr unknown_81_bf1a@unknown_81_c046
 /*unknown_81_a469:*/ and $2940.w, Y
 /*unknown_81_a46c:*/ lda $14
 /*unknown_81_a46e:*/ brk $00
@@ -4372,36 +4372,38 @@ unknown_81_a546:
   inc var_unknown_0727.w
   rts
 
-unknown_81_a578: rep #$30
-/*unknown_81_a57a:*/ inc $0727.w
-/*unknown_81_a57d:*/ ldy $079f.w
-/*unknown_81_a580:*/ bra unknown_81_a58a
-
-unknown_81_a582: rep #$30
-/*unknown_81_a584:*/ inc $0727.w
-/*unknown_81_a587:*/ ldy $079f.w
-unknown_81_a58a: ldx $0330.w
-/*unknown_81_a58d:*/ lda #$0800.w
-/*unknown_81_a590:*/ sta $d0, X
-/*unknown_81_a592:*/ tya
-/*unknown_81_a593:*/ xba
-/*unknown_81_a594:*/ asl A
-/*unknown_81_a595:*/ asl A
-/*unknown_81_a596:*/ asl A
-/*unknown_81_a597:*/ clc
-/*unknown_81_a598:*/ adc #$bf1a.w
-/*unknown_81_a59b:*/ sta $d2, X
-/*unknown_81_a59d:*/ lda #$0081.w
-/*unknown_81_a5a0:*/ sta $d4, X
-/*unknown_81_a5a2:*/ lda $5a
-/*unknown_81_a5a4:*/ and #$00fc.w
-/*unknown_81_a5a7:*/ xba
-/*unknown_81_a5a8:*/ sta $d5, X
-/*unknown_81_a5aa:*/ txa
-/*unknown_81_a5ab:*/ clc
-/*unknown_81_a5ac:*/ adc #$0007.w
-/*unknown_81_a5af:*/ sta $0330.w
-/*unknown_81_a5b2:*/ rts
+unknown_81_a578:
+  rep #$30
+  inc var_unknown_0727.w
+  ldy var_area_index.w
+  bra unknown_81_a582@unknown_81_a58a
+unknown_81_a582:
+  rep #$30
+  inc var_unknown_0727.w
+  ldy var_area_index.w
+@unknown_81_a58a:
+  ldx var_vram_write_queue_tail.w
+  lda #_sizeof_unknown_81_bf1a
+  sta $d0 + vram_write_queue@entry.copy_size, X
+  tya
+  xba
+  asl A
+  asl A
+  asl A
+  clc
+  adc #unknown_81_bf1a
+  sta $d0 + vram_write_queue@entry.source_address, X
+  lda #:unknown_81_bf1a
+  sta $d0 + vram_write_queue@entry.source_address_bank, X
+  lda var_unknown_5a
+  and #$00fc
+  xba
+  sta $d0 + vram_write_queue@entry.vram_address, X
+  txa
+  clc
+  adc #vram_write_queue@entry@size
+  sta var_vram_write_queue_tail.w
+  rts
 
 unknown_81_a5b3: sep #$20
 /*unknown_81_a5b5:*/ lda #$04
@@ -6948,7 +6950,7 @@ unknown_81_bf1a: .dw $000f
 /*unknown_81_c03c:*/ ora $1c5400
 /*unknown_81_c040:*/ ora $9c5100
 @unknown_81_c044: eor ($1c, S), Y
-unknown_81_c046: eor $4e1c.w
+@unknown_81_c046: eor $4e1c.w
 /*unknown_81_c049:*/ trb $5c51.w
 /*unknown_81_c04c:*/ ora $000f00.l
 /*unknown_81_c050:*/ ora $000f00.l
@@ -7477,7 +7479,9 @@ unknown_81_c046: eor $4e1c.w
 /*unknown_81_c70c:*/ ora $000f00.l
 /*unknown_81_c710:*/ ora $000f00.l
 /*unknown_81_c714:*/ ora $000f00.l
-/*unknown_81_c718:*/ ora $000f00.l
+/*unknown_81_c718:*/ .dw $000f
+
+unknown_81_c71a: .dw $000f
 /*unknown_81_c71c:*/ ora $000f00.l
 /*unknown_81_c720:*/ ora $000f00.l
 /*unknown_81_c724:*/ ora $000f00.l
