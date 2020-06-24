@@ -186,7 +186,7 @@ load_from_sram:
   ; Copy var_save into var_unknown_09a2 through var_unknown_0a00.
   ldy #(var_unknown_0a00 - var_unknown_09a2 + 2) - 2
 @copy_save_loop:
-  lda unknown_81_d7c0.w, Y
+  lda var_save.w, Y
   sta var_unknown_09a2.w, Y
   dey
   dey
