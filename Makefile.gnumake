@@ -78,7 +78,7 @@ roms: supermetroid-ntsc.sfc
 .PHONY: clean
 clean:
 	rm -rf $(BUILD)
-	rm -f supermetroid-ntsc.sfc
+	rm -f supermetroid-ntsc.sfc supermetroid-ntsc.sym
 
 .PHONY: check
 check: supermetroid-ntsc.sfc
