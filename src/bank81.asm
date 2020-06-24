@@ -6,6 +6,7 @@
 .include "include/save_slot.asm"
 .include "include/sprite.asm"
 .include "include/start_dma_copy.asm"
+.include "include/vram_write_queue.asm"
 
 .bank ($81 - $80) slot $0
 .org $0
@@ -4349,27 +4350,27 @@ unknown_81_a3e3: lda $a4e6.w, Y
 
 unknown_81_a546:
   rep #$30
-  ldx $0330
-/*unknown_81_a54b:*/ lda #$0800.w
-@unknown_81_a54e: sta $d0, X
-/*unknown_81_a550:*/ lda #$b71a.w
-/*unknown_81_a553:*/ sta $d2, X
-/*unknown_81_a555:*/ lda #$0081.w
-/*unknown_81_a558:*/ sta $d4, X
-/*unknown_81_a55a:*/ lda $58
-/*unknown_81_a55c:*/ and #$00fc.w
-/*unknown_81_a55f:*/ xba
-/*unknown_81_a560:*/ sta $d5, X
-/*unknown_81_a562:*/ txa
-/*unknown_81_a563:*/ clc
-/*unknown_81_a564:*/ adc #$0007.w
-/*unknown_81_a567:*/ sta $0330.w
-/*unknown_81_a56a:*/ lda $51
-/*unknown_81_a56c:*/ and #$ff00.w
-/*unknown_81_a56f:*/ ora #$000f.w
-/*unknown_81_a572:*/ sta $51
-/*unknown_81_a574:*/ inc $0727.w
-/*unknown_81_a577:*/ rts
+  ldx var_vram_write_queue_tail.w
+  lda #_sizeof_unknown_81_b71a
+  sta $d0 + vram_write_queue@entry.copy_size, X
+  lda #unknown_81_b71a
+  sta $d0 + vram_write_queue@entry.source_address, X
+  lda #:unknown_81_b71a
+  sta $d0 + vram_write_queue@entry.source_address_bank, X
+  lda var_unknown_58
+  and #$00fc
+  xba
+  sta $d0 + vram_write_queue@entry.vram_address, X
+  txa
+  clc
+  adc #vram_write_queue@entry@size
+  sta var_vram_write_queue_tail.w
+  lda var_unknown_51
+  and #$ff00
+  ora #$000f
+  sta var_unknown_51
+  inc var_unknown_0727.w
+  rts
 
 unknown_81_a578: rep #$30
 /*unknown_81_a57a:*/ inc $0727.w
@@ -6108,7 +6109,7 @@ unknown_81_b6da:
   .dw $006a, $007b, $006e, $006d, $0088, $0088, $0088, $000f
   .dw $000f, $000f, $000f, $000f, $000f, $000f, $000f, $ffff
 
-/*unknown_81_b71a:*/ .db $0f, $00, $0f
+unknown_81_b71a: .db $0f, $00, $0f
 /*unknown_81_b71d:*/ brk $0f
 /*unknown_81_b71f:*/ brk $0f
 /*unknown_81_b721:*/ brk $0f
@@ -6843,7 +6844,9 @@ unknown_81_b6da:
 /*unknown_81_bf0c:*/ ora $000f00.l
 /*unknown_81_bf10:*/ ora $000f00.l
 /*unknown_81_bf14:*/ ora $000f00.l
-/*unknown_81_bf18:*/ ora $000f00.l
+/*unknown_81_bf18:*/ .dw $000f
+
+unknown_81_bf1a: .dw $000f
 /*unknown_81_bf1c:*/ ora $000f00.l
 /*unknown_81_bf20:*/ ora $000f00.l
 /*unknown_81_bf24:*/ ora $000f00.l
