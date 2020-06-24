@@ -4250,7 +4250,7 @@ unknown_81_a3e3: lda $a4e6.w, Y
 /*unknown_81_a45e:*/ ora $0738.w
 /*unknown_81_a461:*/ jsr $0802.w
 /*unknown_81_a464:*/ bra @unknown_81_a4b8
-/*unknown_81_a466:*/ jsr unknown_81_bf1a@unknown_81_c046
+/*unknown_81_a466:*/ jsr tilemap_area_select_background_crateria@unknown_81_c046
 /*unknown_81_a469:*/ and $2940.w, Y
 /*unknown_81_a46c:*/ lda $14
 /*unknown_81_a46e:*/ brk $00
@@ -4351,11 +4351,11 @@ unknown_81_a3e3: lda $a4e6.w, Y
 unknown_81_a546:
   rep #$30
   ldx var_vram_write_queue_tail.w
-  lda #_sizeof_unknown_81_b71a
+  lda #_sizeof_tilemap_area_select_foreground
   sta $d0 + vram_write_queue@entry.copy_size, X
-  lda #unknown_81_b71a
+  lda #tilemap_area_select_foreground
   sta $d0 + vram_write_queue@entry.source_address, X
-  lda #:unknown_81_b71a
+  lda #:tilemap_area_select_foreground
   sta $d0 + vram_write_queue@entry.source_address_bank, X
   lda var_unknown_58
   and #$00fc
@@ -4383,18 +4383,22 @@ unknown_81_a582:
   ldy var_area_index.w
 @unknown_81_a58a:
   ldx var_vram_write_queue_tail.w
-  lda #_sizeof_unknown_81_bf1a
+  lda #_sizeof_tilemap_area_select_background_crateria
   sta $d0 + vram_write_queue@entry.copy_size, X
+
+  ; [vram_write_queue@entry.source_address] := tilemap_area_select_background
+  ;   + [var_area_index] * _sizeof_tilemap_area_select_background_crateria
   tya
   xba
   asl A
   asl A
   asl A
   clc
-  adc #unknown_81_bf1a
+  adc #tilemap_area_select_background
   sta $d0 + vram_write_queue@entry.source_address, X
-  lda #:unknown_81_bf1a
+  lda #:tilemap_area_select_background
   sta $d0 + vram_write_queue@entry.source_address_bank, X
+
   lda var_unknown_5a
   and #$00fc
   xba
@@ -6111,7 +6115,8 @@ unknown_81_b6da:
   .dw $006a, $007b, $006e, $006d, $0088, $0088, $0088, $000f
   .dw $000f, $000f, $000f, $000f, $000f, $000f, $000f, $ffff
 
-unknown_81_b71a: .db $0f, $00, $0f
+; Area select foreground tilemap
+tilemap_area_select_foreground: .db $0f, $00, $0f
 /*unknown_81_b71d:*/ brk $0f
 /*unknown_81_b71f:*/ brk $0f
 /*unknown_81_b721:*/ brk $0f
@@ -6848,7 +6853,9 @@ unknown_81_b71a: .db $0f, $00, $0f
 /*unknown_81_bf14:*/ ora $000f00.l
 /*unknown_81_bf18:*/ .dw $000f
 
-unknown_81_bf1a: .dw $000f
+; Area select background tilemap - Crateria
+tilemap_area_select_background:
+tilemap_area_select_background_crateria: .dw $000f
 /*unknown_81_bf1c:*/ ora $000f00.l
 /*unknown_81_bf20:*/ ora $000f00.l
 /*unknown_81_bf24:*/ ora $000f00.l
@@ -7481,7 +7488,8 @@ unknown_81_bf1a: .dw $000f
 /*unknown_81_c714:*/ ora $000f00.l
 /*unknown_81_c718:*/ .dw $000f
 
-unknown_81_c71a: .dw $000f
+; Area select background tilemap - Brinstar
+tilemap_area_select_background_brinstar: .dw $000f
 /*unknown_81_c71c:*/ ora $000f00.l
 /*unknown_81_c720:*/ ora $000f00.l
 /*unknown_81_c724:*/ ora $000f00.l
@@ -8101,7 +8109,10 @@ unknown_81_c71a: .dw $000f
 /*unknown_81_cf0c:*/ ora $000f00.l
 /*unknown_81_cf10:*/ ora $000f00.l
 /*unknown_81_cf14:*/ ora $000f00.l
-/*unknown_81_cf18:*/ ora $000f00.l
+/*unknown_81_cf18:*/ .dw $000f
+
+; Area select background tilemap - Norfair
+tilemap_area_select_background_norfair: .dw $000f
 /*unknown_81_cf1c:*/ ora $000f00.l
 /*unknown_81_cf20:*/ ora $000f00.l
 /*unknown_81_cf24:*/ ora $000f00.l
@@ -8725,7 +8736,10 @@ unknown_81_c71a: .dw $000f
 /*unknown_81_d70c:*/ ora $000f00.l
 /*unknown_81_d710:*/ ora $000f00.l
 /*unknown_81_d714:*/ ora $000f00.l
-/*unknown_81_d718:*/ ora $000f00.l
+/*unknown_81_d718:*/ .dw $000f
+
+; Area select background tilemap - Wrecked Ship
+tilemap_area_select_background_wrecked_ship: .dw $000f
 /*unknown_81_d71c:*/ ora $000f00.l
 /*unknown_81_d720:*/ ora $000f00.l
 /*unknown_81_d724:*/ ora $000f00.l
@@ -9374,7 +9388,10 @@ unknown_81_d7c0: ora $000f00.l
 /*unknown_81_df0c:*/ ora $000f00.l
 /*unknown_81_df10:*/ ora $000f00.l
 /*unknown_81_df14:*/ ora $000f00.l
-/*unknown_81_df18:*/ ora $000f00.l
+/*unknown_81_df18:*/ .dw $000f
+
+; Area select background tilemap - Maridia
+tilemap_area_select_background_maridia: .dw $000f
 /*unknown_81_df1c:*/ ora $000f00.l
 /*unknown_81_df20:*/ ora $000f00.l
 /*unknown_81_df24:*/ ora $000f00.l
@@ -9990,7 +10007,9 @@ unknown_81_d7c0: ora $000f00.l
 /*unknown_81_e70e:*/ ora $000f00.l
 /*unknown_81_e712:*/ ora $000f00.l
 /*unknown_81_e716:*/ ora $000f00.l
-/*unknown_81_e71a:*/ ora $000f00.l
+
+; Area select background tilemap - Tourian
+tilemap_area_select_background_tourian: ora $000f00.l
 /*unknown_81_e71e:*/ ora $000f00.l
 /*unknown_81_e722:*/ ora $000f00.l
 /*unknown_81_e726:*/ ora $000f00.l
