@@ -2767,98 +2767,110 @@ unknown_81_95b5:
   ldx #$0688.w
   jmp unknown_81_b3e2
 
-unknown_81_95be: lda #$0000.w
-/*unknown_81_95c1:*/ jsr unknown_81_a053
-/*unknown_81_95c4:*/ stz $0f96.w
-/*unknown_81_95c7:*/ lda $0954.w
-/*unknown_81_95ca:*/ bit #$0001.w
-/*unknown_81_95cd:*/ bne @unknown_81_95d5
-/*unknown_81_95cf:*/ lda #$0400.w
-/*unknown_81_95d2:*/ sta $0f96.w
-@unknown_81_95d5: jsr $960f.w
-/*unknown_81_95d8:*/ lda #$0001.w
-/*unknown_81_95db:*/ jsr unknown_81_a053
-/*unknown_81_95de:*/ stz $0f96.w
-/*unknown_81_95e1:*/ lda $0954.w
-/*unknown_81_95e4:*/ bit #$0002.w
-/*unknown_81_95e7:*/ bne @unknown_81_95ef
-/*unknown_81_95e9:*/ lda #$0400.w
-/*unknown_81_95ec:*/ sta $0f96.w
-@unknown_81_95ef: jsr $963f.w
-/*unknown_81_95f2:*/ lda #$0002.w
-/*unknown_81_95f5:*/ jsr unknown_81_a053
-/*unknown_81_95f8:*/ stz $0f96.w
-/*unknown_81_95fb:*/ lda $0954.w
-/*unknown_81_95fe:*/ bit #$0004.w
-/*unknown_81_9601:*/ bne @unknown_81_9609
-/*unknown_81_9603:*/ lda #$0400.w
-/*unknown_81_9606:*/ sta $0f96.w
-@unknown_81_9609: jsr $966f.w
-/*unknown_81_960c:*/ jmp unknown_81_969f
-unknown_81_960f: ldx #$0218.w
-/*unknown_81_9612:*/ lda $0954.w
-/*unknown_81_9615:*/ eor #$ffff.w
-/*unknown_81_9618:*/ and #$0001.w
-/*unknown_81_961b:*/ jsr unknown_81_a087
-/*unknown_81_961e:*/ ldx #$0272.w
-/*unknown_81_9621:*/ lda $0954.w
-/*unknown_81_9624:*/ eor #$ffff.w
-/*unknown_81_9627:*/ and #$0001.w
-/*unknown_81_962a:*/ jsr unknown_81_a14e
-/*unknown_81_962d:*/ ldy #$b4a0.w
-/*unknown_81_9630:*/ ldx #$0234.w
-/*unknown_81_9633:*/ jsr $b3e2.w
-/*unknown_81_9636:*/ ldy #$b436.w
-/*unknown_81_9639:*/ ldx #$0208.w
-/*unknown_81_963c:*/ jmp unknown_81_b3e2
-unknown_81_963f: ldx #$0318.w
-/*unknown_81_9642:*/ lda $0954.w
-/*unknown_81_9645:*/ eor #$ffff.w
-/*unknown_81_9648:*/ and #$0002.w
-/*unknown_81_964b:*/ jsr unknown_81_a087
-/*unknown_81_964e:*/ ldx #$0372.w
-/*unknown_81_9651:*/ lda $0954.w
-/*unknown_81_9654:*/ eor #$ffff.w
-/*unknown_81_9657:*/ and #$0002.w
-/*unknown_81_965a:*/ jsr unknown_81_a14e
-/*unknown_81_965d:*/ ldy #$b4a0.w
-/*unknown_81_9660:*/ ldx #$0334.w
-/*unknown_81_9663:*/ jsr $b3e2.w
-/*unknown_81_9666:*/ ldy #$b456.w
-/*unknown_81_9669:*/ ldx #$0308.w
-/*unknown_81_966c:*/ jmp unknown_81_b3e2
-unknown_81_966f: ldx #$0418.w
-/*unknown_81_9672:*/ lda $0954.w
-/*unknown_81_9675:*/ eor #$ffff.w
-/*unknown_81_9678:*/ and #$0004.w
-/*unknown_81_967b:*/ jsr unknown_81_a087
-/*unknown_81_967e:*/ ldx #$0472.w
-/*unknown_81_9681:*/ lda $0954.w
-/*unknown_81_9684:*/ eor #$ffff.w
-/*unknown_81_9687:*/ and #$0004.w
-/*unknown_81_968a:*/ jsr unknown_81_a14e
-/*unknown_81_968d:*/ ldy #$b4a0.w
-/*unknown_81_9690:*/ ldx #$0434.w
-/*unknown_81_9693:*/ jsr $b3e2.w
-/*unknown_81_9696:*/ ldy #$b476.w
-/*unknown_81_9699:*/ ldx #$0408.w
-/*unknown_81_969c:*/ jmp unknown_81_b3e2
-unknown_81_969f: ldx $0330.w
-/*unknown_81_96a2:*/ lda #$0800.w
-/*unknown_81_96a5:*/ sta $d0, X
-/*unknown_81_96a7:*/ lda #$3600.w
-/*unknown_81_96aa:*/ sta $d2, X
-/*unknown_81_96ac:*/ lda #$007e.w
-/*unknown_81_96af:*/ sta $d4, X
-/*unknown_81_96b1:*/ lda $58
-/*unknown_81_96b3:*/ and #$00fc.w
-/*unknown_81_96b6:*/ xba
-/*unknown_81_96b7:*/ sta $d5, X
-/*unknown_81_96b9:*/ txa
-/*unknown_81_96ba:*/ clc
-/*unknown_81_96bb:*/ adc #$0007.w
-/*unknown_81_96be:*/ sta $0330.w
-/*unknown_81_96c1:*/ rts
+unknown_81_95be:
+  lda #$0000.w
+  jsr unknown_81_a053
+  stz var_unknown_0f96.w
+  lda var_unknown_0954.w
+  bit #$0001.w
+  bne @unknown_81_95d5
+  lda #$0400.w
+  sta var_unknown_0f96.w
+@unknown_81_95d5:
+  jsr unknown_81_960f
+  lda #$0001.w
+  jsr unknown_81_a053
+  stz var_unknown_0f96.w
+  lda var_unknown_0954.w
+  bit #$0002.w
+  bne @unknown_81_95ef
+  lda #$0400.w
+  sta var_unknown_0f96.w
+@unknown_81_95ef:
+  jsr unknown_81_963f
+  lda #$0002.w
+  jsr unknown_81_a053
+  stz var_unknown_0f96.w
+  lda var_unknown_0954.w
+  bit #$0004.w
+  bne @unknown_81_9609
+  lda #$0400.w
+  sta var_unknown_0f96.w
+@unknown_81_9609:
+  jsr unknown_81_966f
+  jmp unknown_81_969f
+
+unknown_81_960f:
+  ldx #$0218.w
+  lda var_unknown_0954.w
+  eor #$ffff.w
+  and #$0001.w
+  jsr unknown_81_a087
+  ldx #$0272.w
+  lda var_unknown_0954.w
+  eor #$ffff.w
+  and #$0001.w
+  jsr unknown_81_a14e
+  ldy #$b4a0.w
+  ldx #$0234.w
+  jsr unknown_81_b3e2
+  ldy #$b436.w
+  ldx #$0208.w
+  jmp unknown_81_b3e2
+
+unknown_81_963f:
+  ldx #$0318.w
+  lda var_unknown_0954.w
+  eor #$ffff.w
+  and #$0002.w
+  jsr unknown_81_a087
+  ldx #$0372.w
+  lda var_unknown_0954.w
+  eor #$ffff.w
+  and #$0002.w
+  jsr unknown_81_a14e
+  ldy #$b4a0.w
+  ldx #$0334.w
+  jsr unknown_81_b3e2
+  ldy #$b456.w
+  ldx #$0308.w
+  jmp unknown_81_b3e2
+
+unknown_81_966f:
+  ldx #$0418.w
+  lda var_unknown_0954.w
+  eor #$ffff.w
+  and #$0004.w
+  jsr unknown_81_a087
+  ldx #$0472.w
+  lda var_unknown_0954.w
+  eor #$ffff.w
+  and #$0004.w
+  jsr unknown_81_a14e
+  ldy #$b4a0.w
+  ldx #$0434.w
+  jsr unknown_81_b3e2
+  ldy #$b476.w
+  ldx #$0408.w
+  jmp unknown_81_b3e2
+
+unknown_81_969f:
+  ldx var_vram_write_queue_tail.w
+  lda #_sizeof_var_unknown_3600
+  sta var_vram_write_queue.copy_size, X
+  lda #var_unknown_3600
+  sta var_vram_write_queue.source_address, X
+  lda #var_unknown_3600 >> 16
+  sta var_vram_write_queue.source_address_bank, X
+  lda var_unknown_58
+  and #$00fc.w
+  xba
+  sta var_vram_write_queue.vram_address, X
+  txa
+  clc
+  adc #vram_write_queue@entry@size
+  sta var_vram_write_queue_tail.w
+  rts
 
 unknown_81_96c2: rep #$30
 /*unknown_81_96c4:*/ jsr $82ba48
