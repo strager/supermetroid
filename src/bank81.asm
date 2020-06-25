@@ -4383,11 +4383,11 @@ unknown_81_a582:
   ldy var_area_index.w
 @unknown_81_a58a:
   ldx var_vram_write_queue_tail.w
-  lda #_sizeof_tilemap_area_select_background_crateria
+  lda #tilemap_area_select_background@area_size
   sta $d0 + vram_write_queue@entry.copy_size, X
 
   ; [vram_write_queue@entry.source_address] := tilemap_area_select_background
-  ;   + [var_area_index] * _sizeof_tilemap_area_select_background_crateria
+  ;   + [var_area_index] * tilemap_area_select_background@area_size
   tya
   xba
   asl A
@@ -6121,27 +6121,28 @@ tilemap_area_select_foreground:
 
 ; Area select background tilemap - Crateria
 tilemap_area_select_background:
-tilemap_area_select_background_crateria:
+.define tilemap_area_select_background@area_size $800
+@crateria:
   .incbin "graphics/tilemap_area_select_background_crateria.bin"
 
 ; Area select background tilemap - Brinstar
-tilemap_area_select_background_brinstar:
+@brinstar:
   .incbin "graphics/tilemap_area_select_background_brinstar.bin"
 
 ; Area select background tilemap - Norfair
-tilemap_area_select_background_norfair:
+@norfair:
   .incbin "graphics/tilemap_area_select_background_norfair.bin"
 
 ; Area select background tilemap - Wrecked Ship
-tilemap_area_select_background_wrecked_ship:
+@wrecked_ship:
   .incbin "graphics/tilemap_area_select_background_wrecked_ship.bin"
 
 ; Area select background tilemap - Maridia
-tilemap_area_select_background_maridia:
+@maridia:
   .incbin "graphics/tilemap_area_select_background_maridia.bin"
 
 ; Area select background tilemap - Tourian
-tilemap_area_select_background_tourian:
+@tourian:
   .incbin "graphics/tilemap_area_select_background_tourian.bin"
 
   .dsb $fe6, $ff
