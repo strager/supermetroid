@@ -2301,13 +2301,14 @@ unknown_81_90fe:
 @unknown_81_9112:
   jmp unknown_80_8462.l
 
-unknown_81_9116: jsr $888293
-/*unknown_81_911a:*/ jsr $88829e
-/*unknown_81_911e:*/ lda #$0005.w
-/*unknown_81_9121:*/ sta $0998.w
-/*unknown_81_9124:*/ lda #$0000.w
-/*unknown_81_9127:*/ sta $0727.w
-/*unknown_81_912a:*/ rts
+unknown_81_9116:
+  jsr unknown_88_8293.l
+  jsr unknown_88_829e.l
+  lda #game_state_loading_map
+  sta var_game_state.w
+  lda #$0000.w
+  sta var_unknown_0727.w
+  rts
 
 unknown_81_912b: rep #$30
 /*unknown_81_912d:*/ jsr $82bb75
