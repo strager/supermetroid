@@ -2258,16 +2258,16 @@ unknown_81_90ae:
   rtl
 
 unknown_81_90bd:
-  .dw $8d0f
-  .dw $91a4
-  .dw $93e8
-  .dw $90cd
-  .dw $912b
-  .dw $90e7
-  .dw $9116
-  .dw $90fe
+  .dw unknown_81_8d0f
+  .dw unknown_81_91a4
+  .dw unknown_81_93e8
+  .dw unknown_81_90cd
+  .dw unknown_81_912b
+  .dw unknown_81_90e7
+  .dw unknown_81_9116
+  .dw unknown_81_90fe
 
-/*unknown_81_90cd:*/ jsr $82bb75
+unknown_81_90cd: jsr $82bb75
 /*unknown_81_90d1:*/ jsr $82ba6e
 /*unknown_81_90d5:*/ jsr $80894d
 /*unknown_81_90d9:*/ lda $51
@@ -2277,7 +2277,7 @@ unknown_81_90bd:
 /*unknown_81_90e3:*/ inc $0727.w
 /*unknown_81_90e6:*/ rts
 
-/*unknown_81_90e7:*/ jsr $82bb75
+unknown_81_90e7: jsr $82bb75
 /*unknown_81_90eb:*/ jsr $82ba6e
 /*unknown_81_90ef:*/ jsr $808924
 /*unknown_81_90f3:*/ lda $51
@@ -2286,16 +2286,16 @@ unknown_81_90bd:
 /*unknown_81_90fa:*/ inc $0727.w
 @unknown_81_90fd: rts
 
-/*unknown_81_90fe:*/ jsr $82ba6e
+unknown_81_90fe: jsr $82ba6e
 /*unknown_81_9102:*/ jsr $82bb75
 /*unknown_81_9106:*/ jsr $808924
 /*unknown_81_910a:*/ lda $51
 /*unknown_81_910c:*/ and #$000f.w
 /*unknown_81_910f:*/ beq @unknown_81_9112
 /*unknown_81_9111:*/ rts
-
 @unknown_81_9112: jmp $808462
-/*unknown_81_9116:*/ jsr $888293
+
+unknown_81_9116: jsr $888293
 /*unknown_81_911a:*/ jsr $88829e
 /*unknown_81_911e:*/ lda #$0005.w
 /*unknown_81_9121:*/ sta $0998.w
@@ -2303,7 +2303,7 @@ unknown_81_90bd:
 /*unknown_81_9127:*/ sta $0727.w
 /*unknown_81_912a:*/ rts
 
-/*unknown_81_912b:*/ rep #$30
+unknown_81_912b: rep #$30
 /*unknown_81_912d:*/ jsr $82bb75
 /*unknown_81_9131:*/ jsr $82ba6e
 /*unknown_81_9135:*/ lda $8f
@@ -2351,7 +2351,7 @@ unknown_81_90bd:
 /*unknown_81_91a0:*/ sty $19ab.w
 /*unknown_81_91a3:*/ rts
 
-/*unknown_81_91a4:*/ sep #$20
+unknown_81_91a4: sep #$20
 /*unknown_81_91a6:*/ lda #$11
 /*unknown_81_91a8:*/ sta $69
 /*unknown_81_91aa:*/ lda #$20
