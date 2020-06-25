@@ -2660,27 +2660,30 @@ unknown_81_94d5:
 @unknown_81_94ed:
   rts
 
-unknown_81_94ee: rep #$30
-/*unknown_81_94f0:*/ jsr $82ba6e
-unknown_81_94f4: jsr $808924
-/*unknown_81_94f8:*/ lda $57
-/*unknown_81_94fa:*/ and #$ff0f.w
-/*unknown_81_94fd:*/ sta $12
-/*unknown_81_94ff:*/ lda $51
-/*unknown_81_9501:*/ and #$000f.w
-/*unknown_81_9504:*/ asl A
-/*unknown_81_9505:*/ asl A
-/*unknown_81_9506:*/ asl A
-/*unknown_81_9507:*/ asl A
-/*unknown_81_9508:*/ eor #$00f0.w
-/*unknown_81_950b:*/ ora $12
-/*unknown_81_950d:*/ sta $57
-/*unknown_81_950f:*/ lda $51
-/*unknown_81_9511:*/ and #$000f.w
-/*unknown_81_9514:*/ bne @unknown_81_951d
-/*unknown_81_9516:*/ jsr $80836f
-/*unknown_81_951a:*/ inc $0727.w
-@unknown_81_951d: rts
+unknown_81_94ee:
+  rep #$30
+  jsr unknown_82_ba6e.l
+unknown_81_94f4:
+  jsr unknown_80_8924.l
+  lda var_unknown_57
+  and #$ff0f.w
+  sta var_unknown_12
+  lda var_unknown_51
+  and #$000f.w
+  asl A
+  asl A
+  asl A
+  asl A
+  eor #$00f0.w
+  ora var_unknown_12
+  sta var_unknown_57
+  lda var_unknown_51
+  and #$000f.w
+  bne @unknown_81_951d
+  jsr unknown_80_836f.l
+  inc var_unknown_0727.w
+@unknown_81_951d:
+  rts
 
 unknown_81_951e: rep #$30
 /*unknown_81_9520:*/ lda $0952.w
