@@ -2648,15 +2648,17 @@ unknown_81_94a3:
 @unknown_81_94d4:
   rts
 
-unknown_81_94d5: rep #$30
-/*unknown_81_94d7:*/ jsr $82ba35
-/*unknown_81_94db:*/ jsr unknown_81_9dc3
-/*unknown_81_94de:*/ jsr $808924
-/*unknown_81_94e2:*/ lda $51
-/*unknown_81_94e4:*/ and #$000f.w
-/*unknown_81_94e7:*/ bne @unknown_81_94ed
-/*unknown_81_94e9:*/ jmp $808462
-@unknown_81_94ed: rts
+unknown_81_94d5:
+  rep #$30
+  jsr unknown_82_ba35.l
+  jsr unknown_81_9dc3
+  jsr unknown_80_8924.l
+  lda var_unknown_51
+  and #$000f.w
+  bne @unknown_81_94ed
+  jmp unknown_80_8462.l
+@unknown_81_94ed:
+  rts
 
 unknown_81_94ee: rep #$30
 /*unknown_81_94f0:*/ jsr $82ba6e
