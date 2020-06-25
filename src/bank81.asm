@@ -2762,9 +2762,11 @@ unknown_81_95a6:
   bpl @unknown_81_95ac
   rts
 
-unknown_81_95b5: ldy #$b4ee.w
-/*unknown_81_95b8:*/ ldx #$0688.w
-/*unknown_81_95bb:*/ jmp unknown_81_b3e2
+unknown_81_95b5:
+  ldy #$b4ee.w
+  ldx #$0688.w
+  jmp unknown_81_b3e2
+
 unknown_81_95be: lda #$0000.w
 /*unknown_81_95c1:*/ jsr unknown_81_a053
 /*unknown_81_95c4:*/ stz $0f96.w
