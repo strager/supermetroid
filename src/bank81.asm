@@ -1841,14 +1841,16 @@ unknown_81_8d6d:
 
 /*unknown_81_8da4:*/ .db $0f, $00
 
-unknown_81_8da6: rep #$30
-/*unknown_81_8da8:*/ jsr $80894d
-/*unknown_81_8dac:*/ lda $51
-/*unknown_81_8dae:*/ and #$000f.w
-/*unknown_81_8db1:*/ cmp #$000f.w
-/*unknown_81_8db4:*/ bne @unknown_81_8db9
-/*unknown_81_8db6:*/ inc $0727.w
-@unknown_81_8db9: rts
+unknown_81_8da6:
+  rep #$30
+  jsr unknown_80_894d.l
+  lda var_unknown_51
+  and #$000f.w
+  cmp #$000f.w
+  bne @unknown_81_8db9
+  inc var_unknown_0727.w
+@unknown_81_8db9:
+  rts
 
 unknown_81_8dba: sep #$20
 /*unknown_81_8dbc:*/ stz $6b
