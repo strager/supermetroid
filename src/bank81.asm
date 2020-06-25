@@ -2220,14 +2220,15 @@ unknown_81_905b:
   bmi @unknown_81_9070
   rts
 
-unknown_81_907e: sep #$30
-/*unknown_81_9080:*/ lda #$00
-/*unknown_81_9082:*/ sta IO_VMADDL
-/*unknown_81_9085:*/ lda #$40
-/*unknown_81_9087:*/ sta IO_VMADDH
-/*unknown_81_908a:*/ lda #IO_VMAIN_INCREMENT_HIGH
-/*unknown_81_908c:*/ sta IO_VMAIN
-/*unknown_81_908f:*/ jsl start_dma_copy
+unknown_81_907e:
+  sep #$30
+  lda #$00
+  sta IO_VMADDL
+  lda #$40
+  sta IO_VMADDH
+  lda #IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
+  jsl start_dma_copy
 .dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
@@ -2236,13 +2237,13 @@ a1: .dl unknown_9a_b200
 das: .dw unknown_9a_b200@size
 .ENDST
 
-/*unknown_81_909b:*/ lda #$02
-/*unknown_81_909d:*/ sta $420b.w
-/*unknown_81_90a0:*/ rep #$30
-/*unknown_81_90a2:*/ lda #$0010.w
-/*unknown_81_90a5:*/ sta $0998.w
-/*unknown_81_90a8:*/ stz $0950.w
-/*unknown_81_90ab:*/ jmp unknown_81_905b
+  lda #$02
+  sta IO_MDMAEN
+  rep #$30
+  lda #$0010.w
+  sta var_unknown_0998.w
+  stz var_unknown_0950.w
+  jmp unknown_81_905b
 
 unknown_81_90ae: rep #$30
 /*unknown_81_90b0:*/ phb
