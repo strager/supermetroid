@@ -7245,7 +7245,7 @@ unknown_82_ba35: lda #$0e00.w
 /*unknown_82_ba43:*/ jsl unknown_81_891f
 /*unknown_82_ba47:*/ rtl
 
-/*unknown_82_ba48:*/ lda #$0e00.w
+unknown_82_ba48: lda #$0e00.w
 /*unknown_82_ba4b:*/ sta $03
 /*unknown_82_ba4d:*/ ldx #$0080.w
 /*unknown_82_ba50:*/ ldy #$0010.w

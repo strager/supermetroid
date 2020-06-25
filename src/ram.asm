@@ -1086,7 +1086,8 @@ var_unknown_19a1: dw ; $7e19a1
 var_unknown_19ab: dw ; $7e19ab
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $19b7) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $19b5) export
+var_unknown_19b5: dw ; $7e19b5
 var_unknown_19b7: dw ; $7e19b7
 var_unknown_19b9: dw ; $7e19b9
 .ende
