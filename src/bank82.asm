@@ -7260,7 +7260,7 @@ unknown_82_b9fc: lda $0778.w
 /*unknown_82_ba69:*/ jsl unknown_81_891f
 /*unknown_82_ba6d:*/ rtl
 
-/*unknown_82_ba6e:*/ phb
+unknown_82_ba6e: phb
 /*unknown_82_ba6f:*/ phk
 /*unknown_82_ba70:*/ plb
 /*unknown_82_ba71:*/ lda $198d.w
@@ -7391,7 +7391,7 @@ unknown_82_b9fc: lda $0778.w
 @unknown_82_bb73: plb
 /*unknown_82_bb74:*/ rtl
 
-/*unknown_82_bb75:*/ phb
+unknown_82_bb75: phb
 /*unknown_82_bb76:*/ rep #$30
 /*unknown_82_bb78:*/ phk
 /*unknown_82_bb79:*/ plb

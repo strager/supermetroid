@@ -2267,15 +2267,17 @@ unknown_81_90bd:
   .dw unknown_81_9116
   .dw unknown_81_90fe
 
-unknown_81_90cd: jsr $82bb75
-/*unknown_81_90d1:*/ jsr $82ba6e
-/*unknown_81_90d5:*/ jsr $80894d
-/*unknown_81_90d9:*/ lda $51
-/*unknown_81_90db:*/ and #$000f.w
-/*unknown_81_90de:*/ cmp #$000f.w
-/*unknown_81_90e1:*/ bne $03 ; $90e6.w
-/*unknown_81_90e3:*/ inc $0727.w
-/*unknown_81_90e6:*/ rts
+unknown_81_90cd:
+  jsr unknown_82_bb75.l
+  jsr unknown_82_ba6e.l
+  jsr unknown_80_894d.l
+  lda var_unknown_51
+  and #$000f.w
+  cmp #$000f.w
+  bne @unknown_81_90e6
+  inc var_unknown_0727.w
+@unknown_81_90e6:
+  rts
 
 unknown_81_90e7: jsr $82bb75
 /*unknown_81_90eb:*/ jsr $82ba6e
