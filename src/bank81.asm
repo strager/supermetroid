@@ -2290,14 +2290,16 @@ unknown_81_90e7:
 @unknown_81_90fd:
   rts
 
-unknown_81_90fe: jsr $82ba6e
-/*unknown_81_9102:*/ jsr $82bb75
-/*unknown_81_9106:*/ jsr $808924
-/*unknown_81_910a:*/ lda $51
-/*unknown_81_910c:*/ and #$000f.w
-/*unknown_81_910f:*/ beq @unknown_81_9112
-/*unknown_81_9111:*/ rts
-@unknown_81_9112: jmp $808462
+unknown_81_90fe:
+  jsr unknown_82_ba6e.l
+  jsr unknown_82_bb75.l
+  jsr unknown_80_8924.l
+  lda var_unknown_51
+  and #$000f.w
+  beq @unknown_81_9112
+  rts
+@unknown_81_9112:
+  jmp unknown_80_8462.l
 
 unknown_81_9116: jsr $888293
 /*unknown_81_911a:*/ jsr $88829e
