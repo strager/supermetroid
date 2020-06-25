@@ -1138,9 +1138,14 @@ var_unknown_3300: dsw $100 ; $7e3300
 var_unknown_3500: dsw $1b ; $7e3500
 .ende
 
-; TODO: Fix overlap between var_unknown_3600 and var_unknown_3800.
+; TODO: Fix overlap between var_unknown_3600, var_unknown_3760, and
+; var_unknown_3800.
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3600) export
 var_unknown_3600: dsw $400 ; $7e3600
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $3760) export
+var_unknown_3760: dw ; $7e3760
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3800) export
