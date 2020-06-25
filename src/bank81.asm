@@ -2245,18 +2245,19 @@ das: .dw unknown_9a_b200@size
   stz var_unknown_0950.w
   jmp unknown_81_905b
 
-unknown_81_90ae: rep #$30
-/*unknown_81_90b0:*/ phb
-/*unknown_81_90b1:*/ phk
-/*unknown_81_90b2:*/ plb
-/*unknown_81_90b3:*/ lda $0727.w
-/*unknown_81_90b6:*/ asl A
-/*unknown_81_90b7:*/ tax
-/*unknown_81_90b8:*/ jsr ($90bd.w, X)
-/*unknown_81_90bb:*/ plb
-/*unknown_81_90bc:*/ rtl
+unknown_81_90ae:
+  rep #$30
+  phb
+  phk
+  plb
+  lda var_unknown_0727.w
+  asl A
+  tax
+  jsr (unknown_81_90bd, X)
+  plb
+  rtl
 
-/*unknown_81_90bd:*/ ora $91a48d
+unknown_81_90bd: ora $91a48d
 /*unknown_81_90c1:*/ inx
 /*unknown_81_90c2:*/ sta ($cd, S), Y
 /*unknown_81_90c4:*/ bcc $2b ; $90f1.w
