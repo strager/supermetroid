@@ -6,6 +6,7 @@
 .include "include/save_slot.asm"
 .include "include/sprite.asm"
 .include "include/start_dma_copy.asm"
+.include "include/unknown_88_8435.asm"
 .include "include/vram_write_queue.asm"
 
 .bank ($81 - $80) slot $0
@@ -2426,14 +2427,15 @@ unknown_81_91a4: sep #$20
 /*unknown_81_9244:*/ jsr $888293
 /*unknown_81_9248:*/ jsr $88829e
 /*unknown_81_924c:*/ jsr $888288
-/*unknown_81_9250:*/ jsr $888435
-/*unknown_81_9254:*/ brk $32
-/*unknown_81_9256:*/ adc $2292.w, X
-/*unknown_81_9259:*/ and $84, X
-/*unknown_81_925b:*/ dey
-/*unknown_81_925c:*/ brk $31
-/*unknown_81_925e:*/ sta $2292.w
-/*unknown_81_9261:*/ brl $8083 ; $12e7.w
+/*unknown_81_9250:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $00, $32, $7d, $92
+.ENDST
+/*unknown_81_9258:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $00, $31, $8d, $92
+.ENDST
+/*unknown_81_9260:*/ jsr $808382
 /*unknown_81_9264:*/ inc $0727.w
 /*unknown_81_9267:*/ stz $0723.w
 /*unknown_81_926a:*/ stz $0725.w

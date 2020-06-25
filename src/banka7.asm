@@ -1,6 +1,7 @@
 .include "include/common.asm"
 .include "include/io.asm"
 .include "include/start_dma_copy.asm"
+.include "include/unknown_88_8435.asm"
 
 .bank ($a7 - $80) slot $0
 .org $0
@@ -8685,11 +8686,12 @@ das: .dw $400
 /*unknown_a7_ce44:*/ lda $0f86.w
 /*unknown_a7_ce47:*/ ora #$0400.w
 /*unknown_a7_ce4a:*/ sta $0f86.w
-/*unknown_a7_ce4d:*/ jsr $888435
-/*unknown_a7_ce51:*/ ora ($14, X)
-/*unknown_a7_ce53:*/ stx $ce, Y
-/*unknown_a7_ce55:*/ ldx $0e54.w
-/*unknown_a7_ce58:*/ lda #$804d.w
+/*unknown_a7_ce4d:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $01, $14, $96, $ce
+.ENDST
+  ldx $0e54
+  lda #$804d.w
 /*unknown_a7_ce5b:*/ sta $0f8e.w, X
 /*unknown_a7_ce5e:*/ lda #$0001.w
 /*unknown_a7_ce61:*/ sta $0f94.w, X

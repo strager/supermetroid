@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/unknown_88_8435.asm"
 
 .bank ($91 - $80) slot $0
 .org $0
@@ -9541,9 +9542,10 @@ unknown_91_b62d: .dw $0008
 /*unknown_91_cae6:*/ beq @unknown_91_caf6
 /*unknown_91_cae8:*/ jsr $91e16d
 /*unknown_91_caec:*/ bcc @unknown_91_caf6
-/*unknown_91_caee:*/ jsr $888435
-/*unknown_91_caf2:*/ eor ($28, X)
-/*unknown_91_caf4:*/ and $d2, S
+/*unknown_91_caee:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $41, $28, $23, $d2
+.ENDST
 @unknown_91_caf6: plb
 /*unknown_91_caf7:*/ plp
 /*unknown_91_caf8:*/ rtl
@@ -10783,10 +10785,12 @@ unknown_91_d0a6: asl A
 /*unknown_91_d58d:*/ sta $0b14.w
 /*unknown_91_d590:*/ lda #$0056.w
 /*unknown_91_d593:*/ jsr $8090cb
-/*unknown_91_d597:*/ jsr $888435
-/*unknown_91_d59b:*/ eor ($26, X)
-/*unknown_91_d59d:*/ ldx #$abd5.w
-/*unknown_91_d5a0:*/ plp
+/*unknown_91_d597:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $41, $26, $a2, $d5
+.ENDST
+  plb
+  plp
 /*unknown_91_d5a1:*/ rtl
 
 /*unknown_91_d5a2:*/ eor $86, X
@@ -10868,11 +10872,12 @@ unknown_91_d0a6: asl A
 /*unknown_91_d665:*/ sta $0b14.w
 /*unknown_91_d668:*/ lda #$0056.w
 /*unknown_91_d66b:*/ jsr $8090cb
-/*unknown_91_d66f:*/ jsr $888435
-/*unknown_91_d673:*/ eor ($26, X)
-/*unknown_91_d675:*/ ply
-/*unknown_91_d676:*/ dec $ab, X
-/*unknown_91_d678:*/ plp
+/*unknown_91_d66f:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $41, $26, $7a, $d6
+.ENDST
+  plb
+  plp
 /*unknown_91_d679:*/ rtl
 
 /*unknown_91_d67a:*/ eor $86, X

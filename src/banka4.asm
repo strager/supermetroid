@@ -1,4 +1,5 @@
 .include "include/common.asm"
+.include "include/unknown_88_8435.asm"
 
 .bank ($a4 - $80) slot $0
 .org $0
@@ -2396,9 +2397,10 @@
 /*unknown_a4_954a:*/ sta $7ecae4
 /*unknown_a4_954e:*/ lda #$0000.w
 /*unknown_a4_9551:*/ sta $7ecae6
-/*unknown_a4_9555:*/ jsr $888435
-/*unknown_a4_9559:*/ .db $42, $10
-/*unknown_a4_955b:*/ adc $95, S
+/*unknown_a4_9555:*/ jsl unknown_88_8435
+.dstruct instanceof unknown_88_8435@parameters values
+unknown_0: .db $42, $10, $63, $95
+.ENDST
 /*unknown_a4_955d:*/ sta $7e783e
 /*unknown_a4_9561:*/ plp
 /*unknown_a4_9562:*/ rts
