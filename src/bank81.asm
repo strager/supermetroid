@@ -1945,19 +1945,21 @@ das: .dw unknown_8e_d600@size
   plp
   rts
 
-unknown_81_8e60: rep #$30
-/*unknown_81_8e62:*/ ldx #$0000.w
-@unknown_81_8e65: lda $8ee400, X
-/*unknown_81_8e69:*/ sta $7ec000, X
-/*unknown_81_8e6d:*/ lda $8ee402, X
-/*unknown_81_8e71:*/ sta $7ec002, X
-/*unknown_81_8e75:*/ inx
-/*unknown_81_8e76:*/ inx
-/*unknown_81_8e77:*/ inx
-/*unknown_81_8e78:*/ inx
-/*unknown_81_8e79:*/ cpx #$0200.w
-/*unknown_81_8e7c:*/ bmi @unknown_81_8e65
-/*unknown_81_8e7e:*/ rts
+unknown_81_8e60:
+  rep #$30
+  ldx #$0000.w
+@unknown_81_8e65:
+  lda unknown_8e_e400.l, X
+  sta var_color_palette.l, X
+  lda unknown_8e_e400.l + 2, X
+  sta var_color_palette.l + 2, X
+  inx
+  inx
+  inx
+  inx
+  cpx #var_color_palette@size
+  bmi @unknown_81_8e65
+  rts
 
 unknown_81_8e7f: ldx #$0000.w
 /*unknown_81_8e82:*/ lda #$000f.w
