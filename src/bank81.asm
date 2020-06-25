@@ -1768,14 +1768,14 @@ unknown_81_8cf4:
   rtl
 
 unknown_81_8d03:
-  .dw $8d0f
-  .dw $8d6d
-  .dw $8da6
-  .dw $9003
-  .dw $8da6
-  .dw $907e
+  .dw unknown_81_8d0f
+  .dw unknown_81_8d6d
+  .dw unknown_81_8da6
+  .dw unknown_81_9003
+  .dw unknown_81_8da6
+  .dw unknown_81_907e
 
-/*unknown_81_8d0f:*/ rep #$30
+unknown_81_8d0f: rep #$30
 /*unknown_81_8d11:*/ jsr $808924
 /*unknown_81_8d15:*/ lda $51
 /*unknown_81_8d17:*/ and #$000f.w
@@ -1814,7 +1814,7 @@ unknown_81_8d03:
 /*unknown_81_8d69:*/ inc $0727.w
 /*unknown_81_8d6c:*/ rts
 
-/*unknown_81_8d6d:*/ rep #$30
+unknown_81_8d6d: rep #$30
 /*unknown_81_8d6f:*/ lda #$0000.w
 /*unknown_81_8d72:*/ jsr $808fc1
 /*unknown_81_8d76:*/ lda #$ff03.w
@@ -1835,7 +1835,9 @@ unknown_81_8d03:
 /*unknown_81_8da0:*/ stz $0950.w
 /*unknown_81_8da3:*/ rts
 
-/*unknown_81_8da4:*/ ora $30c200
+/*unknown_81_8da4:*/ .db $0f, $00
+
+unknown_81_8da6: rep #$30
 /*unknown_81_8da8:*/ jsr $80894d
 /*unknown_81_8dac:*/ lda $51
 /*unknown_81_8dae:*/ and #$000f.w
@@ -2140,9 +2142,11 @@ unknown_81_8e60: rep #$30
 /*unknown_81_8ffc:*/ brk $0f
 /*unknown_81_8ffe:*/ brk $0f
 /*unknown_81_9000:*/ brk $0f
-/*unknown_81_9002:*/ brk $c2
-/*unknown_81_9004:*/ bmi ($a5 - $100) ; $8fab.w
-/*unknown_81_9006:*/ sta $200089
+  .db $00
+
+unknown_81_9003: rep #$30
+/*unknown_81_9005:*/ lda $8f
+/*unknown_81_9007:*/ bit #$2000.w
 /*unknown_81_900a:*/ bne @unknown_81_902f
 /*unknown_81_900c:*/ bit #$0800.w
 /*unknown_81_900f:*/ bne @unknown_81_902f
@@ -2178,7 +2182,7 @@ unknown_81_8e60: rep #$30
 /*unknown_81_9057:*/ stx $0590.w
 /*unknown_81_905a:*/ rts
 
-@unknown_81_905b: ldx #$0000.w
+unknown_81_905b: ldx #$0000.w
 @unknown_81_905e: lda $7e3300, X
 /*unknown_81_9062:*/ sta $7ec000, X
 /*unknown_81_9066:*/ inx
@@ -2194,7 +2198,7 @@ unknown_81_8e60: rep #$30
 /*unknown_81_907b:*/ bmi @unknown_81_9070
 /*unknown_81_907d:*/ rts
 
-/*unknown_81_907e:*/ sep #$30
+unknown_81_907e: sep #$30
 /*unknown_81_9080:*/ lda #$00
 /*unknown_81_9082:*/ sta IO_VMADDL
 /*unknown_81_9085:*/ lda #$40
@@ -2216,7 +2220,7 @@ das: .dw unknown_9a_b200@size
 /*unknown_81_90a2:*/ lda #$0010.w
 /*unknown_81_90a5:*/ sta $0998.w
 /*unknown_81_90a8:*/ stz $0950.w
-/*unknown_81_90ab:*/ jmp @unknown_81_905b
+/*unknown_81_90ab:*/ jmp unknown_81_905b
 
 unknown_81_90ae: rep #$30
 /*unknown_81_90b0:*/ phb
