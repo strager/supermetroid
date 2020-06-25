@@ -1961,55 +1961,59 @@ unknown_81_8e60:
   bmi @unknown_81_8e65
   rts
 
-unknown_81_8e7f: ldx #$0000.w
-/*unknown_81_8e82:*/ lda #$000f.w
-@unknown_81_8e85: sta $7e3800, X
-/*unknown_81_8e89:*/ inx
-/*unknown_81_8e8a:*/ inx
-/*unknown_81_8e8b:*/ cpx #$0800.w
-/*unknown_81_8e8e:*/ bmi @unknown_81_8e85
-/*unknown_81_8e90:*/ ldx $0330.w
-/*unknown_81_8e93:*/ lda #$0800.w
-/*unknown_81_8e96:*/ sta $d0, X
-/*unknown_81_8e98:*/ lda #$3800.w
-/*unknown_81_8e9b:*/ sta $d2, X
-/*unknown_81_8e9d:*/ lda #$007e.w
-/*unknown_81_8ea0:*/ sta $d4, X
-/*unknown_81_8ea2:*/ lda $58
-/*unknown_81_8ea4:*/ and #$00fc.w
-/*unknown_81_8ea7:*/ xba
-/*unknown_81_8ea8:*/ sta $d5, X
-/*unknown_81_8eaa:*/ txa
-/*unknown_81_8eab:*/ clc
-/*unknown_81_8eac:*/ adc #$0007.w
-/*unknown_81_8eaf:*/ sta $0330.w
-/*unknown_81_8eb2:*/ ldx $0330.w
-/*unknown_81_8eb5:*/ ldy #$0000.w
-@unknown_81_8eb8: lda [$00], Y
-/*unknown_81_8eba:*/ cmp #$ffff.w
-/*unknown_81_8ebd:*/ beq @unknown_81_8edd
-/*unknown_81_8ebf:*/ sta $d0, X
-/*unknown_81_8ec1:*/ iny
-/*unknown_81_8ec2:*/ iny
-/*unknown_81_8ec3:*/ lda [$00], Y
-/*unknown_81_8ec5:*/ sta $d2, X
-/*unknown_81_8ec7:*/ iny
-/*unknown_81_8ec8:*/ iny
-/*unknown_81_8ec9:*/ lda [$00], Y
-/*unknown_81_8ecb:*/ sta $d4, X
-/*unknown_81_8ecd:*/ iny
-/*unknown_81_8ece:*/ iny
-/*unknown_81_8ecf:*/ lda [$00], Y
-/*unknown_81_8ed1:*/ sta $d5, X
-/*unknown_81_8ed3:*/ txa
-/*unknown_81_8ed4:*/ clc
-/*unknown_81_8ed5:*/ adc #$0007.w
-/*unknown_81_8ed8:*/ tax
-/*unknown_81_8ed9:*/ iny
-/*unknown_81_8eda:*/ iny
-/*unknown_81_8edb:*/ bra @unknown_81_8eb8
-@unknown_81_8edd: stx $0330.w
-/*unknown_81_8ee0:*/ rtl
+unknown_81_8e7f:
+  ldx #0
+  lda #$000f
+@unknown_81_8e85:
+  sta var_unknown_3800.l, X
+  inx
+  inx
+  cpx #_sizeof_var_unknown_3800
+  bmi @unknown_81_8e85
+  ldx var_vram_write_queue_tail.w
+  lda #_sizeof_var_unknown_3800
+  sta var_vram_write_queue.copy_size, X
+  lda #var_unknown_3800
+  sta var_vram_write_queue.source_address, X
+  lda #var_unknown_3800 >> 16
+  sta var_vram_write_queue.source_address_bank, X
+  lda var_unknown_58
+  and #$00fc.w
+  xba
+  sta var_vram_write_queue.vram_address, X
+  txa
+  clc
+  adc #vram_write_queue@entry@size
+  sta var_vram_write_queue_tail.w
+  ldx var_vram_write_queue_tail.w
+  ldy #0
+@unknown_81_8eb8:
+  lda [var_unknown_00], Y
+  cmp #$ffff
+  beq @unknown_81_8edd
+  sta var_vram_write_queue.copy_size, X
+  iny
+  iny
+  lda [var_unknown_00], Y
+  sta var_vram_write_queue.source_address, X
+  iny
+  iny
+  lda [var_unknown_00], Y
+  sta var_vram_write_queue.source_address_bank, X
+  iny
+  iny
+  lda [var_unknown_00], Y
+  sta var_vram_write_queue.vram_address, X
+  txa
+  clc
+  adc #vram_write_queue@entry@size
+  tax
+  iny
+  iny
+  bra @unknown_81_8eb8
+@unknown_81_8edd:
+  stx var_vram_write_queue_tail.w
+  rtl
 
 unknown_81_8ee1:
   rti

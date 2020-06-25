@@ -272,9 +272,9 @@ var_unknown_bf_h: db ; $7e00c0
 .endu
 .ende
 
-.define vram_write_queue_count 0 ; TODO. The vram_write_queue array seems to be 0-terminated.
+.define vram_write_queue_count 1 ; TODO. The vram_write_queue array seems to be 0-terminated.
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00d0) export
-var_vram_write_queue: ds vram_write_queue@entry@size * vram_write_queue_count ; $7e00d0
+var_vram_write_queue: instanceof vram_write_queue@entry * vram_write_queue_count ; $7e00d0
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $00e7) export
@@ -1104,6 +1104,10 @@ var_unknown_1f59: dw ; $7e1f59
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3300) export
 var_unknown_3300: dsw $100 ; $7e3300
 var_unknown_3500: dsw $1b ; $7e3500
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $3800) export
+var_unknown_3800: dsw $400 ; $7e3800
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3a8e) export
