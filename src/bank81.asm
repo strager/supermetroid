@@ -2529,13 +2529,15 @@ unknown_81_93a0:
   .dw $0037, $000f, $0010, $000f, $008a, $0070, $0078, $000f
   .dw $007d, $0078, $000f, $007d, $0072, $007d, $0075, $006e, $008b, $ffff
 
-unknown_81_93e8: rep #$30
-/*unknown_81_93ea:*/ jsr $808ef4
-/*unknown_81_93ee:*/ bcs @unknown_81_93fa
-/*unknown_81_93f0:*/ inc $0727.w
-/*unknown_81_93f3:*/ lda #$0004.w
-/*unknown_81_93f6:*/ jsr $808fc1
-@unknown_81_93fa: rts
+unknown_81_93e8:
+  rep #$30
+  jsr unknown_80_8ef4.l
+  bcs @unknown_81_93fa
+  inc var_unknown_0727.w
+  lda #$0004.w
+  jsr unknown_80_8fc1.l
+@unknown_81_93fa:
+  rts
 
 unknown_81_93fb: rep #$30
 /*unknown_81_93fd:*/ phb
