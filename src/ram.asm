@@ -122,7 +122,10 @@ var_unknown_50: db ; $7e0050
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $51) export
-var_unknown_51: db ; $7e0051
+.union
+var_unknown_51: dsb $36 ; $7e0051
+.nextu
+var_unknown_51_padding: db ; $7e0051
 var_unknown_52: db ; $7e0052
 var_unknown_53: db ; $7e0053
 var_unknown_54: db ; $7e0054
@@ -173,6 +176,7 @@ var_unknown_80: db ; $7e0080
 var_unknown_81: db ; $7e0081
 var_unknown_82: db ; $7e0082
 var_unknown_83: db ; $7e0083
+.endu
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $84) export

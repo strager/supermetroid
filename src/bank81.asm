@@ -2201,21 +2201,24 @@ unknown_81_9003:
   stx var_oam_objects_tail.w
   rts
 
-unknown_81_905b: ldx #$0000.w
-@unknown_81_905e: lda $7e3300, X
-/*unknown_81_9062:*/ sta $7ec000, X
-/*unknown_81_9066:*/ inx
-/*unknown_81_9067:*/ inx
-/*unknown_81_9068:*/ cpx #$0200.w
-/*unknown_81_906b:*/ bmi @unknown_81_905e
-/*unknown_81_906d:*/ ldx #$0000.w
-@unknown_81_9070: lda $7e3500, X
-/*unknown_81_9074:*/ sta $51, X
-/*unknown_81_9076:*/ inx
-/*unknown_81_9077:*/ inx
-/*unknown_81_9078:*/ cpx #$0036.w
-/*unknown_81_907b:*/ bmi @unknown_81_9070
-/*unknown_81_907d:*/ rts
+unknown_81_905b:
+  ldx #0
+@unknown_81_905e:
+  lda var_unknown_3300.l, X
+  sta var_color_palette.l, X
+  inx
+  inx
+  cpx #var_color_palette@size
+  bmi @unknown_81_905e
+  ldx #0
+@unknown_81_9070:
+  lda var_unknown_3500.l, X
+  sta var_unknown_51, X
+  inx
+  inx
+  cpx #_sizeof_var_unknown_51
+  bmi @unknown_81_9070
+  rts
 
 unknown_81_907e: sep #$30
 /*unknown_81_9080:*/ lda #$00
