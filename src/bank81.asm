@@ -2257,24 +2257,24 @@ unknown_81_90ae:
   plb
   rtl
 
-unknown_81_90bd: ora $91a48d
-/*unknown_81_90c1:*/ inx
-/*unknown_81_90c2:*/ sta ($cd, S), Y
-/*unknown_81_90c4:*/ bcc $2b ; $90f1.w
-/*unknown_81_90c6:*/ sta ($e7), Y
-/*unknown_81_90c8:*/ bcc @unknown_81_90e0
-/*unknown_81_90ca:*/ sta ($fe), Y
-/*unknown_81_90cc:*/ bcc $22 ; $90f0.w
-/*unknown_81_90ce:*/ adc $bb, X
-/*unknown_81_90d0:*/ brl $6e22 ; $fef5.w
-/*unknown_81_90d3:*/ tsx
-/*unknown_81_90d4:*/ brl $4d22 ; $ddf9.w
-/*unknown_81_90d7:*/ bit #$a580.w
-/*unknown_81_90da:*/ eor ($29), Y
-/*unknown_81_90dc:*/ ora $0fc900
-@unknown_81_90e0: brk $d0
-/*unknown_81_90e2:*/ ora $ee, S
-/*unknown_81_90e4:*/ and [$07]
+unknown_81_90bd:
+  .dw $8d0f
+  .dw $91a4
+  .dw $93e8
+  .dw $90cd
+  .dw $912b
+  .dw $90e7
+  .dw $9116
+  .dw $90fe
+
+/*unknown_81_90cd:*/ jsr $82bb75
+/*unknown_81_90d1:*/ jsr $82ba6e
+/*unknown_81_90d5:*/ jsr $80894d
+/*unknown_81_90d9:*/ lda $51
+/*unknown_81_90db:*/ and #$000f.w
+/*unknown_81_90de:*/ cmp #$000f.w
+/*unknown_81_90e1:*/ bne $03 ; $90e6.w
+/*unknown_81_90e3:*/ inc $0727.w
 /*unknown_81_90e6:*/ rts
 
 /*unknown_81_90e7:*/ jsr $82bb75
