@@ -1871,15 +1871,16 @@ unknown_81_8dba:
   sta var_unknown_69
   rts
 
-unknown_81_8ddb: php
-/*unknown_81_8ddc:*/ sep #$30
-/*unknown_81_8dde:*/ lda #$00
-/*unknown_81_8de0:*/ sta IO_VMADDL
-/*unknown_81_8de3:*/ lda #$00
-/*unknown_81_8de5:*/ sta IO_VMADDH
-/*unknown_81_8de8:*/ lda #IO_VMAIN_INCREMENT_HIGH
-/*unknown_81_8dea:*/ sta IO_VMAIN
-/*unknown_81_8ded:*/ jsl start_dma_copy
+unknown_81_8ddb:
+  php
+  sep #$30
+  lda #$00
+  sta IO_VMADDL
+  lda #$00
+  sta IO_VMADDH
+  lda #IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
+  jsl start_dma_copy
 .dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
@@ -1888,15 +1889,15 @@ a1: .dl unknown_8e_8000
 das: .dw unknown_8e_8000@size + unknown_8e_c000@size
 .ENDST
 
-/*unknown_81_8df9:*/ lda #$02
-/*unknown_81_8dfb:*/ sta $420b.w
-/*unknown_81_8dfe:*/ lda #$00
-/*unknown_81_8e00:*/ sta IO_VMADDL
-/*unknown_81_8e03:*/ lda #$30
-/*unknown_81_8e05:*/ sta IO_VMADDH
-/*unknown_81_8e08:*/ lda #IO_VMAIN_INCREMENT_HIGH
-/*unknown_81_8e0a:*/ sta IO_VMAIN
-/*unknown_81_8e0d:*/ jsl start_dma_copy
+  lda #$02
+  sta IO_MDMAEN
+  lda #$00
+  sta IO_VMADDL
+  lda #$30
+  sta IO_VMADDH
+  lda #IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
+  jsl start_dma_copy
 .dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
@@ -1905,15 +1906,15 @@ a1: .dl unknown_b6_8000
 das: .dw unknown_b6_8000@size
 .ENDST
 
-/*unknown_81_8e19:*/ lda #$02
-/*unknown_81_8e1b:*/ sta $420b.w
-/*unknown_81_8e1e:*/ lda #$00
-/*unknown_81_8e20:*/ sta IO_VMADDL
-/*unknown_81_8e23:*/ lda #$60
-/*unknown_81_8e25:*/ sta IO_VMADDH
-/*unknown_81_8e28:*/ lda #IO_VMAIN_INCREMENT_HIGH
-/*unknown_81_8e2a:*/ sta IO_VMAIN
-/*unknown_81_8e2d:*/ jsl start_dma_copy
+  lda #$02
+  sta IO_MDMAEN
+  lda #$00
+  sta IO_VMADDL
+  lda #$60
+  sta IO_VMADDH
+  lda #IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
+  jsl start_dma_copy
 .dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
@@ -1922,15 +1923,15 @@ a1: .dl unknown_b6_c000
 das: .dw unknown_b6_c000@size
 .ENDST
 
-/*unknown_81_8e39:*/ lda #$02
-/*unknown_81_8e3b:*/ sta $420b.w
-/*unknown_81_8e3e:*/ lda #$00
-/*unknown_81_8e40:*/ sta IO_VMADDL
-/*unknown_81_8e43:*/ lda #$40
-/*unknown_81_8e45:*/ sta IO_VMADDH
-/*unknown_81_8e48:*/ lda #IO_VMAIN_INCREMENT_HIGH
-/*unknown_81_8e4a:*/ sta IO_VMAIN
-/*unknown_81_8e4d:*/ jsl start_dma_copy
+  lda #$02
+  sta IO_MDMAEN
+  lda #$00
+  sta IO_VMADDL
+  lda #$40
+  sta IO_VMADDH
+  lda #IO_VMAIN_INCREMENT_HIGH
+  sta IO_VMAIN
+  jsl start_dma_copy
 .dstruct instanceof start_dma_copy@parameters values
 channel_index: .db 1
 dmap: .db IO_DMAP_CPU_TO_IO | IO_DMAP_MODE_1_VRAM
@@ -1939,10 +1940,10 @@ a1: .dl unknown_8e_d600
 das: .dw unknown_8e_d600@size
 .ENDST
 
-/*unknown_81_8e59:*/ lda #$02
-/*unknown_81_8e5b:*/ sta $420b.w
-/*unknown_81_8e5e:*/ plp
-/*unknown_81_8e5f:*/ rts
+  lda #$02
+  sta IO_MDMAEN
+  plp
+  rts
 
 unknown_81_8e60: rep #$30
 /*unknown_81_8e62:*/ ldx #$0000.w
