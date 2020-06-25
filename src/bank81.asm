@@ -1775,44 +1775,47 @@ unknown_81_8d03:
   .dw unknown_81_8da6
   .dw unknown_81_907e
 
-unknown_81_8d0f: rep #$30
-/*unknown_81_8d11:*/ jsr $808924
-/*unknown_81_8d15:*/ lda $51
-/*unknown_81_8d17:*/ and #$000f.w
-/*unknown_81_8d1a:*/ beq $01 ; $8d1d.w
-/*unknown_81_8d1c:*/ rts
-
-/*unknown_81_8d1d:*/ jsr $80836f
-/*unknown_81_8d21:*/ lda #$0001.w
-/*unknown_81_8d24:*/ jsr $80914d
-/*unknown_81_8d28:*/ jsr $888293
-/*unknown_81_8d2c:*/ jsr $88829e
-/*unknown_81_8d30:*/ ldx #$0000.w
-@unknown_81_8d33: lda $7ec000, X
-/*unknown_81_8d37:*/ sta $7e3300, X
-/*unknown_81_8d3b:*/ inx
-/*unknown_81_8d3c:*/ inx
-/*unknown_81_8d3d:*/ cpx #$0200.w
-/*unknown_81_8d40:*/ bmi @unknown_81_8d33
-/*unknown_81_8d42:*/ ldx #$0000.w
-@unknown_81_8d45: lda $51, X
-/*unknown_81_8d47:*/ sta $7e3500, X
-/*unknown_81_8d4b:*/ inx
-/*unknown_81_8d4c:*/ inx
-/*unknown_81_8d4d:*/ cpx #$0036.w
-/*unknown_81_8d50:*/ bmi @unknown_81_8d45
-/*unknown_81_8d52:*/ jsr unknown_81_8dba
-/*unknown_81_8d55:*/ jsr unknown_81_8ddb
-/*unknown_81_8d58:*/ rep #$30
-/*unknown_81_8d5a:*/ stz $b1
-/*unknown_81_8d5c:*/ stz $b5
-/*unknown_81_8d5e:*/ stz $b9
-/*unknown_81_8d60:*/ stz $b3
-/*unknown_81_8d62:*/ stz $b7
-/*unknown_81_8d64:*/ stz $bb
-/*unknown_81_8d66:*/ jsr unknown_81_8e60
-/*unknown_81_8d69:*/ inc $0727.w
-/*unknown_81_8d6c:*/ rts
+unknown_81_8d0f:
+  rep #$30
+  jsr unknown_80_8924.l
+  lda var_unknown_51
+  and #$000f.w
+  beq @unknown_81_8d1d
+  rts
+@unknown_81_8d1d:
+  jsr unknown_80_836f.l
+  lda #$0001.w
+  jsr unknown_80_914d.l
+  jsr unknown_88_8293.l
+  jsr unknown_88_829e.l
+  ldx #0
+@unknown_81_8d33:
+  lda var_color_palette.l, X
+  sta var_unknown_3300.l, X
+  inx
+  inx
+  cpx #_sizeof_var_unknown_3300
+  bmi @unknown_81_8d33
+  ldx #0
+@unknown_81_8d45:
+  lda var_unknown_51, X
+  sta var_unknown_3500.l, X
+  inx
+  inx
+  cpx #_sizeof_var_unknown_3500
+  bmi @unknown_81_8d45
+  jsr unknown_81_8dba
+  jsr unknown_81_8ddb
+  rep #$30
+  stz var_unknown_b1
+  stz var_unknown_b5
+  stz var_unknown_b9
+  stz var_unknown_b3
+  stz var_unknown_b7
+  stz var_unknown_bb
+  jsr unknown_81_8e60
+  inc var_unknown_0727.w
+  rts
 
 unknown_81_8d6d: rep #$30
 /*unknown_81_8d6f:*/ lda #$0000.w

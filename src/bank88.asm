@@ -370,7 +370,7 @@ unknown_88_81fe: rep #$30
 /*unknown_88_8291:*/ plp
 /*unknown_88_8292:*/ rtl
 
-/*unknown_88_8293:*/ php
+unknown_88_8293: php
 /*unknown_88_8294:*/ rep #$20
 /*unknown_88_8296:*/ lda #$8000.w
 /*unknown_88_8299:*/ trb $18b0.w

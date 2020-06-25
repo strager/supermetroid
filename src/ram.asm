@@ -1100,6 +1100,11 @@ unknown_1ef5_vmadd: dsw unknown_1ef5_count ; $7e1f3d
 var_unknown_1f59: dw ; $7e1f59
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $3300) export
+var_unknown_3300: dsw $100 ; $7e3300
+var_unknown_3500: dsw $1b ; $7e3500
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3a8e) export
 var_unknown_3a8e: dsw $8 ; $7e3a8e
 .ende
