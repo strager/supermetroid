@@ -2752,13 +2752,15 @@ unknown_81_9593: lda $0954.w
 @unknown_81_95a2: sty $19b5.w
 /*unknown_81_95a5:*/ rts
 
-unknown_81_95a6: ldx #$07fe.w
-/*unknown_81_95a9:*/ lda #$000f.w
-@unknown_81_95ac: sta $7e3600, X
-/*unknown_81_95b0:*/ dex
-/*unknown_81_95b1:*/ dex
-/*unknown_81_95b2:*/ bpl @unknown_81_95ac
-/*unknown_81_95b4:*/ rts
+unknown_81_95a6:
+  ldx #_sizeof_var_unknown_3600 - 2
+  lda #$000f.w
+@unknown_81_95ac:
+  sta var_unknown_3600.l, X
+  dex
+  dex
+  bpl @unknown_81_95ac
+  rts
 
 unknown_81_95b5: ldy #$b4ee.w
 /*unknown_81_95b8:*/ ldx #$0688.w
