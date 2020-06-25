@@ -2310,53 +2310,56 @@ unknown_81_9116:
   sta var_unknown_0727.w
   rts
 
-unknown_81_912b: rep #$30
-/*unknown_81_912d:*/ jsr $82bb75
-/*unknown_81_9131:*/ jsr $82ba6e
-/*unknown_81_9135:*/ lda $8f
-/*unknown_81_9137:*/ bit #$2000.w
-/*unknown_81_913a:*/ bne @unknown_81_917c
-/*unknown_81_913c:*/ bit #$0800.w
-/*unknown_81_913f:*/ bne @unknown_81_917c
-/*unknown_81_9141:*/ bit #$0400.w
-/*unknown_81_9144:*/ bne @unknown_81_917c
-/*unknown_81_9146:*/ bit #$0080.w
-/*unknown_81_9149:*/ beq @unknown_81_918c
-/*unknown_81_914b:*/ lda #$00b4.w
-/*unknown_81_914e:*/ sta $0f94.w
-/*unknown_81_9151:*/ lda $0950.w
-/*unknown_81_9154:*/ beq @unknown_81_915d
-/*unknown_81_9156:*/ lda #$0007.w
-/*unknown_81_9159:*/ sta $0727.w
-/*unknown_81_915c:*/ rts
-
-@unknown_81_915d: lda $7ed914
-/*unknown_81_9161:*/ cmp #$001f.w
-/*unknown_81_9164:*/ beq @unknown_81_9171
-/*unknown_81_9166:*/ inc $0727.w
-/*unknown_81_9169:*/ lda $0952.w
-/*unknown_81_916c:*/ jsr $818085
-/*unknown_81_9170:*/ rts
-
-@unknown_81_9171: sta $0998.w
-/*unknown_81_9174:*/ lda $0952.w
-/*unknown_81_9177:*/ jsr $818085
-/*unknown_81_917b:*/ rts
-
-@unknown_81_917c: lda #$0037.w
-/*unknown_81_917f:*/ jsr $809049
-/*unknown_81_9183:*/ lda $0950.w
-/*unknown_81_9186:*/ eor #$0001.w
-/*unknown_81_9189:*/ sta $0950.w
-@unknown_81_918c: ldx #$0028.w
-/*unknown_81_918f:*/ ldy #$00a0.w
-/*unknown_81_9192:*/ lda $0950.w
-/*unknown_81_9195:*/ beq @unknown_81_919d
-/*unknown_81_9197:*/ ldx #$0028.w
-/*unknown_81_919a:*/ ldy #$00c0.w
-@unknown_81_919d: stx $19a1.w
-/*unknown_81_91a0:*/ sty $19ab.w
-/*unknown_81_91a3:*/ rts
+unknown_81_912b:
+  rep #$30
+  jsr unknown_82_bb75.l
+  jsr unknown_82_ba6e.l
+  lda var_new_pressed_buttons
+  bit #IO_JOY_SELECT
+  bne @unknown_81_917c
+  bit #IO_JOY_UP
+  bne @unknown_81_917c
+  bit #IO_JOY_DOWN
+  bne @unknown_81_917c
+  bit #IO_JOY_A
+  beq @unknown_81_918c
+  lda #$00b4.w
+  sta var_unknown_0f94.w
+  lda var_unknown_0950.w
+  beq @unknown_81_915d
+  lda #$0007.w
+  sta var_unknown_0727.w
+  rts
+@unknown_81_915d:
+  lda var_save.unknown_0154.l
+  cmp #$001f.w
+  beq @unknown_81_9171
+  inc var_unknown_0727.w
+  lda var_unknown_0952.w
+  jsr load_from_sram.l
+  rts
+@unknown_81_9171:
+  sta var_game_state.w
+  lda var_unknown_0952.w
+  jsr load_from_sram.l
+  rts
+@unknown_81_917c:
+  lda #$0037.w
+  jsr unknown_80_9049.l
+  lda var_unknown_0950.w
+  eor #$0001.w
+  sta var_unknown_0950.w
+@unknown_81_918c:
+  ldx #$0028.w
+  ldy #$00a0.w
+  lda var_unknown_0950.w
+  beq @unknown_81_919d
+  ldx #$0028.w
+  ldy #$00c0.w
+@unknown_81_919d:
+  stx var_unknown_19a1.w
+  sty var_unknown_19ab.w
+  rts
 
 unknown_81_91a4: sep #$20
 /*unknown_81_91a6:*/ lda #$11

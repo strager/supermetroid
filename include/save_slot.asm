@@ -12,8 +12,9 @@ padding_0139: dsb $f ; $7ed8f9
 
 unknown_0148: dw ; $7ed908
 
-padding_014a: dsb $c ; $7ed90a
+padding_014a: dsb $a ; $7ed90a
 
+unknown_0154: dw ; $7ed914
 save_station_index: dw ; $7ed916
 area_index: dw ; $7ed918
 unknown_015a: dw ; $7ed91a
