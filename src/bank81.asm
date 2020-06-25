@@ -2539,48 +2539,54 @@ unknown_81_93e8:
 @unknown_81_93fa:
   rts
 
-unknown_81_93fb: rep #$30
-/*unknown_81_93fd:*/ phb
-/*unknown_81_93fe:*/ phk
-/*unknown_81_93ff:*/ plb
-/*unknown_81_9400:*/ lda $0727.w
-/*unknown_81_9403:*/ asl A
-/*unknown_81_9404:*/ tax
-/*unknown_81_9405:*/ jsr ($940a.w, X)
-/*unknown_81_9408:*/ plb
-/*unknown_81_9409:*/ rtl
+unknown_81_93fb:
+  rep #$30
+  phb
+  phk
+  plb
+  lda var_unknown_0727.w
+  asl A
+  tax
+  jsr (unknown_81_940a, X)
+  plb
+  rtl
 
-/*unknown_81_940a:*/ lsr $9394.w
-/*unknown_81_940d:*/ stz $9ed6.w, X
-/*unknown_81_9410:*/ cli
-/*unknown_81_9411:*/ ldy #$a1c2.w
-/*unknown_81_9414:*/ inc $6194.w
-/*unknown_81_9417:*/ sta $32, X
-/*unknown_81_9419:*/ sta $c2, X
-/*unknown_81_941b:*/ stx $7a, Y
-/*unknown_81_941d:*/ sta [$13], Y
-/*unknown_81_941f:*/ tya
-/*unknown_81_9420:*/ lda [$98], Y
-/*unknown_81_9422:*/ sty $99
-/*unknown_81_9424:*/ bit $fa9a.w
-/*unknown_81_9427:*/ txs
-/*unknown_81_9428:*/ pea $f394.w
-/*unknown_81_942b:*/ stz $951e.w, X
-/*unknown_81_942e:*/ plp
-/*unknown_81_942f:*/ txy
-/*unknown_81_9430:*/ inc $3394.w
-/*unknown_81_9433:*/ txy
-/*unknown_81_9434:*/ and ($95)
-/*unknown_81_9436:*/ stz $9b
-/*unknown_81_9438:*/ phd
-/*unknown_81_9439:*/ stz $9c36.w
-/*unknown_81_943c:*/ stz $269c.w, X
-/*unknown_81_943f:*/ sta $94f4.w, X
-/*unknown_81_9442:*/ sbc ($9e, S), Y
-/*unknown_81_9444:*/ asl $6895.w, X
-/*unknown_81_9447:*/ sta $9d77.w, X
-/*unknown_81_944a:*/ lda $94, S
-/*unknown_81_944c:*/ cmp $94, X
+unknown_81_940a:
+  .dw $944e
+  .dw $9e93
+  .dw $9ed6
+  .dw $a058
+  .dw $a1c2
+  .dw $94ee
+  .dw $9561
+  .dw $9532
+  .dw $96c2
+  .dw $977a
+  .dw $9813
+  .dw $98b7
+  .dw $9984
+  .dw $9a2c
+  .dw $9afa
+  .dw $94f4
+  .dw $9ef3
+  .dw $951e
+  .dw $9b28
+  .dw $94ee
+  .dw $9b33
+  .dw $9532
+  .dw $9b64
+  .dw $9c0b
+  .dw $9c36
+  .dw $9c9e
+  .dw $9d26
+  .dw $94f4
+  .dw $9ef3
+  .dw $951e
+  .dw $9d68
+  .dw $9d77
+  .dw $94a3
+  .dw $94d5
+
 /*unknown_81_944e:*/ rep #$30
 /*unknown_81_9450:*/ jsr $808924
 /*unknown_81_9454:*/ lda $51
