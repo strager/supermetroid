@@ -7235,8 +7235,9 @@ unknown_82_b9fc: lda $0778.w
 /*unknown_82_ba2e:*/ brk $60
 /*unknown_82_ba30:*/ brk $61
 /*unknown_82_ba32:*/ brk $60
-/*unknown_82_ba34:*/ brk $a9
-/*unknown_82_ba36:*/ brk $0e
+/*unknown_82_ba34:*/ .db $00
+
+unknown_82_ba35: lda #$0e00.w
 /*unknown_82_ba38:*/ sta $03
 /*unknown_82_ba3a:*/ ldx #$0080.w
 /*unknown_82_ba3d:*/ ldy #$0010.w

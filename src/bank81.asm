@@ -2625,25 +2625,28 @@ unknown_81_9486:
   bmi @unknown_81_9489
   rts
 
-unknown_81_94a3: rep #$30
-/*unknown_81_94a5:*/ jsr $82ba6e
-/*unknown_81_94a9:*/ jsr $82ba35
-/*unknown_81_94ad:*/ jsr unknown_81_9dc3
-/*unknown_81_94b0:*/ jsr $808924
-/*unknown_81_94b4:*/ lda $51
-/*unknown_81_94b6:*/ and #$000f.w
-/*unknown_81_94b9:*/ bne @unknown_81_94d4
-/*unknown_81_94bb:*/ lda #$0002.w
-/*unknown_81_94be:*/ sta $0998.w
-/*unknown_81_94c1:*/ stz $0727.w
-/*unknown_81_94c4:*/ ldy #$0000.w
-/*unknown_81_94c7:*/ lda #$0000.w
-@unknown_81_94ca: sta $198d.w, Y
-/*unknown_81_94cd:*/ iny
-/*unknown_81_94ce:*/ iny
-/*unknown_81_94cf:*/ cpy #$0030.w
-/*unknown_81_94d2:*/ bmi @unknown_81_94ca
-@unknown_81_94d4: rts
+unknown_81_94a3:
+  rep #$30
+  jsr unknown_82_ba6e.l
+  jsr unknown_82_ba35.l
+  jsr unknown_81_9dc3
+  jsr unknown_80_8924.l
+  lda var_unknown_51
+  and #$000f.w
+  bne @unknown_81_94d4
+  lda #game_state_unknown_02
+  sta var_game_state.w
+  stz var_unknown_0727.w
+  ldy #$0000.w
+  lda #$0000.w
+@unknown_81_94ca:
+  sta var_unknown_198d.w, Y
+  iny
+  iny
+  cpy #$0030.w
+  bmi @unknown_81_94ca
+@unknown_81_94d4:
+  rts
 
 unknown_81_94d5: rep #$30
 /*unknown_81_94d7:*/ jsr $82ba35
