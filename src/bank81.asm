@@ -2663,6 +2663,7 @@ unknown_81_94d5:
 unknown_81_94ee:
   rep #$30
   jsr unknown_82_ba6e.l
+  ; Fall through.
 unknown_81_94f4:
   jsr unknown_80_8924.l
   lda var_unknown_57
@@ -2685,37 +2686,40 @@ unknown_81_94f4:
 @unknown_81_951d:
   rts
 
-unknown_81_951e: rep #$30
-/*unknown_81_9520:*/ lda $0952.w
-/*unknown_81_9523:*/ asl A
-/*unknown_81_9524:*/ asl A
-/*unknown_81_9525:*/ tax
-/*unknown_81_9526:*/ lda $a312.w, X
-/*unknown_81_9529:*/ sta $19ab.w
-/*unknown_81_952c:*/ lda $a314.w, X
-/*unknown_81_952f:*/ sta $19a1.w
-
-unknown_81_9532: rep #$30
-/*unknown_81_9534:*/ jsr $82ba6e
-/*unknown_81_9538:*/ jsr $80894d
-/*unknown_81_953c:*/ lda $57
-/*unknown_81_953e:*/ and #$ff0f.w
-/*unknown_81_9541:*/ sta $12
-/*unknown_81_9543:*/ lda $51
-/*unknown_81_9545:*/ and #$000f.w
-/*unknown_81_9548:*/ asl A
-/*unknown_81_9549:*/ asl A
-/*unknown_81_954a:*/ asl A
-/*unknown_81_954b:*/ asl A
-/*unknown_81_954c:*/ eor #$00f0.w
-/*unknown_81_954f:*/ ora $12
-/*unknown_81_9551:*/ sta $57
-/*unknown_81_9553:*/ lda $51
-/*unknown_81_9555:*/ and #$000f.w
-/*unknown_81_9558:*/ cmp #$000f.w
-/*unknown_81_955b:*/ bne @unknown_81_9560
-/*unknown_81_955d:*/ inc $0727.w
-@unknown_81_9560: rts
+unknown_81_951e:
+  rep #$30
+  lda var_unknown_0952.w
+  asl A
+  asl A
+  tax
+  lda unknown_81_a312.w, X
+  sta var_unknown_19ab.w
+  lda unknown_81_a312.w + 2, X
+  sta var_unknown_19a1.w
+  ; Fall through.
+unknown_81_9532:
+  rep #$30
+  jsr unknown_82_ba6e.l
+  jsr unknown_80_894d.l
+  lda var_unknown_57
+  and #$ff0f.w
+  sta var_unknown_12
+  lda var_unknown_51
+  and #$000f.w
+  asl A
+  asl A
+  asl A
+  asl A
+  eor #$00f0.w
+  ora var_unknown_12
+  sta var_unknown_57
+  lda var_unknown_51
+  and #$000f.w
+  cmp #$000f.w
+  bne @unknown_81_9560
+  inc var_unknown_0727.w
+@unknown_81_9560:
+  rts
 
 unknown_81_9561: rep #$30
 /*unknown_81_9563:*/ inc $0727.w
@@ -4151,7 +4155,7 @@ unknown_81_a1c2: rep #$30
 /*unknown_81_a30e:*/ sta $0727.w
 @unknown_81_a311: rts
 
-/*unknown_81_a312:*/ bmi @unknown_81_a314
+unknown_81_a312: bmi @unknown_81_a314
 @unknown_81_a314: asl $5800.w
 /*unknown_81_a317:*/ brk $0e
 /*unknown_81_a319:*/ brk $80
