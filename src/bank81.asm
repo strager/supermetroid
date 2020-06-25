@@ -2945,21 +2945,22 @@ unknown_81_96c2:
 unknown_81_975b:
   .db $01, $02, $04
 
-unknown_81_975e: rep #$30
-/*unknown_81_9760:*/ lda $19b5.w
-/*unknown_81_9763:*/ asl A
-/*unknown_81_9764:*/ tax
-/*unknown_81_9765:*/ lda $9772.w, X
-/*unknown_81_9768:*/ sta $19ab.w
-/*unknown_81_976b:*/ lda #$0016.w
-/*unknown_81_976e:*/ sta $19a1.w
-/*unknown_81_9771:*/ rts
+unknown_81_975e:
+  rep #$30
+  lda var_unknown_19b5.w
+  asl A
+  tax
+  lda unknown_81_9772.w, X
+  sta var_unknown_19ab.w
+  lda #$0016.w
+  sta var_unknown_19a1.w
+  rts
 
-/*unknown_81_9772:*/ pha
-/*unknown_81_9773:*/ brk $68
-/*unknown_81_9775:*/ brk $88
-/*unknown_81_9777:*/ brk $d3
-/*unknown_81_9779:*/ .db $00
+unknown_81_9772:
+  .dw $0048
+  .dw $0068
+  .dw $0088
+  .dw $00d3
 
 unknown_81_977a: rep #$30
 /*unknown_81_977c:*/ jsr $82ba48
