@@ -1030,8 +1030,10 @@ var_unknown_0e14: dw ; $7e0e14
 var_unknown_0e16: dw ; $7e0e16
 .ende
 
-.enum (MEM_LOW_HIGH_RAM_BEGIN + $0f94) export
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $0f92) export
+var_unknown_0f92: dw ; $7e0f92
 var_unknown_0f94: dw ; $7e0f94
+var_unknown_0f96: dw ; $7e0f96
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $179c) export
@@ -1066,6 +1068,14 @@ var_unknown_196e: dw ; $7e196e
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $197e) export
 var_unknown_197e: dw ; $7e197e
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $198d) export
+var_unknown_198d: dw ; $7e198d
+.ende
+
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $1997) export
+var_unknown_1997: dw ; $7e1997
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $19a1) export
@@ -1120,6 +1130,11 @@ var_unknown_1f59: dw ; $7e1f59
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3300) export
 var_unknown_3300: dsw $100 ; $7e3300
 var_unknown_3500: dsw $1b ; $7e3500
+.ende
+
+; TODO: Fix overlap between var_unknown_3600 and var_unknown_3800.
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $3600) export
+var_unknown_3600: dsw $400 ; $7e3600
 .ende
 
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $3800) export

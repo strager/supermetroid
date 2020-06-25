@@ -364,7 +364,7 @@ unknown_88_81fe: rep #$30
 /*unknown_88_8285:*/ sta $6b
 /*unknown_88_8287:*/ rts
 
-/*unknown_88_8288:*/ php
+unknown_88_8288: php
 /*unknown_88_8289:*/ rep #$20
 /*unknown_88_828b:*/ lda #$8000.w
 /*unknown_88_828e:*/ tsb $18b0.w
