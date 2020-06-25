@@ -2159,43 +2159,47 @@ unknown_81_8ee1:
 /*unknown_81_9000:*/ brk $0f
   .db $00
 
-unknown_81_9003: rep #$30
-/*unknown_81_9005:*/ lda $8f
-/*unknown_81_9007:*/ bit #$2000.w
-/*unknown_81_900a:*/ bne @unknown_81_902f
-/*unknown_81_900c:*/ bit #$0800.w
-/*unknown_81_900f:*/ bne @unknown_81_902f
-/*unknown_81_9011:*/ bit #$0400.w
-/*unknown_81_9014:*/ bne @unknown_81_902f
-/*unknown_81_9016:*/ bit #$9080.w
-/*unknown_81_9019:*/ beq @unknown_81_9038
-/*unknown_81_901b:*/ lda $0950.w
-/*unknown_81_901e:*/ bne @unknown_81_902b
-/*unknown_81_9020:*/ lda $0952.w
-/*unknown_81_9023:*/ jsr $818000
-/*unknown_81_9027:*/ jmp $808462
-@unknown_81_902b: inc $0727.w
-/*unknown_81_902e:*/ rts
-
-@unknown_81_902f: lda $0950.w
-/*unknown_81_9032:*/ eor #$0001.w
-/*unknown_81_9035:*/ sta $0950.w
-@unknown_81_9038: ldx #$7800.w
-/*unknown_81_903b:*/ lda $0950.w
-/*unknown_81_903e:*/ beq @unknown_81_9043
-/*unknown_81_9040:*/ ldx #$8800.w
-@unknown_81_9043: txa
-/*unknown_81_9044:*/ ora #$0028.w
-/*unknown_81_9047:*/ ldx $0590.w
-/*unknown_81_904a:*/ sta $0370.w, X
-/*unknown_81_904d:*/ lda #$00b6.w
-/*unknown_81_9050:*/ sta $0372.w, X
-/*unknown_81_9053:*/ inx
-/*unknown_81_9054:*/ inx
-/*unknown_81_9055:*/ inx
-/*unknown_81_9056:*/ inx
-/*unknown_81_9057:*/ stx $0590.w
-/*unknown_81_905a:*/ rts
+unknown_81_9003:
+  rep #$30
+  lda var_new_pressed_buttons
+  bit #IO_JOY_SELECT
+  bne @unknown_81_902f
+  bit #IO_JOY_UP
+  bne @unknown_81_902f
+  bit #IO_JOY_DOWN
+  bne @unknown_81_902f
+  bit #IO_JOY_A | IO_JOY_B | IO_JOY_START
+  beq @unknown_81_9038
+  lda var_unknown_0950.w
+  bne @unknown_81_902b
+  lda var_unknown_0952.w
+  jsr save_to_sram.l
+  jmp unknown_80_8462.l
+@unknown_81_902b:
+  inc var_unknown_0727.w
+  rts
+@unknown_81_902f:
+  lda var_unknown_0950.w
+  eor #$0001.w
+  sta var_unknown_0950.w
+@unknown_81_9038:
+  ldx #$7800.w
+  lda var_unknown_0950.w
+  beq @unknown_81_9043
+  ldx #$8800.w
+@unknown_81_9043:
+  txa
+  ora #$0028.w
+  ldx var_oam_objects_tail.w
+  sta var_oam_objects.w, X
+  lda #$00b6.w
+  sta var_oam_objects.tile_and_attributes.w, X
+  inx
+  inx
+  inx
+  inx
+  stx var_oam_objects_tail.w
+  rts
 
 unknown_81_905b: ldx #$0000.w
 @unknown_81_905e: lda $7e3300, X
