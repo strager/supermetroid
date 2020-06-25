@@ -2587,40 +2587,43 @@ unknown_81_940a:
   .dw unknown_81_94a3
   .dw unknown_81_94d5
 
-unknown_81_944e: rep #$30
-/*unknown_81_9450:*/ jsr $808924
-/*unknown_81_9454:*/ lda $51
-/*unknown_81_9456:*/ and #$000f.w
-/*unknown_81_9459:*/ beq @unknown_81_945c
-/*unknown_81_945b:*/ rts
-
-@unknown_81_945c: jsr $80836f
-/*unknown_81_9460:*/ lda #$0001.w
-/*unknown_81_9463:*/ jsr $80914d
-/*unknown_81_9467:*/ jsr $888293
-/*unknown_81_946b:*/ jsr $88829e
-/*unknown_81_946f:*/ inc $0727.w
-/*unknown_81_9472:*/ jsr unknown_81_8dba
-/*unknown_81_9475:*/ jsr unknown_81_8ddb
-/*unknown_81_9478:*/ rep #$30
-/*unknown_81_947a:*/ stz $b1
-/*unknown_81_947c:*/ stz $b5
-/*unknown_81_947e:*/ stz $b9
-/*unknown_81_9480:*/ stz $b3
-/*unknown_81_9482:*/ stz $b7
-/*unknown_81_9484:*/ stz $bb
-unknown_81_9486: ldx #$0000.w
-@unknown_81_9489: lda $8ee400, X
-/*unknown_81_948d:*/ sta $7ec000, X
-/*unknown_81_9491:*/ lda $8ee402, X
-/*unknown_81_9495:*/ sta $7ec002, X
-/*unknown_81_9499:*/ inx
-/*unknown_81_949a:*/ inx
-/*unknown_81_949b:*/ inx
-/*unknown_81_949c:*/ inx
-/*unknown_81_949d:*/ cpx #$0200.w
-/*unknown_81_94a0:*/ bmi @unknown_81_9489
-/*unknown_81_94a2:*/ rts
+unknown_81_944e:
+  rep #$30
+  jsr unknown_80_8924.l
+  lda var_unknown_51
+  and #$000f.w
+  beq @unknown_81_945c
+  rts
+@unknown_81_945c:
+  jsr unknown_80_836f.l
+  lda #$0001.w
+  jsr unknown_80_914d.l
+  jsr unknown_88_8293.l
+  jsr unknown_88_829e.l
+  inc var_unknown_0727.w
+  jsr unknown_81_8dba
+  jsr unknown_81_8ddb
+  rep #$30
+  stz var_unknown_b1
+  stz var_unknown_b5
+  stz var_unknown_b9
+  stz var_unknown_b3
+  stz var_unknown_b7
+  stz var_unknown_bb
+unknown_81_9486:
+  ldx #$0000.w
+@unknown_81_9489:
+  lda unknown_8e_e400.l, X
+  sta var_color_palette.l, X
+  lda unknown_8e_e400.l + 2, X
+  sta var_color_palette.l + 2, X
+  inx
+  inx
+  inx
+  inx
+  cpx #var_color_palette@size
+  bmi @unknown_81_9489
+  rts
 
 unknown_81_94a3: rep #$30
 /*unknown_81_94a5:*/ jsr $82ba6e
