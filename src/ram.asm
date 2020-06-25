@@ -1086,6 +1086,11 @@ var_unknown_19a1: dw ; $7e19a1
 var_unknown_19ab: dw ; $7e19ab
 .ende
 
+.enum (MEM_LOW_HIGH_RAM_BEGIN + $19b7) export
+var_unknown_19b7: dw ; $7e19b7
+var_unknown_19b9: dw ; $7e19b9
+.ende
+
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $1c25) export
 var_unknown_1c25: dw ; 7e1c25
 var_plm_current_index: dw ; $7e1c27
