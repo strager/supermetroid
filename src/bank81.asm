@@ -1755,27 +1755,31 @@ unknown_81_8c7f:
   stx var_oam_objects_tail.w
   rtl
 
-unknown_81_8cf4: rep #$30
-/*unknown_81_8cf6:*/ phb
-/*unknown_81_8cf7:*/ phk
-/*unknown_81_8cf8:*/ plb
-/*unknown_81_8cf9:*/ lda $0727.w
-/*unknown_81_8cfc:*/ asl A
-/*unknown_81_8cfd:*/ tax
-/*unknown_81_8cfe:*/ jsr ($8d03.w, X)
-/*unknown_81_8d01:*/ plb
-/*unknown_81_8d02:*/ rtl
+unknown_81_8cf4:
+  rep #$30
+  phb
+  phk
+  plb
+  lda var_unknown_0727.w
+  asl A
+  tax
+  jsr (unknown_81_8d03, X)
+  plb
+  rtl
 
-/*unknown_81_8d03:*/ ora $8d6d8d
-/*unknown_81_8d07:*/ ldx $8d
-/*unknown_81_8d09:*/ ora $90, S
-/*unknown_81_8d0b:*/ ldx $8d
-/*unknown_81_8d0d:*/ ror $c290.w, X
-/*unknown_81_8d10:*/ bmi $22 ; $8d34.w
-/*unknown_81_8d12:*/ bit $89
-/*unknown_81_8d14:*/ bra unknown_81_8c7f@tile_is_on_screen
-/*unknown_81_8d16:*/ eor ($29), Y
-/*unknown_81_8d18:*/ ora $01f000
+unknown_81_8d03:
+  .dw $8d0f
+  .dw $8d6d
+  .dw $8da6
+  .dw $9003
+  .dw $8da6
+  .dw $907e
+
+/*unknown_81_8d0f:*/ rep #$30
+/*unknown_81_8d11:*/ jsr $808924
+/*unknown_81_8d15:*/ lda $51
+/*unknown_81_8d17:*/ and #$000f.w
+/*unknown_81_8d1a:*/ beq $01 ; $8d1d.w
 /*unknown_81_8d1c:*/ rts
 
 /*unknown_81_8d1d:*/ jsr $80836f
