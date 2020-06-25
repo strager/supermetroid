@@ -1852,23 +1852,24 @@ unknown_81_8da6:
 @unknown_81_8db9:
   rts
 
-unknown_81_8dba: sep #$20
-/*unknown_81_8dbc:*/ stz $6b
-/*unknown_81_8dbe:*/ lda #$03
-/*unknown_81_8dc0:*/ sta $52
-/*unknown_81_8dc2:*/ lda #$51
-/*unknown_81_8dc4:*/ sta $58
-/*unknown_81_8dc6:*/ lda #$58
-/*unknown_81_8dc8:*/ sta $59
-/*unknown_81_8dca:*/ lda #$5c
-/*unknown_81_8dcc:*/ sta $5a
-/*unknown_81_8dce:*/ lda #$00
-/*unknown_81_8dd0:*/ sta $5d
-/*unknown_81_8dd2:*/ lda #$04
-/*unknown_81_8dd4:*/ sta $5e
-/*unknown_81_8dd6:*/ lda #$13
-/*unknown_81_8dd8:*/ sta $69
-/*unknown_81_8dda:*/ rts
+unknown_81_8dba:
+  sep #$20
+  stz var_unknown_6b
+  lda #$03
+  sta var_unknown_52
+  lda #$51
+  sta var_unknown_58
+  lda #$58
+  sta var_unknown_59
+  lda #$5c
+  sta var_unknown_5a
+  lda #$00
+  sta var_unknown_5d
+  lda #$04
+  sta var_unknown_5e
+  lda #$13
+  sta var_unknown_69
+  rts
 
 unknown_81_8ddb: php
 /*unknown_81_8ddc:*/ sep #$30
