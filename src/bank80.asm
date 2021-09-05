@@ -2993,23 +2993,23 @@ unknown_80_9459:
   eor #$8000.w
   sta var_unknown_05cf.w
   bpl @unknown_80_955e
-  lda var_unknown_09c6.w
+  lda var_player_cur_missiles.w
   sta var_unknown_05c9.w
-  lda var_unknown_09ca.w
+  lda var_player_cur_supers.w
   sta var_unknown_05cb.w
-  lda var_unknown_09ce.w
+  lda var_player_cur_powerbombs.w
   sta var_unknown_05cd.w
-  stz var_unknown_09c6.w
-  stz var_unknown_09ca.w
-  stz var_unknown_09ce.w
+  stz var_player_cur_missiles.w
+  stz var_player_cur_supers.w
+  stz var_player_cur_powerbombs.w
   bra @unknown_80_9570
 @unknown_80_955e:
   lda var_unknown_05c9.w
-  sta var_unknown_09c6.w
+  sta var_player_cur_missiles.w
   lda var_unknown_05cb.w
-  sta var_unknown_09ca.w
+  sta var_player_cur_supers.w
   lda var_unknown_05cd.w
-  sta var_unknown_09ce.w
+  sta var_player_cur_powerbombs.w
 @unknown_80_9570:
   lda var_unknown_05c7.w
   bit #$0040.w
@@ -3727,15 +3727,15 @@ das:
   beq @unknown_80_9ac9
   jsl unknown_80_9a2e
 @unknown_80_9ac9:
-  lda var_unknown_09c8.w
+  lda var_player_max_missiles.w
   beq @unknown_80_9ad2
   jsl unknown_80_99cf
 @unknown_80_9ad2:
-  lda var_unknown_09cc.w
+  lda var_player_max_supers.w
   beq @unknown_80_9adb
   jsl unknown_80_9a0e
 @unknown_80_9adb:
-  lda var_unknown_09d0.w
+  lda var_player_max_powerbombs.w
   beq @unknown_80_9ae4
   jsl unknown_80_9a1e
 @unknown_80_9ae4:
@@ -3749,21 +3749,21 @@ das:
   sta0 var_unknown_00
   lda #$0080.w
   sta var_unknown_02
-  lda var_unknown_09c8.w
+  lda var_player_max_missiles.w
   beq @unknown_80_9b0f
-  lda var_unknown_09c6.w
+  lda var_player_cur_missiles.w
   ldx #$0094.w
   jsr number_to_decimal_3
 @unknown_80_9b0f:
-  lda var_unknown_09cc.w
+  lda var_player_max_supers.w
   beq @unknown_80_9b1d
   ldx #$009c.w
-  lda var_unknown_09ca.w
+  lda var_player_cur_supers.w
   jsr number_to_decimal_2
 @unknown_80_9b1d:
-  lda var_unknown_09d0.w
+  lda var_player_max_powerbombs.w
   beq @unknown_80_9b2b
-  lda var_unknown_09ce.w
+  lda var_player_cur_powerbombs.w
   ldx #$00a2.w
   jsr number_to_decimal_2
 @unknown_80_9b2b:
@@ -3869,18 +3869,18 @@ unknown_80_9b44:
 @unknown_80_9bfb:
   lda #unknown_80_9dd3
   sta var_unknown_00
-  lda var_unknown_09c8.w
+  lda var_player_max_missiles.w
   beq @unknown_80_9c16
-  lda var_unknown_09c6.w
+  lda var_player_cur_missiles.w
   cmp var_unknown_0a08.w
   beq @unknown_80_9c16
   sta var_unknown_0a08.w
   ldx #$0094.w
   jsr number_to_decimal_3
 @unknown_80_9c16:
-  lda var_unknown_09cc.w
+  lda var_player_max_supers.w
   beq @unknown_80_9c3f
-  lda var_unknown_09ca.w
+  lda var_player_cur_supers.w
   cmp var_unknown_0a0a.w
   beq @unknown_80_9c3f
   sta var_unknown_0a0a.w
@@ -3895,9 +3895,9 @@ unknown_80_9b44:
   lda var_unknown_0a0a.w
   jsr number_to_decimal_3.w
 @unknown_80_9c3f:
-  lda var_unknown_09d0.w
+  lda var_player_max_powerbombs.w
   beq @unknown_80_9c55
-  lda var_unknown_09ce.w
+  lda var_player_cur_powerbombs.w
   cmp var_unknown_0a0c.w
   beq @unknown_80_9c55
   sta var_unknown_0a0c.w
