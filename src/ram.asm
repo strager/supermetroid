@@ -740,12 +740,12 @@ var_reserve_tank_configuration: dw ; $7e09c0
 .enum (MEM_LOW_HIGH_RAM_BEGIN + $09c2) export
 var_player_cur_health: dw ; $7e09c2
 var_player_max_health: dw ; $7e09c4
-var_unknown_09c6: dw ; $7e09c6
-var_unknown_09c8: dw ; $7e09c8
-var_unknown_09ca: dw ; $7e09ca
-var_unknown_09cc: dw ; $7e09cc
-var_unknown_09ce: dw ; $7e09ce
-var_unknown_09d0: dw ; $7e09d0
+var_player_cur_missiles: dw ; $7e09c6
+var_player_max_missiles: dw ; $7e09c8
+var_player_cur_supers: dw ; $7e09ca
+var_player_max_supers: dw ; $7e09cc
+var_player_cur_powerbombs: dw ; $7e09ce
+var_player_max_powerbombs: dw ; $7e09d0
 var_unknown_09d2: dw ; $7e09d2
 var_player_max_reserve_tanks: dw ; $7e09d4
 var_player_cur_reserve_tanks: dw ; $7e09d6
